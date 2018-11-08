@@ -1,0 +1,66 @@
+\setcounter{section}{5}
+
+\section{Домашнє завдання за 10/17}
+
+Розглянемо крайову задачу
+
+\begin{equation}
+    \label{eq:6.1}
+    Lu \equiv -(p(x) \cdot y'(x))' + q(x) \cdot y(x) = f(x),
+\end{equation}
+\begin{equation}
+    \label{eq:6.2}
+    \left\{
+        \begin{aligned}
+            \alpha_1 \cdot y(a) - \alpha_2 \cdot y'(a) = 0, \\
+            \beta_1 \cdot y(b) + \beta_2 \cdot y'(b) = 0,
+        \end{aligned}
+    \right.
+\end{equation}
+де $\alpha_1^2 + \alpha_2^2 \ne 0$, $\beta_1^2 + \beta_2^2 \ne 0$, $p \in C^{(1)}([a,b])$, $p(x) \ne 0$, $q \in C([a, b])$, $f \in C(a, b) \cap L_2(a,b)$. \\
+
+Зазвичай у фізичних задачах виконуються умови 
+\[ \alpha_1 \cdot \alpha_2 \ge 0, \qquad \beta_1 \cdot \beta_2 \ge 0, \qquad p(x) > 0, \qquad q(x) \ge 0. \]
+
+Область визначення $M_L$ оператора $L$ складається із функцій $y(x)$ класу $C^{(2)}(a,b) \cap C^{(1)}([a,b])$, $y'' \in L_2(a,b)$, що задовольняють граничним умовам \LaReF{eq:6.2}. \\
+
+Задача знаходження тих значень $\lambda$ (характеристичних чисел оператора $L$), для яких рівняння $Ly = \lambda y$ має ненульові розв'язки $y(x)$ з області визначення $M_L$ (власні функції що відповідають цим характеристичним числам), називається \textit{задачею Штурма-Ліувілля}. \\
+
+Якщо $\lambda = 0$ не є характеристичним числом оператора $L$, то розв'язок крайової задачі \LaReF{eq:6.1}-\LaReF{eq:6.2} в класі $M_L$ єдиний і виражається формулою 
+\[ y(x) = \Int_a^b \left(G(x, \xi) \cdot f(\xi)\right) \dif \xi,\]
+де $G(x, \xi)$ -- функція Гріна крайової задачі \LaReF{eq:6.1}-\LaReF{eq:6.2} або оператору $L$. \\
+
+Функція Гріна представляється у вигляді 
+\[G(x,\xi) = -\dfrac1k \begin{cases} y_1(x) \cdot y_2(\xi), & a\le x \le \xi \le b, \\ y_1(\xi) \cdot y_2(x), & a \le \xi \le x \le b, \end{cases}\]
+де $y_1(x)$ і $y_2(x)$ -- ненульові розв'язки рівняння $Ly = 0$, що задовольняються першій і другій граничним умовам \LaReF{eq:6.2} відповідно,
+\[ k = p(x) \cdot w(x) = p(a) \cdot w(a) \ne 0, \qquad x \in [a, b],\]
+\[ w(x) = \begin{vmatrix} y_1(x) & y_2(x) \\ y_1'(x) & y_2'(x) \end{vmatrix}\text{ -- визначник Вронського.}\]
+
+Крайова задача  \[Ly = \lambda y + f,\] де $f \in C(a, b)\cap L_2(a,b)$, за умови що $\lambda = 0$ не є характеристичним числом оператора $L$, еквівалентна інтегральному рівнянню
+\[ y(x) = \lambda \Int_a^b \left(G(x, \xi) \cdot y(\xi)\right) \dif \xi + \Int_a^b \left(G(x, \xi) \cdot f(\xi)\right) \dif \xi.\]
+
+Цей метод інколи можна застосовувати до рівнянь з виродженнями, тобто коли $p(x)$ набуває значення $0$ або нескінченно великих значень, або $q$ набуває нескінченно великих значень на одному з кінців відрізка $[a,b]$.
+
+\begin{problem}[15.14 Владіміров]
+	\begin{enumerate}
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 
+	\end{enumerate}
+\end{solution}

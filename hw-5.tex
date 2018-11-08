@@ -1,0 +1,133 @@
+\setcounter{section}{4}
+
+\section{Домашнє завдання за 10/10}
+
+\begin{problem}[5.36]
+    Знайти характеристичні числа і відповідні власні функції інтегрального рівняння \[ \phi(x) = \lambda \Int_0^1 \mathcal{K}(x,y)\phi(y) dy \] у наступних випадках:
+    \begin{enumerate}
+        \item[3.] $\mathcal{K}(x,y) = \begin{cases} \dfrac{2 - y}{2} \cdot x, & 0 \le x \le y \le 1, \\ \dfrac{2 - x}{2} \cdot y, & 0 \le y \le x \le 1. \end{cases}$
+        \item[4.] $\mathcal{K}(x,y) = \begin{cases} (x + 1) (y - 2), & 0 \le x \le y \le 1, \\ (y + 1) (x - 2), & 0 \le y \le x \le 1. \end{cases}$
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}
+        \item[3.]
+        \begin{align*} 
+            \phi(x) &= \lambda \Int_0^x \left(\dfrac{2 - x}{2} \cdot y \cdot \phi(y)\right) dy + \lambda \Int_x^1 \left(\dfrac{2 - y}{2} \cdot x \cdot \phi(y)\right) dy. \\
+            \phi'(x) &= \lambda \cdot \dfrac{2 - x}{2} \cdot x \cdot \phi(x) - \dfrac\lambda2 \Int_0^x \left(y \cdot \phi(y)\right) dy + \lambda \Int_x^1 \left(\dfrac{2 - y}{2} \cdot \phi(y)\right) dy - \lambda \cdot \dfrac{2 - x}{2} \cdot x \cdot \phi(x) = \\
+            &= - \dfrac\lambda2 \Int_0^x \left(y \cdot \phi(y)\right) dy + \lambda \Int_x^1 \left(\dfrac{2 - y}{2} \cdot \phi(y)\right) dy. \\
+            \phi''(x) &= - \dfrac\lambda2 \cdot x \cdot \phi(x) - \dfrac\lambda2 \cdot (2 - x) \cdot \phi(x) = - \lambda \phi (x).
+        \end{align*}
+        
+        Знайдемо граничні умови:
+        \begin{system*}
+            \phi(0) &= \lambda \Int_0^0 \left(\dfrac{2 - 0}{2} \cdot y \cdot \phi(y)\right) dy + \lambda \Int_0^1 \left(\dfrac{2 - y}{2} \cdot 0 \cdot \phi(y)\right) dy = 0 \\
+            \phi(1) &= \lambda \Int_0^1 \left(\dfrac{2 - 1}{2} \cdot y \cdot \phi(y)\right) dy + \lambda \Int_1^1 \left(\dfrac{2 - y}{2} \cdot 1 \cdot \phi(y)\right) dy = \dfrac \lambda2 \Int_0^1 \left(y \cdot \phi(y)\right) dy \\
+            % \phi'(0) &= - \dfrac \lambda2 \Int_0^0 \left(y \cdot \phi(y)\right) dy + \lambda \Int_0^1 \left(\dfrac{2 - y}{2} \cdot \phi(y)\right) dy = \lambda \Int_0^1 \left(\dfrac{2 - y}{2} \cdot \phi(y)\right) dy \\
+            \phi'(1) &= - \dfrac \lambda2 \Int_0^1 \left(y \cdot \phi(y)\right) dy + \lambda \Int_1^1 \left(\dfrac{2 - y}{2} \cdot \phi(y)\right) dy = - \dfrac \lambda2 \Int_0^1 \left(y \cdot \phi(y)\right) dy
+        \end{system*}
+        
+        Таким чином маємо граничні умови I роду зліва і III справа: $\phi(0) = \phi'(1) + \phi(1) = 0$. \\
+        
+        Звідси знаходимо, що характеристичними числами є $\lambda_n > 0$ -- корені рівняння
+        \[\sqrt{\lambda} = - \tan \sqrt{\lambda},\]
+        а власними функціями -- 
+        \[\phi_n(x) = \sin \left(\sqrt{\lambda_n} \cdot x\right),\]
+        $n \in \NN$.
+        
+        \item[4.]
+        \begin{align*} 
+            \phi(x) &= \lambda \Int_0^x \left((y + 1) \cdot (x - 2) \cdot \phi(y)\right) dy + \lambda \Int_x^1 \left((x + 1) \cdot (y - 2) \cdot \phi(y)\right) dy. \\
+            \phi'(x) &= \lambda \cdot (x + 1) \cdot (x - 2) \cdot \phi(x) + \lambda \Int_0^x \left((y + 1) \cdot \phi(y)\right) dy + \\
+            &+ \lambda \Int_x^1 \left((y - 2) \cdot \phi(y)\right) dy - \lambda \cdot (x + 1) \cdot (x - 2) \cdot \phi(x) = \\
+            &= \lambda \Int_0^x \left((y + 1) \cdot \phi(y)\right) dy - \lambda \Int_x^1 \left((y - 2) \cdot \phi(y)\right) dy. \\
+            \phi''(x) &= \lambda \cdot (x + 1) \cdot \phi(x) - \lambda \cdot (x - 2) \cdot \phi(x) = 3 \lambda \phi(x).
+        \end{align*}
+
+        Знайдемо граничні умови:
+        \begin{system*}
+            \phi(0) &= \lambda \Int_0^0 \left((y + 1) \cdot (0 - 2) \cdot \phi(y)\right) dy + \lambda \Int_0^1 \left((0 + 1) \cdot (y - 2) \cdot \phi(y)\right) dy = \\
+            &= \lambda \Int_0^1 \left((y - 2) \cdot \phi(y)\right) dy \\
+            \phi(1) &= \lambda \Int_0^1 \left((y + 1) \cdot (1 - 2) \cdot \phi(y)\right) dy + \lambda \Int_1^1 \left((1 + 1) \cdot (y - 2) \cdot \phi(y)\right) dy = \\
+            &= - \lambda \Int_0^1 (y + 1) \cdot \phi(y) dy \\
+            \phi'(0) &= \lambda \Int_0^0 \left((y + 1) \cdot \phi(y)\right) dy + \lambda \Int_0^1 \left((y - 2) \cdot \phi(y)\right) dy = \\
+            &= \lambda \Int_0^1 \left((y - 2) \cdot \phi(y)\right) dy \\
+            \phi'(1) &= \lambda \Int_0^1 \left((y + 1) \cdot \phi(y)\right) dy + \lambda \Int_1^1 \left((y - 2) \cdot \phi(y)\right) dy = \\
+            &= \lambda \Int_0^1 \left((y + 1) \cdot \phi(y)\right) dy
+        \end{system*}
+
+        Таким чином маємо граничні умови III роду зліва і III справа: $\phi'(0) - \phi(0) = \phi'(1) + \phi(1) = 0$. \\
+        
+        Звідси знаходимо, що характеристичними числами є $\lambda_n > 0$ -- корені рівняння 
+        \[\cot\sqrt{-3\lambda} = - \dfrac12 \cdot \left(\sqrt{-3\lambda} - \dfrac 1{\sqrt{-3\lambda}}\right),\]
+        а власними функціями -- 
+        \[\phi_n(x) = \sin \left(\sqrt{\lambda_n} \cdot x\right) +\sqrt{\lambda_n}\cdot \cos\left(\sqrt{\lambda_n} \cdot x\right),\]
+        $n \in \NN$.
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}[5.37]
+    Знайти характеристичні числа і відповідні власні функції інтегрального рівняння \[ \phi(x) = \lambda \Int_0^\pi \mathcal{K}(x,y)\phi(y) dy, \] якщо
+    \begin{enumerate}
+        \item
+        \item $\mathcal{K}(x, y) = \begin{cases} \cos x \sin y, & 0 \le x \le y \le \pi \\ \cos y \sin x, & 0 \le y \le x \le \pi \end{cases}$
+        \item $\mathcal{K}(x, y) = \begin{cases} \sin x \cos y, & 0 \le x \le y \le \pi \\ \sin y \cos x, & 0 \le y \le x \le \pi \end{cases}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}
+        \item 
+        \item 
+        \begin{align*} 
+            \phi(x) &= \lambda \Int_0^x \left(\cos (y) \cdot \sin (x) \cdot \phi(y)\right) dy + \lambda \Int_x^\pi \left(\cos (x) \cdot \sin(y) \cdot \phi(y)\right) dy. \\
+            \phi'(x) &= \lambda \cdot \cos (x) \cdot \sin (x) \cdot \phi(x) + \lambda \Int_0^x \left(\cos(y) \cdot \cos(x) \cdot \phi(y)\right) dy - \\
+            &+ \lambda \Int_x^\pi \left(\sin(x) \cdot \sin(y) \cdot \phi(y)\right) dy - \lambda \cdot \cos(x) \cdot \sin (x) \cdot \phi(x) = \\
+            &= \lambda \Int_0^x \left(\cos(y) \cdot \cos(x) \cdot \phi(y)\right) dy - \lambda \Int_x^\pi \left(\sin(x) \cdot \sin(y) \cdot \phi(y)\right) dy. \\
+            \phi''(x) &= \lambda \cdot \cos^2 (x) \cdot \phi(x) - \lambda \Int_0^x \left(\cos(y) \cdot \sin(x) \cdot \phi(y)\right) dy -\\
+            &- \lambda \Int_x^\pi \left(\cos(x) \cdot \sin(y) \cdot \phi(y)\right) dy + \lambda \cdot \sin^2(x) \cdot \phi(x) = \\
+            &= (\lambda - 1) \cdot \phi(x). 
+        \end{align*}
+    
+        Знайдемо граничні умови:
+        \begin{system*}
+            % \phi(0) &= \lambda \Int_0^0 \left(\cos (y) \cdot \sin (0) \cdot \phi(y)\right) dy + \lambda \Int_0^\pi \left(\cos (0) \cdot \sin(y) \cdot \phi(y)\right) dy = \\
+            % &= \Int_0^\pi \left(\sin(y)\cdot\phi(y)\right) dy. \\
+            \phi(\pi) &= \lambda \Int_0^\pi \left(\cos (y) \cdot \sin (\pi) \cdot \phi(y)\right) dy + \lambda \Int_\pi^\pi \left(\cos (\pi) \cdot \sin(y) \cdot \phi(y)\right) dy = 0 \\
+            \phi'(0) &= \lambda \Int_0^0 \left(\cos(y) \cdot \cos(0) \cdot \phi(y)\right) dy - \lambda \Int_0^\pi \left(\sin(0) \cdot \sin(y) \cdot \phi(y)\right) dy = 0 \\
+        \end{system*}
+        Таким чином маємо граничні умови II роду зліва і I роду справа: $\phi'(0) = \phi(\pi) = 0$.
+        
+        Звідси знаходимо, що характеристичними числами є 
+        \[\lambda_n = 1 - \left(\dfrac{(2 n - 1)}{2}\right)^2, \]
+        а власними функціями
+        \[\phi_n(x) = \cos \left(x\cdot\sqrt{1 - \left(\dfrac{(2 n - 1)}{2}\right)^2}\right).\]
+        \item 
+        \begin{align*} 
+            \phi(x) &= \lambda \Int_0^x \left(\sin (y) \cdot \cos (x) \cdot \phi(y)\right) dy + \lambda \Int_x^\pi \left(\sin (x) \cdot \cos(y) \cdot \phi(y)\right) dy. \\
+            \phi'(x) &= \lambda \cdot \sin (x) \cdot \cos (x) \cdot \phi(x) - \lambda \Int_0^x \left(\sin(y) \cdot \sin(x) \cdot \phi(y)\right) dy + \\
+            &+ \lambda \Int_x^\pi \left(\cos(x) \cdot \cos(y) \cdot \phi(y)\right) dy - \lambda \cdot \sin(x) \cdot \cos (x) \cdot \phi(x) = \\
+            &= - \lambda \Int_0^x \left(\sin(y) \cdot \sin(x) \cdot \phi(y)\right) dy + \lambda \Int_x^\pi \left(\cos(x) \cdot \cos(y) \cdot \phi(y)\right) dy. \\
+            \phi''(x) &= - \lambda \cdot \sin^2 (x) \cdot \phi(x) - \lambda \Int_0^x \left(\sin(y) \cdot \cos(x) \cdot \phi(y)\right) dy -\\
+            &- \lambda \Int_x^\pi \left(\sin(x) \cdot \cos(y) \cdot \phi(y)\right) dy - \lambda \cdot \cos^2(x) \cdot \phi(x) = \\
+            &= - (\lambda + 1) \cdot \phi(x). 
+        \end{align*}
+    
+        Знайдемо граничні умови:
+        \begin{system*}
+            \phi(0) &= \lambda \Int_0^0 \left(\sin (y) \cdot \cos (0) \cdot \phi(y)\right) dy + \lambda \Int_0^\pi \left(\sin (0) \cdot \cos(y) \cdot \phi(y)\right) dy = 0 \\
+            % \phi(\pi) &= \lambda \Int_0^\pi \left(\sin (y) \cdot \cos (\pi) \cdot \phi(y)\right) dy + \lambda \Int_\pi^\pi \left(\sin (\pi) \cdot \cos(y) \cdot \phi(y)\right) dy = \\
+            % &= - \lambda \Int_0^\pi \left(\sin (y) \cdot \phi(y)\right) dy \\
+            % \phi'(0) &= - \lambda \Int_0^0 \left(\sin(y) \cdot \sin(0) \cdot \phi(y)\right) dy + \lambda \Int_0^\pi \left(\cos(0) \cdot \cos(y) \cdot \phi(y)\right) dy = \\
+            % &= \lambda \Int_0^\pi \left(\cos(y) \cdot \phi(y)\right) dy \\
+            \phi'(\pi) &= - \lambda \Int_0^\pi \left(\sin(y) \cdot \sin(\pi) \cdot \phi(y)\right) dy + \lambda \Int_\pi^\pi \left(\cos(\pi) \cdot \cos(y) \cdot \phi(y)\right) dy = 0
+        \end{system*}
+        Таким чином маємо граничні умови I роду зліва і II роду справа: $\phi(0) = \phi'(\pi) = 0$.
+        
+        Звідси знаходимо, що характеристичними числами є 
+        \[\lambda_n = \left(\dfrac{(2 n - 1)}{2}\right)^2 - 1, \]
+        а власними функціями
+        \[\phi_n(x) = \sin \left(x\cdot\sqrt{\left(\dfrac{(2n - 1)}{2}\right)^2 - 1}\right).\]
+    \end{enumerate}
+\end{solution}

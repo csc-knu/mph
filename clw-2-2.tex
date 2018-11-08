@@ -1,0 +1,109 @@
+\[ x^2 \cdot u_{xx} + y^2 \cdot u_{yy} + x \cdot u_y = y^2. \]
+
+\[ \Delta = 0 - x^2 \cdot y^2 = - x^2 \cdot y^2. \]
+
+\[ \dfrac{d y}{d x} = \dfrac{0 \pm i \sqrt{x^2 \cdot y^2}}{x^2} = \pm \dfrac{i x y}{x^2} = \dfrac{i y}{x}. \]
+
+\[ \dfrac{d y}{y} = i \dfrac{d x}{x}. \]
+
+\[ \ln |y| = \pm i \ln |x| + C_1. \]
+
+\[ c_1 = \ln |y| \pm i \ln |x|. \]
+
+\[ \xi = \ln |y|, \eta = \ln |x|. \]
+
+\[ \xi_x = 0. \]
+
+\[ \xi_y = \dfrac 1 y. \]
+
+\[ \eta_x = \dfrac 1 x. \]
+
+\[ \eta_y = 0. \]
+
+\[ \dfrac{\partial u}{\partial x} = \dfrac{\partial u}{\partial \xi} \cdot \dfrac{\partial \xi}{\partial x} + \dfrac{\partial u}{\partial \eta} \cdot \dfrac{\partial \eta}{\partial x} = \dfrac{\partial u}{\partial \xi}  \cdot 0 + \dfrac{\partial u}{\partial \eta} \cdot \dfrac 1 x = \dfrac 1 x \cdot \dfrac{\partial u}{\partial \eta}. \]
+
+\[ \dfrac{\partial u}{\partial y} = \dfrac{\partial u}{\partial \xi} \cdot \dfrac 1 y. \]
+
+\[ \dfrac{\partial^2 u}{\partial x^2} = - \dfrac 1 {x^2} \cdot \dfrac{\partial u}{\partial \eta} + \dfrac 1 x \cdot \left( \dfrac{\partial^2 u}{\partial \xi \partial \eta} \cdot \dfrac{\partial \xi}{\partial x} + \dfrac{\partial^2 u}{\partial \eta^2} \cdot \dfrac{\partial u}{\partial x} \right) = - \dfrac 1 {x^2} \cdot \dfrac{\partial u}{\partial \eta} + \dfrac 1 x \cdot \left( \dfrac{\partial^2 u}{\partial \xi \partial \eta} \cdot 0 + \dfrac{\partial^2 u}{\partial \eta^2} \cdot \dfrac 1 x \right) = - \dfrac 1 {x^2} \cdot \dfrac{\partial u}{\partial \eta} + \dfrac 1 {x^2} \cdot \dfrac{\partial^2 u}{\partial \eta^2}. \]
+
+\[ \dfrac{\partial^2 u}{\partial y^2} = - \dfrac 1 {y^2} \cdot \dfrac{\partial u}{\partial \eta} + \dfrac 1 y \cdot \left( \dfrac{\partial^2 u}{\partial \xi^2} \cdot \dfrac{\partial \xi}{\partial y} + \dfrac{\partial^2 u}{\partial \eta \partial \xi} \cdot \dfrac{\partial u}{\partial y} \right) = ... \]
+
+Залишається підставити це все у початкове рівняння скориставшись вищенаведеною заміною.
+
+
+
+\[ x \cdot u_{x x} - 2 \sqrt{x \cdot y} \cdot u_{x y} + y \cdot u_{y y} + x \cdot u_x + 7 \cdot u = \cos (x \cdot y). \]
+
+\[ \Delta = ( - \sqrt{x \cdot y})^2 - x \cdot y = x \cdot y - x \cdot y = 0, \]
+тому рівняння параболічного типу.
+
+\[ \dfrac{d y}{d x} = - \dfrac{\sqrt{x \cdot y}}{x} = - \sqrt{\dfrac{y}{x}}. \]
+
+\[ 2 \sqrt{y} = - 2 \sqrt{x} + C_1. \]
+
+\[ C_1 = 2 \sqrt{y} + 2 \sqrt{x}. \]
+
+\[ \xi = 2 \sqrt{y} + 2 \sqrt{x}, \eta = x. \]
+
+\[ \dfrac{\partial \xi}{\partial x} = 1 / \sqrt{x}. \]
+\[ \dfrac{\partial \xi}{\partial y} = 1 / \sqrt{y}. \]
+\[ \dfrac{\partial \eta}{\partial x} = 1. \]
+\[ \dfrac{\partial \eta}{\partial y} = 0. \]
+
+\[ \dfrac{\partial u}{\partial x} = \dfrac{\partial u}{\partial \xi} \cdot \dfrac{\partial \xi}{\partial x} + \dfrac{\partial u}{\partial \eta} \cdot \dfrac{\partial \eta}{\partial x} = \dfrac{\partial u}{\partial \xi} \cdot \dfrac{1}{\sqrt{x}} + \dfrac{\partial u}{\partial \eta} \cdot 1. \]
+\[ \dfrac{\partial u}{\partial y} = \dfrac{\partial u}{\partial \xi} \cdot \dfrac{\partial \xi}{\partial y} + \dfrac{\partial u}{\partial \eta} \cdot \dfrac{\partial \eta}{\partial y} = \dfrac{\partial u}{\partial \xi} \cdot \dfrac{1}{\sqrt{y}}. \]
+
+\[ \dfrac{\partial^2 u}{\partial x^2} = - \dfrac 1 2 x^{-3/2} \cdot \dfrac{\partial u}{\partial \eta} + \dfrac 1 {\sqrt{x}} \cdot \left( \dfrac{\partial^2 u}{\partial \xi \partial \eta} \cdot \dfrac{\partial \xi}{\partial x} + \dfrac{\partial^2 u}{\partial \eta^2} \cdot \dfrac{\partial \eta}{\partial x} \right) = - \dfrac 1 2 x^{-3/2} \cdot \dfrac{\partial u}{\partial \eta} + \dfrac 1 {\sqrt{x}} \cdot \left( \dfrac{\partial^2 u}{\partial \xi \partial \eta} \cdot \dfrac{1}{\sqrt{x}} + \dfrac{\partial^2 u}{\partial \eta^2} \cdot 1 \right) = . \]
+\[ \dfrac{\partial^2 u}{\partial y^2} = - \dfrac 1 2 y^{-3/2} \cdot \dfrac{\partial u}{\partial \xi} + \dfrac 1 {\sqrt{y}} \cdot \left( \dfrac{\partial^2 u}{\partial \xi \partial \eta} \cdot \dfrac{\partial \eta}{\partial y} + \dfrac{\partial^2 u}{\partial \xi^2} \cdot \dfrac{\partial \xi}{\partial y} \right) = - \dfrac 1 2 \cdot y^{-3/2}  \dfrac{\partial u}{\partial \xi}  + \dfrac 1 {\sqrt{y}} \cdot \dfrac 1 {\sqrt{y}} \cdot \dfrac{\partial^2 u}{\partial y^2} = - \dfrac 1 2 \cdot y^{-3/2}  \dfrac{\partial u}{\partial \xi}  + \dfrac 1 y \cdot \dfrac{\partial^2 u}{\partial y^2} \]
+Далі знаходимо мішану похідну $\dfrac{\partial^2 u}{\partial x}{\partial y} = \left( \dfrac{\partial u}{\partial y} \right)_x^\prime$.\\
+
+Нарешті, підставляємо це все у наше рівняння:
+\[ x \cdot \left( - \dfrac 1 2 x^{-3/2} \cdot \dfrac{\partial u}{\partial \xi} + \dfrac{2}{\sqrt{x}} \cdot \dfrac{\partial^2 u}{\partial \xi \partial \eta} + \dfrac 1 x \cdot \dfrac{\partial^2 u}{\partial \xi^2} + \dfrac{\partial^2 u}{\partial \eta^2}\right) - 2 \sqrt{x \cdot y} \cdot \dfrac 1 {\sqrt{y}} \cdot \left( ... \right) = ... \]
+
+
+\section{Класифікація диференційних рівнянь в частинних похідних від $m$ незалежних змінних }
+
+\[ \Sum_{i, j = 1}^n a_{ij} \dfrac{\partial^2 u}{\partial x_i \partial x_j} + \Sum_{i = 1}^n b_i \cdot \dfrac{\partial u}{\partial x_i} + c u = f, \]
+\[ a_{ij} = a_{ij}(\vec x). \]
+\[ \vec x = (x_1, x_2, \ldots, x_n). \]
+\[ b_i = b_i(\vec x). \]
+\[ u = u(\vec x). \]
+\[ f = f(\vec x). \]
+\[ a_{ij} = a_{ji}. \]
+
+\[ Q_n(\lambda_1, \lambda_2, \ldots, \lambda_n) = \Sum_{i,j=1}^n a_{ij}\lambda_i\lambda_j = \Sum_{i = 1}^n \alpha_i \beta_i^2 \]
+\[ \alpha_i \in \{ -1, 0, 1\}. \]
+
+\begin{enumerate}
+	\item $\alpha_i \ne 0, i = \overline{1, n}$, всі одного знаку -- еліптичного.
+	\item $(n - 1)$ одного, 1 іншого -- гіперболічного, $(n - k)$ одного, $k$ іншого -- ультра-гіперболічного.
+	\item якщо хоча б одне 0 -- параболічного.
+\end{enumerate}
+
+Після заміни рівняння еліптичного типу набуває вигляду
+\[ \Sum_{i=1}^n \dfrac{\partial^2 u}{\partial \xi_i^2} = \Phi_1 \left(\vec \xi, u, \dfrac{\partial u}{\partial \xi_1}, \ldots, \dfrac{\partial u}{\partial \xi_n} \right). \]
+Після заміни рівняння гіперболічного типу набуває вигляду
+\[ \dfrac{\partial^2 u}{\partial \xi_1^2} = \Sum_{i=1}^n \dfrac{\partial^2 u}{\partial \xi_i^2} + \Phi_1 \left(\vec \xi, u, \dfrac{\partial u}{\partial \xi_1}, \ldots, \dfrac{\partial u}{\partial \xi_n} \right). \]
+Після заміни рівняння ультра-гіперболічного типу набуває вигляду
+\[ \Sum_{i=1}^k \dfrac{\partial^2 u}{\partial \xi_i^2} \dfrac{\partial^2 u}{\partial \xi_1^2} = \Sum_{i=k+1}^n \dfrac{\partial^2 u}{\partial \xi_i^2} + \Phi_1 \left(\vec \xi, u, \dfrac{\partial u}{\partial \xi_1}, \ldots, \dfrac{\partial u}{\partial \xi_n} \right). \]
+Після заміни рівняння параболічного типу набуває вигляду
+\[ \Sum_{i=1}^m \dfrac{\partial^2 u}{\partial \xi_i^2} = \Phi_1 \left(\vec \xi, u, \dfrac{\partial u}{\partial \xi_1}, \ldots, \dfrac{\partial u}{\partial \xi_n} \right). \]
+
+Приклад 2.2.1
+\[ u_{xx} + 2 u_{xy} - 2 u_{xz} + 2 u_{yy} + 6 u_{zz} + u_x + 5 u = 0. \]
+
+\[ Q(\lambda_1, \lambda_2, \lambda_3) = \lambda_1^2 + 2\lambda_1 \lambda_2 - 2\lambda_1 \lambda_3 + 2\lambda_2^2 + 6\lambda_3^2 = \]
+\[ = \left( \dfrac{\lambda_1}{\sqrt{2}} + \sqrt{2} \cdot \lambda_2\right)^2 + \left( \dfrac{\lambda_1}{\sqrt{2}} - \sqrt{2} \cdot \lambda_3\right)^2 + (2 \lambda_3)^2 = \beta_1^2 + \beta_2^2 + \beta_3^2. \]
+\[ \beta_1 = \dfrac{\lambda_1}{\sqrt{2}} + \sqrt{2} \cdot \lambda_2. \]
+\[ \beta_2 = \dfrac{\lambda_1}{\sqrt{2}} - \sqrt{2} \cdot \lambda_3. \]
+\[ \beta_3 = 2 \lambda_3. \]
+Рівняння має еліптичний тип.
+\[ \lambda_1 = \sqrt{2} \cdot \left( \beta_2 + \sqrt{2} \cdot \dfrac 1 2 \cdot \beta_3 \right) = \sqrt{2} \cdot \beta_2 + \beta_3. \]
+\[ \lambda_2 = \dfrac{1}{\sqrt{2}} \cdot \left( \beta_1 - \dfrac{1}{\sqrt{2}} \cdot (\sqrt{2} \cdot \beta_2 + \beta_3)\right) = \dfrac{\beta_1}{\sqrt{2}} - \dfrac{\beta_2}{\sqrt{2}} - \dfrac{\beta_3}{2}. \]
+\[ ]lambda_3 = \dfrac{\beta_3}{2}. \]
+
+\[ B = \begin{pmatrix} 0 & \sqrt{2} & 1 \\ 1 / \sqrt{2} & - 1 / \sqrt{2} & - 1 / 2 \\ 0 & 0 & 1 / 2 \end{pmatrix}. \]
+\[ \begin{pmatrix} \xi_1 \\ \xi_2 \\ \xi_3 \end{pmatrix} = \begin{pmatrix} 0 & 1 / \sqrt{2} & 0 \\ \sqrt{2} & - 1 / \sqrt{2} & 0 \\ 1 & -1/2 & 1 / 2 \end{pmatrix} \cdot \begin{pmatrix} x \\ y \\ z \end{pmatrix}. \]
+Далі знаходимо всі похідні які є у рівнянні. \\
+
+Домашнє: Приклад 2.2.2 і 2.2.3

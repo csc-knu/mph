@@ -1,0 +1,60 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, ukrainian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry} 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Нікіта Скибицький, ОМ-3}
+\cfoot{\thepage}
+
+\usepackage{multicol, graphicx}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{theorem}{Теорема}[subsection]
+\newtheorem{definition}{Визначення}
+\newtheorem{prove}{Доведення}
+\newtheorem{problem}{\normalfont{\textit{Задача}}}[section]
+\newtheorem*{solution}{Розв'язок}
+\newtheorem{side_comment}{Зауваження}
+
+\allowdisplaybreaks
+\setlength\parindent{0pt}
+
+\newcommand{\argmax}{\arg\max}
+\newcommand{\argmin}{\arg\min}
+
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\dydx}{\dfrac{\dif y}{\dif x}}
+\newcommand{\dxdt}{\dfrac{\dif x}{\dif t}}
+\newcommand{\dydt}{\dfrac{\dif y}{\dif t}}
+
+\newcommand{\NN}{\mathbb{N}} 
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\const}{\text{const}}
+
+\newcommand{\LaReF}[1]{(\ref{#1})}
+
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\ws}{\text{ }}
+
+\newcommand{\Max}{\displaystyle\max\limits}
+\newcommand{\Min}{\displaystyle\min\limits}
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Int}{\displaystyle\int\limits}
+\newcommand{\Prod}{\displaystyle\prod\limits}
+
+\newenvironment{system}{\begin{equation}\left\{\begin{aligned}}{\end{aligned}\right.\end{equation}}
+\newenvironment{system*}{\begin{equation*}\left\{\begin{aligned}}{\end{aligned}\right.\end{equation*}}
+
+\usepackage{color}
+
+\usepackage{xfrac}

@@ -1,0 +1,187 @@
+\setcounter{section}{3}
+
+\section{Домашнє завдання за 9/26}
+
+\begin{problem}[5.23, Владимиров]
+Знайти характеристичні числа і власні функції ядра $K(x, y)$ і розв'язати інтегральне рівняння 
+\[ \phi(x) = \lambda \Int_{-1}^1 K(x, y) \phi(y) dy + f(x) \] 
+для всіх $\lambda$, $a$, $b$, якщо:
+    \begin{enumerate}
+        \item $K(x, y) = 3x + xy - 5x^2y^2$, $f(x) = ax$;
+        \item $K(x, y) = 3xy + 5x^2y^2$, $f(x) = ax^2 + bx$.
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Почнемо з того, що розкладемо це вироджене ядро:
+        \begin{align*}
+            \phi(x) &= \lambda \Int_{-1}^1 (3x + xy - 5x^2y^2) \phi(y) dy + ax = \\
+            &= \lambda x \Int_{-1}^1 (3 + y) \phi(y) dy - 5 \lambda x^2 \Int_{-1}^1 y^2 \phi(y) dy + ax.
+        \end{align*}
+        Позначимо
+        \[ c_1 = \Int_{-1}^1 (3 + y) \phi(y) dy, \qquad c_2 = \Int_{-1}^1 y^2 \phi(y) dy. \]
+        Тоді загальний розв'язок має вигляд $\phi(x) = \lambda x c_1 - 5 \lambda x^2 c_2 + ax$. Підставляючи це у визначення $c_1$ і $c_2$, знаходимо
+        \begin{system*}
+            c_1 &= \Int_{-1}^1 (3 + y) (\lambda y c_1 - 5 \lambda y^2 c_2 + ay) dy = - 10 \lambda c_2 + 2 \lambda c_1 / 3 + 2 a / 3, \\
+            c_2 &= \Int_{-1}^1 y^2 (\lambda y c_1 - 5 \lambda y^2 c_2 + ay) dy = - 2 \lambda c_2.
+        \end{system*}
+        
+        Ненадовго забудемо про праву частину цієї системи і дослідимо питання про власні числа і функції. Визначник цієї системи 
+        \[ \begin{vmatrix} 1 - \dfrac{2 \lambda}3 & 10 \lambda \\ 0 & 1 + 2 \lambda \end{vmatrix} = \left(1 - \dfrac{2 \lambda}3\right) \cdot (1 + 2 \lambda) = 0, \]
+        тобто $\lambda_1 = 3 / 2$, $\lambda_2 = - 1 / 2$ є власними числами цього ядра.\\
+        
+        Підставляючи $\lambda_1$ і $\lambda_2$ у систему, знаходимо власні вектори $\begin{pmatrix} 1 & 0 \end{pmatrix}^{\star}$ і $\begin{pmatrix} 3 & -4 \end{pmatrix}^{\star}$ відповідно.\\
+        
+        Підставляючи власні вектори у вираз для $\phi(x)$, знаходимо власні функції:
+        \[ \phi_1(x) = x, \qquad \phi_2(x) = 3 x - 4 x^2. \]
+        
+        Тепер повертаємося до знаходження розв'язку. Окремо розглянемо $\lambda = 3 / 2$ і $\lambda = - 1 / 2$ як власні числа.\\
+        
+        При $\lambda = 3 / 2$ розв'язок (а точніше ціла сім'я розв'язків) існує лише при $a = 0$ і має вигляд $\phi(x) = C_1 x$, де $C_1$ -- довільна стала. \\
+        
+        При $\lambda = - 1 / 2$ маємо цілу сім'ю розв'язків $c_1 = \dfrac{5 c_2 + 2 a / 3}{4 / 3} = \dfrac {15 c_2} 4 + \dfrac a 2$, де $c_2$ -- довільна стала. Підставляючи це у загальний вигляд $\phi(x)$, знаходимо 
+        \[ \phi(x) = -\dfrac12\left(\dfrac {15 c_2} 4 + \dfrac a 2\right)x + \dfrac52c_2(3x-4x^2) + ax \textcolor{red}{\overset{?}{\,\,=\,\,}} \dfrac34 ax + C_2(3x - 4x^2) . \]
+        При інших $\lambda$ розв'язок існує завжди і має вигляд $c_2 = 0$, $c_1 = \dfrac{2 a / 3}{1 - 2 \lambda / 3} = \dfrac{2 a}{3 - 2 \lambda}$, тобто $\phi(x) = \dfrac{3 a x}{3 - 2 \lambda}$.
+        
+        \item Почнемо з того, що розкладемо це вироджене ядро:
+        \begin{align*}
+            \phi(x) &= \lambda \Int_{-1}^1 (3xy + 5x^2y^2) \phi(y) dy + ax^2 + bx = \\
+            &= 3 \lambda x \Int_{-1}^1 y \phi(y) dy + 5 \lambda x^2 \Int_{-1}^1 y^2 \phi(y) dy + ax^2 + b.
+        \end{align*}
+        Позначимо
+        \[ c_1 = \Int_{-1}^1 y \phi(y) dy, \qquad c_2 = \Int_{-1}^1 y^2 \phi(y) dy. \]
+        Тоді загальний розв'язок має вигляд $\phi(x) = 3 \lambda x c_1 + 5 \lambda x^2 c_2 + ax^2 + bx$. Підставляючи це у визначення $c_1$ і $c_2$, знаходимо
+        \begin{system*}
+            c_1 &= \Int_{-1}^1 y (3 \lambda y c_1 + 5 \lambda y^2 c_2 + ay^2 + by) dy = 2 b / 3 + \lambda 2 c_1, \\
+            c_2 &= \Int_{-1}^1 y^2 (3 \lambda y c_1 + 5 \lambda y^2 c_2 + ay^2 + by) dy = 2 a / 5 + 2 \lambda c_2 .
+        \end{system*}
+        
+        Ненадовго забудемо про праву частину цієї системи і дослідимо питання про власні числа і функції. Визначник цієї системи 
+        \[ \begin{vmatrix} 1 - 2 \lambda & 0 \lambda \\ 0 & 1 - 2 \lambda \end{vmatrix} = (1 - 2 \lambda)^2 = 0, \]
+        тобто $\lambda = 1 / 2$ є кратним власним числом цього ядра.\\
+        
+        Підставляючи $\lambda$ у систему, знаходимо власні вектори $\begin{pmatrix} 1 & 0 \end{pmatrix}^{\star}$ і $\begin{pmatrix} 0 & 1 \end{pmatrix}^{\star}$ відповідно.\\
+        
+        Підставляючи власні вектори у вираз для $\phi(x)$, знаходимо власні функції:
+        \[ \phi_1(x) = x, \qquad \phi_2(x) = x^2. \]
+        
+        Тепер повертаємося до знаходження розв'язку. Окремо розглянемо $\lambda = 1 / 2$ як власне число.\\
+        
+        При $\lambda = 1 / 2$ розв'язок (а точніше ціла сім'я розв'язків) існує лише при $a = b = 0$ і має вигляд $\phi(x) = C_1 x + C_2 x^2$, де $C_1$, $C_2$ -- довільні сталі. \\
+        
+        При інших $\lambda$ розв'язок існує завжди і має вигляд $c_2 = \dfrac{2a}{5(1 - 2 \lambda)}$, $c_1 = \dfrac{2b}{3(1 - 2 \lambda)}$, тобто 
+        \[ \phi(x) = \dfrac{2 b \lambda x}{1 - 2 \lambda} + \dfrac{2 a x^2}{1 - 2 \lambda} + ax^2 + bx = \dfrac{ax^2 + bx}{1 - 2 \lambda}. \]
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}[5.26, Владимиров]
+    Знайти всі значення параметрів $a$, $b$, $c$ за яких наступні інтегральні рівняння мають розв'язок для довільного $\lambda$.
+    \begin{enumerate}
+        \item $\phi(x) = \lambda \Int_{-1}^1 (xy + x^2y^2) \phi(y) dy + ax^2 + bx + c$.
+        \item[6.] $\phi(x) = \lambda \Int_0^{2\pi} \cos(2x + 4y) \phi(y) dy + e^{ax + b}$.
+        \item[7.] $\phi(x) = \lambda \Int_0^\pi (\sin x \sin 2y + \sin 2x \sin 4y) \phi(y) dy + ax^2 + bx + c$.
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Розглянемо спряжене однорідне рівняння:
+        \[ \psi(x) = \lambda \Int_{-1}^1 (xy + x^2y^2) \psi(y) dy. \]
+        Його ядро вироджене:
+        \[ \psi(x) = \lambda \Int_{-1}^1 (xy + x^2y^2) \psi(y) dy = \lambda x \Int_{-1}^1 y \psi(y) dy + \lambda x^2 \Int_{-1}^1 y^2 \psi(y) dy. \]
+        Позначимо
+        \[ c_1 = \Int_{-1}^1 y \psi(y) dy, \qquad c_2 = \Int_{-1}^1 y^2 \psi(y) dy. \]
+        Тоді загальний розв'язок має вигляд $\psi(x) = \lambda x c_1 + \lambda x^2 c_2$. Підставляючи це у визначення $c_1$ і $c_2$, знаходимо
+        \begin{system*}
+`            c_1 &= \Int_{-1}^1 y (\lambda y c_1 + \lambda y^2 c_2) dy = 2 \lambda c_1 / 3, \\
+            c_2 &= \Int_{-1}^1 y^2 (\lambda y c_1 + \lambda y^2 c_2) dy = 2 \lambda c_2 / 5.
+        \end{system*}
+        Визначник цієї системи
+        \[ \begin{vmatrix} 1 - 2 \lambda / 3 & 0 \\ 0 & 1 - 2 \lambda / 5 \end{vmatrix} = (1 - 2 \lambda / 3) \cdot (1 - 2 \lambda / 5) = 0,\] 
+        тобто $\lambda_1 = 3 / 2$, $\lambda_2 = 5 / 2$ є характеристичними числами цього рівняння. \\
+        
+        Підставляючи характеристичні числа у систему знаходимо власні вектори $\begin{pmatrix} 1 & 0 \end{pmatrix}^{\star}$ та $\begin{pmatrix} 0 & 1 \end{pmatrix}^{\star}$ відповідно. \\
+        
+        Підставляючи власні вектори у вираз для $\psi(x)$, знаходимо власні функції:
+        \[ \phi_1(x) = x, \qquad \phi_2(x) = x^2. \]
+        
+        За третьою теоремою Фредгольма, для існування у прямого рівняння розв'язків необхідно і достатньо аби його вільний член був ортогональним усім власним функція спряженого однорідного рівняння, тобто
+        \begin{system*}
+            0 &= \Int_{-1}^1 (ax^2 + bx + c) \cdot (x) dx = 2 b / 3, \\
+            0 &= \Int_{-1}^1 (ax^2 + bx + c) \cdot (x^2) dx = 2 a / 5 + 2 c / 3. \\
+        \end{system*}
+        Звідси знаходимо $b = 0$ і $5a + 3c = 0$.
+        \item[6.] Розглянемо спряжене однорідне рівняння:
+        \[ \psi(x) = \lambda \Int_0^{2\pi} \cos(2y + 4x) \psi(y) dy. \]
+        Його ядро вироджене:
+        \begin{align*}
+            \psi(x) &= \lambda \Int_0^{2\pi} \cos(2y + 4x) \psi(y) dy = \lambda \Int_0^{2\pi} (\cos(2y)\cos(4x) - \sin(2y)\sin(4x)) \psi(y) dy = \\
+            &= \lambda \cos(4x) \Int_0^{2\pi} \cos(2y) \psi(y) dy - \lambda \sin(4x) \Int_0^{2\pi} \sin(2y) \psi(y) dy.
+        \end{align*} 
+        Позначимо
+        \[ c_1 = \Int_0^{2\pi} \cos(2y) \psi(y) dy, \qquad c_2 = \Int_0^{2\pi} \sin(2y) \psi(y) dy. \]
+        Тоді загальний розв'язок має вигляд $\psi(x) = \lambda \cos(4x) c_1 - \lambda \sin(4x) c_2$. Підставляючи це у визначення $c_1$ і $c_2$, знаходимо
+        \begin{system*}
+            c_1 &= \Int_0^{2\pi} \cos(2y) (\lambda \cos(4y) c_1 - \lambda \sin(4y) c_2) dy = 0, \\
+            c_2 &= \Int_0^{2\pi} \sin(2y) (\lambda \cos(4y) c_1 - \lambda \sin(4y) c_2) dy = 0.
+        \end{system*}
+        Отже, спряжене однорідне рівняння не має не тривіальних розв'язків, а тому за третьою теоремою Фредгольма, у прямого рівняння існує розв'язок для довільного $\lambda$.
+        \item[7.] Розглянемо спряжене однорідне рівняння:
+        \[ \psi(x) = \lambda \Int_0^\pi (\sin y \sin 2x + \sin 2y \sin 4x) \psi(y) dy. \]
+        Його ядро вироджене:
+        \[ \psi(x) = \lambda \Int_0^\pi (\sin y \sin 2x + \sin 2y \sin 4x) \psi(y) dy = \lambda \sin 2x \Int_0^\pi \sin y \psi(y) dy + \lambda \sin 4x \Int_0^\pi \sin 2y \psi(y) dy. \]
+        Позначимо
+        \[ c_1 = \Int_0^\pi \sin y \psi(y) dy, \qquad c_2 = \Int_0^\pi \sin 2y \psi(y) dy. \]
+        Тоді загальний розв'язок має вигляд $\psi(x) = \lambda \sin 2x c_1 + \lambda \sin 4x c_2$. Підставляючи це у визначення $c_1$ і $c_2$, знаходимо
+        \begin{system*}
+            c_1 &= \Int_0^\pi \sin y (\lambda \sin 2y c_1 + \lambda \sin 4y c_2) dy = 0, \\
+            c_2 &= \Int_0^\pi \sin 2y (\lambda \sin 2y c_1 + \lambda \sin 4y c_2) dy = \pi \lambda c_1 / 2.
+        \end{system*}
+        Визначник цієї системи
+        \[ \begin{vmatrix} 1 & 0 \\ -\lambda \pi / 2 & 1 \end{vmatrix} = 1 \ne 0,\] 
+        Отже, спряжене однорідне рівняння не має не тривіальних розв'язків, а тому за третьою теоремою Фредгольма, у прямого рівняння існує розв'язок для довільного $\lambda$.
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}[5.22.2, Владимиров]
+    Знайти розв'язки наступного інтегрального рівняння для всіх $\lambda$ і для всіх значень параметрів $a$, $b$ що входять у вільний член цього рівняння:
+    \[ \phi(x) = \lambda \Int_0^\pi \cos(x + y) \phi(y) dy + a \sin x + b. \]
+\end{problem}
+
+\begin{solution}
+    Почнемо з того, що розкладемо це вироджене ядро:
+        \begin{align*}
+            \phi(x) &= \lambda \Int_0^\pi \cos(x + y) \phi(y) dy + a \sin x + b = \lambda \Int_0^\pi (\cos x \cos y - \sin x \sin y) \phi(y) dy + a \sin x + b = \\
+            &= \lambda \cos x \Int_0^\pi \cos y \phi(y) dy - \lambda \sin x \Int_0^\pi \sin y \phi(y) dy + a \sin x + b
+        \end{align*}
+        Позначимо
+        \[ c_1 = \Int_0^\pi \cos y \phi(y) dy, \qquad c_2 = \Int_0^\pi \sin y \phi(y) dy. \]
+        Тоді загальний розв'язок має вигляд $\phi(x) = \lambda \cos x c_1 - \lambda \sin x c_2 + a \sin x + b$. Підставляючи це у визначення $c_1$ і $c_2$, знаходимо
+        \begin{system*}
+            c_1 &= \Int_0^\pi \cos y (\lambda \cos y c_1 - \lambda \sin y c_2 + a \sin y + b) dy = \lambda \pi c_1 / 2, \\
+            c_2 &= \Int_0^\pi \sin y (\lambda \cos y c_1 - \lambda \sin y c_2 + a \sin y + b) dy = \pi a / 2 + 2 b - \lambda \pi c_2 / 2.
+        \end{system*}
+        
+        Ненадовго забудемо про праву частину цієї системи і дослідимо питання про власні числа і функції. Визначник цієї системи 
+        \[ \begin{vmatrix} 1 - \dfrac{\lambda\pi}{2} & 0 \\ 0 & 1 + \dfrac{\lambda\pi}{2} \end{vmatrix} = \left(1 - \dfrac{\lambda\pi}{2}\right) \cdot \left(1 + \dfrac{\lambda\pi}{2}\right) = 0, \]
+        тобто $\lambda_{1,2} = \pm 2 / \pi$ є власними числами цього ядра. \\
+        
+        Підставляючи $\lambda_1$ і $\lambda_2$ у систему, знаходимо власні вектори $\begin{pmatrix} 1 & 0 \end{pmatrix}^{\star}$ і $\begin{pmatrix} 0 & 1 \end{pmatrix}^{\star}$ відповідно. \\
+        
+        Підставляючи власні вектори у вираз для $\phi(x)$, знаходимо власні функції:
+        \[ \phi_1(x) = \cos x, \qquad \phi_2(x) = \sin x. \]
+        
+        Тепер повертаємося до знаходження розв'язку. Окремо розглянемо $\lambda = \pm 2 / \pi$ як власні числа. \\
+        
+        При $\lambda = 2 / \pi$ розв'язок (а точніше ціла сім'я розв'язків) існує за будь-яких значень параметрів і має вигляд 
+        \[ \phi(x) = C_1 \cos x + \dfrac{a \pi - 4b}{2\pi} \cdot \sin x + b, \]
+        де $C_1$ -- довільна стала. \\
+        
+        При $\lambda = - 2 / \pi$ розв'язок (а точніше ціла сім'я розв'язків) існує якщо $a\pi + 4b = 0$ і має вигляд 
+        \[ \phi(x) = C_2 \sin x + b, \]
+        де $C_2$ -- довільна стала. \\
+        
+        При інших $\lambda$ розв'язок існує за будь-яких значень параметрів і має вигляд 
+        \[ \phi(x) = \dfrac{2(a - 2\lambda b)}{2 + \lambda \pi} \cdot \sin x + b. \]
+\end{solution}
