@@ -1,0 +1,103 @@
+\documentclass[a4paper, 12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english, ukrainian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry} 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Нікіта Скибицький, ОМ-3}
+\lhead{Лекції з математичної фізики, 2018}
+\cfoot{\thepage}
+
+% \usepackage{multicol}
+% \usepackage{graphicx}
+% \usepackage{float}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Визначення}
+\newtheorem*{definition*}{Визначення}
+\newtheorem{lemma}{Лема}
+\newtheorem*{lemma*}{Лема}
+\newtheorem{remark}{Зауваження}
+\newtheorem*{remark*}{Зауваження}
+\newtheorem{theorem}{Теорема}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{example}{Приклад}
+\newtheorem*{example*}{Приклад}
+\newtheorem{solution}{Розв'язок}
+\newtheorem*{solution*}{Розв'язок}
+\newtheorem{corollary}{Наслідок}
+\newtheorem*{corollary*}{Наслідок}
+
+\allowdisplaybreaks
+\setlength\parindent{0pt}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+% \newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+% \newcommand{\NN}{\mathbb{N}}
+% \newcommand{\PP}{\mathbb{P}} 
+% \newcommand{\ZZ}{\mathbb{Z}}
+% \newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\renewcommand{\bf}[1]{\textbf{#1}}
+
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\Max}{\displaystyle\max\limits}
+% \newcommand{\Min}{\displaystyle\min\limits}
+\newcommand{\Sup}{\displaystyle\sup\limits}
+% \newcommand{\Inf}{\displaystyle\inf\limits}
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Int}{\displaystyle\int\limits}
+\newcommand{\Iint}{\displaystyle\iint\limits}
+\newcommand{\Lim}{\displaystyle\lim\limits}
+% \newcommand{\Prod}{\displaystyle\prod\limits}
+
+\makeatletter
+\newcommand*{\relrelbarsep}{.386ex}
+\newcommand*{\relrelbar}{%
+  \mathrel{%
+    \mathpalette\@relrelbar\relrelbarsep
+  }%
+}
+\newcommand*{\@relrelbar}[2]{%
+  \raise#2\hbox to 0pt{$\m@th#1\relbar$\hss}%
+  \lower#2\hbox{$\m@th#1\relbar$}%
+}
+\providecommand*{\rightrightarrowsfill@}{%
+  \arrowfill@\relrelbar\relrelbar\rightrightarrows
+}
+\providecommand*{\leftleftarrowsfill@}{%
+  \arrowfill@\leftleftarrows\relrelbar\relrelbar
+}
+\providecommand*{\xrightrightarrows}[2][]{%
+  \ext@arrow 0359\rightrightarrowsfill@{#1}{#2}%
+}
+\providecommand*{\xleftleftarrows}[2][]{%
+  \ext@arrow 3095\leftleftarrowsfill@{#1}{#2}%
+}
+\makeatother
+
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rang}{rang}
+% \DeclareMathOperator{\dim}{dim}
+
+% \newenvironment{system}{\begin{equation} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation}}
+\newenvironment{system*}{\begin{equation*} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation*}}
+
+\begin{document}
+
+\input{lec-1.tex}
+
+\input{lec-2.tex}
+
+\input{lec-3.tex}
+
+\input{lec-4.tex}
+
+\end{document}

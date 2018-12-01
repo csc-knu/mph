@@ -1,0 +1,327 @@
+\section*{Лекція 1}
+
+\subsection*{\S0. Предмет і методи математичної фізики}
+
+Сучасні технології дослідження реального світу доволі інтенсивно використовують методи математичного моделювання, зокрема ці методи широко використовуються тоді, коли дослідження реального (фізичного) об’єкту є неможливими, або надто дорогими. Вже традиційними стали моделювання властивостей таких фізичних об’єктів:
+\begin{itemize}
+	\item температурні поля і теплові потоки;
+	\item електричні, магнітні та електромагнітні поля;
+	\item концентрація речовини в розчинах, розплавах або сумішах;
+	\item напруження і деформації в пружних твердих тілах;
+	\item параметри рідини або газу, який рухається (обтікає) деяке тіла ;
+	\item перенос різних субстанцій потоками рідин або газу та інші.
+\end{itemize}
+
+Характерною особливістю усіх математичних моделей, що описують перелічені та багато інших процесів є те, що параметри, які представляють інтерес для дослідника є функціями точки простору $\bf{x} = (x_1, x_2, x_3)$ та часу $t$, а самі співвідношення з яких ці характеристики обчислюються є диференціальними рівняннями в частинних похідних зі спеціальними додатковими умовами (крайовими умовами), які дозволяють виділяти однозначний розв’язок. \\
+
+Таким чином можна сказати, що основними об’єктами дослідження предмету математична фізика є крайові задачі для рівнянь в частинних похідних, які моделюють певні фізичні процеси. \\
+
+Процес дослідження реального об’єкту фізичного світу можна представити за наступною схемою:
+\begin{enumerate}
+	\item Побудова математичної моделі реального процесу у вигляді диференціального рівняння або системи диференціальних рівнянь в частинних похідних, доповнення диференціального рівняння в частинних похідних граничними умовами.
+	\item Дослідження властивостей сформульованої крайової задачі з точки зору її коректності. Коректність постановки задачі передбачає виконання наступних умов:
+	\begin{itemize}
+		\item Розв’язок крайової задачі існує;
+		\item Розв’язок єдиний;
+		\item Розв’язок неперервним чином залежить від вхідних даних задачі.
+	\end{itemize}
+	\item Знаходження розв’язку крайової задачі: точного для найбільш простих задач, або наближеного для переважної більшості задач.
+\end{enumerate}
+
+Треба відмітити, що усі перелічені пункти дослідження окрім побудови наближених методів знаходження розв’язків відносяться до предмету дисципліни Математична фізика. \\
+
+Для дослідження задач математичної фізики використовуються математичний апарат наступних розділів математики:
+\begin{itemize}
+	\item математичний аналіз;
+	\item лінійна алгебра;
+	\item диференціальні рівняння;
+	\item теорія функцій комплексної змінної;
+	\item функціональний аналіз;
+\end{itemize}
+
+При побудові математичних моделей використовуються знання з елементарної фізики. \\
+
+Наведемо приклад доволі простої і в той же час цілком реальної математичної моделі розповсюдження тепла в стрижні. \\
+
+Нехай ми маємо однорідний стрижень з теплоізольованою боковою поверхнею і наступними фізичними параметрами:
+\begin{itemize}
+	\item $\rho$ -- густина матеріалу;
+	\item $S$ -- площа поперечного перерізу;
+	\item $k$ -- коефіцієнт теплопровідності;
+	\item $c$ -- коефіцієнт теплоємності;
+	\item $L$ -- довжина стрижня.
+\end{itemize}
+
+Позначимо $u(x, t)$ -- температуру стрижня в точці $x$ в момент часу $t$, $u_0(x)$ -- температуру стрижня у точці $x$ в початковий момент часу $t = 0$. \\
+
+Припустимо, що на лівому кінці стрижня температура змінюється за заданим законом $\phi(t)$, а правий кінець стрижня теплоізольований. \\
+
+В таких припущеннях математична модель може бути записана у вигляді наступної граничної задачі:
+\begin{equation}
+	\label{eq:1}
+	c \rho \dfrac{\partial u(x, t)}{\partial t} = k \dfrac{\partial^2 u(x, t)}{\partial x^2}, \quad 0 < x < L, t > 0
+\end{equation}
+\begin{equation}
+	\label{eq:2}
+	u(0, u) = \phi(t), \quad  \dfrac{\partial u(L, t)}{\partial x} = 0
+\end{equation}
+\begin{equation}
+	\label{eq:3}
+	u(x, 0) = u_0(t)
+\end{equation}
+
+Математична модель містить диференціальне рівняння (\ref{eq:1}), яке виконується для вказаних значень аргументу, граничні умови на кінцях стрижня (\ref{eq:2}) та початкову умови (\ref{eq:3}).
+
+\chapter*{Глава 1 Інтегральні рівняння}
+
+\subsubsection*{Основні поняття}
+
+Інтегральні рівняння -- рівняння, що містять невідому функцію під знаком інтегралу. \\
+
+Багато задач математичної фізики зводяться до лінійних інтегральних рівнянь виду:
+
+\begin{equation}
+	\label{eq:*.1}
+	\phi(x) = \lambda \Int_G K(x, y) \phi(y) \diff y + f(x)
+\end{equation}
+-- інтегральне рівняння Фредгольма II роду.
+
+\begin{equation}
+	\label{eq:*.2}
+	\Int_G K(x, y) \phi(y) \diff y = f(x)
+\end{equation}
+-- інтегральне рівняння Фредгольма I роду. \\
+
+$K(x, y)$ -- ядро інтегрального рівняння $K(x, y) \in C(\bar G \times \bar G)$, $f(x)$ -- вільний член інтегрального рівняння, $f(x) \in C(\bar G)$, $\lambda$ -- комплексний параметр, $\lambda \in \CC$ (відомий або невідомий), $G$ -- область інтегрування, $G \subseteq \RR^n$, $\bar G$ -- замкнена та обмежена. \\
+
+Інтегральне рівняння (\ref{eq:*.1}) при $f(x) \equiv 0$ називається однорідним інтегральним рівнянням Фредгольма II роду
+\begin{equation}
+	\label{eq:*.3}
+	\phi(x) = \lambda \Int_G K(x, y) \phi(y) \diff y.
+\end{equation}
+$\bf{K}$ -- інтегральний оператор: $(\bf{K} \phi)(x)$. \\
+
+Будемо записувати інтегральні рівняння (\ref{eq:*.1}), (\ref{eq:*.2}) та (\ref{eq:*.3}) скорочено в операторній формі:
+\begin{equation}
+	\label{eq:*.1'}
+	\phi = \lambda \bf{K} \phi + f
+\end{equation}
+\begin{equation}
+	\label{eq:*.2'}
+	\bf{K} \phi = f
+\end{equation}
+\begin{equation}
+	\label{eq:*.3'}
+	\phi = \lambda \bf{K} \phi
+\end{equation}
+\begin{equation}
+	\label{eq:*.4}
+	K^*(x, y) = \bar K(y, x)
+\end{equation}
+називають спряжене (союзне) ядро. \\
+
+Інтегральне рівняння
+\begin{equation}
+	\label{eq:*.5}
+	\psi(x) = \bar \lambda \Int_G K^*(x, y) \psi(y) \diff y + g(x)
+\end{equation}
+називається спряженим (союзним) до інтегрального рівняння (\ref{eq:*.1}). \\
+
+Операторна форма:
+\begin{equation}
+	\label{eq:*.5'}
+	\psi = \bar \lambda \bf{K}^* \psi + g
+\end{equation}
+\begin{equation}
+	\label{eq:*.6}
+	\psi = \bar \lambda \bf{K}^* \psi
+\end{equation}
+
+\begin{definition*}
+	Комплексні значення $\lambda$, при яких однорідне інтегральне рівняння Фредгольма (\ref{eq:*.3}) має нетривіальні розв’язки, називаються характеристичними числами ядра $K(x, y)$. Розв’язки, які відповідають власним числам, називаються власними функціями. Кількість лінійно-незалежних власних функцій називається кратністю характеристичного числа.
+\end{definition*}
+
+\subsection*{\S1. Метод послідовних наближень}
+
+\subsubsection*{Метод послідовних наближень для неперервного ядра}
+
+Нагадаємо означення норм в банаховому просторі неперервних функцій $C(\bar G)$ та гільбертовому просторі інтегрованих з квадратом функцій $L_2(G)$ та означення скалярного добутку в просторі $L_2(G)$:
+\[ \|f\|_{C(\bar G)} = \Max_{x \in \bar G} |f(x)|, \quad \|f\|_{L_2(G)} = \left( \Int_G |f(x)|^2 \diff x \right)^{1/2}, \quad (f, g)_{L_2(G)} = \Int_G f(x) \bar g(x) \diff x. \]
+
+\begin{lemma} 
+	Інтегральний оператор $\bf{K}$ з неперервним ядром $K(x, y)$ петворює $C(\bar G) \xrightarrow{\bf{K}} C(\bar G)$, $L_2(G) \xrightarrow{\bf{K}} L_2(G)$, $L_2(G) \xrightarrow{\bf{K}} C(\bar G)$ обмежений та мають місце нерівності:
+	\begin{equation}
+		\label{eq:1.1}
+		\| \bf{K} \phi \|_{C(G)} \le M V \| \phi \|_{C(G)},
+	\end{equation}
+	\begin{equation}
+		\label{eq:1.2}
+		\| \bf{K} \phi \|_{L_2(G)} \le M V \| \phi \|_{L_2(G)},
+	\end{equation}
+	\begin{equation}
+		\label{eq:1.3}
+		\| \bf{K} \phi \|_{C(G)} \le M \sqrt{V} \| \phi \|_{L_2(G)},
+	\end{equation}
+	де
+	\begin{equation}
+		\label{eq:1.4}
+		M = \Max_{x, y \in G \times G} |K(x, y)|,
+	\end{equation}
+	\begin{equation}
+		\label{eq:1.5}
+		V = \Int_G \diff y.
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	Нехай $\phi \in L_2(G)$. Тоді $\phi$ -- абсолютно інтегрована функція на $G$ і, оскільки ядро $K(x, y)$ неперервне на $G \times G$, функція $(\bf{K}\phi)(x)$ неперервна на $G$. Тому оператор $\bf{K}$ переводить $L_2(G)$ в $C(\bar G)$ і, з врахуванням нерівності Коші-Буняковського, обмежений. Доведемо нерівності:
+	\begin{enumerate}
+		\item (\ref{eq:1.1}):
+		\begin{multline*}
+			\| \bf{K} \phi \|_{C(\bar G)} = \Max_{x \in \bar G} \left| \Int_G K(x, y) \phi(y) \diff y \right| \le \Max_{x \in \bar G} \Int_G |K(x, y)| |\phi(y)| \diff y \le \\
+			\le \Max_{x \in \bar G} \left( \Max_{y \in \bar G} |K(x, y)| \Max_{y \in \bar G} |\phi(y)| \Int_G \diff y \right) \le \Max_{x, y \in \bar G \times \bar G} |K(x, y)| \Max_{y \in \bar G} |\phi(y)| \Int_G \diff y = M V \|\phi\|_{C(\bar G)}.
+		\end{multline*}
+		\item (\ref{eq:1.2}):
+		\begin{multline*}
+			\left( \| \bf{K} \phi \|_{L_2(G)} \right)^2 = \Int_G \left| \Int_G K(x, y) \phi(y) \diff y \right|^2 \diff x \le \Int_G \left| \Max_{y \in \bar G} |K(x, y)| \Int_G \phi(y) \diff y \right|^2 \diff x \le \\
+			\le \left( \Max_{x, y \in \bar G \times \bar G} |K(x, y)| \right)^2 \left| \Int_G \phi(y) \diff y \right|^2 \Int_G \diff x \le (M \| \phi\|_{L_2(G)} V)^2
+		\end{multline*}
+		\item (\ref{eq:1.3}):
+		\begin{multline*}
+			\| \bf{K} \phi \|_{C(\bar G)} = \Max_{x \in \bar G} |(\bf{K} \phi) (x)| = \Max_{x \in \bar G} \left| \Int_G K(x, y) \phi(y) \diff y \right| \le \\
+			\le \Max_{x \in \bar G} \sqrt{\Int_G |K(x, y)|^2 \diff y} \sqrt{\Int_G |\phi(y)|^2 \diff y} \le M \sqrt{V} \|\phi\|_{L_2(G)}.
+		\end{multline*}
+	\end{enumerate}
+\end{proof}
+
+Розв’язок інтегрального рівняння другого роду (\ref{eq:*.1'}) будемо шукати методом послідовних наближень:
+\begin{equation}
+	\label{eq:1.10}
+	\phi_0 = f, \quad \phi_1 = \lambda \bf{K} \phi_0 + f, \quad \phi_2 = \lambda \bf{K} \phi_1 + f, \quad \ldots, \quad \phi_{n + 1} = \lambda \bf{K} \phi_n + f
+\end{equation}
+\begin{equation}
+	\label{eq:1.11}
+	\phi_{n + 1} = \Sum_{i = 0}^{n + 1} \lambda^i \bf{K}^i f, \quad \bf{K}^{i + 1} = \bf{K} (\bf{K}^i)
+\end{equation}
+\begin{equation}
+	\label{eq:1.12}
+	\phi_\infty = \Lim_{n \to \infty} \phi_{n} = \Sum_{i = 0}^\infty \lambda^i \bf{K}^i f,
+\end{equation}
+ряд Неймана. \\
+
+Дослідимо збіжність ряду Неймана (\ref{eq:1.12})
+\begin{equation}
+	\label{eq:1.13}
+	\left\| \Sum_{i = 0}^\infty \lambda^i \bf{K}^i f \right\|_{C(\bar G)} \le \Sum_{i = 0}^\infty |\lambda^i| \| \bf{K}^i f \|_{C(\bar G)} \le \Sum_{i = 0}^\infty |\lambda^i(MV)^i| \| f \|_{C(\bar G)} = \dfrac{\|f\|_{C(\bar G)}}{1 - |\lambda| MV}
+\end{equation}
+(оскільки: $\| \bf{K} \phi\|_{C(\bar G)} \le MV \|\phi\|_{C(\bar G)}$, $\|\bf{K}^2\phi\|_{C(\bar G)} \le (MV)^2 \|\phi\|_{C(\bar G)}\|\bf{K}^i\phi\|_{C(\bar G)} \le (MV)^i \|\phi\|_{C(\bar G)}$). \\
+
+Отже, ряд Неймана збігається рівномірно при 
+\begin{equation}
+	\label{eq:1.14}
+	|\lambda| < \dfrac{1}{MV},
+\end{equation} 
+
+умова збіжності методу послідовних наближень. \\
+
+Покажемо, що при виконанні умови (\ref{eq:1.14}) інтегральне рівняння (\ref{eq:*.1}) має єдиний розв’язок. Дійсно припустимо, що їх два:
+
+\begin{equation*}
+	\begin{matrix}
+		\phi^{(1)} = \lambda \bf{K} \phi^{(1)} + f \\
+		\phi^{(2)} = \lambda \bf{K} \phi^{(2)} + f
+	\end{matrix}
+	\Rightarrow
+	\begin{matrix}
+		\phi^{(0)} = \phi^{(1)} - \phi^{(2)}  \\
+		\phi^{(0)} = \lambda \bf{K} \phi^{(0)}
+	\end{matrix}
+\end{equation*}
+
+Обчислимо норму Чебишева: \[ |\lambda| \|\bf{K} \phi^{(0)}\|_{C(\bar G)} = \| \phi^{(0)} \|_{C(\bar G)} \Rightarrow \| \phi^{(0)} \|_{C(\bar G)} \le |\lambda| MV \|\phi^{(0)}\|_{C(\bar G)} \Rightarrow (1 - |\lambda|MV)\|\phi^{(0)}\|_{C(\bar G)} \le 0. \]
+
+Звідси маємо, що $\|\phi^{(0)}\|_{C(\bar G)} = 0$. Таким чином доведена теорема
+
+\begin{theorem}[Про існування розв’язку інтегрального рівняння Фредгольма з неперервним
+ядром для малих значень параметру]
+	Будь-яке інтегральне рівняння Фредгольма другого роду $\phi(x) = \lambda \int_G K(x, y) \phi(y) \diff y + f(x)$ з неперервним ядром $K(x, y)$ при умові (\ref{eq:1.14}) має єдиний розв’язок $\phi$ в класі неперервних функцій $C(\bar G)$ для будь-якого неперервного вільного члена $f$. Цей розв’язок може бути знайдений у вигляді ряду Неймана $\phi = \lim_{n \to \infty} \phi_n = \sum_{i = 0}^\infty \lambda^i \bf{K}^i f$.
+\end{theorem}
+
+\subsubsection*{Повторні ядра}
+
+$\forall f, g \in \bar G$ має місце рівність 
+\begin{equation}
+	\label{eq:1.15}
+	(\bf{K}f,g)_{L_2(G)} = (f, \bf{K}^*g)_{L_2(G)}
+\end{equation}
+Дійсно, якщо $f, g \in L_2(G)$, то за лемою 1 $\bf{K}f, \bf{K}^*g \in L_2(G)$ тому
+\begin{multline*}
+	(\bf{K}f, g) = \Int_G (\bf{K}f)\bar g \diff x = \Int_G \left( \Int_G K(x, y) f(y) \diff y\right) \bar g(x) \diff x = \\
+	= \Int_G f(y) \left( \Int_G K(x, y) \bar g(x) \diff x\right) \diff y = \Int_G f(y) (\bf{K}^* g)(y) \diff y = (f, \bf{K}^*g).
+\end{multline*}
+
+\begin{lemma}
+	Якщо $\bf{K}_1$, $\bf{K}_2$ -- інтегральні оператори з неперервними ядрами $K_1(x, y)$, $K_2(x, y)$ відповідно, то оператор $\bf{K}_3 = \bf{K}_2 \bf{K}_1$ також інтегральний оператор з неперервним ядром $K_3(x, z) = \int_G K_2(x, y) K_1(y, z) \diff y$. При цьому справедлива формула: $(\bf{K}_2\bf{K}_1)^* = \bf{K}_1^* \bf{K}_2^*$.
+\end{lemma}
+\begin{proof}
+	Нехай $K_1(x, y)$, $K_2(x, y)$ -- ядра інтегральних операторів $\bf{K}_1$, $\bf{K}_2$. Розглянемо $\bf{K}_3 = \bf{K}_2 \bf{K}_1$:
+	\begin{multline*}
+		(\bf{K}_3 f)(x) = (\bf{K}_2\bf{K}_1f)(x) = \Int_G K_2(x, y) \left( \Int_G K_1(y, z) f(z) \diff z \right) \diff y = \\
+		= \Int_G \left( \Int_G K_2(x, y) K_1(y, z) \diff y\right) f(z) \diff z = \Int_G K_3(x, z) f(z) \diff z.
+	\end{multline*}
+	Тобто $K_3(x, z) = \int_G K_2(x, y) K_1(y, z) \diff y$ -- ядро оператора $\bf{K}_2\bf{K}_1$. \\
+
+	З рівності (\ref{eq:1.15}) для всіх $f, g \in L_2(G)$ отримуємо $(f, \bf{K}_3^*g - \bf{K}_1^* \bf{K}_2^* g) = 0$, звідки випливає, що $\bf{K}_3^* = \bf{K}_1^* \bf{K}_2^*$.
+\end{proof}
+
+Із доведеної леми випливає, що оператори $\bf{K}^n = \bf{K} (\bf{K}^{n - 1}) = (\bf{K}^{n - 1})\bf{K}$ -- інтегральні та їх ядра $K_{(n)}(x, y)$ -- неперервні та задовольняють рекурентним співвідношенням:
+\begin{equation}
+	\label{eq:1.16}
+	K_{(1)}(x, y) = K(x, y), \quad \ldots, \quad K_{(n)}(x, y) = \Int_G K(x, \xi) K_{(n - 1)}(\xi, y) \diff \xi
+\end{equation}
+-- повторні (ітеровані) ядра.
+\[ \bf{K}f = \Int_G K(x, y) f(y) \diff y, \quad \ldots, \quad \bf{K}^n f = \Int_G K_{(n)}(x, y)f(y) \diff y. \]
+
+\subsubsection*{Резольвента інтегрального оператора}
+
+Пригадаємо представлення розв’язку інтегрального рівняння (\ref{eq:*.1}) у вигляді ряду Неймана $\phi(x) = \sum_{i = 0}^\infty \lambda^i \bf{K}^i f$. Виконаємо перетворення
+\begin{multline*}
+	\phi(x) = f(x) + \lambda \Sum_{i = 1}^\infty \lambda^{i - 1} (\bf{K}^i f) x = f(x) + \Sum_{i = 1}^\infty \lambda^{i - 1} K_{(i)} (x, y) f(y) \diff y = \\
+	= f(x) + \lambda \Int_G \left( \Sum_{i = 1}^\infty \lambda^{i - 1} K_{(i)} (x, y) \right) f(y) \diff y = f(x) + \lambda \Int_G \mathcal{R}(x, y, \lambda) f(y) \diff y,
+\end{multline*}
+при $|\lambda| < \frac{1}{MV}$, де
+\begin{equation}
+	\label{eq:1.17}
+	\mathcal{R}(x, y, \lambda) = \Sum_{i = 1}^\infty \lambda^{i - 1} K_{(i)} (x, y)
+\end{equation}
+-- резольвента інтегрального оператора. \\
+
+Операторна форма запису розв’язку рівняння Фредгольма через резольвенту ядра має вигляд:
+\begin{equation}
+	\label{eq:1.18}
+	\phi = f + \lambda \bf{R} f
+\end{equation}
+
+Мають місце операторні рівності: $\phi = (E + \lambda \bf{R})f$, $(E - \lambda \bf{K})\phi = f$, $\phi = (E - \lambda \bf{K})^{-1}f$, таким чином маємо
+\begin{equation}
+	\label{eq:1.19}
+	E + \lambda \bf{R} = (E - \lambda \bf{K})^{-1}, \quad |\lambda| < \dfrac{1}{MV}.
+\end{equation}
+Зважуючи на формулу (\ref{eq:1.18}) має місце теорема
+\begin{theorem}[Про існування розв’язку інтегрального рівняння Фредгольма з неперервним
+ядром для малих значенням параметру]
+	Будь-яке інтегральне рівняння Фредгольма другого роду $\phi(x) = \lambda \int_G K(x, y) \phi(y) \diff y + f(x)$ з неперервним ядром $K(x, y)$ при умові (\ref{eq:1.14}) має єдиний розв’язок $\phi$ в класі неперервних функцій $C(\bar G)$ для будь-якого неперервного вільного члена $f$. Цей розв’язок може бути знайдений у вигляді (\ref{eq:1.18}) за допомогою резольвенти (\ref{eq:1.17}).
+\end{theorem}
+
+\begin{example}
+	Методом послідовних наближень знайти розв’язок інтегрального рівняння \[\phi(x) = x + \lambda \int_0^1 (xt)^2 \phi(t) \diff t.\]
+\end{example}
+\begin{solution*}
+	$M = 1$, $V = 1$. \\
+
+	Побудуємо повторні ядра \[ K_{(1)}(x, t) = x^2t^2, \quad K_2(x, t) = \int_0^1 x^2 z^4 t^2 \diff z = \frac{x^2t^2}{5}, \quad K_{(p)}(x, t) = \frac{1}{5^{p - 2}} \int_0^1 x^2 z^4 t^2 \diff z = \frac{x^2t^2}{5^{p - 1}}. \]
+	
+	Резольвента має вигляд \[\mathcal{R}(x, t, \lambda) = x^2 t^2 \left(1 + \frac{\lambda}{5} + \frac{\lambda^2}{5^2} + \ldots + \frac{\lambda^p}{5^p} + \ldots \right) = \frac{5x^2t^2}{5 - \lambda}, \quad |\lambda| < 5. \]
+
+	Розв’язок інтегрального рівняння має вигляд: \[ \phi(x) + x + \Int_0^1 \dfrac{5x^2t^3}{5 - \lambda} \diff t = x + \dfrac{5x^2}{4(5 - \lambda)}. \]
+\end{solution*}

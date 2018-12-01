@@ -1,0 +1,260 @@
+\section*{Лекція 4}
+
+\subsubsection*{Характеристичні числа ермітового неперервного ядра}
+
+\begin{theorem}[Про існування характеристичного числа у ермітового неперервного ядра]
+	Для будь-якого ермітового неперервного ядра, що не дорівнює тотожно нулю існує принаймні одне характеристичне число і найменше з них за модулем $\lambda_1$ задовольняє варіаційному принципу
+	\begin{equation}
+		\label{eq:3.2}
+		\dfrac{1}{|\lambda_1|} = \Sup_{f \in L_2(G)} \dfrac{\|\bf{K} f\|_{L_2(G)}}{\|f\|_{L_2(G)}}.
+	\end{equation}
+\end{theorem}
+
+\begin{proof}
+	Серед усіх $f \in L_2$ оберемо такі, що $\|f\|_{L_2(G)} = 1$. Позначимо \[\nu = \Sup_{\substack{f \in L_2(G) \\ \|f\|_{L_2} = 1}} \|\bf{K} f\|_{L_2(G)}.\] Оскільки $\|\bf{K} f\|_{L_2(G)} \le MV \|f\|_{L_2(G)} \le MV$, то $0 \le \nu \le MV$. \\
+
+	Згідно до визначення точної верхньої межі, $\exists \{ f_k \}_{k = 1}^\infty \subset L_2(G)$, $\lim_{n \to \infty} \|\bf{K} f_k\|_{L_2(G)} = \nu$. \\
+
+	Оцінимо \[ \| \bf{K}^2 f\|_{L_2(G)} = \| \bf{K} (\bf{K} f)\|_{L_2(G)} = \bf{K} \left\| \left( \dfrac{\bf{K}f}{\|\bf{K}f\|}\right) \right\|_{L_2(G)} \bf{K} \|f\|_{L_2(G)} \le \nu \bf{K} \|f\|_{L_2(G)} \le \nu^2. \]
+	
+	Покажемо, що $\bf{K}^2 f_k - \nu^2 f_k \to 0$ в середньому квадратичному. Тобто $\| \bf{K}^2 f_k - \nu^2 f_k \|_{L_2(G)}^2 \xrightarrow[k \to \infty]{} 0$.
+
+	Дійсно:
+	\begin{multline*}
+		\| \bf{K}^2 f_k - \nu^2 f_k \|_{L_2(G)}^2 = (\bf{K}^2 f_k - \nu^2 f_k, \bf{K}^2 f_k - \nu^2 f_k)_{L_2(G)} = \|\bf{K}^2 f_k\|_{L_2(G)}^2 + \nu^4 - \nu^2 (\bf{K}^2 f_k, f_k) - \\
+		- \nu^2 (f_k, \bf{K}^2 f_k) = \|\bf{K}^2 f_k\|_{L_2(G)}^2 + \nu^4 - 2 \nu^2 \|\bf{K} f_k\|_{L_2(G)}^2 \le \nu^2 (\nu^2 - \|\bf{K}^2 f_k\|_{L_2(G)}^2) \xrightarrow[k\to\infty]{} 0.
+	\end{multline*}
+
+	Розглянемо послідовність $\{ \bf{K}f_k \} = \{ \phi_k\}$, яка є компактною в рівномірній метриці. \\
+
+	Звідси підпослідовність $\{\phi_{k_i}\}_{i = 1}^\infty$ збіжна в $C(\bar G)$, тобто $\exists \phi \in C(\bar G)$, така що $\| \phi_{k_i} - \phi\|_{C(\bar G)} \xrightarrow[i \to \infty]{} 0$. \\
+
+	Покажемо, що $\bf{K}^2 \phi - \nu^2 \phi = 0$ в кожній точці, тобто $\| \bf{K}^2\phi - \nu^2 \phi\|_{C(\bar G)} = 0$. 
+	\begin{multline*}
+		\|\bf{K}^2\phi-\nu^2\phi\|_{C(\bar G)} = \|\bf{K}^2\phi-\bf{K}^2\phi_{k_i}+\bf{K}^2\phi_{k_i}-\nu^2\phi_{k_i}+\nu^2\phi_{k_i}-\nu^2\phi\|_{C(\bar G)} \le \\
+		\le \|\bf{K}^2\phi-\bf{K}^2\phi_{k_i}\|_{C(\bar G)} + \|\bf{K}^2\phi_{k_i}-\nu^2\phi_{k_i}\|_{C(\bar G)}+\|\nu^2\phi_{k_i}-\nu^2\phi\|_{C(\bar G)} \le \\
+		\le (MV)^2 \|\phi_{k_i} - \phi\|_{C(\bar G)} + M\sqrt{V} \|\bf{K}^2f_{k_i}-\nu^2f_{k_i}\|_{L_2(\bar G)} + \nu^2 \|\phi_{k_i} - \phi\|_{C(\bar G)} \to 0 + 0 + 0.
+	\end{multline*}
+	
+	Таким чином має місце рівність
+	\begin{equation}
+		\label{eq:3.3}
+		\bf{K}^2 \phi - \nu^2 \phi = 0
+	\end{equation}
+	
+	Отже маємо: $(\bf{K} + E\nu)(\bf{K} - E \nu)\phi=0$. Ця рівність може мати місце у двох випадках:
+	\begin{enumerate}
+		\item $(\bf{K} - E\nu) \phi \equiv 0$. Тоді $\phi = \frac{1}{\nu}\bf{K}\phi$, а отже $\phi$ -- власна функція, $\frac{1}{\nu}$ -- характеристичне число оператора $\bf{K}$.
+
+		\item $(\bf{K} - E\nu) \phi \equiv \Phi \ne 0$. Тоді $(\bf{K} + E \nu) \Phi \equiv 0$. Тоді $\Phi = -\frac{1}{\nu}\bf{K}\Phi$, а отже $\Phi$ -- власна функція, $-\frac{1}{\nu}$ -- характеристичне число оператора $\bf{K}$.
+	\end{enumerate}
+	
+	Залишилось довести, що це характеристичне число є мінімальним за модулем. Припустимо супротивне. Нехай $\exists \lambda_0: |\lambda_0| < |\lambda_1|$, тоді $\frac{1}{|\lambda_1|} = \sup_{f \in L_2(G)} \frac{\|\bf{K}f\|}{\|f\|} \ge \frac{\|\bf{K}\phi_0\|}{\|\phi_0\|} = \frac{1}{|\lambda_0|} \Rightarrow |\lambda_0| \ge |\lambda_1|$.
+\end{proof}
+
+\begin{remark*}
+	Доведена теорема є вірною і для ермітових полярних ядер,
+\end{remark*}
+
+Звідси безпосередньо випливають такі властивості характеристичних чисел та власних функцій ермітового ядра:
+\begin{enumerate}
+	\item Множина характеристичних чисел ермітового неперервного ядра не порожня, є підмножиною множини дійсних чисел і не має скінчених граничних точок.
+	\item Кратність будь-якого характеристичного числа скінчена.
+	\item Власні функції можна вибрати так, що вони утворять ортонормовану систему. Тобто $\{ \phi_k\}_{k = 1, 2, \ldots}$ такі що $(\phi_k, \phi_i)_{L_2(G)} = \delta_{ki}$. \\
+	
+	(Зокрема достатньо провести процес ортогоналізації Гілберта-Шмідта для будь-якої системи лінійно незалежних власних функцій, і пронормувати отриману систему).
+\end{enumerate}
+
+\subsection*{\S4. Теорема Гілберта-Шмідта та її наслідки}
+
+\subsubsection*{Білінійний розвинення ермітового неперервного ядра}
+
+Нехай $K(x, y) \in C(\bar G \times \bar G)$ ермітове неперервне ядро, $|\lambda_i| \le |\lambda_{i + 1}|$, $i = 1, 2, \ldots$ його характеристичні числа і $\{\phi_i\}_{i = 1}^\infty$ ортонормована система власних функцій, що відповідають власним числам. \\
+
+Розглянемо послідовність ермітових неперервних ядер:
+\begin{equation}
+	\label{eq:4.1}
+	K^p(x, y) = K(x, y) - \Sum_{i = 1}^p \dfrac{\bar \phi_i(y) \phi_i(x)}{\lambda_i}, \quad p = 1, 2, \ldots
+\end{equation}
+\[ K^p(x, y) = (K^p)*(x, y) \in  C(\bar G \times \bar G). \]
+
+Дослідимо властивості операторів (\ref{eq:4.1}). Покажемо, що будь-яке характеристичне число $\lambda_j$, $j > p + 1$ та відповідна йому власна функція $\phi_j$ є характеристичним числом і власною функцією ядра $K^p(x,y)$.
+\begin{equation}
+	\label{eq:4.2}
+	\bf{K}^p \phi_j = \bf{K} \phi_j - \Sum_{i = 1}^p \dfrac{\phi_i(x)}{\lambda_i} (\phi_i, \phi_j) = \bf{K} \phi_j = \dfrac{\phi_j}{\lambda_j}.
+\end{equation}
+
+Нехай $\lambda_0$, $\phi_0$ -- характеристичне число та відповідна власна функція $K^p(x, y)$, тобто $\lambda_0 \bf{K}^p \phi_0 = \phi_0$. Покажемо що, $(\phi_0, \phi_j) = 0$ для $j = \overline{1, p}$.
+\[ \phi_0 = \lambda_0 \bf{K} \phi_0 - \lambda_0 \Sum_{i = 1}^p \dfrac{\phi_i}{\lambda_i} (\phi_0, \phi_i), \]
+\[ (\phi_0, \phi_j) = \lambda_0 (\bf{K} \phi_0, \phi_j) - \lambda_0 \Sum_{i = 1}^p \dfrac{(\phi_0, \phi_i)(\phi_i, \phi_j)}{\lambda_i} = \dfrac{\lambda_0}{\lambda_j} (\phi_0, \phi_j) - \dfrac{\lambda_0}{\lambda_j} (\phi_0, \phi_j) = 0. \]
+
+Отже $\lambda_0$, $\phi_0$ відповідно характеристичне число і власна функція ядра $K(x, y)$. \\
+
+Таким чином $\phi_0$ -- ортогональна до усіх власних функцій $\phi_1$, $\phi_2$, $\ldots$, $\phi_p$, таким чином, $\lambda_0$ співпадає з одним із характеристичних чисел $\lambda_{p + 1}$, $\lambda_{p + 2}$, $\ldots$ тобто $\phi_0 = \phi_k$ для деякого $k \ge p + 1$. \\
+
+Отже у ядра $K^p(x, y)$ множина власних функцій і характеристичних чисел вичерпується множиною власних функцій і характеристичних чисел ядра $K(x, y)$ починаючи з номера $p + 1$. \\
+
+Враховуючи, що $\lambda_{p + 1}$ найменше за модулем характерне число ядра $K^p(x, y)$, має місце нерівність \[ \dfrac{\|\bf{K}^p f\|_{L_2(G)}}{\|f\|_{L_2(G)}} \le \dfrac{1}{|\lambda_{p + 1}|}. \]
+
+Для ядра, що має скінчену кількість характеристичних чисел, очевидно, має місце рівність $K^N(x, y) = K(x, y) - \sum_{i = 1}^N \frac{\phi_i(x) \bar \phi_i(y)}{\lambda_i} \equiv 0$. \\
+
+Тобто будь-яке ермітове ядро зі скінченою кількістю характеристичних чисел є виродженим і представляється у вигляді $K(x, y) = \sum_{i = 1}^N \frac{\phi_i(x) \bar \phi_i(y)}{\lambda_i}$. \\
+
+Враховуючи теорему про існування характеристичних чисел у ермітового оператора можемо записати:
+\begin{equation}
+	\label{eq:4.3}
+	\| K^{(p)} f \|_{L_2(G)} = \left\| \bf{K}f - \Sum_{i = 1}^p \dfrac{(f, \phi_i)}{\lambda_i} \phi_i \right\|_{L_2(G)} \le \dfrac{\|f\|_{L_2(G)}}{|\lambda_{p + 1}|} \xrightarrow[p\to\infty]{} 0.
+\end{equation}
+Тобто можна вважати, що ермітове ядро в розумінні (\ref{eq:4.3}) наближається наступним білінійним рядом:
+\begin{equation}
+	\label{eq:4.4}
+	K(x, y) \sim \Sum_{i = 1}^\infty \dfrac{\phi_i(x) \bar \phi_i(y)}{\lambda_i}.
+\end{equation}
+Для виродженого ядра маємо його представлення у вигляді
+\begin{equation}
+	\label{eq:4.5}
+	K(x, y) \sim \Sum_{i = 1}^N \dfrac{\phi_i(x) \bar \phi_i(y)}{\lambda_i}.
+\end{equation}
+
+\subsubsection*{Ряд Фур'є функції із $L_2(G)$}
+
+Розглянемо довільну функцію $f \in L_2(G)$ і деяку ортонормовану систему функцій $\{ u_i \}_{i = 1}^\infty$. Рядом Фур'є функції $f$ із $L_2(G)$ називається ряд
+\begin{equation}
+	\label{eq:4.6}
+	\Sum_{i = 1}^\infty (f, u_i) u_i \sim f,
+\end{equation}
+$(f, u_i)$ -- називається коефіцієнтом Фур'є. \\
+
+$\forall f \in L_2(G)$ виконується нерівність Бесселя
+\begin{equation}
+	\label{eq:4.7}
+	\forall N: \Sum_{i = 1}^N |(f, u_i)|^2 \le \|f\|_{L_2(G)}^2.
+\end{equation}
+Нерівність Бесселя гарантує збіжність ряду Фур'є в середньоквадратичному, але не обов'язково до функції $f$.
+
+\begin{definition}
+	Ортонормована система функцій $\{ u_i \}_{i = 1}^\infty$ називається повною (замкненою), якщо ряд Фур'є для будь-якої функції $f \in L_2(G)$ по цій системі функцій збігається до цієї функції в просторі $L_2(G)$.
+\end{definition}
+\begin{theorem}[Критерій замкненості ортонормованої системи функцій]
+	Для того щоб система функцій $\{ u_i \}_{i = 1}^\infty$ була повною в $L_2(G)$ необхідно і достатньо, щоби для будь-якої функції $f \in L_2(G)$ виконувалось рівність Парсеваля-Стеклова:
+	\begin{equation}
+		\label{eq:4.8}
+		\Sum_{i = 1}^\infty |(f, u_i)|^2 = \|f\|_{L_2(G)}^2.
+	\end{equation}
+\end{theorem}
+
+\subsubsection*{Теорема Гільберта-Шмідта}
+
+Функція $f(x)$ називається джерелувато-зображуваною через ермітове неперервне ядро $K(x, y) = K^*(x, y)$, $K \in C(G \times G$, якщо існує функція $h(x) \in L_2(G)$, така що 
+\begin{equation}
+	\label{eq:4.9}
+	f(x) = \Int_G K(x, y) h(y) \diff y.
+\end{equation}
+\begin{theorem}[Гільберта-Шмідта]
+	Довільна джерелувато-зображувана функція $f$ розкладається в абсолютно і рівномірно збіжний ряд Фур'є за системою власних функцій ермітового неперервного ядра $K(x, y)$
+\end{theorem}
+\begin{proof}
+	Обчислимо коефіцієнти Фур'є: $(f, \phi_i) = (\bf{K}h, \phi_i) = (h, \bf{K}\phi_i) = \frac{(h,\phi_i)}{\lambda_i}$. Отже ряд Фур'є функції $f$ має вигляд 
+	\begin{equation}
+		\label{eq:4.10}
+		f \sim \Sum_{i = 1}^\infty \dfrac{(h, \phi_i)}{\lambda_i} \phi_i
+	\end{equation}
+
+	Якщо власних чисел скінчена кількість, то з (\ref{eq:4.5}) випливає, що $f(x) = \sum_{i=1}^N \frac{(h, \phi_i)}{\lambda_i} \phi_i(x)$, якщо ж власних чисел злічена кількість, то з (\ref{eq:4.3}) випливає співвідношення: \[ \left\| f - \Sum_{i = 1}^p \dfrac{(h, \phi_i)}{\lambda_i} \phi_i \right\|_{L_2(G)} = \left\| \bf{K}h - \Sum_{i = 1}^p \dfrac{(h, \phi_i)}{\lambda_i} \phi_i \right\|_{L_2(G)} \xrightarrow[p \to \infty]{}0, \quad h \in L_2(G). \]
+
+	Покажемо, що формулу (\ref{eq:4.4}) можна розглядати як розвинення ядра $K(x, y)$ в ряд Фур'є по системі власних функцій $\phi_i(x)$. Перевіримо це обчислюючи коефіцієнт Фур'є: \[ (K(\cdot, y),\phi_i)_{L_2(G)} = \Int_G K(x, y) \bar \phi_i(x) \diff x = \Int_G \bar K(y, x) \bar \phi_i(x) \diff x = \dfrac{\bar \phi_i(y)}{\lambda_i}. \] Доведемо рівномірну збіжність ряду Фур'є (\ref{eq:4.10}) за критерієм Коші і покажемо, що при, $n, m \to \infty$, відрізок ряду прямує до нуля. За нерівністю Коші-Буняківського маємо: \[ \left| \Sum_{i = n}^m \dfrac{(h, \phi_i)}{\lambda_i} \phi_i \right| \le \Sum_{i = n}^m |(h, \phi_i)\dfrac{|\phi_i|}{|\lambda_i|} \le \left(\Sum_{i=n}^m |(h, \phi_i)|^2\right)^{1/2} \left(\Sum_{i=n}^m \dfrac{|\phi_i|^2}{\lambda_i^2}\right)^{1/2} \]
+
+	\[ \Sum_{i=n}^m |(h, \phi_i)|^2 \le \|h\|_{L_2(G)^2}, \] тобто ряд збігається, а вказана сума прямує до 0 при $n, m \to \infty$.
+
+	\[ \Sum_{i=n}^m \dfrac{|\phi_i|^2}{\lambda_i^2} \le \Int_G |K(x, y)|^2 \diff x \le M^2 V, \] тобто ряд збігається. \\
+
+	Отже \[\left(\Sum_{i=n}^m |(h, \phi_i)|^2\right)^{1/2} \left(\Sum_{i=n}^m \dfrac{|\phi_i|^2}{\lambda_i^2}\right)^{1/2} \xrightarrow[n, m \to \infty]{} 0, \]
+	а отже $\sum_{i=1}^\infty \frac{(h, \phi_i)}{\lambda_i} \phi_i$ збігається абсолютно і рівномірно.
+\end{proof}
+\begin{corollary}
+	Довільне повторне ядро для ермітового неперервного ядра $K(x ,y)$ розкладається в білінійний ряд по системі власних функцій ермітового неперервного ядра, який збігається абсолютно і рівномірно $K_{(p)}(x, y) = \sum_{i = 1}^\infty \frac{\phi_i(x) \bar \phi_i(y)}{\lambda_i^p}$, $p = 2, 3, \ldots$, де коефіцієнти Фур'є  $\frac{\bar \phi_i(y)}{\lambda_i^p}$.
+\end{corollary}
+
+Повторне ядро $K_{(p)} = \int_G K(x, \xi) K_{(p - 1)} (\xi, y) \diff \xi$ є джерелувато-зображувана функція і таким чином для цього має місце теорема Гільберта-Шмідта. \\
+
+Доведемо деякі важливі нерівності:
+\begin{equation}
+	\label{eq:4.11}
+	K_{(2)} (x, x) = \Int_G K(x, \xi) K(\xi, x) \diff \xi = \Int_G K(x, \xi) \bar K(x, \xi) \diff \xi = \Int_G |K(x, \xi)|^2 \diff \xi = \Sum_{i = 1}^\infty \dfrac{|\phi_i(x)|^2}{\lambda_i^2}.
+\end{equation}
+
+Рівність (\ref{eq:4.11}) випливає з наслідку 1. Проінтегруємо (\ref{eq:4.11}), отримаємо
+\begin{equation}
+	\label{eq:4.12}
+	\Iint_{G \times G} |K(x, y)|^2 \diff x \diff y = \Sum_{i = 1}^\infty \dfrac{1}{\lambda_i^2}.
+\end{equation}
+
+\begin{theorem}[Про збіжність білінійного ряду для ермітового неперервного ядра]
+	Ермітове неперервне ядро $K(x, y)$ розкладається в білінійний ряд $K(x, y) = \sum_{i=1}^\infty \frac{\phi_i(x) \bar \phi_i(y)}{\lambda_i}$ по своїх власних функціях, і цей ряд збігаються в нормі $L_2(G)$ по аргументу $x$ рівномірно для кожного $y \in \bar G$, тобто 
+	\[ \left\| K(x, y) - \Sum_{i=1}^p \dfrac{\phi_i(x)\bar \phi_i(y)}{\lambda_i}\right\|_{L_2(x \in G)} \xrightrightarrows[p \to \infty]{y \in \bar G} 0. \]
+\end{theorem}
+\begin{proof}
+	\[ \left\| K(x, y) - \Sum_{i = 1}^p \dfrac{\phi_i(x) \bar \phi_i(y)}{\lambda_i} \right\|_{L_2(G)}^2 = Int_G |K(x, y)|^2 \diff x - \Sum_{i = 1}^p \dfrac{|\phi_i(y)|^2}{\lambda_i^2} \xrightarrow[p \to \infty]{y \in \bar G} 0. \]
+
+	Додатково інтегруючи по аргументу $y \in G$ отримаємо збіжність білінійного ряду (\ref{eq:4.4}) в середньоквадратичному.
+	\begin{equation}
+		\label{eq:4.13}
+		\Iint_G \left( K(x, y) - \Sum_{i = 1}^p \dfrac{\phi_i(x) \bar \phi_i(y)}{\lambda_i} \right)^2 \diff x \diff y \xrightarrow[p \to \infty]{} 0.
+	\end{equation}
+\end{proof}
+
+\subsubsection*{Формула Шмідта для розв’язання інтегральних рівнянь з ермітовим неперервним ядром}
+
+Розглянемо інтегральне рівняння Фредгольма 2 роду $\phi = \lambda \bf{K} \phi + f$, з ермітовим неперервним ядром 
+\begin{equation} 
+	\label{eq:4.14} 
+	K(x, y) = K^* (x, y).
+\end{equation}
+$\lambda_1, \ldots, \lambda_p, \ldots$, $\phi_1, \ldots, \phi_p, \ldots$ -- множина характеристичних чисел та ортонормована система власних функцій ядра $K(x, y)$. \\
+
+Розкладемо розв’язок рівняння $\phi$ по системі власних функцій ядра $K(x, y)$:
+\[ \phi = \lambda \Sum_{i = 1}^\infty (\bf{K}\phi, \phi_i) \phi_i + f = \lambda \Sum_{i = 1}^\infty (\phi, \bf{K} \phi_i) \phi_i + f = \lambda \Sum_{i = 1}^\infty \dfrac{(\phi, \phi_i)}{\lambda_i} \phi_i + f, \]
+
+обчислимо коефіцієнти Фур'є: \[ (\phi, \phi_k) = \lambda \Sum_{i = 1}^\infty \dfrac{(\phi, \phi_i)}{\lambda_i} (\phi_i, \phi_k) + (f, \phi_k) = \lambda \dfrac{\phi, \phi_k}{\lambda_k} + (f, \phi_k). \]
+
+Отже, $(\phi, \phi_k) \left(1 - \frac{\lambda}{\lambda_k}\right) = (f, \phi_k)$, тому $(\phi, \phi_k) = (f, \phi_k) \frac{\lambda_k}{\lambda_k - \lambda}$, $k = 1, 2, \ldots$ \\
+
+Таким чином має місце формула Шмідта:
+\begin{equation}
+	\label{eq:4.15}
+	\phi(x) = \lambda \Sum_{i = 1}^\infty \dfrac{(f, \phi_i)}{\lambda_i - \lambda} \phi_i(x) + f(x).
+\end{equation}
+Розглянемо усі можливі значення $\lambda$:
+\begin{enumerate}
+	\item Якщо $\lambda \notin \{\lambda_i\}_{i=1}^\infty$, тоді існує єдиний розв'язок для довільного вільного члена $f$ і цей розв'язок представляється за формулою (\ref{eq:4.15}).
+	\item Якщо $\lambda = \lambda_k = \lambda_{k + 1} = \ldots = \lambda_{k + q - 1}$ -- співпадає з одним з характеристичних чисел кратності $q$, та при цьому виконанні умови ортогональності $(f, \phi_k) = (f, \phi_{k + 1}) = \ldots = (f, \phi_{k + q - 1}) = 0$ тоді розв'язок існує (не єдиний), і представляється у вигляді 
+	\begin{equation}
+		\label{eq:4.16}
+		\phi(x) = \lambda_k \Sum_{\substack{i = 1 \\ \lambda_i \ne \lambda_k}}^\infty \dfrac{(f, \phi_i)}{\lambda_i - \lambda_k} \phi_i(x) + f(x) + \Sum_{j = k}^{k + q - 1} c_j \phi_j(x),
+	\end{equation}
+	де $c_j$ -- довільні константи. \\
+
+	Якщо $\exists j: (f, \phi_j) \ne 0$, $k \le j \le k + q - 1$ тоді розв'язків не існує.
+\end{enumerate}
+
+\begin{example}
+	Знайти ті значення параметрів $a$, $b$ для яких інтегральне рівняння \[\phi(x) = \lambda \Int_{-1}^1 \left( xy - \dfrac{1}{3} \right) \phi(y) \diff y + ax^2 - bx + 1 \] має розв'язок для будь-якого значення $\lambda$.
+\end{example}
+\begin{solution*}
+	Знайдемо характеристичні числа та власні функції спряженого однорідного рівняння (ядро ермітове).
+	\[ \phi(x) = \lambda x \Int_{-1}^1 y \phi(y0 \diff y - \dfrac{\lambda}{3} \Int_{-1}^1 \phi(y) \diff y = \lambda x c_1 - \dfrac{\lambda}{3} c_2. \]
+	\begin{system*}
+		c_1 &= \Int_{-1}^1 y \phi(y) \diff y = \Int_{-1}^1 y \left(\lambda y c_1 - \dfrac{\lambda}{3} c_2 \right) \diff y = \dfrac{2 \lambda}{3} c_1, \\
+		c_2 &= \Int_{-1}^1 \phi(y) \diff y = \Int_{-1}^1 \left(\lambda y c_1 - \dfrac{\lambda}{3} c_2 \right) \diff y = - \dfrac{2 \lambda}{3} c_2.
+	\end{system*}
+	\[ D(\lambda) = \begin{vmatrix} 1 - \dfrac{2\lambda}{3} & 0 \\ 0 & 1 + \dfrac{2\lambda}{3} \end{vmatrix} = 0.\]
+	\[ \lambda_1 = \dfrac{3}{2}, \quad \lambda_2 = - \dfrac{3}{2}.\]
+	\[ \phi_1(x) = x, \quad \phi_2(x) = 1.\]
+	Умови ортогональності:
+	\begin{system*}
+		\Int_{-1}^1 (ax^2 - bx + 1) x \diff x = - \dfrac{2b}{3} &= 0, \\
+		\Int_{-1}^1 (ax^2 - bx + 1) \diff x = \dfrac{2a}{3} + 2 &= 0.
+	\end{system*}
+	\[ a = -3, \quad b = 0. \]
+\end{solution*}
+
