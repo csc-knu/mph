@@ -1,0 +1,97 @@
+\setcounter{section}{1}
+
+\section{Домашнє завдання за 9/12}
+
+\begin{problem}[Владимиров 5.18]
+    Знайти всі характеристичні числа і відповідні власні функції наступних інтегральних рівнянь:
+    \begin{enumerate}
+        \item $\phi(x) = \lambda \Int_0^{2\pi} \left(\sin(x+y)+\dfrac12\right)\phi(y)dy$.
+        \item[4.] $\phi(x) = \lambda \Int_0^1 \left(\left(\dfrac xy\right)^{2/5}+\bigg(\dfrac yx\bigg)^{2/5}\right)\phi(y)dy$
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Це рівняння з виродженим ядром. Справді: 
+        \begin{equation*}\begin{split}
+            \phi(x) &= \lambda \Int_0^{2\pi} \left(\sin(x+y)+\dfrac12\right)\phi(y)dy = \lambda \Int_0^{2\pi} \left(\sin x\cos y+\cos x\sin y+\dfrac12\right)\phi(y)dy = \\
+            &= \lambda \sin(x)\Int_0^{2\pi} \cos(y)\phi(y)dy + \lambda \cos(x)\Int_0^{2\pi} \sin(y)\phi(y)dy + \lambda \Int_0^{2\pi} \dfrac{\phi(y) dy}{2}.
+        \end{split}\end{equation*}
+        Позначаємо 
+        \[ c_1 = \Int_0^{2\pi} \cos(y)\phi(y)dy \qquad c_2 = \Int_0^{2\pi} \sin(y)\phi(y)dy \qquad c_3 = \Int_0^{2\pi} \dfrac{\phi(y) dy}{2},\]
+        тоді 
+        \[ \phi(x) = \lambda \sin(x) c_1 + \lambda \cos(x) c_2 + \lambda c_3.\]
+        Підставляємо це замість $\phi(y)$ в $c_1$, $c_2$, $c_3$:
+        \begin{equation*}\left\{\begin{aligned}
+            c_1 &= \Int_0^{2\pi} \cos(y)(\lambda \sin(y) c_1 + \lambda \cos(y) c_2 + \lambda c_3) dy &= 0 + \lambda\pi c_2 + 0 \\ 
+            c_2 &= \Int_0^{2\pi} \sin(y)(\lambda \sin(y) c_1 + \lambda \cos(y) c_2 + \lambda c_3) dy &= \lambda\pi c_1 + 0 + 0 \\
+            c_3 &= \Int_0^{2\pi} \dfrac{(\lambda \sin(y) c_1 + \lambda \cos(y) c_2 + \lambda c_3) dy}{2} &= 0 + 0 + \lambda \pi c_3
+        \end{aligned}\right.\end{equation*}
+        Нескладно бачити, що $\lambda=\pm1/\pi$, а відповідними власними функціями будуть $\cos x\pm \sin x$.
+        \item[4.] Це рівняння з виродженим ядром. Справді: 
+        \[ \phi(x) = \lambda \Int_0^1 \left(\left(\dfrac xy\right)^{2/5}+\bigg(\dfrac yx\bigg)^{2/5}\right)\phi(y)dy = \lambda x^{2/5}\Int_0^1 y^{-2/5}\phi(y) dy + \lambda x^{-2/5}\Int_0^1 y^{2/5}\phi(y)dy. \]
+        Позначаємо
+        \[c_1 = \Int_0^1 y^{-2/5}\phi(y) dy \qquad c_2 = \Int_0^1 y^{2/5}\phi(y) dy,\]
+        тоді
+        \[\phi(x) = \lambda x^{2/5} c_1 + \lambda x^{-2/5} c_2.\]
+        Підставляємо це замість $\phi(y)$ в $c_1$, $c_2$:
+        \begin{equation*}\left\{\begin{aligned}
+            c_1 &= \Int_0^1 y^{-2/5}\left(\lambda y^{2/5} c_1 + \lambda y^{-2/5} c_2\right) dy &= \lambda c_1 + 5\lambda c_2 \\
+            c_2 &= \Int_0^1 y^{2/5}\left(\lambda y^{2/5} c_1 + \lambda y^{-2/5} c_2\right) dy &= \dfrac59\lambda c_1 + \lambda c_2
+        \end{aligned}\right.\end{equation*}
+        Звідси маємо
+        \[\begin{vmatrix} 1 - \lambda & - 5\lambda \\ - 5\lambda/9 & 1 - \lambda \end{vmatrix}
+        = \lambda^2 - 2\lambda + 1 - 25\lambda^2/9 = \left(\lambda + \dfrac32\right) \left(\lambda - \dfrac38\right) = 0. \]
+        При $\lambda = -3/2$ власною функцією буде $\phi(x) = 3x^{2/5} + x^{-2/5}$, а при $\lambda = 3/8$ -- $\phi(x) = 3x^{2/5} - x^{-2/5}$.
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}[Владимиров, 5.22]
+    Знайти розв'язок наступних інтегральних рівнянь для всі $\lambda$ і для всіх значень параметрів $a$, $b$, $c$ що входять у вільний член цих рівнянь:
+    \begin{enumerate}
+        \item[3.] $\phi(x) = \lambda\Int_{-1}^1 (1 + xy) \phi(y) dy + ax^2 + bx + c$.
+        \item[6.] $\phi(x) = \lambda\Int_{-1}^1 \left(5(xy)^{1/3} + 7(xy)^{2/3}\right) \phi(y) dy + a + bx^{1/3}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}
+        \item[3.] Це рівняння з виродженим ядром. Справді: 
+        \[ \phi(x) = \lambda\Int_{-1}^1 (1 + xy) \phi(y) dy + ax^2 + bx + c = \lambda \Int_{-1}^1 \phi(y) dy + \lambda x \Int_{-1}^1 y \phi(y) dy + ax^2 + bx + c. \]
+        Позначаємо
+        \[ c_1 = \Int_{-1}^1 \phi(y) dy \qquad c_2 = \Int_{-1}^1 y \phi(y) dy, \]
+        тоді
+        \[ \phi(x) = \lambda c_1 + \lambda x c_2 + ax^2 + bx + c. \]
+        Підставляємо це замість $\phi(y)$ в $c_1$, $c_2$:
+        \begin{equation*}\left\{\begin{aligned}
+            c_1 &= \Int_{-1}^1 \left(\lambda c_1 + \lambda y c_2 + ay^2 + by + c\right) dy &=& \,\, 2\lambda c_1 + \dfrac{2a}{3} + 2c \\
+            c_2 &=  \Int_{-1}^1 y \left(\lambda c_1 + \lambda y c_2 + ay^2 + by + c\right) dy &=& \,\, \dfrac{2\lambda c_2}{3} + \dfrac{2b}{3}
+        \end{aligned}\right.\end{equation*}
+        Окремо розглянемо $\lambda = 1/2$ і $\lambda = 3/2$ як корені характеристичного поліному.\\
+        
+        При $\lambda = 1/2$ маємо, що для існування розв'язку необхідно $2a/3 + 2c = 0$, а сам розв'язок набуває вигляду \[\phi(x) = c_1/2 + bx/2 + ax^2 + bx - a/3 = ax^2 + 3bx/2 + C_1.\]
+        
+        При $\lambda = 3/2$ маємо, що для існування розв'язку необхідно $2b/3 = 0$, а сам розв'язок набуває вигляду \[\phi(x) = (3/2)(2a/3 + 2c)/(-2) + (3/2)c_2 x + ax^2 + c = ax^2 + C_2x - (a + c)/2.\]
+        
+        Інакше ж маємо $c_1 = \dfrac{2(a + 3c)}{3(1 - 2\lambda)}$, $c_2 = \dfrac{2b}{3 - 2 \lambda}$, без жодних обмежень на $a$, $b$, $c$, тому розв'язок набуває вигляду \[\phi(x) = \dfrac{2\lambda(a + 3c)}{3(1 - 2\lambda)} + \dfrac{2\lambda b}{3 - 2 \lambda}x + ax^2 + bx + c = \dfrac{2\lambda a + 3c}{3(1 - 2\lambda)} + \dfrac{3b}{3 - 2 \lambda}x + ax^2.\]
+        
+        \item[6.] Це рівняння з виродженим ядром. Справді: 
+        \begin{equation*} \begin{aligned}
+        \phi(x) &= \lambda\Int_{-1}^1 \left(5(xy)^{1/3} + 7(xy)^{2/3}\right) \phi(y) dy + a + bx^{1/3} = \\ 
+        &= \lambda x^{1/3}\Int_{-1}^1 5y^{1/3}\phi(y) dy + \lambda x^{2/3}\Int_{-1}^1 7y^{2/3} \phi(y) dy + ax + bx^{1/3}. 
+        \end{aligned} \end{equation*}
+        Позначаємо
+        \[ c_1 = \Int_{-1}^1 5y^{1/3} \phi(y) dy \qquad c_2 = \Int_{-1}^1 7y^{2/3} \phi(y) dy, \]
+        тоді
+        \[ \phi(x) = \lambda x^{1/3} c_1 + \lambda x^{2/3} c_2 + ax + bx^{1/3}. \]
+        Підставляємо це замість $\phi(y)$ в $c_1$, $c_2$:
+        \begin{equation*}\left\{\begin{aligned} 
+            c_1 &= \Int_{-1}^1 5y^{1/3} \left(\lambda y^{1/3} c_1 + \lambda y^{2/3} c_2 + ay + by^{1/3}\right) dy &=& \,\, 6\lambda c_1 + 30a/7 + 6b \\
+            c_2 &= \Int_{-1}^1 7y^{2/3} \left(\lambda y^{1/3} c_1 + \lambda y^{2/3} c_2 + ay + by^{1/3}\right) dy &=& \,\, 6\lambda c_2 
+        \end{aligned}\right.\end{equation*}
+        Окремо розглянемо $\lambda = 1/6$ як корінь характеристичного поліному. Маємо, що для існування розв'язку необхідно $30a/7 + 6b = 0$, а сам розв'язок набуває вигляду \[\phi(x) = ax + C_1 x^{1/3} + C_2 x^{2/3}. \]
+
+        Інакше ж маємо $c_1 = \dfrac{30a + 42b}{7(1 - 6\lambda)}$, $c_2 = 0$, без жодних обмежень на $a$, $b$ тому розв'язок набуває вигляду \[\phi(x) = \dfrac{\lambda(30a + 42b)}{7(1 - 6\lambda)}x^{1/3} + ax + bx^{1/3} = \dfrac{30\lambda a + 7b}{7(1 - 6\lambda)}x^{1/3} + ax. \]
+
+    \end{enumerate}
+\end{solution}

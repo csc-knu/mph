@@ -1,0 +1,41 @@
+Рівняння
+\begin{equation}
+	\label{eq:2.3}
+	a(x, y) \cdot u_{x x} + 2 b(x, y) u_{x, y} + c(x, y) u_{y y} = \Phi(x, y, u, u_x, u_y),
+\end{equation}
+де $|a| + |b| + |c| \ne 0$, належить (в точці чи області):
+\begin{itemize}
+	\item гіперболічному типу, якщо $b^2 - a c > 0$;
+	\item параболічному типу, якщо $b^2 - a c = 0$;
+	\item еліптичному типу, якщо $b^2 - a c < 0$.
+\end{itemize}
+
+Для рівняння \ref{eq:2.3} характеристичне рівняння
+\begin{equation}
+	\label{eq:2.4}
+	a(x, y) \cdot (dy)^2 - 2 b(x, y) \cdot dx \cdot dy + c(x, y) \cdot (dx)^2 = 0
+\end{equation}
+розпадається на два рівняння:
+\begin{equation}
+	\label{eq:2.5}
+	\left\{
+		\begin{aligned}
+			a \cdot dy - \left( b + \sqrt{b^2 - a c} \right) \cdot dx &= 0, \\
+			a \cdot dy - \left( b - \sqrt{b^2 - a c} \right) \cdot dx &= 0.
+		\end{aligned}
+	\right.
+\end{equation}
+\begin{itemize}
+	\item Рівняння гіперболічного типу: $b^2 - a c > 0$. Загальні інтеграли $\phi(x, y) = c_1$, $\psi(x, y) = c_2$ рівнянь \ref{eq:2.5} дійсні і різні. Вони визначають дві різні сім'ї дійсних характеристик для рівняння \ref{eq:2.3}. Заміною змінних $\xi = \phi(x, y)$, $\eta = \psi(x, y)$ рівняння \ref{eq:2.3} зводиться до канонічного вигляду
+	\begin{equation}
+		u_{\xi \eta} = \Phi_1(\xi, \eta, u, u_\xi, u_\eta).
+	\end{equation}
+	\item Рівняння параболічного типу: $b^2 - a c = 0$. Рівняння \ref{eq:2.5} однакові. Загальний інтеграл $\phi(x, y) = c$ визначає сім'ю дійсних характеристик для рівняння \ref{eq:2.3}. Заміною змінних $\xi = \phi(x, y)$, $\eta = \psi(x, y)$, де $\psi$ -- довільна гладка функція така, що ця заміна змінних взаємно-однозначна у розглядуваній області, рівняння \ref{eq:2.3} зводиться до канонічного вигляду
+	\begin{equation}
+		u_{\eta \eta} = \Phi_1(\xi, \eta, u, u_\xi, u_\eta).
+	\end{equation}
+	\item Рівняння еліптичного вигляду: $b^2 - a c < 0$. Нехай $\phi(x, y) + i \psi(x, y) = c$ -- загальний інтеграл першого рівняння \ref{eq:2.5}, де $\phi(x, y)$, $\psi(x, y)$ -- дійсні функції. Тоді заміною змінних $\xi = \phi(x, y)$, $\eta = \psi(x, y)$ рівняння \ref{eq:2.3} зводиться до канонічного вигляду
+	\begin{equation}
+		u_{\xi \xi} = \Phi_1(\xi, \eta, u, u_\xi, u_\eta).
+	\end{equation}
+\end{itemize}

@@ -1,0 +1,208 @@
+\newcommand{\conjlambda}{\overline{\lambda}}
+
+\setcounter{section}{2}
+
+\section{Домашнє завдання за 9/19}
+
+\begin{problem}[5.28.1, Владимиров]
+    Знайти характеристичні числа і відповідні власні функції наступного інтегрального рівняння: 
+    \[ 
+        \phi(x_1, x_2) = \lambda \Int_{-1}^1 \Int_{-1}^1 \left(x_1 + x_2 + \dfrac{3}{32} (y_1 + y_2)\right) \phi(y_1, y_2) dy_1 dy_2. 
+    \]
+\end{problem}
+
+\begin{solution}
+    Почнемо з того що розкладемо це вироджене ядро:
+    \begin{equation*}
+        \begin{aligned}
+            \phi(x_1, x_2) &= \lambda \Int_{-1}^1 \Int_{-1}^1 \left(x_1 + x_2 + \dfrac{3}{32} (y_1 + y_2)\right) \phi(y_1, y_2) dy_1 dy_2 = \\
+            &= \lambda (x_1 + x_2) \Int_{-1}^1 \Int_{-1}^1 \phi(y_1, y_2) dy_1 dy_2 + \dfrac{3\lambda}{32} \Int_{-1}^1 \Int_{-1}^1 (y_1 + y_2) \phi(y_1, y_2) dy_1 dy_2. 
+        \end{aligned}
+    \end{equation*} 
+    
+    Позначимо
+    \[
+        c_1 = \Int_{-1}^1 \Int_{-1}^1 \phi(y_1, y_2) dy_1 dy_2 \qquad c_2 = \Int_{-1}^1 \Int_{-1}^1 (y_1 + y_2) \phi(y_1, y_2) dy_1 dy_2.
+    \]
+    
+    Тоді $\phi(x_1, x_2) = \lambda (x_1 + x_2) c_1 + 3\lambda c_2 / 32$. Підставляючи це у визначення $c_1$ і $c_2$ знаходимо
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                c_1 &= \Int_{-1}^1 \Int_{-1}^1 \left(\lambda (y_1 + y_2) c_1 + \dfrac{3\lambda c_2}{32} \right) dy_1 dy_2 = \\
+                &= \Int_{-1}^1 \left(2\lambda y_2 c_1 + \dfrac{3\lambda c_2}{16}\right) dy_2 = \dfrac{3\lambda c_2}{8},  \\
+                c_2 &= \Int_{-1}^1 \Int_{-1}^1 (y_1 + y_2) \left(\lambda (y_1 + y_2) c_1 + \dfrac{3 \lambda c_2}{32}\right) dy_1 dy_2 = \\ 
+                &= \Int_{-1}^1 \left(\dfrac{2\lambda c_1}{3} + 2y_2\left(\lambda y_2c_1 + \dfrac{3\lambda c_2}{32}\right)\right) dy_2 = \dfrac{8\lambda c_1}{3}.
+            \end{aligned}
+        \right.
+    \end{equation*}
+    
+    Визначник цієї системи: $\begin{vmatrix} 1 & - 3\lambda / 8 \\ - 8\lambda / 3 & 1 \end{vmatrix} = 1 - \lambda^2$, тобто $\lambda = \pm 1$ є власними числами цього ядра.\\
+    
+    Підставляючи $\lambda_1 = 1$ і $\lambda_2 = - 1$ у систему, знаходимо власні вектори $\begin{pmatrix} 3 \\ 8 \end{pmatrix}$ і $\begin{pmatrix} 3 \\ -8 \end{pmatrix}$ відповідно.\\
+    
+    Підставляючи власні вектори у вираз для $\phi(x_1, x_2)$, знаходимо власні функції:
+    \begin{equation*}
+        \begin{aligned}
+            \phi_1(x_1, x_2) &= 3(x_1 + x_2) + 24 / 32 \cong 4 \|x\|_1 + 1, \\
+            \phi_2(x_1, x_2) &= - 3(x_1 + x_2) + 24 / 32 \cong - 4 \|x\|_1 + 1.
+        \end{aligned}
+    \end{equation*}
+\end{solution}
+
+\begin{problem}[5.26.4, Владимиров]
+    Знайти всі значення параметрів $a$, $b$ для яких наступне інтегральне рівняння має розв'язок для довільного $\lambda$:
+    \[
+        \phi(x) = \lambda \Int_0^1 \left(xy - \dfrac13\right) \phi(y) dy + ax^2 - bx + 1. 
+    \]
+\end{problem}
+
+\begin{solution}
+    Почнемо з того що запишемо відповідне спряжене однорідне рівняння:
+    \[
+        \psi(x) = \conjlambda \Int_0^1 \left(yx - \dfrac13\right) \psi(y) dy,
+    \]
+    
+    і розкладемо це вироджене ядро:
+    \[
+    \psi(x) = \conjlambda \Int_0^1 \left(yx - \dfrac13\right) \psi(y) dy = \conjlambda x \Int_0^1 y \psi(y) dy - \dfrac {\conjlambda} 3 \Int_0^1 \psi(y) dy.
+    \]
+
+    Позначимо
+    \[
+        c_1 = \Int_0^1 y \psi(y) dy \qquad c_2 = \Int_0^1 \psi(y) dy.
+    \]
+
+    Тоді $\psi(x) = \conjlambda x c_1 - \conjlambda c_2 / 3$. Підставляючи це у визначення $c_1$ і $c_2$ знаходимо:
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                c_1 &= \Int_0^1 y \left( \conjlambda y c_1 - \dfrac {\conjlambda c_2} 3 \right) dy = \dfrac {\conjlambda c_1} 3 - \dfrac{\conjlambda c_2} 6, \\ 
+                c_2 &= \Int_0^1 \left( \conjlambda y c_1 - \dfrac {\conjlambda c_2} 3 \right) dy = \dfrac{\conjlambda c_1} 2 - \dfrac{\conjlambda c_2} 3.
+            \end{aligned}
+        \right.
+    \end{equation*}
+    
+    Визначник системи: $\begin{vmatrix} 1 - \conjlambda / 3 & \conjlambda / 6 \\ - \conjlambda / 2 & 1 + \conjlambda / 3 \end{vmatrix} = 1 - \dfrac {\conjlambda^2} {36}$, тобто $\conjlambda = \pm 6$ є власними числами цього рівняння. \\
+    
+    Підставляючи $\conjlambda_1 = 6$ і $\conjlambda_2 = - 6$ у систему, знаходимо власні вектори $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ і $\begin{pmatrix} 1 \\ 3 \end{pmatrix}$ відповідно. \\
+    
+    Підставляючи власні вектори у вираз для $\psi(x)$, знаходимо власні функції:
+    \begin{equation*}
+        \begin{aligned}
+            \psi_1(x) &= 6x - 2 \cong 3 x - 1, \\
+            \psi_2(x) &= -6 x + 6 \cong x - 1.
+        \end{aligned}
+    \end{equation*}
+    
+    Згадуючи теорему Фредгольма, розуміємо, що залишилося знайти умови за яких $\langle \psi_1(x), ax^2 - bx + 1\rangle = 0$ і $\langle \psi_2(x), ax^2 - bx + 1\rangle = 0$:
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                \langle \psi_1(x), ax^2  - bx + 1\rangle &= \Int_0^1 (3 x - 1) (ax^2  - bx + 1) dx = \dfrac {3a} 4 - b + \dfrac 32 - \dfrac a3 + \dfrac b2 - 1 \cong 5a - 6b + 6 = 0 \\
+                \langle \psi_2(x), ax^2  - bx + 1\rangle &= \Int_0^1 (x - 1) (ax^2  - bx + 1) dx = \dfrac a4 - \dfrac b3 + \dfrac 12 - \dfrac a3 + \dfrac b2 - 1 \cong -a + 2b - 6 = 0 \\
+            \end{aligned}
+        \right.
+    \end{equation*}
+    
+    Звідси вже нескладно знайти $a = b = 6$.
+\end{solution}
+
+\begin{problem}[5.26.3, Владимиров]
+    Знайти всі значення параметрів $a$, $b$ для яких наступне інтегральне рівняння має розв'язок для довільного $\lambda$:
+    \[
+        \phi(x) = \lambda \Int_{-1}^1 \dfrac{1 + xy}{\sqrt{1 - y^2}} \phi(y) dy + x^2 + ax + b. 
+    \]
+\end{problem}
+
+\begin{solution}
+    Почнемо з того що запишемо відповідне спряжене однорідне рівняння:
+    \[
+        \psi(x) = \conjlambda \Int_{-1}^1 \dfrac{1 + yx}{\sqrt{1 - x^2}} \psi(y) dy,
+    \]
+    
+    і розкладемо це вироджене ядро:
+    \[
+        \psi(x) = \conjlambda \Int_{-1}^1 \dfrac{1 + yx}{\sqrt{1 - x^2}} \psi(y) dy =  \dfrac{\conjlambda x}{\sqrt{1 - x^2}} \Int_0^1 y \psi(y) dy + \dfrac{\conjlambda}{\sqrt{1 - x^2}} \Int_0^1 \psi(y) dy.
+    \]
+
+    Позначимо
+    \[
+        c_1 = \Int_{-1}^1 y \psi(y) dy \qquad c_2 = \Int_{-1}^1 \psi(y) dy.
+    \]
+
+    Тоді $\psi(x) = \dfrac{\conjlambda x c_1}{\sqrt{1 - x^2}} + \dfrac{\conjlambda c_2}{\sqrt{1 - x^2}}$. Підставляючи це у визначення $c_1$ і $c_2$ знаходимо:
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                c_1 &= \Int_{-1}^1 y \left( \dfrac{\conjlambda y c_1}{\sqrt{1 - y^2}} + \dfrac{\conjlambda c_2}{\sqrt{1 - y^2}} \right) dy = \dfrac{\conjlambda \pi c_1}{2}, \\ 
+                c_2 &= \Int_{-1}^1 \left( \dfrac{\conjlambda y c_1}{\sqrt{1 - y^2}} + \dfrac{\conjlambda c_2}{\sqrt{1 - y^2}} \right) dy = \conjlambda \pi c_2.
+            \end{aligned}
+        \right.
+    \end{equation*}
+    
+    Визначник системи: $\begin{vmatrix} 1 - \conjlambda \pi / 2 & 0 \\ 0 & 1 - \conjlambda \pi \end{vmatrix}$, тобто $\dfrac 1 \pi$ та $\dfrac 2 \pi$ є власними числами цього рівняння. \\
+    
+    Підставляючи $\conjlambda_1 = \dfrac 2 \pi$ і $\conjlambda_2 = \dfrac 1 \pi$ у систему, знаходимо власні вектори $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ і $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$ відповідно. \\
+    
+    Підставляючи власні вектори у вираз для $\psi(x)$, знаходимо власні функції:
+    \begin{equation*}
+        \begin{aligned}
+            \psi_1(x) &= \dfrac{x}{\pi \sqrt{1 - x^2}} \cong \dfrac{x}{\sqrt{1 - x^2}}, \\
+            \psi_2(x) &= \dfrac{2}{\pi \sqrt{1 - x^2}} \cong \dfrac{1}{\sqrt{1 - x^2}}.
+        \end{aligned}
+    \end{equation*}
+    
+    Згадуючи теорему Фредгольма, розуміємо, що залишилося знайти умови за яких $\langle \psi_1(x), x^2 + ax + b\rangle = 0$ і $\langle \psi_2(x), x^2 + ax + b\rangle = 0$:
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                \langle \psi_1(x), x^2 + ax + b\rangle &= \Int_{-1}^1 \dfrac{x}{\sqrt{1 - x^2}} (x^2 + ax + b) dx = \dfrac {a\pi} 2 = 0 \\
+                \langle \psi_2(x), ax^2 + ax + b\rangle &= \Int_{-1}^1 \dfrac{1}{\sqrt{1 - x^2}} (x^2 + ax + b) dx = \dfrac \pi 2 + \pi b = 0 \\
+            \end{aligned}
+        \right.
+    \end{equation*}
+    
+    Звідси вже нескладно знайти $a = 0$, $b = - 1 / 2$.
+\end{solution}
+
+\begin{problem}[5.21, Владимиров]
+    З'ясувати, для яких значень $\lambda$ інтегральне рівняння 
+    \[
+        \phi(x) = \lambda \Int_0^{2\pi} \cos (2x - y) \phi(y) dy + f(x)
+    \]
+    має розв'язок для довільної $f(x) \in C([0, 2\pi])$ і знайти цей розв'язок.
+\end{problem}
+
+\begin{solution}
+    Почнемо з того що запишемо відповідне спряжене однорідне рівняння:
+    \[
+        \psi(x) = \conjlambda \Int_0^{2 \pi} \cos(2y - x) \psi(y) dy,
+    \]
+    
+    і розкладемо це вироджене ядро:
+    \[
+        \psi(x) = \conjlambda \Int_0^{2 \pi} \cos(2y - x) \psi(y) dy = \conjlambda \sin (x) \Int_0^{2 \pi} \sin (2y) \psi(y) dy + \conjlambda \cos (x) \Int_0^{2 \pi} \cos (2y) \psi(y) dy
+    \]
+    
+    Позначимо
+    \[ 
+        c_1 = \Int_0^{2 \pi} \sin (2y) \psi(y) dy \qquad c_2 = \Int_0^{2 \pi} \cos (2y) \psi(y) dy.
+    \]
+    
+    Тоді $\psi(x) = \conjlambda \sin (x) c_1 + \conjlambda \cos (x) c_2$. Підставляючи це у визначення $c_1$ і $c_2$ знаходимо:
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                c_1 &= \Int_0^{2\pi} \sin (2y) \left( \conjlambda \sin (y) c_1 + \conjlambda \cos (y) c_2 \right) dy = 0, \\ 
+                c_2 &= \Int_0^{2\pi} \cos (2y) \left( \conjlambda \sin (y) c_1 + \conjlambda \cos (y) c_2 \right) dy = 0.
+            \end{aligned}
+        \right.
+    \end{equation*}
+    
+    Отже, отримане рівняння не має нетривіальних розв'язків для жодного $\conjlambda$, а тому вихідне рівняння має нетривіальний розв'язок для довільного $\lambda$ і для довільної $f(x)$, а його розв'язком є функція
+    \[ 
+    \phi(x) = \lambda \Int_0^{2\pi} \cos (2x - y) f(y) dy + f(x).
+    \]
+    
+\end{solution}
