@@ -1,4 +1,5 @@
-\documentclass[a4paper, 12pt]{book}
+\documentclass[a5paper, 10pt]{article}
+\usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, ukrainian]{babel}
 \usepackage{amsmath, amssymb}
@@ -6,13 +7,20 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\rhead{Нікіта Скибицький, ОМ-3}
-\lhead{Лекції з математичної фізики, 2018}
+\lhead{Рівняння математичної фізики}
 \cfoot{\thepage}
 
-% \usepackage{multicol}
-% \usepackage{graphicx}
-% \usepackage{float}
+\allowdisplaybreaks
+\setlength\parindent{0pt}
+\numberwithin{equation}{subsection}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\date{}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=violet}
+
 \usepackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{definition}{Визначення}
@@ -30,33 +38,27 @@
 \newtheorem{corollary}{Наслідок}
 \newtheorem*{corollary*}{Наслідок}
 
-\allowdisplaybreaks
-\setlength\parindent{0pt}
-
-\newcommand*\diff{\mathop{}\!\mathrm{d}}
-% \newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
-
-% \newcommand{\NN}{\mathbb{N}}
-% \newcommand{\PP}{\mathbb{P}} 
-% \newcommand{\ZZ}{\mathbb{Z}}
-% \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
-
-\renewcommand{\bf}[1]{\textbf{#1}}
-
-\renewcommand{\epsilon}{\varepsilon}
-\renewcommand{\phi}{\varphi}
-
 \newcommand{\Max}{\displaystyle\max\limits}
-% \newcommand{\Min}{\displaystyle\min\limits}
 \newcommand{\Sup}{\displaystyle\sup\limits}
-% \newcommand{\Inf}{\displaystyle\inf\limits}
 \newcommand{\Sum}{\displaystyle\sum\limits}
 \newcommand{\Int}{\displaystyle\int\limits}
 \newcommand{\Iint}{\displaystyle\iint\limits}
 \newcommand{\Lim}{\displaystyle\lim\limits}
-% \newcommand{\Prod}{\displaystyle\prod\limits}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\renewcommand{\bf}[1]{\textbf{#1}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\const}{const}
+
+\newenvironment{system}{\begin{equation} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation}}
+\newenvironment{system*}{\begin{equation*} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation*}}
 
 \makeatletter
 \newcommand*{\relrelbarsep}{.386ex}
@@ -83,14 +85,17 @@
 }
 \makeatother
 
-\DeclareMathOperator{\diam}{diam}
-\DeclareMathOperator{\rang}{rang}
-% \DeclareMathOperator{\dim}{dim}
-
-% \newenvironment{system}{\begin{equation} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation}}
-\newenvironment{system*}{\begin{equation*} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation*}}
-
 \begin{document}
+
+\maketitle \thispagestyle{empty} \newpage 
+
+У ваших руках конспект лекцій з нормативного курсу ``Рівняння математичної фізики'', прочитаного доц., к.ф.-м.н. Кузьміном Анатолієм Володимировичем на третьому курсі спеціальності прикладна математика факультету комп'ютерних наук та кібернетики Київського національного університету імені Тараса Шевченка восени 2018-го року. \\
+
+Конспект у компактній формі відображає матеріал курсу, допомагає сформувати загальне уявлення про предмет вивчення, правильно зорієнтуватися в даній галузі знань. Конспект лекцій з названої дисципліни сприятиме більш успішному вивченню дисципліни, причому більшою мірою для студентів заочної форми, екстернату, дистанційного та індивідуального навчання. \\
+
+Комп'ютерний набір та верстка -- Скибицький Нікіта Максимович. \newpage
+
+\tableofcontents \newpage
 
 \input{lec-1.tex}
 
@@ -99,5 +104,13 @@
 \input{lec-3.tex}
 
 \input{lec-4.tex}
+
+\input{lec-5.tex}
+
+\input{lec-6.tex}
+
+\input{lec-7.tex}
+
+\input{lec-14.tex}
 
 \end{document}

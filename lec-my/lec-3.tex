@@ -1,5 +1,5 @@
-\section*{Лекція 3}
-\subsubsection*{Теореми Фредгольма для інтегральних рівнянь з неперервним ядром}
+%{Лекція 3}
+\subsubsection{Теореми Фредгольма для інтегральних рівнянь з неперервним ядром}
 
 Будемо розглядати рівняння:
 \begin{equation}
@@ -20,7 +20,7 @@
 де $\alpha = (\alpha_1, \alpha_2, \ldots, \alpha_n)$, $x^\alpha = x_1^{\alpha_1} \cdot x_2^{\alpha_2} \cdot \ldots \cdot x_n^{\alpha_n}$, такий що $|K(x, y) - P_N(x, y)| < \epsilon$, $x, y \in \bar G \times \bar G$, тобто 
 \begin{equation}
 	\label{eq:2.15}
-	K(x, y) = P_N(x, y) + Q_n(x, y),
+	K(x, y) = P_N(x, y) + Q_N(x, y),
 \end{equation}
 де $P_N(x,y)$ -- вироджене ядро (поліном), $|Q_N(x, y)| < \epsilon$, $x, y \in \bar G \times \bar G$. \\
 
@@ -88,7 +88,7 @@
 де $T_N(x, y, \lambda) = P_N(x, y) + \lambda \int_G P_N(x, \xi) R_N(\xi, y, \lambda) \diff \xi$ -- вироджене, оскільки є сумою двох вироджених, поліному $P_N(x, y)$, та інтегрального доданку. Покажемо що другий доданок в $T_N$ -- вироджений. Дійсно:
 \[ \Int_G \Sum_{|\alpha + \beta| \le N} a_{\alpha \beta} x^\alpha \xi^\beta R_N(\xi, y) \diff \xi = \Sum_{|\alpha + \beta| \le N} a_{\alpha \beta} x^\alpha \Int_G \xi^\beta R_N(\xi, y) \diff \xi. \]
 
-\subsubsection*{Альтернатива Фредгольма}
+\subsubsection{Альтернатива Фредгольма}
 
 Сукупність теорем Фредгольма для інтегральних рівнянь з неперервним ядром називається альтернативою Фредгольма.
 
@@ -118,7 +118,7 @@
 	Для будь-якого як завгодно великого числа $R > 0$ в крузі $|\lambda| < R$ лежить лише скінчена кількість характеристичних чисел неперервного ядра $K(x, y)$.
 \end{theorem}
 
-\subsubsection*{Наслідки з теорем Фредгольма}
+\subsubsection{Наслідки з теорем Фредгольма}
 
 \begin{corollary}
 	З четвертої теореми Фредгольма випливає, що множина характеристичних чисел неперервного ядра не має скінчених граничних точок і не більш ніж злічена $\lim_{n \to \infty} |\lambda_n| = \infty$.
@@ -133,8 +133,7 @@
 	Якщо $\lambda_k \ne \lambda_j$, то $(\phi_k, \psi_j) = 0$.
 \end{corollary}
 
-\subsubsection*{Теореми Фредгольма для інтегральних рівнянь з полярним ядром}
-
+\subsubsection{Теореми Фредгольма для інтегральних рівнянь з полярним ядром}
 
 Розповсюдимо Теореми Фредгольма для інтегральних рівнянь з полярним ядром:
 \begin{equation}
@@ -165,8 +164,9 @@
 Дійсно:
 \begin{multline*} 
 	\Int_G |K(x, y) - L_M(x, y)| \diff y = \Int_{|x - y| < 1 / M} \left| \dfrac{A(x, y)}{|x - y|^\alpha} - A(x, y) M^\alpha \right| \diff y = \\
-	= \Int_{|x - y| < 1 /M} |A(x, y)| \left| \dfrac{1}{|x - y|^\alpha} - M^\alpha \right| \diff y \le A_0 \Int_{|x - y| < 1 /M} \left| \dfrac{1}{|x - y|^\alpha} - M^\alpha \right| \diff y \le A_0 \Int_{|x - y| < 1 /M} \dfrac{\diff y}{|x - y|^\alpha} = \\
-	= A_0 \sigma_n \Int_0^{1 / M} \xi^{n - 1 - \alpha} \diff \xi = A_0 \sigma_n \left.\dfrac{\xi^{n - \alpha}}{n - \alpha}\right|_0^{1 / M} = \dfrac{A_0\sigma_n}{(n - \alpha)M^{n - \alpha}} \le \dfrac{\epsilon}{2},
+	= \Int_{|x - y| < 1 /M} |A(x, y)| \left| \dfrac{1}{|x - y|^\alpha} - M^\alpha \right| \diff y \le A_0 \Int_{|x - y| < 1 /M} \left| \dfrac{1}{|x - y|^\alpha} - M^\alpha \right| \diff y \le \\
+	\le A_0 \Int_{|x - y| < 1 /M} \dfrac{\diff y}{|x - y|^\alpha} = A_0 \sigma_n \Int_0^{1 / M} \xi^{n - 1 - \alpha} \diff \xi = \\
+	= A_0 \sigma_n \left.\dfrac{\xi^{n - \alpha}}{n - \alpha}\right|_0^{1 / M} = \dfrac{A_0\sigma_n}{(n - \alpha)M^{n - \alpha}} \le \dfrac{\epsilon}{2},
 \end{multline*}
 де $\sigma_n$ -- площа поверхні одиничної сфери. \\
 
@@ -182,7 +182,7 @@
 Теореми Фредгольма залишаються вірними для інтегральних рівнянь з полярним ядром на обмеженій кусково-гладкій поверхні $S$ та контурі $C$:
 \[ \phi(x) = \lambda \Int_S K(x, y) \phi(y) \diff y + f(x), \quad \dfrac{A(x, y)}{|x - y|^\alpha}, \quad \alpha < \dim(S). \]
 
-\subsection*{\S3. Інтегральні рівняння з ермітовим ядром}
+\subsection{Інтегральні рівняння з ермітовим ядром}
 
 Розглядатимемо ядро $K(x, y) \in C(\bar G \times \bar G)$ таке що $K(x, y) = K^*(x, y)$. \\
 
@@ -219,7 +219,7 @@
 	Інтегральний оператор $\bf{K}$ з неперервним ядром $K(x, y)$ є цілком неперервний з $L_2(G)$ у $C(\bar G)$.
 \end{lemma}
 \begin{proof}
-	Нехай $f \in < \subset L_2(G)$ та $\forall f \in M: \|f\|_{L_2(G)} \le A$. Але $\|\bf{K} f\|_{C(\bar G)} \le M \sqrt{V} \|f\|_{L_2(G)} \le M \sqrt{V} A$, тобто множина функцій є рівномірно обмеженою. \\
+	Нехай $f \in M \subset L_2(G)$ та $\forall f \in M: \|f\|_{L_2(G)} \le A$. Але $\|\bf{K} f\|_{C(\bar G)} \le M \sqrt{V} \|f\|_{L_2(G)} \le M \sqrt{V} A$, тобто множина функцій є рівномірно обмеженою. \\
 
 	Покажемо що множина $\{ \bf{K}f(x)\}$ -- одностайно неперервна. \\
 

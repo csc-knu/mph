@@ -1,6 +1,8 @@
-\section*{Лекція 1}
+%{Лекція 1}
 
-\subsection*{\S0. Предмет і методи математичної фізики}
+\section{Вступ}
+
+\subsection{Предмет і методи математичної фізики}
 
 Сучасні технології дослідження реального світу доволі інтенсивно використовують методи математичного моделювання, зокрема ці методи широко використовуються тоді, коли дослідження реального (фізичного) об’єкту є неможливими, або надто дорогими. Вже традиційними стали моделювання властивостей таких фізичних об’єктів:
 \begin{itemize}
@@ -8,7 +10,7 @@
 	\item електричні, магнітні та електромагнітні поля;
 	\item концентрація речовини в розчинах, розплавах або сумішах;
 	\item напруження і деформації в пружних твердих тілах;
-	\item параметри рідини або газу, який рухається (обтікає) деяке тіла ;
+	\item параметри рідини або газу, який рухається (обтікає) деяке тіло;
 	\item перенос різних субстанцій потоками рідин або газу та інші.
 \end{itemize}
 
@@ -72,9 +74,9 @@
 
 Математична модель містить диференціальне рівняння (\ref{eq:1}), яке виконується для вказаних значень аргументу, граничні умови на кінцях стрижня (\ref{eq:2}) та початкову умови (\ref{eq:3}).
 
-\chapter*{Глава 1 Інтегральні рівняння}
+\section{Інтегральні рівняння}
 
-\subsubsection*{Основні поняття}
+\subsubsection{Основні поняття}
 
 Інтегральні рівняння -- рівняння, що містять невідому функцію під знаком інтегралу. \\
 
@@ -92,7 +94,7 @@
 \end{equation}
 -- інтегральне рівняння Фредгольма I роду. \\
 
-$K(x, y)$ -- ядро інтегрального рівняння $K(x, y) \in C(\bar G \times \bar G)$, $f(x)$ -- вільний член інтегрального рівняння, $f(x) \in C(\bar G)$, $\lambda$ -- комплексний параметр, $\lambda \in \CC$ (відомий або невідомий), $G$ -- область інтегрування, $G \subseteq \RR^n$, $\bar G$ -- замкнена та обмежена. \\
+$K(x, y)$ -- ядро інтегрального рівняння, $K(x, y) \in C(\bar G \times \bar G)$, $f(x)$ -- вільний член інтегрального рівняння, $f(x) \in C(\bar G)$, $\lambda$ -- комплексний параметр, $\lambda \in \CC$ (відомий або невідомий), $G$ -- область інтегрування, $G \subseteq \RR^n$, $\bar G$ -- замкнена та обмежена. \\
 
 Інтегральне рівняння (\ref{eq:*.1}) при $f(x) \equiv 0$ називається однорідним інтегральним рівнянням Фредгольма II роду
 \begin{equation}
@@ -118,7 +120,7 @@ $\bf{K}$ -- інтегральний оператор: $(\bf{K} \phi)(x)$. \\
 	\label{eq:*.4}
 	K^*(x, y) = \bar K(y, x)
 \end{equation}
-називають спряжене (союзне) ядро. \\
+-- спряжене (союзне) ядро. \\
 
 Інтегральне рівняння
 \begin{equation}
@@ -141,15 +143,19 @@ $\bf{K}$ -- інтегральний оператор: $(\bf{K} \phi)(x)$. \\
 	Комплексні значення $\lambda$, при яких однорідне інтегральне рівняння Фредгольма (\ref{eq:*.3}) має нетривіальні розв’язки, називаються характеристичними числами ядра $K(x, y)$. Розв’язки, які відповідають власним числам, називаються власними функціями. Кількість лінійно-незалежних власних функцій називається кратністю характеристичного числа.
 \end{definition*}
 
-\subsection*{\S1. Метод послідовних наближень}
+\subsection{Метод послідовних наближень}
 
-\subsubsection*{Метод послідовних наближень для неперервного ядра}
+\subsubsection{Метод послідовних наближень для неперервного ядра}
 
 Нагадаємо означення норм в банаховому просторі неперервних функцій $C(\bar G)$ та гільбертовому просторі інтегрованих з квадратом функцій $L_2(G)$ та означення скалярного добутку в просторі $L_2(G)$:
-\[ \|f\|_{C(\bar G)} = \Max_{x \in \bar G} |f(x)|, \quad \|f\|_{L_2(G)} = \left( \Int_G |f(x)|^2 \diff x \right)^{1/2}, \quad (f, g)_{L_2(G)} = \Int_G f(x) \bar g(x) \diff x. \]
+\begin{multline*} 
+	\|f\|_{C(\bar G)} = \Max_{x \in \bar G} |f(x)|, \\
+	\|f\|_{L_2(G)} = \left( \Int_G |f(x)|^2 \diff x \right)^{1/2}, \\
+	(f, g)_{L_2(G)} = \Int_G f(x) \bar g(x) \diff x.
+\end{multline*}
 
 \begin{lemma} 
-	Інтегральний оператор $\bf{K}$ з неперервним ядром $K(x, y)$ петворює $C(\bar G) \xrightarrow{\bf{K}} C(\bar G)$, $L_2(G) \xrightarrow{\bf{K}} L_2(G)$, $L_2(G) \xrightarrow{\bf{K}} C(\bar G)$ обмежений та мають місце нерівності:
+	Інтегральний оператор $\bf{K}$ з неперервним ядром $K(x, y)$ петворює множини функцій $C(\bar G) \xrightarrow{\bf{K}} C(\bar G)$, $L_2(G) \xrightarrow{\bf{K}} L_2(G)$, $L_2(G) \xrightarrow{\bf{K}} C(\bar G)$ обмежений та мають місце нерівності:
 	\begin{equation}
 		\label{eq:1.1}
 		\| \bf{K} \phi \|_{C(G)} \le M V \| \phi \|_{C(G)},
@@ -179,11 +185,13 @@ $\bf{K}$ -- інтегральний оператор: $(\bf{K} \phi)(x)$. \\
 		\item (\ref{eq:1.1}):
 		\begin{multline*}
 			\| \bf{K} \phi \|_{C(\bar G)} = \Max_{x \in \bar G} \left| \Int_G K(x, y) \phi(y) \diff y \right| \le \Max_{x \in \bar G} \Int_G |K(x, y)| |\phi(y)| \diff y \le \\
-			\le \Max_{x \in \bar G} \left( \Max_{y \in \bar G} |K(x, y)| \Max_{y \in \bar G} |\phi(y)| \Int_G \diff y \right) \le \Max_{x, y \in \bar G \times \bar G} |K(x, y)| \Max_{y \in \bar G} |\phi(y)| \Int_G \diff y = M V \|\phi\|_{C(\bar G)}.
+			\le \Max_{x \in \bar G} \left( \Max_{y \in \bar G} |K(x, y)| \Max_{y \in \bar G} |\phi(y)| \Int_G \diff y \right) \le \\
+			\le \Max_{x, y \in \bar G \times \bar G} |K(x, y)| \Max_{y \in \bar G} |\phi(y)| \Int_G \diff y = M V \|\phi\|_{C(\bar G)}.
 		\end{multline*}
 		\item (\ref{eq:1.2}):
 		\begin{multline*}
-			\left( \| \bf{K} \phi \|_{L_2(G)} \right)^2 = \Int_G \left| \Int_G K(x, y) \phi(y) \diff y \right|^2 \diff x \le \Int_G \left| \Max_{y \in \bar G} |K(x, y)| \Int_G \phi(y) \diff y \right|^2 \diff x \le \\
+			\left( \| \bf{K} \phi \|_{L_2(G)} \right)^2 = \Int_G \left| \Int_G K(x, y) \phi(y) \diff y \right|^2 \diff x \le \\
+			\le \Int_G \left| \Max_{y \in \bar G} |K(x, y)| \Int_G \phi(y) \diff y \right|^2 \diff x \le \\
 			\le \left( \Max_{x, y \in \bar G \times \bar G} |K(x, y)| \right)^2 \left| \Int_G \phi(y) \diff y \right|^2 \Int_G \diff x \le (M \| \phi\|_{L_2(G)} V)^2
 		\end{multline*}
 		\item (\ref{eq:1.3}):
@@ -212,9 +220,9 @@ $\bf{K}$ -- інтегральний оператор: $(\bf{K} \phi)(x)$. \\
 Дослідимо збіжність ряду Неймана (\ref{eq:1.12})
 \begin{equation}
 	\label{eq:1.13}
-	\left\| \Sum_{i = 0}^\infty \lambda^i \bf{K}^i f \right\|_{C(\bar G)} \le \Sum_{i = 0}^\infty |\lambda^i| \| \bf{K}^i f \|_{C(\bar G)} \le \Sum_{i = 0}^\infty |\lambda^i(MV)^i| \| f \|_{C(\bar G)} = \dfrac{\|f\|_{C(\bar G)}}{1 - |\lambda| MV}
+	\left\| \Sum_{i = 0}^\infty \lambda^i \bf{K}^i f \right\|_{C(\bar G)} \le \Sum_{i = 0}^\infty |\lambda^i| \| \bf{K}^i f \|_{C(\bar G)} \le \Sum_{i = 0}^\infty |\lambda^i|(MV)^i \| f \|_{C(\bar G)} = \dfrac{\|f\|_{C(\bar G)}}{1 - |\lambda| MV}
 \end{equation}
-(оскільки: $\| \bf{K} \phi\|_{C(\bar G)} \le MV \|\phi\|_{C(\bar G)}$, $\|\bf{K}^2\phi\|_{C(\bar G)} \le (MV)^2 \|\phi\|_{C(\bar G)}\|\bf{K}^i\phi\|_{C(\bar G)} \le (MV)^i \|\phi\|_{C(\bar G)}$). \\
+(оскільки: $\| \bf{K} \phi\|_{C(\bar G)} \le MV \|\phi\|_{C(\bar G)}$, $\|\bf{K}^2\phi\|_{C(\bar G)} \le (MV)^2 \|\phi\|_{C(\bar G)}$, $\|\bf{K}^i\phi\|_{C(\bar G)} \le (MV)^i \|\phi\|_{C(\bar G)}$). \\
 
 Отже, ряд Неймана збігається рівномірно при 
 \begin{equation}
@@ -238,7 +246,12 @@ $\bf{K}$ -- інтегральний оператор: $(\bf{K} \phi)(x)$. \\
 	\end{matrix}
 \end{equation*}
 
-Обчислимо норму Чебишева: \[ |\lambda| \|\bf{K} \phi^{(0)}\|_{C(\bar G)} = \| \phi^{(0)} \|_{C(\bar G)} \Rightarrow \| \phi^{(0)} \|_{C(\bar G)} \le |\lambda| MV \|\phi^{(0)}\|_{C(\bar G)} \Rightarrow (1 - |\lambda|MV)\|\phi^{(0)}\|_{C(\bar G)} \le 0. \]
+Обчислимо норму Чебишева: 
+\begin{multline*} 
+	|\lambda| \|\bf{K} \phi^{(0)}\|_{C(\bar G)} = \| \phi^{(0)} \|_{C(\bar G)} \Rightarrow \\
+	\Rightarrow \| \phi^{(0)} \|_{C(\bar G)} \le |\lambda| MV \|\phi^{(0)}\|_{C(\bar G)} \Rightarrow \\
+	\Rightarrow (1 - |\lambda|MV)\|\phi^{(0)}\|_{C(\bar G)} \le 0.
+\end{multline*}
 
 Звідси маємо, що $\|\phi^{(0)}\|_{C(\bar G)} = 0$. Таким чином доведена теорема
 
@@ -247,7 +260,7 @@ $\bf{K}$ -- інтегральний оператор: $(\bf{K} \phi)(x)$. \\
 	Будь-яке інтегральне рівняння Фредгольма другого роду $\phi(x) = \lambda \int_G K(x, y) \phi(y) \diff y + f(x)$ з неперервним ядром $K(x, y)$ при умові (\ref{eq:1.14}) має єдиний розв’язок $\phi$ в класі неперервних функцій $C(\bar G)$ для будь-якого неперервного вільного члена $f$. Цей розв’язок може бути знайдений у вигляді ряду Неймана $\phi = \lim_{n \to \infty} \phi_n = \sum_{i = 0}^\infty \lambda^i \bf{K}^i f$.
 \end{theorem}
 
-\subsubsection*{Повторні ядра}
+\subsubsection{Повторні ядра}
 
 $\forall f, g \in \bar G$ має місце рівність 
 \begin{equation}
@@ -282,7 +295,7 @@ $\forall f, g \in \bar G$ має місце рівність
 -- повторні (ітеровані) ядра.
 \[ \bf{K}f = \Int_G K(x, y) f(y) \diff y, \quad \ldots, \quad \bf{K}^n f = \Int_G K_{(n)}(x, y)f(y) \diff y. \]
 
-\subsubsection*{Резольвента інтегрального оператора}
+\subsubsection{Резольвента інтегрального оператора}
 
 Пригадаємо представлення розв’язку інтегрального рівняння (\ref{eq:*.1}) у вигляді ряду Неймана $\phi(x) = \sum_{i = 0}^\infty \lambda^i \bf{K}^i f$. Виконаємо перетворення
 \begin{multline*}
@@ -314,12 +327,16 @@ $\forall f, g \in \bar G$ має місце рівність
 \end{theorem}
 
 \begin{example}
-	Методом послідовних наближень знайти розв’язок інтегрального рівняння \[\phi(x) = x + \lambda \int_0^1 (xt)^2 \phi(t) \diff t.\]
+	Методом послідовних наближень знайти розв’язок інтегрального рівняння \[\phi(x) = x + \lambda \Int_0^1 (xt)^2 \phi(t) \diff t.\]
 \end{example}
 \begin{solution*}
 	$M = 1$, $V = 1$. \\
 
-	Побудуємо повторні ядра \[ K_{(1)}(x, t) = x^2t^2, \quad K_2(x, t) = \int_0^1 x^2 z^4 t^2 \diff z = \frac{x^2t^2}{5}, \quad K_{(p)}(x, t) = \frac{1}{5^{p - 2}} \int_0^1 x^2 z^4 t^2 \diff z = \frac{x^2t^2}{5^{p - 1}}. \]
+	Побудуємо повторні ядра 
+	\begin{multline*} 
+		K_{(1)}(x, t) = x^2t^2, \quad K_2(x, t) = \Int_0^1 x^2 z^4 t^2 \diff z = \dfrac{x^2t^2}{5}, \\ 
+		K_{(p)}(x, t) = \dfrac{1}{5^{p - 2}} \Int_0^1 x^2 z^4 t^2 \diff z = \dfrac{x^2t^2}{5^{p - 1}}.
+	\end{multline*}
 	
 	Резольвента має вигляд \[\mathcal{R}(x, t, \lambda) = x^2 t^2 \left(1 + \frac{\lambda}{5} + \frac{\lambda^2}{5^2} + \ldots + \frac{\lambda^p}{5^p} + \ldots \right) = \frac{5x^2t^2}{5 - \lambda}, \quad |\lambda| < 5. \]
 

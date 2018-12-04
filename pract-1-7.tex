@@ -1,0 +1,329 @@
+\documentclass[a4paper, 12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english, ukrainian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry} 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Нікіта Скибицький, ОМ-3}
+\lhead{Практики з математичної фізики, 2018}
+\cfoot{\thepage}
+
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{example}{Приклад}
+\newtheorem*{example*}{Приклад}
+\newtheorem{solution}{Розв'язок}
+\newtheorem*{solution*}{Розв'язок}
+
+\allowdisplaybreaks
+\setlength\parindent{0pt}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\renewcommand{\bf}[1]{\textbf{#1}}
+
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\Max}{\displaystyle\max\limits}
+\newcommand{\Sup}{\displaystyle\sup\limits}
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Int}{\displaystyle\int\limits}
+\newcommand{\Iint}{\displaystyle\iint\limits}
+\newcommand{\Lim}{\displaystyle\lim\limits}
+
+\makeatletter
+\newcommand*{\relrelbarsep}{.386ex}
+\newcommand*{\relrelbar}{%
+  \mathrel{%
+    \mathpalette\@relrelbar\relrelbarsep
+  }%
+}
+\newcommand*{\@relrelbar}[2]{%
+  \raise#2\hbox to 0pt{$\m@th#1\relbar$\hss}%
+  \lower#2\hbox{$\m@th#1\relbar$}%
+}
+\providecommand*{\rightrightarrowsfill@}{%
+  \arrowfill@\relrelbar\relrelbar\rightrightarrows
+}
+\providecommand*{\leftleftarrowsfill@}{%
+  \arrowfill@\leftleftarrows\relrelbar\relrelbar
+}
+\providecommand*{\xrightrightarrows}[2][]{%
+  \ext@arrow 0359\rightrightarrowsfill@{#1}{#2}%
+}
+\providecommand*{\xleftleftarrows}[2][]{%
+  \ext@arrow 3095\leftleftarrowsfill@{#1}{#2}%
+}
+\makeatother
+
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rang}{rang}
+
+\newenvironment{system}{\begin{equation} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation}}
+\newenvironment{system*}{\begin{equation*} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation*}}
+
+\begin{document}
+
+\begin{example}
+	Методом послідовних наближень знайти розв’язок інтегрального рівняння \[\phi(x) = x + \lambda \Int_0^1 (xt)^2 \phi(t) \diff t.\]
+\end{example}
+
+\begin{solution*}
+	$M = 1$, $V = 1$. \\
+
+	Побудуємо повторні ядра \[ K_{(1)}(x, t) = x^2t^2, \quad K_2(x, t) = \Int_0^1 x^2 z^4 t^2 \diff z = \dfrac{x^2t^2}{5}, \quad K_{(p)}(x, t) = \dfrac{1}{5^{p - 2}} \Int_0^1 x^2 z^4 t^2 \diff z = \dfrac{x^2t^2}{5^{p - 1}}. \]
+	
+	Резольвента має вигляд \[\mathcal{R}(x, t, \lambda) = x^2 t^2 \left(1 + \dfrac{\lambda}{5} + \dfrac{\lambda^2}{5^2} + \ldots + \dfrac{\lambda^p}{5^p} + \ldots \right) = \dfrac{5x^2t^2}{5 - \lambda}, \quad |\lambda| < 5. \]
+
+	Розв’язок інтегрального рівняння має вигляд: \[ \phi(x) + x + \Int_0^1 \dfrac{5x^2t^3}{5 - \lambda} \diff t = x + \dfrac{5x^2}{4(5 - \lambda)}. \]
+\end{solution*}
+
+\newpage
+
+\begin{example}
+	Знайти розв’язок інтегрального рівняння \[ \phi(x) = \lambda \Int_0^\pi \sin(x - y) \phi(y) \diff y + \cos(x). \]
+\end{example}
+
+\begin{solution*}
+	\[ \phi(x) = \lambda \sin(x) \Int_0^\pi \cos(y) \phi(y) \diff y - \lambda \cos(x) \Int_0^\pi \sin(y) \phi(y) \diff y + \cos(x). \]
+
+	Позначимо \[ c_1 = \Int_0^\pi \cos(y) \phi(y) \diff y, \quad c_2 = \Int_0^\pi \sin(y) \phi(y) \diff y. \]
+
+	\[ \phi(x) = \lambda (c_1 \sin(x) - c_2 \cos(x)) + \cos(x). \]
+	
+	Підставляючи останню рівність в попередні отримаємо систем рівнянь:
+	\begin{system*}
+		c_1 &= \Int_0^\pi \cos(y) (\lambda c_1 \sin(y) - \lambda c_2 \cos(y) + \cos(y)) \diff y, \\
+		c_2 &= \Int_0^\pi \sin(y) (\lambda c_1 \sin(y) - \lambda c_2 \cos(y) + \cos(y)) \diff y.
+	\end{system*}
+	
+	Після обчислення інтегралів:
+	\begin{system*}
+		c_1 + \dfrac{\lambda \pi}{2} c_2 &= \dfrac{\pi}{2}, \\
+		- \dfrac{\lambda\pi}{2} c_1 + c_2 &= 0.
+	\end{system*}
+
+	Визначник цієї системи
+	\[ D(\lambda) = \begin{vmatrix} 1 & \dfrac{\lambda\pi}{2} \\ -\dfrac{\lambda\pi}{2} & 1 \end{vmatrix} = 1 + \left( \dfrac{\lambda \pi}{2} \right)^2 \ne 0. \]
+	
+	За правилом Крамера маємо
+	\[ c_1 = \dfrac{2 \pi}{4 + (\lambda \pi)^2}, \quad c_2 = \dfrac{\lambda \pi^2}{4 + (\lambda \pi)^2}. \]
+	
+	Таким чином розв’язок має вигляд
+	\[ \phi(x) = \dfrac{2 \lambda \pi \sin(x) + 4 \cos (x)}{4 + (\lambda \pi)^2}. \]
+\end{solution*}
+
+\newpage
+
+\begin{example}
+	Знайти характеристичні числа та власні функції інтегрального оператора \[ \phi(x0 = \lambda \Int_0^1 \left( \left( \dfrac{x}{t} \right)^{2/5} + \left( \dfrac{t}{x} \right)^{2/5} \right) \phi(t) \diff t. \]
+\end{example}
+
+\begin{solution*}
+	\[ \phi(x) = \lambda x^{2 / 5} \Int_0^1 t^{-2/5} \phi(t) \diff t + \lambda x^{-2/5} \Int_0^1 t^{2/5} \phi(t) \diff t. \]
+
+	Позначимо \[ c_1 = \Int_0^1 t^{-2/5} \phi(t) \diff t, \quad c_2 = \Int_0^1 t^{2/5} \phi(t) \diff t. \]
+
+	\[ \phi(x) = \lambda c_1 x^{2/5} + \lambda c_2 x^{-2/5}. \]
+	
+	\begin{system*}
+		c_1 &= \Int_0^1 t^{-2/5} (\lambda c_1 t^{2/5} + \lambda c_2 t^{-2/5}) \diff t, \\
+		c_2 &= \Int_0^1 t^{2/5} (\lambda c_1 t^{2/5} + \lambda c_2 t^{-2/5}) \diff t.
+	\end{system*}
+	
+	\begin{system*}
+		(1 - \lambda) c_1 - 5 \lambda c_2 &= 0, \\
+		-\dfrac{5\lambda}{9} c_1 + (1 - \lambda) c_2 &= 0.
+	\end{system*}
+	
+	\[ D(\lambda) = \begin{vmatrix} 1 - \lambda & - 5 \lambda \\ - \dfrac{5\lambda}{9} & 1 - \lambda \end{vmatrix} = (1 - \lambda)^2 - \dfrac{25\lambda^2}{9} = 0. \]
+	
+	\[ \lambda_1 = \dfrac{3}{8}, \quad \lambda_2 = - \dfrac{3}{2}. \]
+	
+	З системи однорідних рівнянь при $\lambda = \lambda_1 = \dfrac{3}{8}$ маємо $c_1 = 3 c_2$. Тоді маємо власну функцію $\phi_1(x) = 3 x^{2 / 5} + x^{-2 / 5}$. \\
+
+	При $\lambda = \lambda_2 = - \dfrac{3}{2}$ маємо $c_1 = - 3 c_2$. Маємо другу власну функцію $\phi_2(x) = - 3 x^{2 / 5} + x^{-2 / 5}$.
+\end{solution*}
+
+\newpage
+
+\begin{example}
+	Знайти розв’язок інтегрального рівняння при всіх значеннях параметрів $\lambda$, $a$, $b$, $c$: \[\phi(x) = \lambda \Int_{-1}^1 (\sqrt[3]{x} + \sqrt[3]{y}) \phi(y) \diff y + ax^2 + bx + c. \]
+\end{example}
+
+\begin{solution*}
+	Запишемо рівняння у вигляді: \[\phi(x) = \lambda \sqrt[3]{x} \Int_{-1}^1 \phi(y) \diff y + \lambda \Int_{-1}^1 \sqrt[3]{y} \phi(y) \diff y + ax^2 + bx + c. \]
+
+	Введемо позначення: \[ c_1 = \Int_{-1}^1 \phi(y) \diff y, \quad c_2 = \Int_{-1}^1 \sqrt[3]{y} \phi(y) \diff y, \]
+	та запишемо розв’язок у вигляді: $\phi(x) = \lambda \sqrt[3]{x} c_1 + \lambda c_2 + ax^2 + bx + c$. \\
+
+	Для визначення констант отримаємо СЛАР:
+	\begin{system*}
+		c_1 - 2 \lambda c_2 &= \dfrac{2a}{3} + 2 c, \\
+		- \dfrac{6\lambda}{5} c_1 + c_2 &= \dfrac{6b}{7}.
+	\end{system*}
+
+	Визначник системи дорівнює \[\begin{vmatrix} 1 & - 2 \lambda \\ - \dfrac{6\lambda}{5} & 1 \end{vmatrix} = 1 - \dfrac{12\lambda^2}{5}.\]
+
+	Характеристичні числа ядра $\lambda_1 = \dfrac{1}{2} \sqrt{\dfrac{5}{3}}$, $\lambda_2 = - \dfrac{1}{2} \sqrt{\dfrac{5}{3}}$. \\
+
+	Нехай $\lambda \ne \lambda_1$, $\lambda \ne \lambda_2$. Тоді розв'язок існує та єдиний для будь-якого вільного члена і має вигляд \[ \phi(x) = \dfrac{5 \lambda (14 a + 30 \lambda b + 42 c)}{21 (5 - 12 \lambda^2)} \sqrt[3]{x} + \dfrac{28 \lambda a + 84 \lambda c + 30 b}{7(5 - 12 \lambda^2)} + ax^2 + bx + c. \]
+
+	Нехай $\lambda = \lambda_1 = \dfrac{1}{2} \sqrt{\dfrac{5}{3}}$. Тоді система рівнянь має вигляд:
+	\begin{system*}
+		c_1 - \sqrt{\dfrac{5}{3}} c_2 &= \dfrac{2a}{3} + 2 c, \\
+		c_1 - \sqrt{\dfrac{5}{3}} c_2 &= - \sqrt{\dfrac{5}{3}} \dfrac{6b}{7}.
+	\end{system*}
+
+	Ранги розширеної і основної матриці співпадатимуть якщо має місце рівність $\dfrac{2a}{3} + 2c = - \sqrt{\dfrac{5}{3}} \dfrac{6}{7} b$, $(*)$. \\
+
+	При виконанні цієї умови розв'язок існує $c_2 = c_2$, $c_1 = \sqrt{\dfrac{5}{3}} c_2 + \dfrac{2a}{3} + 2c$. \\
+
+	Таким чином розв'язок можна записати \[ \phi(x) = \dfrac{1}{2} \sqrt{\dfrac{5}{3}} \sqrt[3]{x} \left( \sqrt{\dfrac{5}{3}} c_2 + \dfrac{2a}{3} + 2c \right) + \dfrac{1}{2} \sqrt{\dfrac{5}{3}} c_2 + ax^2 + bx + x. \]
+
+	Якщо $\lambda = \lambda_1 = \dfrac{1}{2} \sqrt{\dfrac{5}{3}}$, а умова $(*)$ не виконується, то розв'язків не існує. \\
+
+	Нехай $\lambda = \lambda_2 = - \dfrac{1}{2} \sqrt{\dfrac{5}{3}}$. Після підстановки цього значення отримаємо СЛАР
+	\begin{system*}
+		c_1 + \sqrt{\dfrac{5}{3}} c_2 &= \dfrac{2a}{3} + 2 c, \\
+		c_1 + \sqrt{\dfrac{5}{3}} c_2 &= \sqrt{\dfrac{5}{3}} \dfrac{6b}{7}.
+	\end{system*}
+
+	Остання система має розв'язок при умові, $\dfrac{2a}{3} + 2c = \sqrt{\dfrac{5}{3}} \dfrac{6}{7} b$, $(**)$. \\
+
+	При виконанні умови $(**)$, розв’язок існує $c_2 = c_2$, $c_1 = - \sqrt{\dfrac{5}{3}} c_2 + \dfrac{2a}{3} + 2c$. \\
+
+	Розв'язок інтегрального рівняння можна записати: \[ \phi(x) = \dfrac{1}{2} \sqrt{\dfrac{5}{3}} \sqrt[3]{x} \left( -\sqrt{\dfrac{5}{3}} c_2 + \dfrac{2a}{3} + 2c \right) + \dfrac{1}{2} \sqrt{\dfrac{5}{3}} c_2 + ax^2 + bx + c. \]
+\end{solution*}
+
+\newpage
+
+\begin{example}
+	Знайти ті значення параметрів $a$, $b$ для яких інтегральне рівняння \[\phi(x) = \lambda \Int_{-1}^1 \left( xy - \dfrac{1}{3} \right) \phi(y) \diff y + ax^2 - bx + 1 \] має розв'язок для будь-якого значення $\lambda$.
+\end{example}
+
+\begin{solution*}
+	Знайдемо характеристичні числа та власні функції спряженого однорідного рівняння (ядро ермітове). \[ \phi(x) = \lambda x \Int_{-1}^1 y \phi(y) \diff y - \dfrac{\lambda}{3} \Int_{-1}^1 \phi(y) \diff y = \lambda x c_1 - \dfrac{\lambda}{3} c_2. \]
+	
+	\begin{system*}
+		c_1 &= \Int_{-1}^1 y \phi(y) \diff y = \Int_{-1}^1 y \left(\lambda y c_1 - \dfrac{\lambda}{3} c_2 \right) \diff y = \dfrac{2 \lambda}{3} c_1, \\
+		c_2 &= \Int_{-1}^1 \phi(y) \diff y = \Int_{-1}^1 \left(\lambda y c_1 - \dfrac{\lambda}{3} c_2 \right) \diff y = - \dfrac{2 \lambda}{3} c_2.
+	\end{system*}
+
+	\[ D(\lambda) = \begin{vmatrix} 1 - \dfrac{2\lambda}{3} & 0 \\ 0 & 1 + \dfrac{2\lambda}{3} \end{vmatrix} = 0.\]
+
+	\[ \lambda_1 = \dfrac{3}{2}, \quad \lambda_2 = - \dfrac{3}{2}.\]
+	
+	\[ \phi_1(x) = x, \quad \phi_2(x) = 1.\]
+	
+	Умови ортогональності:
+	\begin{system*}
+		\Int_{-1}^1 (ax^2 - bx + 1) x \diff x = - \dfrac{2b}{3} &= 0, \\
+		\Int_{-1}^1 (ax^2 - bx + 1) \diff x = \dfrac{2a}{3} + 2 &= 0.
+	\end{system*}
+	\[ a = -3, \quad b = 0. \]
+\end{solution*}
+
+\newpage
+
+\begin{example}
+    Знайти розв’язок інтегрального рівняння \[ \phi(x) = \lambda \Int_0^1 K(x, y) \phi(y) \diff y + x,\] де \[ K(x,y)=\begin{cases}x(y-1), & 0 \le x \le y \le 1 \\ y(x-1), & 0\le y\le x\le1\end{cases}. \]
+\end{example}
+
+\begin{solution*}
+    Розв’язок будемо шукати за формулою Шмідта. Знайдемо характеристичні числа та власні функції ермітового ядра. Запишемо однорідне рівняння \[ \phi(x) = \lambda \Int_0^x y(x-1)\phi(y)\diff y + \lambda\Int_x^1x(y-1)\phi(y)\diff y.\]
+    
+    Продиференціюємо рівняння: \[ \phi'(x) = \lambda \Int_0^x y\phi(y)\diff y + \lambda x(x-1)\phi(x) + \lambda\Int_x^1(y-1)\phi(y)\diff y - \lambda x(x-1)\phi(x).\]
+    
+    Обчислимо другу похідну: \[ \phi''(x) = \lambda x\phi(x)-\lambda(x-1)\phi(x).\]
+
+    Або після спрощення $\phi'' = \lambda \phi$. Доповнимо диференціальне рівняння другого порядку граничними умовами вигляду (\ref{eq:5.2}), (\ref{eq:5.3}). Легко бачити що \[ \phi(0) = \lambda \Int_0^0 y(0-1)\phi(y)\diff y + \lambda\Int_0^10(y-1)\phi(y)\diff y=0. \]
+
+    Аналогічно \[ \phi(1) = \lambda\Int_0^1y(1-1)\phi(y)\diff y + \lambda\Int_1^11(y-1)\phi(y)\diff y=0.\]
+
+    Таким чином отримаємо задачу Штурма-Ліувілля:
+    \begin{system*}
+        & \phi'' = \lambda \phi, \quad 0 < x < 1, \\
+        & \phi(0) = \phi(1) = 0.
+    \end{system*}
+
+    Для знаходження власних чисел і власних функцій розглянемо можливі значення параметру $\lambda$:
+    \begin{enumerate}
+        \item $\lambda > 0$, $\phi(x)=c_1\sinh(\sqrt{\lambda}x)+c_2\cosh(\sqrt{\lambda}x)$. \\
+
+        Враховуючи граничні умови, маємо систему рівнянь 
+        \begin{system*}
+            & c_1 \cdot 0 + c_2 = 0, \\
+            & c_1 \sinh(\sqrt{\lambda}) + c_2 \cosh(\sqrt{\lambda}) = 0.
+        \end{system*}
+
+        Визначник цієї системи повинен дорівнювати нулю. \[ D(\lambda) = \begin{vmatrix} 0 & 1 \\ \sinh(\sqrt{\lambda}) & \cosh(\sqrt{\lambda}) \end{vmatrix} = - \sinh(\sqrt{\lambda}) = 0. \]
+
+        Єдиним розв’язком цього рівняння є $\lambda = 0$, яке не задовольняє, бо $\lambda > 0$. Це означає, що система рівнянь має тривіальний розв’язок і будь-яке $\lambda > 0$ не є власним числом.
+
+        \item $\lambda = 0$, $\phi(x) = c_1 x + c_2$. З граничних умов маємо, що $c_1 = c_2 = 0$. Тобто $\lambda=0$ не є власним числом.
+
+        \item $\lambda < 0$, $\phi(x) = c_1\sin(\sqrt{-\lambda}x)+c_2\cos(\sqrt{-\lambda}x)$. \\
+
+        Враховуючи граничні умови, маємо систему рівнянь
+        \begin{system*}
+            & c_1 \cdot 0 + c_2 = 0, \\
+            & c_1 \sin(\sqrt{-\lambda}) + c_2 \cos(\sqrt{-\lambda}) = 0.
+        \end{system*}
+
+        Визначник цієї системи прирівняємо до нуля \[ D(\lambda) = \begin{vmatrix} 0 & 1 \\ \sin(\sqrt{-\lambda}) & \cos(\sqrt{-\lambda}) \end{vmatrix} = -\sin(\sqrt{-\lambda}) = 0. \]
+
+        Це рівняння має зліченну множину розв’язків $\lambda_k = - (\pi k)^2$, $k = 1, 2, \ldots$. Система лінійних алгебраїчних рівнянь має розв’язок $c_2=0$, $c_1=c_1$. \\ 
+
+        Таким чином нормовані власні функції задачі Штурма-Ліувілля мають вигляд $\phi_k(x) = \sqrt{2} \sin(k \pi x)$. \\
+
+        Порахуємо коефіцієнти Фур’є \[f_n = (f, \phi_n) = \sqrt{2} \Int_0^1 x \sin(\pi nx) \diff x = \sqrt{2} \dfrac{(-1)^n}{\pi n}. \]
+
+        Згідно до формули Шмідта розв’язок рівняння при $\lambda \ne \lambda_k$ має вигляд: \[ \phi(x) = x - 2 \lambda \Sum_{k=1}^\infty \dfrac{(-1)^{k+1}\sin(\pi k x)}{((\pi k)^2+\lambda)\pi k}.\]
+
+        При $\lambda = \lambda_k$ розв’язок не існує, оскільки не виконана умова ортогональності вільного члена до власної функції.
+    \end{enumerate}
+\end{solution*}
+
+\newpage
+
+\begin{example}
+	Звести задачу Штурма-Ліувілля до інтегрального рівняння з ермітовим неперервним ядром:
+	\begin{system*}
+		& \bf{L}y \equiv -(1+e^x)y''-e^xy'=\lambda x^2y, \quad 0 < x < 1, \\
+		& y(0) - 2y'(0) = y'(1) = 0.
+	\end{system*}
+\end{example}
+
+\begin{solution*}
+	Побудуємо функцію Гріна оператора $\bf{L}$. Розглянемо задачі Коші:
+	\begin{system*}
+		& -(1+e^x)v_i''-e^xv_i'=0, \quad i=1,2,\\
+		& v_1(0)-2v_1'(0)=v_2'(1)=0.
+	\end{system*}
+
+	Загальний розв’язок диференціального рівняння $-(1+e^x)y''-e^xy'=0$ має вигляд $c_1(x-\ln(1+e^x))+c_2$. Тоді розв’язки задач Коші:
+	\[ v_1(x) = a(x - \ln(1+e^x)+1+\ln2), \quad a = const, \quad v_2(x) = b, \quad b = const. \]
+
+	Обчислимо визначник Вронського \[\begin{vmatrix} v_1(x) & v_2(x) \\ v_1'(x) & v_2'(x) \end{vmatrix} = \dfrac{ab}{1+e^x}. \]
+
+	Перевіримо тотожність Ліувілля $p(x)w(x) = ab = const$. Запишемо функцію Гріна за формулою:
+	\[ G(x, \xi) = - \begin{cases} (x-\ln(1+e^x)+1+\ln2), & 0\le x \le \xi \le 1, \\ (\xi-\ln(1+e^\xi)+1+\ln2), & 0\le \xi \le i \le 1. \end{cases} \]
+
+	Запишемо інтегральне рівняння \[y(x) = \lambda \Int_0^1 G(x,\xi)\xi^2y(\xi)\diff\xi. \]
+
+	Симетризуємо ядро інтегрального рівняння, помножимо обидві частини на $x$: \[ x \cdot y(x) = \lambda \Int_0^1 x \cdot \xi \cdot G(x, \xi) \cdot \xi \cdot y(\xi) \diff \xi. \]
+
+	Введемо позначення: \[ \omega(x) = xy(x), \quad G_1(x, \xi) = x\xi G(x,\xi).\]
+
+	Отримаємо однорідне інтегральне рівняння Фредгольма другого роду з симетричним ядром: \[\omega(x) = \lambda \Int_0^1 G_1(x, \xi) \omega(\xi) \diff \xi.\]
+\end{solution*}
+
+\end{document}
