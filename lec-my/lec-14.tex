@@ -185,3 +185,61 @@
 	\label{eq7.20}
 	\Sum_{i=1}^m \pm u_{\xi_i\xi_i} + \Phi = 0
 \end{equation} -- параболічний тип.
+
+\begin{example}
+	Визначити тип рівняння і привести його до канонічної форми запису $y^2 u_{xx} - x^2 u_{yy} = 0$.
+\end{example}
+
+\begin{solution*}
+	Складемо характеристичне рівняння \[ \dfrac{\diff y}{\diff x} = \dfrac{0\pm\sqrt{0+(xy)^2}}{y^2}, \quad \dfrac{\diff y}{\diff x} = \pm\dfrac{x}{y}. \]
+
+	Оскільки обидві характеристики є дійсними, то рівняння має гіперболічний тип. Останнє рівняння можна записати у вигляді: \[y \diff y = \pm x \diff x.\]
+
+	Загальні інтеграли цього рівняння мають вигляд: \[y^2 \pm x^2 = \const.\]
+
+	Для отримання першої канонічної форми запису необхідно обрати нові змінні \[\xi = x^2 + y^2,\quad \eta = x^2 - y^2. \]
+
+	Для отримання другої канонічної форми запису оберемо змінні \[ \alpha = \dfrac{\xi + \eta}{2} = x^2, \quad \beta = \dfrac{\xi-\eta}{2} = y^2, \]
+
+	обчислимо похідні 
+	\[ u_x = u_\alpha 2 x + u_\beta \cdot 0, \quad u_y = u_\alpha \cdot 0 + u_\beta 2 y, \]
+	\[ u_{xx} = u_{\alpha\alpha} 4x^2 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} \cdot 0 + u_\alpha 2 + u_\beta \cdot 0, \]
+	\[ u_{yy} = u_{\alpha\alpha} \cdot 0 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} 
+	4y^2 + u_\alpha \cdot 0 + u_\beta 2. \]
+
+	Підставимо знайдені похідні в рівняння:
+	\[ y^2(4x^2u_{\alpha\alpha} + 2u_\alpha) - x^2(4y^2u_{\beta\beta} + 2u_\beta) = 0, \]
+	\[ u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{1}{2x^2y^2}(u_\alpha - u_\beta) = 0, \]
+	або остаточно маємо:
+	\[ u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{1}{2\alpha\beta}(u_\alpha - u_\beta) = 0. \]
+\end{solution*}
+
+\begin{example}
+	Визначити тип рівняння і привести його до канонічної форми запису $u_{xx} + 2 u_{xy} - 2 u_{xz} + 2 u_{yy} + 6 u_{zz} = 0$.
+\end{example}
+
+\begin{solution*}
+	Поставимо у відповідність головній частині рівняння квадратичну форму: \[\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+2\lambda_2^2+6\lambda_3^2. \]
+
+	Методом виділення повних квадратів приведемо квадратичну форму до канонічної форми запису
+	\begin{multline*}
+		\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+2\lambda_2^2+6\lambda_3^2 = (\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+\lambda_2^2+\lambda_3^2 - 2 \lambda_2\lambda_3)^2 + \\ 
+		+ \lambda_2^2 + 2\lambda_2\lambda_3 + 5\lambda_3^2 = (\lambda_1+\lambda_2-\lambda_3)^2 + (\lambda_2^2 + 2\lambda_2\lambda_3+\lambda_3^2) + 4\lambda_3^2 = \\
+		= (\lambda_1+\lambda_2-\lambda_3)^2 + (\lambda_2 + \lambda_3)^2 + (2\lambda_3)^2.
+	\end{multline*}
+
+	Вводимо нові незалежні змінні: \[ \begin{matrix} \mu_1 = \lambda_1 + \lambda_2 - \lambda_3, \\ \mu_2 = \lambda_2 + \lambda_3, \\ \mu_3 = 2 \lambda_3 \end{matrix} \]
+
+	Отримаємо канонічну форму запису для квадратичної форми: $\mu_1^2 + \mu_2^2 + \mu_3^2$. \\
+
+	Оскільки при квадраті кожної змінної коефіцієнт дорівнює 1, то квадратична форма та рівняння мають еліптичний тип. \\
+
+	Запишемо тепер заміну змінних, яка приведе рівняння до канонічної форми запису. Обчислимо матрицю оберненого лінійного перетворення:
+	\[ \begin{matrix} \lambda_1 = \mu_1 - \mu_2 + \mu_3 \\ \lambda_2 = \mu_2 - \mu_3/2 \\ \lambda_3 = \mu_3 / 2 \end{matrix} \quad B = \begin{pmatrix} 1 & -1 & 1 \\ 0 & 1 & -1/2 \\ 0 & 0 & 1/2 \end{pmatrix}, \quad \lambda = B \mu. \]
+
+	Обчислимо транспоновану матрицю \[ B^T = \begin{pmatrix} 1 & 0 & 0 \\ -1 & 1 & 0 \\ 1 & -1/2 & 1/2 \end{pmatrix}. \]
+
+	Для диференціального рівняння маємо нові змінні: $\vec \xi = B^T \vec x$. Або в координатній формі: \[ \left\{ \begin{matrix} \xi = x \\ \eta = y - x \\ \zeta = x - y / 2 + z / 2 \end{matrix} \right. \]
+
+	У новій системі координат головна частина диференціального рівняння буде мати канонічну форму запису еліптичного рівняння $u_{\xi\xi} + u_{\eta\eta} + u_{\zeta\zeta} = 0$.
+\end{solution*}

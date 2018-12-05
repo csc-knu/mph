@@ -1,79 +1,62 @@
-\documentclass[a4paper, 12pt]{book}
+% cls && pdflatex pract-1-9.tex && cls && pdflatex pract-1-9.tex && start pract-1-9.pdf
+\documentclass[a4paper, 12pt]{article}
+\usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, ukrainian]{babel}
 \usepackage{amsmath, amssymb}
 \usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry} 
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\rhead{Нікіта Скибицький, ОМ-3}
-\lhead{Практики з математичної фізики, 2018}
-\cfoot{\thepage}
-
-
-\usepackage{amsthm}
-\theoremstyle{definition}
-\newtheorem{example}{Приклад}
-\newtheorem*{example*}{Приклад}
-\newtheorem{solution}{Розв'язок}
-\newtheorem*{solution*}{Розв'язок}
-
 \allowdisplaybreaks
 \setlength\parindent{0pt}
 
-\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=violet}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem*{example*}{Приклад}
+\newtheorem*{solution*}{Розв'язок}
 
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
-
-\renewcommand{\bf}[1]{\textbf{#1}}
-
-\renewcommand{\epsilon}{\varepsilon}
-\renewcommand{\phi}{\varphi}
-
 \newcommand{\Max}{\displaystyle\max\limits}
 \newcommand{\Sup}{\displaystyle\sup\limits}
 \newcommand{\Sum}{\displaystyle\sum\limits}
 \newcommand{\Int}{\displaystyle\int\limits}
 \newcommand{\Iint}{\displaystyle\iint\limits}
 \newcommand{\Lim}{\displaystyle\lim\limits}
+\DeclareMathOperator{\const}{const}
 
-\makeatletter
-\newcommand*{\relrelbarsep}{.386ex}
-\newcommand*{\relrelbar}{%
-  \mathrel{%
-    \mathpalette\@relrelbar\relrelbarsep
-  }%
-}
-\newcommand*{\@relrelbar}[2]{%
-  \raise#2\hbox to 0pt{$\m@th#1\relbar$\hss}%
-  \lower#2\hbox{$\m@th#1\relbar$}%
-}
-\providecommand*{\rightrightarrowsfill@}{%
-  \arrowfill@\relrelbar\relrelbar\rightrightarrows
-}
-\providecommand*{\leftleftarrowsfill@}{%
-  \arrowfill@\leftleftarrows\relrelbar\relrelbar
-}
-\providecommand*{\xrightrightarrows}[2][]{%
-  \ext@arrow 0359\rightrightarrowsfill@{#1}{#2}%
-}
-\providecommand*{\xleftleftarrows}[2][]{%
-  \ext@arrow 3095\leftleftarrowsfill@{#1}{#2}%
-}
-\makeatother
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
 
-\DeclareMathOperator{\diam}{diam}
-\DeclareMathOperator{\rang}{rang}
+\renewcommand{\bf}[1]{\textbf{#1}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
 
 \newenvironment{system}{\begin{equation} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation}}
 \newenvironment{system*}{\begin{equation*} \left\{\begin{aligned}}{\end{aligned} \right. \end{equation*}}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Рівняння математичної фізики}
+\rhead{Практичні заняття}
+\cfoot{\thepage}
+
 \begin{document}
 
-\begin{example}
+У ваших руках конспект практичних занять що містить приклади розв'язування типових практичних задач з нормативного курсу ``Рівняння математичної фізики'', що читається на третьому курсі спеціальності прикладна математика факультету комп'ютерних наук та кібернетики Київського національного університету імені Тараса Шевченка. \\
+
+Приклади розв'язань у компактній формі відображають матеріал курсу, допомагають сформувати загальне уявлення про предмет вивчення, правильно зорієнтуватися в даній галузі знань. Конспект практичних занять з названої дисципліни сприятиме більш успішному вивченню дисципліни, причому більшою мірою для студентів заочної форми, екстернату, дистанційного та індивідуального навчання. \\
+
+Комп'ютерний набір та верстка -- Скибицький Нікіта Максимович.
+
+\tableofcontents \newpage
+
+\section{Розв'язати інтегральне рівняння методом послідовних наближень}
+\begin{example*}
 	Методом послідовних наближень знайти розв’язок інтегрального рівняння \[\phi(x) = x + \lambda \Int_0^1 (xt)^2 \phi(t) \diff t.\]
-\end{example}
+\end{example*}
 
 \begin{solution*}
 	$M = 1$, $V = 1$. \\
@@ -87,9 +70,11 @@
 
 \newpage
 
-\begin{example}
+\section{Розв'язати інтегральне рівняння зведенням до СЛАР}
+
+\begin{example*}
 	Знайти розв’язок інтегрального рівняння \[ \phi(x) = \lambda \Int_0^\pi \sin(x - y) \phi(y) \diff y + \cos(x). \]
-\end{example}
+\end{example*}
 
 \begin{solution*}
 	\[ \phi(x) = \lambda \sin(x) \Int_0^\pi \cos(y) \phi(y) \diff y - \lambda \cos(x) \Int_0^\pi \sin(y) \phi(y) \diff y + \cos(x). \]
@@ -122,9 +107,11 @@
 
 \newpage
 
-\begin{example}
+\section{Знайти характеристичні числа та власні функції інтегрального оператору}
+
+\begin{example*}
 	Знайти характеристичні числа та власні функції інтегрального оператора \[ \phi(x0 = \lambda \Int_0^1 \left( \left( \dfrac{x}{t} \right)^{2/5} + \left( \dfrac{t}{x} \right)^{2/5} \right) \phi(t) \diff t. \]
-\end{example}
+\end{example*}
 
 \begin{solution*}
 	\[ \phi(x) = \lambda x^{2 / 5} \Int_0^1 t^{-2/5} \phi(t) \diff t + \lambda x^{-2/5} \Int_0^1 t^{2/5} \phi(t) \diff t. \]
@@ -154,9 +141,11 @@
 
 \newpage
 
-\begin{example}
+\section{Розв'язати інтегральне рівняння при всіх значеннях параметрів}
+
+\begin{example*}
 	Знайти розв’язок інтегрального рівняння при всіх значеннях параметрів $\lambda$, $a$, $b$, $c$: \[\phi(x) = \lambda \Int_{-1}^1 (\sqrt[3]{x} + \sqrt[3]{y}) \phi(y) \diff y + ax^2 + bx + c. \]
-\end{example}
+\end{example*}
 
 \begin{solution*}
 	Запишемо рівняння у вигляді: \[\phi(x) = \lambda \sqrt[3]{x} \Int_{-1}^1 \phi(y) \diff y + \lambda \Int_{-1}^1 \sqrt[3]{y} \phi(y) \diff y + ax^2 + bx + c. \]
@@ -205,9 +194,11 @@
 
 \newpage
 
-\begin{example}
+\section{Знайти значення параметрів для яких інтегральне рівняння має розв'язок для будь-якого значення $\lambda$}
+
+\begin{example*}
 	Знайти ті значення параметрів $a$, $b$ для яких інтегральне рівняння \[\phi(x) = \lambda \Int_{-1}^1 \left( xy - \dfrac{1}{3} \right) \phi(y) \diff y + ax^2 - bx + 1 \] має розв'язок для будь-якого значення $\lambda$.
-\end{example}
+\end{example*}
 
 \begin{solution*}
 	Знайдемо характеристичні числа та власні функції спряженого однорідного рівняння (ядро ермітове). \[ \phi(x) = \lambda x \Int_{-1}^1 y \phi(y) \diff y - \dfrac{\lambda}{3} \Int_{-1}^1 \phi(y) \diff y = \lambda x c_1 - \dfrac{\lambda}{3} c_2. \]
@@ -233,9 +224,11 @@
 
 \newpage
 
-\begin{example}
+\section{Розв’язати інтегральне рівняння за формулою Шмідта}
+
+\begin{example*}
     Знайти розв’язок інтегрального рівняння \[ \phi(x) = \lambda \Int_0^1 K(x, y) \phi(y) \diff y + x,\] де \[ K(x,y)=\begin{cases}x(y-1), & 0 \le x \le y \le 1 \\ y(x-1), & 0\le y\le x\le1\end{cases}. \]
-\end{example}
+\end{example*}
 
 \begin{solution*}
     Розв’язок будемо шукати за формулою Шмідта. Знайдемо характеристичні числа та власні функції ермітового ядра. Запишемо однорідне рівняння \[ \phi(x) = \lambda \Int_0^x y(x-1)\phi(y)\diff y + \lambda\Int_x^1x(y-1)\phi(y)\diff y.\]
@@ -294,13 +287,15 @@
 
 \newpage
 
-\begin{example}
+\section{Звести задачу Штурма-Ліувілля до інтегрального рівняння}
+
+\begin{example*}
 	Звести задачу Штурма-Ліувілля до інтегрального рівняння з ермітовим неперервним ядром:
 	\begin{system*}
 		& \bf{L}y \equiv -(1+e^x)y''-e^xy'=\lambda x^2y, \quad 0 < x < 1, \\
 		& y(0) - 2y'(0) = y'(1) = 0.
 	\end{system*}
-\end{example}
+\end{example*}
 
 \begin{solution*}
 	Побудуємо функцію Гріна оператора $\bf{L}$. Розглянемо задачі Коші:
@@ -324,6 +319,72 @@
 	Введемо позначення: \[ \omega(x) = xy(x), \quad G_1(x, \xi) = x\xi G(x,\xi).\]
 
 	Отримаємо однорідне інтегральне рівняння Фредгольма другого роду з симетричним ядром: \[\omega(x) = \lambda \Int_0^1 G_1(x, \xi) \omega(\xi) \diff \xi.\]
+\end{solution*}
+
+\newpage
+
+\section{Визначити тип рівняння і звести до канонічної форми, дві змінні}
+
+\begin{example*}
+	Визначити тип рівняння і привести його до канонічної форми запису $y^2 u_{xx} - x^2 u_{yy} = 0$.
+\end{example*}
+
+\begin{solution*}
+	Складемо характеристичне рівняння \[ \dfrac{\diff y}{\diff x} = \dfrac{0\pm\sqrt{0+(xy)^2}}{y^2}, \quad \dfrac{\diff y}{\diff x} = \pm\dfrac{x}{y}. \]
+
+	Оскільки обидві характеристики є дійсними, то рівняння має гіперболічний тип. Останнє рівняння можна записати у вигляді: \[y \diff y = \pm x \diff x.\]
+
+	Загальні інтеграли цього рівняння мають вигляд: \[y^2 \pm x^2 = \const.\]
+
+	Для отримання першої канонічної форми запису необхідно обрати нові змінні \[\xi = x^2 + y^2,\quad \eta = x^2 - y^2. \]
+
+	Для отримання другої канонічної форми запису оберемо змінні \[ \alpha = \dfrac{\xi + \eta}{2} = x^2, \quad \beta = \dfrac{\xi-\eta}{2} = y^2, \]
+
+	обчислимо похідні 
+	\[ u_x = u_\alpha 2 x + u_\beta \cdot 0, \quad u_y = u_\alpha \cdot 0 + u_\beta 2 y, \]
+	\[ u_{xx} = u_{\alpha\alpha} 4x^2 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} \cdot 0 + u_\alpha 2 + u_\beta \cdot 0, \]
+	\[ u_{yy} = u_{\alpha\alpha} \cdot 0 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} 
+	4y^2 + u_\alpha \cdot 0 + u_\beta 2. \]
+
+	Підставимо знайдені похідні в рівняння:
+	\[ y^2(4x^2u_{\alpha\alpha} + 2u_\alpha) - x^2(4y^2u_{\beta\beta} + 2u_\beta) = 0, \]
+	\[ u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{1}{2x^2y^2}(u_\alpha - u_\beta) = 0, \]
+	або остаточно маємо:
+	\[ u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{1}{2\alpha\beta}(u_\alpha - u_\beta) = 0. \]
+\end{solution*}
+
+\newpage
+
+\section{Визначити тип рівняння і звести до канонічної форми, три змінні}
+
+\begin{example*}
+	Визначити тип рівняння і привести його до канонічної форми запису $u_{xx} + 2 u_{xy} - 2 u_{xz} + 2 u_{yy} + 6 u_{zz} = 0$.
+\end{example*}
+
+\begin{solution*}
+	Поставимо у відповідність головній частині рівняння квадратичну форму: \[\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+2\lambda_2^2+6\lambda_3^2. \]
+
+	Методом виділення повних квадратів приведемо квадратичну форму до канонічної форми запису
+	\begin{multline*}
+		\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+2\lambda_2^2+6\lambda_3^2 = (\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+\lambda_2^2+\lambda_3^2 - 2 \lambda_2\lambda_3)^2 + \\ 
+		+ \lambda_2^2 + 2\lambda_2\lambda_3 + 5\lambda_3^2 = (\lambda_1+\lambda_2-\lambda_3)^2 + (\lambda_2^2 + 2\lambda_2\lambda_3+\lambda_3^2) + 4\lambda_3^2 = \\
+		= (\lambda_1+\lambda_2-\lambda_3)^2 + (\lambda_2 + \lambda_3)^2 + (2\lambda_3)^2.
+	\end{multline*}
+
+	Вводимо нові незалежні змінні: \[ \begin{matrix} \mu_1 = \lambda_1 + \lambda_2 - \lambda_3, \\ \mu_2 = \lambda_2 + \lambda_3, \\ \mu_3 = 2 \lambda_3 \end{matrix} \]
+
+	Отримаємо канонічну форму запису для квадратичної форми: $\mu_1^2 + \mu_2^2 + \mu_3^2$. \\
+
+	Оскільки при квадраті кожної змінної коефіцієнт дорівнює 1, то квадратична форма та рівняння мають еліптичний тип. \\
+
+	Запишемо тепер заміну змінних, яка приведе рівняння до канонічної форми запису. Обчислимо матрицю оберненого лінійного перетворення:
+	\[ \begin{matrix} \lambda_1 = \mu_1 - \mu_2 + \mu_3 \\ \lambda_2 = \mu_2 - \mu_3/2 \\ \lambda_3 = \mu_3 / 2 \end{matrix} \quad B = \begin{pmatrix} 1 & -1 & 1 \\ 0 & 1 & -1/2 \\ 0 & 0 & 1/2 \end{pmatrix}, \quad \lambda = B \mu. \]
+
+	Обчислимо транспоновану матрицю \[ B^T = \begin{pmatrix} 1 & 0 & 0 \\ -1 & 1 & 0 \\ 1 & -1/2 & 1/2 \end{pmatrix}. \]
+
+	Для диференціального рівняння маємо нові змінні: $\vec \xi = B^T \vec x$. Або в координатній формі: \[ \left\{ \begin{matrix} \xi = x \\ \eta = y - x \\ \zeta = x - y / 2 + z / 2 \end{matrix} \right. \]
+
+	У новій системі координат головна частина диференціального рівняння буде мати канонічну форму запису еліптичного рівняння $u_{\xi\xi} + u_{\eta\eta} + u_{\zeta\zeta} = 0$.
 \end{solution*}
 
 \end{document}
