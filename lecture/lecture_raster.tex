@@ -1,26 +1,27 @@
-% cls && pdflatex cmp.tex && cls && pdflatex cmp.tex && start cmp.pdf
-\documentclass[a5paper, 10pt]{article}
+% cls && pdflatex lecture_raster.tex && pdflatex lecture_raster.tex && del lecture_raster.aux, lecture_raster.toc, lecture_raster.log, lecture_raster.out && start lecture_raster.pdf
+\documentclass[a4paper, 12pt]{article}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, ukrainian]{babel}
 \usepackage{amsmath, amssymb}
-\usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry} 
+% \usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry} 
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\lhead{Рівняння математичної фізики}
-\cfoot{\thepage}
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \lhead{Рівняння математичної фізики}
+% \cfoot{\thepage}
 
 \allowdisplaybreaks
 \setlength\parindent{0pt}
 \numberwithin{equation}{subsection}
 
 \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\date{}
+\author{Скибицький Нікіта}
+\date{\today}
 
 \usepackage{xcolor}
 \usepackage{hyperref}
-\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=violet}
+\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=red}
 
 \usepackage{amsthm}
 \theoremstyle{definition}
@@ -49,6 +50,20 @@
 \newcommand{\Lim}{\displaystyle\lim\limits}
 
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\rfrac[2]{{}^{#1}\!/_{\!#2}}
+
+\numberwithin{equation}{section}% reset equation counter for sections
+\numberwithin{equation}{subsection}
+% Omit `.0` in equation numbers for non-existent subsections.
+\renewcommand*{\theequation}{%
+  \ifnum\value{subsection}=0 %
+    \thesection
+  \else
+    \thesubsection
+  \fi
+  .\arabic{equation}%
+}
+
 
 \renewcommand{\bf}[1]{\textbf{#1}}
 \renewcommand{\epsilon}{\varepsilon}
