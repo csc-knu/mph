@@ -1,0 +1,340 @@
+% cd ..\..\Users\NikitaSkybytskyi\Desktop\c3s2\mathematical-physics
+% pdflatex 24.01.prac.tex && pdflatex 24.01.prac.tex && del 24.01.prac.out, 24.01.prac.log, 24.01.prac.aux, 24.01.prac.toc && start 24.01.prac.pdf
+
+\input{univ.sty}
+
+\title{Математична фізика::практика}
+\author{Нікіта Скибицький}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{24.01. Метод Фур'є}
+
+Метод також називають \textit{методом розділення змінних}.
+
+\subsection{Теорія}
+
+Розглянемо наступну постановку задачі:
+
+\begin{problem*}
+	Знайти вільні коливання струни довжини $\ell$ із закріпленими кінцями у середовищі без опору. Початкове положення струни і її швдикість задані. \\
+
+	Цю задачу можна формалізувати наступним чином:
+	\begin{equation}
+		\label{eq:1}
+		\frac{\partial^2 u}{\partial t^2} = a^2 \cdot \frac{\partial^2 u}{\partial x^2}, \quad x \in (0, \ell), \quad t > 0,
+	\end{equation}
+	закріплені кінці (крайові умови):
+	\begin{equation}
+		\label{eq:2}
+		u(0, t) = 0 = u(\ell, t),
+	\end{equation}
+	початкові\footnote{Тут $u_t$ позначає $\frac{\partial u}{\partial t}$.} умови:
+	\begin{align}
+		\label{eq:3}
+		u(x, 0) &= \phi(x), \quad x \in [0, \ell], \\
+		\label{eq:4}
+		u_t(x, 0) &= \psi(x), \quad x \in [0, \ell).
+	\end{align}
+\end{problem*}
+
+Метод Фур'є застосовується до задач, у яких саме рівняння \eqref{eq:1} та крайові умови \eqref{eq:2} є однорідними (по $x$).
+
+\begin{solution}
+	Будемо шукати розв'язок у вигляді
+	\begin{equation}
+		\label{eq:5}
+		u(x, t) = X(x) \cdot T(t) \not\equiv 0.
+	\end{equation}
+
+	Підставляємо \eqref{eq:5} в \eqref{eq:1}:
+	\begin{equation*}
+		X(x) \cdot T''(t) = a^2 \cdot X''(x) \cdot T(t).
+	\end{equation*}
+
+	Ділимо\footnote{Розв'язок нетривіальний тому можемо собі таке дозволити.} обидві частини на $a^2 \cdot X(x) \cdot T(t)$ маємо:
+	\begin{equation*}
+		\frac{T''(t)}{a^2 \cdot T(t)} = \frac{X''(x)}{X(x)}.
+	\end{equation*}
+
+	Оскільки ліва частина не залежить від $x$ а права від $t$, то робимо висновок що вони обидві -- сталі. Позначимо відповідну сталу через $-\lambda$, отримаємо:
+	\begin{equation*}
+		\frac{T''(t)}{a^2 \cdot T(t)} = \frac{X''(x)}{X(x)} = - \lambda.
+	\end{equation*}
+
+	Звідси маємо два рівняння:
+	\begin{align*}
+		T''(t) + \lambda \cdot a^2 \cdot T(t) &= 0, \\
+		X''(x) + \lambda \cdot X(x) &= 0.
+	\end{align*}
+
+	Поставимо тепер задачу Штурма-Ліувілля для функції $X(x)$. \\
+
+	З крайових умов \eqref{eq:2} маємо:
+	\begin{equation*}
+		u(0, t) = X(0) \cdot T(t) = 0.
+	\end{equation*}
+
+	Оскільки $T \not\equiv 0$, то звідси $X(0) = 0$. Аналогічно $X(\ell) = 0$. \\
+
+	Нагадаємо \textit{постановку задачі Штурма-Ліувілля}:
+
+	\begin{problem*}
+		Необхідно знайти усі $\lambda$ для яких задане однорідне рівняння має нетривіальний розв'язок.
+	\end{problem*}
+
+	Знайдемо $\lambda$ з характеристичного рівняння $\kappa^2 = - \lambda$, маємо три випадки:
+
+	\begin{enumerate}
+		\item $\lambda = 0$. Тоді розв'язок рівняння має вигляд\footnote{Тут $a$ -- не параметр початквої задачі а локальний невідомий коефіцієнт.} $X(x) = a x + b$, підставляємо його в крайові умови:
+		\begin{align*}
+			0 &= X(0) = b,
+			0 &= X(\ell) = a \ell + b.
+		\end{align*}
+
+		Нескладно бачити, що $a = b = 0$, тобто отримали тривіальний розв'язок $X \equiv 0$ який нас не влаштовує.
+		\item $\lambda < 0$, тоді розв'язок рівняня має вигляд\footnote{Тут $a$ -- не параметр початквої задачі а локальний невідомий коефіцієнт.} 
+		\begin{equation*}
+			X(x) = a \cdot e^{\sqrt{-\lambda} \cdot x} + b \cdot e^{-\sqrt{-\lambda} \cdot x},
+		\end{equation*}
+		підставляємо його в крайові умови:
+		\begin{align*}
+			0 &= X(0) = a + b = 0, \\
+			0 &= X(\ell) = a \cdot e^{\sqrt{-\lambda} \cdot \ell} + b \cdot e^{-\sqrt{-\lambda} \cdot \ell}.
+		\end{align*}
+
+		Нескладно бачити, що у цієї системи немає нетривіальни розв'язків, зокрема тому що її визначник $\ne$ 0.
+		\item $\lambda > 0$, тоді розв'язок рівняня має вигляд\footnote{Тут $a$ -- не параметр початквої задачі а локальний невідомий коефіцієнт.} 
+		\begin{equation*}
+			X(x) = a \cdot \cos \left( \sqrt{\lambda} \cdot x \right) + b \cdot \sin \left( \sqrt{\lambda} \cdot x \right),
+		\end{equation*}
+		підставляємо його в крайові умови:
+		\begin{align*}
+			0 &= X(0) = a, \\
+			0 &= X(\ell) = b \sin \left( \sqrt{\lambda} \ell \right).
+		\end{align*}
+
+		Звідси $\lambda_n = \left( \frac{\pi n}{\ell} \right)^2$, $n \in \NN$. \\
+	\end{enumerate}
+
+	Відповідний розв'язок набуває вигляду
+	\begin{equation*}
+		X_n(x) = \sin \left( \frac{\pi n x}{\ell} \right), \quad n \in \NN.
+	\end{equation*}
+
+	Пісдтавляємо знайдене $\lambda_n$ у рівняння на $T$:
+	\begin{equation*}
+		T_n''(t) + \left( \frac{\pi n}{\ell} \right)^2 \cdot T_n(t) = 0.
+	\end{equation*}
+
+	Тут параметр вже цілком конкретний, тому можемо одразу записати загальний вигляд розв'язку:
+	\begin{equation*}
+		T_n(t) = a_n \cdot \cos \left( \frac{\pi n a t}{\ell} \right) + b_n \cdot \sin \left( \frac{\pi n a t}{\ell} \right).
+	\end{equation*}
+	
+	З \eqref{eq:5} маємо $u_n(x, t) = X_n(x) \cdot T_n(t)$. Але всі ці розв'язки лінійно незалежні, тому загальним розв'язком буде
+	\begin{multline}
+		\label{eq:6}
+		u(x, t) = \Sum_{n = 1}^\infty X_n(x) \cdot T_n(t) = \\ = \Sum_{n = 1}^\infty \sin \left( \frac{\pi n x}{\ell} \right) \cdot \left( a_n \cdot \cos \left( \frac{\pi n a t}{\ell} \right) + b_n \cdot \sin \left( \frac{\pi n a t}{\ell} \right) \right).
+	\end{multline}
+
+	Залишилося знайти $a_n$, $b_n$ з умов \eqref{eq:3} та \eqref{eq:4}. \\
+
+	Підставляємо \eqref{eq:6} в \eqref{eq:3}:
+	\begin{equation*}
+		u(x, 0) = \Sum_{n = 1}^\infty a_n \cdot \sin \left( \frac{\pi n x}{\ell} \right) = \phi(x) = \ldots
+	\end{equation*}
+
+	\begin{remark*}
+		Тут ми припускаємо, що $\phi(x)$ відповідає умовам теореми Стєклова і граничним умовам нашої задачі Штурма-Ліувілля.
+	\end{remark*}
+
+	\begin{equation*}
+		\ldots = \Sum_{n = 1}^\infty \phi_n \cdot X_n(x) = \Sum_{n = 1}^\infty \phi_n \cdot \sin \left( \frac{\pi n x}{\ell} \right).
+	\end{equation*}
+
+	Прирівнюючи коефіцієнти\footnote{$\phi_n = \frac{1}{\|X_n\|^2} \cdot \int_0^\ell \phi(x) \cdot X_n(x) \cdot \diff x$.} в цих рядах Фур'є знаходимо що $a_n = \phi_n$.\\
+
+	Знайдемо\footnote{Тут $\psi_n$ визначається аналогічно до $\phi_n$ вище.} $b_n$ з \eqref{eq:4}:
+
+	\begin{equation*}
+		u_t(x, 0) = \Sum_{n = 1}^\infty \sin \left( \frac{\pi n x}{\ell} \right) \cdot b_n \cdot \frac{\pi n a}{\ell} = \psi(x) = \Sum_{n = 1}^\infty \psi_n \cdot \sin \left( \frac{\pi n x}{\ell} \right).
+	\end{equation*}
+
+	Прирівнюючи коефіцієнти в цих рядах Фур'є знаходимо що $b_n = \psi_n \cdot \frac{\ell}{\pi n a}$.\\	
+
+	Далі підставляємо $a_n, b_n$ в \eqref{eq:6}.
+\end{solution}
+
+Ми вже не будемо тут цього робити, оскілкьи подальші формули в загальному випадку доволі громізкі, і не дуже змістовні. \\
+
+Рівняння коливання струни є рівнянням гіперболічного типу. Метод Фур'є можна також застосовувати до рівнянь параболічного типу, таких як розводіл тепла:
+
+\begin{problem*}
+	Знайти розводіл температури теплоізольованого (немає стоків) стержня на кінцях якого підтримується нульова температура. Початковий розподіл температури заданий. \\
+
+	Формально, маємо рівняння
+	\begin{equation}
+		\label{eq:1-parabolic}
+		\frac{\partial u}{\partial t} = a^2 \cdot \frac{\partial^2 u}{\partial x^2}
+	\end{equation}
+	на кінцях підтримуєтсья нульова температура:
+	\begin{equation}
+		\label{eq:2-parabolic}
+		u(0, t) = 0 = u(\ell, t),
+	\end{equation}
+	початкові умови:
+	\begin{align}
+		\label{eq:3-parabolic}
+		u(x, 0) &= \phi(x), \quad x \in [0, \ell].
+	\end{align}
+\end{problem*}
+
+\begin{solution}
+	Будемо шукати розв'язок у вигляді \eqref{eq:5}.
+
+	Підставляємо \eqref{eq:5} в \eqref{eq:1}:
+	\begin{equation*}
+		X(x) \cdot T'(t) = a^2 \cdot X''(x) \cdot T(t).
+	\end{equation*}
+
+	Ділимо обидві частини на $a^2 \cdot X(x) \cdot T(t)$ маємо:
+	\begin{equation*}
+		\frac{T(t)}{a^2 \cdot T(t)} = \frac{X''(x)}{X(x)}.
+	\end{equation*}
+
+	Звідси маємо два рівняння:
+	\begin{align*}
+		T'(t) + \lambda \cdot a^2 \cdot T(t) &= 0, \\
+		X''(x) + \lambda \cdot X(x) &= 0.
+	\end{align*}
+
+	Задача Штурма-Ліувілля для функції $X(x)$ вже розв'язана, одразу переходимо до знаходження $T(t)$. \\
+
+	Пісдтавляємо знайдене $\lambda_n$ у рівняння на $T$:
+	\begin{equation*}
+		T_n'(t) + \left( \frac{\pi n}{\ell} \right)^2 \cdot T_n(t) = 0.
+	\end{equation*}
+
+	Тут параметр вже цілком конкретний, тому можемо одразу записати загальний вигляд розв'язку:
+	\begin{equation*}
+		T_n(t) = a_n \cdot \exp \left\{ - \left( \frac{\pi n a}{\ell} \cdot t\right) \right\}.
+	\end{equation*}
+	
+	Загальним розв'язком буде
+	\begin{equation}
+		\label{eq:6-parabolic}
+		u(x, t) = \Sum_{n = 1}^\infty \sin \left( \frac{\pi n x}{\ell} \right) \cdot a_n \cdot \exp \left\{ - \left( \frac{\pi n a}{\ell} \cdot t\right) \right\}.
+	\end{equation}
+
+	Залишилося знайти $a_n$ з умови \eqref{eq:3-parabolic}. \\
+
+	Підставляємо \eqref{eq:6-parabolic} в \eqref{eq:3-parabolic}:
+	\begin{multline*}
+		u(x, 0) = \Sum_{n = 1}^\infty a_n \cdot \sin \left( \frac{\pi n x}{\ell} \right) = \\ = \phi(x) = \Sum_{n = 1}^\infty \phi_n \cdot X_n(x) = \Sum_{n = 1}^\infty \phi_n \cdot \sin \left( \frac{\pi n x}{\ell} \right).
+	\end{multline*}
+
+	Прирівнюючи коефіцієнти в цих рядах Фур'є знаходимо що $a_n = \phi_n$.\\
+
+	Далі підставляємо $a_n$ в \eqref{eq:6-parabolic}.
+\end{solution}
+
+\subsection{Практика}
+
+\begin{problem}[Владіміров, №20.14.1]
+	\begin{equation*}
+		u_{tt} = u_{xx} - 4 u, \quad 0 < x < 1
+	\end{equation*}
+	\begin{equation*}
+		u|_{x = 0} = u|_{x = 1} = 0
+	\end{equation*}
+	\begin{equation*}
+		u|_{t = 0} = x^2 - x
+	\end{equation*}
+	\begin{equation*}
+		u_t|_{t = 0} = 0
+	\end{equation*}
+\end{problem}
+
+\begin{solution}
+	Будемо шукати розв'язок у вигляді
+	\begin{equation*}
+		u(t, x) = T(t) \cdot X(x).
+	\end{equation*}
+
+	Підставляємо
+	\begin{equation*}
+		T''(t) \cdot X(x) = T(T) \cdot X''(x)  4 \cdot T(t) \cdot X(x).
+	\end{equation*}
+	
+	Ділимо обидві частини на $X(x) \cdot T(t)$, маємо:
+	\begin{equation*}
+		\frac{T''(t)}{T(t)} = \frac{X''(x)}{X(x)} - 4 = - \lambda.
+	\end{equation*}
+	
+	Поставимо тепер задачу Штурма-Ліувілля для функції $X(x)$:
+	\begin{equation*}
+		X''(x) + (\lambda - 4) \cdot X(x) = 0.
+	\end{equation*}
+
+	Знайдемо $\lambda$ з характеристичного рівняння $\kappa^2 = 4 - \lambda$, маємо три випадки:
+	\begin{enumerate}
+		\item $\lambda - 4 = 0 \implies X \equiv 0$;
+		\item $\lambda - 4 < 0 \implies X \equiv 0$;
+		\item $\lambda - 4 > 0 \implies \lambda_n = (\pi n)^2 + 4$, $n \in \NN$.
+	\end{enumerate}
+
+	Відповідний розв'язок набуває вигляду
+	\begin{equation*}
+		X_n(x) = \sin (\pi n x), \quad n \in \NN.
+	\end{equation*}
+
+	Пісдтавляємо знайдене $\lambda_n$ у рівняння на $T$:
+	\begin{equation*}
+		T''(t) + ((\pi n)^2 + 4) T(t) = 0.
+	\end{equation*}
+
+	Тут параметр вже цілком конкретний, тому можемо одразу записати загальний вигляд розв'язку:
+	\begin{equation*}
+		T_n(t) = a_n \cdot \cos \left( \sqrt{(\pi n)^2 + 4} \cdot t \right) + b_n \cdot \sin \left( \sqrt{(\pi n)^2 + 4} \cdot t \right).
+	\end{equation*}
+
+	Загальним розв'язком буде
+	\begin{equation*}
+		u(x, t) = \Sum_{n = 1}^\infty \sin(\pi n x) \cdot \left( a_n \cdot \cos \left( \sqrt{(\pi n)^2 + 4} \cdot t \right) + b_n \cdot \sin \left( \sqrt{(\pi n)^2 + 4} \cdot t \right) \right).
+	\end{equation*}
+
+	Знайдемо $a_n$ з
+	\begin{equation*}
+		\Sum_{n = 1}^\infty a_n \cdot \sin(\pi n x) = u|_{t = 0} = x^2 - x = \phi(x) = \Sum_{n = 1}^\infty \phi_n \cdot \sin(\pi n x).
+	\end{equation*}
+
+	Після певних неприємних обчислень маємо:
+	\begin{equation*}
+		a_n = \phi_n = \begin{cases} -\frac{8}{(\pi n)^3}, & n = 2 k - 1, \\ 0, & n = 2 k. \end{cases}
+	\end{equation*}
+
+	Знайдемо $b_n$ з
+	\begin{equation*}
+		\Sum_{n = 1}^\infty b_n \cdot \sin(\pi n x) \cdot \sqrt{(\pi n)^2 + 4} = u_t|_{t = 0} = 0.
+	\end{equation*}
+	
+	Звідси одразу маємо $b_n = 0$, зокрема тому, що функції $\sin (\pi n x)$ є лінійно-незалежними.
+\end{solution}
+
+\subsection{Домашнє завдання}
+
+\begin{problem}[Владіміров, №20.14.1]
+	Буде згодом.
+\end{problem}
+
+\begin{solution}
+	Буде згодом.
+\end{solution}
+
+\end{document}

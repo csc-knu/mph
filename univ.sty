@@ -1,0 +1,94 @@
+% cd ..\..\Users\NikitaSkybytskyi\Desktop\c3s1\complex-analysis
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, ukrainian]{babel}
+
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Теорема}[subsection]
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{lemma}{Лема}[subsection]
+\newtheorem*{lemma*}{Лема}
+\newtheorem{remark}{Зауваження}
+\newtheorem*{remark*}{Зауваження}
+\theoremstyle{definition}
+\newtheorem{problem}{Задача}[section]
+\newtheorem*{problem*}{Задача}
+\newtheorem*{solution}{Розв'язок}
+\newtheorem{example}{Приклад}
+\newtheorem*{example*}{Приклад}
+\newtheorem*{hint}{Вказівка}
+
+\newcommand{\Max}{\displaystyle\max\limits}
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Int}{\displaystyle\int\limits}
+\newcommand{\Iint}{\displaystyle\iint\limits}
+\newcommand{\Iiint}{\displaystyle\iiint\limits}
+\DeclareMathOperator*{\Lim}{lim}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+
+\DeclareMathOperator{\Arg}{Arg}
+
+\DeclareMathOperator{\Ln}{Ln}
+
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arccosh}{Arccosh}
+\DeclareMathOperator{\Arctanh}{Arctanh}
+
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccoth}{arccoth}
+
+\DeclareMathOperator{\divergence}{div}
+\DeclareMathOperator{\grad}{grad}
+
+\newcommand{\varLimsup}{\varlimsup\limits}
+
+\makeatletter
+\newcommand\xLeftrightarrow[2][]{%
+  \ext@arrow 9999{\longLeftrightarrowfill@}{#1}{#2}}
+\newcommand\longLeftrightarrowfill@{%
+  \arrowfill@\Leftarrow\relbar\Rightarrow}
+\makeatother
+
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\allowdisplaybreaks
+\setlength\parindent{0pt}
+\numberwithin{equation}{subsection}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=red}
+
+\numberwithin{equation}{section}% reset equation counter for sections
+\numberwithin{equation}{subsection}
+% Omit `.0` in equation numbers for non-existent subsections.
+\renewcommand*{\theequation}{%
+  \ifnum\value{subsection}=0 %
+    \thesection
+  \else
+    \thesubsection
+  \fi
+  .\arabic{equation}%
+}
