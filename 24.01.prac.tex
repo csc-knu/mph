@@ -93,7 +93,7 @@
 	\begin{enumerate}
 		\item $\lambda = 0$. Тоді розв'язок рівняння має вигляд\footnote{Тут $a$ -- не параметр початквої задачі а локальний невідомий коефіцієнт.} $X(x) = a x + b$, підставляємо його в крайові умови:
 		\begin{align*}
-			0 &= X(0) = b,
+			0 &= X(0) = b, \\
 			0 &= X(\ell) = a \ell + b.
 		\end{align*}
 
@@ -269,7 +269,7 @@
 
 	Підставляємо
 	\begin{equation*}
-		T''(t) \cdot X(x) = T(T) \cdot X''(x)  4 \cdot T(t) \cdot X(x).
+		T''(t) \cdot X(x) = T(T) \cdot X''(x) - 4 \cdot T(t) \cdot X(x).
 	\end{equation*}
 	
 	Ділимо обидві частини на $X(x) \cdot T(t)$, маємо:
@@ -329,12 +329,91 @@
 
 \subsection{Домашнє завдання}
 
-\begin{problem}[Владіміров, №20.14.1]
-	Буде згодом.
+\begin{problem}[Владіміров, №20.41.1]
+	Розв'язати змішану задачу:
+	\begin{equation*}
+		u_t = u_{xx}, \quad 0 < x < 1	
+	\end{equation*}
+	\begin{equation*}
+		u_x|_{x = 0} = 0 = u_x|_{x = 1}
+	\end{equation*}
+	\begin{equation*}
+		u|_{t = 0} = x^2 - 1
+	\end{equation*}
 \end{problem}
 
 \begin{solution}
-	Буде згодом.
+	Будемо шукати розв'язок у вигляді
+	\begin{equation*}
+		u(t, x) = T(t) \cdot X(x).
+	\end{equation*}
+
+	Підставляємо
+	\begin{equation*}
+		T'(t) \cdot X(x) = T(T) \cdot X''(x).
+	\end{equation*}
+	
+	Ділимо обидві частини на $X(x) \cdot T(t)$, маємо:
+	\begin{equation*}
+		\frac{T'(t)}{T(t)} = \frac{X''(x)}{X(x)} = - \lambda.
+	\end{equation*}
+	
+	Поставимо тепер задачу Штурма-Ліувілля для функції $X(x)$:
+	\begin{equation*}
+		X''(x) + \lambda \cdot X(x) = 0.
+	\end{equation*}
+
+	Її крайові умови:
+	\begin{equation*}
+		X'(0) = 0 = X'(1)
+	\end{equation*}
+
+	Знайдемо $\lambda$ з характеристичного рівняння $\kappa^2 = - \lambda$, маємо три випадки:
+	\begin{enumerate}
+		\item $\lambda = 0 \implies X \equiv 1$;
+		\item $\lambda < 0 \implies X \equiv 0$;
+		\item $\lambda > 0 \implies \lambda_n = (\pi n)^2$, $n \in \NN$.
+	\end{enumerate}
+
+	Відповідний розв'язок набуває вигляду
+	\begin{equation*}
+		X_n(x) = \cos(\pi n x), \quad n \in \NN.
+	\end{equation*}
+
+	Пісдтавляємо знайдене $\lambda_n$ у рівняння на $T$:
+	\begin{equation*}
+		T'(t) + (\pi n)^2 \cdot T(t) = 0.
+	\end{equation*}
+
+	Тут параметр вже цілком конкретний, тому можемо одразу записати загальний вигляд розв'язку:
+	\begin{equation*}
+		T_n(t) = a_n \cdot e^{ - (\pi n)^2 t}.
+	\end{equation*}
+
+	Загальним розв'язком буде
+	\begin{equation*}
+		u(x, t) = \Sum_{n = 1}^\infty \cos(\pi n x) \cdot a_n \cdot e^{ - (\pi n)^2 t}.
+	\end{equation*}
+
+	Знайдемо $a_n$ з
+	\begin{equation*}
+		\Sum_{n = 1}^\infty a_n \cdot \cos(\pi n x) = u|_{t = 0} = x^2 - 1 = \phi(x) = \Sum_{n = 1}^\infty \phi_n \cdot \cos(\pi n x).
+	\end{equation*}
+
+	Після певних неприємних обчислень маємо:
+	\begin{align*}
+		a_n &= \phi_n = \frac{1}{\|X_n\|^2} \cdot \int_0^1 (x^2 - 1) \cdot \cos(\pi n x) \cdot \diff x = \\ &= \frac{1}{\frac{1}{2} + \frac{\sin(2 \pi n)}{4 \pi n}} \cdot \frac{2 \pi n \cdot \cos(\pi n) - 2 \sin(\pi n)}{\pi^3 \cdot n^3} = \\ &= 2 \cdot \frac{2 \pi n \cdot \cos(\pi n)}{\pi^3 \cdot n^3} = \frac{(-1)^n \cdot 4}{\pi^2 \cdot n^2}.
+	\end{align*}
+
+	Пригадаємо що у нас є ще $\lambda_0 = 0$ для якого $X_0 \equiv 1$, а також $T'(t) = 0$, тобто $T(t) = const = a_0$. Зрозуміло, що аналогічно попередньому ($a_n$, $n \in \NN$) маємо:
+	\begin{equation*}
+		a_0 = \phi_0 = \frac{1}{\|1\|^2} \cdot \int_0^1 (x^2 - 1) \cdot 1 \diff x = \left. \left( \frac{x^3}{3} - x \right) \right|_0^1 = - \frac{2}{3}.
+	\end{equation*}
+
+	Підставляємо це все у вигляд загального розв'язку:
+	\begin{equation*}
+		u(x, t) = -\frac{2}{3} - \frac{4}{\pi^2} \cdot \Sum_{n = 1}^\infty \frac{(-1)^n \cdot \cos(\pi n x) \cdot e^{ - (\pi n)^2 t}}{n^2}
+	\end{equation*}
 \end{solution}
 
 \end{document}
