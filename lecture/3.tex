@@ -1,0 +1,500 @@
+\input{univ.sty}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
+
+\input{th.sty}
+
+\begin{document}
+
+\tableofcontents
+
+% \input{lec-1.tex}
+% \input{lec-2.tex}
+
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{1}
+\setcounter{theorem}{9}
+\setcounter{equation}{28}
+
+\subsubsection{Теореми Фредгольма для інтегральних рівнянь з неперервним ядром}
+
+Будемо розглядати рівняння:
+\begin{align}
+	\phi(x) &= \lambda \Int_G K(x, y) \phi(y) \diff y + f(x), \\
+	\psi(x) &= \overline \lambda \Int_G K^\star (x, y) \psi(y) \diff y + g(x),
+\end{align}
+
+Ядро $K(x, y) \in C\left(\overline G \times \overline G\right)$, отже його можна наблизити поліномом (Теорема Вєйєрштраса). \medskip
+
+Тобто, для будь-якого $\epsilon > 0$ існує 
+\begin{equation}
+	P_N(x, y) = \Sum_{|\alpha + \beta| \le N} a_{\alpha\beta}x^\alpha y^\beta.
+\end{equation}
+де $\alpha = (\alpha_1, \alpha_2, \ldots, \alpha_n)$, $x^\alpha = x_1^{\alpha_1} \cdot x_2^{\alpha_2} \cdot \ldots \cdot x_n^{\alpha_n}$, такий що $|K(x, y) - P_N(x, y)| < \epsilon$, $(x, y) \in \overline G \times \overline G$, тобто 
+\begin{equation}
+	K(x, y) = P_N(x, y) + Q_N(x, y),
+\end{equation}
+де $P_N(x,y)$ --- вироджене ядро (поліном), $|Q_N(x, y)| < \epsilon$, $(x, y) \in \overline G \times \overline G$. \medskip
+
+Виходячи з останньої рівності, інтегральне рівняння Фредгольма приймає вигляд 
+\begin{equation}
+	\phi = \lambda \bf{P}_N \phi + \lambda \bf{Q}_N \phi + f,
+\end{equation}
+де $\bf{P}_N$ та $\bf{Q}_N$ --- інтегральні оператори з ядрами $P_N(x, y)$ та $Q_N(x, y)$ відповідно ($\bf{P}_N + \bf{Q}_N = \bf{K}$). \medskip
+
+Для спряженого рівняння маємо:
+\begin{equation}
+	K^\star (x, y) = P_N^\star (x, y) + Q_N^\star (x, y),
+\end{equation}
+і
+\begin{equation}
+	\psi = \overline \lambda \bf{P}_N^\star  \psi + \overline \lambda \bf{Q}_N^\star  \psi + g.
+\end{equation}
+
+\begin{proposition}
+	В класі $C(G)$ отримані рівняння
+	\begin{align}
+		\phi &= \lambda \bf{P}_N \phi + \lambda \bf{Q}_N \phi + f, \\
+		\psi &= \overline \lambda \bf{P}_N^\star  \psi + \overline \lambda \bf{Q}_N^\star  \psi + g
+	\end{align}
+	еквівалентні рівнянням з виродженим ядром. 
+\end{proposition}
+
+\begin{proof}
+	Введемо нову функцію 
+	\begin{equation}
+		\Phi = \phi - \lambda \bf{Q}_N \phi
+	\end{equation}
+
+	З рівняння на $\phi$ випливає що $\Phi = \lambda \bf{P}_N + f$, а з однією із рівностей твердження \ref{proposition:2.1.17} випливає що $\forall \lambda$ такого що $|\lambda| < 1 / \epsilon V$:
+	\begin{equation}
+		(E - \lambda \bf{Q}_N)^{-1} = (E + \lambda \bf{R}_N),
+	\end{equation}
+	де $\bf{R}_N$ --- резольвента для $\bf{Q}_N$. Отже
+	\begin{equation}
+		\phi = (E - \lambda \bf{Q}_N)^{-1} \Phi = (E + \lambda \bf{R}_N) \Phi.
+	\end{equation}
+
+	Тобто, рівняння Фредгольма ІІ роду перетворюється на 
+	\begin{equation}
+		\Phi = \lambda \bf{P}_N (E + \lambda \bf{R}_N) \Phi.
+	\end{equation}
+
+	Для спряженого рівняння маємо:
+	\begin{equation}
+		\psi = \overline \lambda \left(E + \overline \lambda \bf{R}_N^\star\right) \bf{P}_N^\star  \psi + \left(E + \overline \lambda \bf{R}_N^\star\right) g.
+	\end{equation}
+
+	Позначимо $g_1 = \left(E + \overline \lambda \bf{R}_N^\star\right) g$. Маємо:
+	\begin{equation}
+		\psi = \overline \lambda \left(E + \overline \lambda \bf{R}_N^\star\right) \bf{P}_N^\star  \psi + g_1.
+	\end{equation}
+
+	Оскільки $(\bf{P}_N \bf{R}_N)^\star  = \bf{R}_N^\star  \bf{P}_N^\star $, то отримані рівняння спряжені. \medskip
+
+	Позначимо нарешті
+	\begin{align}
+		\bf{T}_N &= \bf{P}_N (E + \lambda \bf{R}_N), \\
+		\bf{T}_N^\star &= \left(E + \overline \lambda \bf{R}_N^\star\right) \bf{P}_N^\star.
+	\end{align}
+
+	Тоді рівняння Фредгольма з неперервним ядром можна записати у вигляді:
+	\begin{align}
+		\Phi &= \lambda \bf{T}_N \Phi + f, \\
+		\Psi &= \overline \lambda \bf{T}_N^\star \Psi + g_1,
+	\end{align}
+	де 
+	\begin{equation}
+		T_N(x, y, \lambda) = P_N(x, y) + \lambda \int_G P_N(x, \xi) R_N(\xi, y, \lambda) \diff \xi
+	\end{equation}
+	--- вироджене, оскільки є сумою двох вироджених, поліному $P_N(x, y)$, та інтегрального доданку. Покажемо що другий доданок в $T_N$ --- вироджений. Дійсно:
+	\begin{equation}
+		\Int_G \Sum_{|\alpha + \beta| \le N} a_{\alpha \beta} x^\alpha \xi^\beta R_N(\xi, y) \diff \xi = \Sum_{|\alpha + \beta| \le N} a_{\alpha \beta} x^\alpha \Int_G \xi^\beta R_N(\xi, y) \diff \xi.
+	\end{equation}
+\end{proof}
+
+\subsubsection{Альтернатива Фредгольма}
+
+Сукупність теорем Фредгольма для інтегральних рівнянь з неперервним ядром називається альтернативою Фредгольма.
+
+\begin{theorem}[Перша теорема Фредгольма для неперервних ядер]
+	Якщо інтегральне рівняння Фредгольма ІІ роду з неперервним ядром $K(x, y)$ має розв'язок $\forall f \in C\left(\overline G\right)$ то і спряжене рівняння має розв'язок для $\forall g \in C(\overline G)$ і ці роз'язки єдині.
+\end{theorem}
+
+\begin{proof}
+	Нехай інтегральне рівняння Фредгольма ІІ роду має розв'язок в $C\left(\overline G\right)$ для $\forall$ вільного члена $f$, тоді еквівалентне йому рівняння $\Phi = \lambda \bf{T}_N \Phi + F$ має такі ж властивості і згідно з першою теоремою Фредгольма для вироджених ядер $D(\lambda) \ne 0$, а спряжене до нього рівняння $\Psi = \overline \lambda \bf{T}_N^\star  + g_1$ теж має єдиний розв'язок $\forall$ вільного члена $g_1$, еквівалентне до нього (і спряжене до початкового) рівняння має розв'язок $\forall g$.
+\end{proof}
+
+\begin{theorem}[Друга теорема Фредгольма для непевних ядер]
+	Якщо інтегральне рівняння Фредгольма ІІ роду має розв'язки не для будь-якого вільного члена $f$, то однорідні рівняння $\phi = \lambda \bf{K} \phi$ та $\psi = \overline \lambda \bf{K}^\star \psi$ мають однакову скінчену кількість лінійно-незалежних розв'язків.
+\end{theorem}
+
+\begin{proof}
+	Нехай інтегральне рівняння Фредгольма ІІ роду має розв'язок не $\forall$ вільного члена $f$, тоді еквівалентне йому рівняння з виродженим ядром $\Phi = \lambda \bf{T}_N \Phi + F$  має таку ж властивість. Згідно з теоремами Фредгольма для вироджених ядер $D(\lambda) = 0$ (для виродженого ядра $\bf{T}_N$). Однорідні рівняння які їм відповідають мають однакову скінчену кількість лінійно-незалежних розв'язків, еквівалентні до них однорідні рівняння  $\phi = \lambda \bf{K} \phi$ та $\psi = \overline \lambda \bf{K}^\star \psi$ теж мають однакову скінчену кількість лінійно незалежних розв'язків.
+\end{proof}
+
+\begin{theorem}[Третя теорема Фредгольма для неперервних ядер]
+	Якщо інтегральне рівняння Фредгольма ІІ роду має розв'язок не для довільного вільного члена $f$, то для існування розв'язку інтегрального рівняння в $C\left(\overline G\right)$ необхідно і достатньо, щоб вільний член $f$ був ортогональним всім розв'язкам спряженого однорідного рівняння. Розв'язок не єдиний і визначається з точністю до лінійної оболонки, натягнутої на систему власних функцій оператора $\bf{K}$.
+\end{theorem}
+
+\begin{proof}
+	Нехай неоднорідне рівняння Фредгольма ІІ роду має розв'язок не для будь-якого вільного члена $f$, тоді еквівалентне рівняння з виродженим ядром має таку ж властивість, і за третьою теоремою Фредгольма для вироджених ядер $D(\lambda) = 0$ (для виродженого ядра $\bf{T}_N$). Розв'язок цього еквівалентного рівняння існує тоді і тільки тоді коли $f$ ортогональний до розв'язків спряженого однорідного рівняння. Але легко бачити, що вільний член початкового і еквівалентного рівнянь співпадають, так само співпадають розв'язки вихідного спряженого однорідного рівняння та еквівалентного.
+\end{proof}
+
+\begin{remark}
+	Для доведення теорем для будь-якого фіксованого значення $\lambda$ вибиралося $\epsilon$, таке щоби $|\lambda| < 1 / \epsilon V$.
+\end{remark}
+
+\begin{theorem}[Четверта теорема Фредгольма]
+	Для будь-якого як завгодно великого числа $R > 0$ в крузі $|\lambda| < R$ лежить лише скінчена кількість характеристичних чисел неперервного ядра $K(x, y)$.
+\end{theorem}
+
+\begin{exercise}
+	Доведіть четверту теорему Фредгольма.
+\end{exercise}
+
+\subsubsection{Наслідки з теорем Фредгольма}
+
+\begin{corollary}
+	З четвертої теореми Фредгольма випливає, що множина характеристичних чисел неперервного ядра не має скінчених граничних точок і не більш ніж злічена $\Lim_{n \to \infty} |\lambda_n| = \infty$.
+\end{corollary}
+
+\begin{exercise}
+	Доведіть цей наслідок.
+\end{exercise}
+
+\begin{corollary}
+	З другої теореми Фредгольма випливає, що кратність кожного характеристичного числа скінчена, їх можна занумерувати у порядку зростання модулів $|\lambda_1| \le |\lambda_2| \le \ldots \le |\lambda_k| \le |\lambda_{k + 1}| \le \ldots$, кожне число зустрічається стільки разів, яка його кратність. Також можна занумерувати послідовність власних функцій ядра $K(x, y)$: $\phi_1$, $\phi_2$, $\ldots$, $\phi_k$, $\phi_{k + 1}$, $\ldots$ і спряженого ядра $K^\star (x, y)$: $\psi_1$, $\psi_2$, $\ldots$, $\psi_k$, $\psi_{k + 1}$, $\ldots$.
+\end{corollary}
+
+\begin{exercise}
+	Доведіть цей наслідок.
+\end{exercise}
+
+\begin{corollary}
+	Власні функції неперервного ядра $K(x, y)$ неперервні в області $G$.
+\end{corollary}
+
+\begin{exercise}
+	Доведіть цей наслідок.
+\end{exercise}
+
+\begin{corollary}
+	Якщо $\lambda_k \ne \lambda_j$, то $(\phi_k, \psi_j) = 0$.
+\end{corollary}
+
+\begin{exercise}
+	Доведіть цей наслідок.
+\end{exercise}
+
+\subsubsection{Теореми Фредгольма для інтегральних рівнянь з полярним ядром}
+
+Розповсюдимо теореми Фредгольма для інтегральних рівнянь з полярним ядром:
+\begin{equation}
+	K(x, y) = \dfrac{A(x, y)}{|x - y|^\alpha}, \quad \alpha < n.
+\end{equation}
+
+Покажемо що $\forall \epsilon > 0$ існує таке вироджене ядро $P_N(x, y)$ що,
+\begin{align}
+	\Max_{x \in \overline G} \Int_G |K(x, y) - P_N(x, y)| \diff y &< \epsilon, \\
+	\Max_{x \in \overline G} \Int_G |K^\star (x, y) - P_N^\star (x, y)| \diff y &< \epsilon.
+\end{align}
+
+Розглянемо неперервне ядро
+\begin{equation}
+	L_M(x, y) = \begin{cases}
+		K(x, y), & |x - y| \ge 1 / M, \\
+		A(x, y) M^\alpha, & |x - y| < 1 / M.
+	\end{cases}
+\end{equation}
+
+\begin{proposition}
+	При достатньо великому $M$ має місце оцінка
+	\begin{equation}
+		\Int_G |K(x, y) - L_M(x, y)| \diff y \le \epsilon.
+	\end{equation}
+\end{proposition}
+
+\begin{proof}
+	Дійсно:
+	\begin{equation}
+		\begin{aligned}
+			\Int_G |K(x, y) - L_M(x, y)| \diff y &= \Int_{|x - y| < 1 / M} \left| \dfrac{A(x, y)}{|x - y|^\alpha} - A(x, y) M^\alpha \right| \diff y = \\
+			&= \Int_{|x - y| < 1 /M} |A(x, y)| \left| \dfrac{1}{|x - y|^\alpha} - M^\alpha \right| \diff y \le \\
+			&\le A_0 \Int_{|x - y| < 1 / M} \left| \dfrac{1}{|x - y|^\alpha} - M^\alpha \right| \diff y \le \\
+			&\le A_0 \Int_{|x - y| < 1 / M} \dfrac{\diff y}{|x - y|^\alpha} = \\
+			&= A_0 \sigma_n \Int_0^{1 / M} \xi^{n - 1 - \alpha} \diff \xi = \\
+			&= A_0 \sigma_n \left.\dfrac{\xi^{n - \alpha}}{n - \alpha}\right|_0^{1 / M} = \\
+			&= \dfrac{A_0\sigma_n}{(n - \alpha)M^{n - \alpha}} \le \dfrac{\epsilon}{2},
+		\end{aligned}
+	\end{equation}
+	де $\sigma_n$ --- площа поверхні одиничної сфери.
+\end{proof}
+
+Завжди можна підібрати вироджене ядро $P_N(x, y)$ таке що 
+\begin{equation}
+	|L_M(x, y) - P_N(x, y)| \le \dfrac{\epsilon}{2V},
+\end{equation}
+де $V$ --- об'єм області $G$. 
+
+\begin{equation}
+	\begin{aligned}
+		\Int_G |K(x, y) - P_N(x, y)| \diff y &= \Int_G \left| K(x, y) - L_M(x, y) + \right. \\
+		&\quad + \left. L_M(x, y) - P_N(x, y) \right| \diff y \le \\
+		&\le \Int_G | K(x, y) - L_M(x, y)| \diff y + \\
+		&\quad + \Int_G |L_M(x, y) - P_N(x, y)| \diff y \le \\
+		&\le \dfrac{\epsilon}{2} + \dfrac{\epsilon}{2V} \Int_G \diff y = \epsilon.
+	\end{aligned}
+\end{equation}
+
+Використавши попередню техніку (для неперервного ядра) інтегральне рівняння з полярним ядром зводиться до еквівалентного рівняння з виродженим ядром. Тобто теореми Фредгольма залишаються вірними для інтегральних рівнянь з полярним ядром з тим же самим формулюванням. \medskip
+
+Теореми Фредгольма залишаються вірними для інтегральних рівнянь з полярним ядром на обмеженій кусково-гладкій поверхні $S$ та контурі $C$:
+\begin{equation}
+	\phi(x) = \lambda \Int_S K(x, y) \phi(y) \diff y + f(x), \quad \dfrac{A(x, y)}{|x - y|^\alpha}, \quad \alpha < \dim(S).
+\end{equation}
+
+\subsection{Інтегральні рівняння з ермітовим ядром}
+
+Розглядатимемо ядро $K(x, y) \in C\left(\overline G \times \overline G\right)$ таке що $K(x, y) = K^\star (x, y)$.
+
+\begin{definition}[ермітового ядра]
+	Неперервне ядро будемо називати \it{ермітовим}, якщо виконується
+	\begin{equation}
+		K(x, y) = K^\star (x, y).
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+	Ермітовому ядру відповідає ермітовий оператор тобто $\bf{K} = \bf{K}^\star $.
+\end{remark}
+
+\begin{lemma}
+	Для того, щоб лінійний оператор був ермітовим, необхідно і достатньо, щоб для довільної комплексно значної функції $f \in L_2\left(\overline G\right)$ білінійна форма $(\bf{K}f, f)$ приймала лише дійсні значення.
+\end{lemma}
+
+\begin{exercise}
+	Доведіть цю лему.
+\end{exercise}
+
+\begin{lemma}
+	Характеристичні числа ермітового оператора дійсні.
+\end{lemma}
+
+\begin{exercise}
+	Доведіть цю лему.
+\end{exercise}
+
+\begin{definition}[компактної в рівномірній метриці множини функцій]
+	Множина функцій $M \subset C\left(\overline G\right)$ --- \it{компактна в рівномірній метриці}, якщо з будь-якої нескінченної множини функцій з $M$ можна виділити рівномірно збіжну підпослідовність.
+\end{definition}
+
+\begin{definition}[рівномірно обмеженої множини функцій]
+	Нескінченна множина $M \subset C\left(\overline G\right)$ --- \it{рівномірно обмежена}, якщо для будь-якого елемента $f \in M$ має місце $\|f\|_{C(\overline G)} \le a$, де $a$ єдина константа для $M$.
+\end{definition}
+
+\begin{definition}[одностайно неперервної множини функцій]
+	Множина $M \subset C\left(\overline G\right)$ --- \it{одностайно неперервна} якщо $\forall \epsilon > 0 \exists \delta(\epsilon): \forall f \in M, \forall x_1, x_2: |f(x_1) - f(x_2)| < \epsilon$ як тільки $|x_1 - x_2| < \delta(\epsilon)$.
+\end{definition}
+
+\begin{theorem}[Арчела-Асколі, критерій компактності в рівномірній метриці]
+	Для того, щоб множина $M \subset C\left(\overline G\right)$ була компактною, необхідно і достатньо, щоб вона складалась з рівномірно-обмеженої і одностайно-неперервної множини функцій.
+\end{theorem}
+
+\begin{sproblem}
+	Доведіть теорему Арчела-Асколі.
+\end{sproblem}
+
+\begin{definition}[цілком неперервного оператора]
+	Назвемо оператор $\bf{K}$ \it{цілком неперервним} з $L_2(G)$ у $C\left(\overline G\right)$, якщо він переводить обмежену множину в $L_2(G)$ у компактну множину в $C\left(\overline G\right)$ (в рівномірній метриці).
+\end{definition}
+
+\begin{lemma}[про цілком неперервність інтегральногго оператора з неперервним ядром]
+	Інтегральний оператор $\bf{K}$ з неперервним ядром $K(x, y)$ є цілком неперервний з $L_2(G)$ у $C\left(\overline G\right)$.
+\end{lemma}
+
+\begin{proof}
+	Нехай $f \in M \subset L_2(G)$ та $\forall f \in M$: $\|f\|_{L_2(G)} \le A$. Але 
+	\begin{equation}
+		\|\bf{K} f\|_{C\left(\overline G\right)} \le M \sqrt{V} \|f\|_{L_2(G)} \le M \sqrt{V} A,	
+	\end{equation}
+	тобто множина функцій є рівномірно обмеженою. \medskip
+
+	Покажемо що множина $\{ \bf{K}f(x)\}$ --- одностайно неперервна. \medskip
+
+	Ядро $K \in C\left(\overline G \times \overline G\right)$, а отже є рівномірно неперервним, бо неперервне на компакті, тобто
+	\begin{equation}
+		\forall \epsilon > 0 \exists \delta > 0: \forall x', x'' \in \overline G: \left\|x' - x''\right\| < \delta \implies \left|(\bf{K}f)(x') - (\bf{K}f)(x'')\right| \le \epsilon.
+	\end{equation}
+	Дійсно,
+	\begin{equation}
+		\begin{aligned}
+			|(\bf{K}f)(x') - (\bf{K}f)(x'')| &= \left| \Int_G K(x', y) f(y) \diff y - \Int_G K(x'', y) f(y) \diff y \right| \le \\
+			&\le \Int_G \left( |K(x', y) - K(x'', y)| \cdot |f(y)| \right) \diff y \le \\
+			&\le \dfrac{\epsilon \sqrt{V}}{A \sqrt{V}} \cdot \|f\|_{L_2\left(\overline G\right)} \le \epsilon.
+		\end{aligned}
+	\end{equation}
+\end{proof}
+
+\newpage
+
+\begin{example}
+	Знайти характеристичні числа та власні функції інтегрального оператора 
+	\begin{equation*}
+		\phi(x) = \lambda \Int_0^1 \left( \left( \dfrac{x}{t} \right)^{2/5} + \left( \dfrac{t}{x} \right)^{2/5} \right) \phi(t) \diff t.
+	\end{equation*}
+\end{example}
+
+\begin{solution}
+	Розділимо ядро наступним чином:
+	\begin{equation*}
+		\phi(x) = \lambda x^{2 / 5} \Int_0^1 t^{-2/5} \phi(t) \diff t + \lambda x^{-2/5} \Int_0^1 t^{2/5} \phi(t) \diff t.
+	\end{equation*}
+
+	Позначимо
+	\begin{equation*}
+		c_1 = \Int_0^1 t^{-2/5} \phi(t) \diff t, \quad c_2 = \Int_0^1 t^{2/5} \phi(t) \diff t,
+	\end{equation*}
+	тоді
+	\begin{equation*}
+		\phi(x) = \lambda c_1 x^{2/5} + \lambda c_2 x^{-2/5}.
+	\end{equation*}
+
+	Підставляючи $\phi$ назад у $c_i$ маємо СЛАР
+	\begin{system*}
+		c_1 &= \Int_0^1 t^{-2/5} (\lambda c_1 t^{2/5} + \lambda c_2 t^{-2/5}) \diff t, \\
+		c_2 &= \Int_0^1 t^{2/5} (\lambda c_1 t^{2/5} + \lambda c_2 t^{-2/5}) \diff t.
+	\end{system*}
+
+	Інтегруючи знаходимо
+	\begin{system*}
+		(1 - \lambda) c_1 - 5 \lambda c_2 &= 0, \\
+		-\frac{5\lambda}{9} c_1 + (1 - \lambda) c_2 &= 0.
+	\end{system*}
+	
+	Визначник цієї СЛАР
+	\begin{equation*}
+		D(\lambda) = \begin{vmatrix} 1 - \lambda & - 5 \lambda \\ - \dfrac{5\lambda}{9} & 1 - \lambda \end{vmatrix} = (1 - \lambda)^2 - \dfrac{25\lambda^2}{9} = 0,
+	\end{equation*}
+	тобто власні числа
+	\begin{equation*}
+		\lambda_1 = \dfrac{3}{8}, \quad \lambda_2 = - \dfrac{3}{2}.
+	\end{equation*}
+	
+	З системи однорідних рівнянь при $\lambda = \lambda_1 = 3 / 8$ маємо $c_1 = 3 c_2$. Тоді маємо власну функцію
+	\begin{equation*}
+		\phi_1(x) = 3 x^{2 / 5} + x^{-2 / 5}.
+	\end{equation*}
+
+	При $\lambda = \lambda_2 = - 3 / 2$ маємо $c_1 = - 3 c_2$. Маємо другу власну функцію
+	\begin{equation*}
+		\phi_2(x) = - 3 x^{2 / 5} + x^{-2 / 5}.
+	\end{equation*}
+\end{solution}
+
+\begin{example}
+	Знайти розв'язок інтегрального рівняння при всіх значеннях параметрів $\lambda$, $a$, $b$, $c$: 
+	\begin{equation*}
+		\phi(x) = \lambda \Int_{-1}^1 \left(\sqrt[3]{x} + \sqrt[3]{y}\right) \phi(y) \diff y + ax^2 + bx + c.
+	\end{equation*}
+\end{example}
+
+\begin{solution}
+	Запишемо рівняння у вигляді: 
+	\begin{equation*}
+		\phi(x) = \lambda \sqrt[3]{x} \Int_{-1}^1 \phi(y) \diff y + \lambda \Int_{-1}^1 \left( \sqrt[3]{y} \cdot \phi(y) \right) \diff y + ax^2 + bx + c.
+	\end{equation*}
+
+	Введемо позначення: 
+	\begin{equation*}
+		c_1 = \Int_{-1}^1 \phi(y) \diff y, \quad c_2 = \Int_{-1}^1 \sqrt[3]{y} \phi(y) \diff y,
+	\end{equation*}
+	та запишемо розв'язок у вигляді:
+	\begin{equation*}
+		\phi(x) = \lambda \sqrt[3]{x} c_1 + \lambda c_2 + ax^2 + bx + c
+	\end{equation*}
+
+	Для визначення констант отримаємо СЛАР:
+	\begin{system*}
+		c_1 - 2 \lambda c_2 &= \dfrac{2a}{3} + 2 c, \\
+		- \dfrac{6\lambda}{5} c_1 + c_2 &= \dfrac{6b}{7}.
+	\end{system*}
+
+	Визначник системи дорівнює
+	\begin{equation*}
+		\begin{vmatrix} 1 & - 2 \lambda \\ - \frac{6\lambda}{5} & 1 \end{vmatrix} = 1 - \frac{12\lambda^2}{5}.
+	\end{equation*}
+
+	Характеристичні числа ядра 
+	\begin{equation*}
+		\lambda_1 = \frac{1}{2} \sqrt{\frac{5}{3}}, \quad \lambda_2 = - \frac{1}{2} \sqrt{\frac{5}{3}}.
+	\end{equation*}
+
+	Нехай $\lambda \ne \lambda_1$, $\lambda \ne \lambda_2$. Тоді розв'язок існує та єдиний для будь-якого вільного члена і має вигляд
+	\begin{equation*}
+		\phi(x) = \dfrac{5 \lambda (14 a + 30 \lambda b + 42 c)}{21 (5 - 12 \lambda^2)} \cdot\sqrt[3]{x} + \dfrac{28 \lambda a + 84 \lambda c + 30 b}{7(5 - 12 \lambda^2)} + ax^2 + bx + c.
+	\end{equation*}
+
+	Нехай 
+	\begin{equation*}
+		\lambda = \lambda_1 = \frac{1}{2} \cdot \sqrt{\frac{5}{3}}.
+	\end{equation*}
+	
+	Тоді система рівнянь має вигляд:
+	\begin{system*}
+		c_1 - \sqrt{\dfrac{5}{3}} c_2 &= \dfrac{2a}{3} + 2 c, \\
+		c_1 - \sqrt{\dfrac{5}{3}} c_2 &= - \sqrt{\dfrac{5}{3}} \dfrac{6b}{7}.
+	\end{system*}
+
+	Ранги розширеної і основної матриці співпадатимуть якщо має місце рівність
+	\begin{equation*}
+		\frac{2a}{3} + 2c = -\sqrt{\frac{5}{3}} \cdot \frac{6}{7} \cdot b \quad (\star)
+	\end{equation*}
+
+	При виконанні цієї умови розв'язок існує
+	\begin{equation*}
+		c_2 = c_2, \quad c_1 = \sqrt{\frac{5}{3}} c_2 + \frac{2a}{3} + 2c.
+	\end{equation*}
+
+	Таким чином розв'язок можна записати
+	\begin{equation*}
+		\phi(x) = \dfrac{1}{2} \sqrt{\dfrac{5}{3}} \sqrt[3]{x} \left( \sqrt{\dfrac{5}{3}} c_2 + \dfrac{2a}{3} + 2c \right) + \dfrac{1}{2} \sqrt{\dfrac{5}{3}} c_2 + ax^2 + bx + x.
+	\end{equation*}
+
+	Якщо
+	\begin{equation*}
+		\lambda = \lambda_1 = \frac{1}{2} \cdot \sqrt{\frac{5}{3}}
+	\end{equation*}
+	а умова $(\star)$ не виконується, то розв'язків не існує. \medskip
+
+	Нехай
+	\begin{equation*}
+		\lambda = \lambda_2 = - \frac{1}{2} \sqrt{\frac{5}{3}}
+	\end{equation*}
+
+	Після підстановки цього значення отримаємо СЛАР
+	\begin{system*}
+		c_1 + \sqrt{\dfrac{5}{3}} c_2 &= \dfrac{2a}{3} + 2 c, \\
+		c_1 + \sqrt{\dfrac{5}{3}} c_2 &= \sqrt{\dfrac{5}{3}} \dfrac{6b}{7}.
+	\end{system*}
+
+	Остання система має розв'язок при умові
+	\begin{equation*}
+		\frac{2a}{3} + 2c = \sqrt{\frac{5}{3}} \cdot \frac{6}{7} \cdot b, \quad (\star\star)
+	\end{equation*}
+
+	При виконанні умови $(\star\star)$, розв'язок існує
+	\begin{equation*}
+		c_2 = c_2, \quad c_1 = - \sqrt{\frac{5}{3}} c_2 + \frac{2a}{3} + 2c.
+	\end{equation*}
+
+	Розв'язок інтегрального рівняння можна записати:
+	\begin{equation*}
+		\phi(x) = \dfrac{1}{2} \sqrt{\dfrac{5}{3}} \sqrt[3]{x} \left( -\sqrt{\dfrac{5}{3}} c_2 + \dfrac{2a}{3} + 2c \right) + \dfrac{1}{2} \sqrt{\dfrac{5}{3}} c_2 + ax^2 + bx + c.
+	\end{equation*}
+\end{solution}
+
+\end{document}
