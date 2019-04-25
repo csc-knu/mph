@@ -91,6 +91,8 @@
 	\end{equation}
 \end{itemize}
 
+\newpage
+
 \section{Інтегральні рівняння}
 
 \subsubsection{Основні поняття}
@@ -122,11 +124,11 @@
 \end{definition}
 
 \begin{definition}[вільного члена інтегрального рівняння]
-	\it{Вільним членом} інтегральних рівнянь наведених вище називається функція $f(x) \in C\left(\overline G\right)$.
+	\it{Вільним \allowbreak членом} інтегральних рівнянь наведених вище називається функція $f(x) \in C\left(\overline G\right)$.
 \end{definition}
 
 \begin{definition}[однорідного рівняння Фредгольма II роду]
-	Інтегральне рівняння Фредгольма II роду при $f(x) \equiv 0$ називається \it{однорідним}:
+	Інтегра\-льне рівняння Фредгольма II роду при $f(x) \equiv 0$ називається \it{однорідним}:
 	\begin{equation}
 		\phi(x) = \lambda \Int_G K(x, y) \phi(y) \diff y.
 	\end{equation}
@@ -139,12 +141,14 @@
 	\end{equation}
 \end{definition}
 
-Будемо записувати інтегральні рівняння скорочено в операторній формі:
-\begin{align}
-	\phi &= \lambda \bf{K} \phi + f, \\
-	\bf{K} \phi &= f, \\
-	\phi &= \lambda \bf{K} \phi.
-\end{align}
+\begin{remark}
+    Будемо записувати інтегральні рівняння скорочено в операторній формі:
+    \begin{align}
+    	\phi &= \lambda \bf{K} \phi + f, \\
+    	\bf{K} \phi &= f, \\
+    	\phi &= \lambda \bf{K} \phi.
+    \end{align}
+\end{remark}
 
 \begin{definition}[спряженого (союзного ядра)]
 	\it{Спряженим (сюзним) ядром} називається функція
@@ -161,14 +165,16 @@
 	називається \it{спряженим (союзним)} до відповідного інтегрального рівняння Фредгольма ІІ роду.
 \end{definition}
 
-Операторна форма рівнянь останніх двох рівнянь:
-\begin{align}
-	\psi &= \overline \lambda \bf{K}^\star \psi + g, \\
-	\psi &= \overline \lambda \bf{K}^\star \psi.
-\end{align}
+\begin{remark}
+    Операторна форма рівнянь останніх двох рівнянь:
+    \begin{align}
+    	\psi &= \overline \lambda \bf{K}^\star \psi + g, \\
+    	\psi &= \overline \lambda \bf{K}^\star \psi.
+    \end{align}
+\end{remark}
 
 \begin{definition}[характеристичних чисел ядра]
-	Комплексні значення $\lambda$, при яких однорідне інтегральне рівняння Фредгольма ІІ роду має нетривіальні розв'язки, називаються \it{характеристичними числами ядра} $K(x, y)$.
+	Комплексні $\lambda$, при яких однорідне інтегральне рівняння Фредгольма ІІ роду має нетривіальні розв'язки, називаються \it{характеристичними числами} ядра $K(x, y)$.
 \end{definition}
 
 \begin{definition}[власних функцій ядра]
@@ -184,7 +190,6 @@
 \subsubsection{Метод послідовних наближень для неперервного ядра}
 
 Нагадаємо кілька визначень:
-
 \begin{definition}[норми у $C\left(\overline G\right)$]
 	\it{Нормою} у банаховому просторі неперервних функцій $C\left(\overline G\right)$ називається
 	\begin{equation}
@@ -360,6 +365,8 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 	Будь-яке інтегральне рівняння Фредгольма другого роду з неперервним ядром $K(x, y)$ при умові $|\lambda| < 1 / MV$ має єдиний розв'язок $\phi$ в класі неперервних функцій $C\left(\overline G\right)$ для будь-якого неперервного вільного члена $f$. Цей роз\-в'я\-зок може бути знайдений у вигляді ряду Неймана.
 \end{theorem}
 
+\allowbreak
+
 \subsubsection{Повторні ядра}
 
 \begin{proposition}[про перенос інтегрального оператору через кому у скалярному добутку]
@@ -419,13 +426,15 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 \end{equation}
 
 \begin{definition}[повторних (ітерованих) ядер]
-	Інтегральні ядра $K_{(n)}(x, y)$ називаються \it{повторними (ітерованими)}.
+	При цьому інтегра\-льні ядра $K_{(n)}(x, y)$ називаються \it{повторними (ітерованими)}.
 \end{definition}
 
-Операторна форма:
-\begin{equation}
-	\bf{K}f = \Int_G K(x, y) f(y) \diff y, \quad \ldots, \quad \bf{K}^n f = \Int_G K_{(n)}(x, y)f(y) \diff y.
-\end{equation}
+\begin{remark}
+    Операторна форма:
+    \begin{equation}
+        \bf{K}f = \Int_G K(x, y) f(y) \diff y, \quad \ldots, \quad \bf{K}^n f = \Int_G K_{(n)}(x, y)f(y) \diff y.
+    \end{equation}
+\end{remark}
 
 \subsubsection{Резольвента інтегрального оператора}
 
@@ -438,7 +447,7 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 		&= f(x) + \lambda \Int_G \mathcal{R}(x, y, \lambda) f(y) \diff y,
 	\end{aligned}
 \end{equation}
-при $|\lambda| < 1/MV$.
+при $|\lambda| < 1 / MV$.
 
 \begin{definition}[резольвенти інтегрального оператора]
 	Функція
@@ -448,10 +457,12 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 	називається \it{резольвентою} інтегрального оператора $K(x, y)$.
 \end{definition}
 
-Операторна форма запису розв'язку рівняння Фредгольма через резольвенту ядра має вигляд:
-\begin{equation}
-	\phi = f + \lambda \bf{R} f.
-\end{equation}
+\begin{remark}
+    Операторна форма запису розв'язку рівняння Фредгольма через резольвенту ядра має вигляд:
+    \begin{equation}
+    	\phi = f + \lambda \bf{R} f.
+    \end{equation}
+\end{remark}
 
 \begin{proposition}
 	Мають місце операторні рівності:
@@ -471,12 +482,13 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 	E + \lambda \bf{R} = (E - \lambda \bf{K})^{-1}, \quad |\lambda| < \dfrac{1}{MV}.
 \end{equation}
 
-Зважуючи на формулу розв'язку рівняння Фредгольма через резольвенту, має місце теорема
-
+Зважуючи на формулу розв'язку рівняння Фредгольма через резольвенту, має місце
 \begin{theorem}[про існування розв'язку інтегрального рівняння Фредгольма з неперервним
 ядром для малих значенням параметру]
 	Будь-яке інтегральне рівняння Фредгольма другого роду з неперервним ядром $K(x, y)$ при умові $|\lambda| < 1 / MV$ має єдиний розв'язок $\phi$ в класі неперервних функцій $C\left(\overline G\right)$ для будь-якого неперервного вільного члена $f$. Цей розв'язок може бути знайдений у вигляді $f + \lambda \bf{R} f$ за допомогою резольвенти $\bf{R}$.
 \end{theorem}
+
+\newpage
 
 \begin{example}
 	Методом послідовних наближень знайти розв'язок інтегрального рівняння \begin{equation*}\phi(x) = x + \lambda \Int_0^1 (xt)^2 \phi(t) \diff t.\end{equation*}
