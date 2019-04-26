@@ -1,14 +1,14 @@
-\input{univ.sty}
+% \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+% \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+% \author{Скибицький Нікіта}
+% \date{\today}
 
-\input{th.sty}
+% \input{th.sty}
 
-\begin{document}
+% \begin{document}
 
-\tableofcontents
+% \tableofcontents
 
 \section{Вступ}
 
@@ -110,7 +110,7 @@
 	\end{equation}
 \end{definition}
 
-Тут $\lambda$ --- комплексний параметр, $\lambda \in \CC$ (відомий або невідомий), $G$ --- область інтегрування, $G \subseteq \RR^n$, $\overline G$ --- замкнена та обмежена.
+Тут $\lambda$ --- комплексний параметр, $\lambda \in \CC$ (відомий або невідомий), $G$ --- область інтегрування, $G \subseteq \RR^n$, $\oG$ --- замкнена та обмежена.
 
 \begin{definition}[інтегрального рівняння Фредгольма I роду]
 	\it{Інтегральним рівнянням Фредгольма І роду} називається рівняння вигляду
@@ -120,11 +120,11 @@
 \end{definition}
 
 \begin{definition}[ядра інтегрального рівняння]
-	\it{Ядром} інтегральних рівнянь наведених вище називається функція $K(x, y) \in C\left(\overline G\times\overline G\right)$.
+	\it{Ядром} інтегральних рівнянь наведених вище називається функція $K(x, y) \in \CoGoG$.
 \end{definition}
 
 \begin{definition}[вільного члена інтегрального рівняння]
-	\it{Вільним \allowbreak членом} інтегральних рівнянь наведених вище називається функція $f(x) \in C\left(\overline G\right)$.
+	\it{Вільним \allowbreak членом} інтегральних рівнянь наведених вище називається функція $f(x) \in \CoG$.
 \end{definition}
 
 \begin{definition}[однорідного рівняння Фредгольма II роду]
@@ -190,10 +190,10 @@
 \subsubsection{Метод послідовних наближень для неперервного ядра}
 
 Нагадаємо кілька визначень:
-\begin{definition}[норми у $C\left(\overline G\right)$]
-	\it{Нормою} у банаховому просторі неперервних функцій $C\left(\overline G\right)$ називається
+\begin{definition}[норми у $\CoG$]
+	\it{Нормою} у банаховому просторі неперервних функцій $\CoG$ називається
 	\begin{equation}
-		\|f\|_{C\left(\overline G\right)} = \Max_{x \in \overline G} |f(x)|.
+		\|f\|_{\CoG} = \Max_{x \in \oG} |f(x)|.
 	\end{equation}
 \end{definition}
 
@@ -213,11 +213,11 @@
 
 \begin{lemma} 
 	\label{lemma:2.1.4}
-	Інтегральний оператор $\bf{K}$ з неперервним ядром $K(x, y)$ петворює множини функцій $C\left(\overline G\right) \xrightarrow{\bf{K}} C\left(\overline G\right)$, $L_2(G) \xrightarrow{\bf{K}} L_2(G)$, $L_2(G) \xrightarrow{\bf{K}} C\left(\overline G\right)$ обмежений та мають місце нерівності:
+	Інтегральний оператор $\bf{K}$ з неперервним ядром $K(x, y)$ петворює множини функцій $\CoG \xrightarrow{\bf{K}} \CoG$, $L_2(G) \xrightarrow{\bf{K}} L_2(G)$, $L_2(G) \xrightarrow{\bf{K}} \CoG$ обмежений та мають місце нерівності:
 	\begin{align}
-		\| \bf{K} \phi \|_{C(G)} &\le M V \| \phi \|_{C(G)}, \\
+		\| \bf{K} \phi \|_{\CoG} &\le M V \| \phi \|_{\CoG}, \\
 		\| \bf{K} \phi \|_{L_2(G)} &\le M V \| \phi \|_{L_2(G)}, \\
-		\| \bf{K} \phi \|_{C(G)} &\le M \sqrt{V} \| \phi \|_{L_2(G)},
+		\| \bf{K} \phi \|_{\CoG} &\le M \sqrt{V} \| \phi \|_{L_2(G)},
 	\end{align}
 
 	де
@@ -227,37 +227,37 @@
 \end{lemma}
 
 \begin{remark}
-	Мається на увазі, що довільна функція $\phi$ з множини функцій $C\left(\overline G\right)$ під дією інтегрального оператора $\bf{K}$ переходить у функцію $\bf{K}\phi$ з множини функцій $C\left(\overline G\right)$, і так далі.
+	Мається на увазі, що довільна функція $\phi$ з множини функцій $\CoG$ під дією інтегрального оператора $\bf{K}$ переходить у функцію $\bf{K}\phi$ з множини функцій $\CoG$, і так далі.
 \end{remark}
 
 \begin{proof}
-	Нехай $\phi \in L_2(G)$. Тоді $\phi$ --- абсолютно інтегровна функція на $G$ і, оскільки ядро $K(x, y)$ неперервне на $G \times G$, функція $(\bf{K}\phi)(x)$ неперервна на $G$. Тому оператор $\bf{K}$ переводить $L_2(G)$ в $C\left(\overline G\right)$ і, з врахуванням нерівності Коші-Буняковського, обмежений. Доведемо нерівності:
+	Нехай $\phi \in L_2(G)$. Тоді $\phi$ --- абсолютно інтегровна функція на $G$ і, оскільки ядро $K(x, y)$ неперервне на $G \times G$, функція $(\bf{K}\phi)(x)$ неперервна на $G$. Тому оператор $\bf{K}$ переводить $L_2(G)$ в $\CoG$ і, з врахуванням нерівності Коші-Буняковського, обмежений. Доведемо нерівності:
 	\begin{enumerate}
 		\item $\| \bf{K} \phi \|_{C(G)} \le M V \| \phi \|_{C(G)}$:
 		\begin{equation}
 			\begin{aligned}
-				\| \bf{K} \phi \|_{C\left(\overline G\right)} &= \Max_{x \in \overline G} \left| \Int_G K(x, y) \phi(y) \diff y \right| \le \\
-				&\le \Max_{x \in \overline G} \Int_G \left( |K(x, y)| \cdot |\phi(y)| \right) \diff y \le \\
-				&\le \Max_{x \in \overline G} \left( \Max_{y \in \overline G} |K(x, y)| \cdot \Max_{y \in \overline G} |\phi(y)| \cdot \Int_G \diff y \right) \le \\
-				&\le \Max_{(x, y) \in \overline G \times \overline G} |K(x, y)| \cdot \Max_{y \in \overline G} |\phi(y)| \cdot \Int_G \diff y = \\
-				&= M V \|\phi\|_{C\left(\overline G\right)}.
+				\| \bf{K} \phi \|_{\CoG} &= \Max_{x \in \oG} \left| \Int_G K(x, y) \phi(y) \diff y \right| \le \\
+				&\le \Max_{x \in \oG} \Int_G \left( |K(x, y)| \cdot |\phi(y)| \right) \diff y \le \\
+				&\le \Max_{x \in \oG} \left( \Max_{y \in \oG} |K(x, y)| \cdot \Max_{y \in \oG} |\phi(y)| \cdot \Int_G \diff y \right) \le \\
+				&\le \Max_{(x, y) \in \oG \times \oG} |K(x, y)| \cdot \Max_{y \in \oG} |\phi(y)| \cdot \Int_G \diff y = \\
+				&= M V \|\phi\|_{\CoG}.
 			\end{aligned}
 		\end{equation}
 		\item $\| \bf{K} \phi \|_{L_2(G)} \le M V \| \phi \|_{L_2(G)}$:
 		\begin{equation}
 			\begin{aligned}
 				\left( \| \bf{K} \phi \|_{L_2(G)} \right)^2 &= \Int_G \left| \Int_G K(x, y) \phi(y) \diff y \right|^2 \diff x \le \\
-				&\le \Int_G \left| \Max_{y \in \overline G} |K(x, y)| \cdot \Int_G \phi(y) \diff y \right|^2 \diff x \le \\
-				&\le \left( \Max_{(x, y) \in \overline G \times \overline G} |K(x, y)| \right)^2 \cdot \left| \Int_G \phi(y) \diff y \right|^2 \cdot \Int_G \diff x \le \\
+				&\le \Int_G \left| \Max_{y \in \oG} |K(x, y)| \cdot \Int_G \phi(y) \diff y \right|^2 \diff x \le \\
+				&\le \left( \Max_{(x, y) \in \oG \times \oG} |K(x, y)| \right)^2 \cdot \left| \Int_G \phi(y) \diff y \right|^2 \cdot \Int_G \diff x \le \\
 				&\le (M \| \phi\|_{L_2(G)} V)^2.
 			\end{aligned}
 		\end{equation}
 		\item $\| \bf{K} \phi \|_{C(G)} \le M \sqrt{V} \| \phi \|_{L_2(G)}$:
 		\begin{equation}
 			\begin{aligned}
-				\| \bf{K} \phi \|_{C\left(\overline G\right)} &= \Max_{x \in \overline G} |(\bf{K} \phi) (x)| = \\
-				&= \Max_{x \in \overline G} \left| \Int_G K(x, y) \phi(y) \diff y \right| \le \\
-				&\le \Max_{x \in \overline G} \sqrt{\Int_G |K(x, y)|^2 \diff y} \cdot \sqrt{\Int_G |\phi(y)|^2 \diff y} \le \\
+				\| \bf{K} \phi \|_{\CoG} &= \Max_{x \in \oG} |(\bf{K} \phi) (x)| = \\
+				&= \Max_{x \in \oG} \left| \Int_G K(x, y) \phi(y) \diff y \right| \le \\
+				&\le \Max_{x \in \oG} \sqrt{\Int_G |K(x, y)|^2 \diff y} \cdot \sqrt{\Int_G |\phi(y)|^2 \diff y} \le \\
 				&\le M \sqrt{V} \|\phi\|_{L_2(G)}.
 			\end{aligned}
 		\end{equation}
@@ -292,22 +292,22 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 Дослідимо збіжність ряду Неймана:
 \begin{equation}
 	\begin{aligned}
-		\left\| \Sum_{i = 0}^\infty \lambda^i \bf{K}^i f \right\|_{C\left(\overline G\right)} &\le \Sum_{i = 0}^\infty |\lambda^i| \cdot \| \bf{K}^i f \|_{C\left(\overline G\right)} \le \\
-		&\le \Sum_{i = 0}^\infty |\lambda^i| \cdot (MV)^i \cdot \| f \|_{C\left(\overline G\right)} = \dfrac{\|f\|_{C\left(\overline G\right)}}{1 - |\lambda| \cdot MV}.
+		\left\| \Sum_{i = 0}^\infty \lambda^i \bf{K}^i f \right\|_{\CoG} &\le \Sum_{i = 0}^\infty |\lambda^i| \cdot \| \bf{K}^i f \|_{\CoG} \le \\
+		&\le \Sum_{i = 0}^\infty |\lambda^i| \cdot (MV)^i \cdot \| f \|_{\CoG} = \dfrac{\|f\|_{\CoG}}{1 - |\lambda| \cdot MV}.
 	\end{aligned}
 \end{equation}
 
 Справді,
 \begin{equation}
-	\| \bf{K} \phi\|_{C\left(\overline G\right)} \le MV \|\phi\|_{C\left(\overline G\right)},
+	\| \bf{K} \phi\|_{\CoG} \le MV \|\phi\|_{\CoG},
 \end{equation}
 тому
 \begin{equation}
-	\|\bf{K}^2\phi\|_{C\left(\overline G\right)} \le (MV)^2 \|\phi\|_{C\left(\overline G\right)}
+	\|\bf{K}^2\phi\|_{\CoG} \le (MV)^2 \|\phi\|_{\CoG}
 \end{equation} 
 і, взагалі кажучи,
 \begin{equation}
-	\|\bf{K}^i\phi\|_{C\left(\overline G\right)} \le (MV)^i \|\phi\|_{C\left(\overline G\right)}.
+	\|\bf{K}^i\phi\|_{\CoG} \le (MV)^i \|\phi\|_{\CoG}.
 \end{equation}
 
 Отже ми довели наступне
@@ -343,26 +343,26 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 
 	Обчислимо норму Чебишева:
 	\begin{equation}
-		|\lambda| \cdot \|\bf{K} \phi^{(0)}\|_{C\left(\overline G\right)} = \| \phi^{(0)} \|_{C\left(\overline G\right)}.
+		|\lambda| \cdot \|\bf{K} \phi^{(0)}\|_{\CoG} = \| \phi^{(0)} \|_{\CoG}.
 	\end{equation}
 
 	Застосовуючи нерівність з леми до лівої частини отримуємо
 	\begin{equation}
-		\| \phi^{(0)} \|_{C\left(\overline G\right)} \le |\lambda| \cdot MV \cdot \|\phi^{(0)}\|_{C\left(\overline G\right)}.
+		\| \phi^{(0)} \|_{\CoG} \le |\lambda| \cdot MV \cdot \|\phi^{(0)}\|_{\CoG}.
 	\end{equation}
 
 	Звідси безпосередньо випливає
 	\begin{equation}
-		(1 - |\lambda| \cdot MV) \cdot \|\phi^{(0)}\|_{C\left(\overline G\right)} \le 0.
+		(1 - |\lambda| \cdot MV) \cdot \|\phi^{(0)}\|_{\CoG} \le 0.
 	\end{equation}
 
-	Звідси маємо, що $\|\phi^{(0)}\|_{C\left(\overline G\right)} = 0$.
+	Звідси маємо, що $\|\phi^{(0)}\|_{\CoG} = 0$.
 \end{proof}
 
 Таким чином доведена
 \begin{theorem}[про існування розв'язку інтегрального рівняння Фредгольма з неперервним
 ядром для малих значень параметру]
-	Будь-яке інтегральне рівняння Фредгольма другого роду з неперервним ядром $K(x, y)$ при умові $|\lambda| < 1 / MV$ має єдиний розв'язок $\phi$ в класі неперервних функцій $C\left(\overline G\right)$ для будь-якого неперервного вільного члена $f$. Цей роз\-в'я\-зок може бути знайдений у вигляді ряду Неймана.
+	Будь-яке інтегральне рівняння Фредгольма другого роду з неперервним ядром $K(x, y)$ при умові $|\lambda| < 1 / MV$ має єдиний розв'язок $\phi$ в класі неперервних функцій $\CoG$ для будь-якого неперервного вільного члена $f$. Цей роз\-в'я\-зок може бути знайдений у вигляді ряду Неймана.
 \end{theorem}
 
 \allowbreak
@@ -486,7 +486,7 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 Зважуючи на формулу розв'язку рівняння Фредгольма через резольвенту, має місце
 \begin{theorem}[про існування розв'язку інтегрального рівняння Фредгольма з неперервним
 ядром для малих значенням параметру]
-	Будь-яке інтегральне рівняння Фредгольма другого роду з неперервним ядром $K(x, y)$ при умові $|\lambda| < 1 / MV$ має єдиний розв'язок $\phi$ в класі неперервних функцій $C\left(\overline G\right)$ для будь-якого неперервного вільного члена $f$. Цей розв'язок може бути знайдений у вигляді $f + \lambda \bf{R} f$ за допомогою резольвенти $\bf{R}$.
+	Будь-яке інтегральне рівняння Фредгольма другого роду з неперервним ядром $K(x, y)$ при умові $|\lambda| < 1 / MV$ має єдиний розв'язок $\phi$ в класі неперервних функцій $\CoG$ для будь-якого неперервного вільного члена $f$. Цей розв'язок може бути знайдений у вигляді $f + \lambda \bf{R} f$ за допомогою резольвенти $\bf{R}$.
 \end{theorem}
 
 \newpage
@@ -518,4 +518,4 @@ $\bf{K}^{i + 1} = \bf{K} (\bf{K}^i)$. \medskip
 	\end{equation*}
 \end{solution}
 
-\end{document}
+% \end{document}
