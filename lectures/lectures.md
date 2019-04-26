@@ -12,9 +12,9 @@
 
 3. Лекція №3: [pdf-v](3-v.pdf), [docx](3.docx)
 
----
+4. Лекція №4: [pdf-v](4-v.pdf), [docx](4.docx)
 
-4. Лекція №4: [pdf](4.pdf), [doc](4.doc)
+---
 
 5. Лекція №5: [pdf](5.pdf), [doc](5.doc)
 
