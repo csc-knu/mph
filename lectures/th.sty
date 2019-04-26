@@ -44,9 +44,13 @@
 \declaretheorem[style=thmbluebox,name=Теорема,numberwithin=subsection]{theorem}
 \declaretheorem[style=thmbluebox,name=Лема,sibling=theorem]{lemma}
 \declaretheorem[style=thmbluebox,name=Твердження,sibling=theorem]{proposition}
+\declaretheorem[style=thmbluebox,name=Закон,sibling=theorem]{law}
+\declaretheorem[style=thmbluebox,name=Рівняння,sibling=theorem]{th_equation}
 \declaretheorem[style=thmbluebox,name=Наслідок,sibling=theorem]{corollary}
+
 \declaretheorem[style=thmredbox,name=Приклад,sibling=theorem]{example}
 \declaretheorem[style=thmredbox,name=Приклади,sibling=example]{examples}
+
 \declaretheorem[style=thmredbox,name=Властивість,sibling=theorem]{property}
 \declaretheorem[style=thmredbox,name=Властивості,sibling=property]{properties}
 
@@ -87,15 +91,10 @@
 	mdframed={style=mdblackbox}
 ]{thmblackbox}
 
-% \theoremstyle{theorem}
-\declaretheorem[name=Запитання,sibling=theorem,style=thmgreenbox]{ques}
 \declaretheorem[name=Вправа,sibling=theorem,style=thmblackbox]{exercise}
+\declaretheorem[name=Запитання,sibling=theorem,style=thmgreenbox]{ques}
 \declaretheorem[name=Зауваження,sibling=theorem,style=thmgreenbox]{remark}
-
-\theoremstyle{definition}
-\newtheorem{claim}[theorem]{Твердження}
 \declaretheorem[name=Визначення,sibling=theorem,style=thmblackbox]{definition}
-\newtheorem{fact}[theorem]{Факт}
 
 \newtheorem{problem}{Задача}[subsection]
 \newtheorem{sproblem}[problem]{Задача}

@@ -16,7 +16,7 @@
 
 5. Лекція №5: [pdf-v](5-v.pdf), [docx](5.docx)
 
-6. Лекція №6: [pdf](6.pdf), [doc](6.doc)
+6. Лекція №6: [pdf-r](6-r.pdf), [docx](6.docx)
 
 7. Лекція №7: [pdf-v](7-v.pdf), [docx](7.docx)
 
