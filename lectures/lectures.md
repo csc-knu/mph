@@ -18,7 +18,7 @@
 
 6. Лекція №6: [pdf](6.pdf), [doc](6.doc)
 
-7. Лекція №7: [pdf-r](7-r.pdf), [docx](7.docx)
+7. Лекція №7: [pdf-v](7-v.pdf), [docx](7.docx)
 
 ---
 
