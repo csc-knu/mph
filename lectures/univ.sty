@@ -25,6 +25,7 @@
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
 
+\DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\rang}{rang}
 \DeclareMathOperator{\const}{const}
@@ -84,8 +85,14 @@
 \newcommand{\Sum}{\displaystyle\sum\limits}
 \newcommand{\Int}{\displaystyle\int\limits}
 \newcommand{\Iint}{\displaystyle\iint\limits}
+\newcommand{\Iiint}{\displaystyle\iiint\limits}
 \newcommand{\Lim}{\displaystyle\lim\limits}
 
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 
 \newcommand*\rfrac[2]{{}^{#1}\!/_{\!#2}}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
