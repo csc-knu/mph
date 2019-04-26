@@ -14,7 +14,7 @@
 
 4. Лекція №4: [pdf-v](4-v.pdf), [docx](4.docx)
 
-5. Лекція №5: [pdf-r](5-r.pdf), [docx](5.docx)
+5. Лекція №5: [pdf-v](5-v.pdf), [docx](5.docx)
 
 ---
 
