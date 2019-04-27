@@ -24,7 +24,7 @@
 
 7. Лекція №7: [pdf-v](7-v.pdf), [docx](7.docx)
 
-8. Лекція №8: [pdf](8.pdf), [doc](8.doc)
+8. Лекція №8: [pdf-r](8-r.pdf), [docx](8.docx)
 
 9. Лекція №9: [pdf](9.pdf), [doc](9.doc)
 
