@@ -24,6 +24,8 @@ _Якщо захочете правити вихідний код лекцій, 
 
 ### Другий розділ
 
+[лекції 6&ndash;10](ch-2-r.pdf)
+
 7. Лекція №7: [pdf-v](7-v.pdf), [docx](7.docx), [LaTeX source](7.tex)
 
 8. Лекція №8: [pdf-v](8-v.pdf), [docx](8.docx), [LaTeX source](8.tex)
