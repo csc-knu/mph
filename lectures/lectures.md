@@ -4,27 +4,29 @@
 
 ---
 
+_Якщо ви захочете вносити зміни у вихідний код лекцій, то вам знадобляться [univ.sty](univ.sty) і [th.sty](th.sty)._
+
 ### Перший розділ
 
 [разом](ch-1-v.pdf)
 
-1. Лекція №1: [pdf-v](1-v.pdf), [docx](1.docx)
+1. Лекція №1: [pdf-v](1-v.pdf), [docx](1.docx), [LaTeX source](1.tex)
 
-2. Лекція №2: [pdf-v](2-v.pdf), [docx](2.docx)
+2. Лекція №2: [pdf-v](2-v.pdf), [docx](2.docx), [LaTeX source](2.tex)
 
-3. Лекція №3: [pdf-v](3-v.pdf), [docx](3.docx)
+3. Лекція №3: [pdf-v](3-v.pdf), [docx](3.docx), [LaTeX source](3.tex)
 
-4. Лекція №4: [pdf-v](4-v.pdf), [docx](4.docx)
+4. Лекція №4: [pdf-v](4-v.pdf), [docx](4.docx), [LaTeX source](4.tex)
 
-5. Лекція №5: [pdf-v](5-v.pdf), [docx](5.docx)
+5. Лекція №5: [pdf-v](5-v.pdf), [docx](5.docx), [LaTeX source](5.tex)
 
-6. Лекція №6: [pdf-v](6-v.pdf), [docx](6.docx)
+6. Лекція №6: [pdf-v](6-v.pdf), [docx](6.docx), [LaTeX source](6.tex)
 
 ### Другий розділ
 
-7. Лекція №7: [pdf-v](7-v.pdf), [docx](7.docx)
+7. Лекція №7: [pdf-v](7-v.pdf), [docx](7.docx), [LaTeX source](7.tex)
 
-8. Лекція №8: [pdf-r](8-r.pdf), [docx](8.docx)
+8. Лекція №8: [pdf-v](8-v.pdf), [docx](8.docx), [LaTeX source](8.tex)
 
 9. Лекція №9: [pdf](9.pdf), [doc](9.doc)
 
