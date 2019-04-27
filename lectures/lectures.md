@@ -30,7 +30,7 @@ _Якщо захочете правити вихідний код лекцій, 
 
 9. Лекція №9: [pdf-v](9-v.pdf), [docx](9.docx), [LaTeX source](9.tex)
 
-10. Лекція №10: [pdf-r](10-r.pdf), [docx](10.docx), [LaTeX source](10.tex)
+10. Лекція №10: [pdf-v](10-v.pdf), [docx](10.docx), [LaTeX source](10.tex)
 
 11. Лекція №11: [pdf](11.pdf), [doc](11.doc)
 
