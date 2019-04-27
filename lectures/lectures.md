@@ -28,7 +28,7 @@ _Якщо захочете правити вихідний код лекцій, 
 
 8. Лекція №8: [pdf-v](8-v.pdf), [docx](8.docx), [LaTeX source](8.tex)
 
-9. Лекція №9: [pdf-r](9-r.pdf), [docx](9.docx), [LaTeX source](9.tex)
+9. Лекція №9: [pdf-v](9-v.pdf), [docx](9.docx), [LaTeX source](9.tex)
 
 10. Лекція №10: [pdf](10.pdf), [doc](10.doc)
 
