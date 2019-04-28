@@ -4,15 +4,15 @@
 
 ### Викладацький склад
 
-Курс лекцій читається Кузьміном А.В., `kuzmin_a_b на ukr тчк net`
+Курс лекцій читається Кузьміном А.В., <code>kuzmin_a_b на ukr тчк net</code>
 
 Практичні заняття проводять:
 
-- Кузьмін А.В., `kuzmin_a_b на ukr тчк net`
+- Кузьмін А.В., <code>kuzmin_a_b на ukr тчк net</code>
 
-- Кашпур. О.Ф., `olena тчк kashpur на gmail тчк com`
+- Кашпур. О.Ф., <code>olena тчк kashpur на gmail тчк com</code>
 
-Підтримкою сайту займається Скибицький Н.М., `n тчк skybytskyi на gmal тчк com`
+Підтримкою сайту займається Скибицький Н.М., <code>n тчк skybytskyi на gmal тчк com</code>
 
 ### Розподіл балів
 
