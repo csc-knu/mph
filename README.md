@@ -4,7 +4,7 @@
 
 ### Викладацький склад
 
-Курс лекцій читається Кузьміном А.В., <code>kuzmin_a_b на ukr тчк net</code>
+Курс лекцій читається Кузьміном А.В., <span style="font-family:monospace;">kuzmin_a_b на ukr тчк net</span>
 
 Практичні заняття проводять:
 
