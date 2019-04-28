@@ -32,6 +32,6 @@
 
 - [Конспект лекцій](lectures/lectures.md)
 
-- [Контрольні запитання](control/control.md).
+- [Контрольні запитання](control/control.md)
 
-- Література [To appear later on].
+- [Література](books/books.md)
