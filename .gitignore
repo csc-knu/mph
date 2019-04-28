@@ -8,3 +8,6 @@
 *.out
 # ignore generated sync TeX g-zip files
 *.synctex.gz
+# ignore generated html files
+*.html
+
