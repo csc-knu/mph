@@ -1,0 +1,553 @@
+\input{univ.sty}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
+
+\input{th.sty}
+
+\begin{document}
+
+\tableofcontents
+
+\setcounter{section}{3}
+
+\section{Дослідження граничних задач математичної фізики та методів побудови їх розв'язків}
+
+\subsection{Поняття узагальнених функцій та дії над ними}
+
+Поняття узагальнених функцій виникло як результат природного розширення класичного поняття функції. Так, виконання деяких дій над класичними функціями виводить за межи таких. Вперше узагальнену функцію в математичні дослідження у 1947 році ввів англійський фізик Поль Дірак у своїх квантово-механічних дослідженнях. Така функція отримала назву $\delta$-функція Дірака. Ця функція дозволяє записати просторову щільність фізичної величини (маси, величини заряду, інтенсивності джерела тепла, сили тощо) зосередженої або прикладеної в одній точці. \medskip
+
+Розглянемо приклад, який дає уявлення про $\delta$-функцію. 
+\begin{example}
+	Нехай $\epsilon$-окіл точки $x$ прямої є джерелом тепла одиничної інтенсивності. Будемо припускати також, що джерело рівномірно розподілене по довжині $\epsilon$-околу. Враховуючи припущення, джерело тепла може бути описане наступною функцією
+
+	\begin{equation}
+		f_\epsilon(x) = \begin{cases} 
+			0, & x < - \epsilon, \\
+			1 / 2 \epsilon, & - \epsilon \le x < \epsilon, \\
+			0, & \epsilon \le x.
+		\end{cases}
+	\end{equation}
+\end{example}
+
+\begin{remark}
+	При цьому важливо, що сумарна кількість тепла, що виділяється $\epsilon$-околом дорівнює одиниці, тобто
+	\begin{equation}
+		\Int_{-\infty}^\infty f_\epsilon(x) \diff x = 1.
+	\end{equation}
+\end{remark}
+Припустимо, що фізичний розмір джерела такий малий, що його розмірами можна нехтувати, тобто будемо вважати що джерело є точковим. \medskip
+
+В цьому випадку природно визначити функцію 
+\begin{equation}
+	f_0(x) = \Lim_{\epsilon \to 0} f_\epsilon(x) = \begin{cases}
+		0, & x \ne 0, \\
+		\infty, & x = 0.
+	\end{cases}
+\end{equation}
+
+Легко бачити, що інтеграл Лебега функції $f_0(x)$ існує і дорівнює нулю:
+\begin{equation}
+	\Int_{-\infty}^\infty f_0(x) \diff x = 0.
+\end{equation}
+
+Тобто користуючись звичайним граничним переходом (поточковою границею) ми отримуємо функцію, яка не моделює одиничне точкове джерело тепла. \medskip
+
+Для коректного визначення граничної функції будемо розглядати замість сильної (поточкової) границі, слабку границю. \medskip
+
+Введемо набір пробних функцій $D(\RR^n) = C_\infty^0 (\RR^n)$ --- множину нескінченно диференційовних в $\RR^n$ функцій з компактним носієм. 
+
+\begin{remark}
+	Нагадаємо, що функція має компактний носій якщо існує куля $U_A(0)$ радіусу $A$, за межами якої функція обертається в тотожній нуль разом з усіма своїми похідними.
+\end{remark}
+
+\begin{proposition}
+	Виконується рівність
+	\begin{equation}
+		\Lim_{\epsilon \to 0} \Int_{-\infty}^\infty f_\epsilon(x) \phi(x) \diff x = \phi(0)
+	\end{equation}	
+	для довільної $\phi \in D(\RR^1)$.
+\end{proposition}
+
+\begin{proof}
+	Справді:
+	\begin{equation}
+		\begin{aligned}
+			\left| \Int_{-\infty}^\infty f_\epsilon(x) \phi(x) \diff x - \phi(0) \right| &= \left| \Int_{-\infty}^\infty f_\epsilon(x) (\phi(x) - \phi(0)) \diff x \right| \le \\
+			&\le \frac{1}{2\epsilon} \Int_\epsilon^\epsilon |\phi(x) - \phi(0)| \diff x = \\
+			&= \frac{\eta(\epsilon)}{2\epsilon} \Int_\epsilon^\epsilon \diff x = \eta(\epsilon) \xrightarrow[\epsilon \to 0]{} 0.
+		\end{aligned}	
+	\end{equation}
+
+	Це означає, що слабка границя дорівнює $\phi(0)$ для довільної $\phi \in D(\RR^1)$.
+\end{proof}
+	
+\begin{remark}
+	Тут ми винесли середнє значення підінтегралньої функції $g(x) = |\phi(x) - \phi(0)|$ з-під інтегралу, тобто $\eta(\epsilon) = g(\xi) = |\phi(\xi) - \phi(0)|$, де $\xi = \xi(\epsilon)$ --- якась середня точка, $\xi \in (-\epsilon, \epsilon)$. \medskip
+
+	Далі, $|\phi(\xi) - \phi(0)| \to 0$ при $\xi \to 0$, а $\xi \to 0$ при $\epsilon \to 0$ бо $|\xi| < |\epsilon|$. \medskip
+
+	Нарешті, $\eta(\epsilon) \to 0$ при $\epsilon \to 0$ адже $\phi$ --- неперервна, тобто $|\phi(\xi) - \phi(0)| \to 0$ при $\xi \to 0$, і знову-ж-таки $\xi \to 0$ при $\epsilon \to 0$ бо $|\xi| < |\epsilon|$.
+\end{remark}
+
+Таким чином $\delta$-функцію Дірака можна визначити, як слабку границю послідовності функції $f_\epsilon$ на множині $D(\RR^1)$, що збігається до числа $\phi(0)$ при $\epsilon \to 0$. \medskip
+
+Можна записати 
+\begin{equation}
+	\Lim_{\epsilon \to 0} \Int_{-\infty}^\infty f_\epsilon(x) \phi(x) \diff x = \Int_{-\infty}^\infty \delta(x) \phi(x) \diff x.
+\end{equation}
+
+Останню рівність будемо розглядати як лінійний неперервний функціонал, який будь-якій функції $\phi$ ставить у відповідність число $\phi(0)$.
+
+\begin{definition}[узагальненої функції]
+	\it{Узагальненою функцією} $f$ будемо називати будь-який лінійний неперервний функціонал   заданий на множині основних (пробних) функцій $\phi \in D(\RR^n)$.
+\end{definition}
+
+\begin{remark}
+	Лінійність і неперервність розуміємо в традиційному сенсі:
+	\begin{equation}
+		\langle f, a_1 \phi_1 + a_2 \phi_2 \rangle = a_1 \langle f, \phi_1 \rangle + a_2 \langle f, \phi_2 \rangle,
+	\end{equation}
+	і
+	\begin{equation}
+		\Lim_{k \to \infty} \langle f, \phi_k \rangle = 0,
+	\end{equation}
+	для довільної $\{\phi_k\}_{k = 1}^\infty$ такої, що $D^{\alpha_1 \ldots \alpha_n} \phi_k(x) \xrightarrow[]{k \to \infty} 0$ для довільних $\alpha_1, \ldots, \alpha_n$.
+\end{remark}
+
+Серед усіх узагальнених функцій виділяють клас регулярних узагальнених функцій.
+\begin{definition}[регулярної функції]
+	\it{Регулярними} називаються функції, які можуть бути представлені у вигляді 
+	\begin{equation}
+		\phi \mapsto \langle f, \phi \rangle = \Iiint_{\RR^n} f(x) \phi(x) \diff x
+	\end{equation}
+	з функцією $f(x) \in L_{\text{loc}}^1$ --- тобто абсолютно інтегровною функцією на будь-якому компакті, що належить $\RR^n$.
+\end{definition}
+
+\begin{remark}
+	Кожна локально інтегрована функція визначає \it{єдину} регулярну узагальнену функцію і навпаки, кожна регулярна узагальнена функція визначає \it{єдину} локально інтегровану функцію. 
+\end{remark}
+
+\begin{remark}
+	\it{Єдиність} означає, що дві локально інтегровані функції співпадають якщо вони відрізняються між собою на множині нульової міри.
+\end{remark}
+
+\begin{definition}[сингулярної функції]
+	Усі інші лінійні неперервні функціонали визначають \it{сингулярні} узагальнені функції.
+\end{definition}
+
+\begin{example}[сингулярної функції]
+	$\delta$-функція Дірака.
+\end{example}
+
+\begin{remark}
+	Дуже часто узагальнені функції називають також \it{розподілами}.
+\end{remark}
+
+Хоча сингулярні узагальнені функції є частинним випадком узагальнених функцій, але для їх представлення найчастіше використовується позначення скалярного добутку таке саме як і для регулярних узагальнених функцій. \medskip
+
+Справа в тому, що 
+\begin{proposition}
+	Для будь-якої сингулярної узагальненої функції $f: \phi \mapsto \langle f, \phi \rangle$ можна побудувати послідовність регулярних узагальнених функцій, яка слабко збігається до неї, тобто $\exists \{f_k\}_{k = 1}^\infty$, $f_k \in L_{\text{loc}}^1(\RR^n)$ така, що
+	\begin{equation}
+		\Lim_{k \to \infty} \Iiint_{\RR^n} f_k(x) \phi(x) \diff x = \langle f, \phi \rangle
+	\end{equation}
+\end{proposition}
+
+\begin{remark}
+	Ця послідовність не єдина.
+\end{remark}
+
+\begin{remark}
+	$\delta$-функцію ми побудували як границю $\Lim_{\epsilon \to 0} f_\epsilon$, яку можна було назвати \it{$\delta$-образною} послідовністю.
+\end{remark}
+
+Можна навести і інші
+\begin{examples}[$\delta$-образних послідовностей]
+	$\delta$-образними послідовностями також є:
+	\begin{itemize}
+		\item $f_m(x) = \dfrac{m}{\pi (1 + m^2 x^2)}$;
+		\item $f_m(x) = \dfrac{\sin m x}{\pi x}$;
+		\item $f_m(x) = \dfrac{m}{\sqrt{2 \pi}} \exp \left\{ - \dfrac{m^2 x^2}{2}\right\}$.
+	\end{itemize}
+\end{examples}
+
+\begin{remark}
+	Константи у знаменниках тут для того, щоби
+	\begin{equation}
+		\Int_{-\infty}^\infty f_m(x) \diff x = 1.
+	\end{equation}
+\end{remark}
+ 	  		 
+\subsubsection{Узагальнені функції та фізичні розподіли}
+
+Узагальнені функції (часто їх називають розподілами) можна інтерпретувати як розподіл електричних, магнітних зарядів або розподіл мас, тощо. Так наприклад функцію Дірака можна трактувати як щільність з якою розподілена маса, що дорівнює одиниці в точці $x = 0$. 
+
+\begin{definition}[зсунутої $\delta$-функції]
+	Аналогічним чином можна ввести і зсунуту функцію Дірака.
+	\begin{equation}
+		\Int_{-\infty}^\infty \delta(x - a) \phi(x) \diff x = \phi(a).
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+	Використовуючи цю формулу можна зобразити щільність розподілу зосереджених мас або іншої фізичної величини в точках прямої.
+\end{remark}
+
+\begin{example}
+	Так, якщо в точках $x_i$ розташовані зосереджені маси $m_i$, $i \in I$, то
+	щільність такого розподілу мас можна зобразити у вигляді
+	\begin{equation}
+		\rho(x) = \Sum_{i \in I} m_i \cdot \delta(x - x_i).	
+	\end{equation}
+\end{example}
+
+\begin{remark}
+	При цьому повну масу, яка зосереджена на прямій можна порахувати за формулою
+	\begin{equation}
+		\Int_{-\infty}^\infty \rho(x) \diff x = \Sum_{i \in I} m_i.	
+	\end{equation}
+\end{remark}
+
+\begin{definition}[$\delta$-функції в $\RR^n$]
+	Аналогічно $\delta$-функції, введеній на прямій, можна ввести $\delta$-функцію для $n$-вимірного евклідового простору:
+	\begin{equation}
+		\Iiint_{\RR^n} \delta(x - a) \phi(x) \diff x = \phi(a).
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+	Тоді щільність розподілу точкових мас у просторі можна також записати у вигляді
+	\begin{equation}
+		\rho(x) = \Sum_{i \in I} m_i \cdot \delta_3(x - x_i).	
+	\end{equation}
+\end{remark}
+
+Нагадаємо
+\begin{proposition}
+	Точковий одиничний електричний заряд розташований в точці $x_0$ створює потенціал рівний
+	\begin{equation}
+		\Iiint_{\RR^3} \frac{\delta(y - x_0) \diff y}{4 \pi |x - y|} = \frac{1}{4 \pi |x - x_0|}
+	\end{equation}
+	в точці $x \in \RR^3$. 
+\end{proposition}
+
+\begin{remark}
+	В цьому випадку $\delta(y - x_0)$ можна сприймати як щільність одиничного точкового заряду.
+\end{remark}
+
+\begin{example}
+	Якщо щільність зарядів $f(y)$ представляє собою локально інтегровану функцію, то маємо для потенціалу електростатичного поля відому формулу електростатики:
+	\begin{equation}
+		P(x) = \Iiint_{\RR^3} \frac{f(x) \diff y}{4 \pi |x - y|}.	
+	\end{equation}
+\end{example}
+
+\begin{definition}[поверхневої функції Дірака]
+	Узагальненням точкової функції Дірака є так звана \it{поверхнева функція Дірака} $\delta_S$, яку можна визначити як лінійний неперервний функціонал:
+	\begin{equation}
+		\phi \mapsto \langle \delta_S, \phi \rangle = \Iint_{S} \phi(x) \diff x.	
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+	Ця узагальнена функція може бути інтерпретована як щільність розподілу зарядів на поверхні $S$.
+\end{remark}
+
+\begin{example}
+	Потенціал електростатичного поля можна записати у вигляді
+	\begin{equation}
+		W(x) = \left\langle \mu(y) \delta_S(y), \frac{1}{4 \pi |x - y|} \right\rangle = \Iiint_{\RR^3} \frac{\mu(y) \delta_S(y) \diff y}{4 \pi |x - y|} = \Iint_{S} \frac{\mu(y) \diff y}{4 \pi |x - y|}.	
+	\end{equation}
+\end{example}
+
+\begin{definition}[потенціалу просторого шару]
+	Легко бачити, що $W(x)$ представляє собою потенціал електростатичного поля, утворений зарядженою поверхнею $S$ і називається \it{потенціалом простого шару}.
+\end{definition}
+
+\subsubsection{Дії над узагальненими функціями}
+
+Головною перевагою узагальнених функцій є те, що будь-яка узагальнена функція має похідні будь-якого порядку. \medskip
+
+Для визначення похідної узагальненої функції розглянемо звичайну неперервно диференційовну функцію $f(x)$ і згадаємо, що виконується наступна
+\begin{formula}[інтегрування за частинами]
+	\begin{equation}
+		\Int_{\RR^n} D^{\alpha_1 \ldots \alpha_n} f(x) \phi(x) \diff x = (-1)^{|\alpha|} \Int_{\RR^n} f(x) D^{\alpha_1 \ldots \alpha_n} \phi(x) \diff x,
+	\end{equation}
+	де $|\alpha| = \alpha_1 + \ldots + \alpha_n$, яка є істинною для будь-якої функції $\phi \in D(\RR^n)$.
+\end{formula}
+
+Права частина цієї рівності має зміст для будь-якої локально-інтегровної функції $f$. \medskip \allowbreak
+
+Таким чином можемо дати
+\begin{definition}[похідної локально-інтегровної функції]
+	\it{Похідною} $D^{\alpha_1 \ldots \alpha_n}$ будь-якої локально-інтегровної функції $f$ будемо називати лінійний неперервний функціонал
+	\begin{equation}
+		\Big\langle D^{\alpha_1 \ldots \alpha_n} f, \phi \Big\rangle = (-1)^{|\alpha|} \Int_{\RR^n} f(x) D^{\alpha_1 \ldots \alpha_n} \phi(x) \diff x.	
+	\end{equation}
+\end{definition}
+
+Аналогічним чином вводиться похідна і для сингулярних узагальнених функцій.
+\begin{definition}[похідної сингулярних функцій]
+	$D^{\alpha_1 \ldots \alpha_n} f$ визначається як лінійний неперервний функціонал
+	\begin{equation}
+		\Big\langle D^{\alpha_1 \ldots \alpha_n} f, \phi \Big\rangle = (-1)^{|\alpha|} \Big\langle f, D^{\alpha_1 \ldots \alpha_n} \phi \Big\rangle.
+	\end{equation}
+\end{definition}
+
+Розглянемо приклади обчислення похідних деяких узагальнених функцій:
+\begin{example}
+	Знайти $\theta'$, де 
+	\begin{equation}
+		\theta(x) = \begin{cases}
+			0, & x \le 0, \\
+			1, & 0 < x
+		\end{cases}	
+	\end{equation}
+	--- функція Хевісайда.
+\end{example}
+
+\begin{solution}
+	Розглянемо наступні рівності:
+	\begin{equation}
+		\begin{aligned}
+			\left\langle \theta', \phi \right\rangle &= - \Int_{-\infty}^\infty \theta(x) \phi'(x) \diff x = - \Int_{0}^\infty \phi'(x) \diff x = \\
+			&= - (\phi(\infty) - \phi(0)) = \phi(0) - \phi(\infty) = \phi(0) - 0 = \phi(0) = \langle \delta, \phi \rangle.	
+		\end{aligned}
+	\end{equation}
+
+	Таким чином можна записати $\theta' = \delta$.
+\end{solution}
+
+\begin{example}
+	Знайти $\delta^{(2)}$.
+\end{example}
+
+\begin{solution}
+	\begin{equation}
+		\left\langle \delta^{(2)}, \phi \right\rangle = \left\langle \delta, \phi^{(2)} \right\rangle = \phi^{(2)}(0).
+	\end{equation}
+\end{solution}
+
+\begin{example}
+	$f$ --- кусково неперервно-диференційовна функція, яка має в деякій точці $x_0$ розрив першого роду.
+\end{example}
+
+\begin{solution}
+	\begin{equation}
+		\begin{aligned}
+			\langle f', \phi \rangle &= - \Int_{-\infty}^\infty f(x) \phi'(x) \diff x = \\
+			&= - \Int_{-\infty}^{x_0} f(x) \phi'(x) \diff x -\Int_{x_0}^\infty f(x) \phi'(x) \diff x = \\
+			&= - f(x_0 - 0) + \phi(x_0) + f(x_0 + 0) \phi(x_0) + \\
+			&\quad + \Int_{-\infty}^{x_0} f(x)' \phi(x) \diff x + \Int_{x_0}^\infty f(x)' \phi(x) \diff x = \\
+			&= \phi(x_0) [f(x_0)] + \Int_{-\infty}^{x_0} f(x)' \phi(x) \diff x + \Int_{x_0}^\infty f(x)' \phi(x) \diff x = \\
+			&= \phi(x_0) [f(x_0)] + \Int_{-\infty}^\infty f(x)' \diff x  = \\
+			&= \Int_{-\infty}^\infty \Big( [f(x_0)] \cdot \delta(x - x_0) + \{f(x)'\} \Big) \phi(x) \diff x,
+		\end{aligned}
+	\end{equation}
+	де $[f(x_0)] = f(x_0 + 0) - f(x_0 - 0)$, $\{f'(x)\}$ --- локально інтегрована функція, яка співпадає з звичайною похідною функції $f$ в усіх точках де вона існує.
+\end{solution}
+
+\begin{remark}
+	Таким чином для функції, яка має скінчену кількість точок розриву першого роду має місце така формула обчислення похідної:
+	\begin{equation}
+		f'(x) = \{f'(x)\} + \Sum_{i} [f(x_i)] \delta (x - x_i).
+	\end{equation}
+\end{remark}
+
+\begin{example}
+	Нехай функція $f(x)$ задана в просторі $\RR^3$ кусково неперервно-ди\-фе\-рен\-ці\-йов\-на і має розрив першого роду на кусково–гладкій поверхні $S$. Будемо припускати, що поверхня   розділяє простір $\RR^3$ на два півпростори $\RR_+^3$ та $\RR_-^3$.
+\end{example}
+
+\begin{solution}
+	Зафіксуємо на $S$ напрям нормалі, яка направлена всередину $\RR_+^3$. \medskip
+
+	Визначимо похідну від $f(x)$:
+	\begin{equation}
+		\begin{aligned}
+			\left\langle \frac{\partial f}{\partial x_i}, \phi \right\rangle &= - \Iiint_{\RR^3} f(x) \frac{\partial \phi(x)}{\partial x_i} \diff x = \\
+			&= - \Iiint_{\RR_+^3} f(x) \frac{\partial \phi(x)}{\partial x_i} \diff x - \Iiint_{\RR_-^3} f(x) \frac{\partial \phi(x)}{\partial x_i} \diff x = \\
+			&= \Iint_S f(x + 0) \phi(x) \cos(n, x_i) \diff S - \\
+			&\quad- \Iint_S f(x - 0) \phi(x) \cos(n, x_i) \diff S + \\
+			&\quad + \Iiint_{\RR_+^3} \phi(x) \frac{\partial f(x)}{\partial x_i} \diff x + \Iiint_{\RR_-^3} \phi(x) \frac{\partial f(x)}{\partial x_i} \diff x = \\
+			&= \Iiint_{\RR^3} \left(  \left\{ \frac{\partial f}{\partial x_i}\right\} + [f]_S(x) \cos(n, x_i) \right) \phi(x) \diff x.
+		\end{aligned}	
+	\end{equation}
+	де $\{\partial f(x) / \partial x_i\}$ --- класична похідна функції $f(x)$ в усіх точках, де вона існує, $[f(x)]_S = \left.(f(x + 0) - f(x - 0))\right|_{x \in S}$ --- стрибок функції $f(x)$ на поверхні $S$. \medskip
+
+	Таким чином можна записати, що 
+	\begin{equation}
+		\frac{\partial f}{\partial x_i} = \left\{ \frac{\partial f}{\partial x_i}\right\} + [f]_S(x) \cos(n, x_i) \delta_S(x).
+	\end{equation}
+\end{solution}
+
+\subsubsection{Носій та порядок узагальнених функцій}
+
+Вводячи поняття узагальнених функцій ми використовували множину основних (пробних) функцій $D(\RR^n) = C_\infty^0(\RR^n)$. Взагалі кажучи, простір пробних функцій (а таким чином і розподілів) можна узагальнити, ввівши простір основних функцій як $D(\Omega) = C_\infty^0(\Omega)$, тобто клас пробних функцій складається з функцій, які нескінченно-диференційовні в $\Omega$ і на границі $\partial \Omega$ перетворюються в нуль разом з усіма своїми похідними. \medskip
+
+Для побудови функцій такого класу використовуються $\epsilon$-шапочки.
+
+\begin{definition}[$\epsilon$-шапочки]
+	$\epsilon$-шапочкою називається функція
+	\begin{equation}
+		\omega_\epsilon(x) = \begin{cases}
+			C_\epsilon \exp \left\{ - \frac{\epsilon^2}{\epsilon^2 - |x|^2} \right\}, & |x| \le \epsilon, \\
+			0, & |x| > \epsilon.
+		\end{cases}
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+	Сталу $C_\epsilon$ обираємо так, щоби 
+	\begin{equation}
+		\Iiint_{\RR^n} \omega_\epsilon (x) \diff x = 1.
+	\end{equation}
+\end{remark}
+
+Легко бачити, що 
+\begin{equation}
+	\Lim_{\epsilon \to +0} \Iiint_{\RR^n} \omega_\epsilon(x - y) \phi(y) \diff y = \phi(x).
+\end{equation}
+
+Це означає, що $\epsilon$-шапочки слабко збігаються до $\delta(x)$ при $\epsilon \to + 0$. \medskip
+
+Введемо функцію
+\begin{equation}
+	\eta(x) = \Iiint_{\RR^n} \chi(x) \omega_\epsilon(x - y) \diff y,
+\end{equation}
+де $\chi(x)$ -- характеристична функція множини $\Omega_{2\epsilon}$, тобто
+\begin{equation}
+	\chi(x) = \begin{cases}
+		1, & x \in \Omega_{2 \epsilon}, \\
+		0, & x \notin \Omega_{2 \epsilon}, 
+	\end{cases}
+\end{equation}
+а множина $\Omega_{2 \epsilon}$ утворилася з множини $\Omega$ шляхом відступу всередину $\Omega$ від границі на полосу ширини $2 \epsilon$. \medskip
+
+Тоді будь-яка функція $\phi(x) = \eta(x) f(x) \in D(\Omega)$ якщо $f(x) \in C^\infty(\RR^n)$. \medskip
+
+Таким чином можна утворити достатньо широкий клас пробних функцій.
+\begin{remark}
+	Узагальнені функції взагалі кажучи не мають значень в окремих точках. \medskip
+
+	В той же час можна говорити про обертання узагальненої функції на нуль у деякій області.
+\end{remark}
+
+\begin{definition}[обертання узагальненої функції на нуль]
+	Будемо говорити, що узагальнена функція $f$ \it{обертається на нуль} у області $\Omega$, якщо $\langle f, \varphi \rangle = 0$, $\forall \varphi \in D(\Omega)$.
+\end{definition} 
+
+\begin{definition}[нульової множини узагальненої функції]
+	\it{Нульовою множиною} $O_f$ узагальненої функції $f$ будемо називати об'єднання усіх областей у яких узагальнена функція $f$ обертається на нуль. 
+\end{definition}
+
+\begin{definition}[носія узагальненої функції]
+	\it{Носієм} $\text{supp} f$ узагальненої функції $f$ називають множину $\RR^n \setminus O_f$.
+\end{definition}
+
+\begin{definition}[порядку узагальненої функції]
+	Будемо говорити, що узагальнена функція $f$ має \it{порядок сингулярності} (або просто порядок) $\le j$, якщо
+	\begin{equation}
+		f = \Sum_{|\alpha| \le j} D^\alpha g_\alpha,	
+	\end{equation}
+	де $g_\alpha \in L_{\text{loc}}^1 (\Omega)$. Якщо число $j$ у цій формулі неможливо зменшити, то кажуть що порядок узагальненої функції $f$ \it{дорівнює} $j$.
+\end{definition}
+
+Нехай $f$ --- узагальнена функція порядку $j$, а $\phi$ --- довільна пробна функція. За визначенням
+\begin{equation}
+	\langle f, \phi \rangle = \Sum_{|\alpha| \le j} \langle D^\alpha g_\alpha, \phi \rangle = \Sum_{|\alpha| \le j} (-1)^{|\alpha|} \Iiint_\Omega g_\alpha D^\alpha \phi \diff x, \quad \forall \phi \in D(\Omega).
+\end{equation}
+
+Неважко бачити, що права частина цієї формули зберігає зміст не тільки для функцій з класу $D(\Omega)$, але і для функцій ширшого класу $D^j(\Omega)$.
+
+\begin{remark}
+	Узагальнені функції порядку $j$ можна визначати як лінійні неперервні функціонали на класі основних функцій $D^j(\Omega)$.
+\end{remark}
+
+
+
+\subsubsection{Згортка та регуляризація узагальнених функцій}
+
+Нехай $f(x), g(x)$ --- дві локально-інтегровні функції в $\RR^n$. При цьому функція 
+\begin{equation}
+	h(x) = \Iiint_{\RR^n} | g(y) f(x - y) | \diff y	
+\end{equation}
+теж буде локально-інтегровна в $\RR^n$. 
+
+\begin{definition}[згортки]
+	\it{Згорткою} $f * g$ цих функцій будемо називати функцію
+	\begin{equation}
+		(f * g) (x) = \Iiint_{\RR^n} f(y) g(x - y) \diff y =  \Iiint_{\RR^n} g(y) f(x - y) \diff y = (g * f)(x).		
+	\end{equation}
+\end{definition}
+
+Таким чином згортка є локально-інтегровною функцію і тим самим визначає регулярну узагальнену функцію, яка діє на основні функції за правилом
+\begin{equation}
+	\varphi \mapsto \Iiint_{\RR^n} (f * g) (\xi) \varphi(\xi) \diff \xi.	
+\end{equation}
+
+Розглянемо випадок згортки двох функцій $f$ та $\psi$, де $f$ --- узагальнена, а $\psi$ --- основна (пробна) функція. Оскільки $\psi$ --- фінітна функція, то згортка $f * \psi$ існує, а враховуючи нескінчену гладкість пробної функції, $(f * \psi) \in C^\infty(\RR^n)$.
+
+\begin{definition}
+	\it{Регуляризацією} узагальненої функції $f$ будемо називати функцію $f_\epsilon = f * \omega_\epsilon$.
+\end{definition}
+
+Зрозуміло, що $f_\epsilon \in C^\infty (\RR^n)$, а враховуючи властивості $\epsilon$-шапочки $\omega_\epsilon$ легко бачити, що 
+\begin{equation}
+	f_\epsilon \xrightarrow[\epsilon \to 0]{\text{w.}} f,
+\end{equation}
+тобто довели
+\begin{proposition}
+	Будь-яка узагальнена функція є слабка границя своїх регуляризацій.
+\end{proposition}
+
+\begin{example}
+	Розглянемо узагальнену функцію
+	\begin{equation}
+		P \frac{1}{x - a},
+	\end{equation}
+	яка співпадає на усій числовій прямій з функцією $\frac{1}{x - a}$ за винятком точки $a$ і визначає лінійний неперервний функціонал, який діє за правилом
+	\begin{equation}
+		\begin{aligned}
+			\left\langle P \frac{1}{x - a}, \psi \right\rangle &= \text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x)}{x - a} \diff x = \\
+			&= \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi(x)}{x - a} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x)}{x - a} \diff x \right).
+		\end{aligned}
+	\end{equation}
+
+	Розглянемо узагальнену функцію
+	\begin{equation}
+		P \frac{1}{(x - a)^2},
+	\end{equation}
+	яка співпадає на усій числовій прямій з функцією $\frac{1}{(x - a)^2}$ за винятком точки $a$ і визначає лінійний неперервний функціонал, який діє за правилом
+	\begin{equation}
+		\begin{aligned}
+			\left\langle P \frac{1}{(x - a)^2}, \psi \right\rangle &= \text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x = \\
+			&= \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x \right).
+		\end{aligned}
+	\end{equation}
+
+	Покажемо, що 
+	\begin{equation}
+		\left( P \frac{1}{x - a} \right)' = P \frac{1}{(x - a)^2}
+	\end{equation}
+	з точки зору узагальнених функцій.
+\end{example}
+
+\begin{proof}
+	Справді,
+	\begin{equation}
+		\begin{aligned}
+			\left\langle \left( P \frac{1}{x - a} \right)', \psi \right\rangle &= - \left\langle P \frac{1}{x - a}, \psi' \right\rangle = \\
+			&= - \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi'(x)}{x - a} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi'(x)}{x - a} \diff x \right) = \\
+			&= - \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\diff (\psi(x) - \psi(a))}{x - a} + \Int_{a + \epsilon}^\infty \frac{\diff (\psi(x) - \psi(a))}{x - a} \right) = \\
+			&= - \Lim_{\epsilon \to 0} \left( \left. \frac{\psi(x) - \psi(a)}{x - a} \right|_{-\infty}^{a - \epsilon} + \left. \frac{\psi(x) - \psi(a)}{x - a}\right|_{a + \epsilon}^\infty \right. + \\
+			&\quad + \left. \Int_{-\infty}^{a - \epsilon}\frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x \right) = \\
+			&= - \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x \right) - \\
+			&\quad-\Lim_{\epsilon \to 0} \left( \frac{\psi(a - \epsilon) - \psi(a)}{-\epsilon} - \frac{\psi(a + \epsilon) - \psi(a)}{\epsilon} \right) = \\
+			&= -\text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x = - \left\langle P \frac{1}{(x - a)^2}, \psi \right\rangle.
+		\end{aligned}
+	\end{equation}
+\end{proof}
+
+\end{document}
