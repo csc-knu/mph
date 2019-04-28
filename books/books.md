@@ -10,7 +10,7 @@
 
 - Владимиров В.С., "Рівняння математичної фізики", видання 1981: [pdf](vladimirov-lectures-1981.pdf), [djvu](vladimirov-lectures-1981.djvu)
 
-- Владимиров В.С., "Збірник задач з рівнянь математичної фізики", видання 2003: [pdf](vladimirov-problems-2003.pdf), [djvu](vladimirov-problems-2003.djvu)
+- Владимиров В.С., "Збірник задач з математичної фізики", видання 2003: [pdf](vladimirov-problems-2003.pdf), [djvu](vladimirov-problems-2003.djvu)
 
 - Краснов М.Л, "Інтегральні рівняння", видання 2003: [pdf](krasnov-2003.pdf)
 
@@ -26,7 +26,7 @@
 
 - Соболев С.Л., "Рівняння математичної фізики, видання 1992: [pdf](sobolev-1992.pdf), [djvu](sobolev-1992.djvu)
 
-- Владимиров В.С., "Збірник задач з рівнянь математичної фізики", видання 2001: [pdf](vladimirov-problems-2001.pdf), [djvu](vladimirov-problems-2001.djvu)
+- Владимиров В.С., "Збірник задач з математичної фізики", видання 2001: [pdf](vladimirov-problems-2001.pdf), [djvu](vladimirov-problems-2001.djvu)
 
 - Ховратович Д.В., "Рівняння математичної фізики. Конспект лекцій", 2005: [pdf](khovratovich-2005.pdf)
 
