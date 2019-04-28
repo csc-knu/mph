@@ -7,7 +7,6 @@
 Курс лекцій читається Кузьміном А.В.,<span style="font-family:monospace;"> kuzmin_a_b на ukr тчк net</span>
 
 Практичні заняття проводять:
-
 - Кузьмін А.В.,<span style="font-family:monospace;"> kuzmin_a_b на ukr тчк net</span>
 - Кашпур. О.Ф.,<span style="font-family:monospace;"> olena тчк kashpur на gmail тчк com</span>
 
