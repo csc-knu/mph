@@ -34,29 +34,29 @@
 
 Обчислимо вирази для похідних в нових змінних $\xi$, $\eta$:
 \begin{align}
-	u_x &= u_\xi \cdot \xi_x + u_\eta \cdot \eta_x, \\
-	u_y &= u_\xi \cdot \xi_y + u_\eta \cdot \eta_y, \\
-	u_{xx} &= u_{\xi\xi} \cdot \xi_x^2 + 2 u_{\xi\eta} \cdot \xi_x \cdot \eta_x + u_{\eta\eta} \cdot \eta_x^2 + u_\xi \cdot \xi_{xx} + u_\eta \cdot \eta_{xx}, \\
-	u_{yy} &= u_{\xi\xi} \cdot \xi_y^2 + 2 u_{\xi\eta} \cdot \xi_y \cdot \eta_x + u_{\eta\eta} \cdot \eta_y^2 + u_\xi \cdot \xi_{yy} + u_\eta \cdot \eta_{yy}, \\
-	u_{xy} &= u_{\xi\xi} \cdot \xi_x \cdot \xi_y + u_{\xi\eta} (\xi_x \eta_y + \xi_y \eta_x) + u_{\eta\eta} \cdot \eta_x \eta_y + u_\xi \cdot \xi_{xy} + u_\eta \cdot \eta_{xy}.
+	u_x &= u_\xi \xi_x + u_\eta \eta_x, \\
+	u_y &= u_\xi \xi_y + u_\eta \eta_y, \\
+	u_{xx} &= u_{\xi\xi} \xi_x^2 + 2 u_{\xi\eta} \xi_x \eta_x + u_{\eta\eta} \eta_x^2 + u_\xi \xi_{xx} + u_\eta \eta_{xx}, \\
+	u_{yy} &= u_{\xi\xi} \xi_y^2 + 2 u_{\xi\eta} \xi_y \eta_x + u_{\eta\eta} \eta_y^2 + u_\xi \xi_{yy} + u_\eta \eta_{yy}, \\
+	u_{xy} &= u_{\xi\xi} \xi_x \xi_y + u_{\xi\eta} (\xi_x \eta_y + \xi_y \eta_x) + u_{\eta\eta} \eta_x \eta_y + u_\xi \xi_{xy} + u_\eta \eta_{xy}.
 \end{align}
 
 Підставимо обчислені похідні в рівняння:
 \begin{multline}
-	A (u_{\xi\xi} \cdot \xi_x^2 + 2 u_{\xi\eta} \xi_x \eta_x + u_{\eta\eta} \cdot \eta_x^2 ) + \\
-	+ 2 B(u_{\xi\xi} \cdot \xi_x \cdot \xi_y + u_{\xi\eta}(\xi_x\eta_y+\xi_y\eta_x)+u_{\eta\eta}\cdot\eta_x\cdot\eta_y) + \\
-	+ C (u_{\xi\xi} \cdot \xi_y^2 + 2 u_{\xi\eta}\xi_y\eta_y + u_{\eta\eta}\cdot \eta_y^2) + \widetilde{F}(\xi, \eta, u, u_\xi, u_\eta) = 0.
+	A (u_{\xi\xi} \xi_x^2 + 2 u_{\xi\eta} \xi_x \eta_x + u_{\eta\eta} \eta_x^2 ) + \\
+	+ 2 B(u_{\xi\xi} \xi_x \xi_y + u_{\xi\eta}(\xi_x\eta_y+\xi_y\eta_x)+u_{\eta\eta}\cdot\eta_x\cdot\eta_y) + \\
+	+ C (u_{\xi\xi} \xi_y^2 + 2 u_{\xi\eta}\xi_y\eta_y + u_{\eta\eta}\eta_y^2) + \widetilde{F}(\xi, \eta, u, u_\xi, u_\eta) = 0.
 \end{multline}
 
 Перегрупуємо доданки і отримаємо рівняння у вигляді:
 \begin{equation}
-	\overline{A} \cdot u_{\xi\xi} + 2\overline{B}\cdot u_{\xi\eta} + \overline{C} \cdot u_{\eta\eta} + \widetilde{F}(\xi,\eta,u,u_\xi,u_\eta)=0,
+	\overline{A} u_{\xi\xi} + 2\overline{B}u_{\xi\eta} + \overline{C} u_{\eta\eta} + \widetilde{F}(\xi,\eta,u,u_\xi,u_\eta)=0,
 \end{equation}
 де 
 \begin{align}
-	\overline{A} &= A \cdot \xi_x^2 + 2 B \xi_x \xi_y + C \cdot \xi_y^2 \\
-	\overline{B} &= A \cdot \xi_x \cdot \eta_x + B(\xi_x \eta_y + \xi_y \eta_x) + C \cdot \xi_y \cdot \eta_y \\
-	\overline{C} &= A \cdot \eta_y^2 + 2 B \eta_x \eta_y + C \cdot \eta_y^2
+	\overline{A} &= A \xi_x^2 + 2 B \xi_x \xi_y + C \xi_y^2 \\
+	\overline{B} &= A \xi_x \eta_x + B(\xi_x \eta_y + \xi_y \eta_x) + C \xi_y \eta_y \\
+	\overline{C} &= A \eta_y^2 + 2 B \eta_x \eta_y + C \eta_y^2
 \end{align}
 
 Зробимо нульовими коефіцієнти при $u_{\xi\xi}$ та $u_{\eta\eta}$ за рахунок вибору нових змінних:
@@ -169,7 +169,7 @@
 	У випадку параболічного рівняння маємо $AC = B^2$ і таким чином 
 	\begin{equation}
 		\begin{aligned}
-			\overline{A} &= (A \cdot \xi_x^2 + 2 B \xi_X \xi_y + C \cdot \xi_y^2) = \\
+			\overline{A} &= (A \xi_x^2 + 2 B \xi_x \xi_y + C \xi_y^2) = \\
 			&= \left( \sqrt{A} \xi_x + \sqrt{C} \xi_y \right)^2 = 0.
 		\end{aligned}
 	\end{equation}
@@ -213,7 +213,7 @@
 \end{equation}
 де
 \begin{align}
-	\overline{A}_{k,l} &= \Sum_{i=1}^n \Sum_{j=1}^n A_{i,j}\alpha_{i,k}\alpha_{j,l}, \
+	\overline{A}_{k,l} &= \Sum_{i=1}^n \Sum_{j=1}^n A_{i,j}\alpha_{i,k}\alpha_{j,l}, \\
 	\overline{B}_k &= \Sum_{i=1}^n B_i \alpha_{i,k} + \Sum_{i=1}^n \Sum_{j=1}^n A_{i,j}(\xi_k)_{x_ix_j}.
 \end{align}
 
@@ -316,20 +316,23 @@
 
 	обчислимо похідні 
 	\begin{align*}
-		u_x &= u_\alpha 2 x + u_\beta \cdot 0, \\
-		u_y &= u_\alpha \cdot 0 + u_\beta 2 y, \\
-		u_{xx} &= u_{\alpha\alpha} 4x^2 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} \cdot 0 + u_\alpha \cdot 2 + u_\beta \cdot 0, \\
-		u_{yy} &= u_{\alpha\alpha} \cdot 0 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} 4y^2 + u_\alpha \cdot 0 + u_\beta \cdot 2.
+		u_x &= u_\alpha \cdot 2 x + u_\beta \cdot 0, \\
+		u_y &= u_\alpha \cdot 0 + u_\beta \cdot 2 y, \\
+		u_{xx} &= u_{\alpha\alpha} \cdot 4x^2 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} \cdot 0 + u_\alpha \cdot 2 + u_\beta \cdot 0, \\
+		u_{yy} &= u_{\alpha\alpha} \cdot 0 + 2 u_{\alpha\beta} \cdot 0 + u_{\beta\beta} \cdot 4y^2 + u_\alpha \cdot 0 + u_\beta \cdot 2.
 	\end{align*}
 
 	Підставимо знайдені похідні в рівняння:
-	\begin{align*}
-		y^2(4x^2u_{\alpha\alpha} + 2u_\alpha) - x^2(4y^2u_{\beta\beta} + 2u_\beta) &= 0, \\
-		u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{1}{2x^2y^2}(u_\alpha - u_\beta) &= 0,
-	\end{align*}
-	або остаточно маємо:
 	\begin{equation*}
-		u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{1}{2\alpha\beta}(u_\alpha - u_\beta) = 0.
+		y^2(4x^2u_{\alpha\alpha} + 2u_\alpha) - x^2(4y^2u_{\beta\beta} + 2u_\beta) = 0,
+	\end{equation*}
+	або
+	\begin{equation*}
+		u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{u_\alpha - u_\beta}{2x^2y^2} = 0,
+	\end{equation*}
+	і остаточно маємо:
+	\begin{equation*}
+		u_{\alpha\alpha} - u_{\beta\beta} + \dfrac{u_\alpha - u_\beta}{2\alpha\beta} = 0.
 	\end{equation*}
 \end{solution}
 
@@ -386,14 +389,14 @@
 
 	Обчислимо транспоновану матрицю
 	\begin{equation*}
-		B^T = \begin{pmatrix} 
+		B^\intercal = \begin{pmatrix} 
 			1 & 0 & 0 \\
 			-1 & 1 & 0 \\
 			1 & -1/2 & 1/2
 		\end{pmatrix}.
 	\end{equation*}
 
-	Для диференціального рівняння маємо нові змінні: $\vec \xi = B^T \vec x$. Або в координатній формі:
+	Для диференціального рівняння маємо нові змінні: $\vec \xi = B^\intercal \vec x$. Або в координатній формі:
 	\begin{system*}
 		\xi &= x, \\
 		\eta &= y - x, \\
@@ -477,7 +480,7 @@
 \begin{example}
 	Розглянемо систему стаціонарних рівнянь теорії пружності:
 	\begin{equation}
-		\left( \Delta \vec U + \frac{m}{m - 2} \nabla \Big(\nabla \cdot \vec U\Big)\right) = - \frac{1}{G} \vec X.
+		\left( \Delta \vecf U + \frac{m}{m - 2} \nabla \Big(\nabla \cdot \vecf U\Big)\right) = - \frac{\vec X}{G}.
 	\end{equation}
 \end{example}
 
@@ -485,9 +488,11 @@
 	Старший порядок похідних цієї системи дорівнює двом, тоді матриця яка відповідає головній частині системи має вигляд
 	\begin{equation}
 		A_0(D) = \begin{pmatrix}
-			\Delta + \lambda \frac{\partial^2}{\partial x^2} & \lambda \frac{\partial^2}{\partial x\partial y} & \lambda \frac{\partial^2}{\partial x\partial z} \\
-			\lambda \frac{\partial^2}{\partial y\partial x} & \Delta + \lambda \frac{\partial^2}{\partial y^2} & \lambda \frac{\partial^2}{\partial y\partial z} \\
-			\lambda \frac{\partial^2}{\partial z\partial x} & \Delta + \lambda \frac{\partial^2}{\partial z \partial y} & \lambda \frac{\partial^2}{\partial z^2}
+			\Delta + \lambda \dfrac{\partial^2}{\partial x^2} & \lambda \dfrac{\partial^2}{\partial x\partial y} & \lambda \dfrac{\partial^2}{\partial x\partial z} \\
+			\\
+			\lambda \dfrac{\partial^2}{\partial y\partial x} & \Delta + \lambda \dfrac{\partial^2}{\partial y^2} & \lambda \dfrac{\partial^2}{\partial y\partial z} \\
+			\\
+			\lambda \dfrac{\partial^2}{\partial z\partial x} & \Delta + \lambda \dfrac{\partial^2}{\partial z \partial y} & \lambda \dfrac{\partial^2}{\partial z^2}
 		\end{pmatrix}
 	\end{equation}
 	де $\lambda = m / (m - 2)$. \medskip
@@ -496,7 +501,9 @@
 	\begin{equation}
 		\begin{vmatrix}
 			|\xi|^2 + \lambda \xi_1^2 & \lambda \xi_1 \xi_2 & \lambda \xi_1 \xi_3 \\
+			\\
 			\lambda \xi_2 \xi_1 & |\xi|^2 + \lambda \xi_2^2 & \lambda \xi_2 \xi_3 \\
+			\\
 			\lambda \xi_3 \xi_1 & \lambda \xi_3 \xi_2 & |\xi|^2 + \lambda \xi_3^2
 		\end{vmatrix} = |\xi|^6 (1 + \lambda).
 	\end{equation}
@@ -505,24 +512,89 @@
 \end{solution}
 
 \begin{example}
-Розглянемо систему рівнянь гідродинаміки у випадку ізоентропічної течії 
- 
- 						(7.24)
+	Розглянемо систему рівнянь гідродинаміки у випадку ізоентропічної течії 
+	\begin{system}
+		& \frac{\partial \rho}{\partial t} + \nabla \cdot \Big(\rho \vecf V \Big) = 0, \\
+		& \frac{\partial \vecf V}{\partial t} + \Big\langle \vecf V, \nabla \Big\rangle \vecf V + \frac{\nabla p}{\rho} = 0, \\
+		& p = p(\rho).
+	\end{system}
 \end{example}
  
 \begin{solution}
-Порядок системи дорівнює одиниці, тому матриця системи має вигляд:
- 
-Відповідна характеристична форма матиме вигляд:
- 				(7.25),    де  ,   - квадрат швидкості звуку. Розкриваючи визначник (7.25) отримаємо співвідношення  	 (7.26)
-Розглядаючи (7.26) як поліном відносно змінної  , яка відповідає змінній часу   у системі рівнянь, отримаємо для довільних дійсних значень вектора    чотири дійсних кореня, а саме  .
-Таким чином система рівнянь гідродинаміки (7.24) має гіперболічний тип.
-Розглянемо систему рівнянь Нав'є – Стокса для нестисливої рідини
- 								(7.27)
-Матриця головної частини системи має вигляд:
- . 
-Характеристична форма  запишеться у вигляді:
- , де  . Враховуючи, що характеристична форма містить лише три змінних, а рівняння містить чотири, можемо зробити висновок, що система (7.27) є параболічною.
+	Порядок системи дорівнює одиниці, тому матриця системи має вигляд:
+	\begin{equation}
+		A_0(D) = \begin{pmatrix}
+			\dfrac{\partial}{\partial t} + \Big\langle \vecf V, \nabla \Big\rangle & \rho \dfrac{\partial}{\partial x_1} & \rho \dfrac{\partial}{\partial x_2} & \rho \dfrac{\partial}{\partial x_3} \\
+			\\
+			\dfrac{c^2}{\rho} \dfrac{\partial}{\partial x_1} & \dfrac{\partial}{\partial t} + \Big\langle \vecf V, \nabla \Big\rangle & 0 & 0 \\
+			\\
+			\dfrac{c^2}{\rho} \dfrac{\partial}{\partial x_2} & 0 & \dfrac{\partial}{\partial t} + \Big\langle \vecf V, \nabla \Big\rangle & 0 \\
+			\\
+			\dfrac{c^2}{\rho} \dfrac{\partial}{\partial x_3} & 0 & 0 & \dfrac{\partial}{\partial t} + \Big\langle \vecf V, \nabla \Big\rangle
+		\end{pmatrix}
+	\end{equation}
+
+	Відповідна характеристична форма матиме вигляд:
+	\begin{equation}
+		\begin{vmatrix}
+			\tau + \Big\langle \vecf V, \xi \Big\rangle & \rho \xi_1 & \rho \xi_2 & \rho \xi_3 \\
+			\\
+			\dfrac{c^2}{\rho} \xi_1 & \tau + \Big\langle \vecf V, \xi \Big\rangle & 0 & 0 \\
+			\\
+			\dfrac{c^2}{\rho} \xi_2 & 0 & \tau + \Big\langle \vecf V, \xi \Big\rangle & 0 \\
+			\\
+			\dfrac{c^2}{\rho} \xi_3 & 0 & 0 & \tau + \Big\langle \vecf V, \xi \Big\rangle\\
+		\end{vmatrix}
+		= 0,
+	\end{equation}
+	де
+	\begin{equation}
+		\Big\langle \vecf V, \xi \Big\rangle = \Sum_{i = 1}^3 V_i \xi_i,
+	\end{equation}
+	а $c^2 = \diff p / \diff \rho$ --- квадрат швидкості звуку. Розкриваючи визначник отримаємо співвідношення
+	\begin{equation}
+		\left( \tau + \Big\langle \vecf V, \xi \Big\rangle \right)^2 \left(\left( \tau + \Big\langle \vecf V, \xi \Big\rangle \right)^2 - c^2 |\xi|^2 \right) = 0.
+	\end{equation}
+
+	Розглядаючи цей вираз як поліном відносно змінної $\tau$, яка відповідає змінній часу $t$ у системі рівнянь, отримаємо для довільних дійсних значень вектора $\xi$ чотири дійсних кореня, а саме
+	\begin{align}
+		\tau_{1,2} &= - \Big\langle \vecf V, \xi \Big\rangle, \\
+		\tau_{3,4} &= - \Big\langle \vecf V, \xi \Big\rangle \pm c |\xi|, 
+	\end{align}
+
+	\begin{remark}
+		Тут $\tau_{1,2}$ позначає кратний корінь.
+	\end{remark}
+
+	Таким чином система рівнянь гідродинаміки має гіперболічний тип.
+\end{solution}
+
+\begin{example}
+	Розглянемо систему рівнянь Нав'є-Стокса для нестисливої рідини
+	\begin{equation}
+		\frac{\partial \vecf V}{\partial t} + \Big(\vecf V \cdot \nabla\Big) \vecf V = \frac{\eta}{\rho} \Delta \vecf V.
+	\end{equation}
+\end{example}
+
+\begin{solution}
+	Матриця головної частини системи має вигляд:
+	\begin{equation}
+		A_0(x, D) = \begin{pmatrix}
+			\Delta & 0 & 0 \\
+			0 & \Delta & 0 \\
+			0 & 0 & \Delta
+		\end{pmatrix}
+	\end{equation}
+
+	Характеристична форма запишеться у вигляді:
+	\begin{equation}
+		\begin{vmatrix}
+			|\xi|^2 & 0 & 0 \\
+			0 & |\xi|^2 & 0 \\
+			0 & 0 & |\xi|^2
+		\end{vmatrix} = |\xi|^6 = 0,
+	\end{equation}
+	де $\xi = (\xi_1, \xi_2, \xi_3)$. Враховуючи, що характеристична форма містить лише три змінних, а рівняння містить чотири, можемо зробити висновок, що система є параболічною.
 \end{solution}
 
 \end{document}
