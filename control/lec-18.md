@@ -29,7 +29,7 @@ $$
 $$
 \begin{align*}
 	(\Delta + k^2) q_k(x) &= - \delta(x), \\
-	\left( a^2 \Delta - \frac{\partial}{\partial t} \right) \epsilon(x, t) &= - \delta(x, t), \\
+	\left( a^2 \Delta - \frac{\partial}{\partial t} \right) \varepsilon(x, t) &= - \delta(x, t), \\
 	\left( a^2 \Delta - \frac{\partial^2}{\partial t^2} \right) \psi(x, t) &= - \delta(x, t)
 \end{align*}
 $$
@@ -39,8 +39,8 @@ $$
 $$
 \begin{align*}
 	\displaystyle\iiint\limits_{\mathbb{R}^n} q_k(x) (\Delta + k^2) \varphi(x) \, \mathrm{d} x &= - \varphi(0), \\
-	\displaystyle\iiint\limits_{\mathbb{R}^{n + 1}} \varepsilon(x, t) \left( a^2 \Delta + \frac{\partial}{\partial t}\right) \pvarhi(x, t) \, \mathrm{d} x \, \mathrm{d} t &= - \varphi(0, 0), \\
-	\displaystyle\iiint\limits_{\mathb{R}^{n + 1}} \psi(x, t) \left( a^2 \Delta + \frac{\partial^2}{\partial t^2}\right) \varphi(x, t) \, \mathrm{d} x \, \mathrm{d} t &= - \varphi(0, 0).
+	\displaystyle\iiint\limits_{\mathbb{R}^{n + 1}} \varepsilon(x, t) \left( a^2 \Delta + \frac{\partial}{\partial t}\right) \varphi(x, t) \, \mathrm{d} x \, \mathrm{d} t &= - \varphi(0, 0), \\
+	\displaystyle\iiint\limits_{\mathbb{R}^{n + 1}} \psi(x, t) \left( a^2 \Delta + \frac{\partial^2}{\partial t^2}\right) \varphi(x, t) \, \mathrm{d} x \, \mathrm{d} t &= - \varphi(0, 0).
 \end{align*}
 $$
 
