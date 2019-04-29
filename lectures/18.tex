@@ -16,6 +16,444 @@
 \setcounter{theorem}{51}
 \setcounter{equation}{48}
 
+\subsection{Фундаментальні розв'язки основних диференціальних операторів}
 
+Нехай $L$ --- диференціальний оператор порядку $m$ вигляду
+\begin{equation}
+	L = \Sum_{|\alpha|\le m}a_\alpha(x)D^\alpha.
+\end{equation}
+
+Розглянемо диференціальне рівняння
+\begin{equation}
+	L u = f(x).
+\end{equation}
+
+\begin{definition}[узагальненого розв'язку]
+	Узагальненим розв'язком цього рівняння будемо називати будь-яку узагальнену функцію $u$, яка задовольняє це рівняння в розумінні виконання рівності:
+	\begin{equation}
+		\langle L u, \phi \rangle = \langle f, \phi \rangle
+	\end{equation}
+	для довільної $\phi \in D(\Omega)$.
+\end{definition}
+
+Остання рівність рівнозначна рівності
+\begin{equation}
+	\langle u, L^\star \phi \rangle = \langle f, \phi \rangle
+\end{equation}
+для довільної $\phi \in D(\Omega)$. \medskip
+
+Тут було введено
+\begin{definition}[спряженого оператора]
+	\it{Спряженим} до оператора $L$ нзаивається оператор що визначається рівністю
+	\begin{equation}
+		L^\star \phi = \Sum_{|\alpha|\le m} (-1)^{|\alpha|} D^\alpha (a_\alpha \phi).
+	\end{equation}
+\end{definition}
+
+Особливу роль в математичній фізиці відіграють фундаментальні роз\-в'яз\-ки для основних диференціальних операторів математичної фізики: (Гельмгольца, теплопровідності, хвильового), які представляють собою узагальнені розв'язки неоднорідних диференціальних рівнянь:
+\begin{align}
+	(\Delta + k^2) q_k(x) &= - \delta(x), \\
+	\left( a^2 \Delta - \frac{\partial}{\partial t} \right) \epsilon(x, t) &= - \delta(x, t), \\
+	\left( a^2 \Delta - \frac{\partial^2}{\partial t^2} \right) \psi(x, t) &= - \delta(x, t)
+\end{align}
+
+\begin{definition}[фундаментального розв'язку]
+	Узагальнені функції $q_k(x)$, $\epsilon(x, t)$, $\psi(x, t)$ називаються фундаментальними розв'язками оператора Гельмгольца, теплопровідності, хвильового відповідно, якщо вони задовольняють відповідні рівняння як узагальнені функції:
+	\begin{align}
+		\Iiint_{\RR^n} q_k(x) (\Delta + k^2) \phi(x) \diff x &= - \phi(0), \\
+		\Iiint_{\RR^{n + 1}} \epsilon(x, t) \left( a^2 \Delta + \frac{\partial}{\partial t}\right) \phi(x, t) \diff x \diff t &= - \phi(0, 0), \\
+		\Iiint_{\RR^{n + 1}} \psi(x, t) \left( a^2 \Delta + \frac{\partial^2}{\partial t^2}\right) \phi(x, t) \diff x \diff t &= - \phi(0, 0).
+	\end{align}
+\end{definition}
+
+\begin{remark}
+	Тут $\RR^{n+1} = \RR^n \times \RR$, простір усіх можливих значень $(x, t)$. Зрозуміло, що можна було також записати
+	\begin{equation}
+		\Iiint_{\RR^{n + 1}} \diff x \diff t = \Int_{-\infty}^\infty \Iiint_{\RR^n} \diff x \diff t,
+	\end{equation}
+	але було вибрано перше позначення для заощадження часу, місця, а також задля одноманітності.
+\end{remark}
+
+\begin{remark}
+	Неважко зрозуміти, що фундаментальні роз\-в'яз\-ки визначені таким чином є неєдиними і визначаються з точністю до розв'язків відповідного однорідного рівняння. Але серед множини фундаментальних розв'язків вибирають такі, які мають певний характер поведінки на нескінченості.
+\end{remark}
+
+Загальний метод знаходження фундаментальних розв'язків операторів з постійними коефіцієнтами полягає в застосуванні прямого та оберненого перетворення Фур'є по просторовій змінній $x$ та зведення рівняння в частинних похідних до алгебраїчного рівняння у випадку стаціонарного рівняння, або до звичайного диференціального рівняння у випадку нестаціонарного рівняння. \medskip
+
+Ми покажемо що деякі узагальнені функції представляють собою фундаментальні розв'язки основних диференціальних операторів.
+
+\subsubsection{Фундаментальні розв'язки операторів Лапласа та Гельмгольца}
+
+Розглянемо двовимірний оператор Лапласа 
+\begin{equation}
+	\Delta_2 = \Sum_{i = 1}^2 \frac{\partial^2}{\partial x_i^2}.
+\end{equation}
+
+\begin{theorem}[про фундаментальний розв'язок двовимірного оператора Лапласа]
+	Для двохвимірного оператора Лапласа функція
+	\begin{equation}
+		q^{(2)}(x) = \frac{1}{2 \pi} \ln \frac{1}{|x|},
+	\end{equation}
+	де $|x| = \sqrt{x_1^2 + x_2^2}$, є фундаментальним розв'язком, тобто задовольняє як узагальнена функція рівняння
+	\begin{equation}
+		\Delta_2 \frac{1}{2 \pi} \ln \frac{1}{|x|} = - \delta(x)
+	\end{equation}
+\end{theorem}
+
+\begin{remark}
+	Тут останню рівність необхідно розуміти як
+	\begin{equation}
+		\Iint_{\RR^2} \frac{1}{2 \pi} \ln \frac{1}{|x|} \Delta_2 \phi(x) \diff x = - \phi(0), \quad \forall \phi \in D(\RR^2).
+	\end{equation}
+\end{remark}
+
+\begin{proof}
+	Перш за все,
+	\begin{multline}
+		\Iint_{\RR^2} \frac{1}{2 \pi} \ln \frac{1}{|x|} \Delta_2 \phi(x) \diff x = \Lim_{\epsilon \to 0} \Iint_{U_R \setminus U_\epsilon} \frac{1}{2 \pi} \ln \frac{1}{|x|} \Delta_2 \phi(x) \diff x = \\
+		= \Lim_{\epsilon \to 0} \Iint_{U_R \setminus U_\epsilon} \Delta_2 \frac{1}{2 \pi} \ln \frac{1}{|x|} \phi(x) \diff x + \Iint_{S_R} \ldots \diff S + \\
+		+ \Lim_{\epsilon \to 0} \Iint_{S \epsilon} \left( \frac{1}{2 \pi} \ln \frac{1}{|x|} \frac{\partial \phi(x)}{\partial n} - \frac{\partial}{\partial n} \left( \frac{1}{2 \pi} \ln \frac{1}{|x|} \right) \phi(x) \right) \diff S.
+	\end{multline}
+
+	\begin{remark}
+		Тут $U_R$, $U_\epsilon$ --- околи нуля такі, що $\supp \phi \subset U_R$, а $U_\epsilon$ --- нескінченно малий окіл. \medskip
+
+		Також тут позначено $S_R = \partial U_R$, $S_\epsilon = \partial U_\epsilon$. \medskip
+		
+		У свою чергу $n$ --- вектор нормалі до $S_\epsilon$.
+	\end{remark}
+ 
+	\begin{proposition}
+		Для $x \ne 0$
+		\begin{equation}
+			\Delta_2 \frac{1}{2 \pi} \ln \frac{1}{|x|} = 0.
+		\end{equation}
+	\end{proposition}
+
+	\begin{proof}
+		Дійсно,
+		\begin{align}
+			\frac{\partial}{\partial x_i} \frac{1}{2 \pi} \ln \frac{1}{|x|} &= - \frac{x_i}{|x|^2}, \\
+			\frac{\partial^2}{\partial x_i^2} \frac{1}{2 \pi} \ln \frac{1}{|x|} &= \frac{1}{|x|^2} - \frac{2 x_i^2}{|x|^4}, \\
+			\Delta_2 \frac{1}{2 \pi} \ln \frac{1}{|x|} &= \Sum_{i = 1}^2 \left(\frac{1}{|x|^2} - \frac{2 x_i^2}{|x|^4}\right) = 0.
+		\end{align}
+	\end{proof}
+
+	Таким чином, першій інтеграл дорівнює нулю. Інтеграл по сфері $S_R$ для великого значення $R$ теж дорівнює нулю за рахунок фінітності пробної функції $\phi$.
+
+	\begin{remark}
+		Справді, цей інтеграл позначає потік поля $\vec \phi$ через $S_R$, але $\supp \phi \subset U_R$, тобто поза $U_{R - \epsilon}$ для якогось (нового) малого $\epsilon$ поле $\vec \phi$ не діє, а тому його потік дорівнє нулеві.
+	\end{remark}
+
+	Обчислимо граничні значення поверхневих інтегралів по сфері $S_\epsilon$:
+	\begin{multline}
+		\Lim_{\epsilon \to 0} \Iint_{S \epsilon} \left( \frac{1}{2 \pi} \ln \frac{1}{|x|} \frac{\partial \phi(x)}{\partial n} - \frac{\partial}{\partial n} \left( \frac{1}{2 \pi} \ln \frac{1}{|x|} \right) \phi(x) \right) \diff S = \\
+		= \Lim_{\epsilon \to 0} \frac{1}{2 \pi} \left( \Int_0^{2 \pi} \epsilon \ln \frac{1}{\epsilon} \frac{\partial \phi(\epsilon \cos \theta, \epsilon \sin \theta)}{\partial n} \diff \theta - \Int_0^{2 \pi} \epsilon \ln \frac{1}{\epsilon} \phi(\epsilon \cos \theta, \epsilon \sin \theta) \diff \theta \right).
+	\end{multline}
+
+	\begin{remark}
+		При обчисленні останнього інтегралу враховано, що
+		\begin{equation}
+			\left. \frac{\partial}{\partial n} \ln \frac{1}{|x|} \right|_{x \in S_\epsilon} = - \left. \frac{\partial}{\partial r} \ln \frac{1}{r} \right|_{r = \epsilon} = \frac{1}{\epsilon}.
+		\end{equation}
+
+		Множник $\epsilon$ під знаком інтегралу з'являється як якобіан переходу до полярної системи координат.
+	\end{remark}
+
+	Враховуючи неперервну диференційовність функції $\phi$, здійснюючи граничний перехід при $\epsilon \to 0$, отримаємо, що першій інтеграл прямує до нуля, а другий до значення $- \phi(0, 0)$.
+\end{proof}
+
+\subsubsection{Фундаментальний розв'язок тривимірного оператора Гельмгольца}
+ 
+Розглянемо тривимірний оператор Гельмгольца:
+\begin{equation}
+	\Lambda_3 = \Sum_{i = 1}^3 \frac{\partial^2}{\partial x_i^2} + k^2
+\end{equation}
+
+\begin{theorem}[про фундаментальний розв'язок тривимірного оператора Гельмгольца]
+	Для тривимірного оператора Гельмгольца функція
+	\begin{equation}
+		q_\pm^k(x) = \frac{e^{\pm ik|x|}}{4 \pi |x|}
+	\end{equation}
+	є фундаментальним розв'язком, тобто задовольняє як узагальнена функція диференціальному рівнянню:
+	\begin{equation}
+		\Sum_{i = 1}^3 \frac{\partial^2 q_\pm^k (x)}{\partial x_i^2} + k^2 q_\pm^k(x) = - \delta(x).
+	\end{equation}
+\end{theorem}
+
+\begin{remark}
+	Останнє рівняння треба розуміти як
+	\begin{equation}
+		\Iiint_{\RR^3} q_\pm^k(x) \left( \Sum_{i = 1}^3 \frac{\partial^2}{\partial x_i^2} + k^2 \right) \phi(x) \diff x = - \phi(0)
+	\end{equation}
+	для довільної $\phi \in D(\RR^3)$.
+\end{remark}
+
+\begin{proof}
+	Обчислимо ліву частину останньої рівності:
+	\begin{multline}
+		\Iiint_{\RR^3} q_\pm^k(x)\left( \Sum_{i = 1}^3 \frac{\partial^2}{\partial x_i^2} + k^2 \right) \phi(x) \diff x = \\
+		= \Lim_{\epsilon \to 0} \Iiint_{U_R \setminus U_\epsilon} \left( \sum_{i = 1}^3 \frac{\partial^2}{\partial x_i^2} + k^2 \right) \phi(x) \diff x =
+	\end{multline}
+	 
+	Обчислимо кожний з інтегралів.
+
+	\begin{proposition}
+		Для $x \ne 0$
+		\begin{equation}
+			\left( \Sum_{j = 1}^3 \frac{\partial^2}{\partial x_j^2} + k^2 \right) q_\pm^k(x) = 0.
+		\end{equation}
+	\end{proposition}
+
+	\begin{proof}
+		Дійсно, для обчислення другої похідної можна скористатися формулою
+		\begin{equation}
+			\frac{\partial^2 q_\pm^k(x)}{\partial x_j^2} = \frac{\partial^2}{\partial|x|^2} \left( \frac{e^{\pm ik|x|}}{4\pi|x|}\right)\left(\frac{\partial|x|}{\partial x_j}\right)^2 + \frac{\partial}{\partial|x|} \left( \frac{e^{\pm ik|x|}}{4\pi|x|}\right)\left(\frac{\partial^2|x|}{\partial x_j^2}\right).
+		\end{equation}
+		
+		У ній по-перше
+		\begin{equation}
+			\frac{\partial^2}{\partial |x|^2} \left(\frac{e^{\pm ik|x|}}{4\pi|x|}\right)=-\frac{e^{\pm ik|x|}(k^2|x|^2\pm2ik|x|-2)}{4\pi|x|^3},
+		\end{equation}
+		і
+		\begin{equation}
+			\left( \frac{\partial|x|}{\partial x_j}\right)^2 = \frac{x_j^2}{|x|^2},
+		\end{equation}
+		а також
+		\begin{equation}
+			\frac{\partial}{\partial|x|}\left( \frac{e^{\pm ik|x|}}{4\pi|x|}\right)\left(\frac{\partial^2|x|}{\partial x_j^2}\right) = \frac{e^{\pm ik|x|}(\pm ik|x|-1)}{4\pi|x|^5} (|x|^2 - x_j^2).
+		\end{equation}
+
+		Після підстановки та приведення подібних отримаємо
+		\begin{equation}
+			\left( \Sum_{j = 1}^3 \frac{\partial^2}{\partial x_j^2} + k^2 \right) q_\pm^k(x)=\frac{e^{\pm ik|x|}}{4\pi|x|^3}\Big(-k^2|x|^2\Big) + k^2\frac{e^{\pm ik|x|}}{4\pi|x|} = 0.
+		\end{equation}
+	\end{proof}
+
+	Інтеграл по сфері великого радіусу $S_R$ дорівнює нулю за рахунок фінітності пробної функції:
+	\begin{multline}
+		\Iint_{S_\epsilon}\frac{\partial\phi(x)}{\partial n}q_\pm^k(x)\diff S=\frac{e^{\pm ik\epsilon}(\pm ik\epsilon-1)}{4\pi\epsilon^2}\cdot\\
+		\cdot\Int_0^{2\pi}\Int_{-\pi}^\pi\epsilon^2\sin\theta\frac{\partial\phi(\epsilon\cos\psi\cos\theta,\epsilon\sin\psi,\cos\theta,\epsilon\sin\theta)}{\partial n}\diff\psi\diff\theta\xrightarrow[\epsilon\to0]{}0.
+	\end{multline}
+
+	Обчислимо останній поверхневий інтеграл
+	\begin{multline}
+		\Iint_{S_\epsilon} \frac{\partial q_\pm^k(x)}{\partial n} \phi(x)\diff S = \frac{e^{\pm ik\epsilon}(\pm ik\epsilon-1)}{4\pi\epsilon^2} \Iint_{S_\epsilon}\phi(x)\diff S=\frac{e^{\pm ik\epsilon}(\pm ik\epsilon-1)}{4\pi\epsilon^2} \cdot \\
+		\cdot \Int_0^{2\pi}\Int_{-\pi}^\pi \epsilon^2\sin\theta\cdot\phi(\epsilon\cos\psi\cos\theta,\epsilon\sin\psi\cos\theta,\epsilon\sin\theta)\diff\psi\diff\theta\xrightarrow[\epsilon\to0]{}-\phi(0).
+	\end{multline}
+\end{proof}
+
+\begin{remark}
+	З формули для $q_\pm^k(x)$ легко отримати фундаментальний розв'язок для тривимірного оператора Лапласа, тобто показати, що функція
+	\begin{equation}
+		\frac{1}{4 \pi |x|}
+	\end{equation}
+	задовольняє наступному рівнянню:
+	\begin{equation}
+		\Delta_3 \frac{1}{4 \pi |x|} = - \delta(x), \quad x \in \RR^3
+	\end{equation}
+\end{remark}
+
+\begin{remark}
+	Формально формулу $1 / 4 \pi |x|$ можна отримати з $q_\pm^k(x)$ при $k = 0$.
+\end{remark}
+
+\subsubsection{Фундаментальний розв'язок двовимірного оператора Гельмгольца}
+
+\begin{theorem}[про фундаментальний розв'язок двовимірного оператора Гельмгольца]
+	Функція
+	\begin{equation}
+		q^k(x) = \frac{1}{2\pi}K_0(-ik|x|),
+	\end{equation}
+	де $x = (x_1, x_2)$ є фундаментальним розв'язком двовимірного оператора Гельмгольца, тобто задовольняє співвідношенню:
+	\begin{equation}
+		\Iint_{\RR^2}q^k(x)\left(\Sum_{i=1}^2\frac{\partial^2}{\partial x_i^2}+k^2\right) \phi(x)\diff x = \phi(0).
+	\end{equation}
+\end{theorem}
+
+\begin{remark}
+	У формулі для $q^k(x)$ функція $K_\nu(x)$ --- функція Бесселя другого роду уявного аргументу $v$-порядку і є одним з двох лінійно-незалежних розв'язків лінійного диференціального рівняння Бесселя уявного аргументу:
+	\begin{equation}
+		x^2 Y'' + x Y' - (x^2 + \nu^2) Y = 0.
+	\end{equation}
+\end{remark}
+
+\begin{proof}
+	Аналогічне доведенню співвідношення для двовимірного оператора Лапласа.
+
+	\begin{proposition} 
+		Для $x \ne 0$
+		\begin{equation}
+			\Sum_{j = 1}^2 \left(\frac{\partial^2}{\partial x_j^2} + k^2\right) \frac{1}{2\pi} K_0(-ik|x|) = 0.
+		\end{equation}
+	\end{proposition}
+ 
+ 	\begin{proof}
+		Обчислимо частинні похідні:
+		\begin{multline}
+			\frac{\partial^2}{\partial x_j^2}\frac{1}{2\pi}K_0(-ik|x|) = \\
+			= \frac{1}{2\pi}\left(-k^2K_0''(-ik|x|)\frac{x_j^2}{|x|^2}-ikK_0'(-ik|x|)\frac{|x|^2-x_j^2}{|x|^3}\right).
+		\end{multline}
+
+		Таким чином
+		\begin{multline}
+			\Sum_{j=1}^2\left(\frac{\partial^2}{\partial x_j^2}+k^2\right)\frac{1}{2\pi}K_0(-ik|x|) = \\
+			= \frac{1}{2\pi}\left(-k^2K_0''(-ik|x|)-ikK_0'(-ik|x|)\frac{1}{|x|}+k^2K_0(ik|x|)\right)=0.
+		\end{multline}
+	\end{proof}
+
+	\begin{remark}
+		Остання рівність стає очевидною якщо помножити останнє рівняння на $|x|^2$ та ввести нову незалежну змінну $\xi = - i k |x|$.
+	\end{remark}
+
+	\begin{remark}
+		При доведенні необхідної рівності важливим є також характер поведінки фундаментального розв'язку і його першої похідної в околі точки $x = 0$. \medskip
+
+		Відомо, що
+		\begin{align}
+			K_0(ix) &\sim \frac{1}{2\pi} \ln\frac{1}{|x|}, \\
+			K_0'(ix) &\sim -\frac{1}{2\pi} \frac{1}{|x|},
+		\end{align}
+		при $x\to+0$.
+	\end{remark}
+\end{proof}
+
+\subsubsection{Фундаментальний розв'язок оператора теплопровідності}
+
+\begin{theorem}[про фундаментальний розв'язок оператора теплопровідності]
+	Фундаментальним розв'язком оператора теплопровідності є
+	\begin{equation}
+		\epsilon(x,t)=\frac{\theta(t)}{\left(2a\sqrt{\pi t}\right)^n} \cdot \exp\left\{ - \frac{|x|^2}{4a^2t} \right\}, \quad x \in \RR^n
+	\end{equation}
+\end{theorem}
+
+\begin{remark}
+	Це означає, що узагальнена функція $\epsilon(x,t)$ задовольняє інтегральній тотожності:
+	\begin{equation}
+		\Int_{-\infty}^\infty \epsilon(x,t) \left(\frac{\partial \phi}{\partial t} + a^2\Delta\phi\right)\diff x\diff t=-\phi(0,0)
+	\end{equation}
+	для довільної $\phi\in D(\RR^n\times\RR)$.
+\end{remark}
+
+\begin{proof}
+	Очевидно, що $\epsilon(x,t)\in C^\infty(t > 0)$.
+
+	\begin{proposition}
+		Ця функція задовольняє рівняння теплопровідності:
+		\begin{equation}
+			\left( a^2\Delta - \frac{\partial}{\partial t}\right)\epsilon(x,t) = 0, \quad t > 0, \quad x \in \RR^n.
+		\end{equation}
+	\end{proposition}
+
+	\begin{proof}
+		Обчислимо частинні похідні:
+		\begin{align}
+			\frac{\partial \epsilon}{\partial t} &= \left( \frac{|x|^2}{4a^2t^2}-\frac{n}{2t}\right)\epsilon, \\
+			\frac{\partial \epsilon}{\partial x_i} &= -\frac{x_i}{2a^2t}\epsilon, \\
+			\frac{\partial^2\epsilon}{\partial x_i^2} &= \left( \frac{x_i^2}{4a^2t^2}-\frac{1}{2a^2t}\right)\epsilon.
+		\end{align}
+
+		Підставляючи знайдені похідні в оператор теплопровідності встановимо справедливість співвідношення.
+	\end{proof}
+
+	\allowbreak
+
+	Повертаємося до доведення інтегральної тотожності:
+	\begin{multline}
+		\Int_{-\infty}^\infty \Iiint_{\RR^n} \epsilon(x,t)\left(\frac{\partial\phi}{\partial t}+a^2\Delta\phi\right)\diff x\diff t = \\
+		= \Lim_{\substack{\tau\to0\\R \to \infty}} \Int_\tau^\infty \Iiint_{U_R} \epsilon(x,t) \left(\frac{\partial\phi}{\partial t}+a^2\Delta\phi\right)\diff x\diff t = \\
+		= \Lim_{\substack{\tau\to0\\R \to \infty}} \left( \Int_\tau^\infty \Iiint_{U_R} \phi(x,t) \left(\frac{\partial\epsilon}{\partial t}-a^2\Delta\epsilon\right)\diff x\diff t \right. + \\
+		+ \left. \Int_\tau^\infty \Iint_{S_R} a^2 \left(\frac{\partial\phi}{\partial n}\epsilon-\frac{\partial\epsilon}{\partial n}\phi\right)\diff S_r \diff t + \Iiint_{U_R} \epsilon\left.\phi\right|_\tau^\infty\diff x\right) = \\
+		= - \Lim_{\tau \to 0} \Iiint_{\RR^n} \phi(x,\tau)\epsilon(x,\tau)\diff x
+	\end{multline}
+
+	Можна показати, що
+	\begin{equation}
+		\Iiint_{\RR^n} \frac{\exp\left\{-\frac{|x|^2}{4a^2t}\right\}}{\left(2a\sqrt{\pi t}\right)^n} \diff x = 1, \quad t > 0.
+	\end{equation}
+
+	\begin{proposition}
+		\begin{equation}
+			\frac{\exp\left\{-\frac{|x|^2}{4a^2\tau}\right\}}{\left(2a\sqrt{\pi\tau}\right)^n} \xrightarrow[\tau \to + 0]{\text{w.}}\delta(x).
+		\end{equation}
+	\end{proposition}
+
+	\begin{proof}
+		Дійсно
+		\begin{multline}
+			\left| \Iiint_{\RR^n} \frac{\exp\left\{-\frac{|x|^2}{4a^2\tau}\right\}}{\left(2a\sqrt{\pi\tau}\right)^2} (\phi(x) - \phi(0)) \diff x \right| \le \\
+			\le \frac{K}{\left(2a\sqrt{\pi\tau}\right)^n} \Iiint_{\RR^3} \exp\left\{-\frac{|x|^2}{4a^2\tau}\right\} |x| \diff x = A,
+		\end{multline}
+		де $K = \Max_x |\phi'(x)|$.
+	\end{proof}
+
+	Для обчислення останнього інтегралу перейдемо до узагальненої сферичної системи координат та введемо нову змінну: $\xi = r / 2 a \sqrt{\tau}$:
+	\begin{equation}
+		\begin{aligned}
+			A &= \frac{K \sigma_n}{\left(2a\sqrt{\pi\tau}\right)^n} \Lim_{R \to \infty} \Int_0^R \exp\left\{-\frac{r^2}{4a^2\tau}\right\}r^n \diff r = \\
+			&= \frac{2a\sqrt{\tau}K\sigma_n}{\pi^{n/2}} \Lim_{R \to \infty} \Int_0^{R / 2 a \sqrt{\tau}} e^{-\xi^2} \xi^n \diff \xi = \\
+			&= \frac{2a\sqrt{\tau}K\sigma_n}{\pi^{n/2}} \Int_0^\infty e^{-\xi^2} \xi^n \diff \xi = \\
+			&= O\left(\sqrt{\tau}\right) \xrightarrow[\tau\to+0]{}0.
+		\end{aligned}
+	\end{equation}
+\end{proof}
+ 
+\subsubsection{Фундаментальний розв'язок хвильового оператора}
+
+\begin{theorem}[про фундаментальний розв'язок одновимірного хвильового оператора]
+	Узагальнена функція
+	\begin{equation}
+		\psi_1(x, t) = \frac{1}{2a}\theta(at-|x|)
+	\end{equation}
+	є фундаментальним розв'язком одновимірного хвильового оператора, тобто задовольняє інтегральному співвідношенню:
+	\begin{equation}
+		\Int_{-\infty}^\infty \Int_{-\infty}^\infty \left(a^2\frac{\partial^2\phi}{\partial x^2}-\frac{\partial^2\phi}{\partial t^2}\right)\diff x\diff t = - \phi(0, 0)
+	\end{equation}
+	для довільної $\phi \in D(\RR^2)$.
+\end{theorem}
+
+\begin{proof}
+	Обчислимо ліву частину останнього виразу:
+	\begin{multline}
+		\Int_{-\infty}^\infty \Int_{-\infty}^\infty \left(a^2\frac{\partial^2\phi}{\partial x^2}-\frac{\partial^2\phi}{\partial t^2}\right)\diff x\diff t = \\
+		= -\frac{1}{2a} \Int_{-\infty}^\infty \Int_{|x|/a}^\infty \frac{\partial^2 \phi}{\partial t^2} \diff t\diff x + \frac{a}{2} \Int_0^\infty \Int_{-at}^{at} \frac{\partial^2 \phi}{\partial x^2} \diff x \diff t = \\
+		= \frac{1}{2a}\Int_{-\infty}^\infty \frac{\partial \phi(x,|x|/a)}{\partial t}\diff x + \frac{a}{2}\Int_0^\infty\left(\frac{\partial\phi(at,t)}{\partial x}-\frac{\partial \phi(-at,t)}{\partial x}\right)\diff t=\\
+		= \frac{1}{2a}\Int_0^\infty \frac{\partial \phi(x,|x|/a)}{\partial t}\diff x + \frac{1}{2a}\Int_0^\infty \frac{\partial \phi(-x,|x|/a)}{\partial t}\diff x +\\
+		+\frac{a}{2}\Int_0^\infty\left(\frac{\partial\phi(at,t)}{\partial x}-\frac{\partial \phi(-at,t)}{\partial x}\right)\diff t = (\star)
+	\end{multline}
+
+	\begin{remark}
+		Зрозуміло, що третій інтеграл $= 0$, адже ми інтегруємо частинну похідну функції що не залежить від змінної $x$ по змінній $x$, тобто підінтегральна функція дорівнює нулеві.
+	\end{remark}
+
+	В першому та другому інтегралах введемо нову змінну $x = a t$, отримаємо 
+	\begin{equation}
+		\begin{aligned}
+			(\star) &= \frac{1}{2} \Int_0^\infty \frac{\partial \phi(at,t)}{\partial t}\diff t + \frac{1}{2} \Int_0^\infty \frac{\partial \phi(-at,t)}{\partial t}\diff t = \\
+			&= \frac{1}{2} \Int_0^\infty \frac{\diff \phi(at,t)}{\diff t}\diff t + \frac{1}{2} \Int_0^\infty \frac{\diff \phi(-at,t)}{\diff t}\diff t = \\
+			&= - \frac{\phi(0,0)}{2} - \frac{\phi(0,0)}{2} = - \phi(0,0).
+		\end{aligned}
+	\end{equation}
+
+	\begin{remark}
+		Тут ми вкотре скористалися скінченністю носія $\phi$ (фінітністю пробної функції):
+		\begin{equation}
+			\begin{aligned}
+				\frac{1}{2} \Int_0^\infty \frac{\diff \phi(at, t)}{\diff t} \diff t &= \frac{1}{2} \Int_0^\infty \diff \phi(at, t) = \\
+				&= \left. \frac{\phi(a t, t)}{2} \right|_0^\infty = \\
+				&= \frac{\phi(a \cdot \infty, \infty) - \phi(a \cdot 0, 0)}{2} = \\
+				&= \frac{0 - \phi(0, 0)}{2} = - \frac{\phi(0, 0)}{2}.
+			\end{aligned}
+		\end{equation}
+	\end{remark}
+\end{proof}
+
+\begin{remark}
+	Без доведення наведемо вигляд фундаментального розв'язку для двовимірного та тривимірного хвильового оператора.
+	\begin{align}
+		\psi_2(x, t) &= \frac{\theta(at-|x|)}{2\pi a\sqrt{a^2t^2-|x|^2}}, \quad x \in RR^2, \\
+		\psi_3(x, t) &= \frac{\theta(t)}{4 \pi a^2 t} \delta_{S_{at}}(x), \quad x \in RR^3.
+	\end{align}
+\end{remark}
 
 \end{document}
