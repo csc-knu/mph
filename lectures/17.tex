@@ -1,14 +1,14 @@
-\input{univ.sty}
+% \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+% \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+% \author{Скибицький Нікіта}
+% \date{\today}
 
-\input{th.sty}
+% \input{th.sty}
 
-\begin{document}
+% \begin{document}
 
-\tableofcontents
+% \tableofcontents
 
 \setcounter{section}{3}
 
@@ -258,7 +258,7 @@
 \begin{example}
 	Потенціал електростатичного поля можна записати у вигляді
 	\begin{equation}
-		W(x) = \left\langle \mu(y) \delta_S(y), \frac{1}{4 \pi |x - y|} \right\rangle = \Iiint_{\RR^3} \frac{\mu(y) \delta_S(y) \diff y}{4 \pi |x - y|} = \Iint_{S} \frac{\mu(y) \diff y}{4 \pi |x - y|}.	
+		W(x) = \langle \mu(y) \delta_S(y), \frac{1}{4 \pi |x - y|} \rangle = \Iiint_{\RR^3} \frac{\mu(y) \delta_S(y) \diff y}{4 \pi |x - y|} = \Iint_{S} \frac{\mu(y) \diff y}{4 \pi |x - y|}.	
 	\end{equation}
 \end{example}
 
@@ -271,12 +271,12 @@
 Головною перевагою узагальнених функцій є те, що будь-яка узагальнена функція має похідні будь-якого порядку. \medskip
 
 Для визначення похідної узагальненої функції розглянемо звичайну неперервно диференційовну функцію $f(x)$ і згадаємо, що виконується наступна
-\begin{formula}[інтегрування за частинами]
+\begin{th_formula}[інтегрування за частинами]
 	\begin{equation}
 		\Int_{\RR^n} D^{\alpha_1 \ldots \alpha_n} f(x) \phi(x) \diff x = (-1)^{|\alpha|} \Int_{\RR^n} f(x) D^{\alpha_1 \ldots \alpha_n} \phi(x) \diff x,
 	\end{equation}
 	де $|\alpha| = \alpha_1 + \ldots + \alpha_n$, яка є істинною для будь-якої функції $\phi \in D(\RR^n)$.
-\end{formula}
+\end{th_formula}
 
 Права частина цієї рівності має зміст для будь-якої локально-інтегровної функції $f$. \medskip \allowbreak
 
@@ -284,7 +284,7 @@
 \begin{definition}[похідної локально-інтегровної функції]
 	\it{Похідною} $D^{\alpha_1 \ldots \alpha_n}$ будь-якої локально-інтегровної функції $f$ будемо називати лінійний неперервний функціонал
 	\begin{equation}
-		\Big\langle D^{\alpha_1 \ldots \alpha_n} f, \phi \Big\rangle = (-1)^{|\alpha|} \Int_{\RR^n} f(x) D^{\alpha_1 \ldots \alpha_n} \phi(x) \diff x.	
+		\langle D^{\alpha_1 \ldots \alpha_n} f, \phi \rangle = (-1)^{|\alpha|} \Int_{\RR^n} f(x) D^{\alpha_1 \ldots \alpha_n} \phi(x) \diff x.	
 	\end{equation}
 \end{definition}
 
@@ -292,7 +292,7 @@
 \begin{definition}[похідної сингулярних функцій]
 	$D^{\alpha_1 \ldots \alpha_n} f$ визначається як лінійний неперервний функціонал
 	\begin{equation}
-		\Big\langle D^{\alpha_1 \ldots \alpha_n} f, \phi \Big\rangle = (-1)^{|\alpha|} \Big\langle f, D^{\alpha_1 \ldots \alpha_n} \phi \Big\rangle.
+		\langle D^{\alpha_1 \ldots \alpha_n} f, \phi \rangle = (-1)^{|\alpha|} \langle f, D^{\alpha_1 \ldots \alpha_n} \phi \rangle.
 	\end{equation}
 \end{definition}
 
@@ -312,7 +312,7 @@
 	Розглянемо наступні рівності:
 	\begin{equation}
 		\begin{aligned}
-			\left\langle \theta', \phi \right\rangle &= - \Int_{-\infty}^\infty \theta(x) \phi'(x) \diff x = - \Int_{0}^\infty \phi'(x) \diff x = \\
+			\langle \theta', \phi \rangle &= - \Int_{-\infty}^\infty \theta(x) \phi'(x) \diff x = - \Int_{0}^\infty \phi'(x) \diff x = \\
 			&= - (\phi(\infty) - \phi(0)) = \phi(0) - \phi(\infty) = \phi(0) - 0 = \phi(0) = \langle \delta, \phi \rangle.	
 		\end{aligned}
 	\end{equation}
@@ -326,7 +326,7 @@
 
 \begin{solution}
 	\begin{equation}
-		\left\langle \delta^{(2)}, \phi \right\rangle = \left\langle \delta, \phi^{(2)} \right\rangle = \phi^{(2)}(0).
+		\langle \delta^{(2)}, \phi \rangle = \langle \delta, \phi^{(2)} \rangle = \phi^{(2)}(0).
 	\end{equation}
 \end{solution}
 
@@ -366,7 +366,7 @@
 	Визначимо похідну від $f(x)$:
 	\begin{equation}
 		\begin{aligned}
-			\left\langle \frac{\partial f}{\partial x_i}, \phi \right\rangle &= - \Iiint_{\RR^3} f(x) \frac{\partial \phi(x)}{\partial x_i} \diff x = \\
+			\langle \frac{\partial f}{\partial x_i}, \phi \rangle &= - \Iiint_{\RR^3} f(x) \frac{\partial \phi(x)}{\partial x_i} \diff x = \\
 			&= - \Iiint_{\RR_+^3} f(x) \frac{\partial \phi(x)}{\partial x_i} \diff x - \Iiint_{\RR_-^3} f(x) \frac{\partial \phi(x)}{\partial x_i} \diff x = \\
 			&= \Iint_S f(x + 0) \phi(x) \cos(n, x_i) \diff S - \\
 			&\quad- \Iint_S f(x - 0) \phi(x) \cos(n, x_i) \diff S + \\
@@ -510,7 +510,7 @@
 	яка співпадає на усій числовій прямій з функцією $\frac{1}{x - a}$ за винятком точки $a$ і визначає лінійний неперервний функціонал, який діє за правилом
 	\begin{equation}
 		\begin{aligned}
-			\left\langle P \frac{1}{x - a}, \psi \right\rangle &= \text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x)}{x - a} \diff x = \\
+			\langle P \frac{1}{x - a}, \psi \rangle &= \text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x)}{x - a} \diff x = \\
 			&= \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi(x)}{x - a} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x)}{x - a} \diff x \right).
 		\end{aligned}
 	\end{equation}
@@ -522,7 +522,7 @@
 	яка співпадає на усій числовій прямій з функцією $\frac{1}{(x - a)^2}$ за винятком точки $a$ і визначає лінійний неперервний функціонал, який діє за правилом
 	\begin{equation}
 		\begin{aligned}
-			\left\langle P \frac{1}{(x - a)^2}, \psi \right\rangle &= \text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x = \\
+			\langle P \frac{1}{(x - a)^2}, \psi \rangle &= \text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x = \\
 			&= \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x \right).
 		\end{aligned}
 	\end{equation}
@@ -538,16 +538,18 @@
 	Справді,
 	\begin{equation}
 		\begin{aligned}
-			\left\langle \left( P \frac{1}{x - a} \right)', \psi \right\rangle &= - \left\langle P \frac{1}{x - a}, \psi' \right\rangle = \\
+			\langle \left( P \frac{1}{x - a} \right)', \psi \rangle &= - \langle P \frac{1}{x - a}, \psi' \rangle = \\
 			&= - \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi'(x)}{x - a} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi'(x)}{x - a} \diff x \right) = \\
 			&= - \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\diff (\psi(x) - \psi(a))}{x - a} + \Int_{a + \epsilon}^\infty \frac{\diff (\psi(x) - \psi(a))}{x - a} \right) = \\
 			&= - \Lim_{\epsilon \to 0} \left( \left. \frac{\psi(x) - \psi(a)}{x - a} \right|_{-\infty}^{a - \epsilon} + \left. \frac{\psi(x) - \psi(a)}{x - a}\right|_{a + \epsilon}^\infty \right. + \\
 			&\quad + \left. \Int_{-\infty}^{a - \epsilon}\frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x \right) = \\
 			&= - \Lim_{\epsilon \to 0} \left( \Int_{-\infty}^{a - \epsilon}\frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x + \Int_{a + \epsilon}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x \right) - \\
 			&\quad-\Lim_{\epsilon \to 0} \left( \frac{\psi(a - \epsilon) - \psi(a)}{-\epsilon} - \frac{\psi(a + \epsilon) - \psi(a)}{\epsilon} \right) = \\
-			&= -\text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x = - \left\langle P \frac{1}{(x - a)^2}, \psi \right\rangle.
+			&= -\text{v.p.} \Int_{-\infty}^\infty \frac{\psi(x) - \psi(a)}{(x - a)^2} \diff x = - \langle P \frac{1}{(x - a)^2}, \psi \rangle.
 		\end{aligned}
 	\end{equation}
 \end{proof}
 
-\end{document}
+\newpage
+
+% \end{document}
