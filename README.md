@@ -8,7 +8,7 @@
 
 Практичні заняття проводять:
 - Кузьмін А.В.,<span style="font-family:monospace;"> kuzmin_a_b на ukr тчк net</span>
-- Кашпур. О.Ф.,<span style="font-family:monospace;"> olena тчк kashpur на gmail тчк com</span>
+- Кашпур О.Ф.,<span style="font-family:monospace;"> olena тчк kashpur на gmail тчк com</span>
 
 Підтримкою сайту займається Скибицький Н.М.,<span style="font-family:monospace;"> n тчк skybytskyi на gmal тчк com</span>
 
