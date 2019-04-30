@@ -25,6 +25,6 @@ _Більше **100** балів бути не може, тому у разі п
 
 ## Власне матеріали
 
-- [Конспект лекцій](lectures/lectures.md)
-- [Контрольні питання](control/control.md)
-- [Література](books/books.md)
+- [Конспект лекцій](lectures/README.md)
+- [Контрольні питання](control/README.md)
+- [Література](books/README.md)
