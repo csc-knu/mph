@@ -53,7 +53,7 @@ _Зараз опрацьовані лекції №№1&ndash;14, та №№17&
 
 18. Лекція №18: [pdf-v](18-v.pdf), [docx](18.docx), [LaTeX source](18.tex)
 
-19. Лекція №19: [pdf](19.pdf), [docx](19.docx)
+19. Лекція №19: [pdf-r](19-r.pdf), [docx](19.docx), [LaTeX source](19.tex)
 
 20. Лекція №20: [pdf](20.pdf), [docx](20.docx)
 
