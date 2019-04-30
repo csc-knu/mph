@@ -85,12 +85,14 @@
 \newcommand{\Sup}{\displaystyle\sup\limits}
 \newcommand{\Sum}{\displaystyle\sum\limits}
 \newcommand{\Int}{\displaystyle\int\limits}
+\newcommand{\Oint}{\displaystyle\oint\limits}
 \newcommand{\Iint}{\displaystyle\iint\limits}
 \newcommand{\Iiint}{\displaystyle\iiint\limits}
-\newcommand{\Oint}{\displaystyle\oint\limits}
+\newcommand{\Lim}{\displaystyle\lim\limits}
+
+\usepackage{esint}
 \newcommand{\Oiint}{\displaystyle\oiint\limits}
 \newcommand{\Oiiint}{\displaystyle\oiiint\limits}
-\newcommand{\Lim}{\displaystyle\lim\limits}
 
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 
@@ -108,3 +110,8 @@
 \usepackage{bm}
 
 \newcommand{\vecf}[1]{{\vec{\mathbf{#1}}}} % vector-field or vector-function
+
+\let\oldlangle=\langle
+\renewcommand{\langle}{\left\oldlangle}
+\let\oldrangle=\rangle
+\renewcommand{\rangle}{\right\oldrangle}
