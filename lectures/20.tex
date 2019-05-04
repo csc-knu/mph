@@ -1,0 +1,85 @@
+\input{univ.sty}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
+
+\input{th.sty}
+
+\begin{document}
+
+\tableofcontents
+
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+\setcounter{subsubsection}{4}
+\setcounter{theorem}{21}
+\setcounter{equation}{55}
+
+\subsubsection{Функція Гріна граничних задач оператора теплопровідності}
+
+Будемо розглядати граничні задачі для рівняння теплопровідності:
+
+\begin{system}
+	& a^2 \Delta u(x, t) - \frac{\partial u(x,t)}{\partial t} = - F(x, t), \quad x \in \Omega, t > 0, \\
+	& u(x, 0) = u_0(x), \\
+	& \left. \ell_i u(x, t) \right|_{x \in S} = f(x, t), \quad i = 1, 2, 3.
+\end{system}
+
+Тут 
+\begin{align}
+	\left. \ell_1 u(x, t) \right|_{x \in S} &= \left. u(x, t) \right|_{x \in S}, \\
+	\left. \ell_2 u(x, t) \right|_{x \in S} &= \left. \frac{\partial u(x, t)}{\partial n} \right|_{x \in S}, \\
+	\left. \ell_3 u(x, t) \right|_{x \in S} &= \left. \frac{\partial u(x, t)}{\partial n} + \alpha(x, t) \cdot u(x, t) \right|_{x \in S}
+\end{align}
+--- оператори граничних умов першого, другого, або третього роду.
+
+\begin{definition}[функції Гріна граничної задачі теплопровідності]
+	Функцію $E_i (x, \xi, t - \tau)$ будемо називати \textit{функцією Гріна першої, другої або третьої граничної задачі рівняння теплопровідності} в області $\Omega$ з границею $S$ для $t > 0$, якщо вона є розв'язком настуної граничної задачі:
+	\begin{system}
+		& a^2 \Delta_x E_i (x, \xi, t - \tau) - \frac{\partial E_i(x, \xi, t - \tau)}{\partial t} = - \delta(x - \xi, t - \tau), \quad x, \xi \in \Omega, \quad t > 0 \\
+		& \left. E_i(x, \xi, t - \tau) \right|_{t - \tau \le 0} = 0, \\
+		& \left. \ell_i E_i (x, \xi, t - \tau) \right|_{x \in S} = 0, \quad i = 1, 2, 3.
+	\end{system}
+\end{definition}
+
+Еквівалетнне визначення можна надати у вигляді
+\begin{definition}[функції Гріна граничної задачі теплопровідності]
+	Функцію $E_i (x, \xi, t - \tau)$ будемо називати \textit{функцією Гріна першої, другої або третьої граничної задачі рівняння теплопровідності} в області $\Omega$ з границею $S$ для $t > 0$, якщо вона може бути представлена у вигляді
+	\begin{equation}
+		E_i(x, \xi, t - \tau) = \epsilon(x - \xi, t - \tau) + \omega_i(x, \xi, t - \tau),
+	\end{equation}
+	де  перший доданок є фундаментальним розв'язком оператора теплопровідності, а другий  є розв'язком наступної граничної задачі
+	\begin{system}
+		& a^2 \Delta_x \omega_i (x, \xi, t - \tau) - \frac{\partial \omega_i(x, \xi, t - \tau)}{\partial t} = - \delta(x - \xi, t - \tau), \quad x, \xi \in \Omega, \quad t > 0 \\
+		& \left. \omega_i(x, \xi, t - \tau) \right|_{t - \tau \le 0} = 0, \\
+		& \left. \ell_i \omega_i (x, \xi, t - \tau) \right|_{x \in S} = -\left.\ell_i \epsilon_i(x - \xi, t - \tau)\right|_{x \in S} \quad i = 1, 2, 3.
+	\end{system}
+\end{definition}
+
+Вивчимо 
+\begin{properties}[функції Гріна оператора теплопровідності]
+	\begin{enumerate}
+		\item Легко бачити, що функція Гріна граничних задач рівняння теплопровідності з аргументами $E_i(x, \xi, -t)$ задовольняє спряженому диференціальному рівнянню
+		\begin{equation}
+			a^2 \Delta_x E_i(x, \xi, -t) + \frac{\partial E_i(x, \xi, - t)}{\partial t} = - \delta(x - \xi) \delta (t - \tau), \quad x, \xi \in \Omega, \quad t > 0.
+		\end{equation}
+		\item Функція Гріна є також симетричною функцією своїх перших двох аргументів.
+	\end{enumerate}
+\end{properties}
+	
+\begin{proof}
+	Доведемо другу властивість. Запишемо співвідношення, яким задовольняє функція Гріна:
+	\begin{align}
+		a^2 \Delta_x E_i(x, \xi, t - \tau_1) + \frac{\partial E_i(x, \xi, t - \tau_1)}{\partial t} &= - \delta(x - \xi) \delta (t - \tau_1), \quad x, \xi \in \Omega, \\
+		a^2 \Delta_x E_i(x, \eta, \tau_2 - t) + \frac{\partial E_i(x, \eta, \tau_2 - t)}{\partial t} &= - \delta(x - \eta) \delta (t - \tau_2), \quad x, \eta \in \Omega.
+	\end{align}
+	Перше рівняння помножимо на $E_i(x, \xi, \tau_2 - t)$, друге рівняння помножимо на $E_i(x, \xi, t - \tau_1)$, віднімемо від першого друге і проінтегруємо по $x \in \Omega$ і по $-\infty < t < \tau$:
+	% \begin{equation}
+		% \begin{aligned}
+			a^2 \Iiint_\Omega
+		\end{aligned}
+	\end{equation}
+\end{proof}
+
+\end{document}
