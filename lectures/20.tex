@@ -21,10 +21,11 @@
 Будемо розглядати граничні задачі для рівняння теплопровідності:
 
 \begin{system}
-	& a^2 \Delta u(x, t) - \frac{\partial u(x,t)}{\partial t} = - F(x, t), \quad x \in \Omega, t > 0, \\
+	& a^2 \Delta u(x, t) - \frac{\partial u(x,t)}{\partial t} = - F(x, t), \\
 	& u(x, 0) = u_0(x), \\
 	& \left. \ell_i u(x, t) \right|_{x \in S} = f(x, t), \quad i = 1, 2, 3.
 \end{system}
+для $x \in \Omega$, $t > 0$. \medskip
 
 Тут 
 \begin{align}
@@ -37,10 +38,11 @@
 \begin{definition}[функції Гріна граничної задачі теплопровідності]
 	Функцію $E_i (x, \xi, t - \tau)$ будемо називати \textit{функцією Гріна першої, другої або третьої граничної задачі рівняння теплопровідності} в області $\Omega$ з границею $S$ для $t > 0$, якщо вона є розв'язком настуної граничної задачі:
 	\begin{system}
-		& a^2 \Delta_x E_i (x, \xi, t - \tau) - \frac{\partial E_i(x, \xi, t - \tau)}{\partial t} = - \delta(x - \xi, t - \tau), \quad x, \xi \in \Omega, \quad t > 0 \\
+		& a^2 \Delta_x E_i (x, \xi, t - \tau) - \frac{\partial E_i(x, \xi, t - \tau)}{\partial t} = - \delta(x - \xi, t - \tau), \\
 		& \left. E_i(x, \xi, t - \tau) \right|_{t - \tau \le 0} = 0, \\
 		& \left. \ell_i E_i (x, \xi, t - \tau) \right|_{x \in S} = 0, \quad i = 1, 2, 3.
 	\end{system}
+	для $x \in \Omega$, $t > 0$
 \end{definition}
 
 Еквівалетнне визначення можна надати у вигляді
@@ -51,19 +53,22 @@
 	\end{equation}
 	де  перший доданок є фундаментальним розв'язком оператора теплопровідності, а другий  є розв'язком наступної граничної задачі
 	\begin{system}
-		& a^2 \Delta_x \omega_i (x, \xi, t - \tau) - \frac{\partial \omega_i(x, \xi, t - \tau)}{\partial t} = - \delta(x - \xi, t - \tau), \quad x, \xi \in \Omega, \quad t > 0 \\
+		& a^2 \Delta_x \omega_i (x, \xi, t - \tau) - \frac{\partial \omega_i(x, \xi, t - \tau)}{\partial t} = - \delta(x - \xi, t - \tau), \\
 		& \left. \omega_i(x, \xi, t - \tau) \right|_{t - \tau \le 0} = 0, \\
 		& \left. \ell_i \omega_i (x, \xi, t - \tau) \right|_{x \in S} = -\left.\ell_i \epsilon_i(x - \xi, t - \tau)\right|_{x \in S} \quad i = 1, 2, 3.
 	\end{system}
+	для $x \in \Omega$, $t > 0$.
 \end{definition}
 
 Вивчимо 
 \begin{properties}[функції Гріна оператора теплопровідності]
+	Легко бачити, що 
 	\begin{enumerate}
-		\item Легко бачити, що функція Гріна граничних задач рівняння теплопровідності з аргументами $E_i(x, \xi, -t)$ задовольняє спряженому диференціальному рівнянню
+		\item Функція Гріна граничних задач рівняння теплопровідності з аргументами $E_i(x, \xi, -t)$ задовольняє спряженому диференціальному рівнянню
 		\begin{equation}
-			a^2 \Delta_x E_i(x, \xi, -t) + \frac{\partial E_i(x, \xi, - t)}{\partial t} = - \delta(x - \xi) \delta (t - \tau), \quad x, \xi \in \Omega, \quad t > 0.
+			a^2 \Delta_x E_i(x, \xi, -t) + \frac{\partial E_i(x, \xi, - t)}{\partial t} = - \delta(x - \xi) \delta (t - \tau), 
 		\end{equation}
+		для усіх $x, \xi \in \Omega$, і $t > 0$.
 		\item Функція Гріна є також симетричною функцією своїх перших двох аргументів.
 	\end{enumerate}
 \end{properties}
@@ -75,11 +80,81 @@
 		a^2 \Delta_x E_i(x, \eta, \tau_2 - t) + \frac{\partial E_i(x, \eta, \tau_2 - t)}{\partial t} &= - \delta(x - \eta) \delta (t - \tau_2), \quad x, \eta \in \Omega.
 	\end{align}
 	Перше рівняння помножимо на $E_i(x, \xi, \tau_2 - t)$, друге рівняння помножимо на $E_i(x, \xi, t - \tau_1)$, віднімемо від першого друге і проінтегруємо по $x \in \Omega$ і по $-\infty < t < \tau$:
-	% \begin{equation}
-		% \begin{aligned}
-			a^2 \Iiint_\Omega
+	\begin{equation}
+		\begin{aligned}
+			& a^2 \Iiint_\Omega \Int_{-\infty}^\tau \Big( E_i(x, \eta, \tau_2 - t) \Delta_x E_i(x, \xi, t - \tau_1) - \\
+			& \qquad \quad - E_i(x, \xi, t - \tau_1) \Delta_x E_i(x, \eta, \tau_2 - t) \Big) \diff t \diff x - \\
+			& \qquad - \Iiint_\Omega \Int_{-\infty}^\tau \frac{\partial}{\partial \tau} \left( E_i(x, \xi, t - \tau_1) E_i(x, \eta, \tau_2 - t) \right) \diff t \diff x = \\
+			& \quad = - E_i(\xi, \eta, \tau_2 - \tau_1) + E_i(\eta, \xi, \tau_2 - \tau_1).
 		\end{aligned}
 	\end{equation}
+
+	В результаті застосування другої формули Гріна до першого інтегралу в лівій частині рівності і обчислення другого інтегралу лівої частини, отримаємо:
+	\begin{equation}
+		\begin{aligned}
+			& E_i(\xi, \eta, \tau_2 - \tau_1 ) - E_i(\eta, \xi, \tau_2 - \tau_1) = \\
+			& \quad = - \Iiint_\Omega \Big( E_i(x, \xi, \tau - \tau_1) E_i(x, \eta, \tau_2 - \tau) - \\
+			& \qquad \quad - E_i(x, \xi, -\infty) E_i(x, \eta, -\infty) \Big) \diff \Omega + \\
+			& \qquad + a^2 \Iint_S \Int_{-\infty}^\tau \left( \frac{\partial E_i(x, \xi, t - \tau_1)}{\partial n} E_i(x, \eta, \tau_2 - t) \right. - \\
+			& \qquad \quad - \left. E_i(x, \xi, t - \tau_1) \frac{\partial E_i(x, \eta, \tau_2 - t)}{\partial n} \right) \diff S \diff t.
+		\end{aligned}
+	\end{equation}
+
+	Обираючи $\tau > \tau_2 > \tau_1$ , отримаємо з урахування граничних і початкових умов для функції Гріна, що інтеграли в правій частині останньої рівності дорівнює нулю.
 \end{proof}
+
+Для отримання інтегрального представлення розв'язків граничних задач, запишемо граничну задачу теплопровідності в змінних $\xi$, $\tau$ :
+\begin{system}
+	& a^2 \Delta u(\xi, \tau) - \frac{\partial u(\xi, \tau)}{\partial \tau} = - F(\xi, \tau), \quad \xi \in \Omega, \quad \tau > 0, \\
+	& u(\xi, 0) = u_0(\xi), \\
+	& \left. \ell_i u(\xi, \tau) \right|_{\xi \in S} = f(\xi, \tau), \quad i = 1, 2, 3. 
+\end{system}
+та рівняння для функції Гріна по змінних $\xi$, $\tau$:
+\begin{equation}
+	a^2 \Delta_\xi E_i(x, \xi, t - \tau) + \frac{\partial E_i(x, \xi, t - \tau)}{\partial \tau} = - \delta(x - \xi) \delta(t - \tau),
+\end{equation}
+де $x, \xi \in \Omega$, $ t > \tau > 0$. \medskip
+
+Перше рівняння помножимо на $E_i(x, \xi, t - \tau)$, а друге --- на $u(\xi, \tau$, віднімемо від першого друге, і проінтегруємо по $0 < \tau < t + \epsilon$ та по $\xi \in \Omega$. \medskip
+
+Отриаємо співвідношення:
+\begin{equation}
+	\begin{aligned}
+		& a^2 \Int_0^{t + \epsilon} \Iiint_\Omega \Big( E_i(x, \xi, t - \tau) \Delta u(\xi, \tau) - \\
+		& \qquad \quad - u(\xi, \tau) \Delta_\xi E_i(x, \xi, t - \tau) \Big) \diff \xi \diff \tau + \\
+		& \qquad + \Int_0^{t + \epsilon} \Iiint_\Omega E_i(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau - \\
+		& \qquad -  \Iiint_\Omega \Int_0^{t+\epsilon} \frac{\partial (E_u(x, \xi, t - \tau) u(\xi, \tau))}{\partial \tau} \diff \tau \diff \xi = \\
+		& \quad =  \Int_0^{t + \epsilon} \Iiint_\Omega \delta(x - \xi) \delta(t - \tau) \diff \xi \diff \tau.
+	\end{aligned}
+\end{equation}
+
+Після застосування другої формули Гріна до першого інтегралу, обчислення третього інтегралу при $\epsilon \to 0$ отримаємо наступну проміжну формулу:
+\begin{equation}
+	\begin{aligned}
+		u(x, t) &= \Int_0^t \Iiint_\Omega E_i(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau + \\
+		& \quad + \Iiint_\Omega E_i(x, \xi, t) u_0(\xi) \diff \xi + \\
+		& \quad + a^2 \Int_0^t \Iint_S \left( E_i(x, \xi, t - \tau) \frac{\partial u(\xi, \tau)}{\partial n_\xi} - u(\xi, \tau) \frac{\partial E_i(x, \xi, t - \tau)}{\partial n_\xi} \right) \diff S_\xi \diff \tau.
+	\end{aligned}
+\end{equation}
+
+Враховуючи відповідні граничні умови, яким задовольняє розв'язок на границі поверхні $S$ отримаємо для першої граничної задачі:
+\begin{equation}
+	\begin{aligned}
+		u(x, t) &= \Int_0^t \Iiint_\Omega E_1(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau + \\
+		& \quad + \Iiint_\Omega E_1(x, \xi, t) u_0(\xi) \diff \xi - \\
+		& \quad - a^2 \Int_0^t \Iint_S \left( \frac{\partial E_1(x, \xi, t - \tau)}{\partial n_\xi} f(\xi, \tau)\right) \diff S_\xi \diff \tau.
+	\end{aligned}
+\end{equation}
+
+Для другої та третьої граничних задач отримаємо 
+\begin{equation}
+	\begin{aligned}
+		u(x, t) &= \Int_0^t \Iiint_\Omega E_i(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau + \\
+		& \quad + \Iiint_\Omega E_i(x, \xi, t) u_0(\xi) \diff \xi + \\
+		& \quad + a^2 \Int_0^t \Iint_S E_i(x, \xi, t - \tau) f(\xi, \tau) \diff S_\xi \diff \tau.
+	\end{aligned}
+\end{equation}
+
+\subsubsection{Функція Гріна граничних задач хвильового оператора}
 
 \end{document}
