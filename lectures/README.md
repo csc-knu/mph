@@ -49,7 +49,7 @@ _Зараз опрацьовані лекції №№1&ndash;14, та №№17&
 
 ### Третій розділ
 
-[лекції 17&ndash;20](ch-3-r.pdf)
+[лекції 17&ndash;20](ch-3-v.pdf)
 
 17. Лекція №17: [pdf-v](17-v.pdf), [docx](17.docx), [LaTeX source](17.tex)
 
@@ -57,7 +57,7 @@ _Зараз опрацьовані лекції №№1&ndash;14, та №№17&
 
 19. Лекція №19: [pdf-v](19-v.pdf), [docx](19.docx), [LaTeX source](19.tex)
 
-20. Лекція №20: [pdf-r](20-r.pdf), [docx](20.docx), [LaTeX source](20.tex)
+20. Лекція №20: [pdf-v](20-v.pdf), [docx](20.docx), [LaTeX source](20.tex)
 
 21. Лекція №21: [pdf](21.pdf), [docx](21.docx)
 
