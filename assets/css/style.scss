@@ -3,10 +3,6 @@
 
 @import "{{ site.theme }}";
 
-header {
-    padding: 25px;
-}
-
-section {
-	margin-top: 110px;
+.page-header {
+	padding: 1rem;
 }
