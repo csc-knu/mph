@@ -4,11 +4,11 @@
 
 ### Викладацький склад
 
-Курс лекцій читається Кузьміном А.В.,<span style="font-family:monospace;"> kuzmin_a_b на ukr тчк net</span>
+Курс лекцій читається Кузьміном А.В., kuzmin_a_b<span style="font-family:monospace;">@</span>ukr.net
 
 Практичні заняття проводять:
-- Кузьмін А.В.,<span style="font-family:monospace;"> kuzmin_a_b на ukr тчк net</span>
-- Кашпур О.Ф.,<span style="font-family:monospace;"> olena тчк kashpur на gmail тчк com</span>
+- Кузьмін А.В., kuzmin_a_b<span style="font-family:monospace;">@</span>ukr.net
+- Кашпур О.Ф., olena.kashpur<span style="font-family:monospace;">@</span>gmail.com
 
 Підтримкою сайту займається Скибицький Н.М., n.skybytskyi<span style="font-family:monospace;">@</span>gmail.com
 
