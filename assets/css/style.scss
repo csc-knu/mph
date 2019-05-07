@@ -4,5 +4,11 @@
 @import "{{ site.theme }}";
 
 .page-header {
-	padding: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 0.01rem;
+	padding-top: 1rem;
+    color: #fff;
+    text-align: center;
+    background-color: #cc2874;
+    background-image: linear-gradient(120deg, #155799, #ff1010);
 }
