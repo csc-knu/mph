@@ -4,15 +4,15 @@
 
 ### Викладацький склад
 
-Курс лекцій читається Кузьміном А.В., kuzmin_a_b<span style="font-family:monospace;">@</span>ukr.net
+Курс лекцій читає Кузьмін Анатолій Володимирович, kuzmin_a_b<span style="font-family:monospace;">@</span>ukr.net
 
 Практичні заняття проводять:
 
-- Кузьмін А.В., kuzmin_a_b<span style="font-family:monospace;">@</span>ukr.net
+- Кузьмін Анатолій Володимирович, kuzmin_a_b<span style="font-family:monospace;">@</span>ukr.net
 
-- Кашпур О.Ф., olena.kashpur<span style="font-family:monospace;">@</span>gmail.com
+- Кашпур Олена Федорівна, olena.kashpur<span style="font-family:monospace;">@</span>gmail.com
 
-Підтримкою сайту займається Скибицький Н.М., n.skybytskyi<span style="font-family:monospace;">@</span>gmail.com
+Підтримкою і розробкою сайту і навчальних матеріалів займається Скибицький Нікіта Максимович, n.skybytskyi<span style="font-family:monospace;">@</span>gmail.com
 
 ### Розподіл балів
 
@@ -27,6 +27,7 @@
 - **40** балів за езкамен/залік. Екзаменаційний білет містить **4** питання.
 
 _Розподіл балів однаковий для обох семестрів._
+
 _Більше **100** балів бути не може, тому у разі перебору ~~бали згорають~~ ставимо max._
 
 ## Власне матеріали
