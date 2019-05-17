@@ -1,0 +1,107 @@
+\input{univ.sty}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
+
+\input{th.sty}
+
+\begin{document}
+
+\tableofcontents
+
+\setcounter{section}{4}
+\setcounter{subsection}{4}
+\setcounter{subsubsection}{3}
+% \setcounter{theorem}{30}
+\setcounter{equation}{17}
+
+\subsubsection{Функція Гріна задачі Діріхле для кулі}
+
+Будемо розглядати граничну задачу
+\begin{system}
+	\Delta U(P) = 0, \quad |P| < R, \\
+	\left. U(P) \right|_{|P| = R} = f(P).
+\end{system}
+
+Побудуємо функцію Гріна першої граничної задачі оператора Лапласа для кулі. \medskip
+
+Введемо позначення:
+\begin{equation}
+	| OP_0 | = r_0, \quad | OP_0' | = r_0', \quad r = | P - P_0 |, \quad r' = | P - P_0' |.
+\end{equation}
+ 
+На довільному промені, який проходить через центр кулі точку $O$ розмістимо всередині кулі у точці $P_0$ одиничний точковий додатний заряд. Розглянемо точку $P_0'$ симетричну точці   відносно сфери.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.75\textwidth]{img/21-1.png}
+\end{figure}
+
+Це означає, що обидві точки лежать на одному промені, а їх відстані від центру сфери задовольняють співвідношенню
+\begin{equation}
+	r_0 \cdot r_0' = R^2.
+\end{equation}
+
+В $P_0'$ точці розмістимо від'ємний заряд величини $e$, яку оберемо виходячи з властивостей функції Гріна. \medskip
+
+Запишемо потенціал електростатичного поля від суми зарядів:
+\begin{equation}
+	\Pi(P) = \frac{1}{4 \pi r} - \frac{e}{4 \pi r}.
+\end{equation}
+
+Обчислимо величину $e$ використовуючи теорему косинусів:
+\begin{nalign}
+	\Pi(P) &= \frac{1}{4 \pi} \left. \left( \frac{1}{\sqrt{\rho^2 + r_0^2 - 2 \rho r_0 \cos \gamma}} - \frac{e}{\sqrt{\rho^2 + \frac{R^4}{r_0^2} - 2 \rho \cdot \frac{R^2}{r_0} \cdot \cos \gamma}} \right) \right|_{\rho = R} = \\
+	&= \frac{1}{4 \pi}  \left( \frac{1}{\sqrt{R^2 + r_0^2 - 2 R r_0 \cos \gamma}} - \frac{e}{\sqrt{R^2 + \frac{R^4}{r_0^2} - 2 R \cdot \frac{R^2}{r_0} \cdot \cos \gamma}} \right) = \\
+	&= \frac{1}{4 \pi} \cdot \frac{1 - e \cdot \frac{r_0}{R}}{\sqrt{R^2 + r_0^2 - 2 R r_0 \cos \gamma}} = 0.
+\end{nalign}
+
+Остання рівність буде вірною, якщо $e = R / r_0$. \medskip
+
+Таким чином функцію Гріна задачі Діріхле для кулі можна записати при знайденому значенні  величини зовнішнього заряду:
+\begin{equation}
+	G_1 (P, P_0) = \frac{1}{4\pi} \left( 1 / \sqrt{\rho^2 + r_0^2 - 2 \rho r_0 \cos \gamma} - 1 / \sqrt{R^2 + \frac{\rho^2 r_0^2}{R^2} - 2 \rho r_0 \cos \gamma} \right).
+\end{equation}
+
+Для знаходження формули інтегрального представлення обчислимо:
+\begin{multline}
+	\left. \frac{\partial G_1 (P, P_0)}{\partial n_P} \right|_{P \in S} = \left. \frac{\partial G_1 (P, P_0)}{\partial \rho} \right|_{\rho = R} = \\
+	= \frac{1}{4 \pi} \left. \left( - \frac{\rho - r_0 \cos \gamma}{(\rho^2 + r_0^2 - 2 \rho r_0 \cos \gamma)^{3/2}} + \frac{\frac{\rho r_0^2}{R^2} - r_0 \cos \gamma}{\left(\frac{\rho^2 r_0^2}{R^2} + r_0^2 - 2 R r_0 \cos \gamma\right)^{3/2}} \right) \right|_{\rho = R} = \\
+	= - \frac{1}{4 \pi R} \cdot \frac{R^2 - r_0^2}{(R^2 + r_0^2 - 2 R r_0 \cos \gamma)^{3/2}}.
+\end{multline}
+
+Для запису остаточної формули треба ввести сферичну систему координат. Запишемо через сферичні кути:
+\begin{equation}
+	\cos \gamma = \frac{\measuredangle (OP, OP_0)}{\rho r_0} = \cos \theta \cos \theta_0 + \sin \theta \sin \theta_0 \cos (\phi - \phi_0).
+\end{equation}
+
+Тут $\rho, \phi, \theta$ --- сферичні координати точки $P$, а $r_0, \phi_0, \theta_0$ --- сферичні координати точки $P_0$. \medskip
+
+\begin{th_formula}[формула Пуассона для кулі]
+	Використовуючи формулу (3.16) запишемо розв'язок задачі Діріхле:
+	\begin{equation}
+		U(r_0, \phi_0, \theta_0) = \frac{R}{4 \pi} \Int_0^{2 \pi} \Int_0^\pi \frac{(R^2 - r_0^2) \sin \theta f(\phi, \theta) \diff \theta \diff \phi}{(R^2 + r_0^2 - 2 R r_0 \cos \gamma)^{3/2}}.
+	\end{equation}
+
+	Ця формула дає розв'язок задачі Діріхле для рівняння Лапласа і називається \it{формулою Пуассона для кулі}.
+\end{th_formula}
+
+\subsubsection{Функція Гріна для областей на площині}
+
+Функція Гріна для областей у двовимірному випадку в принципі можна будувати в той же спосіб, що і в тривимірному випадку. При цьому треба враховувати вигляд фундаментального розв'язку для $\RR^2$, що приводить до наступного вигляду функції Гріна:
+\begin{equation}
+	G_i (p, p_0) = \frac{1}{2 \pi} \cdot \ln \left( \frac{1}{|p - p_0|} \right) + g_i (p, p_0), \quad p, p_0 \in D \subset \RR^2.
+\end{equation}
+
+Фізичний зміст фундаментального розв'язку в двовимірному випадку представляє собою потенціал електростатичного поля в точці $p$ рівномірно зарядженої одиничним додатнім зарядом  нескінченої нитки, яка проходить ортогонально до площини через деяку точку $p_0$. Точки $p, p_0$ належать площині:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.75\textwidth]{img/21-2.png}
+\end{figure}
+
+Аналогічно кулі, можна отримати функцію Гріна задачі Діріхле для кола, яка має вигляд:
+\begin{equation}
+	G_1 (p, p_0) = \frac{1}{2 \pi} \left( \ln \left( \frac{1}{\sqrt{r_0^2 + \rho^2 - 2 \rho r_0 \cos \gamma}} \right) - \ln \left( \frac{R}{r_0} \cdot \frac{1}{\sqrt{\frac{R^4}{r_0^2} + \rho^2 - 2 \rho \cdot \frac{R^2}{r_0} \cdot \cos \gamma}} \right) \right)
+\end{equation}
+
+\end{document}
