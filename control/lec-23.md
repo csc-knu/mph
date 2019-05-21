@@ -71,6 +71,7 @@
 і підставляючи значення коефіцієнтів в степеневий ряд отримаємо  -->
 
 \begin{equation}
+	\label{eq:7.10}
 	J_\nu (x) = \Sum_{k = 0}^\infty \frac{(-1)^k}{\Gamma(k + \nu + 1) k!} \left( \frac{x}{2} \right)^{2 k + \nu}.
 \end{equation}
 
@@ -132,6 +133,7 @@ $$
 
 $$
 \begin{equation}
+	\label{eq:7.14}
 	\begin{aligned}
 		N_n(x) &= - \frac{1}{\pi} \Sum_{k = 0}^{n - 1} \frac{(n - k - 1)!}{k!} \left( \frac{x}{2} \right)^{2 k - n} + \frac{2}{\pi} J_n(x) \ln \frac{x}{2} - \newline
 		& \quad - \frac{1}{\pi} \Sum_{k = 0}^\infty \frac{(-1)^k}{k! (k + n)!} \left( \frac{x}{2} \right)^{2k + n} (\Psi(k + n + 1) + \Psi(k + 1)).
@@ -144,6 +146,52 @@ $$
 ### 27. Властивості функцій Бесселя першого та другого роду дійсного аргументу.
 
 ### 28. Рівняння для функцій Бесселя уявного аргументу, функції Бесселя першого та другого роду уявного аргументу.
+
+Важливою властивістю функцій Бесселя є асимптотичний характер поведінки цих функцій на нескінченості. <!-- Вводячи функцію $$y(x) = V(x) / \sqrt{x}$$, підставляючи її в рівняння Бесселя отримаємо рівняння
+
+\begin{equation}
+	V'' + \left( 1 - \frac{\nu^2 - 1/4}{x^2} \right) V = 0.
+\end{equation}
+
+Розв'язки останнього рівняння можна представити для $$x \to \infty$$ у вигляді
+
+\begin{equation}
+	V(x) = \gamma \cdot \sin(x + \delta) + O(1 / x),
+\end{equation}
+
+а відповідно
+
+\begin{equation}
+	y(x) = \gamma \cdot \frac{\sin(x + \delta)}{\sqrt{x}} + O \left( \frac{1}{x^{3/2}} \right).
+\end{equation} -->
+
+Додаткові дослідження дозволяють отримати, наступні асимптотичні формули:
+
+\begin{align}
+	J_\nu(x) &= \sqrt{\frac{2}{\pi x}} \cdot \cos \left( x - \frac{\nu \pi}{2} - \frac{\pi}{4} \right) + O \left( \frac{1}{x^{3/2}} \right), \quad x \to \infty, \newline
+	N_{\nu}(x) &= \sqrt{\frac{2}{\pi x}} \cdot \sin \left( x - \frac{\nu \pi}{2} - \frac{\pi}{4} \right) + O \left( \frac{1}{x^{3/2}} \right), \quad x \to \infty.
+\end{align}
+
+Останні формули свідчать про те, що функції Бесселя як першого так і другого роду мають злічену кількість нулів, тобто рівняння $$J_\nu(x) = 0$$, $$N_\nu(x) = 0$$ мають злічену кількість коренів, які для великих значень аргументу $$x$$ асимптотично прямують до нулів  тригонометричних функцій $$\cos \left( x - \frac{\nu \pi}{2} - \frac{\pi}{4} \right)$$, $$\sin \left( x - \frac{\nu \pi}{2} - \frac{\pi}{4} \right)$$. А самі функції Бесселя ведуть себе як $$O(1 / \sqrt{x})$$, $$x \to \infty$$.
+
+Аналіз формул \eqref{eq:7.10} та \eqref{eq:7.14} показує, що при $$x \to 0$$: $$J_n(x) \approx \frac{1}{n!} \left( \frac{x}{2} \right)^n$$, $$n = 0, 1, 2, \ldots$$, $$N_n(x) \approx - \frac{(n - 1)!}{\pi} \left( \frac{x}{2} \right)^{-n} \to \infty$$, $$N_0(x) = \frac{2}{\pi} \ln \frac{x}{2} \to \infty$$, $$x \to 0$$.
+
+Важливою властивістю функцій Бесселя першого та другого роду є рекурентні формули, яким задовольняють функції Бесселя 
+
+\begin{align}
+	\frac{\diff}{\diff x} J_\nu(x) + frac{\nu}{x} \cdot J_\nu(x) &= J_{\nu - 1}(x), \newline
+	\frac{\diff}{\diff x} J_\nu(x) - frac{\nu}{x} \cdot J_\nu(x) &= - J_{\nu + 1}(x), \newline
+	\frac{\diff}{\diff x} N_\nu(x) + frac{\nu}{x} \cdot N_\nu(x) &= N_{\nu - 1}(x), \newline
+	\frac{\diff}{\diff x} N_\nu(x) - frac{\nu}{x} \cdot N_\nu(x) &= - N_{\nu + 1}(x).
+\end{align}
+
+Виключаючи з двох співвідношень похідну, можна зв'язати між собою функції Бесселя трьох сусідніх порядків.
+
+Для прикладу наведемо графіки функцій Бесселя $$J_3(x)$$ та $$N_3(x)$$:
+
+![j3](j3.png)
+
+![n3](n3.png)
 
 ### 29. Властивості функцій Бесселя першого та другого роду уявного аргументу.
 
