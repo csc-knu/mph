@@ -272,7 +272,7 @@ $$
 \begin{equation}
 	\left\{
 		\begin{aligned}
-			& \Delta U(P) = - F(P), \quad P \in \Omega = \{(x, y, z): z > 0, x, y \in \RR\}, \newine
+			& \Delta U(P) = - F(P), \quad P \in \Omega = \{(x, y, z): z > 0, x, y \in \RR\}, \newline
 			& - \left. \frac{\partial U(P)}{\partial z} \right|_{P \in S} = f(P), \quad S = \{(x, y, z): z = 0, x, y \in \RR\}.
 		\end{aligned}
 	\right.
