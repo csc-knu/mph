@@ -227,7 +227,7 @@ $$
 \begin{equation}
 	\begin{aligned}
 		0 &= \Iiint_\Omega u(x) \Delta u(x) \diff x = \Iiint_\Omega u(x) (\nabla \cdot \nabla u(x)) \diff x = \newline
-		&= \Iint_S u(x) \cdot \langle \nabla u(x), n \rangle \diff S - \Iiint_\Omega |\nabla u(x)|^2 \diff x.
+		&= \Iint_S u(x) \cdot \big\langle \nabla u(x), n \big\rangle \diff S - \Iiint_\Omega |\nabla u(x)|^2 \diff x.
 	\end{aligned}
 \end{equation}
 $$
