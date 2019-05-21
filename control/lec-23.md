@@ -210,6 +210,7 @@ $$
 Другий клас функцій Бесселя &mdash; функції Бесселя уявного аргументу можна отримати як два лінійно–незалежних розв'язки рівняння \eqref{eq:7.2}, зокрема їх можна записати за формулою \eqref{eq:7.10} з використанням заміни змінної $$x \mapsto i x$$, в результаті будемо мати функцію Бесселя першого роду уявного аргументу:
 
 \begin{equation}
+	\label{eq:7.17}
 	I_\nu(x) = \frac{J_\nu(i x)}{i^\nu} = \Sum_{k = 0^\infty} \frac{(x / 2)^{2 k + \nu}}{k! \cdot \Gamma(k + \nu + 1)}, \quad 0 < x < \infty.
 \end{equation}
 
@@ -237,6 +238,7 @@ $$
 
 $$
 \begin{equation}
+	\label{eq:7.21}
 	\begin{aligned}
 		K_n(x) &= \frac{1}{2} \Sum_{k = 0}^{n - 1} \frac{(-1)^k \cdot (n - k - 1)!}{k!} \left( \frac{2}{x} \right)^{n - 2k} - I_n(x) \ln \frac{x}{2} + \newline
 		& \quad + \frac{1}{2} \Sum_{k = 0}^{n - 1} \frac{(x / 2)^{n + 2 k}}{k! \cdot (k + n)!} (\Psi(k + 1) + \Psi(k + n + 1)).
@@ -245,6 +247,25 @@ $$
 $$
 
 ### 29. Властивості функцій Бесселя першого та другого роду уявного аргументу.
+
+Виходячи з рекурентних співвідношень для функцій Бесселя дійсного аргументу можна отримати рекурентні співвідношення для функцій Бесселя уявного аргументу першого та другого роду:
+
+\begin{align}
+	\frac{\diff I_\nu(x)}{\diff x} + \frac{\nu}{x} \cdot I_\nu(x) &= I_{\nu - 1}(x), \newline
+	\frac{\diff I_\nu(x)}{\diff x} - \frac{\nu}{x} \cdot I_\nu(x) &= - I_{\nu + 1}(x), \newline
+	\frac{\diff K_\nu(x)}{\diff x} + \frac{\nu}{x} \cdot K_\nu(x) &= K_{\nu - 1}(x), \newline
+	\frac{\diff K_\nu(x)}{\diff x} - frac{\nu}{x} \cdot K_\nu(x) &= - K_{\nu + 1}(x).
+\end{align}
+
+Відмітимо також характер поведінки функцій Бесселя уявного аргументу при $$x = 0$$ та $$x \to \infty$$.
+
+Виходячи з формул для \eqref{eq:7.17} та \eqref{eq:7.21} можна зробити висновок, що $$I_\nu(x) = O(x^\nu)$$, $$x \to 0$$, $$K_\nu(x) = O(x^{-\nu})$$, $$\nu > 0$$, $$K_0(x) = O(\ln(x))$$, $$x \to 0$$, $$I_\nu(x) \approx \sqrt{\frac{1}{2 \pi x}} \cdot e^x$$, $$K_\nu(x) \approx \sqrt{\frac{\pi}{2 x}} \cdot e^{-x}$$, $$x \to \infty$$.
+
+Наведемо графіки функцій $$I_3(x)$$ та $$K_3(x)$$:
+
+![i3](i3.png)
+
+![k3](k3.png)
 
 ---
 
