@@ -104,4 +104,52 @@
 	G_1 (p, p_0) = \frac{1}{2 \pi} \left( \ln \left( \frac{1}{\sqrt{r_0^2 + \rho^2 - 2 \rho r_0 \cos \gamma}} \right) - \ln \left( \frac{R}{r_0} \cdot \frac{1}{\sqrt{\frac{R^4}{r_0^2} + \rho^2 - 2 \rho \cdot \frac{R^2}{r_0} \cdot \cos \gamma}} \right) \right)
 \end{equation}
 
+Або через комплексні змінні $z = \rho e^{i \phi}$, $z_0 = r_0 e^{i \phi_0}$, $z_0^\star = \frac{R^2}{\overline{z_0}}$:
+
+\begin{equation}
+	G_1 (z, z_0) = \frac{1}{2 \pi} \ln \left( \frac{r_0 \cdot |z - z_0^\star|}{R \cdot |z - z_0|} \right).
+\end{equation}
+
+Таким чином розв'язок задачі Діріхле для кола може бути записаним у вигляді:
+
+\begin{equation}
+	u(r_0, \phi_0) = \frac{1}{2 \pi} \Int_0^{2 \pi} \frac{R^2 - r_0^2}{R^2 + r_0^2 - 2 R r_0 \cos (\phi - \phi_0)} f(\phi) \diff \phi.
+\end{equation}
+
+Або через точки комплексної площини,
+
+\begin{equation}
+	\frac{R^2 - r_0^2}{R^2 + r_0^2 - 2 R r_0 \cos (\phi - \phi_0)} = \real \left( \frac{z + z_0}{z - z_0} \right), \quad \diff \phi = \frac{\diff z}{i z}.
+\end{equation}
+
+Тоді попередня формула набуває вигляду
+
+\begin{equation}
+	u(z_0) = \real \frac{1}{2 \pi i} \Int_{|z| = R} f(z) \cdot \frac{z + z_0}{z - z_0} \cdot \frac{\diff z}{z}.
+\end{equation}
+
+Нехай необхідно побудувати функцію Гріна першої граничної задачі 
+
+\begin{system}
+	& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0, \quad (x, y) \in D, \\
+	& \left. u(x, y) \right|_{C} = f(x, y)
+\end{system}
+
+для довільної однозв'язної області $D$ з жордановою границею $C$. \medskip
+
+Припустимо, що відома функція $\omega(z)$, яка здійснює конформне відображення області $D$ на одиничний круг $|\omega| < 1$, тоді з попередньої формули, функція Гріна першої граничної задачі для області $D$ буде мати вигляд:
+
+\begin{equation}
+	G(z, z_0) = \frac{1}{2 \pi} \ln \left| \frac{1 - \overline{\omega(z_0)} \omega(z)}{\omega(z) - \omega(z_0)} \right|.
+\end{equation}
+
+А розв'язок задачі Діріхле можна записати у вигляді:
+
+\begin{equation}
+	u(\zeta_0) = \real \frac{1}{2 \pi i} \Oint_C f(\zeta) \cdot \frac{\omega(\zeta) + \omega(\zeta_0)}{\omega(\zeta) - \omega(\zeta_0)} \cdot \frac{\omega'(\zeta)}{\omega(\zeta)} \cdot \diff \zeta.
+\end{equation}
+
+\subsubsection{Функція Гріна першої та другої граничної задачі рівняння теплопровідності для пів прямої}
+
+
 \end{document}
