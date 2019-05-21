@@ -12,6 +12,7 @@
 					Max: "\\displaystyle\\max\\limits",
 					Min: "\\displaystyle\\min\\limits",
 					Int: "\\displaystyle\\int\\limits",
+					Lim: "\\displaystyle\\lim\\limits",
 					Iint: "\\displaystyle\\iint\\limits",
 					Iiint: "\\displaystyle\\iiint\\limits",
 					Oint: "\\displaystyle\\oint\\limits",
