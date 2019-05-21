@@ -163,9 +163,10 @@ $$
 
 \begin{equation}
 	y(x) = \gamma \cdot \frac{\sin(x + \delta)}{\sqrt{x}} + O \left( \frac{1}{x^{3/2}} \right).
-\end{equation} -->
+\end{equation} 
+-->
 
-Додаткові дослідження дозволяють отримати, наступні асимптотичні формули:
+Додаткові дослідження дозволяють отримати наступні асимптотичні формули:
 
 \begin{align}
 	J_\nu(x) &= \sqrt{\frac{2}{\pi x}} \cdot \cos \left( x - \frac{\nu \pi}{2} - \frac{\pi}{4} \right) + O \left( \frac{1}{x^{3/2}} \right), \quad x \to \infty, \newline
@@ -174,7 +175,7 @@ $$
 
 Останні формули свідчать про те, що функції Бесселя як першого так і другого роду мають злічену кількість нулів, тобто рівняння $$J_\nu(x) = 0$$, $$N_\nu(x) = 0$$ мають злічену кількість коренів, які для великих значень аргументу $$x$$ асимптотично прямують до нулів  тригонометричних функцій $$\cos \left( x - \frac{\nu \pi}{2} - \frac{\pi}{4} \right)$$, $$\sin \left( x - \frac{\nu \pi}{2} - \frac{\pi}{4} \right)$$. А самі функції Бесселя ведуть себе як $$O(1 / \sqrt{x})$$, $$x \to \infty$$.
 
-Аналіз формул \eqref{eq:7.10} та \eqref{eq:7.14} показує, що при $$x \to 0$$: $$J_n(x) \approx \frac{1}{n!} \left( \frac{x}{2} \right)^n$$, $$n = 0, 1, 2, \ldots$$, $$N_n(x) \approx - \frac{(n - 1)!}{\pi} \left( \frac{x}{2} \right)^{-n} \to \infty$$, $$N_0(x) = \frac{2}{\pi} \ln \frac{x}{2} \to \infty$$, $$x \to 0$$.
+Аналіз формул \eqref{eq:7.10} та $$(8)$$ показує, що при $$x \to 0$$: $$J_n(x) \approx \frac{1}{n!} \left( \frac{x}{2} \right)^n$$, $$n = 0, 1, 2, \ldots$$, $$N_n(x) \approx - \frac{(n - 1)!}{\pi} \left( \frac{x}{2} \right)^{-n} \to \infty$$, $$N_0(x) = \frac{2}{\pi} \ln \frac{x}{2} \to \infty$$, $$x \to 0$$.
 
 Важливою властивістю функцій Бесселя першого та другого роду є рекурентні формули, яким задовольняють функції Бесселя 
 
