@@ -128,9 +128,15 @@
 
 Остаточний вигляд функції Бесселя другого роду
 
+$$
 \begin{equation}
-	N_n(x) = - \frac{1}{\pi} \Sum_{k = 0}^{n - 1} \frac{(n - k - 1)!}{k!} \left( \frac{x}{2} \right)^{2 k - n} + \frac{2}{\pi} J_n(x) \ln \frac{x}{2} - \frac{1}{\pi} \Sum_{k = 0}^\infty \frac{(-1)^k}{k! (k + n)!} \left( \frac{x}{2} \right)^{2k + n} (\Psi(k + n + 1) + \Psi(k + 1)).
+	\begin{aligned}
+		N_n(x) &= - \frac{1}{\pi} \Sum_{k = 0}^{n - 1} \frac{(n - k - 1)!}{k!} \left( \frac{x}{2} \right)^{2 k - n} + \newline
+		& \quad + \frac{2}{\pi} J_n(x) \ln \frac{x}{2} - \newline
+		& \quad - \frac{1}{\pi} \Sum_{k = 0}^\infty \frac{(-1)^k}{k! (k + n)!} \left( \frac{x}{2} \right)^{2k + n} (\Psi(k + n + 1) + \Psi(k + 1)).
+	\end{aligned}
 \end{equation}
+$$
 
 Дуже часто функцію Бесселя другого роду $$N_\nu(x)$$ називають _функцією Вебера_.
 
