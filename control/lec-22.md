@@ -303,15 +303,26 @@ $$
 
 Застосуємо для $$u(x)$$ другу рівність Діріхле:
 
+$$
 \begin{equation}
-	\Iiint_{U(0, R) \setminus \Omega} | \nabla u |^2 \diff x = \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S + \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S = \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S.
+	\begin{aligned}
+		\Iiint_{U(0, R) \setminus \Omega} | \nabla u |^2 \diff x &= \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S + \newline
+		&\quad + \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S = \newline
+		&= \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S.
+	\end{aligned}
 \end{equation}
+$$
 
 Спрямуємо радіус кулі $$R$$ до нуля і врахуємо умову регулярності на нескінченості
 
+$$
 \begin{equation}
-	\Iiint_{\Omega} | \nabla u |^2 \diff x = \Lim_{R \to \infty} \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S = \Lim_{R \to \infty} O \left( \frac{1}{R^3} \right) \Iint_{S(0, R)} \diff S = 0.
+	\begin{aligned}
+		\Iiint_{\Omega} | \nabla u |^2 \diff x &= \Lim_{R \to \infty} \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S = \newline
+		&= \Lim_{R \to \infty} O \left( \frac{1}{R^3} \right) \Iint_{S(0, R)} \diff S = 0.
+	\end{aligned}
 \end{equation}
+$$
 
 Таким чином $$u(x) \equiv \text{const}$$, $$x \in \Omega'$$ а оскільки $$u(x) = 0$$, $$x \in S$$, то $$u_1(x) \equiv u_2(x)$$, $$x \in \Omega'$$.
 
