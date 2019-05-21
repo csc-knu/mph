@@ -36,6 +36,7 @@
 
 Де
 
+$$
 \begin{equation}
 	\left\{
 		\begin{aligned}
@@ -45,6 +46,7 @@
 		\end{aligned}
 	\right.
 \end{equation}
+$$
 
 Для сферичної системи координат $$q_1 = r$$, $$q_2 = \theta$$, $$q_3 = \varphi$$. Формули мають вигляд $$x = r \cdot \sin \theta \cdot \cos \varphi$$, $$y = r \cdot \sin \theta \cdot \sin \varphi$$, $$z = r \cdot \cos \theta$$, $$H_1 = 1$$, $$H_2 = r$$, $$H_3 = r \cdot \sin \theta$$.
 
