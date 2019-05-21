@@ -132,6 +132,8 @@ $$
 \end{equation}
 $$
 
+#### Сферична система координат
+
 Для сферичної системи координат $$q_1 = r$$, $$q_2 = \theta$$, $$q_3 = \varphi$$. Формули мають вигляд $$x = r \cdot \sin \theta \cdot \cos \varphi$$, $$y = r \cdot \sin \theta \cdot \sin \varphi$$, $$z = r \cdot \cos \theta$$, $$H_1 = 1$$, $$H_2 = r$$, $$H_3 = r \cdot \sin \theta$$.
 
 Таким чином оператор Лапласа у сферичній системі координат матиме вигляд.
@@ -145,6 +147,8 @@ $$
 	\end{aligned}
 \end{equation}
 $$
+
+#### Циліндрична система координат
 
 Для циліндричної системи координат $$q_1 = \rho$$, $$q_2 = \varphi$$, $$q_3 = z$$.
 
@@ -161,11 +165,13 @@ $$
 \end{equation}
 $$
 
+<!-- #### Полярна система координат
+
 Якщо функція $$u$$ не залежить від змінної $$z$$, то отримуємо полярну систему координат і вираз оператора Лапласа в полярній системі координат:
 
 \begin{equation}
 	\Delta_{\rho, \varphi} u = \frac{1}{\rho} \cdot \frac{\partial}{\partial \rho} \left( \rho \cdot \frac{\partial u}{\partial \rho} \right) + \frac{1}{\rho^2} \cdot \frac{\partial^2 u}{\partial \varphi^2}.
-\end{equation}
+\end{equation} -->
 
 ### 23. Принцип максимуму гармонічної функції, наслідки.
 
