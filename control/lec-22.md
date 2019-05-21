@@ -217,17 +217,24 @@ _Доведення_. Нехай $$u(x)$$ &mdash; гармонічна функ�
 
 Нехай $$u(x)$$ &mdash; гармонічна функція області $$U(0, R) \setminus \Omega$$ з границями $$S$$ та $$S(0, R)$$, де $$R$$ як завгодно велике число, тоді має місце така рівність Діріхле
 
+$$
 \begin{equation}
-	\Iint_{U(0, R) \setminus \Omega} |\nabla u|^2 \diff x = \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S + \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S.
+	\begin{aligned}
+		\Iint_{U(0, R) \setminus \Omega} |\nabla u|^2 \diff x &= \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S + \newline
+		&\quad + \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S.
+	\end{aligned}
 \end{equation}
+$$
 
 Для доведення пешої рівності Діріхле достатньо записати очевидний ланцюжок рівностей:
 
 $$
 \begin{equation}
 	\begin{aligned}
-		0 &= \Iiint_\Omega u(x) \Delta u(x) \diff x = \Iiint_\Omega u(x) (\nabla \cdot \nabla u(x)) \diff x = \newline
-		&= \Iint_S u(x) \cdot \big\langle \nabla u(x), n \big\rangle \diff S - \Iiint_\Omega |\nabla u(x)|^2 \diff x.
+		0 &= \Iiint_\Omega u(x) \Delta u(x) \diff x = \newline
+		&= \Iiint_\Omega u(x) (\nabla \cdot \nabla u(x)) \diff x = \newline
+		&= \Iint_S u(x) \cdot \big\langle \nabla u(x), n \big\rangle \diff S - \newline
+		&\quad - \Iiint_\Omega |\nabla u(x)|^2 \diff x.
 	\end{aligned}
 \end{equation}
 $$
