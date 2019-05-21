@@ -52,9 +52,15 @@ $$
 
 Таким чином оператор Лапласа у сферичній системі координат матиме вигляд.
 
+$$
 \begin{equation}
-	\Delta_{r, \varphi, \theta} u = \frac{1}{r^2} \cdot \frac{\partial}{\partial r} \left( r^2 \cdot \frac{\partial u}{\partial r} \right) + \frac{1}{r^2 \cdot \sin \theta} \cdot \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial u}{\partial \theta} \right) + \frac{1}{r^2 \cdot \sin^2 \theta} \cdot \frac{\partial^2 u}{\partial \varphi^2}.
+	\begin{aligned}
+		\Delta_{r, \varphi, \theta} u &= \frac{1}{r^2} \cdot \frac{\partial}{\partial r} \left( r^2 \cdot \frac{\partial u}{\partial r} \right) + \newline
+		&\quad + \frac{1}{r^2 \cdot \sin \theta} \cdot \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial u}{\partial \theta} \right) + \newline
+		&\quad + \frac{1}{r^2 \cdot \sin^2 \theta} \cdot \frac{\partial^2 u}{\partial \varphi^2}.
+	\end{aligned}
 \end{equation}
+$$
 
 Для циліндричної системи координат $$q_1 = \rho$$, $$q_2 = \varphi$$, $$q_3 = z$$.
 
