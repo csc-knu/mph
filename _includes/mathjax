@@ -2,14 +2,18 @@
 	<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({
 			CommonHTML: { scale: 100 },
-			TeX: { equationNumbers: { autoNumber: "AMS" } },
-			Macros: {
-				RR: "{\\mathbb{R}}",
-				diff: "\\mathop{}\\!\\mathrm{d}",
-				Int: "\\displaystyle\\int\\limits",
-				Iint: "\\displaystyle\\iint\\limits",
-				Iiint: "\\displaystyle\\iiint\\limits",
-				Oint: "\\displaystyle\\oint\\limits",
+			TeX: { 
+				equationNumbers: { 
+					autoNumber: "AMS" 
+				},
+				Macros: {
+					RR: "{\\mathbb{R}}",
+					diff: "\\mathop{}\\!\\mathrm{d}",
+					Int: "\\displaystyle\\int\\limits",
+					Iint: "\\displaystyle\\iint\\limits",
+					Iiint: "\\displaystyle\\iiint\\limits",
+					Oint: "\\displaystyle\\oint\\limits",
+				}
 			}
 		});
 	</script>
