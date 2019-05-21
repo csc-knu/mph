@@ -85,7 +85,7 @@
 Змінюючи в останній формулі індекс сумування $$k = k' + n$$, отримаємо
 
 \begin{equation}
-	J_{-n}(x) = (-1)^n \Sum_{k'} \frac{(-1)^k'}{\Gamma(k' + n + 1) \Gamma(k' + 1)} \left( \frac{x}{2} \right)^{2k' + n} = (-1)^n J_n(x).
+	J_{-n}(x) = (-1)^n \sum_{k'} \frac{(-1)^k'}{\Gamma(k' + n + 1) \Gamma(k' + 1)} \left( \frac{x}{2} \right)^{2 k' + n} = (-1)^n J_n(x).
 \end{equation}
 
 <!-- Остання рівність свідчить про лінійну залежність функцій $$J_n(x)$$ та $$J_{-n}(x)$$ і таким чином лінійна комбінація цих функцій не може складати загальний розв'язок рівняння Бесселя. -->
@@ -131,8 +131,7 @@
 $$
 \begin{equation}
 	\begin{aligned}
-		N_n(x) &= - \frac{1}{\pi} \Sum_{k = 0}^{n - 1} \frac{(n - k - 1)!}{k!} \left( \frac{x}{2} \right)^{2 k - n} + \newline
-		& \quad + \frac{2}{\pi} J_n(x) \ln \frac{x}{2} - \newline
+		N_n(x) &= - \frac{1}{\pi} \Sum_{k = 0}^{n - 1} \frac{(n - k - 1)!}{k!} \left( \frac{x}{2} \right)^{2 k - n} + \frac{2}{\pi} J_n(x) \ln \frac{x}{2} - \newline
 		& \quad - \frac{1}{\pi} \Sum_{k = 0}^\infty \frac{(-1)^k}{k! (k + n)!} \left( \frac{x}{2} \right)^{2k + n} (\Psi(k + n + 1) + \Psi(k + 1)).
 	\end{aligned}
 \end{equation}
