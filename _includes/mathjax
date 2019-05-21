@@ -9,6 +9,8 @@
 				Macros: {
 					RR: "{\\mathbb{R}}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
+					Max: "\\displaystyle\\max\\limits",
+					Min: "\\displaystyle\\min\\limits",
 					Int: "\\displaystyle\\int\\limits",
 					Iint: "\\displaystyle\\iint\\limits",
 					Iiint: "\\displaystyle\\iiint\\limits",
