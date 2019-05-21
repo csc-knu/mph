@@ -30,9 +30,15 @@
 
 Загальний вигляд оператора Лапласа в криволінійних координатах має вигляд:
 
+$$
 \begin{equation}
-	\Delta u = \frac{1}{H_1 H_2 H_3} \left( \frac{\partial}{\partial q_1} \left( \frac{H_2 H_3}{H_1} \cdot \frac{\partial u}{\partial q_1} \right) + \frac{\partial}{\partial q_2} \left( \frac{H_1 H_3}{H_2} \cdot \frac{\partial u}{\partial q_2} \right) + \frac{\partial}{\partial q_3} \left( \frac{H_2 H_1}{H_3} \cdot \frac{\partial u}{\partial q_3} \right) \right).
+	\begin{aligned}
+	\Delta u &= \frac{1}{H_1 H_2 H_3} \left( \frac{\partial}{\partial q_1} \left( \frac{H_2 H_3}{H_1} \cdot \frac{\partial u}{\partial q_1} \right) \right. + \newline
+	&\quad + \frac{\partial}{\partial q_2} \left( \frac{H_1 H_3}{H_2} \cdot \frac{\partial u}{\partial q_2} \right) + \newline
+	&\quad + \left. \frac{\partial}{\partial q_3} \left( \frac{H_2 H_1}{H_3} \cdot \frac{\partial u}{\partial q_3} \right) \right).
+	\end{aligned}
 \end{equation}
+$$
 
 Де
 
@@ -68,9 +74,14 @@ $$
 
 Оператор Лапласа в циліндричній системі координат має вигляд:
 
+$$
 \begin{equation}
-	\Delta_{\rho, \varphi, z} u = \frac{1}{\rho} \cdot \frac{\partial}{\partial \rho} \left( \rho \cdot \frac{\partial u}{\partial \rho} \right) + \frac{1}{\rho^2} \cdot \frac{\partial^2 u}{\partial \varphi^2} + \frac{\partial^2 u}{\partial z^2}.
+	\begin{aligned}
+		\Delta_{\rho, \varphi, z} u &= \frac{1}{\rho} \cdot \frac{\partial}{\partial \rho} \left( \rho \cdot \frac{\partial u}{\partial \rho} \right) + \newline
+		&\quad + \frac{1}{\rho^2} \cdot \frac{\partial^2 u}{\partial \varphi^2} + \frac{\partial^2 u}{\partial z^2}.
+	\end{aligned}
 \end{equation}
+$$
 
 Якщо функція $$u$$ не залежить від змінної $$z$$, то отримуємо полярну систему координат і вираз оператора Лапласа в полярній системі координат:
 
