@@ -10,6 +10,84 @@
 
 ### 19. Регулярність на нескінченності, перетворення Кельвіна. Гармонічність в нескінченно віддаленій точці.
 
+#### Перетворення Кельвіна
+
+Нехай функція $$u$$ гармонічна за межами кулі $$U(0, R)$$, тоді функцію
+
+\begin{equation}
+	v(y) = \left( \frac{R}{|y|} \right)^{n - 2} \cdot u \left( \frac{R^2}{|y|^2} \cdot y \right).
+\end{equation}
+
+(тут використовується перетворення аргументу обернених радіус векторів $$x = R^2 / \vert y \vert^2 \cdot y$$ або обернене $$y = R^2 / \vert x \vert^2 \cdot x$$) будемо називати перетворенням Кельвіна гармонічної функції $$u(x)$$ в $$n$$-вимірному евклідовому просторі.
+
+В подальшому будемо вважати, що $$R = 1$$, цього завжди можна досягти шляхом зміни масштабу. Покажемо, що для $$n = 3$$ перетворення Кельвіна $$v(y)$$ гармонічної функції $$u(x)$$ є гармонічною функцією аргументу $$y$$.
+
+<!-- Легко показати, що перший доданок в операторі Лапласа може бути записаний у вигляді  
+
+\begin{equation}
+	\frac{1}{r^2} \cdot \frac{\partial}{\partial r} \left( r^2 \cdot \frac{\partial u}{\partial r} \right) = \frac{1}{r} \cdot \frac{\partial^2 (r u)}{\partial r^2}.
+\end{equation}
+ -->
+Таким чином при $$n = 3$$, $$R = 1$$ перетворення Кельвіна має вигляд 
+
+\begin{equation}
+	v(y) = \frac{1}{|y|} \cdot u \left( \frac{y}{|y|^2} \right).
+\end{equation}
+
+Оскільки $$y = x / \vert x \vert^2$$, а $$x = y / \vert y \vert^2$$, то $$\vert y \vert = 1 / \vert x \vert$$, або $$v(y) = \vert x \vert \cdot u(x)$$.
+
+Покажемо, що функція $$v(r', \theta, \varphi) = r \cdot u(r, \theta, \varphi)$$. Де $$r = 1 / r'$$, задовольняє рівнянню Лапласа, якщо $$u(r, \theta, \varphi)$$ &mdash; гармонічна функція.
+
+<!-- Дійсно маємо 
+
+$$
+\begin{equation}
+	\begin{aligned}
+		r \cdot \Delta_{r, \theta, \varphi} u &= \frac{\partial^2 (r u)}{\partial r^2} + \frac{1}{r \cdot \sin \theta} \left( \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial u}{\partial \theta} \right) + \frac{1}{\sin \theta} \cdot \frac{\partial^2 u}{\partial \varphi^2} \right) = \newline
+		&= \frac{\partial^2 v}{\partial r^2} + \frac{1}{r^2 \cdot \sin \theta} \left( \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial v}{\partial \theta} \right) + \frac{1}{\sin \theta} \cdot \frac{\partial^2 v}{\partial \varphi^2} \right) = \newline
+		&= (r')^2 \cdot \frac{\partial}{\partial r'} \left( (r')^2 \cdot \frac{\partial v}{\partial r'} \right) + \frac{(r')^2}{\sin \theta} \cdot \left( \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial v}{\partial \theta} + \frac{1}{\sin \theta} \cdot \frac{\partial^2 v}{\oartial \varphi^2} \right) \right) = \newline
+		&= (r')^4 \cdot \Delta_{r', \varphi, \theta} \cdot v(r', \theta, \varphi) = 0.
+	\end{aligned}
+\end{equation}
+$$
+
+При отриманні останньої рівності було враховано що
+
+\begin{equation}
+	\frac{\partial v}{\partial r} = -(r')^2 \cdot \frac{\partial v}{\partial r'}, \quad
+	\frac{\partial^2 v}{\partial r^2} = (r')^2 \cdot \frac{\partial}{\partial r'} \left( (r')^2 \cdot \frac{\partial v}{\partial r'} \right).
+\end{equation} -->
+
+Аналогічно тому, як було показана гармонічність $$v(y) = 1 / \vert y \vert \cdot u (y / \vert y \vert^2)$$ у тривимірному евклідовому просторі, можна показати гармонічність функції $$v(y) = u( y / \vert y \vert^2)$$ у двовимірному евклідовому просторі.
+
+#### Гармонічність в нескінченно віддаленій точці та поведінка гармонічних функцій на нескінченості.
+
+Будемо говорити, що функція $$u(x)$$ є _гармонічною функцією в нескінченно віддаленій точці_, якщо функція
+
+\begin{equation}
+	v(y) = \begin{cases}
+		1 / |y| \cdot u (y / |y|^2), & n = 3, \newline
+		u (y / |y|^2), & n = 2,
+	\end{cases}
+\end{equation}
+
+є гармонічною функцією в точці нуль.
+
+Легко бачити, що
+
+\begin{equation}
+	v(y) = \begin{cases}
+		|x| \cdot u(x), & n = 3, \newline
+		u(x), & n = 2.
+	\end{cases}
+\end{equation}
+
+**Теорема** (_про поведінку гармонічних функцій в нескінченно віддалені точці в просторі_). Якщо при $$n = 3$$ функція $$u(x)$$ гармонічна в нескінченно віддаленій точці, то при $$\vert x \vert \to \infty$$ функція прямує до нуля не повільніше $$1 / \vert x \vert$$, а частинні похідні ведуть себе як $$D^\alpha u(x) = O(1 / \vert x \vert^{1 + \vert \alpha \vert})$$.
+
+**Теорема** (_про поведінку гармонічних функцій в нескінченно віддалені точці на площині_). Якщо при $$n = 2$$ функція $$u(x)$$ гармонічна в нескінченно віддаленій точці, то при $$\vert x \vert \to \infty$$ функція $$u(x)$$ обмежена, а частинні похідні ведуть себе як $$D^\alpha u(x) = O(1 / \vert x \vert^{1 + \vert \alpha \vert})$$.
+
+Гармонічні функції які мають поведінку на нескінченості визначену теоремами для тривимірного і двовимірного просторів називають регулярними на нескінченості гармонічними функціями, а відповідні оцінки умовами регулярності на нескінченості.
+
 ### 20. Оператор Лапласа в циліндричній та сферичній системах координат.
 
 Якщо замість прямокутних координат $$x, y, z$$ ввести ортогональні криволінійні координати $$q_1, q_2, q_3$$ за допомогою співвідношень
