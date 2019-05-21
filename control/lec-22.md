@@ -22,8 +22,8 @@
 
 \begin{equation}
 	\begin{aligned}
-		x &= \varphi_1(q_1, q_2, q_3), \\
-		y &= \varphi_2(q_1, q_2, q_3), \\
+		x &= \varphi_1(q_1, q_2, q_3), \newline
+		y &= \varphi_2(q_1, q_2, q_3), \newline
 		z &= \varphi_3(q_1, q_2, q_3).
 	\end{aligned}
 \end{equation}
@@ -39,8 +39,8 @@
 \begin{equation}
 	\left\{
 		\begin{aligned}
-			H_1^2 &= \left( \frac{\partial \varphi_1}{\partial q_1} \right)^2 + \left( \frac{\partial \varphi_2}{\partial q_1} \right)^2 + \left( \frac{\partial \varphi_3}{\partial q_1} \right)^2, \\
-			H_2^2 &= \left( \frac{\partial \varphi_1}{\partial q_2} \right)^2 + \left( \frac{\partial \varphi_2}{\partial q_2} \right)^2 + \left( \frac{\partial \varphi_3}{\partial q_2} \right)^2, \\
+			H_1^2 &= \left( \frac{\partial \varphi_1}{\partial q_1} \right)^2 + \left( \frac{\partial \varphi_2}{\partial q_1} \right)^2 + \left( \frac{\partial \varphi_3}{\partial q_1} \right)^2, \newline
+			H_2^2 &= \left( \frac{\partial \varphi_1}{\partial q_2} \right)^2 + \left( \frac{\partial \varphi_2}{\partial q_2} \right)^2 + \left( \frac{\partial \varphi_3}{\partial q_2} \right)^2, \newline
 			H_3^2 &= \left( \frac{\partial \varphi_1}{\partial q_3} \right)^2 + \left( \frac{\partial \varphi_2}{\partial q_3} \right)^2 + \left( \frac{\partial \varphi_3}{\partial q_3} \right)^2.
 		\end{aligned}
 	\right.
@@ -51,7 +51,7 @@
 Таким чином оператор Лапласа у сферичній системі координат матиме вигляд.
 
 \begin{equation}
-	\Delta_{r, \varphi, \theta} u = \frac{1}{r^2} \cdot \frac{\partial}{\partial r} \left( r^2 \cdot \frac{\partial u}{\partial r} \right) + \frac{1}{r^2 \cdot \sin \thera} \cdot \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial u}{\partial \theta} \right) + \frac{1}{r^2 \cdot \sin^2 \theta} \cdot \frac{\partial^2 u}{\partial \varphi^2}.
+	\Delta_{r, \varphi, \theta} u = \frac{1}{r^2} \cdot \frac{\partial}{\partial r} \left( r^2 \cdot \frac{\partial u}{\partial r} \right) + \frac{1}{r^2 \cdot \sin \theta} \cdot \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial u}{\partial \theta} \right) + \frac{1}{r^2 \cdot \sin^2 \theta} \cdot \frac{\partial^2 u}{\partial \varphi^2}.
 \end{equation}
 
 Для циліндричної системи координат $$q_1 = \rho$$, $$q_2 = \varphi$$, $$q_3 = z$$.
