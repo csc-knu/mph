@@ -12,6 +12,7 @@
 
 Будемо розглядати граничні задачі для рівняння теплопровідності:
 
+$$
 \begin{equation}
 	\left\{
 		\begin{aligned}
@@ -21,21 +22,25 @@
 		\end{aligned}
 	\right.
 \end{equation}
+$$
 
 для $$x \in \Omega$$, $$t > 0$$.
 
 Тут 
 
+$$
 \begin{align}
 	\left. \ell_1 u(x, t) \right|_{x \in S} &= \left. u(x, t) \right|_{x \in S}, \newline
 	\left. \ell_2 u(x, t) \right|_{x \in S} &= \left. \frac{\partial u(x, t)}{\partial n} \right|_{x \in S}, \newline
 	\left. \ell_3 u(x, t) \right|_{x \in S} &= \left. \frac{\partial u(x, t)}{\partial n} + \alpha(x, t) \cdot u(x, t) \right|_{x \in S}
 \end{align}
+$$
 
 &mdash; оператори граничних умов першого, другого, або третього роду.
 
 **Визначення** функції Гріна рівняння теплопровідності: Функцію $$E_i (x, \xi, t - \tau)$$ будемо називати _функцією Гріна першої, другої або третьої граничної задачі рівняння теплопровідності_ в області $$\Omega$$ з границею $$S$$ для $$t > 0$$, якщо вона є розв'язком настуної граничної задачі:
 
+$$
 \begin{equation}
 	\left\{
 		\begin{aligned}
@@ -45,6 +50,7 @@
 		\end{aligned}
 	\right.
 \end{equation}
+$$
 
 для $$x \in \Omega$$, $$t > 0$$.
 
@@ -56,6 +62,7 @@
 
 де перший доданок є фундаментальним розв'язком оператора теплопровідності, а другий є розв'язком наступної граничної задачі
 
+$$
 \begin{equation}
 	\left\{
 		\begin{aligned}
@@ -65,11 +72,13 @@
 		\end{aligned}
 	\right.
 \end{equation}
+$$
 
 для $$x \in \Omega$$, $$t > 0$$.
 
 Враховуючи відповідні граничні умови, яким задовольняє розв'язок на границі поверхні $$S$$ отримаємо для першої граничної задачі:
 
+$$
 \begin{equation}
 	\begin{aligned}
 		u(x, t) &= \Int_0^t \Iiint_\Omega E_1(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau + \newline
@@ -77,9 +86,11 @@
 		& \quad - a^2 \Int_0^t \Iint_S \left( \frac{\partial E_1(x, \xi, t - \tau)}{\partial n_\xi} f(\xi, \tau)\right) \diff S_\xi \diff \tau.
 	\end{aligned}
 \end{equation}
+$$
 
 Для другої та третьої граничних задач отримаємо 
 
+$$
 \begin{equation}
 	\begin{aligned}
 		u(x, t) &= \Int_0^t \Iiint_\Omega E_i(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau + \newline
@@ -87,11 +98,13 @@
 		& \quad + a^2 \Int_0^t \Iint_S E_i(x, \xi, t - \tau) f(\xi, \tau) \diff S_\xi \diff \tau.
 	\end{aligned}
 \end{equation}
+$$
 
 ### 11. Визначення функції Гріна основних крайових задач для гіперболічного рівняння. Представлення розв'язку. 
 
 Будемо розглядати граничні задачі для хвильового рівняння:
 
+$$
 \begin{equation}
 	\left\{
 		\begin{aligned}
@@ -102,9 +115,11 @@
 		\end{aligned}
 	\right.
 \end{equation}
+$$
 
 **Визначення** функції Гріна хвильового рівняння: Функцію $$\Theta_i(x, \xi, t - \tau)$$ будемо називати функцією Гріна першої, другої або третьої граничної задачі хвильового рівняння в області $$\Omega$$ з границею $$S$$ і $$t > 0$$, якщо вона є розв'язком наступної граничної задачі:
 
+$$
 \begin{equation}
 	\left\{
 		\begin{aligned}
@@ -115,6 +130,7 @@
 		\end{aligned}
 	\right.
 \end{equation}
+$$
 
 Еквівалентне визначення можна надати у вигляді: Функцію $$\Theta_i(x, \xi, t - \tau)$$ будемо називати функцією Гріна першої, другої або третьої граничної задачі хвильового рівняння в області $$\Omega$$ з границею $$S$$ і $$t > 0$$, якщо вона може бути представлена у вигляді
 
@@ -124,6 +140,7 @@
 
 де перший доданок є фундаментальним розв'язком хвильового оператора, а другий є розв'язком наступної граничної задачі:
 
+$$
 \begin{equation}
 	\left\{
 		\begin{aligned}
@@ -134,9 +151,11 @@
 		\end{aligned}
 	\right.
 \end{equation}
+$$
 
 Розв'язком першої граничної задачі для хвильового рівняння є 
 
+$$
 \begin{equation}
 	\begin{aligned}
 		u(x, t) &= \Int_0^t \Iiint_\Omega \Theta_1(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau + \newline
@@ -145,9 +164,11 @@
 		& \quad - a^2 \Int_0^t \Iint_S \left( \frac{\partial \Theta_1(x, \xi, t - \tau)}{\partial n_\xi} f(\xi, \tau) \right) \diff S_\xi \diff \tau.
 	\end{aligned}
 \end{equation}
+$$
 
 Розв'язком другої і третьої граничних задач для хвильового рівняння є 
 
+$$
 \begin{equation}
 	\begin{aligned}
 		u(x, t) &= \Int_0^t \Iiint_\Omega \Theta_i(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau + \newline
@@ -156,6 +177,7 @@
 		& \quad - a^2 \Int_0^t \Iint_S \Big( \Theta_i(x, \xi, t - \tau) f(\xi, \tau) \Big) \diff S_\xi \diff \tau.
 	\end{aligned}
 \end{equation}
+$$
 
 ---
 
