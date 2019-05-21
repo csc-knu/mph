@@ -11,6 +11,7 @@
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Max: "\\displaystyle\\max\\limits",
 					Min: "\\displaystyle\\min\\limits",
+					Sum: "\\displaystyle\\sum\\limits",
 					Int: "\\displaystyle\\int\\limits",
 					Lim: "\\displaystyle\\lim\\limits",
 					Iint: "\\displaystyle\\iint\\limits",
