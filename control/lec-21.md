@@ -72,7 +72,7 @@
 _Доведення._ Використаємо формулу
 
 \begin{equation}
-	u(x) = \Iint_S \left( \frac{1}{4 \pi |x - \xi|} \cdot \frac{\partial u(\xi)}{\partial n} - u(\xi) \cdot \frac{\partial}{\partial n} \frac{1}{4 \pi |x - \xi|} \right) \diff S_\xi?
+	u(x) = \Iint_S \left( \frac{1}{4 \pi |x - \xi|} \cdot \frac{\partial u(\xi)}{\partial n} - u(\xi) \cdot \frac{\partial}{\partial n} \frac{1}{4 \pi |x - \xi|} \right) \diff S_\xi.
 \end{equation}
 
 в якій в якості поверхні $$S$$ візьмемо сферу радіусу $$R$$ з центром у точці $$x_0$$, і обчислимо значення функції $$u$$ в точці $$x_0$$:
