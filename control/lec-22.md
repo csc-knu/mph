@@ -226,7 +226,7 @@ $$
 \end{equation}
 $$
 
-Для доведення пешої рівності Діріхле достатньо записати очевидний ланцюжок рівностей:
+<!-- Для доведення пешої рівності Діріхле достатньо записати очевидний ланцюжок рівностей:
 
 $$
 \begin{equation}
@@ -239,13 +239,13 @@ $$
 \end{equation}
 $$
 
-Аналогічно можна довести і другу рівність Діріхле.
+Аналогічно можна довести і другу рівність Діріхле. -->
 
 При формулюванні теорем єдиності гармонічних функцій ми скрізь будемо припускати існування відповідної гармонічної функції, хоча сам факт існування гармонічної функції ми доведемо пізніше.
 
 **Теорема** (_Перша теорема єдиності гармонічних функцій_). Якщо в обмеженій області $$\Omega$$, (або в області $$\Omega' = \RR^3 \setminus \Omega$$) існує гармонічна функція (або гармонічна функція регулярна на нескінченості), яка приймає на поверхні $$S$$ задані значення, то така функція єдина.
 
-_Доведення_. Припустимо, що в області $$\Omega$$ існує принаймні дві гармонічні функції, які приймають на поверхні $$S$$ однакові значення:
+<!-- _Доведення_. Припустимо, що в області $$\Omega$$ існує принаймні дві гармонічні функції, які приймають на поверхні $$S$$ однакові значення:
 
 $$
 \begin{equation}
@@ -331,7 +331,88 @@ $$
 \end{equation}
 $$
 
-Таким чином $$u(x) \equiv \text{const}$$, $$x \in \Omega'$$ а оскільки $$u(x) = 0$$, $$x \in S$$, то $$u_1(x) \equiv u_2(x)$$, $$x \in \Omega'$$.
+Таким чином $$u(x) \equiv \text{const}$$, $$x \in \Omega'$$ а оскільки $$u(x) = 0$$, $$x \in S$$, то $$u_1(x) \equiv u_2(x)$$, $$x \in \Omega'$$. -->
+
+**Теорема** (_Друга теорема єдиності гармонічних функцій_). Якщо в обмеженій області $$\Omega$$, (або в області $$\Omega' = \RR^3 \setminus \Omega$$) існує гармонічна функція (або гармонічна функція регулярна на нескінченості), яка приймає на поверхні $$S$$ задані значення своєї нормальної похідної $$\left. \frac{\partial u}{\partial n} \right|_{x \in S}$$, то в області $$\Omega$$ вона визначається с точністю до адитивної константи, а в області $$\Omega'$$ вона єдина.
+
+<!-- _Доведення_. Припустимо, що в області $$\Omega$$ існує принаймі дві гармонічні функції, які приймають на поверхні $$S$$ однакові значення нормальної похідної:
+
+$$
+\begin{equation}
+	\begin{aligned}
+		\Delta u_i(x) = 0, \quad x \in \Omega, \newline
+		\left. \frac{\partial u_i}{\partial n} \right|_{x \in S} = f, \quad i = 1, 2.
+	\end{aligned}
+\end{equation}
+$$
+
+Для функції $$u(x) = u_1(x) - u_2(x)$$ будемо мати 	
+
+$$
+\begin{equation}
+	\begin{aligned}
+		\Delta u_i(x) = 0, \quad x \in \Omega, \newline
+		\left. \frac{\partial u_i}{\partial n} \right|_{x \in S} = 0.
+	\end{aligned}
+\end{equation}
+$$
+
+Для функції $$u(x)$$ використаємо (першу) рівність Діріхле:
+
+\begin{equation}
+	\Iiint_\Omega | \nabla u|^2 \diff x = \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S = 0,
+\end{equation}
+
+тобто $$\nabla u(x) \equiv 0$$, $$x \in \Omega$$. Константа залишається невизначеною і таким чином $$u_1(x) = u_2(x) + \text{const}$$.
+
+Покажемо справедливість теореми для області $$\Omega'$$.
+
+Припускаючи існування двох регулярних гармонічних функцій які приймають на поверхні $$S$$ однакові значення
+
+$$
+\begin{equation}
+	\begin{aligned}
+		\Delta u_i(x) = 0, \quad x \in \Omega', \newline
+		\left. \frac{\partial u_i}{\partial n} \right|_{x \in S} = 0,
+	\end{aligned}
+\end{equation}
+$$
+
+отримаємо для функції $$u(x) = u_1(x) - u_2(x)$$ задачу
+
+$$
+\begin{equation}
+	\begin{aligned}
+		\Delta u(x) = 0, \quad x \in \Omega', \newline
+		\left. \frac{\partial u}{\partial n} \right|_{x \in S} = 0.
+	\end{aligned}
+\end{equation}
+$$
+
+Застосуємо для $$u(x)$$ другу рівність Діріхле:
+
+$$
+\begin{equation}
+	\begin{aligned}
+		\Iiint_{U(0, R) \setminus \Omega} | \nabla u|^2 \diff x &= \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S + \newline
+		& \quad + \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S = \newline
+		&= u \cdot \frac{\partial u}{\partial n} \diff S.
+	\end{aligned}	
+\end{equation}
+$$
+
+Спрямуємо радіус кулі $$R$$ до нуля і врахуємо умову регулярності на нескінченості. В результаті будемо мати
+
+$$
+\begin{equation}
+	\begin{aligned}
+		\Iiint_{\Omega'} |\nabla u|^2 \diff x &= \Lim_{R \to \infty} \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial n} \diff S = \newline
+		&= \Lim_{R \to \infty} O \left( \frac{1}{R^3} \right) \Iint_{S(0, R)} \diff S = 0.
+	\end{aligned}
+\end{equation}
+$$
+
+Таким чином $$u(x) \equiv \text{\const}$$, $$x \in \Omega'$$ а оскільки $$\Lim_{x \to \infty} u(x) = 0$$, то $$u(x) \equiv 0$$, $$u_1(x) \equiv u_2(x)$$ і друга теорема єдиності доведена. -->
 
 ### 25. Теорема єдиності гармонійної функції із граничними умовами третього роду.
 
