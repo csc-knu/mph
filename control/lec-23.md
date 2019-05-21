@@ -180,10 +180,10 @@ $$
 Важливою властивістю функцій Бесселя першого та другого роду є рекурентні формули, яким задовольняють функції Бесселя 
 
 \begin{align}
-	\frac{\diff}{\diff x} J_\nu(x) + \frac{\nu}{x} \cdot J_\nu(x) &= J_{\nu - 1}(x), \newline
-	\frac{\diff}{\diff x} J_\nu(x) - \frac{\nu}{x} \cdot J_\nu(x) &= - J_{\nu + 1}(x), \newline
-	\frac{\diff}{\diff x} N_\nu(x) + \frac{\nu}{x} \cdot N_\nu(x) &= N_{\nu - 1}(x), \newline
-	\frac{\diff}{\diff x} N_\nu(x) - frac{\nu}{x} \cdot N_\nu(x) &= - N_{\nu + 1}(x).
+	\frac{\diff J_\nu(x)}{\diff x} + \frac{\nu}{x} \cdot J_\nu(x) &= J_{\nu - 1}(x), \newline
+	\frac{\diff J_\nu(x)}{\diff x} - \frac{\nu}{x} \cdot J_\nu(x) &= - J_{\nu + 1}(x), \newline
+	\frac{\diff N_\nu(x)}{\diff x} + \frac{\nu}{x} \cdot N_\nu(x) &= N_{\nu - 1}(x), \newline
+	\frac{\diff N_\nu(x)}{\diff x} - frac{\nu}{x} \cdot N_\nu(x) &= - N_{\nu + 1}(x).
 \end{align}
 
 Виключаючи з двох співвідношень похідну, можна зв'язати між собою функції Бесселя трьох сусідніх порядків.
