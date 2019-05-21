@@ -28,8 +28,8 @@ $$
 
 $$
 \begin{align*}
-	(\Delta + k^2) q_k(x) &= - \delta(x), \\
-	\left( a^2 \Delta - \frac{\partial}{\partial t} \right) \varepsilon(x, t) &= - \delta(x, t), \\
+	(\Delta + k^2) q_k(x) &= - \delta(x), \newline
+	\left( a^2 \Delta - \frac{\partial}{\partial t} \right) \varepsilon(x, t) &= - \delta(x, t), \newline
 	\left( a^2 \Delta - \frac{\partial^2}{\partial t^2} \right) \psi(x, t) &= - \delta(x, t)
 \end{align*}
 $$
@@ -38,8 +38,8 @@ $$
 
 $$
 \begin{align*}
-	\displaystyle\iiint\limits_{\mathbb{R}^n} q_k(x) (\Delta + k^2) \varphi(x) \, \mathrm{d} x &= - \varphi(0), \\
-	\displaystyle\iiint\limits_{\mathbb{R}^{n + 1}} \varepsilon(x, t) \left( a^2 \Delta + \frac{\partial}{\partial t}\right) \varphi(x, t) \, \mathrm{d} x \, \mathrm{d} t &= - \varphi(0, 0), \\
+	\displaystyle\iiint\limits_{\mathbb{R}^n} q_k(x) (\Delta + k^2) \varphi(x) \, \mathrm{d} x &= - \varphi(0), \newline
+	\displaystyle\iiint\limits_{\mathbb{R}^{n + 1}} \varepsilon(x, t) \left( a^2 \Delta + \frac{\partial}{\partial t}\right) \varphi(x, t) \, \mathrm{d} x \, \mathrm{d} t &= - \varphi(0, 0), \newline
 	\displaystyle\iiint\limits_{\mathbb{R}^{n + 1}} \psi(x, t) \left( a^2 \Delta + \frac{\partial^2}{\partial t^2}\right) \varphi(x, t) \, \mathrm{d} x \, \mathrm{d} t &= - \varphi(0, 0).
 \end{align*}
 $$
@@ -148,7 +148,7 @@ $$
 
 $$
 \begin{align*}
-	\psi_2(x, t) &= \frac{\theta(at-\vert x\vert)}{2\pi a\sqrt{a^2t^2-\vert x\vert^2}}, \quad x \in \mathbb{R}^2, \\
+	\psi_2(x, t) &= \frac{\theta(at-\vert x\vert)}{2\pi a\sqrt{a^2t^2-\vert x\vert^2}}, \quad x \in \mathbb{R}^2, \newline
 	\psi_3(x, t) &= \frac{\theta(t)}{4 \pi a^2 t} \delta_{S_{at}}(x), \quad x \in \mathbb{R}^3.
 \end{align*}
 $$

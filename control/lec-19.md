@@ -17,7 +17,7 @@
 \begin{equation}
 	\left\{
 		\begin{aligned}
-			& (\Delta + k^2) u(x) = - F(x), \quad x \in \Omega, \\
+			& (\Delta + k^2) u(x) = - F(x), \quad x \in \Omega, \newline
 			& \left. \ell_i u(x) \right|_{x \in S} = f(x), \quad i = 1, 2, 3.
 		\end{aligned}
 	\right.
@@ -26,8 +26,8 @@
 Використаємо позначення для граничних операторів:
 
 \begin{align}
-	\left. \ell_1 u(x) \right|_{x \in S} &= \left. u(x) \right|_{x \in S}, \\
-	\left. \ell_2 u(x) \right|_{x \in S} &= \left. \frac{\partial u(x)}{\partial n} \right|_{x \in S}, \\
+	\left. \ell_1 u(x) \right|_{x \in S} &= \left. u(x) \right|_{x \in S}, \newline
+	\left. \ell_2 u(x) \right|_{x \in S} &= \left. \frac{\partial u(x)}{\partial n} \right|_{x \in S}, \newline
 	\left. \ell_3 u(x) \right|_{x \in S} &= \left. \frac{\partial u(x)}{\partial n} + \alpha(x) u(x) \right|_{x \in S},
 \end{align}
 
@@ -40,7 +40,7 @@
 \begin{equation}
 	\left\{
 		\begin{aligned}
-			& (\Delta_x + k^2) G_i^k(x, \xi) = - \delta(x - \xi), \quad x, \xi \in \Omega, \\
+			& (\Delta_x + k^2) G_i^k(x, \xi) = - \delta(x - \xi), \quad x, \xi \in \Omega, \newline
 			& \left. \ell_i G_i^k(x, \xi) \right|_{x \in S} = 0, \quad i = 1, 2, 3.
 		\end{aligned}
 	\right.
@@ -59,7 +59,7 @@
 \begin{equation}
 	\left\{
 		\begin{aligned}
-			& (\Delta_x + k^2) g_i^k(x, \xi) = - \delta(x - \xi), \quad x, \xi \in \Omega, \\
+			& (\Delta_x + k^2) g_i^k(x, \xi) = - \delta(x - \xi), \quad x, \xi \in \Omega, \newline
 			& \left. \ell_i g_i^k(x, \xi) \right|_{x \in S} = - \left. \ell_i q_\pm^k(x) \right|_{x \in S}, \quad i = 1, 2, 3.
 		\end{aligned}
 	\right.
@@ -94,7 +94,7 @@
 $$
 \left\{
 	\begin{aligned}
-		& a^2 \Delta u(x, t) - \frac{\partial u(x, t)}{\partial t} = - F(x, t), \quad t > 0, \quad x \in \mathbb{R}^n, \\
+		& a^2 \Delta u(x, t) - \frac{\partial u(x, t)}{\partial t} = - F(x, t), \quad t > 0, \quad x \in \mathbb{R}^n, \newline
 		& u(x, 0) = u_0(x).
 	\end{aligned}
 \right.
@@ -113,8 +113,8 @@ $$
 $$
 \left\{
 	\begin{aligned}
-		& a^2 \frac{\partial^2 u(x, t)}{\partial x^2} - \frac{\partial^2 u(x, t)}{\partial t^2} = - F(x, t), \quad t > 0, \quad x \in \mathbb{R}^1, \\
-		& u(x, 0) = u_0(x), \\
+		& a^2 \frac{\partial^2 u(x, t)}{\partial x^2} - \frac{\partial^2 u(x, t)}{\partial t^2} = - F(x, t), \quad t > 0, \quad x \in \mathbb{R}^1, \newline
+		& u(x, 0) = u_0(x), \newline
 		& \frac{\partial u(x, 0)}{\partial t} = v_0(x).
 	\end{aligned}
 \right.
@@ -124,7 +124,7 @@ $$
 
 $$
 \begin{aligned}
-	u(x, t) &= \frac{u_0(x - at) + u_0(x + at)}{2} + \\
+	u(x, t) &= \frac{u_0(x - at) + u_0(x + at)}{2} + \newline
 	& \quad + \frac{1}{2a} \displaystyle\int\limits_{x - at}^{x + at} v_0(\xi) \,\mathrm{d} \xi + \frac{1}{2a} \displaystyle\int\limits_0^t \displaystyle\int\limits_{x - a(t - \tau)}^{x + a(t - \tau)} F(\xi, \tau) \,\mathrm{d} \xi \,\mathrm{d} \tau.
 \end{aligned}
 $$
@@ -136,8 +136,8 @@ $$
 $$
 \left\{
 	\begin{aligned}
-		& a^2 \Delta u(x, t) - u_{tt}(x, t) = -F(x, t), \quad t > 0, \quad x \in \mathbb{R}^2, \\
-		& u(x, 0) = u_0(x), \\
+		& a^2 \Delta u(x, t) - u_{tt}(x, t) = -F(x, t), \quad t > 0, \quad x \in \mathbb{R}^2, \newline
+		& u(x, 0) = u_0(x), \newline
 		& u_t(x, 0) = v_0.
 	\end{aligned}
 \right.
@@ -147,8 +147,8 @@ $$
 
 $$
 \begin{aligned}
-	u(x, t) &= \frac{1}{2 a \pi} \displaystyle\int\limits_0^t \displaystyle\iint\limits_{\vert\xi - x\vert < a (t - \tau)} \frac{F(\xi, \tau) \,\mathrm{d} \xi \,\mathrm{d} \tau}{\sqrt{a^2 (t - \tau)^2 - \vert\xi - x\vert^2}} + \\
-	& \quad + \frac{\partial}{\partial t} \displaystyle\iint\limits_{\vert\xi - x\vert < a t} \frac{u_0(\xi) \,\mathrm{d} \xi}{2 a \pi \sqrt{a^2 t^2 - \vert\xi - x\vert^2}} + \\
+	u(x, t) &= \frac{1}{2 a \pi} \displaystyle\int\limits_0^t \displaystyle\iint\limits_{\vert\xi - x\vert < a (t - \tau)} \frac{F(\xi, \tau) \,\mathrm{d} \xi \,\mathrm{d} \tau}{\sqrt{a^2 (t - \tau)^2 - \vert\xi - x\vert^2}} + \newline
+	& \quad + \frac{\partial}{\partial t} \displaystyle\iint\limits_{\vert\xi - x\vert < a t} \frac{u_0(\xi) \,\mathrm{d} \xi}{2 a \pi \sqrt{a^2 t^2 - \vert\xi - x\vert^2}} + \newline
 	& \quad + \frac{1}{2 a \pi} \displaystyle\iint\limits_{\vert\xi - x\vert < a t} \frac{v_0(\xi) \,\mathrm{d} \xi}{\sqrt{a^2 t^2 - \vert x - \xi\vert^2}}.
 \end{aligned}
 $$

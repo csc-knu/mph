@@ -38,8 +38,8 @@ $$
 
 $$
 f_\varepsilon(x) = \begin{cases} 
-	0, & x < - \varepsilon, \\
-	1 / 2 \varepsilon, & - \varepsilon \le x < \varepsilon, \\
+	0, & x < - \varepsilon, \newline
+	1 / 2 \varepsilon, & - \varepsilon \le x < \varepsilon, \newline
 	0, & \varepsilon \le x.
 \end{cases}
 $$
@@ -88,7 +88,7 @@ $$
 
 $$
 \theta(x) = \begin{cases}
-	0, & x \le 0, \\
+	0, & x \le 0, \newline
 	1, & 0 < x
 \end{cases}
 $$
@@ -228,7 +228,7 @@ _Регуляризацією_ узагальненої функції $$f$$ б�
 
 $$
 \omega_\varepsilon(x) = \begin{cases}
-	C_\varepsilon \exp \left\{ - \frac{\varepsilon^2}{\varepsilon^2 - |x|^2} \right\}, & |x| \le \varepsilon, \\
+	C_\varepsilon \exp \left\{ - \frac{\varepsilon^2}{\varepsilon^2 - |x|^2} \right\}, & |x| \le \varepsilon, \newline
 	0, & |x| > \varepsilon,
 \end{cases}
 $$
