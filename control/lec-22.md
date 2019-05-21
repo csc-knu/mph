@@ -223,9 +223,14 @@ _Доведення_. Нехай $$u(x)$$ &mdash; гармонічна функ�
 
 Для доведення пешої рівності Діріхле достатньо записати очевидний ланцюжок рівностей:
 
+$$
 \begin{equation}
-	0 = \Iiint_\Omega u(x) \Delta u(x) \diff x = \Iiint_\Omega u(x) (\nabla \cdot \nabla u(x)) \diff x = \Iint_S u(x) \cdot \langle \nabla u(x), n \rangle \diff S - \Iiint_\Omega |\nabla u(x)|^2 \diff x.
+	\begin{aligned}
+		0 &= \Iiint_\Omega u(x) \Delta u(x) \diff x = \Iiint_\Omega u(x) (\nabla \cdot \nabla u(x)) \diff x = \newline
+		&= \Iint_S u(x) \cdot \langle \nabla u(x), n \rangle \diff S - \Iiint_\Omega |\nabla u(x)|^2 \diff x.
+	\end{aligned}
 \end{equation}
+$$
 
 Аналогічно можна довести і другу рівність Діріхле.
 
@@ -265,7 +270,7 @@ $$
 	\Iiint_\Omega | \nabla u |^2 \diff x = \Iint_S u \cdot \frac{\partial u}{\partial n} \diff S = 0.
 \end{equation}
 
-Звідси маємо, що $$\nalba u(x) \equiv 0$$, $$x \in \Omega$$. Остання рівність означає, що $$u(x) \equiv \text{const}$$, $$x \in \overline{\Omega}$$ а оскільки $$u(x) = 0$$, $$x \in S$$ то $$u(x) \equiv 0$$, $$x \in \Omega$$. Тобто ми маємо, що $$y_1(x) \equiv u_2(x)$$.
+Звідси маємо, що $$\nabla u(x) \equiv 0$$, $$x \in \Omega$$. Остання рівність означає, що $$u(x) \equiv \text{const}$$, $$x \in \overline{\Omega}$$ а оскільки $$u(x) = 0$$, $$x \in S$$ то $$u(x) \equiv 0$$, $$x \in \Omega$$. Тобто ми маємо, що $$y_1(x) \equiv u_2(x)$$.
 
 Покажемо справедливість теореми для області $$\Omega'$$.
 
