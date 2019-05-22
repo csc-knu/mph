@@ -13,29 +13,45 @@
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-	color: #971557
+	color: #971557;
 }
 
 @media only screen and (min-width: 960px) {
 	.main-content {
 		font-size: 1.11rem !important;
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 2.00rem;
+			margin-bottom: 1.00rem;
+		}
 	}
 }
 
 @media only screen and (max-width: 959px) and (min-width: 768px) {
 	.main-content {
 		font-size: 1.00rem !important;
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 1.80rem;
+			margin-bottom: 0.90rem;
+		}
 	}
 }
 
 @media only screen and (max-width: 767px) and (min-width: 600px) {
 	.main-content {
 		font-size: 0.90rem !important;
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 1.62rem;
+			margin-bottom: 0.81rem;
+		}
 	}
 }
 
 @media only screen and (max-width: 599px) {
 	.main-content {
 		font-size: 0.81rem !important;
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 1.46rem;
+			margin-bottom: 0.73rem;
+		}
 	}
 }
