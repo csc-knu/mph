@@ -416,4 +416,127 @@ $$
 
 <!-- **Вправа:** цю теорему довести самостійно. -->
 
+### 34. Джерела виникнення рівняння Гельмгольца.
+
+$$
+\begin{equation}
+	\begin{aligned}
+		& a^2 \Delta u(x, t) - \frac{\partial^2 u}{\partial t^2} = -F(x, t), \label{eq:6.1} \newline
+		& \left. \ell_i u \right\vert_{x \in S} = f(x, t).
+	\end{aligned}
+\end{equation}
+$$
+
+В задачі \eqref{eq:6.1} відсутні початкові умови у зв'язку з тим, що розглядаються спеціальні значення функції $$F(x, t)$$ та $$f(x, t)$$. А саме ми вважаємо, що ці функції є періодичними по аргументу $$t$$ з однаковим періодом.
+
+Покладемо, що
+
+\begin{align}
+	F(x, t) &= F_1(x) \cdot \cos(\omega t) - F_2(x) \cdot \sin(\omega t), \newline
+	f(x, t) &= f_1(x) \cdot \cos(\omega t) - f_2(x) \cdot \sin(\omega t).
+\end{align}
+
+Можна очікувати, що в результаті доволі тривалої дії таких збурень розв'язок задачі при будь-яких початкових умовах теж буде періодичним, тобто
+
+\begin{equation}
+	u(x, t) = V_1(x) \cdot \cos(\omega t) - V_2(x) \cdot \sin(\omega t).
+\end{equation}
+
+Підставляючи цей вигляду у задачу отримаємо
+
+\begin{equation}
+	\left( \Delta V_1 + \frac{\omega^2}{a^2} \cdot V_1 \right) \cdot \cos(\omega t) - \left( \Delta V_2 + \frac{\omega^2}{a^2} \cdot V_2 \right) \cdot \sin(\omega t) = - \frac{F_1}{a^2} \cdot \cos (\omega t) - \frac{F_2}{a^2} \cdot \sin(\omega t).
+\end{equation}
+
+і
+
+\begin{equation}
+	\cos(\omega t) \cdot \left. \ell_i V_1 \right\vert_{x \in S} - \sin(\omega t) \cdot \left. \ell_i V_2 \right\vert_{x \in S} = f_1 \cdot \cos(\omega t) - f_2 \cdot \sin(\omega t).
+\end{equation}
+
+Оскільки функції $$\sin(\omega t)$$, $$\cos(\omega t)$$ &mdash; лінійно незалежні, то для амплітуди $$V_i(x)$$, $$i = 1, 2$$ отримаємо рівняння Гельмгольца:
+
+$$
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			& \Delta V_j(x) + \frac{\omega^2}{a^2} = - \frac{F_j}{a^2}, \newline
+			& \left. \ell_i V_j \right\vert_{x \in S} = f_j, 
+		\end{aligned}
+	\right.
+\end{equation}
+$$
+
+для $$x \in \Omega$$, $$j = 1, 2$$.
+
+Аналогічний результат можна отримати, якщо ввести комплексну амплітуду $$V = V_1 + i V_2$$, комплексну зовнішню силу та комплексну амплітуду граничної умови $$F = F_1 + i F_2$$, $$f = f_1 + i f_2$$.
+
+Шукаючи розв'язок початкової задачі вигляді
+
+\begin{equation}
+	U(x, t) = V(x) \cdot e^{i \omega t}.
+\end{equation}
+
+Отримаємо для комплексної амплітуди задачу
+
+$$
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			& \Delta V(x) + \frac{\omega^2}{a^2} = - \frac{F}{a^2}, \newline
+			& \left. \ell_i V_j \right\vert_{x \in S} = f_j.
+		\end{aligned}
+	\right.
+\end{equation}
+$$ 
+
+для $$x \in \Omega$$.
+
+Другим джерелом виникнення рівняння Гельмгольца є стаціонарне рівняння дифузії при наявності в середовище процесів, що ведуть до розмноження речовини. Такі процеси наприклад виникають при дифузії  нейтронів. Рівняння має вигляд:
+
+\begin{equation}
+	\Delta V(x) + \frac{c}{D} \cdot V(x) = 0,
+\end{equation}
+
+де $$D$$ &mdash; коефіцієнт дифузії, $$c$$ &mdash; швидкість розмноження нейтронів.
+
+### 35. Приклади неєдиності розв'язку внутрішньої граничних задач рівняння Гельмгольца, природа неєдиності.
+
+Суттєвою відмінністю граничних задач для рівняння Гельмгольца від граничних задач рівняння Лапласа полягає в можливому порушенні єдиності розв'язку як для внутрішніх так і для зовнішніх задач.
+
+Розглянемо таку граничну задачу:
+
+$$
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 u = 0, \label{eq:6.7} \newline
+			& u(0, y) = u(\pi, y) = u(x, 0) = u(x, \pi) = 0,
+		\end{aligned}
+	\right.
+\end{equation}	
+$$
+
+для $$0 < x < \pi$$, $$0 < y < \pi$$.
+
+При $$k = 0$$ задача \eqref{eq:6.7} має лише тривіальний розв'язок, що випливає з першої теореми єдності гармонічних функцій.
+
+Нехай, $$k$$ &mdash; ціле число. Неважко перевірити, що в цьому разі задача \eqref{eq:6.7} має нетривіальний розв'язок $$u(x, y) = \sin(k x) \cdot \sin (k y)$$, а це в свою чергу означає, що задача з неоднорідними граничними умовами та неоднорідне рівняння Гельмгольца
+
+$$
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 u = -F(x, y), \newline
+			& u(0, y) = \varphi_1(y), \newline
+			& u(1, y) = \varphi_2(y), \newline
+			& u(x, 0) = \psi_1(x), \newline
+			& u(x, 1) = \psi_2(x),
+		\end{aligned}
+	\right.
+\end{equation}
+$$
+
+має неєдиний розв'язок, який визначається з точністю до розв’язку однорідного рівняння, тобто з точністю до функції $$A \cdot \sin(k x) \cdot \sin(k y)$$.
+
 [Назад на головну](../README.md)
