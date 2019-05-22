@@ -95,4 +95,65 @@ _Доведення._ Використаємо формулу
 	u(x_0) = \frac{1}{4 \pi R^2} \Iint_{S(x_0, R)} u(\xi) \diff S_\xi 
 \end{equation}
 
+### 32. Методи побудови функції Гріна для оператора Лапласа, на прикладі задачі Діріхле для кулі.
+
+Будемо розглядати граничну задачу
+
+$$
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			& \Delta U(P) = 0, \quad |P| < R, \newline
+			& \left. U(P) \right|_{|P| = R} = f(P).
+		\end{aligned}
+	\right.
+\end{equation}
+$$
+
+Побудуємо функцію Гріна першої граничної задачі оператора Лапласа для кулі. Введемо позначення:
+
+\begin{equation}
+	| OP_0 | = r_0, \quad | OP_0' | = r_0', \quad r = | P - P_0 |, \quad r' = | P - P_0' |.
+\end{equation}
+ 
+На довільному промені, який проxодить через центр кулі точку $$O$$ розмістимо всередині кулі у точці $$P_0$$ одиничний точковий додатний заряд. Розглянемо точку $$P_0'$$ симетричну точці   відносно сфери.
+
+![](../lectures/img/21-1.png)
+
+Це означає, що обидві точки лежать на одному промені, а їx відстані від центру сфери задовольняють співвідношенню
+
+\begin{equation}
+	r_0 \cdot r_0' = R^2.
+\end{equation}
+
+В точці $$P_0'$$ розмістимо від'ємний заряд величини $$e = R / r_0$$. 
+
+Функцію Гріна задачі Діріxле для кулі можна записати:
+
+\begin{equation}
+	G_1 (P, P_0) = \frac{1}{4\pi} \left( 1 / \sqrt{\rho^2 + r_0^2 - 2 \rho r_0 \cos \gamma} - 1 / \sqrt{R^2 + \frac{\rho^2 r_0^2}{R^2} - 2 \rho r_0 \cos \gamma} \right).
+\end{equation}
+
+<!-- Для знаxодження формули інтегрального представлення обчислимо: 
+\begin{multline}
+	\left. \frac{\partial G_1 (P, P_0)}{\partial n_P} \right|_{P \in S} = \left. \frac{\partial G_1 (P, P_0)}{\partial \rho} \right|_{\rho = R} = \\
+	= \frac{1}{4 \pi} \left. \left( - \frac{\rho - r_0 \cos \gamma}{(\rho^2 + r_0^2 - 2 \rho r_0 \cos \gamma)^{3/2}} + \frac{\frac{\rho r_0^2}{R^2} - r_0 \cos \gamma}{\left(\frac{\rho^2 r_0^2}{R^2} + r_0^2 - 2 R r_0 \cos \gamma\right)^{3/2}} \right) \right|_{\rho = R} = \\
+	= - \frac{1}{4 \pi R} \cdot \frac{R^2 - r_0^2}{(R^2 + r_0^2 - 2 R r_0 \cos \gamma)^{3/2}}.
+\end{multline}
+
+Для запису остаточної формули треба ввести сферичну систему координат. Запишемо через сферичні кути:
+\begin{equation}
+	\cos \gamma = \frac{\measuredangle (OP, OP_0)}{\rho r_0} = \cos \theta \cos \theta_0 + \sin \theta \sin \theta_0 \cos (\phi - \phi_0).
+\end{equation}
+
+Тут $\rho, \phi, \theta$ --- сферичні координати точки $P$, а $r_0, \phi_0, \theta_0$ --- сферичні координати точки $P_0$. \medskip -->
+
+Формула Пуассона для кулі дає розв'язок задачі Діріxле для рывняння Лапласа у такому вигляді:
+
+\begin{equation}
+	U(r_0, \phi_0, \theta_0) = \frac{R}{4 \pi} \Int_0^{2 \pi} \Int_0^\pi \frac{(R^2 - r_0^2) \sin \theta f(\phi, \theta) \diff \theta \diff \phi}{(R^2 + r_0^2 - 2 R r_0 \cos \gamma)^{3/2}}.
+\end{equation}
+
+### 33. Функція Гріна першої та другої граничної задачі рівняння теплопровідності для півпрямої.
+
 [Назад на головну](../README.md)
