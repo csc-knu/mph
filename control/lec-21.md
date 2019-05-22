@@ -77,7 +77,7 @@ _Доведення._ Використаємо формулу
 	u(x_0) = \Iint_{S(x_0, R)} \left( \frac{1}{4 \pi |x_0 - \xi|} \cdot \frac{\partial u(\xi)}{\partial n} - u(\xi) \cdot \frac{\partial}{\partial n_\xi} \frac{1}{4 \pi |x_0 - \xi|} \right) \diff S_\xi.
 \end{equation}
  
-Оскільки $$\xi \in S(x_0, R)$$, то $$\frac{1}{4 \pi |x_0 - \xi|} = \frac{1}{4 \pi R}$$, а
+Оскільки $$\xi \in S(x_0, R)$$, то $$\frac{1}{4 \pi \vert x_0 - \xi \vert} = \frac{1}{4 \pi R}$$, а
 
 \begin{equation}
 	\left. \frac{\partial}{\partial n_\xi} \frac{1}{4 \pi |x_0 - \xi|} \right|_{S(x_0, R)} = \frac{1}{4 \pi R^2}.
