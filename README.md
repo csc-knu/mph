@@ -10,7 +10,7 @@
 
 - Кашпур Олена Федорівна, olena.kashpur<span style="font-family:monospace;">@</span>gmail.com, [розклад](https://mytimetable.live/teacher/Kashpyr-OF/)
 
-Сайт і конспекти &mdash; Скибицький Нікіта Максимович, n.skybytskyi<span style="font-family:monospace;">@</span>gmail.com
+Сайт і конспекти &mdash; Скибицький Нікіта, n.skybytskyi<span style="font-family:monospace;">@</span>gmail.com
 
 ### Розподіл балів
 
