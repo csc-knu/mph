@@ -245,9 +245,9 @@ $$
 $$
 \begin{equation}
 	\begin{aligned}
-    	E_1(x, \xi, t - \tau) &= \frac{\theta(t - \tau)}{2 a \sqrt{t - \tau}} \cdot \exp\left\{- \newline
-    	&\quad - \frac{|x - \xi|^2}{2 a^2 (t - \tau)}\right\} - \frac{\theta(t-\tau)}{2a\sqrt{t-\tau}} \cdot \exp\left\{-\frac{|x + \xi|^2}{2a^2 (t-\tau)}\right\}.
-    \end{aligned}
+		E_1(x, \xi, t - \tau) &= \frac{\theta(t - \tau)}{2 a \sqrt{t - \tau}} \cdot \exp\left\{- \frac{|x - \xi|^2}{2 a^2 (t - \tau)}\right\} - \newline
+		&\quad -\frac{\theta(t-\tau)}{2a\sqrt{t-\tau}} \cdot \exp\left\{-\frac{|x + \xi|^2}{2a^2 (t-\tau)}\right\}.
+	\end{aligned}
 \end{equation}
 $$
 
@@ -260,7 +260,7 @@ $$
 $$
 \begin{equation}
 	\begin{aligned}
-		E_2(x, \xi, t- \tau) =& \frac{\theta(t-\tau)}{2a\sqrt{t-\tau}} \cdot \exp\left\{-\frac{|x - \xi|^2}{2a^2 (t-\tau)}\right\} + \newline
+		E_2(x, \xi, t- \tau) &= \frac{\theta(t-\tau)}{2a\sqrt{t-\tau}} \cdot \exp\left\{-\frac{|x - \xi|^2}{2a^2 (t-\tau)}\right\} + \newline
 		&\quad + \frac{\theta(t-\tau)}{2a\sqrt{t-\tau}} \cdot \exp\left\{\frac{|x + \xi|^2}{2a^2 (t-\tau)}\right\}.
    	\end{aligned}
 \end{equation}
