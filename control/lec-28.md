@@ -29,7 +29,7 @@
 Послідовність $$\ell_1, \ell_2, \ldots$$ лінійних функціоналів на $$M$$ слабко збігається до функціоналу $$\ell$$ на $$M$$, якщо вона збіжна до $$\ell$$ на кожному елементі $$f$$ із $$M$$, тобто: 
 
 \begin{equation}
-	\langle \ell_k, f\rangle \xrightarrow[k \to \infty]{} \langle \ell.
+	\langle \ell_k, f\rangle \xrightarrow[k \to \infty]{} \langle \ell, f\rangle.
 \end{equation}
 
 **Теорема** (_Фішера-Рісса_): Якщо $$f \in H^\star$$, то існує єдиний елемент $$y(f) \in H$$, такий що $$f(x) = \langle x, y\rangle$$ для довільного $$x \in H$$, та $$\|f\|_H^\star = \|y\|_H$$, де $$H^\star$$ &mdash; гільбертовий простір.
