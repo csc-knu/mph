@@ -188,7 +188,7 @@ $$
 
 $$
 \begin{equation}
-	\varepsilon (x, t) = \frac{\theta(t)}{2 a \sqrt(\pi t)} \cdot \exp\left\{-\frac{|x|^2}{2a^2 t}\right\}.
+	\varepsilon (x, t) = \frac{\theta(t)}{2 a \sqrt{\pi t}} \cdot \exp\left\{-\frac{|x|^2}{2a^2 t}\right\}.
 \end{equation}
 $$
 
