@@ -17,25 +17,25 @@
 }
 
 @media only screen and (min-width: 960px) {
-	.mjx-chtml {
-		font-size: 100% !important;
+	.main-content {
+		font-size: 1.11rem !important;
 	}
 }
 
 @media only screen and (max-width: 959px) and (min-width: 768px) {
-	.mjx-chtml {
-		font-size: 95% !important;
+	.main-content {
+		font-size: 1.00rem !important;
 	}
 }
 
 @media only screen and (max-width: 767px) and (min-width: 600px) {
-	.mjx-chtml {
-		font-size: 90% !important;
+	.main-content {
+		font-size: 0.90rem !important;
 	}
 }
 
 @media only screen and (max-width: 599px) {
-	.mjx-chtml {
-		font-size: 85% !important;
+	.main-content {
+		font-size: 0.81rem !important;
 	}
 }
