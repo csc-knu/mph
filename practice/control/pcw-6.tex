@@ -1,0 +1,82 @@
+\documentclass[a5paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[english, ukrainian]{babel}
+\usepackage[margin=.25in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\newenvironment{system*}{%
+  \begin{equation*}%
+    \left\{%
+      \begin{aligned}%
+}{%
+      \end{aligned}%
+    \right.%
+  \end{equation*}%
+}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\Int}{\displaystyle\int\limits}
+
+\setlength{\parindent}{0in}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
+
+\pagestyle{empty}
+
+\begin{document}
+%
+\section*{Потенціали}%
+%
+\begin{enumerate}
+	\item Діріхле (І роду) --- заряд іншого знаку, нульовий заряд.
+	\item Неймана (ІІ роду) --- заряд того ж знаку, нульовий потік.
+\end{enumerate}%
+%
+\begin{enumerate}
+	\item Границя є площиною --- заряд такої ж абсолютної величини.
+	\item Границя є сферою --- величина заряду в $R/r_0$ разів більша.
+\end{enumerate}%
+%
+У сферичні координати функція Гріна переписується через $\gamma = \angle P_0 O P$.%
+%
+\section*{Теплопровідність ($\RR^1$)}%
+%
+\begin{system*}
+	& a^2 \cdot u_{xx} - u_t = - f(x, t), \quad t > 0, \quad x \in \RR^1, \\
+	& u(x, 0) = u_0(x).
+\end{system*}%
+%
+\begin{equation*}
+	u(x, t) = \Int_0^t \Int_{-\infty}^\infty f(\xi, \tau) \varepsilon(x - \xi, t - \tau) \diff \xi \diff \tau + \Int_{-\infty}^\infty \varepsilon(x - \xi, t) u_0(\xi) \diff \xi.
+\end{equation*}%
+%
+\begin{equation*}
+	\varepsilon(x,t)=\frac{1}{2a\sqrt{\pi t}} \cdot \exp\left\{ - \frac{|x|^2}{4a^2t} \right\}, \quad x \in \RR^1
+\end{equation*}%
+%
+\section*{Струна}%
+%
+\begin{enumerate}
+	\item Кінець закріплений --- продовжуємо непарним чином.
+	\item Кінець вільний --- продовжуємо парним чином.
+\end{enumerate}%
+%
+\begin{system*}
+	& a^2 u_{xx} - u_{tt} = - f(x, t), \quad t > 0, \quad x \in \RR^1, \\
+	& u(x, 0) = u_0(x), \\
+	& u_t(x, 0) = v_0(x).
+\end{system*}%
+%
+\begin{equation*}
+	\begin{aligned}
+		u(x, t) &= \frac{u_0(x - at) + u_0(x + at)}{2} + \frac{1}{2a} \Int_{x - at}^{x + at} v_0(\xi) \diff \xi + \\
+		&\quad + \frac{1}{2a} \Int_0^t \Int_{x - a(t - \tau)}^{x + a(t - \tau)} f(\xi, \tau) \diff \xi \diff \tau.
+	\end{aligned}
+\end{equation*}%
+%
+\end{document}
