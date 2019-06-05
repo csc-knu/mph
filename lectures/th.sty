@@ -41,20 +41,20 @@
 	postheadspace={0pt},
 ]{thmredbox}
 
-\declaretheorem[style=thmbluebox,name=Теорема,numberwithin=subsection]{theorem}
-\declaretheorem[style=thmbluebox,name=Лема,sibling=theorem]{lemma}
-\declaretheorem[style=thmbluebox,name=Твердження,sibling=theorem]{proposition}
-\declaretheorem[style=thmbluebox,name=Принцип,sibling=theorem]{th_principle}
-\declaretheorem[style=thmbluebox,name=Закон,sibling=theorem]{law}
-\declaretheorem[style=thmbluebox,name=Формула,sibling=theorem]{th_formula}
-\declaretheorem[style=thmbluebox,name=Рівняння,sibling=theorem]{th_equation}
-\declaretheorem[style=thmbluebox,name=Умова,sibling=theorem]{th_condition}
-\declaretheorem[style=thmbluebox,name=Наслідок,sibling=theorem]{corollary}
+\declaretheorem[style=thmbluebox,name=Теорема,numberwithin=subsubsection]{theorem}
+\declaretheorem[style=thmbluebox,name=Лема,numberwithin=subsubsection]{lemma}
+\declaretheorem[style=thmbluebox,name=Твердження,numberwithin=subsubsection]{proposition}
+\declaretheorem[style=thmbluebox,name=Принцип,numberwithin=subsubsection]{th_principle}
+\declaretheorem[style=thmbluebox,name=Закон,numberwithin=subsubsection]{law}
+\declaretheorem[style=thmbluebox,name=Формула,numberwithin=subsubsection]{th_formula}
+\declaretheorem[style=thmbluebox,name=Рівняння,numberwithin=subsubsection]{th_equation}
+\declaretheorem[style=thmbluebox,name=Умова,numberwithin=subsubsection]{th_condition}
+\declaretheorem[style=thmbluebox,name=Наслідок,numberwithin=subsubsection]{corollary}
 
-\declaretheorem[style=thmredbox,name=Приклад,sibling=theorem]{example}
+\declaretheorem[style=thmredbox,name=Приклад,numberwithin=subsubsection]{example}
 \declaretheorem[style=thmredbox,name=Приклади,sibling=example]{examples}
 
-\declaretheorem[style=thmredbox,name=Властивість,sibling=theorem]{property}
+\declaretheorem[style=thmredbox,name=Властивість,numberwithin=subsubsection]{property}
 \declaretheorem[style=thmredbox,name=Властивості,sibling=property]{properties}
 
 \mdfdefinestyle{mdgreenbox}{%
@@ -94,10 +94,9 @@
 	mdframed={style=mdblackbox}
 ]{thmblackbox}
 
-\declaretheorem[name=Вправа,sibling=theorem,style=thmblackbox]{exercise}
-\declaretheorem[name=Запитання,sibling=theorem,style=thmgreenbox]{ques}
-\declaretheorem[name=Зауваження,sibling=theorem,style=thmgreenbox]{remark}
-\declaretheorem[name=Визначення,sibling=theorem,style=thmblackbox]{definition}
+\declaretheorem[name=Вправа,numberwithin=subsubsection,style=thmblackbox]{exercise}
+\declaretheorem[name=Зауваження,numberwithin=subsubsection,style=thmgreenbox]{remark}
+\declaretheorem[name=Визначення,numberwithin=subsubsection,style=thmblackbox]{definition}
 
 \newtheorem{problem}{Задача}[subsection]
 \newtheorem{sproblem}[problem]{Задача}

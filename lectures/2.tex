@@ -1,20 +1,20 @@
-\input{univ.sty}
+ \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+ \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+ \author{Скибицький Нікіта}
+ \date{\today}
 
-\input{th.sty}
+ \input{th.sty}
 
 \begin{document}
 
-\tableofcontents
+ \tableofcontents
 
-\setcounter{section}{2}
-\setcounter{subsection}{1}
-\setcounter{subsubsection}{4}
-\setcounter{theorem}{20}
-\setcounter{equation}{39}
+ \setcounter{section}{2}
+ \setcounter{subsection}{1}
+ \setcounter{subsubsection}{4}
+%  \setcounter{theorem}{20}
+ \setcounter{equation}{39}
 
 \subsubsection{Метод послідовних наближень для інтегральних рівнянь з полярним ядром}
 
@@ -180,7 +180,7 @@
 	\begin{equation}
 		K_3(x, y) = \begin{cases}
 			\dfrac{A_3(x, y)}{|x - y|^{\alpha_1 + \alpha_2 - n}}, & \alpha_1 + \alpha_2 - n > 0, \\
-			A_3(x, y) \big|\ln|x - y|\big| + B_3(x, y), & \alpha_1 + \alpha_2 - n = 0, \\
+			A_3(x, y) \ln|x - y| + B_3(x, y), & \alpha_1 + \alpha_2 - n = 0, \\
 			A_3(x, y), & \alpha_1 + \alpha_2 - n < 0,
 		\end{cases}
 	\end{equation}
@@ -197,17 +197,17 @@
 	\begin{aligned}
 		K_{(2)}(x, y) &= \begin{cases}
 			\dfrac{A_2(x, y)}{|x - y|^{2\alpha - n}}, & 2\alpha - n > 0, \\
-			A_2(x, y) \big|\ln|x - y|\big| + B_2(x, y), & 2\alpha - n = 0, \\
+			A_2(x, y) \ln|x - y| + B_2(x, y), & 2\alpha - n = 0, \\
 			A_2(x, y), & 2\alpha - n < 0,
 		\end{cases} \\
 		K_{(3)}(x, y) &= \begin{cases}
 			\dfrac{A_3(x, y)}{|x - y|^{3\alpha - 2n}}, & 3\alpha - 2n > 0, \\
-			A_3(x, y) \big|\ln|x - y|\big| + B_3(x, y), & 3\alpha - 2n = 0, \\
+			A_3(x, y) \ln|x - y| + B_3(x, y), & 3\alpha - 2n = 0, \\
 			A_3(x, y), & 3\alpha - 2n < 0,
 		\end{cases} \\
 		K_{(p)}(x, y) &= \begin{cases}
 			\dfrac{A_p(x, y)}{|x - y|^{p\alpha - (p-1)n}}, & p\alpha - (p - 1)n > 0, \\
-			A_p(x, y) \big|\ln|x - y|\big| + B_p(x, y), & p\alpha - (p - 1)n = 0, \\
+			A_p(x, y) \ln|x - y| + B_p(x, y), & p\alpha - (p - 1)n = 0, \\
 			A_p(x, y), & p\alpha - (p - 1)n < 0.
 		\end{cases}
 	\end{aligned}
@@ -494,4 +494,4 @@
 	\end{equation*}
 \end{solution}
 
-\end{document}
+ \end{document}
