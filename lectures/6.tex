@@ -1,20 +1,26 @@
-\input{univ.sty}
+ \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+ \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+ \author{Скибицький Нікіта}
+ \date{\today}
 
-\input{th.sty}
+ \input{th.sty}
 
-\begin{document}
+ \begin{document}
 
-\tableofcontents
+ \tableofcontents
 
-\setcounter{section}{2}
-\setcounter{subsection}{5}
-\setcounter{subsubsection}{3}
-\setcounter{theorem}{8}
-\setcounter{equation}{36}
+% \input{lec-1.tex}
+% \input{lec-2.tex}
+% \input{lec-3.tex}
+% \input{lec-4.tex}
+% \input{lec-5.tex}
+
+ \setcounter{section}{2}
+ \setcounter{subsection}{5}
+ \setcounter{subsubsection}{3}
+ \setcounter{theorem}{8}
+ \setcounter{equation}{36}
 
 \subsubsection{Властивості власних чисел задачі Штурма-Ліувіля}
 
@@ -116,7 +122,7 @@
 
 Інтегральне рівняння має неперервне, але не симетричне ядра, для його симетризації домножимо рівняння на $\sqrt{\rho(x)}$ і отримаємо
 \begin{equation}
-	\rho(x)u(x) = \lambda \Int_0^1 \sqrt{\rho(x)\rho(\xi)} G(x, \xi) \rho(\xi)u(\xi) \diff \xi
+	\sqrt{\rho(x)}u(x) = \lambda \Int_0^1 \sqrt{\rho(x)\rho(\xi)} G(x, \xi)\sqrt{ \rho(\xi)}u(\xi) \diff \xi
 \end{equation}
 
 Позначимо $v(x) = \sqrt{\rho(x)} \cdot u(x)$, $G_\rho(x, \xi) = \sqrt{\rho(x)\rho(\xi)} G(x, \xi)$, отримаємо інтегральне рівняння з ермітовим неперервним ядром:
@@ -197,7 +203,7 @@
 \begin{proof}
 	Дійсно: $v_k=\mu_k^2\bf{K}_2v_k$, тоді
 	\begin{equation}
-		\bf{K}^\star v_k=\mu_k\bf{K}^\star \bf{K}_2v_k=\mu_k\bf{K}^\star \bf{K}\bf{K}^\star v_k=\mu_k^2\bf{K}_1\bf{K}v_k
+		\bf{K}^\star v_k=\mu_k^2\bf{K}^\star \bf{K}_2v_k=\mu_k^2\bf{K}^\star \bf{K}\bf{K}^\star v_k=\mu_k^2\bf{K}_1\bf{K}^\star v_k
 	\end{equation}
 	звідси випливає, що $C_k\bf{K}^\star v_k=u_k$. Оберемо константу з умови ортонормованості:
 
@@ -233,7 +239,8 @@
 
 \begin{proof}
 	Дійсно, написане розвинення представляє собою ряд Фур'є ядра по ортонормованой системі функцій $\{u_k(x)\}_{k=1}^\infty$, або $\{v_k(x)\}_{k=1}^\infty$ і
-	збігається в середньому по кожній змінній $x$, $y$. Тобто
+	збігається в середньому квадратичному 
+	по кожній змінній $x$, $y$. Тобто
 	\begin{multline}
 		\Int_G \left| K(x,y) - \Sum_{i=1}^n \dfrac{v_i(x) \overline u_i(y)}{\mu_i} \right|^2 \diff x = \Int_G |K(x, y)|^2 \diff x - \Sum_{k=1}^n \dfrac{|u_k(y)|^2}{\mu_k^2} = \\
 		= K_1(y, y) - \Sum_{k=1}^n \dfrac{|u_k(y)|^2}{\mu_k^2} = \Sum_{k=n+1}^\infty \dfrac{|u_k(x)|^2}{\mu_k^2} \xrightarrow[n\to\infty]{} 0.
@@ -295,7 +302,7 @@
 
 \subsubsection{Несиметричні ядра}
 
-Розглянемо інтегральне рівняння Фредгольма І роду з несиметричним ядром. Для представлення ядра скористаємось форумалима з твердження \ref{proposition:2.6.4}, а для представлення вільного члена $f(x)$ застосуємо розвинення цієї функції в ряд Фур'є по системі власних функцій ядра $K_2(x,y)$, $v_k(x)$. В результаті будемо мати:
+Розглянемо інтегральне рівняння Фредгольма І роду з несиметричним ядром. Для представлення ядра скористаємось формулама з твердження \ref{proposition:2.6.4}, а для представлення вільного члена $f(x)$ застосуємо розвинення цієї функції в ряд Фур'є по системі власних функцій ядра $K_2(x,y)$, $v_k(x)$. В результаті будемо мати:
 \begin{equation}
 	\Sum_{i=1}^\infty \Int_G \dfrac{v_i(x)\overline u_i(y)}{\mu_i} \phi(y) \diff y = \Sum_{i=1}^\infty (f,v_i)v_i(x).
 \end{equation}
@@ -445,4 +452,4 @@
 	\item Інтегральні рівняння Фредгольма першого роду з несиметричним ядром, умови існування розв'язку.
 \end{enumerate}
 
-\end{document}
+ \end{document}

@@ -1,20 +1,23 @@
-\input{univ.sty}
+ \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+ \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+ \author{Скибицький Нікіта}
+ \date{\today}
 
-\input{th.sty}
+ \input{th.sty}
 
-\begin{document}
+ \begin{document}
 
-\tableofcontents
+ \tableofcontents
 
-\setcounter{section}{2}
-\setcounter{subsection}{2}
-\setcounter{subsubsection}{1}
-\setcounter{theorem}{9}
-\setcounter{equation}{28}
+% \input{lec-1.tex}
+% \input{lec-2.tex}
+
+ \setcounter{section}{2}
+ \setcounter{subsection}{2}
+ \setcounter{subsubsection}{1}
+ \setcounter{theorem}{9}
+ \setcounter{equation}{28}
 
 \subsubsection{Теореми Фредгольма для інтегральних рівнянь з неперервним ядром}
 
@@ -66,7 +69,7 @@
 		\Phi = \phi - \lambda \bf{Q}_N \phi
 	\end{equation}
 
-	З рівняння на $\phi$ випливає що $\Phi = \lambda \bf{P}_N + f$, а з однією із рівностей твердження \ref{proposition:2.1.17} випливає що $\forall \lambda$ такого що $|\lambda| < 1 / \epsilon V$:
+	З рівняння на $\phi$ випливає що $\Phi = \lambda \bf{P}_N + f$, а з однією із рівностей твердження \ref{proposition:2.1.17} випливає що $\forall \lambda$ такого що $|\lambda| < 1 / (\epsilon V)$:
 	\begin{equation}
 		(E - \lambda \bf{Q}_N)^{-1} = (E + \lambda \bf{R}_N),
 	\end{equation}
@@ -125,7 +128,7 @@
 	Нехай інтегральне рівняння Фредгольма ІІ роду має розв'язок в $C\left(\overline G\right)$ для $\forall$ вільного члена $f$, тоді еквівалентне йому рівняння $\Phi = \lambda \bf{T}_N \Phi + F$ має такі ж властивості і згідно з першою теоремою Фредгольма для вироджених ядер $D(\lambda) \ne 0$, а спряжене до нього рівняння $\Psi = \overline \lambda \bf{T}_N^\star  + g_1$ теж має єдиний розв'язок $\forall$ вільного члена $g_1$, еквівалентне до нього (і спряжене до початкового) рівняння має розв'язок $\forall g$.
 \end{proof}
 
-\begin{theorem}[Друга теорема Фредгольма для непевних ядер]
+\begin{theorem}[Друга теорема Фредгольма для неперервних ядер]
 	Якщо інтегральне рівняння Фредгольма ІІ роду має розв'язки не для будь-якого вільного члена $f$, то однорідні рівняння $\phi = \lambda \bf{K} \phi$ та $\psi = \overline \lambda \bf{K}^\star \psi$ мають однакову скінчену кількість лінійно-незалежних розв'язків.
 \end{theorem}
 
@@ -142,7 +145,7 @@
 \end{proof}
 
 \begin{remark}
-	Для доведення теорем для будь-якого фіксованого значення $\lambda$ вибиралося $\epsilon$, таке щоби $|\lambda| < 1 / \epsilon V$.
+	Для доведення теорем для будь-якого фіксованого значення $\lambda$ вибиралося $\epsilon$, таке щоби $|\lambda| < 1 / (\epsilon V)$.
 \end{remark}
 
 \begin{theorem}[Четверта теорема Фредгольма]
@@ -294,7 +297,7 @@
 \end{definition}
 
 \begin{definition}[одностайно неперервної множини функцій]
-	Множина $M \subset C\left(\overline G\right)$ --- \it{одностайно неперервна} якщо $\forall \epsilon > 0 \exists \delta(\epsilon): \forall f \in M, \forall x_1, x_2: |f(x_1) - f(x_2)| < \epsilon$ як тільки $|x_1 - x_2| < \delta(\epsilon)$.
+	Множина $M \subset C\left(\overline G\right)$ --- \it{одностайно неперервна} якщо $\forall \epsilon >0  \:\exists \delta(\epsilon): \forall f \in M, \forall x_1, x_2: |f(x_1) - f(x_2)| < \epsilon$ як тільки $|x_1 - x_2| < \delta(\epsilon)$.
 \end{definition}
 
 \begin{theorem}[Арчела-Асколі, критерій компактності в рівномірній метриці]
@@ -324,7 +327,7 @@
 
 	Ядро $K \in C\left(\overline G \times \overline G\right)$, а отже є рівномірно неперервним, бо неперервне на компакті, тобто
 	\begin{equation}
-		\forall \epsilon > 0 \exists \delta > 0: \forall x', x'' \in \overline G: \left\|x' - x''\right\| < \delta \implies \left|(\bf{K}f)(x') - (\bf{K}f)(x'')\right| \le \epsilon.
+		\forall \epsilon > 0  \-\;\exists \delta > 0: \forall x', x'' \in \overline G: \left\|x' - x''\right\| < \delta \implies \left|(\bf{K}f)(x') - (\bf{K}f)(x'')\right| \le \epsilon.
 	\end{equation}
 	Дійсно,
 	\begin{equation}
@@ -494,4 +497,4 @@
 	\end{equation*}
 \end{solution}
 
-\end{document}
+ \end{document}

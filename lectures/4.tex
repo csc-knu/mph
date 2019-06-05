@@ -1,20 +1,24 @@
-\input{univ.sty}
+ \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+ \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+ \author{Скибицький Нікіта}
+ \date{\today}
 
-\input{th.sty}
+ \input{th.sty}
 
-\begin{document}
+ \begin{document}
 
-\tableofcontents
+ \tableofcontents
 
-\setcounter{section}{2}
-\setcounter{subsection}{3}
-\setcounter{subsubsection}{0}
-\setcounter{theorem}{14}
-\setcounter{equation}{4}
+ %\input{lec-1.tex}
+ %\input{lec-2.tex}
+%\input{lec-3.tex}
+
+ \setcounter{section}{2}
+ \setcounter{subsection}{3}
+ \setcounter{subsubsection}{0}
+ \setcounter{theorem}{14}
+ \setcounter{equation}{4}
 
 \subsubsection{Характеристичні числа ермітового неперервного ядра}
 
@@ -35,7 +39,7 @@
 	\begin{equation}
 		\|\bf{K} f\|_{L_2(G)} \le MV \|f\|_{L_2(G)} \le MV,
 	\end{equation}
-	то $0 \le \nu \le MV$. \medskip
+то\ $0 \le \nu \left\le MV$ .\medskip
 
 	Згідно до визначення точної верхньої межі,
 	\begin{equation}
@@ -203,7 +207,7 @@
 
 Для виродженого ядра маємо його представлення у вигляді
 \begin{equation}
-	K(x, y) \sim \Sum_{i = 1}^N \dfrac{\phi_i(x) \overline \phi_i(y)}{\lambda_i}.
+	K(x, y) = \Sum_{i = 1}^N \dfrac{\phi_i(x) \overline \phi_i(y)}{\lambda_i}.
 \end{equation}
 
 \subsubsection{Ряд Фур'є функції із $L_2(G)$}
@@ -267,11 +271,11 @@
 		f \sim \Sum_{i = 1}^\infty \dfrac{(h, \phi_i)}{\lambda_i} \phi_i
 	\end{equation}
 
-	Якщо власних чисел скінчена кількість, то з можливе точне представлення 
+	Якщо власних чисел скінчена кількість, то можливе точне представлення 
 	\begin{equation}
 		f(x) = \sum_{i=1}^N \frac{(h, \phi_i)}{\lambda_i} \phi_i(x),
 	\end{equation}
-	якщо ж власних чисел злічена кількість, то з можемо записати:
+	якщо ж власних чисел злічена кількість, то  можемо записати:
 	\begin{equation}
 		\left\| f - \Sum_{i = 1}^p \dfrac{(h, \phi_i)}{\lambda_i} \phi_i \right\|_{L_2(G)} = \left\| \bf{K}h - \Sum_{i = 1}^p \dfrac{(h, \phi_i)}{\lambda_i} \phi_i \right\|_{L_2(G)} \xrightarrow[p \to \infty]{}0.
 	\end{equation}
@@ -284,7 +288,7 @@
 	\begin{equation}
 		\begin{aligned}
 			(K(x, y),\phi_i)_{L_2(G)} &= \Int_G K(x, y) \overline \phi_i(x) \diff x = \\
-			&= \Int_G \overline K(y, x) \overline \phi_i(x) \diff x = \dfrac{\overline \phi_i(y)}{\lambda_i}.
+			&= \Int_G \overline {K(y, x)} \overline \phi_i(x) \diff x = \dfrac{\overline \phi_i(y)}{\lambda_i}.
 		\end{aligned}
 	\end{equation}
 
@@ -325,13 +329,13 @@
 	де $p = 2, 3, \ldots$, і коефіцієнти Фур'є  $\overline \phi_i(y) / \lambda_i^p$.
 \end{corollary}
 
-Повторне ядро $K_{(p)} = \int_G K(x, \xi) K_{(p - 1)} (\xi, y) \diff \xi$ є джерелувато-зображувана функція і таким чином для нього має місце теорема Гільберта-Шмідта. \medskip
+Повторне ядро $K_{(p)}(x,y) = \int_G K(x, \xi) K_{(p - 1)} (\xi, y) \diff \xi$ є джерелувато-зображувана функція і таким чином для нього має місце теорема Гільберта-Шмідта. \medskip
 
 Доведемо деякі важливі рівності:
 \begin{equation}
 	\begin{aligned}
 	K_{(2)} (x, x) &= \Int_G K(x, \xi) K(\xi, x) \diff \xi = \\
-	&= \Int_G K(x, \xi) \overline K(x, \xi) \diff \xi = \\
+	&= \Int_G K(x, \xi) \overline {K(x, \xi)} \diff \xi = \\
 	&= \Int_G |K(x, \xi)|^2 \diff \xi = \\
 	&= \Sum_{i = 1}^\infty \dfrac{|\phi_i(x)|^2}{\lambda_i^2}.
 	\end{aligned}
@@ -473,4 +477,4 @@ $\lambda_1, \ldots, \lambda_p, \ldots$, $\phi_1, \ldots, \phi_p, \ldots$ --- м�
 	\end{equation*}
 \end{solution}
 
-\end{document}
+ \end{document}
