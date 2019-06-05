@@ -5,19 +5,21 @@ _Зараз опрацьовані лекції №№1&ndash;14, та №№17&
 
 ### Перший розділ
 
-[разом](ch-1-v.pdf)
+_Станом на 5 червня 2019 р. цей розділ повністю відредагований Анатолієм Володимировичем_
 
-1. Лекція №1: [pdf-v](1-v.pdf), [docx](1.docx), [LaTeX source](1.tex)
+[разом](ch-1/ch-1.pdf)
 
-2. Лекція №2: [pdf-v](2-v.pdf), [docx](2.docx), [LaTeX source](2.tex)
+1. Лекція №1: [pdf](ch-1/1.pdf), [docx](ch-1/1.docx), [LaTeX source](ch-1/1.tex)
 
-3. Лекція №3: [pdf-v](3-v.pdf), [docx](3.docx), [LaTeX source](3.tex)
+2. Лекція №2: [pdf](ch-1/2.pdf), [docx](ch-1/2.docx), [LaTeX source](ch-1/2.tex)
 
-4. Лекція №4: [pdf-v](4-v.pdf), [docx](4.docx), [LaTeX source](4.tex)
+3. Лекція №3: [pdf](ch-1/3.pdf), [docx](ch-1/3.docx), [LaTeX source](ch-1/3.tex)
 
-5. Лекція №5: [pdf-v](5-v.pdf), [docx](5.docx), [LaTeX source](5.tex)
+4. Лекція №4: [pdf](ch-1/4.pdf), [docx](ch-1/4.docx), [LaTeX source](ch-1/4.tex)
 
-6. Лекція №6: [pdf-v](6-v.pdf), [docx](6.docx), [LaTeX source](6.tex)
+5. Лекція №5: [pdf](ch-1/5.pdf), [docx](ch-1/5.docx), [LaTeX source](ch-1/5.tex)
+
+6. Лекція №6: [pdf](ch-1/6.pdf), [docx](ch-1/6.docx), [LaTeX source](ch-1/6.tex)
 
 ### Другий розділ
 

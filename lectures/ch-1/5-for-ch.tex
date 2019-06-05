@@ -1,0 +1,478 @@
+\subsubsection{Додатньо визначені ядра}
+
+\begin{definition}[додатно-визначеного ядра]
+    Неперервне ядро $K(x, y)$ називається \it{додатно-визначеним}, якщо $\forall f \in L_2(G)$: $(\bf{K}f, f) \ge 0$,прричому $(\bf{K}f, f) = 0 \iff \|f\|_{L_2(G)} = 0$.
+\end{definition}
+
+\begin{remark}
+    Довільне додатньо визначене ядро є ермітовим (його білінійна форма $(\bf{K}f, f)$ приймає дійсні значення).
+\end{remark}
+
+\begin{lemma}
+    Для того, щоб неперервне ядро було додатньо визначеним необхідно і достатньо, щоб його характеристичні числа були додатні.
+\end{lemma}
+
+\begin{proof}
+    Необхідність: для власних функцій $(\bf{K} \phi_k, \phi_k) = 1 / \lambda_k > 0$. \medskip
+
+    Достатність: Розглянемо $\bf{K} f$ як джерелувато-зображувану функцію, згідно до теореми Гілберта-Шмідта
+    \begin{equation}
+        \bf{K} f = \sum_{k = 1}^\infty \frac{(f, \phi_k)}{\lambda_k} \phi_k,
+    \end{equation}
+    тоді 
+    \begin{equation}
+        (\bf{K}f, f) = \Sum_{k = 1}^\infty \dfrac{(f, \phi_k)}{\lambda_k} (\phi_k, f) = \Sum_{k = 1}^\infty \dfrac{|(f, \phi_k)|^2}{\lambda_k} > 0,
+    \end{equation}
+    отже квадратична форма додатньо визначена. \medskip
+
+    Таким чином додатність характеристичних чисел є критерієм додатної визначеності ядра.
+\end{proof}
+
+\begin{lemma}
+    Довільне додатньо визначене неперервне ядро має характеристичні числа і для них має місце варіаційний принцип:
+    \begin{equation}
+        \dfrac{1}{\lambda_k} = \Sup_{\substack{f \in L_2(G) \\ (f, \phi_i) = 0, i = \overline{1, k - 1}}} \dfrac{(\bf{K}f, f)_{L_2(G)}}{\|f\|_{L_2(G)}^2}, \quad k = 1, 2, \ldots,
+    \end{equation}
+    де $\lambda_1 \le \lambda_2 \le \lambda_3 \le \ldots$, а $\phi_1, \phi_2, \phi_3, \ldots$ --- ортонормована система власних функцій.
+\end{lemma}
+
+\begin{proof}
+    З теореми Гілберта Шмідта можна оцінити 
+    \begin{equation}
+        \dfrac{(\bf{K}f, f)_{L_2(G)}}{\|f\|_{L_2(G)}^2} = \Sum_{i=k}^\infty \dfrac{|(f, \phi_i)|^2}{\lambda_i\|f\|^2} \le \dfrac{1}{\lambda_k} \Sum_{i=k}^\infty \dfrac{|(f, \phi_i)|^2}{\|f\|^2} \le \dfrac{1}{\lambda_k}.
+    \end{equation}
+    (перша нерівність виконується оскільки $\lambda_k$ --- найменше характеристичне число в сумі, а друга випливає з нерівності Бесселя). \medskip
+
+    З іншого боку при $f = \phi_k$ маємо
+    \begin{equation}
+        \frac{(\bf{K}\phi_k, \phi_k)}{\|\phi_k\|^2} = \frac{1}{\lambda_k},
+    \end{equation}
+    тобто існує функція на якій досягається верхня межа цієї нерівності.
+\end{proof}
+
+\begin{theorem}[Мерсера, про регулярну збіжність білінійного ряду для ермітових ядер зі скінченою кількістю від'ємних характеристичних чисел] 
+    Якщо ермітове неперервне ядро $K(x, y)$ має лише скінчену кількість від'ємних характеристичних чисел, то його білінійний ряд 
+    \begin{equation}
+        K(x,y)=\Sum_{i=1}^\infty\dfrac{\phi_i(x)\overline\phi_i(y)}{\lambda_i}
+    \end{equation}
+    збігається в $\overline G\times\overline G$ абсолютно і рівномірно.
+\end{theorem}
+
+\begin{proof}
+    Покажемо, що якщо ядро $K(x,y)$ --- додатньо визначене, то $\forall x\in\overline G$: $K(x,x)\ge0$. Оскільки $K(x,y)$ --- ермітове, то $K(x,x)=\overline {K(x,x)}$ і є дійсною функцією. Якщо існує хоча б одна точка $x_0\in\overline G$ така, що $K(x_0,x_0)<0$, то виходячи з неперервності знайдеться і деякій окіл цієї точки $U(x_0,x_0)\subset\overline G\times\overline G$ такий, що $\forall(x,y)\in U(x_0,x_0)$: $\text{Re} K(x,y)<0$. Оберемо невід'ємну неперервну функцію $\phi(x)$ яка відміна від нуля лише в $U(x_0,x_0)$ і отримаємо
+    \begin{equation}
+        \begin{aligned}
+            (\bf{K}\phi,\phi)&=\Int_{U(x_0,x_0)}K(x,y)\phi(x)\phi(y)\diff x\diff y=\\
+            &=\Int_{U(x_0,x_0)}\text{Re}K(x,y)\phi(x)\phi(y)\diff x\diff y\le0.
+        \end{aligned}
+    \end{equation}
+
+    Остання нерівність вступає в протиріччя з припущенням додотньої визначеності ядра, тобто теорему достатньо довести для додатньо визначених ядер. \medskip
+
+    Розглянемо ядро
+    \begin{equation}
+        K^p(x,y)=K(x,y)-\sum_{i=1}^p\frac{\overline\phi_i(y)\phi_i(x)}{\lambda_i},
+    \end{equation}
+    де $p$ --- номер останнього від'ємного характеристичного числа, так що усі $\lambda_i$, $i=p+1,p+2,\ldots$ є додатніми. Таким чином ядро $K^p(x,y)$ є неперервним та додатньо визначеним. А це означає, що $\forall x\in\overline G:K^p(x,x)\ge0$. Таким чином маємо нерівність:
+    \begin{equation}
+        \Sum_{i=1}^N\dfrac{|\phi_i(x)|^2}{\lambda_i}\le K(x,x)\le M,\quad x\in\overline G, N=p+1,p+2,\ldots,
+    \end{equation}
+    тобто ряд
+    \begin{equation}
+        \sum_{k=1}^\infty\frac{|\phi_k(x)|^2}{\lambda_k}
+    \end{equation}
+    рівномірно збіжний. \medskip
+
+    Розглянемо білінійний ряд 
+    \begin{equation}
+        \sum_{i=1}^\infty\frac{\phi_i(x)\overline\phi_i(y)}{\lambda_i}
+    \end{equation}
+    і доведемо його абсолютну і рівномірну збіжність за критерієм Коші. Використовуючи нерівність Коші-Буняківського маємо:
+    \begin{equation}
+        \Sum_{k=p}^{p+q}\dfrac{|\phi_k(x)\overline\phi_k(y)|}{\lambda_k}\le\left(\Sum_{k=p}^{p+q}\dfrac{|\phi_k(x)|^2}{\lambda_k}\cdot\Sum_{k=p}^{p+q}\dfrac{|\phi_k(y)|^2}{\lambda_k}\right)^{1/2}
+    \end{equation}
+
+    Але оскільки
+    \begin{equation}
+        \sum_{k=1}^\infty\frac{|\phi_k(x)|^2}{\lambda_k}
+    \end{equation}
+    рівномірно збіжний, то білінійний ряд
+    \begin{equation}
+        K(x,y)=\Sum_{i=1}^\infty\dfrac{\phi_i(x)\overline\phi_i(y)}{\lambda_i}
+    \end{equation}
+    збігається абсолютно і рівномірно (регулярно) в $\overline G\times\overline G$.
+\end{proof}
+
+\begin{remark}
+    Теорема Гільберта-Шмідта і її наслідки, встановлені для ермітового неперервного ядра, залишаються вірними і для ермітового слабо полярного ядра.
+\end{remark}
+
+\begin{remark}
+    Теорема Гільберта-Шмідта і формула Шмідта у випадку полярного ядра залишаються вірними, але з заміною рівномірної збіжності на середньоквадратичну.
+\end{remark}
+
+\subsection{Задача Штурма-Ліувілля. Теорема Стеклова}
+
+Постановка задачі Штурма-Ліувілля: нехай $\bf{L}$ --- диференціальний оператор другого порядку: задано рівняння
+\begin{equation}
+    \label{eq:2.5.1}
+    \bf{L}u=(-p(x)u')'+q(x)u=\lambda u,\quad0<x<l,
+\end{equation}
+з крайовими умовами
+\begin{align}
+    \label{eq:2.5.2}
+    l_1(u)|_{x=0}&=h_1u(0)-h_2u'(0)=0,\\
+    \label{eq:2.5.3}
+    l_2(u)|_{x=l}&=H_1u(l)+H_2u'(l)=0,
+\end{align}
+де функція $p\in C^{(1)}([0,l])$, $p>0$, функція $q\in C([0,l])$, $q\ge0$, виконуються наступні умови на сталі: $h_1, h_2, H_1, H_2 \ge 0$, $h_1+h_2>0$, $H_1+H_2>0$,
+а також
+\begin{equation}
+    \label{eq:2.5.4}
+    M_L=\{u:u\in C^{(2)}(0,l)\cap C^{(1)}([0,l]), u''\in L_2(0,l), l_1u(0)=l_2u(l)=0\}
+\end{equation}
+-- область визначення оператора $\bf{L}$.
+
+\begin{definition}[власних чисел і функцій задачі Штурма-Ліувілля]
+    Знайти розв'язки задачі Штурма-Ліувіля означає знайти всі ті значення параметра $\lambda$, при яких крайова задача \eqref{eq:2.5.1}--\eqref{eq:2.5.4} має нетривіальний розв'язок. Ці значення називаються \it{власними значеннями} задачі Штурма-Ліувіля, а самі розв'язки --- \it{власними функціями}.
+\end{definition}
+
+\subsubsection{Функція Гріна оператора $\bf{L}$}
+
+Будемо припускати, що $\lambda = 0$ не є власним числом оператора $\bf{L}$ задачі Штурма-Ліувіля. \medskip
+
+Розглянемо крайову задачу:
+\begin{system}
+    & (-p(x)u')'+q(x)u=f(x),\quad0<x<l \\
+    & l_1(u)|_{x=0}=l_2(u)|_{x=l}=0
+\end{system}
+
+Припустимо що $f \in C(0,l)\cap L_2(0,l)$. \medskip
+
+З припущення, що $\lambda = 0$ не є власним числом випливає, що задача має єдиний розв'язок. \medskip
+
+Розглянемо функції $v_i(x)$, $i=1,2$ --- ненульові дійсні розв'язки однорідних задач Коші:
+\begin{system}
+    & (-p(x)v_i'(x))'+q(x)v_i'(x)=0,\quad i=1,2 \\
+    & l_1v_1|_{x=0}=l_2v_2|_{x=l}=0
+\end{system}
+
+З загальної теорії задач Коші випливає, що розв'язки цих задач Коші існують, тому $v_i(x)$ --- двічі неперервно диференційовані функції.
+
+\begin{proposition}
+    $v_1(x)$, $v_2(x)$ --- лінійно незалежні.
+\end{proposition}
+
+\begin{proof}
+    Припустимо що це не так і $v_1(x) = cv_2(x)$, тобто $v_1(x)$ задовольняє одночасно граничним умовам на лівому і правому краях. Тоді $v_1(x)$ --- власна функція оператора $\bf{L}$, і відповідає власному числу $\lambda = 0$ що суперечить припущенню.
+\end{proof}
+
+В цьому випадку визначник Вронського
+\begin{equation}
+    w(x) = \begin{vmatrix} v_1 & v_2 \\ v_1' & v_2' \end{vmatrix} \ne 0
+\end{equation}
+
+Будемо шукати розв'язок задачі методом варіації довільної сталої у вигляді:
+\begin{equation}
+    u(x) = c_1(x) v_1(x) + c_2(x) v_2(x).
+\end{equation}
+
+Підставимо в рівняння:
+\begin{equation}
+    (-p(c_1'v_1+c_2'v_2+c_1v_1'+c_2v_2')'+q(c_1v_1+c_2v_2)=f.
+\end{equation}
+
+Накладемо першу умову на коефіцієнти: $c_1'v_1+c_2'v_2=0$, маємо: 
+\begin{equation}
+    -p'(c_1v_1'+c_2v_2')-p(c_1'v_1'+c_2'v_2'+c_1v_1''+c_2v_2'')+q(c_1v_1+c_2v_2)=f,
+\end{equation}
+або
+\begin{equation}
+    c_1Lv_1 + c_2Lv_2 - p(c_1'v_1'+c_2'v_2')=f,
+\end{equation}
+оскільки $c_1\bf{L}v_1=0$, $c_2\bf{L}v_2=0$, то
+\begin{equation}
+    -p(c_1'v_1'+c_2'v_2')=f,
+\end{equation}
+отже
+\begin{equation}
+    c_1'v_1'+c_2'v_2'=-\frac{f}{p}.
+\end{equation}
+
+Таким чином $c_1'$ та $c_2'$ повинні задовольняти системі лінійних диференціальних рівнянь:
+\begin{system}
+    c_1'v_1 + c_2'v_2 &= 0, \\
+    c_1'v_1' + c_2'v_2' &= - \dfrac{f}{p},
+\end{system}
+визначник системи
+\begin{equation}
+    w(x) = \begin{vmatrix} v_1 & v_2 \\ v_1' & v_2' \end{vmatrix} \ne 0.
+\end{equation}
+
+\begin{remark}
+    Має місце рівність Ліувілля:
+    \begin{equation}
+        w(x)\cdot p(x)=w(0)\cdot p(0)=\text{const}.
+    \end{equation}
+\end{remark}
+
+Розв'язавши систему рівнянь, отримаємо:
+\begin{system}
+    c_1'(x) &= \dfrac{1}{w(x)} \begin{vmatrix} 0 & v_2 \\ - \dfrac{f}{p} & v_2' \end{vmatrix} = \dfrac{v_2(x)f(x)}{p(0)w(0)}, \\
+    c_2'(x) &= \dfrac{1}{w(x)} \begin{vmatrix} v_1 & 0 \\ v_1' & - \dfrac{f}{p} \end{vmatrix} = -\dfrac{v_1(x)f(x)}{p(0)w(0)}, 
+\end{system}
+
+Знайдемо додаткові умови для диференціальних рівнянь вище: 
+\begin{multline} 
+l_1u|_{x=0} = h_1(c_1(0)v_1(0) + c_2(0)v_2(0)) - \\
+- h_2(c_1'(0)v_1(0) + c_2'(0)v_2(0) + c_1(0)v_1'(0) + c_2(0)v_2'(0)) = 0,
+\end{multline}
+а враховуючи, що $c_1'(0)v_1(0)+c_2'(0)v_2(0) = 0$ маємо
+\begin{equation}
+    c_1(0) (h_1v_1(0) - h_2v_1'(0)) + c_2(0)v_2'(0) = 0.
+\end{equation}
+
+Оскільки перший доданок дорівнює нулю, то остання рівність виконується коли $c_2(0) = 0$, аналогічно отримаємо, що $c_1(l) = 0$. \medskip
+
+Проінтегруємо систему дифурів що розглядається, отримаємо
+\begin{equation}
+    c_1(x)=-\Int_x^l\dfrac{f(\xi)v_2(\xi)}{p(0)w(0)}\diff\xi, \quad c_2(x)=-\Int_0^x\dfrac{v_1(\xi)f(\xi)}{p(0)w(0)}\diff\xi
+\end{equation}
+
+Тоді розв'язок крайової задачі буде мати вигляд:
+\begin{equation}
+    u(x)=-\Int_0^x\dfrac{v_1(\xi)v_2(x)f(\xi)}{p(0)w(0)}\diff\xi-\Int_x^l\dfrac{f(\xi)v_1(x)v_2(\xi)}{p(0)w(0)}\diff\xi
+\end{equation}
+
+\begin{definition}[функції Гріна]
+    \it{Функція Гріна} визначається наступним чином:
+    \begin{equation}
+        G(x, \xi) = - \dfrac{1}{p(0)w(0)} \begin{cases}
+            v_1(\xi) v_2(x), & 0 \le \xi \le x \le l, \\
+            v_1(x) v_2(\xi), & 0 \le x \le \xi \le l.
+        \end{cases}
+    \end{equation}
+\end{definition}
+
+Отже розв'язок крайової задачі можна записати у вигляді
+\begin{equation}
+    u(x) = \Int_0^l G(x, \xi) f(\xi) \diff \xi
+\end{equation}
+
+$G(x, \xi)$ називається функцією Гріна оператора Штурма-Ліувіля. Попередні міркування доводять наступну лемму.
+\begin{lemma}
+    \label{lemma:2.5.5}
+    Якщо $\lambda = 0$ не є власним числом задачі Штурма-Ліувіля, то роз\-в'яз\-ок крайової задачі існує та єдиний і представляється за формулою
+    \begin{equation}
+        u(x) = \Int_0^l G(x, \xi) f(\xi) \diff \xi
+    \end{equation}
+    через функцію Гріна.
+\end{lemma}
+
+\newpage
+
+\subsubsection{Властивості функції Гріна}
+\begin{properties}[функції Гріна]
+    Можна показати, що:
+    \begin{enumerate}
+        \item \begin{itemize}
+                \item $G(x, \xi) \in C([0, l] \times [0, l])$;
+                \item $G(x, \xi) \in C^{(2)}(0 < x < \xi < l)$;
+                \item $G(x, \xi) \in C^{(2)} (0 < \xi < x < l)$.
+            \end{itemize}
+        \item Симетричність: $G(x, \xi) = G(\xi, x)$, $x, \xi \in [0, l] \times [0, l]$.
+        \item На діагоналі $x = \xi$ має місце розрив першої похідної:
+            \begin{equation}
+                \frac{\partial G(\xi + 0, \xi)}{\partial x} - \frac{\partial G(\xi - 0, \xi)}{\partial x} = - \frac{1}{p(\xi)},
+            \end{equation}
+            да $\xi\in(0, l)$. 
+        \item Поза діагоналлю $x = \xi$ функція Гріна задовольняє однорідному диференціальному рівнянню $\bf{L}_x G(x, y) = 0$.
+        \item На бічних сторонах квадрату $[0,l]\times[0,l]$ функція Гріна $G(x, y)$ задовольняє граничним умовам $l_1G|_{x=0}=l_2G|_{x=l}=0$.
+        \item Функція $G(x,\xi)$ є розв'язком неоднорідного рівняння:
+            \begin{equation}
+                \bf{L}_xG(x,\xi)=-\delta(x-\xi),
+            \end{equation}
+            де $\delta(x)$ --- дельта-функція Дірака.
+    \end{enumerate}
+\end{properties}
+
+\subsubsection{Зведення крайової задачі з оператором Штурма-Ліувілля до інтегрального рівняння}
+
+Розглянемо крайову задачу з параметром
+\begin{system}
+    \label{eq:2.5.27}
+    & \bf{L}u = (-p(x)u')' + q(x)u = f(x) + \lambda u, \\
+    & l_1(u)|_{x=0} = 0, \\
+    & l_2(u)|_{x=l} = 0, \\
+    & f \in C(0, l) \cap L_2(0, l),
+\end{system}
+і покажемо що вона може бути зведена до інтегрального рівняння Фредгольма другого роду з дійсним, симетричним та неперервним ядром $G(x, \xi)$.
+
+\begin{theorem}[про еквівалентність крайової задачі для рівняння другого порядку інтегральному рівнянню з ермітовим ядром] 
+    \label{theorem:2.5.7}
+    Крайова задача при умові, що $\lambda = 0$ не є власним числом оператора $\bf{L}$, еквівалентна інтегральному рівнянню Фредгольма другого роду:
+    \begin{equation}
+        u(x) = \lambda \Int_0^l G(x, \xi) u(\xi) \diff \xi + \Int_0^l G(x, \xi) f(\xi) \diff \xi, \quad u \in C([0, l]),
+    \end{equation}
+    де $G(x, \xi)$ --- функція Гріна оператора $\bf{L}$ із задачі \eqref{eq:2.5.27}.
+\end{theorem}
+
+\begin{proof}
+    Необхідність. Нехай виконуються умови крайової задачі, тоді з леми \ref{lemma:2.5.5} із заміною правої частини $f \mapsto f + \lambda u$ розв'язок крайової задачі можемо представити у вигляді:
+    \begin{equation}
+        u(x) = \Int_0^l G(x, \xi) (\lambda u(\xi) + f(\xi)) \diff \xi,
+    \end{equation}
+    тобто $u(x)$ задовольняє вищенаведеному інтегральному рівнянню. \medskip
+
+    Достатність. Нехай має місце інтегралньа рівність і $u_0(x)$ --- її розв'язок. Розглянемо крайову задачу:
+    \begin{system*}
+        & \bf{L}u = f + \lambda u_0, \\
+        & l_1(u)|_{x=0} = l_2(u)|_{x=l} = 0.
+    \end{system*}
+
+    За лемою \ref{lemma:2.5.5}, єдиний розв'язок цієї задачі задається формулою
+    \begin{equation}
+        u(x) = \lambda \Int_0^1 G(x, \xi) u_0(\xi) \diff \xi + \Int_0^1 G(x, \xi) f(\xi) \diff \xi,
+    \end{equation}
+    звідки випливає, що $u_0$ задовольняє рівнянню $Lu_0=f+\lambda u_0$, таким чином $u(x)=u_0(x)$ тобто $u_0$ є розв'язком вищенаведеної крайової задачі.
+\end{proof}
+
+У випадку коли $f \equiv 0$, ця крайова задача перетворюється в задачу Штурма-Ліувіля
+\begin{system}
+    & \bf{L}u = \lambda u, \quad 0 < x < l, \\
+    & l_1(u)|_{x=0} = l_2(u)|_{x=l} = 0.
+\end{system}
+
+Задача Штурма-Ліувіля еквівалентна задачі про знаходження характеристичних чисел та власних функцій для однорідного інтегрального рівняння Фредгольма
+\begin{equation}
+    u(x) = \lambda \Int_0^1 G(x, \xi) u(\xi) \diff \xi
+\end{equation}
+при умові, що $\lambda = 0$ не є власним числом оператора $\bf{L}$.\medskip
+
+Покажемо як позбавитись цього припущення. Нехай маємо задачу \allowbreak Штурма-Ліувілля:
+\begin{system}
+    & \bf{L}u = \lambda u, \quad 0 < x < l, \\
+    & l_1(u)|_{x=0} = l_2(u)|_{x=l} = 0.
+\end{system}
+
+Легко бачити, що $(\bf{L}u, u) \ge 0$, тобто власні числа невід'ємні. \medskip
+
+Розглянемо крайову задачу:
+\begin{system}
+    &\bf{L}_1 u \equiv (-p(x)u')'+(q(x)+1)u=\mu u,\\
+    & l_1u|_{x=0}=l_2u|_{x=l}, \quad \mu=\lambda+1.
+\end{system}
+
+Ця задача з точністю до позначень співпадає з початковою задачею Штурма-Ліувіля. Очевидно, що $\mu = 0$ не є власним числом нової задачі Штурма-Ліувіля (бо тоді $\lambda = -1$ могло би бути власним числом початкової задачі Штурма-Ліувілля). \medskip
+
+Введемо диференціальний оператор
+\begin{equation}
+    \bf{L}_1u = (-pu')' + q_1u = \mu u
+\end{equation}
+
+Отже, нова задача еквівалентна попередній задачі при $\mu = \lambda + 1$, та еквівалентна інтегральному рівнянню 
+\begin{equation}
+    u(x) = (\lambda+1)\Int_0^1 G_1(x, \xi)u(\xi)\diff \xi,
+\end{equation}
+де $G_1(x, \xi)$ --- функція Гріна оператора $\bf{L}_1$. \medskip
+
+Таким чином, ввівши оператор $\bf{L}_1$ і відповідну йому нову функцію Гріна $G_1(x, \xi)$, можна позбутися припущення, що $\lambda = 0$ не є власним числом задачі Штурма-Ліувілля.
+
+\newpage
+
+\begin{example}
+    Знайти розв'язок інтегрального рівняння
+    \begin{equation*}
+        \phi(x) = \lambda \Int_0^1 K(x, y) \phi(y) \diff y + x,
+    \end{equation*}
+    де
+    \begin{equation*}
+        K(x,y)=\begin{cases}x(y-1), & 0 \le x \le y \le 1 \\ y(x-1), & 0\le y\le x\le1\end{cases}.
+    \end{equation*}
+\end{example}
+
+\begin{solution}
+    Розв'язок будемо шукати за формулою Шмідта. Знайдемо характеристичні числа та власні функції ермітового ядра. Запишемо однорідне рівняння
+    \begin{equation*}
+        \phi(x) = \lambda \Int_0^x y(x-1)\phi(y)\diff y + \lambda\Int_x^1x(y-1)\phi(y)\diff y.
+    \end{equation*}
+    
+    Продиференціюємо рівняння:
+    \begin{equation*}
+        \phi'(x) = \lambda \Int_0^x y\phi(y)\diff y + \lambda x(x-1)\phi(x) + \lambda\Int_x^1(y-1)\phi(y)\diff y - \lambda x(x-1)\phi(x).
+    \end{equation*}
+    
+    Обчислимо другу похідну:
+    \begin{equation*}
+        \phi''(x) = \lambda x\phi(x)-\lambda(x-1)\phi(x).
+    \end{equation*}
+
+    Або після спрощення $\phi'' = \lambda \phi$. Доповнимо диференціальне рівняння другого порядку крайовими умовами: легко бачити що
+    \begin{equation*}
+        \phi(0) = \lambda \Int_0^0 y(0-1)\phi(y)\diff y + \lambda\Int_0^10(y-1)\phi(y)\diff y=0.
+    \end{equation*}
+
+    Аналогічно
+    \begin{equation*}
+        \phi(1) = \lambda\Int_0^1y(1-1)\phi(y)\diff y + \lambda\Int_1^11(y-1)\phi(y)\diff y=0.
+    \end{equation*}
+
+    Таким чином отримаємо задачу Штурма-Ліувілля:
+    \begin{system*}
+        & \phi'' = \lambda \phi, \quad 0 < x < 1, \\
+        & \phi(0) = \phi(1) = 0.
+    \end{system*}
+
+    Для знаходження власних чисел і власних функцій розглянемо можливі значення параметру $\lambda$:
+    \begin{enumerate}
+        \item $\lambda > 0$, $\phi(x)=c_1\sinh(\sqrt{\lambda}x)+c_2\cosh(\sqrt{\lambda}x)$. \medskip
+
+        Враховуючи граничні умови, маємо систему рівнянь 
+        \begin{system*}
+            & c_1 \cdot 0 + c_2 = 0, \\
+            & c_1 \sinh(\sqrt{\lambda}) + c_2 \cosh(\sqrt{\lambda}) = 0.
+        \end{system*}
+
+        Визначник цієї системи повинен дорівнювати нулю:
+        \begin{equation*}
+            D(\lambda) = \begin{vmatrix} 0 & 1 \\ \sinh(\sqrt{\lambda}) & \cosh(\sqrt{\lambda}) \end{vmatrix} = - \sinh(\sqrt{\lambda}) = 0.
+        \end{equation*}
+
+        Єдиним розв'язком цього рівняння є $\lambda = 0$, яке не задовольняє, бо $\lambda > 0$. Це означає, що система рівнянь має тривіальний розв'язок і будь-яке $\lambda > 0$ не є власним числом.
+
+        \item $\lambda = 0$, $\phi(x) = c_1 x + c_2$. З граничних умов маємо, що $c_1 = c_2 = 0$. Тобто $\lambda=0$ не є власним числом.
+
+        \item $\lambda < 0$, $\phi(x) = c_1\sin(\sqrt{-\lambda}x)+c_2\cos(\sqrt{-\lambda}x)$. \medskip
+
+        Враховуючи граничні умови, маємо систему рівнянь
+        \begin{system*}
+            & c_1 \cdot 0 + c_2 = 0, \\
+            & c_1 \sin(\sqrt{-\lambda}) + c_2 \cos(\sqrt{-\lambda}) = 0.
+        \end{system*}
+
+        Визначник цієї системи прирівняємо до нуля:
+        \begin{equation*}
+            D(\lambda) = \begin{vmatrix} 0 & 1 \\ \sin(\sqrt{-\lambda}) & \cos(\sqrt{-\lambda}) \end{vmatrix} = -\sin(\sqrt{-\lambda}) = 0.
+        \end{equation*}
+
+        Це рівняння має зліченну множину розв'язків
+        \begin{equation*}
+            \lambda_k = - (\pi k)^2, \quad k = 1, 2, \ldots
+        \end{equation*}
+        Система лінійних алгебраїчних рівнянь має розв'язок $c_2=0$, $c_1=c_1$. \medskip
+
+        Таким чином нормовані власні функції задачі Штурма-Ліувілля мають вигляд $\phi_k(x) = \sqrt{2} \sin(k \pi x)$. \medskip
+
+        Порахуємо коефіцієнти Фур'є:
+        \begin{equation*}
+            f_n = (f, \phi_n) = \sqrt{2} \int_0^1 x \sin(\pi nx) \diff x = \sqrt{2} \frac{(-1)^n}{\pi n}
+        \end{equation*}
+
+        Згідно до формули Шмідта розв'язок рівняння при $\lambda \ne \lambda_k$ має вигляд:
+        \begin{equation*}
+            \phi(x) = x - 2 \lambda \Sum_{k=1}^\infty \dfrac{(-1)^{k+1}\sin(\pi k x)}{((\pi k)^2+\lambda)\pi k}
+        \end{equation*}
+
+        При $\lambda = \lambda_k$ розв'язок не існує, оскільки не виконана умова ортогональності вільного члена до власної функції.
+    \end{enumerate}
+\end{solution}
