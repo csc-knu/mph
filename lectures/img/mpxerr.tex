@@ -1,0 +1,74 @@
+\gdef\mpxshipout{\shipout\hbox\bgroup
+  \setbox0=\hbox\bgroup}
+\gdef\stopmpxshipout{\egroup  \dimen0=\ht0 \advance\dimen0\dp0
+  \dimen1=\ht0 \dimen2=\dp0
+  \setbox0=\hbox\bgroup
+    \box0
+    \ifnum\dimen0>0 \vrule width1sp height\dimen1 depth\dimen2 
+    \else \vrule width1sp height1sp depth0sp\relax
+    \fi\egroup
+  \ht0=0pt \dp0=0pt \box0 \egroup}
+\mpxshipout% line 35 ./8.mp
+Ox%
+\stopmpxshipout
+\mpxshipout% line 38 ./8.mp
+Oy%
+\stopmpxshipout
+\mpxshipout% line 41 ./8.mp
+Oz%
+\stopmpxshipout
+\mpxshipout% line 51 ./8.mp
+$\sigma_x$%
+\stopmpxshipout
+\mpxshipout% line 53 ./8.mp
+$\tau_{x, y}$%
+\stopmpxshipout
+\mpxshipout% line 55 ./8.mp
+$\tau_{x, z}$%
+\stopmpxshipout
+\mpxshipout% line 72 ./8.mp
+$O$%
+\stopmpxshipout
+\mpxshipout% line 78 ./8.mp
+$-\vec{{\bf t}}^{(x)}$%
+\stopmpxshipout
+\mpxshipout% line 82 ./8.mp
+$-\vec{{\bf t}}^{(y)}$%
+\stopmpxshipout
+\mpxshipout% line 86 ./8.mp
+$-\vec{{\bf t}}^{(z)}$%
+\stopmpxshipout
+\mpxshipout% line 94 ./8.mp
+$A$%
+\stopmpxshipout
+\mpxshipout% line 95 ./8.mp
+x%
+\stopmpxshipout
+\mpxshipout% line 98 ./8.mp
+$B$%
+\stopmpxshipout
+\mpxshipout% line 99 ./8.mp
+y%
+\stopmpxshipout
+\mpxshipout% line 102 ./8.mp
+$C$%
+\stopmpxshipout
+\mpxshipout% line 103 ./8.mp
+z%
+\stopmpxshipout
+\mpxshipout% line 112 ./8.mp
+$\vec{\bf n}$%
+\stopmpxshipout
+\mpxshipout% line 120 ./8.mp
+$\vec{f}$%
+\stopmpxshipout
+\mpxshipout% line 132 ./8.mp
+Ox%
+\stopmpxshipout
+\mpxshipout% line 136 ./8.mp
+$x$%
+\stopmpxshipout
+\mpxshipout% line 140 ./8.mp
+$x + \mathrm{d} x$%
+\stopmpxshipout
+\end{document}

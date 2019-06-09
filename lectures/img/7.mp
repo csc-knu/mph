@@ -1,3 +1,6 @@
+prologues := 3;
+beginfig(1)
+
 u := 2cm;
 pair a, b, c, d, e, f, g[], h[];
 
@@ -44,3 +47,6 @@ drawarrow gh[1] -- (gh[1] + (0, dx));
 label.urt(btex $\vec n$ etex, gh[1]);
 drawarrow gh[2] -- (gh[2] - (0, dx));
 label.lrt(btex $\vec n$ etex, gh[2]);
+
+endfig;
+end
