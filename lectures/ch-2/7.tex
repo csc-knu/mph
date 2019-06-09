@@ -7,18 +7,131 @@
 \input{th.sty}
 
 \begin{document}
-
 \tableofcontents
 
 \setcounter{section}{2}
 
 \section{Побудова математичних моделей базових фізичних процесів}
 
+\setcounter{subsection}{-1}
+\subsection{Оператор \texorpdfstring{$\nabla$}{nabla} (лікбез математчиної теорії поля)}
+
+\begin{definition}[оператора \texorpdfstring{$\nabla$}{nabla} в \textorpdfstring{$\RR^2$}{R2}]
+    Для двовимірного евклідового простору $E^2$ у прямокутній декартовій системі координат \it{оператор набла} визначається наступним чином:
+    \begin{equation}
+    	\nabla = \frac{\partial}{\partial x} \vec{i} + \frac{\partial}{\partial y} \vec{j}
+    \end{equation}
+    де $\vec{i}$, $\vec{j}$ --- одиничні вектори по вісям $x$ і $y$ відповідно.
+\end{definition}
+
+\begin{definition}[оператора \texorpdfstring{$\nabla$}{nabla} в \textorpdfstring{$\RR^3$}{R3}]
+    Для тривимірного евклідового простору $E^3$ у прямокутній декартовій системі координат \it{оператор набла} визначається наступним чином:
+    \begin{equation}
+    	\nabla = \frac{\partial}{\partial x} \vec{i} + \frac{\partial}{\partial y} \vec{j} + \frac{\partial}{\partial z} \vec{k},
+    \end{equation}
+    де $\vec{i}$, $\vec{j}$, $\vec{k}$ --- одиничні вектори по вісям $x$, $y$ і $z$ відповідно.
+\end{definition}
+
+\subsubsection{Властивості оператора \texorpdfstring{$\nabla$}{nabla}}
+
+\begin{definition}[градієнту через оператор \texorpdfstring{$\nabla$}{nabla}]
+	Якщо ``скалярно помножити'' вектор $\nabla$ на скалярну функцію $f = f(x, y, z)$, то вийде вектор:
+	\begin{equation}
+    	\nabla f = \frac{\partial f}{\partial x} \vec{i} + \frac{\partial f}{\partial y} \vec{j} + \frac{\partial f}{\partial z} \vec{k} = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right) = \bf{grad} f,
+    \end{equation}
+    який є нічим іншим як \it{градієнтом} $\bf{grad} f$ функції $f$.
+\end{definition}
+
+\begin{definition}[дивергенції через оператор \texorpdfstring{$\nabla$}{nabla}]
+	Якщо ``скалярно помножити'' вектор $\nabla$ на вектор-функцію $\vec{F} = (f, g, h) = (f(x, y, z), g(x, y, z), h(x, y, z))$, то вийде скаляр:
+	\begin{equation}
+    	\nabla \cdot \vec{F} = \frac{\partial f}{\partial x} + \frac{\partial g}{\partial y} + \frac{\partial h}{\partial z} = {\bf div} \vec{F},
+    \end{equation}
+    який є нічим іншим як \it{дивергенцією} $\bf{div} \vec{F}$ функції $\vec{F}$.
+\end{definition}
+
+\begin{definition}[ротора через оператор \texorpdfstring{$\nabla$}{nabla}]
+	Якщо ``векторно помножити'' вектор $\nabla$ на вектор-функцію $\vec{F} = (f, g, h) = (f(x, y, z), g(x, y, z), h(x, y, z))$, то вийде вектор:
+	\begin{equation}
+    	\nabla \times \vec{F} = \begin{vmatrix}
+    		\vec{i} & \vec{j} & \vec{k} \\
+    		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+    		f & g & h
+		\end{vmatrix} =
+		\left( \frac{\partial h}{\partial y} - \frac{\partial g}{\partial z} \right) \vec{i} + \left( \frac{\partial f}{\partial z} - \frac{\partial h}{\partial x} \right) \vec{j} + \left( \frac{\partial g}{\partial x} - \frac{\partial f}{\partial y} \right) \vec{k} = \bf{rot} \vec{F}.
+    \end{equation}
+    який є нічим іншим як \it{ротором} $\bf{rot} \vec{F}$ функції $\vec{F}$.
+\end{definition}
+
+\begin{definition}[оператора Лапласа через оператор \texorpdfstring{$\nabla$}{nabla}]
+	Склаярний добуток $\nabla \cdot \nabla = \nabla^2$ є ніщо янше як оператор Лапласа, який також позначається $\Delta$. \medskip
+
+	У декартових координатах оператор Лапласа має вигляд
+	\begin{equation}
+    	\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}.
+    \end{equation}
+\end{definition}
+
+\subsubsection{Оператори другого порядку}
+
+Оскільки існують різні способи множення веткорів і скалярів, з допомогою оператор набла можна записати різі види ``диференціювання''. так, комбінування склаярних і векторних добутків дає 7 різних варіантів ``похідних'' другого порядку:
+
+\begin{align}
+	& \bf{div} (\bf{grad} f) = \nabla \cdot (\nabla f) \\
+	& \bf{rot} (\bf{grad} f) = \nabla \times (\nabla f) \\
+	& \Delta f = \nabla^2 f) \\
+	& \bf{grad} (\bf{div} \vec{F}) = \nabla (\nabla \cdot \vec{F}) \\
+	& \bf{div} (\bf{rot} \vec{F}) = \nabla \cdot (\nabla \times \vec{F}) \\
+	& \bf{rot} (\bf{rot} \vec{F}) = \nabla \times (\nabla \times \vec{F}) \\
+	& \Delta \vec{F} = \nabla^2 \vec{F}
+\end{align}
+
+Для достатньо гладких полів (двічі неперервно диференційовних) ці оператори не незалежні. Два з них тотожньо дорівнюють нулю:
+
+\begin{gather}
+	\bf{rot} (\bf{grad} f) = \nabla \times (\nabla f) = (\nabla \times \nabla) f = 0 \\
+	\bf{div} (\bf{rot} \vec{F}) = \nabla \cdot (\nabla \times \vec{F}) = (\nabla \times \nabla) \cdot \vec{F} = 0.
+\end{gather}
+
+Два завжди рівні:
+
+\begin{equation}
+	\bf{div} (\bf{grad} f) = \nabla \cdot (\nabla f) = (\nabla \cdot \navla) f = \nabla^2 f = \Delta f.
+\end{equation}
+
+А решта три пов'язані співвідношенням:
+
+\begin{equation}
+	\nabla \times (\nabla \vec {F})= \nabla (\nabla \cdot \vec{F}) - \nabla^2 \vec{F}.
+\end{equation}
+
+І ще один може бути виражене через тензорний добуток векторів:
+
+\begin{equation}
+	\nabla (\nabla \cdot \vec{F}) = \nabla \cdot (\nabla \otimes \vec {F})
+\end{equation}
+
+\subsusection{Приклади}
+
+\begin{example}
+	Нехай $z = z(x, y) = x y$, тоді
+	\begin{equation}
+		\nabla z = \frac{\partial z}{\partial x} \vec{i} + \frac{\partial z}{\partial y} \vec{j} = y \vec{i} + x \vec{j}.
+	\end{equation}
+\end{example}
+
+\begin{example}
+	Нехай $z = z(x, y) = 30 y x^3$, тоді
+	\begin{equation}
+		\nabla z = \frac{\partial z}{\partial x} \vec{i} + \frac{\partial z}{\partial y} \vec{j} = 90 y x^2 \vec{i} + 30 x^3 \vec{j}.
+	\end{equation}
+\end{example}
+
 \subsection{Математичні моделі розповсюдження тепла та дифузії речовини}
 
 Для запису математичної моделі введемо величини:
 \begin{itemize}
-	\item $x = (x_1, x_2, x_3) \in G \subset E^3$ об'єм тіла, $t$ --- час;
+	\item $x = (x_1, x_2, x_3) \in G \subset R^3$ об'єм тіла, $t$ --- час;
 	\item $u(x, t)$ --- температура в точці $x$ у момент часу $t$;
 	\item $c(x)$ --- теплоємність (кількість тепла, яка необхідна, для підняти температуру одиниці маси тіла на один градус);
 	\item $k(x)$ --- теплопровідність речовини (здатність проводити тепло);
@@ -81,7 +194,7 @@
 	\end{multline}
 \end{theorem}
 
-Для перетворення першого інтегралу правої частини останньої рівності застосуємо формулу Остроградського Гауса,  
+Для перетворення першого інтегралу правої частини останньої рівності застосуємо формулу Остроградського Гауса, 
 \begin{equation}
 	\Iint_S \langle A, \vec n \rangle \diff S = \Iiint_G \Big(\nabla \cdot \vec A\Big) \diff G,
 \end{equation}
@@ -92,15 +205,15 @@
 
 В результаті отримаємо:
 \begin{multline}
-	\Int_{t_1}^{t_2} \Iiint_G \left( c(x) \cdot \rho(x) \cdot \frac{\partial u(x, t)}{\partial t} \right) \diff G \diff t = \\
-	= \Int_{t_1}^{t_2} \Iiint_G \left( \nabla \cdot (k(x) \cdot \nabla u) \right) \diff G \diff t + \Int_{t_1}^{t_2} \Iiint_G f(x, t) \diff G \diff t.
+	\Int_{t_1}^{t_2} \Iiint_G \left( c(x)\rho(x) \frac{\partial u(x, t)}{\partial t} \right) \diff G \diff t = \\
+	= \Int_{t_1}^{t_2} \Iiint_G \left( \nabla \cdot (k(x) \nabla u) \right) \diff G \diff t + \Int_{t_1}^{t_2} \Iiint_G f(x, t) \diff G \diff t.
 \end{multline}
 
-Враховуючи, що остання рівність отримана для довільного об'єму $G$ та довільних моментів часу  , можна зробити висновок, що вона має місце тоді і лише тоді, коли має місце рівність підінтегральних виразів:
-\begin{multline}
-	c(x) \cdot \rho(x) \cdot \frac{\partial u(x, t)}{\partial t} \cdot \diff G \cdot \diff t = \\
-	= \nabla \cdot (k(x) \cdot \nabla u) \cdot \diff G \cdot \diff t + f(x, t) \cdot \diff G \cdot \diff t,
-\end{multline}
+Враховуючи, що остання рівність отримана для довільного об'єму $G$ та довільних моментів часу, можна зробити висновок, що вона має місце тоді і лише тоді, коли має місце рівність підінтегральних виразів:
+\begin{equation}
+	\label{eq:thermal-energy-is-const}
+	c(x) \rho(x) \frac{\partial u(x, t)}{\partial t} =\nabla\cdot (k(x) \nabla u) + f(x, t),
+\end{equation}
 де $x \in G$, $t > 0$. \medskip
 
 Це рівняння повинно виконуватись для кожної точки $x$ реального фізичного об'єму тіла (збережемо для нього позначення $G$, а для його поверхні позначення $S$), та для кожного моменту часу $t$. \medskip
@@ -113,7 +226,7 @@
 	\begin{definition}[умови Діріхле]
 		Крайовою умовою першого роду, або \it{умовою Діріхле} називають співвідношення
 		\begin{equation}
-			\left. u(x, t) \right|_{x \in S} = v(x, t).		  							
+			\left. u(x, t) \right|_{x \in S} = v(x, t).		 							
 		\end{equation}
 	\end{definition}
 
@@ -122,7 +235,7 @@
 	\begin{definition}[умови Неймана]
 		Крайовою умовою другого роду, або \it{умовою Неймана} називають співвідношення
 		\begin{equation}
-			\left. k(x) \cdot \frac{\partial u(x, t)}{\partial \vec n} \right|_{x \in S} = q(x, t).
+			\left. k(x) \frac{\partial u(x, t)}{\partial \vec n} \right|_{x \in S} = q(x, t).
 		\end{equation}
 	\end{definition}
 
@@ -130,7 +243,7 @@
 	\begin{definition}[умови Ньютона]
 		Крайовою умовою третього роду, або \it{умовою Ньютона} називають співвідношення
 		\begin{equation}
-			\left. k(x) \cdot \frac{\partial u(x, t)}{\partial \vec n} \right|_{x \in S} = \left. \alpha(x, t) \cdot (v(x, t) - u(x, t)) \right|_{x \in S},
+			\left. k(x) \frac{\partial u(x, t)}{\partial \vec n} \right|_{x \in S} = \left. \alpha(x, t) (v(x, t) - u(x, t)) \right|_{x \in S},
 		\end{equation}
 		де $\alpha(x, t) > 0$ --- коефіцієнт теплообміну, $v(x, t)$ --- температура оточуючого середовища.
 	\end{definition}
@@ -152,7 +265,7 @@
 \subsubsection{Частинні випадки рівняння теплопровідності}
 
 \begin{remark}
-	У випадку, коли коефіцієнт теплопровідності та інтенсивність теплових джерел залежить не лише від точки простору і часу, а і від самої температури, тобто $k = k(u, x, t)$, $f = f(u, x, t)$, лінійне диференціальне рівняння вище стає квазілінійним, тобто лінійним відносно старших похідних.
+	У випадку, коли коефіцієнт теплопровідності та інтенсивність теплових джерел залежить не лише від точки простору і часу, а і від самої температури, тобто $k = k(u, x, t)$, $f = f(u, x, t)$, лінійне диференціальне рівняння \eqref{eq:thermal-energy-is-const} стає квазілінійним, тобто лінійним відносно старших похідних.
 \end{remark}
 
 Окрім загального вигляду рівняння теплопровідності, у практичних випадках часто використовуються частинні випадки рівняння. \medskip
@@ -161,11 +274,11 @@
 \begin{itemize}
 	\item У пластині:
 	\begin{equation}
-		\nabla \cdot (k(x) \cdot \nabla u(x, t)) = \frac{\partial}{\partial x_1} \left( k(x) \cdot \frac{\partial u(x, t)}{\partial x_1} \right) + \frac{\partial}{\partial x_2} \left( k(x) \cdot \frac{\partial u(x, t)}{\partial x_2} \right).
+		\nabla \cdot (k(x) \nabla u(x, t)) = \frac{\partial}{\partial x_1} \left( k(x) \frac{\partial u(x, t)}{\partial x_1} \right) + \frac{\partial}{\partial x_2} \left( k(x) \frac{\partial u(x, t)}{\partial x_2} \right).
 	\end{equation}
 	\item У стрижні:
 	\begin{equation}
-		\nabla \cdot (k(x) \cdot \nabla u(x, t)) = \frac{\partial}{\partial x} \left( k(x) \cdot \frac{\partial u(x, t)}{\partial x} \right).
+		\nabla \cdot (k(x) \nabla u(x, t)) = \frac{\partial}{\partial x} \left( k(x) \frac{\partial u(x, t)}{\partial x} \right).
 	\end{equation}
 \end{itemize}
 
@@ -178,8 +291,8 @@
 	a^2 = \frac{k_0}{c_0 \rho_0} > 0,
 \end{equation}
 і було введено
-\begin{definition}[оператора Лапласа]
-	\it{Оператором Лапласа} називається функціонал $\Delta$ що діє на функцію $u(x, t)$ наступним чином:
+\begin{definition}[оператор Лапласа]
+	\it{Оператором Лапласа} називається диференціальний оператор $\Delta$ що діє на функцію $u(x, t)$ по векторній змінній $x$ наступним чином:
 	\begin{equation}
 		\Delta u(x, t) = \nabla \cdot (\nabla u(x, t)) = \Sum_{i = 1}^n \frac{\partial^2 u(x, t)}{\partial x_i^2}.
 	\end{equation}
@@ -188,7 +301,7 @@
 \begin{remark}
 	Зокрема одновимірне рівняння теплопровідності має вигляд:
 	\begin{equation}
-		\frac{\partial u(x, t)}{\partial t}  = a^2 \cdot \frac{\partial^2 u(x, t)}{\partial x^2} + \frac{1}{c_0 \rho_0} \cdot f(x, t).
+		\frac{\partial u(x, t)}{\partial t} = a^2 \frac{\partial^2 u(x, t)}{\partial x^2} + \frac{1}{c_0 \rho_0} f(x, t).
 	\end{equation}
 \end{remark}
 
@@ -212,9 +325,9 @@
 	\begin{tabular}{| C{3.75cm} | C{3.75cm} | L{4.5cm} |}
 		\hline
 		Дифузія & Теплопровідність & Пояснення \\ \hline
-		$D \cdot \dfrac{\partial u}{\partial \vec n} \cdot \diff S$ & $k \cdot \dfrac{\partial u}{\partial \vec n} \cdot \diff S$ & Закон Нерста, описує кількість речовини, яка поступає всередину тіла через його поверхню в одиницю часу за рахунок нерівномірності концентрації. \\ \hline
+		$D \dfrac{\partial u}{\partial \vec n} \diff S$ & $k \dfrac{\partial u}{\partial \vec n} \diff S$ & Закон Нерста, описує кількість речовини, яка поступає всередину тіла через його поверхню в одиницю часу за рахунок нерівномірності концентрації. \\ \hline
 		$f(x, t)$ & $f(x, t)$ & Інтенсивність джерела речовини в середині об'єму. \\ \hline
- 		$D \cdot \dfrac{\partial u}{\partial \vec n} = \alpha \left. (v - u)\right|_S$ & $k \cdot \dfrac{\partial u}{\partial \vec n} = \alpha \left. (v - u)\right|_S$ & Кількість речовини, яка поступає  через поверхню $S$ тіла за законом, аналогічним закону Ньютона,
+ 		$D \dfrac{\partial u}{\partial \vec n} = \alpha \left. (v - u)\right|_S$ & $k \dfrac{\partial u}{\partial \vec n} = \alpha \left. (v - u)\right|_S$ & Кількість речовини, яка поступає через поверхню $S$ тіла за законом, аналогічним закону Ньютона,
  		$v$ --- відома концентрація речовини в тому чи іншому середовищі; $\alpha$ --- коефіцієнт проникності поверхні. \\ \hline
  	\end{tabular}
 \end{table}
@@ -228,7 +341,7 @@
 
 Кількість речовини, яка проходить через всю поверхню $S$ за час від $t_1 \to t_2$:
 \begin{equation}
-	Q_2(t_1, t_2) = \Int_{t_1}^{t_2} \Iint_S \left( D(x, t) \cdot \frac{\partial u}{\partial \vec n} \right) \diff S \diff t.
+	Q_2(t_1, t_2) = \Int_{t_1}^{t_2} \Iint_S \left( D(x, t) \frac{\partial u}{\partial \vec n} \right) \diff S \diff t.
 \end{equation}
 
 Кількість речовини, яка поступає за рахунок джерел речовини в об'ємі $G$ за час від $t_1$ до $t_2$:
@@ -237,24 +350,24 @@
 \end{equation}
 
 Отже, отримали 
-\begin{theorem}[закон збереження маси]
+\begin{law*}[збереження маси]
 	Вионується співвідношення:
 	\begin{equation}
 		\Delta Q_1(t_1, t_2) = Q_2(t_1, t_2) + Q_3(t_1, t_2).
 	\end{equation}
-\end{theorem}
+\end{law*}
 а також
-\begin{theorem}[інтегралньий закон збереження маси]
+\begin{law*}[збереження маси в інтегральному вигляді]
 	Вионується співвідношення:
 	\begin{multline}
 		\Iiint_G c(x) (u(x, t_2) - u(x, t_1)) \diff G = \\
-		= \Int_{t_1}^{t_2} \Iint_S \left( D(x, t) \cdot \frac{\partial u(x, t)}{\partial \vec n} \right) \diff S \diff t + \Int_{t_1}^{t_2} \Iiint_G f(x, t) \diff G \diff t.
+		= \Int_{t_1}^{t_2} \Iint_S \left( D(x, t) \frac{\partial u(x, t)}{\partial \vec n} \right) \diff S \diff t + \Int_{t_1}^{t_2} \Iiint_G f(x, t) \diff G \diff t.
 	\end{multline}
-\end{theorem}
+\end{law*}
 
 Після застосування формули Остроградського-Гауса та прирівнювання підінтегральних виразів отримаємо рівняння дифузії речовини у вигляді:
 \begin{equation}
-	c(x) \cdot \frac{\partial u}{\partial t} = \nabla \cdot (D(x, t) \cdot \nabla u) + f(x, t),
+	c(x) \frac{\partial u}{\partial t} = \nabla \cdot (D(x, t) \nabla u) + f(x, t),
 \end{equation}
 де $x \in G$, $t > 0$. \medskip
 
@@ -272,7 +385,7 @@
 
 	\item Якщо на границі відбувається обмін речовиною з оточуючим середовищем через напівпроникливу мембрану за законом аналогічним закону Ньютона:
 	\begin{equation}
-		\left. D \cdot \frac{\partial u(x, t)}{\partial \vec n} \right|_{x \in S} = \alpha \cdot \left. ( v(x, t) - u(x, t) ) \right|_{x \in S};
+		\left. D(x,t) \frac{\partial u(x, t)}{\partial \vec n} \right|_{x \in S} = \alpha(x,t) \left. ( v(x, t) - u(x, t) ) \right|_{x \in S};
 	\end{equation}
 
 	\item Якщо в початковий момент часу відома концентрація речовини:
@@ -284,15 +397,14 @@
 \begin{remark}
 	У випадку, коли коефіцієнти рівняння та граничних умов не залежать від часу $t$, розв'язок рівняння не залежить від часу в результаті отримаємо стаціонарне рівняння теплопровідності та дифузії:
 	\begin{align}
-		\nabla \cdot (k(x) \cdot \nabla u(x, t)) &= -f(x), \\
-		\nabla \cdot (D(x) \cdot \nabla u(x, t)) &= -f(x).
+		\nabla \cdot (k(x) \nabla u(x)) &= -f(x), \\
+		\nabla \cdot (D(x) \nabla u(x)) &= -f(x).
 	\end{align}
 \end{remark}
 
 \subsubsection{Задача Стефана (задача про остигання та затвердіння розплавленого металу)}
 
-
-Вертикальний циліндричний посуд заповнений розплавленим металом, який знаходиться при заданій температурі $U_0 > U_{melt}$. Починаючи з моменту часу $t_0$ вільна поверхня розплавленого металу підтримується при постійній температурі $U_1 < U_{melt}$. Поставимо задачу про остудження та затвердіння металу, якщо дно і бокова поверхня посуду теплоізольовані. Термічними деформаціями об'єму будемо нехтувати тобто процес розповсюдження тепла відбувається лише вздовж вісі циліндру. Введемо позначення: 
+Вертикальний циліндричний посуд заповнений розплавленим металом, який знаходиться при заданій температурі $U_0 > U_{melt}$ - температура плавління металу. Починаючи з моменту часу $t_0$ вільна поверхня розплавленого металу підтримується при постійній температурі $U_1 < U_{melt}$. Поставимо задачу про остудження та затвердіння металу, якщо дно і бокова поверхня посуду теплоізольовані. Термічними деформаціями об'єму будемо нехтувати тобто процес розповсюдження тепла відбувається лише вздовж вісі циліндру. Введемо позначення: 
 \begin{itemize}
  	\item $\rho_s$, $\rho_l$ --- щільність твердої (eng. \it{solid}) та рідкої (eng. \it{liquid}) фази металу;
 	\item $c_s$, $c_l$ --- теплоємність твердої та рідкої фази металу;
@@ -306,7 +418,7 @@
 Деякі з введених позначень краще видно на наступній ілюстрації:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.5\textwidth]{img/7-1.png}
+	\includegraphics[width=.5\textwidth]{{../img/7-1}.png}
 \end{figure}
 
 Отримаємо рівняння теплового балансу для нескінченно малого об'єму розплавленого металу, який знаходиться між перерізами $x$ та $x + \Delta x$ за проміжок часу від $t$ до $t + \Delta t$. \medskip
@@ -328,14 +440,14 @@
 
 Ця зміна може відбуватися за рахунок теплових потоків, через перерізи $x$ та $x + \Delta x$. Підрахуємо кількість тепла, яка поступає всередину тіла через переріз $x + \Delta x$ за час $\Delta t$:
 \begin{equation}
-	\diff Q(x + \Delta x) = k_l \cdot \frac{\partial u(x + \Delta x, t)}{\partial \vec n} \cdot S \cdot \Delta t k_l \cdot \frac{\partial u(x + \Delta x, t)}{\partial x} \cdot S \cdot \Delta t
+	\diff Q(x + \Delta x) = k_l \frac{\partial u(x + \Delta x, t)}{\partial \vec n} S \Delta t= k_l \frac{\partial u(x + \Delta x, t)}{\partial x} S \Delta t
 \end{equation} 
-  
+ 
 Напрям нормалі $\vec n$ в цьому перерізі співпадає з напрямом вісі $Ox$. \medskip
 
 Кількість тепла, яка поступає всередину тіла через переріз $x$ за час $\Delta t$ можна записати у вигляді:
 \begin{equation}
-	\diff Q(x) = k_l \cdot \frac{\partial u(x, t)}{\partial \vec n} \cdot S \cdot \Delta t = - k_l \cdot \frac{\partial u(x + \Delta x, t)}{\partial x} \cdot S \cdot \Delta t
+	\diff Q(x) = k_l \frac{\partial u(x, t)}{\partial \vec n} S \Delta t = - k_l \frac{\partial u(x, t)}{\partial x} S \Delta t
 \end{equation} 
 
 Таким чином можна скласти рівняння теплового балансу:
@@ -345,30 +457,33 @@
  
 Або після підстановки відповідних значень поділених на $\Delta x \cdot \Delta t \cdot S$ отримаємо:
 \begin{equation}
-	\frac{c_l \cdot \rho_l \cdot (u(x, t + \Delta t) - u(x, t))}{\Delta t} = k_l \cdot \left( \frac{\partial u(x + \Delta x, t)}{\partial x} - \frac{\partial u(x, t)}{\partial x} \right) \cdot \frac{1}{\Delta x}.
+	\frac{c_l \rho_l (u(x, t + \Delta t) - u(x, t))}{\Delta t} = k_l \left( \frac{\partial u(x + \Delta x, t)}{\partial x} - \frac{\partial u(x, t)}{\partial x} \right) \frac{1}{\Delta x}.
 \end{equation}
-  
+ 
 Після граничного переходу коли $\Delta x$ та $\Delta t$ прямують до нуля, отримаємо диференціальне рівняння:
 \begin{equation}
-	c_l \cdot \rho_l \cdot \frac{\partial u(x, t)}{\partial t} = k_l \cdot \frac{\partial^2 u(x, t)}{\partial x^2},
+	\label{eq:liquid-phase-diff-eq}
+	c_l \rho_l \frac{\partial u(x, t)}{\partial t} = k_l \frac{\partial^2 u(x, t)}{\partial x^2},
 \end{equation}
 де $\xi(t) < x < L$, $t > t_0$. \medskip
 
 Аналогічні міркування дозволяють отримати рівняння для твердої фази:
 \begin{equation}
-	c_s \cdot \rho_s \cdot \frac{\partial u(x, t)}{\partial t} = k_s \cdot \frac{\partial^2 u(x, t)}{\partial x^2},
+	\label{eq:solid-phase-diff-eq}
+	c_s \rho_s \frac{\partial u(x, t)}{\partial t} = k_s \frac{\partial^2 u(x, t)}{\partial x^2},
 \end{equation}
 де $0 < x < \xi(t)$, $t > t_0$. \medskip
 
 \begin{definition}[співвідношення на границі розділу фаз]
 	Температура при переході через границю розділу фаз повинна змінюватись неперервно і співпадати з температурою плавлення металу, тобто повинно виконуватись настуну співвідношення:
 	\begin{equation}
-		u(\xi(t) - 0, t) = t(\xi(t) + 0, t) = U_{melt},
+		\label{eq:phase-border-conditions}
+		u(\xi(t) - 0, t) = u(\xi(t) + 0, t) = U_{melt},
 	\end{equation}
 	яке називається \it{співвідношенням на границі розділу фаз}.
 \end{definition}
 
-Отримаємо рівняння теплового балансу для елементарного об'єму обмеженого перерізами $\xi(t) - \Delta x$ та  $\xi(t) + \Delta x$. \medskip
+Отримаємо рівняння теплового балансу для елементарного об'єму обмеженого перерізами $\xi(t) - \Delta x$ та $\xi(t) + \Delta x$. \medskip
 
 За час $\Delta t$ затвердіє об'єм металу рівний
 \begin{equation}
@@ -389,47 +504,52 @@
 
 Рівняння теплового балансу для елементарного об'єму обмеженого перерізами $\xi(t) - \Delta x$ та $\xi(t) + \Delta x$ можна записати у вигляді:
 \begin{multline}
-	(\xi(t + \Delta t) - \xi(t)) \cdot S \cdot \lambda \cdot \rho_s = \\
-	= \Delta t \cdot S \cdot \left( k_l \cdot \frac{\partial u(\xi(t) + \Delta x, t)}{\partial x} - k_s \cdot \frac{\partial u(\xi(t) - \Delta x, t)}{\partial x}\right)
+	(\xi(t + \Delta t) - \xi(t)) S \lambda \rho_s = \\
+	= \Delta t S \left( k_l \frac{\partial u(\xi(t) + \Delta x, t)}{\partial x} - k_s \frac{\partial u(\xi(t) - \Delta x, t)}{\partial x}\right)
 \end{multline}
 
 Поділивши обидві частини на $\Delta t$, скоротивши на $S$ і спрямувавши $\Delta x$, $\Delta t$ до нуля отримаємо співвідношення:
 \begin{equation}
-	\lambda \cdot \rho_s \cdot \frac{\partial \xi(t)}{\partial t} = k_l \cdot \frac{\partial u(\xi(t) + \Delta x, t)}{\partial x} - k_s \cdot \frac{\partial u(\xi(t) - \Delta x, t)}{\partial x}.
+	\lambda \rho_s \frac{\partial \xi(t)}{\partial t} = k_l \frac{\partial u(\xi(t) + 0, t)}{\partial x} - k_s \frac{\partial u(\xi(t) - 0, t)}{\partial x}.
 \end{equation}
 
 \begin{definition}[внутрішніх граничних умов (умов спряження)]
 	Останню умову 
 	\begin{equation}
-		\lambda \cdot \rho_s \cdot \frac{\partial \xi(t)}{\partial t} = k_l \cdot \frac{\partial u(\xi(t) + \Delta x, t)}{\partial x} - k_s \cdot \frac{\partial u(\xi(t) - \Delta x, t)}{\partial x}.
+		\label{eq:conjugate-conditions}
+		\lambda \rho_s \frac{\partial \xi(t)}{\partial t} = k_l \frac{\partial u(\xi(t) + 0, t)}{\partial x} - k_s \frac{\partial u(\xi(t) - 0, t)}{\partial x}.
 	\end{equation}
-	разом із співвідношенням на границі розділу фаз називають \it{внутрішніми граничними умовами}, або \it{умовами спряження}.
+	разом із співвідношенням \eqref{eq:phase-border-conditions} на границі розділу фаз називають \it{внутрішніми граничними умовами}, або \it{умовами спряження}.
 \end{definition}
 
 Запишемо початкові умови та умови на верхній та нижній основі циліндру:
 \begin{itemize}
 	\item В початковий момент часу задана температура розплавленого металу:
 	\begin{equation}
+		\label{eq:start-time-temp}
 		u(x, t_0) = U_0, \quad 0 < x < L.
 	\end{equation}
 	
 	\item На верхній основі задана температура:
 	\begin{equation}
+		\label{eq:upper-cylinder-border-temp}
 		u(0, t) = U_1, \quad t > t_0.
 	\end{equation}
 
 	\item Нижня основа теплоізольована, тобто тепловий потік, який поступає всередину тіла дорівнює нулю:
 	\begin{equation}
+		\label{eq:lower-cylinder-border-temp-flow}
 		\frac{\partial u(L, t)}{\partial x} = 0, \quad t > t_0.
 	\end{equation}
 	
 	\item В початковий момент часу положення границі фазового переходу співпадає з верхньою основою циліндру: 
 	\begin{equation}
-		\xi(0) = 0.
+		\label{eq:start-time-xi}
+		\xi(t_0) = 0.
 	\end{equation}
 \end{itemize}
 
-Таким чином до моменту часу, коли весь метал затвердіє постановка задачі Стефана включає в себе диференційні рівняння, умови спряження, початкові умови та граничні умови. \medskip
+Таким чином, до моменту часу, коли весь метал затвердіє постановка задачі Стефана включає в себе диференційні рівняння \eqref{eq:liquid-phase-diff-eq}, \eqref{eq:solid-phase-diff-eq}, співвідношення на границі розділу фаз \eqref{eq:phase-border-conditions}, умови спряження \eqref{eq:conjugate-conditions}, початкові умови \eqref{eq:start-time-temp}, \eqref{eq:start-time-xi} та граничні умови \eqref{eq:upper-cylinder-border-temp}, \eqref{eq:lower-cylinder-border-temp-flow}. \medskip
 
 \begin{remark}
 	Після повного затвердіння металу, тобто коли $\xi(t_1) = L$, процес буде описуватись звичайним рівнянням теплообміну для $t > t_1$ з граничними умовами
