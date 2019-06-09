@@ -1,10 +1,10 @@
-\input{univ.sty}
+\input{../univ.sty}
 
 \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
 \author{Скибицький Нікіта}
 \date{\today}
 
-\input{th.sty}
+\input{../th.sty}
 
 \begin{document}
 
@@ -120,12 +120,12 @@
 \end{equation}
 
 Після скорочення на $S$ отримаємо
-\begin{theorem}[векторна форма закону рівноваги елемента поверхні]
+\begin{law*}[рівноваги елемента поверхні у векторній формі]
 	Виконується співвідношення:
 	\begin{equation}
 		\vec f = \bf{t}^{(x)} \cdot \cos ( \vec n, x) + \bf{t}^{(y)} \cdot \cos ( \vec n, y) + \bf{t}^{(z)} \cdot \cos ( \vec n, z).
 	\end{equation}
-\end{theorem}
+\end{law*}
 
 Запишемо закон рівноваги елемента поверхні в скалярному вигляді:
 \begin{align}
@@ -160,21 +160,21 @@
 	\Iint_S ( \bf{t}^{(x)} \cdot \cos ( \vec n, x ) + \bf{t}^{(y)} \cdot \cos(\vec n, y) + \bf{t}^{(z)} \cdot \cos (\vec n, z) ) \diff S.
 \end{equation}
 
-\begin{theorem}[векторний запис закону рівноваги елементу об'єму]
+\begin{law*}[рівноваги елементу об'єму у векторній формі]
 	Для того щоб тіло знаходилося в стані спокою або рухалось рівномірно і прямолінійно, рівнодіюча об'ємної та поверхневої сил повинна дорівнювати нулю:
 	\begin{multline}
 		\Iint_S \big( \bf{t}^{(x)} \cos(\vec n, x) + \bf{t}^{(y)} \cos(\vec n, y) + \bf{t}^{(z)} \cos(\vec n, z) \big) \diff S + \\ 
 		+ \Iiint_G \begin{pmatrix} X \\ Y \\ Z \end{pmatrix} \diff G = 0.
 	\end{multline}
-\end{theorem}
+\end{law*}
 
-\begin{theorem}[скалярний запис закону рівноваги елементу об'єму]
+\begin{law*}[рівноваги елементу об'єму у скалярній формі]
 	\begin{system}
 		\Iint_S \left( \sigma_x \cos(\vec n, x) + \tau_{yx} \cos(\vec n, y) + \tau_{zx} \cos(\vec n, z)\right) \diff S + \Iiint_G X \diff G &= 0, \\
 		\Iint_S \left( \tau_{xy} \cos(\vec n, x) + \sigma_y \cos(\vec n, y) + \tau_{zy} \cos(\vec n, z)\right) \diff S + \Iiint_G Y \diff G &= 0, \\
 		\Iint_S \left( \tau_{xz} \cos(\vec n, x) + \tau_{yz} \cos(\vec n, y) + \sigma_z \cos(\vec n, z)\right) \diff S + \Iiint_G Z \diff G &= 0.
 	\end{system}
-\end{theorem}
+\end{law*}
 
 \begin{remark}
 	Додатковою умовою рівноважного положення тіла окрім закону рівноваги елементу об'єму є виконання закону збереження моментів сил з якого випливає симетричність матриці \eqref{eq:3.2.3}:
@@ -196,14 +196,14 @@
 --- вектор зовнішньої нормалі до поверхні. \medskip
 
 Враховуючи формулу Остроградського-Гауса, кожен поверхневий інтеграл перетворимо в об'ємний, в результаті отримаємо
-\begin{theorem}[диференціальна форма запису закону рівноваги елементу об'єму]
+\begin{law*}[рівноваги елементу об'єму у диференційльній формі]
 	Виконуються співвідношення:
 	\begin{system}
 		\Iiint_G \left( \nabla \cdot \bf{t}^{(x)} + X \right) \diff G &= 0, \\
 		\Iiint_G \left( \nabla \cdot \bf{t}^{(y)} + Y \right) \diff G &= 0, \\
 		\Iiint_G \left( \nabla \cdot \bf{t}^{(z)} + Z \right) \diff G &= 0.
 	\end{system}
-\end{theorem}
+\end{law*}
 
 \begin{definition}[тензора напружень]
 	В подальшому симетричну матрицю \eqref{eq:3.2.3} будемо називати \it{тензором напружень}.
@@ -247,12 +247,12 @@
 \end{equation}
 
 Отже, для довільної компоненти тензора напружень має місце 
-\begin{theorem}[формула переходу до нової системи координат]
+\begin{th_formula*}[переходу до нової системи координат]
 	Виконуються співвідношення вигляду
 	\begin{equation}
 		\tau_{\alpha \beta} = \Sum_{a, b \in \{x, y, z\}} \tau_{a b} \cos (\alpha, a) \cos (\beta, b).
 	\end{equation}
-\end{theorem}
+\end{th_formula*}
 
 \begin{remark}
 	Тут використані позначення $\tau_{\alpha \alpha} = \sigma_\alpha$, $\tau_{a a} = \sigma_a$.
@@ -341,7 +341,7 @@
 	Приклавши силу в напрямку вісі $Ox$, точка $x$ змістилася і зайняла положення $x + U(x, \cdot, \cdot)$; точка $x + \diff x$ теж змістилася і зайняла положення $(x + \diff x) + U(x + \diff x, \cdot, \cdot)$:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[]{{../img/8-3}.mps}
+		\includegraphics[width=.8\textwidth]{{../img/8-3}.mps}
 	\end{figure}
 
 	Порахуємо відносне подовження відрізка $\diff x$ після прикладення до нього напруження:
@@ -366,7 +366,7 @@
 	Розглянемо фізичну модель зрізуючих деформацій. Нехай відрізки $AB$ та $CD$ довжини $\diff x$ та $\diff y$  відповідно після дії прикладених сил зайняли положення $A' B'$ та $C' D'$ відповідно:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[]{{../img/8-4}.mps}
+		\includegraphics[width=.7\textwidth]{{../img/8-4}.mps}
 	\end{figure}
 
 	Точка $A$ змістилася на відстань $V(x, \cdot, \cdot)$, а точка $B$ змістилася на відстань $V(x + \diff x, \cdot, \cdot)$. \medskip
@@ -467,12 +467,12 @@
 \end{equation}
 
 Отже у загальному вигляді доведена
-\begin{theorem}[формула перетворення тензора деформацій]
+\begin{th_formula*}[перетворення тензора деформацій]
 	Виконуються співвідношення вигляду:
 	\begin{equation}
 		\gamma_{\alpha \beta} = \Sum_{a, b \in \{x, y, z\}} \gamma_{a b} \cos (\alpha, a) \cos(\beta b),
 	\end{equation}
 	де $\alpha, \beta \in \{\xi, \eta, \zeta\}$.
-\end{theorem}
+\end{th_formula*}
 
 \end{document}
