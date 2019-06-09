@@ -1,10 +1,10 @@
-\input{univ.sty}
+\input{../univ.sty}
 
 \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
 \author{Скибицький Нікіта}
 \date{\today}
 
-\input{th.sty}
+\input{../th.sty}
 
 \begin{document}
 \tableofcontents
@@ -16,7 +16,7 @@
 \setcounter{subsection}{-1}
 \subsection{Оператор \texorpdfstring{$\nabla$}{nabla} (лікбез математчиної теорії поля)}
 
-\begin{definition}[оператора \texorpdfstring{$\nabla$}{nabla} в \textorpdfstring{$\RR^2$}{R2}]
+\begin{definition}[оператора $\nabla$ в $\RR^2$]
     Для двовимірного евклідового простору $E^2$ у прямокутній декартовій системі координат \it{оператор набла} визначається наступним чином:
     \begin{equation}
     	\nabla = \frac{\partial}{\partial x} \vec{i} + \frac{\partial}{\partial y} \vec{j}
@@ -24,7 +24,7 @@
     де $\vec{i}$, $\vec{j}$ --- одиничні вектори по вісям $x$ і $y$ відповідно.
 \end{definition}
 
-\begin{definition}[оператора \texorpdfstring{$\nabla$}{nabla} в \textorpdfstring{$\RR^3$}{R3}]
+\begin{definition}[оператора $\nabla$ в $\RR^3$]
     Для тривимірного евклідового простору $E^3$ у прямокутній декартовій системі координат \it{оператор набла} визначається наступним чином:
     \begin{equation}
     	\nabla = \frac{\partial}{\partial x} \vec{i} + \frac{\partial}{\partial y} \vec{j} + \frac{\partial}{\partial z} \vec{k},
@@ -34,36 +34,46 @@
 
 \subsubsection{Властивості оператора \texorpdfstring{$\nabla$}{nabla}}
 
-\begin{definition}[градієнту через оператор \texorpdfstring{$\nabla$}{nabla}]
+\begin{definition}[градієнту через оператор $\nabla$]
 	Якщо ``скалярно помножити'' вектор $\nabla$ на скалярну функцію $f = f(x, y, z)$, то вийде вектор:
 	\begin{equation}
-    	\nabla f = \frac{\partial f}{\partial x} \vec{i} + \frac{\partial f}{\partial y} \vec{j} + \frac{\partial f}{\partial z} \vec{k} = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right) = \bf{grad} f,
+    	\nabla f = \frac{\partial f}{\partial x} \vec{i} + \frac{\partial f}{\partial y} \vec{j} + \frac{\partial f}{\partial z} \vec{k} = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right) = \grad f,
     \end{equation}
-    який є нічим іншим як \it{градієнтом} $\bf{grad} f$ функції $f$.
+    який є нічим іншим як \it{градієнтом} $\grad f$ функції $f$.
 \end{definition}
 
-\begin{definition}[дивергенції через оператор \texorpdfstring{$\nabla$}{nabla}]
-	Якщо ``скалярно помножити'' вектор $\nabla$ на вектор-функцію $\vec{F} = (f, g, h) = (f(x, y, z), g(x, y, z), h(x, y, z))$, то вийде скаляр:
+\begin{definition}[дивергенції через оператор $\nabla$]
+	Якщо ``скалярно помножити'' вектор $\nabla$ на вектор-функцію
+	\begin{equation}
+	    \vec{F} = (f, g, h) = (f(x, y, z), g(x, y, z), h(x, y, z)),
+	\end{equation}
+	то вийде скаляр:
 	\begin{equation}
     	\nabla \cdot \vec{F} = \frac{\partial f}{\partial x} + \frac{\partial g}{\partial y} + \frac{\partial h}{\partial z} = {\bf div} \vec{F},
     \end{equation}
-    який є нічим іншим як \it{дивергенцією} $\bf{div} \vec{F}$ функції $\vec{F}$.
+    який є нічим іншим як \it{дивергенцією} $\divergence \vec{F}$ функції $\vec{F}$.
 \end{definition}
 
-\begin{definition}[ротора через оператор \texorpdfstring{$\nabla$}{nabla}]
-	Якщо ``векторно помножити'' вектор $\nabla$ на вектор-функцію $\vec{F} = (f, g, h) = (f(x, y, z), g(x, y, z), h(x, y, z))$, то вийде вектор:
+\begin{definition}[ротора через оператор $\nabla$]
+	Якщо ``векторно помножити'' вектор $\nabla$ на вектор-функцію
 	\begin{equation}
-    	\nabla \times \vec{F} = \begin{vmatrix}
-    		\vec{i} & \vec{j} & \vec{k} \\
-    		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-    		f & g & h
-		\end{vmatrix} =
-		\left( \frac{\partial h}{\partial y} - \frac{\partial g}{\partial z} \right) \vec{i} + \left( \frac{\partial f}{\partial z} - \frac{\partial h}{\partial x} \right) \vec{j} + \left( \frac{\partial g}{\partial x} - \frac{\partial f}{\partial y} \right) \vec{k} = \bf{rot} \vec{F}.
+	    \vec{F} = (f, g, h) = (f(x, y, z), g(x, y, z), h(x, y, z)),
+	\end{equation}
+	то вийде вектор:
+	\begin{equation}
+    	\begin{aligned}
+        	\nabla \times \vec{F} &= \begin{vmatrix}
+        		\vec{i} & \vec{j} & \vec{k} \\
+        		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+        		f & g & h
+    		\end{vmatrix} = \\
+    		&= \left( \frac{\partial h}{\partial y} - \frac{\partial g}{\partial z} \right) \vec{i} + \left( \frac{\partial f}{\partial z} - \frac{\partial h}{\partial x} \right) \vec{j} + \left( \frac{\partial g}{\partial x} - \frac{\partial f}{\partial y} \right) \vec{k} = \rot \vec{F}.
+    	\end{aligned}
     \end{equation}
-    який є нічим іншим як \it{ротором} $\bf{rot} \vec{F}$ функції $\vec{F}$.
+    який є нічим іншим як \it{ротором} $\rot \vec{F}$ функції $\vec{F}$.
 \end{definition}
 
-\begin{definition}[оператора Лапласа через оператор \texorpdfstring{$\nabla$}{nabla}]
+\begin{definition}[оператора Лапласа через оператор $\nabla$]
 	Склаярний добуток $\nabla \cdot \nabla = \nabla^2$ є ніщо янше як оператор Лапласа, який також позначається $\Delta$. \medskip
 
 	У декартових координатах оператор Лапласа має вигляд
@@ -77,26 +87,26 @@
 Оскільки існують різні способи множення веткорів і скалярів, з допомогою оператор набла можна записати різі види ``диференціювання''. так, комбінування склаярних і векторних добутків дає 7 різних варіантів ``похідних'' другого порядку:
 
 \begin{align}
-	& \bf{div} (\bf{grad} f) = \nabla \cdot (\nabla f) \\
-	& \bf{rot} (\bf{grad} f) = \nabla \times (\nabla f) \\
+	& \divergence (\grad f) = \nabla \cdot (\nabla f) \\
+	& \rot (\grad f) = \nabla \times (\nabla f) \\
 	& \Delta f = \nabla^2 f) \\
-	& \bf{grad} (\bf{div} \vec{F}) = \nabla (\nabla \cdot \vec{F}) \\
-	& \bf{div} (\bf{rot} \vec{F}) = \nabla \cdot (\nabla \times \vec{F}) \\
-	& \bf{rot} (\bf{rot} \vec{F}) = \nabla \times (\nabla \times \vec{F}) \\
+	& \grad (\divergence \vec{F}) = \nabla (\nabla \cdot \vec{F}) \\
+	& \divergence (\rot \vec{F}) = \nabla \cdot (\nabla \times \vec{F}) \\
+	& \rot (\rot \vec{F}) = \nabla \times (\nabla \times \vec{F}) \\
 	& \Delta \vec{F} = \nabla^2 \vec{F}
 \end{align}
 
 Для достатньо гладких полів (двічі неперервно диференційовних) ці оператори не незалежні. Два з них тотожньо дорівнюють нулю:
 
 \begin{gather}
-	\bf{rot} (\bf{grad} f) = \nabla \times (\nabla f) = (\nabla \times \nabla) f = 0 \\
-	\bf{div} (\bf{rot} \vec{F}) = \nabla \cdot (\nabla \times \vec{F}) = (\nabla \times \nabla) \cdot \vec{F} = 0.
+	\rot (\grad f) = \nabla \times (\nabla f) = (\nabla \times \nabla) f = 0 \\
+	\divergence (\rot \vec{F}) = \nabla \cdot (\nabla \times \vec{F}) = (\nabla \times \nabla) \cdot \vec{F} = 0.
 \end{gather}
 
 Два завжди рівні:
 
 \begin{equation}
-	\bf{div} (\bf{grad} f) = \nabla \cdot (\nabla f) = (\nabla \cdot \navla) f = \nabla^2 f = \Delta f.
+	\divergence (\grad f) = \nabla \cdot (\nabla f) = (\nabla \cdot \nabla) f = \nabla^2 f = \Delta f.
 \end{equation}
 
 А решта три пов'язані співвідношенням:
@@ -111,7 +121,7 @@
 	\nabla (\nabla \cdot \vec{F}) = \nabla \cdot (\nabla \otimes \vec {F})
 \end{equation}
 
-\subsusection{Приклади}
+\subsubsection{Приклади}
 
 \begin{example}
 	Нехай $z = z(x, y) = x y$, тоді
@@ -418,7 +428,7 @@
 Деякі з введених позначень краще видно на наступній ілюстрації:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.5\textwidth]{{../img/7-1}.png}
+	\includegraphics[width=.7\textwidth]{{../img/7-1}.png}
 \end{figure}
 
 Отримаємо рівняння теплового балансу для нескінченно малого об'єму розплавленого металу, який знаходиться між перерізами $x$ та $x + \Delta x$ за проміжок часу від $t$ до $t + \Delta t$. \medskip

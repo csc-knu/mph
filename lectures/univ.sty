@@ -12,8 +12,8 @@
 \setlength\parindent{0pt}
 \numberwithin{equation}{subsection}
 
-\usepackage{hyperref}
-\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=blue}
+\usepackage[unicode=true,colorlinks=true,linktoc=all,linkcolor=blue, pdfencoding=auto]{hyperref}
+\usepackage{bookmark}
 
 \numberwithin{equation}{subsection}
 
@@ -26,6 +26,9 @@
 \renewcommand{\phi}{\varphi}
 
 \DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\divergence}{div}
+\DeclareMathOperator{\rot}{rot}
+
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\real}{Re}
 \DeclareMathOperator{\rang}{rang}
