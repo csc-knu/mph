@@ -1,3 +1,4 @@
+outputtemplate := "%j-%c.mps";
 prologues := 3;
 
 vardef project(expr a,b,c) =
