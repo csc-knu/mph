@@ -29,9 +29,9 @@ _Станом на 5 червня 2019 р. цей розділ повністю 
 
 8. Лекція №8: [pdf](ch-2/8.pdf), [docx](ch-2/8.docx), [LaTeX source](ch-2/8.tex)
 
-9. Лекція №9: [pdf-v](9-v.pdf), [docx](9.docx), [LaTeX source](9.tex)
+9. Лекція №9: [pdf](ch-2/9.pdf), [docx](9.docx), [LaTeX source](ch-2/9.tex)
 
-10. Лекція №10: [pdf-v](10-v.pdf), [docx](10.docx), [LaTeX source](10.tex)
+10. Лекція №10: [pdf](ch-2/10.pdf), [docx](10.docx), [LaTeX source](ch-2/10.tex)
 
 11. Лекція №11: [pdf-v](11-v.pdf), [docx](11.docx), [LaTeX source](11.tex)
 

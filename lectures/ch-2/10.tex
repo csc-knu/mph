@@ -1,20 +1,20 @@
 \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+ \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+ \author{Скибицький Нікіта}
+ \date{\today}
 
-\input{th.sty}
+ \input{th.sty}
 
-\begin{document}
+ \begin{document}
 
-\tableofcontents
+ \tableofcontents
 
-\setcounter{section}{3}
-\setcounter{subsection}{2}
-\setcounter{subsubsection}{10}
-\setcounter{theorem}{40}
-\setcounter{equation}{111}
+ \setcounter{section}{3}
+ \setcounter{subsection}{2}
+ \setcounter{subsubsection}{10}
+ \setcounter{theorem}{40}
+ \setcounter{equation}{111}
 
 \subsection{Математичні моделі руху ідеальної рідини}
 
@@ -61,7 +61,7 @@
 
 З формули Остроградського-Гауса для другого інтегралу:
 \begin{equation}
-	\Int_{t_1}^{t_2} \Iiint_G \frac{\partial \rho(x, t)}{\partial t} \diff G \diff t+ \Int_{t_1}^{t_2} \Iiint_G \big( \nabla \cdot ( \rho(x, t) \bf{V}_n(x, t)) \big) \diff G \diff t = 0.
+	\Int_{t_1}^{t_2} \Iiint_G \frac{\partial \rho(x, t)}{\partial t} \diff G \diff t+ \Int_{t_1}^{t_2} \Iiint_G \big( \nabla \cdot ( \rho(x, t) \bf{V}(x, t)) \big) \diff G \diff t = 0.
 \end{equation}
 
 Ця рівність виконується для будь-якого об'єму $G$ і для будь-якого проміжку часу, таким чином вона вірна тоді і лише тоді, коли рівний нулю відповідний підінтегральний вираз. \medskip
@@ -96,7 +96,7 @@
 	- \Int_{t_1}^{t_2} \Iint_S \rho(x, t) V_n(x, t) V_i(x, t) \diff S \diff t
 \end{equation}
 
-Імпульс змінюється також за рахунок поверхневої сила, яка діє на уявний об'єм з боку оточуючої рідини, в нашому випадку це є сила тиску, яка завжди діє ортогонально до поверхні тіла тому її напрям протилежний вектору нормалі: 
+Імпульс змінюється також за рахунок поверхневої сила, яка діє на уявний об'єм з боку оточуючої рідини, в нашому випадку це є сила тиску, яка завжди діє ортогонально до поверхні тіла тому її напрям протилежний вектору зовнішньої нормалі: 
 \begin{equation}
 	\diff \vec F(x, t) = - p(x, t) \cdot \vec{\bf{n}} (x, t) \cdot \diff S.
 \end{equation}
@@ -113,10 +113,10 @@
 Таким чином ми отримали
 \begin{law}[збереження імпульсу]
 	Зміна імпульсу всередині уявного об'єму відбувається за рахунок сили тиску і втікання рідини через поверхню тіла і має вигляд:
-	\begin{equation}
-		\Int_{t_1}^{t_2} \Iint_S \big( p(x, t) \cdot \vec{\bf{n}}_i(x, t) \big) \diff S \diff t
-		+ \Iiint_G \left. \rho(x, t) V_i(x, t) \right|_{t_1}^{t_2} \diff G = 0.
-	\end{equation}
+	\begin{multline}
+	\Int_{t_1}^{t_2} \Iint_S \rho(x, t) V_n(x, t) V_i(x, t) \diff S \diff t+\Int_{t_1}^{t_2} \Iint_S \big( p(x, t) \cdot \vec{\bf{n}}_i(x, t) \big) \diff S \diff t +\\
+	+	 \Iiint_G \left. \rho(x, t) V_i(x, t) \right|_{t_1}^{t_2} \diff G = 0.
+	\end{multline}
 \end{law}
 
 За формулою Остроградського-Гауса:
@@ -126,16 +126,16 @@
 
 Оскільки ця рівність виконується для будь-якого об'єму $G$ і для будь-якого проміжку часу, то нулю рівний і відповідний підінтегральний вираз:
 \begin{equation}
-	\nabla \cdot (\rho V V_i) + \nabla_i p + \frac{\partial \rho V_i}{\partial t} = 0.
+\frac{\partial \rho V_i}{\partial t} +	\nabla \cdot (\rho V V_i) + \nabla_i p  = 0.
 \end{equation}
 
 \subsubsection{Закон збереження енергії}
 
 Кількість енергії в елементі об'єму $\diff G$ можна обчислити як:
 \begin{equation}
-	\rho \cdot \frac{|V|^2}{2} \cdot \diff G + \rho \cdot \epsilon \cdot \diff G = \rho \left( \frac{|V|^2}{2} + \epsilon \right) \diff G,
+	\rho  \frac{|V|^2}{2} t \diff G + \rho  \epsilon  \diff G = \rho \left( \frac{|V|^2}{2} + \epsilon \right) \diff G,
 \end{equation}
-де $\rho \cdot |V|^2 / 2 \cdot \diff G$ --- кількість кінетичної, $\rho \cdot \epsilon \cdot \diff G$ --- кількість внутрішньої (теплової) енергії. \medskip
+де $\rho  |V|^2 / 2  \diff G$ --- кількість кінетичної, $\rho  \epsilon  \diff G$ --- кількість внутрішньої (теплової) енергії. \medskip
 
 Її зміна за проміжок часу від $t_1$ до $t_2$ в довільному об'ємі $G$ обчислюється за формулою:
 \begin{equation}
@@ -235,10 +235,10 @@
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/10-1.png}
+%	\includegraphics[width=\textwidth]{img/10-1.png}
 \end{figure}
 
-Через поверхню тіла потік не протікає це означає, що нормальна складова вектора швидкості дорівнює нормальній складовій вектору швидкості поверхні тіла $U_n$:
+Через поверхню тіла потік ідеальної рідини не протікає це означає, що нормальна складова вектора швидкості дорівнює нормальній складовій вектору швидкості поверхні тіла $U_n$:
 \begin{equation}
 	\left. V_n(x, t) \right|_{x \in S} = U_n(x, t).
 \end{equation}
@@ -261,12 +261,12 @@
 
 На поверхні поршня повинна виконуватись умова непротікання. Запишемо її з використанням рівняння поверхні поршня:
 \begin{equation}
-	\diff h = \Sum_{i = 1}^3 \frac{\partial h}{\partial x_i} \cdot \diff x_i + \frac{\partial h}{\partial r} \cdot \diff t = 0.
+	\diff h = \Sum_{i = 1}^3 \frac{\partial h}{\partial x_i} \cdot \diff x_i + \frac{\partial h}{\partial t} \cdot \diff t = 0.
 \end{equation}
 
 Позначимо $U_i = \diff x_i / \diff t$ --- складові вектора швидкості поверхні в напрямку вісі $Ox_i$. Вектор нормалі до поверхні поршня можна записати у вигляді
 \begin{equation}
-	\vec n = \frac{\nabla h}{\|\nabla h\|} = \frac{1}{\|\nabla h\|} \big( h_x, h_y, h_z \big).
+	\vec n = \frac{\nabla h}{\|\nabla h\|}
 \end{equation}
 
 Тоді легко отримати нормальну складову вектору швидкості поверхні:
@@ -320,7 +320,7 @@
 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=.5\textwidth]{img/10-2.png}
+%		\includegraphics[width=.5\textwidth]{img/10-2.png}
 	\end{figure}
 \end{definition}
 
@@ -383,7 +383,7 @@
 
 	При надзвуковому втіканні рідини на границі $S_1$ необхідно задавати усі п'ять функцій:
 	\begin{equation}
-		\left. \vec V \right|_{x \in S_1} = \vec V_i, \quad \left. \rho \right|_{x \in S_1} = \rho_i, \quad \left. p \right|_{x \in S_1} = p_i.
+		\left. \vec V \right|_{x \in S_1} = \vec V_{in}, \quad \left. \rho \right|_{x \in S_1} = \rho_{in}, \quad \left. p \right|_{x \in \ S_1} = p_{in}.
 	\end{equation}
 
 	\item Розглянемо надзвукове витікання через поверхню $S_2$: $V_n > c$. \medskip
@@ -391,4 +391,4 @@
 	В цьому випадку ніяких граничних умов на відповідній границі ставити не треба, рідина, яка \bf{дуже швидко} витікає через $S_2$ ніяк не впливає на внутрішню течію в каналі.
 \end{enumerate}
 
-\end{document}
+ \end{document}

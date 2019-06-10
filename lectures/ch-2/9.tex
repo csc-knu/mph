@@ -1,20 +1,20 @@
-\input{univ.sty}
+ \input{univ.sty}
 
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
+ \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+ \author{Скибицький Нікіта}
+ \date{\today}
 
-\input{th.sty}
+ \input{th.sty}
 
-\begin{document}
+ \begin{document}
 
-\tableofcontents
+ \tableofcontents
 
-\setcounter{section}{3}
-\setcounter{subsection}{2}
-\setcounter{subsubsection}{5}
-\setcounter{theorem}{22}
-\setcounter{equation}{56}
+ \setcounter{section}{3}
+ \setcounter{subsection}{2}
+ \setcounter{subsubsection}{5}
+ \setcounter{theorem}{22}
+ \setcounter{equation}{56}
 
 Порівнюючи формули переходу до нових координат для обох тензорів, бачимо їх ідентичність, тобто перетворення тензора напружень та тензору деформацій відбувається за однаковими формулами. Таким чином існує система координат $h_1$, $h_2$, $h_3$, для якої тензор деформації має діагональний вигляд: 
 \begin{equation}
@@ -45,8 +45,8 @@
 \begin{proposition}
 	Для ізотропних тіл (тіл властивості яких в усіх напрямках однакові) головні вісі тензора деформації та тензора напружень співпадають:
 	\begin{align}
-		\tau_{a b} &= \Sum_{i = 1}^3 2 \epsilon_i \cos (h_i, a) \cos (h_i, b), \\
-		\sigma_a &= \Sum_{i = 1}^3 \epsilon_i \cos^2(h_i, a),
+		\tau_{a b} &= \Sum_{i = 1}^3  \sigma_i \cos (h_i, a) \cos (h_i, b), \\
+		\sigma_a &= \Sum_{i = 1}^3 \sigma_i \cos^2(h_i, a),
 	\end{align}
 	де $a, b \in \{x, y, z\}$.
 \end{proposition}
@@ -56,7 +56,7 @@
 Розглянемо пружній паралелепіпед до нижньої грані якого прикладене напруження $\sigma_1$ у напряму першої головної координатної вісі $h_1$:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/9-1.png}
+%	\includegraphics[]{img/9-1.png}
 \end{figure}
 
 Згідно до спрощеного трактування закону Гука  
@@ -78,7 +78,7 @@
 \end{law}
 
 Позначимо $S = \sigma_1 + \sigma_2 + \sigma_3$ і запишемо 
-\begin{law}[Гука]
+\begin{law}[Гука для головних компонентів тензору напружень та деформацій]
 	Зв'язок між головними компонентами тензора напружень та тензора деформації:
 	\begin{equation}
 		\epsilon_i = \frac{m + 1}{E m} \left( \sigma_i - \frac{S}{m + 1} \right),
@@ -243,7 +243,7 @@
 		\left. \Sum_{a \in \{x, y, z\}} \tau_{b a} \cos(\vec{\bf{n}}, a) \right|_{(x, y, z) \in S} = \\
 		= - K_b \cdot \left. \left( U_b(x, y, z, t) + F_b(x, y, z, t) \right) \right|_{(x, y, z) \in S},
 	\end{multline}
-	де $b \in \{\xi, y, z\}$.
+	де $b \in \{x, y, z\}$.
 \end{itemize}
 
 \subsubsection{Спрощення системи рівнянь теорії пружності}
@@ -266,16 +266,16 @@
 	+ \nabla \times \left( G \Delta \vec \Phi + \Vec F - \rho \cdot \frac{\partial^2 \vec \Phi}{\partial t^2} \right) = 0.
 \end{multline}
 
-В результаті маємо рівняння скалярне та векторне хвильове рівняння:
-\begin{th_equation}[скалярне хвильове]
-	Виконується співвідношення:
+В результаті маємо  скалярне та векторне хвильове рівняння:
+\begin{th_equation}[скалярне хвильове рівняння]
+	Виконується співвідношення для скалярного потенціалу:
 	\begin{equation}
 		\rho \cdot \frac{\partial^2 \phi}{\partial t^2} = \left( \frac{2 G (m - 1)}{(m - 2)} \right) \Delta \phi + f.
 	\end{equation}
 \end{th_equation}
 
-\begin{th_equation}[векторне хвильове]
-	Виконується співвідношення:
+\begin{th_equation}[векторне хвильове рівняння]
+	Виконується співвідношення для векторного потенціалу:
 	\begin{equation}
 		\rho \cdot \frac{\partial^2 \vec \Phi}{\partial t^2} = G \Delta  \vec \Phi + \vec F.
 	\end{equation}
@@ -412,7 +412,7 @@
 	\end{equation}
 	\item У випадку, коли на лівому кінці діє задана сила, то для отримання граничної умови  можна записати рівняння руху для елементарного відрізку $[0, \Delta x]$  яке матиме вигляд:
 	\begin{equation}
-		\rho \cdot \Delta x \cdot \frac{\partial^2 u(\xi, t)}{\partial t^2} = T_0 \cdot u_x(\Delta x, t) - \psi_1(t) + f(\xi, t),
+		\rho  \Delta x t \frac{\partial^2 u(\xi, t)}{\partial t^2} = T_0  u_x(\Delta x, t) - \psi_1(t) + f(\xi, t),
 	\end{equation}
 	де $\xi$ --- якась середня точка, тобто $\xi \in (0, \Delta x)$. \medskip
  
@@ -423,15 +423,15 @@
 
 	\item Для випадку пружного закріплення замість заданої сили $\psi_1(t)$ необхідно розглядати силу реакції пружини, яка пропорційна зміщенню і діє в напрямку протилежному зміщенню. Таким чином рівняння руху буде мати вигляд:
 	\begin{equation}
-		\rho \cdot \Delta x \cdot \frac{\partial^2 u(\xi, t)}{\partial t^2} = T_0 \cdot u_x(\Delta x, t) + k \cdot u(0, t) + f(\xi, t),
+		\rho\Delta x  \frac{\partial^2 u(\xi, t)}{\partial t^2} = T_0u_x(\Delta x, t) + k  u(0, t) + f(\xi, t),
 	\end{equation}
 	де $\xi$ --- якась середня точка, тобто $\xi \in (0, \Delta x)$. \medskip
 
 	Після граничного переходу отримаємо 
 	\begin{equation}
-		u_x(0, t) + \frac{K}{T_0} \cdot u(0, t) = 0,	
+		u_x(0, t) + \frac{K}{T_0}  u(0, t) = 0,	
 	\end{equation}
 	де $k$ --- коефіцієнт жорсткості пружини.
 \end{itemize}
 
-\end{document}
+ \end{document}
