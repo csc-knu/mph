@@ -1,20 +1,20 @@
- \input{univ.sty}
+\input{../univ.sty}
 
- \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
- \author{Скибицький Нікіта}
- \date{\today}
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
 
- \input{th.sty}
+\input{../th.sty}
 
- \begin{document}
+\begin{document}
 
- \tableofcontents
+\tableofcontents
 
- \setcounter{section}{3}
- \setcounter{subsection}{2}
- \setcounter{subsubsection}{5}
- \setcounter{theorem}{22}
- \setcounter{equation}{56}
+\setcounter{section}{3}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{5}
+\setcounter{theorem}{22}
+\setcounter{equation}{56}
 
 Порівнюючи формули переходу до нових координат для обох тензорів, бачимо їх ідентичність, тобто перетворення тензора напружень та тензору деформацій відбувається за однаковими формулами. Таким чином існує система координат $h_1$, $h_2$, $h_3$, для якої тензор деформації має діагональний вигляд: 
 \begin{equation}
@@ -69,22 +69,21 @@
 
 Прикладаючи напруження в напряму двох інших головних координатних вісей $\sigma_2$ та $\sigma_3$, відповідно будемо мати стиснення в напряму $h_1$. Це від'ємне подовження (стиснення) в напрямку першої координатної вісі, за рахунок напруження $\sigma_2$ дорівнює $\sigma_2 / m E$, а за рахунок напруження $\sigma_3$ дорівнює $\sigma_3 / m E$. \medskip
 
-Отже, маємо 
-\begin{law}[Гука, загальний]
-	Повна величина подовження в напрямку першої головної координатної вісі дорівнює
-	\begin{equation}
-		\epsilon_1 = \frac{1}{E} \left( \sigma_1 - \frac{\sigma_2 + \sigma_3}{m} \right) = \frac{m + 1}{E m} \left( \sigma_1 - \frac{\sigma_1 + \sigma_2 + \sigma_3}{m + 1} \right)
-	\end{equation}
-\end{law}
+Отже, маємо загальний закон Гука: \medskip
+
+Повна величина подовження в напрямку першої головної координатної вісі дорівнює
+\begin{equation}
+	\epsilon_1 = \frac{1}{E} \left( \sigma_1 - \frac{\sigma_2 + \sigma_3}{m} \right) = \frac{m + 1}{E m} \left( \sigma_1 - \frac{\sigma_1 + \sigma_2 + \sigma_3}{m + 1} \right)
+\end{equation}
 
 Позначимо $S = \sigma_1 + \sigma_2 + \sigma_3$ і запишемо 
-\begin{law}[Гука для головних компонентів тензору напружень та деформацій]
+\begin{law*}[Гука для головних компонентів тензору напружень та деформацій]
 	Зв'язок між головними компонентами тензора напружень та тензора деформації:
 	\begin{equation}
 		\epsilon_i = \frac{m + 1}{E m} \left( \sigma_i - \frac{S}{m + 1} \right),
 	\end{equation}
 	для $i = 1, 2, 3$.
-\end{law}
+\end{law*}
 
 Використовуючи формули переходу до нової системи координат отримаємо:
 \begin{equation}
@@ -134,13 +133,15 @@
 \begin{law}[Гука, еквівалентна форма]
 	Для довільної прямокутної системи координат:
 	\begin{align}
+	    \label{eq:hooke-1}
 		\sigma_\alpha &= 2 G \left( \epsilon_\alpha + \frac{\theta}{m - 2} \right), \\
+		\label{eq:hooke-2}
 		\tau_{\alpha \beta} &= G \gamma_{\alpha \beta},
 	\end{align}
 	де $\alpha, \beta \in \{x, y, z\}$.
 \end{law}
 
-Запишемо замкнену систему диференціальних рівнянь, яка складається з останніх рівнянь, закону рівноваги елементу об'єму
+Запишемо замкнену систему диференціальних рівнянь, яка складається з рівнянь \eqref{eq:hooke-1}, \eqref{eq:hooke-2}, закону рівноваги елементу об'єму
 \begin{system}
 	\frac{\partial \sigma_x}{\partial x} + \frac{\partial \tau_{x y}}{\partial y} + \frac{\partial \tau_{x z}}{\partial z} + X &= 0, \\
 	\frac{\partial \tau_{y x}}{\partial x} + \frac{\partial \sigma_y}{\partial y} + \frac{\partial \tau_{y z}}{\partial z} + Y &= 0, \\
@@ -434,4 +435,4 @@
 	де $k$ --- коефіцієнт жорсткості пружини.
 \end{itemize}
 
- \end{document}
+\end{document}
