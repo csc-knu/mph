@@ -52,13 +52,13 @@
 \end{equation}
 
 Таким чином ми отримали
-\begin{law*}[збереження маси]
+\begin{law}[збереження маси]
 	\label{laq:mass-conservation}
 	Зміна маси в об'ємі $G$ за час від $t_1$ до $t_2$ дорівнює кількості рідини, що втікає (витікає) через поверхню тіла за обраний інтервал часу і має вигляд:
 	\begin{equation}
 		\Iiint_G \left. \rho(x, t) \right|_{t_1}^{t_2} \diff G + \Int_{t_1}^{t_2} \Iint_S \rho(x, t) \bf{V}_n(x, t) \diff S \diff t = 0.
 	\end{equation}
-\end{law*}
+\end{law}
 
 З формули Остроградського-Гауса для другого інтегралу:
 \begin{equation}
@@ -112,14 +112,14 @@
 \end{equation}
 
 Таким чином ми отримали
-\begin{law*}[збереження імпульсу]
+\begin{law}[збереження імпульсу]
 	\label{law:impulse-conservation}
 	Зміна імпульсу всередині уявного об'єму відбувається за рахунок сили тиску і втікання рідини через поверхню тіла і має вигляд:
 	\begin{multline}
 	\Int_{t_1}^{t_2} \Iint_S \rho(x, t) V_n(x, t) V_i(x, t) \diff S \diff t+\Int_{t_1}^{t_2} \Iint_S \big( p(x, t) \cdot \vec{\bf{n}}_i(x, t) \big) \diff S \diff t +\\
 	+	 \Iiint_G \left. \rho(x, t) V_i(x, t) \right|_{t_1}^{t_2} \diff G = 0.
 	\end{multline}
-\end{law*}
+\end{law}
 
 За формулою Остроградського-Гауса:
 \begin{equation}
@@ -196,14 +196,14 @@
 \end{equation}
 
 Таким чином ми отримали
-\begin{law*}[збереження повної енергії]
+\begin{law}[збереження повної енергії]
 	\label{laq:full-energy-conservation}
 	Зміна повної енергії в довільному об'ємі відбувається за рахунок її проникнення з масою рідини через поверхню тіла та за рахунок роботи сил тиску:
 	\begin{multline}
 		\Int_{t_1}^{t_2} \Iint_S \left( \rho(x, t) V_n(x, t) \left( \frac{|V(x, t)|^2}{2} + \epsilon(x, t) \right) + p(x, t) V_n(x, t) \right) \diff S \diff t + \\
 		+ \Iiint_G \rho(x, t) \left. \left( \frac{|V(x, t)|^2}{2} + \epsilon(x, t) \right) \right|_{t_1}^{t_2} \diff G = 0
 	\end{multline}
-\end{law*}
+\end{law}
 
 Застосування теореми Остроградського-Гауса до поверхневого інтегралу приводить до інтегральної рівності:
 \begin{multline}
