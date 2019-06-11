@@ -1,20 +1,20 @@
-\input{univ.sty}
+\input{../univ.sty}
 
- \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
- \author{Скибицький Нікіта}
- \date{\today}
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
 
- \input{th.sty}
+\input{../th.sty}
 
- \begin{document}
+\begin{document}
 
- \tableofcontents
+\tableofcontents
 
- \setcounter{section}{3}
- \setcounter{subsection}{2}
- \setcounter{subsubsection}{10}
- \setcounter{theorem}{40}
- \setcounter{equation}{111}
+\setcounter{section}{3}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{10}
+\setcounter{theorem}{40}
+\setcounter{equation}{111}
 
 \subsection{Математичні моделі руху ідеальної рідини}
 
@@ -52,12 +52,13 @@
 \end{equation}
 
 Таким чином ми отримали
-\begin{law}[збереження маси]
+\begin{law*}[збереження маси]
+	\label{laq:mass-conservation}
 	Зміна маси в об'ємі $G$ за час від $t_1$ до $t_2$ дорівнює кількості рідини, що втікає (витікає) через поверхню тіла за обраний інтервал часу і має вигляд:
 	\begin{equation}
 		\Iiint_G \left. \rho(x, t) \right|_{t_1}^{t_2} \diff G + \Int_{t_1}^{t_2} \Iint_S \rho(x, t) \bf{V}_n(x, t) \diff S \diff t = 0.
 	\end{equation}
-\end{law}
+\end{law*}
 
 З формули Остроградського-Гауса для другого інтегралу:
 \begin{equation}
@@ -111,13 +112,14 @@
 \end{equation}
 
 Таким чином ми отримали
-\begin{law}[збереження імпульсу]
+\begin{law*}[збереження імпульсу]
+	\label{law:impulse-conservation}
 	Зміна імпульсу всередині уявного об'єму відбувається за рахунок сили тиску і втікання рідини через поверхню тіла і має вигляд:
 	\begin{multline}
 	\Int_{t_1}^{t_2} \Iint_S \rho(x, t) V_n(x, t) V_i(x, t) \diff S \diff t+\Int_{t_1}^{t_2} \Iint_S \big( p(x, t) \cdot \vec{\bf{n}}_i(x, t) \big) \diff S \diff t +\\
 	+	 \Iiint_G \left. \rho(x, t) V_i(x, t) \right|_{t_1}^{t_2} \diff G = 0.
 	\end{multline}
-\end{law}
+\end{law*}
 
 За формулою Остроградського-Гауса:
 \begin{equation}
@@ -126,7 +128,35 @@
 
 Оскільки ця рівність виконується для будь-якого об'єму $G$ і для будь-якого проміжку часу, то нулю рівний і відповідний підінтегральний вираз:
 \begin{equation}
-\frac{\partial \rho V_i}{\partial t} +	\nabla \cdot (\rho V V_i) + \nabla_i p  = 0.
+\frac{\partial \rho V_i}{\partial t} +	\nabla \cdot (\rho V V_i) + \nabla_i p = 0, \quad i = 1, 2, 3.
+\end{equation}
+
+У векторному вигляді це співвідношення набуває наступного вигляду:
+\begin{equation}
+	\nabla \cdot (\rho V \otimes V) + \nabla p + \frac{\partial \rho V}{\partial t} = 0,
+\end{equation}
+де $\otimes$ позначає тензорний добуток:
+\begin{equation}
+	\begin{pmatrix}
+		x_1 \\
+		x_2 \\
+		\vdots \\
+		x_n
+	\end{pmatrix} 
+	\otimes
+	\begin{pmatrix}
+		y_1 \\
+		y_2 \\
+		\vdots \\
+		y_n
+	\end{pmatrix} 
+	=
+	\begin{pmatrix}
+		x_1 y_1 & x_1 y_2 & \cdots & x_1 y_n \\
+		x_2 y_1 & x_2 y_2 & \cdots & x_2 y_n \\
+		\vdots & \vdots & \ddots & \vdots \\
+		x_n y_1 & x_n y_2 & \cdots & x_n y_n
+	\end{pmatrix}
 \end{equation}
 
 \subsubsection{Закон збереження енергії}
@@ -166,13 +196,14 @@
 \end{equation}
 
 Таким чином ми отримали
-\begin{law}[збереження повної енергії]
+\begin{law*}[збереження повної енергії]
+	\label{laq:full-energy-conservation}
 	Зміна повної енергії в довільному об'ємі відбувається за рахунок її проникнення з масою рідини через поверхню тіла та за рахунок роботи сил тиску:
 	\begin{multline}
 		\Int_{t_1}^{t_2} \Iint_S \left( \rho(x, t) V_n(x, t) \left( \frac{|V(x, t)|^2}{2} + \epsilon(x, t) \right) + p(x, t) V_n(x, t) \right) \diff S \diff t + \\
 		+ \Iiint_G \rho(x, t) \left. \left( \frac{|V(x, t)|^2}{2} + \epsilon(x, t) \right) \right|_{t_1}^{t_2} \diff G = 0
 	\end{multline}
-\end{law}
+\end{law*}
 
 Застосування теореми Остроградського-Гауса до поверхневого інтегралу приводить до інтегральної рівності:
 \begin{multline}
@@ -186,7 +217,7 @@
 
 Воно є диференціальною формою запису закону збереження повної енергії. \medskip
 
-Сукупність трьо отриманих законів у диференціальному вигляді будемо розглядати як систему з 5 рівнянь із 6-ма невідомими функціями. Ця система описує загальні закономірності руху ідеальної рідини. Для замикання системи диференціальних рівнянь її треба доповнити рівнянням стану, яке враховує індивідуальні властивості середовища і зв'язує між собою три термодинамічні параметри наприклад це рівняння може мати вигляд:
+Сукупність \ref{laq:mass-conservation}, \ref{laq:full-energy-conservation}, \ref{law:impulse-conservation} трьох отриманих законів у диференціальному вигляді будемо розглядати як систему з 5 рівнянь із 6-ма невідомими функціями. Ця система описує загальні закономірності руху ідеальної рідини. Для замикання системи диференціальних рівнянь її треба доповнити рівнянням стану, яке враховує індивідуальні властивості середовища і зв'язує між собою три термодинамічні параметри наприклад це рівняння може мати вигляд:
 \begin{equation}
 	\epsilon = \epsilon(p, \rho).
 \end{equation}
@@ -235,7 +266,7 @@
 
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=\textwidth]{img/10-1.png}
+	\includegraphics[]{{../img/10-1}.mps}
 \end{figure}
 
 Через поверхню тіла потік ідеальної рідини не протікає це означає, що нормальна складова вектора швидкості дорівнює нормальній складовій вектору швидкості поверхні тіла $U_n$:
@@ -320,7 +351,7 @@
 
 	\begin{figure}[H]
 		\centering
-%		\includegraphics[width=.5\textwidth]{img/10-2.png}
+		\includegraphics[]{{../img/10-2}.mps}
 	\end{figure}
 \end{definition}
 
@@ -391,4 +422,4 @@
 	В цьому випадку ніяких граничних умов на відповідній границі ставити не треба, рідина, яка \bf{дуже швидко} витікає через $S_2$ ніяк не впливає на внутрішню течію в каналі.
 \end{enumerate}
 
- \end{document}
+\end{document}
