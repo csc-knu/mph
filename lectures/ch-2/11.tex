@@ -37,6 +37,7 @@
 \begin{figure}[H]
 	\centering
 	\includegraphics[]{{../img/11-1}.mps}
+	\caption{траєкторія руху частинки рідини}
 \end{figure}
 тобто похідну по часу $t$ вздовж контуру $x = x(t)$:
 \begin{equation}
@@ -54,6 +55,7 @@
 \begin{figure}[H]
 	\centering
 	\includegraphics[]{{../img/11-2}.mps}
+	\caption{Дві частинки рідини рухаються ``паралельно''}
 \end{figure}
  
 Тоді згідно $\diff S / \diff t = 0$ в будь-який момент часу $t > 0$ ентропія буде залишатися постійною в довільній точці області, яка утворилася при переміщенні усіх її частинок вздовж траєкторій руху частинок, тобто області $\Omega(t)$. Таким чином можливе існування течій з постійним значення ентропії. Використовуючи введену термодинамічну функцію ентальпію, за формулою
@@ -92,8 +94,8 @@
 \begin{multline}
 	\nabla \times \vec V = 
 	\begin{vmatrix} 
-		i_1 & i_2 & i_3 \\
-		\frac{\partial}{\partial x_1} & \frac{\partial}{\partial x_2} & \frac{\partial}{\partial x_3} \\
+		i_1 & i_2 & i_3 \\ \\[-.25cm]
+		\dfrac{\partial}{\partial x_1} & \dfrac{\partial}{\partial x_2} & \dfrac{\partial}{\partial x_3} \\ \\[-.25cm]
 		V_1 & V_2 & V_3
 	\end{vmatrix} = \\
 	= \vec i_1 \left( \frac{\partial V_3}{\partial x_2} - \frac{\partial V_2}{\partial x_3} \right) - \vec i_2 \left( \frac{\partial V_3}{\partial x_1} - \frac{\partial V_1}{\partial x_3} \right) + \vec i_3 \left( \frac{\partial V_2}{\partial x_1} - \frac{\partial V_1}{\partial x_2} \right).
@@ -144,6 +146,7 @@
 \begin{figure}[H]
 	\centering
 	\includegraphics[]{{../img/11-3}.mps}
+	\caption{Поверхня $\sigma$ спиhається на червоний контур $c(t)$}
 \end{figure}
 
 Тобто
@@ -155,6 +158,7 @@
 \begin{figure}[H]
 	\centering
 	\includegraphics[]{{../img/11-4}.mps}
+	\caption{Контур $c_\epsilon(t)$ нанизаний на червону траєкторію $c(t)$}
 \end{figure}
  
 Припускаючи, що при $t = 0$ маємо $\nabla \times V = 0$, а таким чином $(\nabla \times V)_n = 0$, то згідно теореми Томсона $(\nabla \times V) = 0$, для $t > 0$. \medskip
@@ -162,7 +166,9 @@
 Якщо розглянути область $\Omega$ для якої циркуляція відсутня при $t = 0$ тобто $\nabla \times V = 0$ то вздовж будь-якої траєкторії яка починається в області $\Omega$ в будь-який момент часу поле залишається безвихровим, тобто $\nabla \times \vec V = 0$:
 \begin{figure}[H]
 	\centering
-	%\includegraphics[]{img/11-5.png}
+	\includegraphics[]{{../img/11-5}.mps}
+	\и
+	\caption{Безвихрове поле: локально рух не паралельний але глобально спрямований паралельно}
 \end{figure}
 
 Це свідчить про існування безвихрових або потенційних течій. \medskip
