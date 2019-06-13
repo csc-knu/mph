@@ -1,10 +1,10 @@
-\input{univ.sty}
+\input{../univ.sty}
 
 \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
 \author{Скибицький Нікіта}
 \date{\today}
 
-\input{th.sty}
+\input{../th.sty}
 
 \begin{document}
 
@@ -36,7 +36,7 @@
 Знайдемо повну похідну деякого параметра $f$ вздовж траєкторії руху $x = x(t)$ частинки рідини:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/11-1.png}
+	\includegraphics[]{{../img/11-1}.mps}
 \end{figure}
 тобто похідну по часу $t$ вздовж контуру $x = x(t)$:
 \begin{equation}
@@ -45,12 +45,16 @@
 
 Будемо називати цей вираз похідною по часу вздовж траєкторії руху частинки. \medskip
 
-З не дивергентноъ форму закону збереження ентропії бачимо, що повна зміна ентропії вздовж траєкторії руху частинки дорівнює нулю, тобто
+З не дивергентної форми закону збереження ентропії бачимо, що повна зміна ентропії вздовж траєкторії руху частинки дорівнює нулю, тобто
 \begin{equation}
 	\frac{\diff S}{\diff t} = 0.
 \end{equation}
 
-Припустимо що в початковий момент часу $t = 0$ ідеальна рідина займає деяку область $\Omega(0)$, а ентропія $S(x, 0) = S_0 = \const$ для $x \in \Omega(0)$. \medskip
+Припустимо що в початковий момент часу $t = 0$ ідеальна рідина займає деяку область $\Omega(0)$, а ентропія $S(x, 0) = S_0 = \const$, $\forall x \in \Omega(0)$:
+\begin{figure}[H]
+	\centering
+	\includegraphics[]{{../img/11-2}.mps}
+\end{figure}
  
 Тоді згідно $\diff S / \diff t = 0$ в будь-який момент часу $t > 0$ ентропія буде залишатися постійною в довільній точці області, яка утворилася при переміщенні усіх її частинок вздовж траєкторій руху частинок, тобто області $\Omega(t)$. Таким чином можливе існування течій з постійним значення ентропії. Використовуючи введену термодинамічну функцію ентальпію, за формулою
 \begin{equation}
@@ -63,7 +67,7 @@
 
 Перетворимо закон збереження імпульсу, продиференціюємо відповідні добутки та отримаємо:
 \begin{equation}
-	V_i \cdot \frac{\partial \rho}{\partial t} + \rho \cdot \frac{\partial V_i}{\partial t} + V_i \cdot \nabla \cdot (\rho V) + \rho \langle V, \nabla V_i \rangle + \nabla_i p = 0.
+	V_i  \frac{\partial \rho}{\partial t} + \rho  \frac{\partial V_i}{\partial t} + V_i  \nabla \cdot (\rho V) + \rho \langle V, \nabla V_i \rangle + \nabla_i p = 0.
 \end{equation}
 
 Після скорочення отримаємо закон збереження імпульсу в не дивергентній формі:
@@ -82,7 +86,7 @@
 
 Скористаємось відомою формулою векторного аналізу
 \begin{equation}
-	\frac{\nabla |V|^2}{2} = \vec V \times \nabla \times \vec V + \langle \vec V, \nabla \vec V \rangle,
+	\frac{\nabla |V|^2}{2} = \vec V \times (\nabla \times \vec V) + \langle \vec V, \nabla \vec V \rangle,
 \end{equation}
 де
 \begin{multline}
@@ -98,7 +102,7 @@
 Отримаємо рівняння:
 \begin{equation}
 	\label{eq:3.3.64}
-	\frac{\partial V}{\partial t} + \frac{\nabla \left| \vec V\right|^2}{2} - \vec V \times \nabla \times \vec V + \nabla W = 0
+	\frac{\partial V}{\partial t} + \frac{\nabla \left| \vec V\right|^2}{2} - \vec V \times( \nabla \times \vec V) + \nabla W = 0
 \end{equation}
 
 Подіємо на нього $\nabla \times$, і врахуємо, що для будь-якої скалярної функції $f$ виуонується $\nabla \times \nabla f = 0$, в результаті отримаємо систему рівнянь відносно вектору швидкості.
@@ -106,7 +110,7 @@
 \begin{th_equation}[система рівнянь руху ідеальної рідини для ізоентропічного випадку]
 	Виконуються співвідношення
 	\begin{equation}
-		\frac{\partial}{\partial t} \left(\nabla \times \vec V\right) - \nabla \times \vec V \times \nabla \times \vec V = 0.
+		\frac{\partial}{\partial t} \left(\nabla \times \vec V\right) - \nabla \times (\vec V \times (\nabla \times \vec V)) = 0.
 	\end{equation}
 \end{th_equation}
 
@@ -116,7 +120,7 @@
 
 Розглянемо інтеграл	
 \begin{equation}
-	\Gamma(t) = \Oint_{c(t)} \vec V(t) \diff \vec l
+	\Gamma(t) = \Oint_{c(t)} \vec V(t) \cdot\diff \vec l
 \end{equation}
 який називається циркуляцією вектора швидкості вздовж контуру (під знаком інтегралу записано скалярний добуток векторів швидкості $\vec V(t)$ та вектору нескінченно малого зміщення вздовж контуру $\diff \vec l$); $c(t)$ --- контур, утворений частинами ідеальної рідини, що рухаються вздовж своїх траєкторій. \medskip
 
@@ -139,7 +143,7 @@
 Використаємо теорему Стокса для будь-якої поверхні $\sigma$, що спирається на контур $c(t)$:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/11-3.png}
+	\includegraphics[]{{../img/11-3}.mps}
 \end{figure}
 
 Тобто
@@ -147,10 +151,10 @@
 	\Gamma(t) = \Oint_{c(t)} \vec V(t) \cdot \diff \vec l = \Iint_{\sigma(t)} (\nabla \times V)_n \diff \sigma = \const.
 \end{equation}
 
-Розглянемо деяку траєкторію руху однієї частинки ідеальної рідини і нескінченно малий контур, який нанизаний на траєкторію руху:
+Розглянемо деяку траєкторію руху $c(t)$ однієї частинки ідеальної рідини і нескінченно малий контур $c_\epsilon(t)$, який нанизаний на траєкторію руху:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/11-4.png}
+	\includegraphics[]{{../img/11-4}.mps}
 \end{figure}
  
 Припускаючи, що при $t = 0$ маємо $\nabla \times V = 0$, а таким чином $(\nabla \times V)_n = 0$, то згідно теореми Томсона $(\nabla \times V) = 0$, для $t > 0$. \medskip
@@ -158,7 +162,7 @@
 Якщо розглянути область $\Omega$ для якої циркуляція відсутня при $t = 0$ тобто $\nabla \times V = 0$ то вздовж будь-якої траєкторії яка починається в області $\Omega$ в будь-який момент часу поле залишається безвихровим, тобто $\nabla \times \vec V = 0$:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/11-5.png}
+	%\includegraphics[]{img/11-5.png}
 \end{figure}
 
 Це свідчить про існування безвихрових або потенційних течій. \medskip
@@ -210,7 +214,7 @@
 \end{equation}
 але $c^2 = \diff p / \diff \rho$, звідки
 \begin{equation}
-	c^2 \cdot \frac{\diff \rho}{\diff p} = \rho \cdot \frac{\diff W}{\diff t}.
+	c^2  \frac{\diff \rho}{\diff t} = \rho  \frac{\diff W}{\diff t}.
 \end{equation}
 
 Враховуючи недивергнетну форму рівняння нерозривності отримаємо:

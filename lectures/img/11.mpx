@@ -1,0 +1,121 @@
+% Written by metapost version 2.00
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s("x",_n0,1.00000,0.0000,0.0000,);
+_n1="cmr10";
+_s("=",_n1,1.00000,8.4613,0.0000,);
+_s("x",_n0,1.00000,18.9773,0.0000,);
+_s("(",_n1,1.00000,24.6712,0.0000,);
+_s("t",_n0,1.00000,28.5456,0.0000,);
+_s(")",_n1,1.00000,32.1432,0.0000,);
+setbounds _p to (0,-2.4907)--(36.0176,-2.4907)--
+ (36.0176,7.4720)--(0,7.4720)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s("c",_n0,1.00000,0.0000,0.0000,);
+_n1="cmr10";
+_s("(",_n1,1.00000,4.3114,0.0000,);
+_s("t",_n0,1.00000,8.1858,0.0000,);
+_s(")",_n1,1.00000,11.7834,0.0000,);
+setbounds _p to (0,-2.4907)--(15.6578,-2.4907)--
+ (15.6578,7.4720)--(0,7.4720)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s(char27,_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,0.0000)--(6.0502,0.0000)--
+ (6.0502,4.2895)--(0,4.2895)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s("c",_n0,1.00000,0.0000,0.0000,);
+_n1="cmr10";
+_s("(",_n1,1.00000,4.3114,0.0000,);
+_s("t",_n0,1.00000,8.1858,0.0000,);
+_s(")",_n1,1.00000,11.7834,0.0000,);
+setbounds _p to (0,-2.4907)--(15.6578,-2.4907)--
+ (15.6578,7.4720)--(0,7.4720)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s("c",_n0,1.00000,0.0000,0.0000,);
+_n2="cmmi7";
+_s(char34,_n2,1.00000,4.3114,-1.4944,);
+_n1="cmr10";
+_s("(",_n1,1.00000,8.5735,0.0000,);
+_s("t",_n0,1.00000,12.4479,0.0000,);
+_s(")",_n1,1.00000,16.0455,0.0000,);
+setbounds _p to (0,-2.4907)--(19.9199,-2.4907)--
+ (19.9199,7.4720)--(0,7.4720)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s("S",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,0.0000)--(6.6833,0.0000)--
+ (6.6833,6.8078)--(0,6.8078)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="cmr10";
+_s("rot",_n1,1.00000,0.0000,0.0000,);
+_n0="cmmi10";
+_s("~",_n0,1.00000,12.3709,0.0000,);
+_s("v",_n0,1.00000,12.7577,0.0000,);
+_s("=",_n1,1.00000,20.7116,0.0000,);
+_s("0",_n1,1.00000,31.2277,0.0000,);
+setbounds _p to (0,0.0000)--(36.2090,0.0000)--
+ (36.2090,7.1177)--(0,7.1177)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s("t",_n0,1.00000,0.0000,0.0000,);
+_n1="cmr10";
+_s("=",_n1,1.00000,6.3650,0.0000,);
+_s("t",_n0,1.00000,16.8810,0.0000,);
+_n3="cmr7";
+_s("0",_n3,1.00000,20.4787,-1.4944,);
+setbounds _p to (0,-1.4944)--(24.9480,-1.4944)--
+ (24.9480,6.1278)--(0,6.1278)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi10";
+_s("t",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,0.0000)--(3.5976,0.0000)--
+ (3.5976,6.1278)--(0,6.1278)--cycle;
+_p endgroup
+mpxbreak
