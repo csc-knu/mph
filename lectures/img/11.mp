@@ -123,9 +123,9 @@ beginfig(5)
     
     vardef wavetwo(expr start) =
         draw start withpen pencircle scaled 2bp;
-        drawarrow start{right} for i = 1 upto k[2] - 1:
+        drawarrow start{dir 30} for i = 1 upto k[2] - 1:
             .. start + (u * (2 * i / k[2]), u/4 * sind(360 / k[2] * i)) + .025 * u * normaldeviate * up
-        endfor .. (start + (2 u, 0)) {right};
+        endfor .. (start + (2 u, 0)) {dir 30};
     enddef;
     
     k[3] := 4;

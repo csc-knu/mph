@@ -2,7 +2,7 @@
 %%BoundingBox: -1 -1 171 86 
 %%HiResBoundingBox: -1 -1 170.823 85.28935 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2019.06.14:0013
+%%CreationDate: 2019.06.14:0135
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font ICXWUR-CMMI10 ICXWUR-CMR10
