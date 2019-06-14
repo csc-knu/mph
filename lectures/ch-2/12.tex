@@ -27,7 +27,7 @@
 Нехай шар рідини $A$ рухається зі швидкістю $v$, а шар рідини $B$ зі швидкістю $v + \diff v$, відстань між шарами $\diff y$:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/12-1.png}
+	\includegraphics[]{{../img/12-1}.mps}
 \end{figure}
 
 У введених позначеннях сила тертя $T$ між двома шарами рідини задається формулою
@@ -39,8 +39,10 @@
 Закони, що описують процеси руху в'язкої рідини, залишаються тими що і для ідеальної рідини, але при цьому з'являється додатковий механізм передачі імпульсу та енергії. \medskip
 
 \begin{law}[збереження маси у вигляді рівняння нерозривності]
+	\label{law:mass-conservation-continuity}
 	Залишається незмінним:
 	\begin{equation}
+		\label{eq:mass-conservation-continuity}
 		\frac{\partial \rho}{\partial t} + \nabla \cdot \Big(\rho \vecf V\Big) = 0.		
 	\end{equation}
 \end{law}
@@ -49,6 +51,7 @@
 
 Нагадаємо вигляд потоку імпульсу для ідеальної рідини, що проходить через елементарну поверхню $\diff S$ в одиницю часу:
 \begin{equation}
+	\label{eq:impulse-flow}
 	\diff \vecf I = \Big(\rho V_n \vecf V + p \vec n \Big) \diff S.
 \end{equation}
 
@@ -79,14 +82,16 @@
 	\end{equation}
 \end{definition}
 
-Тоді закон збереження маси у вигляді рівняння нерозривності можна записати у вигляді: 
+Тоді поток імпульсу \eqref{eq:impulse-flow} можна записати у вигляді: 
 \begin{equation}
 	\diff \vecf I = \langle \bm{\Pi}, \vec n \rangle \diff S.
 \end{equation}
 
 \begin{law}[збереження імпульсу ідеальної рідини]
+	\label{law:impulse-conservation-ideal-liquid}
 	З використанням тензору щільності потоку імпульсу $\bm{\Pi}$ матиме вигляд:
 	\begin{equation}
+		\label{eq:impulse-conservation-ideal-liquid}
 		\frac{\partial \rho \vecf V}{\partial t} + \nabla \cdot \bm{\Pi} = 0.
 	\end{equation}
 \end{law}
@@ -115,14 +120,16 @@
 
 Використовуючи загальний вигляд тензору потоку імпульсу для в'язкої рідини, маємо
 \begin{law}[збереження імпульсу]
+	\label{law:impulse-conservation-viscous-liquid}
 	Також можна записати у розгорнутому вигляді:
 	\begin{equation}
+		\label{eq:impulse-conservation-viscous-liquid}
 		\frac{\partial \rho \vecf V}{\partial t} + \nabla \cdot \Big(\rho \vecf V \vecf V^\intercal\Big) + \nabla p = \eta \Delta \vecf V + \left( \xi + \frac{\eta}{3} \right) \nabla \Big(\nabla \cdot \vecf V \Big).
 	\end{equation}
 \end{law}
 
 \begin{remark}
-	Як видно, тут ми вважаємо, що $\vecf V$ --- вектор-стовпчик. У випадку вектора-рядка потрібно було б записати $\vecf V^\intercal \vecf V$.
+	Тут ми вважаємо, що $\vecf V$ --- вектор-стовпчик, відповідно   $\vecf V^\intercal $ --- вектор-рядок.
 \end{remark}
 
 \begin{remark}
@@ -173,7 +180,9 @@
 
 Звідси, 
 \begin{law}[збереження повної енергії для в'язкої рідини]
+	\label{law:energy-conservation-viscous-liquid}
 	\begin{equation}
+		\label{eq:energy-conservation-viscous-liquid}
 		\frac{\partial}{\partial t} \left( \rho \left( \frac{|V|^2}{2} + \epsilon\right)\right) + \nabla \cdot \left( \left( \rho \left(\frac{|V|^2}{2} + \epsilon\right)I + \dot{\bf{P}}\right) \vecf V \right) = 0.
 	\end{equation}
 \end{law}
@@ -191,7 +200,7 @@
 
 Отже, отримали
 \begin{th_equation}[які описують рух в'язкої рідини]
-	Ця система складається з рівняння нерозривності (закону збереження маси), закону збереження імпульсу, і закону збереження повної енергії, та замикається рівнянням стану
+	Ця система складається з рівняння нерозривності \eqref{eq:mass-conservation-continuity} (закону \ref{law:mass-conservation-continuity} збереження маси), закону збереження імпульсу \ref{law:impulse-conservation-viscous-liquid}, і закону збереження повної енергії \ref{law:energy-conservation-viscous-liquid}, та замикається рівнянням стану
 	\begin{equation}
 		\epsilon = \epsilon(p, \rho).
 	\end{equation}
@@ -227,7 +236,7 @@
 
 \subsubsection{Умови на поверхні розділу двох середовищ}
 
-У випадку, коли два середовища розділені рухомою поверхнею, (дві рідини, що не змішуються) то на межі розділу двох середовищ, мають бути задані дві умови:
+У випадку, коли два середовища розділені рухомою поверхнею, (дві рідини, що не змішуються) то на границі розділу двох середовищ, задають дві умови:
 \begin{enumerate}
  	\item динамічна:
  	\begin{equation}
@@ -259,10 +268,10 @@
 \end{definition}
 
 Нехай $h(x, t) = 0$ --- рівняння вільної поверхні, де $h: \RR^n\times \RR \to \RR$ --- невідома функція, тоді виконується
-\begin{th_condition}[непротікання]
+\begin{th_condition}[на вільній поверхні]
 	Cпіввідношення 
 	\begin{equation}
-		\left. \frac{\partial h(x, t)}{\partial t} \right|_{x \in S} + \left. \langle \nabla_x h(x , t), \vecf V(x,t) \rangle \right|_{x \in S} = 0
+		\left. \frac{\partial h(x, t)}{\partial t} \right. + \left. \langle \nabla_x h(x , t), \vecf V(x,t) \rangle \right|_{x \in S} = 0
 	\end{equation}
 	виражає умову непротікання рідини через поверхню $S$.
 \end{th_condition}
@@ -319,7 +328,7 @@
 
 Взаємодія між електричними зарядами відбувається через електричне поле. Будь-який заряд змінює властивості оточуючого середовища створюючи в ньому електричне поле. Це поле проявляє себе у тому, що розташований в цьому полі заряд буде знаходитись під дією сили. \medskip
 
-Для дослідження поля використовують пробний заряд, який обирають невеликим за величиною і розмірами (точковий заряд). Згідно до закону Кулона сила $\vec f$, що діє на пробний заряд   полем точкового заряду величини $q'$ записується у вигляді
+Для дослідження поля використовують пробний заряд, який обирають невеликим за величиною і розмірами (точковий заряд). Згідно до закону Кулона сила $\vec f$, що діє на пробний заряд  $q'$  полем точкового заряду величини $q$ записується у вигляді
 \begin{equation}
 	\vec f = q' \left( \frac{1}{4 \pi \epsilon_0} \frac{q}{|r|^3} \vec r \right)
 \end{equation}
@@ -329,7 +338,7 @@
 \begin{definition}[напруженості електричного поля]
 	Характеристикою електричного поля, яка не залежить від величини пробного заряду є
 	\begin{equation}
-		E = \frac{\vec f}{q},
+		E = \frac{\vec f}{q'},
 	\end{equation}
 	яку називають \it{напруженістю електричного поля}.
 \end{definition}
@@ -338,7 +347,7 @@
 	Її також можна визначити як силу, що діє на одиничний пробний заряд.
 \end{remark}
 
-Таким чином, з напруженість електричного поля точкового заряду $q$ визначається за формулою:
+Таким чином,  напруженість електричного поля точкового заряду $q$ визначається за формулою:
 \begin{equation}
 	\vecf E = \frac{1}{4 \pi \epsilon_0} \frac{q}{|r|^3} \vec r,
 \end{equation}
@@ -363,9 +372,9 @@
 
 У випадку, коли в області $\Omega$ трьохвимірного простору заряди розташовані щільно і щільність їх розташування задана деякою функцією $q(P)$, то напруженість електричного поля визначається у вигляді інтегралу:
 \begin{equation}
-	\vecf E(P) = \frac{1}{4 \pi \epsilon_0} \Iiint_\Omega \frac{q(P)}{|r|^3} \vec r \diff P,
+	\vecf E(P_0) = \frac{1}{4 \pi \epsilon_0} \Iiint_\Omega \frac{q(P)}{|r|^3} \vec r \diff P,
 \end{equation}
-де $\vec r = \vec P - P_0$.
+де $\vec r =\overrightarrow{ P_0 - P}$.
 
 \subsubsection{Потік векторного поля. Теорема Гауса}
 
@@ -395,7 +404,7 @@
 	\Phi = - \frac{q}{4 \pi \epsilon_0} \Oiint_S \frac{\partial}{\partial n} \frac{1}{|r|} \diff S.
 \end{equation}
 
-В наступних лекціях, при вивченні гармонічних функцій ми покажемо, що цей інтеграл дорівнює $q / \epsilon_0$. \medskip
+В наступних лекціях, при вивченні гармонічних функцій ми покажемо, що цей вираз з урахуванням значення інтеграул дорівнює  $q / \epsilon_0$. \medskip
 
 Таким чином потік напруженості векторного поля одного точкового заряду дорівнює величині цього заряду поділеному на електричну постійну. \medskip
 
@@ -442,7 +451,7 @@
 \begin{definition}[потенціалу електростатичного поля]
 	Введемо величину
 	\begin{equation}
-		u\Big(\vec r\Big) = \frac{1}{4 \pi \epsilon_0 |r|}, \quad \vec r = (r_1, r_2, r_3).
+		u\Big(\vec r\Big) = \frac{1}{4 \pi \epsilon_0 |r|}, \quad \vec r = (x_1, x_2, x_3).
 	\end{equation}
 	і назвемо її потенціалом електростатичного поля одиничного точкового заряду, розташованого в точці початку координат.
 \end{definition}
@@ -451,7 +460,7 @@
 \begin{equation}
 	\frac{\vec r}{|r|^3} = - \nabla \frac{1}{|r|},
 \end{equation}
-легко бачити, що
+легко бачити, що напруженість поля одиничного точкового заряду можна записати 
 \begin{equation}
 	-\nabla u = \vecf E,
 \end{equation}
@@ -460,7 +469,7 @@
 
 Легко перевірити, що формула для напруженості електричного поля через інтеграл може бути переписана у вигляді
 \begin{equation}
-	\vecf E (P) = - \frac{1}{4 \pi \epsilon_0} \nabla \Iiint_\Omega \frac{q(P)}{|r|} \diff P.
+	\vecf E (P_0) = - \frac{1}{4 \pi \epsilon_0} \nabla_{P_0} \Iiint_\Omega \frac{q(P)}{|P-P_0|} \diff P.
 \end{equation}
 
 Враховуючи потенційність векторного поля, роботу в такому полі можна обчислити
@@ -497,7 +506,7 @@
 \end{equation}
 або, враховуючи $-\nabla \Phi = \vecf E$, отримаємо рівняння:
 \begin{equation}
-	\nabla \cdot (\nabla u) = -\frac{\rho}{\epsilon_0}
+	\nabla \cdot (\nabla \Phi) = -\frac{\rho}{\epsilon_0}
 \end{equation}
 або
 \begin{th_equation}[основне рівняння електростатики для вакууму]
