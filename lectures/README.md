@@ -35,7 +35,7 @@ _Станом на 5 червня 2019 р. цей розділ повністю 
 
 11. Лекція №11: [pdf](ch-2/11.pdf), [docx](ch-2/11.docx), [LaTeX source](ch-2/11.tex)
 
-12. Лекція №12: [pdf-v](12-v.pdf), [docx](12.docx), [LaTeX source](12.tex)
+12. Лекція №12: [pdf](ch-2/12.pdf), [docx](ch-2/12.docx), [LaTeX source](ch-2/12.tex)
 
 13. Лекція №13: [pdf-v](13-v.pdf), [docx](13.docx), [LaTeX source](13.tex)
 
