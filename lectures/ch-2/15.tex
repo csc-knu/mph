@@ -1,10 +1,10 @@
-\input{univ.sty}
+\input{../univ.sty}
 
 \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
 \author{Скибицький Нікіта}
 \date{\today}
 
-\input{th.sty}
+\input{../th.sty}
 
 \begin{document}
 
@@ -47,7 +47,7 @@
 
 В подальшому ми будемо розглядати класичні розв'язки граничних задач. Це означає, що рівняння і усі граничні умови виконуються в кожній точці області або границі. \medskip
 
-Введемо обмеження на коефіцієнти рівняння $p$ і $q$ та вільний член $F$. Зокрема будемо припускати, що $p > 0$, $p \in C^1 \left(\overline \Omega\right)$, $q \ge 0$, $q \in C \left(\overline \Omega\right)$, $F(x) \in C \lefT(\overline \Omega\right)$. \medskip
+Введемо обмеження на коефіцієнти рівняння $p$ і $q$ та вільний член $F$. Зокрема будемо припускати, що $p > 0$, $p \in C^1 \left(\overline \Omega\right)$, $q \ge 0$, $q \in C \left(\overline \Omega\right)$, $F(x) \in C \left(\overline \Omega\right)$. \medskip
 
 Позначимо $\partial \Omega = S$ --- поверхню на якій задаються граничні умови загального
 вигляду:
@@ -118,12 +118,12 @@
 
 Таким чином постановка граничної задачі для гіперболічного рівняння має вигляд: \medskip
 
-Знайти функцію $u(x, t) \in C^{(2, 2)} (Z(\Omega, T)) \cap C^{(1, 1)} \left( \overline {Z(\Omega, T)} \right)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $(x, t) \in Z_0(\Omega, T)$, і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}. \medskip
+Знайти функцію $u(x, t) \in C^{(2, 2)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 1)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $(x, t) \in Z_0(\Omega, T)$, і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}. \medskip
 
 При цьому відносно вхідних даних будемо робити наступні припущення
 \begin{gather}
-    p > 0, \quad p \in C^1 \left( \overline \Omega \right), \quad q \ge 0, \quad q \in C \left( \overline \Omega \right), \quad F(x, t) \in C \left( \ovelrine{Z(\Omega, T)} \right), \\
-    u_0, v_0 \in C \left( \ovelrine{Z_0(\Omega, T)} \right), \quad \alpha, \phi \in C \left( \ovelrine{Z_S(\Omega, T)} \right), \quad \alpha \ge 0.
+    p > 0, \quad p \in C^1 \Big( \overline \Omega \Big), \quad q \ge 0, \quad q \in C \Big( \overline \Omega \Big), \quad F(x, t) \in C \Big( \overline{Z(\Omega, T)} \Big), \\
+    u_0, v_0 \in C \left( \overline{Z_0(\Omega, T)} \right), \quad \alpha, \phi \in C \left( \overline{Z_S(\Omega, T)} \right), \quad \alpha \ge 0.
 \end{gather}
 
 \subsubsection{Задача Коші}
