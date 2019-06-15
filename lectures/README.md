@@ -41,7 +41,7 @@ _Станом на 5 червня 2019 р. цей розділ повністю 
 
 14. Лекція №14: [pdf-v](14-v.pdf), [docx](14.docx), [LaTeX source](14.tex)
 
-15. Лекція №15: [pdf](15.pdf), [docx](15.docx)
+15. Лекція №15: [pdf](ch-2/15.pdf), [docx](ch-2/15.docx), [LaTeX source](ch-2/15.tex)
 
 16. Лекція №16: [pdf](16.pdf), [docx](16.docx)
 
