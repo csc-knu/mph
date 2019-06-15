@@ -43,9 +43,15 @@
 
 \subsubsection{Гранична задача для еліптичного рівняння}
 
-Будемо розділяти внутрішні і зовнішні задачі для еліптичного рівняння, а саме, якщо $x \in \Omega$, то таку задачу будемо називати внутрішньою, якщо $x \in \Omega'$ --- задача зовнішня. \medskip
+Будемо розділяти внутрішні і зовнішні задачі для еліптичного рівняння.
 
-В подальшому ми будемо розглядати класичні розв'язки граничних задач. Це означає, що рівняння і усі граничні умови виконуються в кожній точці області або границі. \medskip
+\begin{definition}[внутрішньої і зовнішньої задач]
+    Якщо $x \in \Omega$, то таку задачу будемо називати \textit{внутрішньою}, якщо $x \in \Omega'$ ---  \textit{зовнішньою}.
+\end{definition}
+
+\begin{remark}
+    В подальшому ми будемо розглядати класичні розв'язки граничних задач. Це означає, що рівняння і усі граничні умови виконуються в кожній точці області або границі.
+\end{remark}
 
 Введемо обмеження на коефіцієнти рівняння $p$ і $q$ та вільний член $F$. Зокрема будемо припускати, що $p > 0$, $p \in C^1 \left(\overline \Omega\right)$, $q \ge 0$, $q \in C \left(\overline \Omega\right)$, $F(x) \in C \left(\overline \Omega\right)$. \medskip
 
@@ -74,13 +80,22 @@
     \end{equation}
 \end{enumerate}
 
-Таким чином гранична задача для еліптичного рівняння може бути сформульована наступним чином: знайти функцію $u(x) \in C^2(\Omega) \cap C^1 \left( \overline \Omega \right)$, яка в кожній внутрішній точці області $\Omega$ (для внутрішньої задачі) або $\Omega'$ (для зовнішньої задачі) задовольняє рівняння \eqref{eq:elliptic-differential-equation}, а кожній точці границі $S$ виконується одна з граничних умов \eqref{eq:elliptic-dirichlet-boundary-conditions}, \eqref{eq:elliptic-neumann-boundary-conditions} або \eqref{eq:elliptic-newton-boundary-conditions}. \medskip
+Таким чином гранична задача для еліптичного рівняння може бути сформульована наступним чином: 
+\begin{problem_formulation*}[граничної для еліптичного рівняння]
+    Знайти функцію $u(x) \in C^2\big(\Omega\big) \cap C^1 \big( \overline \Omega \big)$, яка в кожній внутрішній точці області $\Omega$ (для внутрішньої задачі) або $\Omega'$ (для зовнішньої задачі) задовольняє рівняння \eqref{eq:elliptic-differential-equation}, а кожній точці границі $S$ виконується одна з граничних умов \eqref{eq:elliptic-dirichlet-boundary-conditions}, \eqref{eq:elliptic-neumann-boundary-conditions} або \eqref{eq:elliptic-newton-boundary-conditions}.
+\end{problem_formulation*}
 
-У випадку зовнішньої граничної задачі в нескінченно віддаленій точці області слід задавати додаткові умови поведінки розв'язку. Такі умови називають умовами регулярності на нескінченості. Як правило вони полягають в завданні характеру спадання розв'язку і мають вигляд
-\begin{equation}
-    u(x) = O \left( \frac{1}{|x|^\alpha} \right),
-\end{equation}
-при $|x| \to \infty$, де $\alpha$ --- деякий заданий параметр задачі.
+\begin{definition}
+    У випадку зовнішньої граничної задачі в нескінченно віддаленій точці області слід задавати додаткові умови поведінки розв'язку. Такі умови називають умовами \textit{регулярності на нескінченості}.
+\end{definition}
+
+\begin{remark}
+    Як правило вони полягають в завданні характеру спадання розв'язку і мають вигляд
+    \begin{equation}
+        u(x) = O \left( \frac{1}{|x|^\alpha} \right),
+    \end{equation}
+    при $|x| \to \infty$, де $\alpha$ --- деякий заданий параметр задачі.
+\end{remark}
 
 \subsubsection{Постановка змішаних задач для рівняння гіперболічного типу. Задача Коші для гіперболічного рівняння}
 
@@ -116,32 +131,35 @@
     \end{equation}
 \end{enumerate}
 
-Таким чином постановка граничної задачі для гіперболічного рівняння має вигляд: \medskip
+Таким чином постановка граничної задачі для гіперболічного рівняння має вигляд:
+\begin{problem_formulation*}[граничної для гіперболічного рівняння]
+    Знайти функцію $u(x, t) \in C^{(2, 2)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 1)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $(x, t) \in Z_0(\Omega, T)$, і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}.
+\end{problem_formulation*}
 
-Знайти функцію $u(x, t) \in C^{(2, 2)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 1)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $(x, t) \in Z_0(\Omega, T)$, і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}. \medskip
-
-При цьому відносно вхідних даних будемо робити наступні припущення
-\begin{gather}
-    p > 0, \quad p \in C^1 \Big( \overline \Omega \Big), \quad q \ge 0, \quad q \in C \Big( \overline \Omega \Big), \quad F(x, t) \in C \Big( \overline{Z(\Omega, T)} \Big), \\
-    u_0, v_0 \in C \left( \overline{Z_0(\Omega, T)} \right), \quad \alpha, \phi \in C \left( \overline{Z_S(\Omega, T)} \right), \quad \alpha \ge 0.
-\end{gather}
+\begin{remark}
+    При цьому відносно вхідних даних будемо робити наступні припущення
+    \begin{gather}
+        p > 0, \quad p \in C^1 \Big( \overline \Omega \Big), \quad q \ge 0, \quad q \in C \Big( \overline \Omega \Big), \quad F(x, t) \in C \Big( \overline{Z(\Omega, T)} \Big), \\
+        u_0, v_0 \in C \left( \overline{Z_0(\Omega, T)} \right), \quad \alpha, \phi \in C \left( \overline{Z_S(\Omega, T)} \right), \quad \alpha \ge 0.
+    \end{gather}
+\end{remark}
 
 \subsubsection{Задача Коші}
 
 У випадку, коли область $\Omega$ має великі розміри і впливом граничних умов можна знехтувати, область $\Omega$ ототожнюється з усім евклідовим простором, тобто $\Omega = \RR^n$. \medskip
 
-У зв'язку з відсутністю границі, граничні умови не задаються. В цьому випадку гранична задача трансформується в задачу Коші для гіперболічного рівняння яка ставиться наступним чином: \medskip
-
-Знайти функцію $u(x, t) \in C^{(2, 2)} \Big( Z(\RR^n, T) \Big) \cap C^{(1, 1)} \Big( \overline {Z(\RR^n, T)} \Big)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\RR^n, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $x \in \RR^n$.
+У зв'язку з відсутністю границі, граничні умови не задаються. В цьому випадку гранична задача трансформується в задачу Коші для гіперболічного рівняння яка ставиться наступним чином: 
+\begin{problem_formulation*}[Коші для гіперболічного рівняння]
+    Знайти функцію $u(x, t) \in C^{(2, 2)} \Big( Z(\RR^n, T) \Big) \cap C^{(1, 1)} \Big( \overline {Z(\RR^n, T)} \Big)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\RR^n, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $x \in \RR^n$.
+\end{problem_formulation*}
 
 \subsubsection{Постановка змішаних задач для рівняння параболічного типу}
 
 При постановці граничної задачі і задачі Коші для рівняння параболічного типу треба враховувати, що по часовій змінній рівняння має перший порядок, що і обумовлює деякі відмінності в постановці граничних задач. \medskip
 
-Постановка граничної задачі для рівняння параболічного типу \eqref{eq:parabolic-differential-equation} має вигляд: \medskip
-
-Знайти функцію $u(x, t) \in C^{(2, 1)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 0)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівняння \eqref{eq:parabolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition} для $(x, t) \in Z_0(\Omega, T)$ і в
-кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}. \medskip
+Постановка граничної задачі для рівняння параболічного типу \eqref{eq:parabolic-differential-equation} має вигляд:
+\begin{problem_formulation*}[граничної для параболічного рівняння]
+    Знайти функцію $u(x, t) \in C^{(2, 1)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 0)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівняння \eqref{eq:parabolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition} для $(x, t) \in Z_0(\Omega, T)$ і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}. \end{problem_formulation*}
 
 Аналогічні зміни необхідно запровадити і при постановці задачі Коші для рівняння параболічного типу.
 
