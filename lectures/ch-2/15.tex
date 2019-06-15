@@ -159,7 +159,8 @@
 
 Постановка граничної задачі для рівняння параболічного типу \eqref{eq:parabolic-differential-equation} має вигляд:
 \begin{problem_formulation*}[граничної для параболічного рівняння]
-    Знайти функцію $u(x, t) \in C^{(2, 1)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 0)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівняння \eqref{eq:parabolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition} для $(x, t) \in Z_0(\Omega, T)$ і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}. \end{problem_formulation*}
+    Знайти функцію $u(x, t) \in C^{(2, 1)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 0)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівняння \eqref{eq:parabolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition} для $(x, t) \in Z_0(\Omega, T)$ і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}.
+\end{problem_formulation*}
 
 Аналогічні зміни необхідно запровадити і при постановці задачі Коші для рівняння параболічного типу.
 
@@ -187,7 +188,7 @@
     \right.
 \end{equation}
 
-Формулювання диференціального рівняння і граничних умов ще недостатньо що б гранична задача була сформульована однозначно. Необхідно додатково вказати які аналітичні властивості вимагаються від розв’язку, в якому розумінні задовольняється рівняння і граничні умови. \medskip
+Формулювання диференціального рівняння і граничних умов ще недостатньо що б гранична задача була сформульована однозначно. Необхідно додатково вказати які аналітичні властивості вимагаються від роз\-в'яз\-ку, в якому розумінні задовольняється рівняння і граничні умови. \medskip
 
 При аналізі граничної задачі виникають наступні питання:
 \begin{itemize}
@@ -214,17 +215,23 @@
 
 Позначимо $R(A)$ та $D(A)$ --- область значень та область визначення оператора $A$. Коректність операторного рівняння визначають для пари просторів $E$ та $F$. \medskip
 
-В термінах операторного рівняння \eqref{eq:boundary-operator-equation} існування розв'язку означає, що область значень оператора $R(A)$ є не порожня підмножина $F$. \medskip
+\begin{proposition}
+    В термінах операторного рівняння \eqref{eq:boundary-operator-equation} існування розв'язку означає, що область значень оператора $R(A)$ є не порожня підмножина $F$.
+\end{proposition}
 
-Єдиність розв'язку означає, що відображення $A: D(A) \to R(A)$ ін'єктивне і на $R(A)$ визначений обернений оператор $A^{-1}$.
+\begin{proposition}
+    Єдиність розв'язку означає, що відображення $A: D(A) \to R(A)$ ін'єктивне і на $R(A)$ визначений обернений оператор $A^{-1}$.
+\end{proposition}
 
 \begin{definition}[ін'єктивного відображення]
-    Відображення $A: D(A) \to R(A)$ називається \textit{ін'єктивним}, якщо різні елементи множини $D(A)$ переводяться в різні елементи множини $R(A)$.    
+    Відображення $A$: \allowbreak $D(A) \to R(A)$ називається \textit{ін'єктивним}, якщо різні елементи множини $D(A)$ переводяться в різні елементи множини $R(A)$.    
 \end{definition}
 
-Вимога неперервної залежності розв'язку від правої частини або стійкості граничної задачі зводиться до неперервності або обмеженості оператора $A^{-1}$.
+\begin{proposition}
+    Вимога неперервної залежності розв'язку від правої частини або стійкості граничної задачі зводиться до неперервності або обмеженості оператора $A^{-1}$.
+\end{proposition}
 
-\subsusbection{Приклад Адамара}
+\subsubsection{Приклад Адамара}
 
 \begin{example}[Адамара, некоректно поставленої задачі]
     Розглянемо рівняння Лапласа
@@ -239,7 +246,7 @@
 \end{example}
 
 \begin{proposition}
-    Для прикладу Адамара порушена умова непевної залежності розв'язку від вхідних даних.
+    Для прикладу Адамара порушена умова непевної залежності роз\-в'яз\-ку від вхідних даних.
 \end{proposition}
 
 \begin{proof}
@@ -247,13 +254,13 @@
     \begin{equation}
         u_k(x, t) = \frac{\sinh(k t) \sin (k x)}{k^2},
     \end{equation}
-    причому
+    причому $\forall x \in (0, \pi)$:
     \begin{equation}
-        \forall x \in (0, \pi): \Lim_{k \to \infty} u_k(x, 0) =  \Lim_{k \to \infty} \frac{\sin (k x)}{k} = 0,
+        \Lim_{k \to \infty} u_k(x, 0) =  \Lim_{k \to \infty} \frac{\sin (k x)}{k} = 0,
     \end{equation}
-    але
+    але $\forall t > 0$, $\forall x \in (0, \pi)$:
     \begin{equation}
-        \forall t > 0, \forall x \in (0, \pi): \Lim_{k \to \infty} u_k(x, t) =  \Lim_{k \to \infty} \frac{\sinh(k t) \sin (k x)}{k^2} = \infty.
+        \Lim_{k \to \infty} u_k(x, t) =  \Lim_{k \to \infty} \frac{\sinh(k t) \sin (k x)}{k^2} = \infty.
     \end{equation}
 \end{proof}
 
