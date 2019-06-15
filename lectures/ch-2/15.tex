@@ -283,7 +283,7 @@
     \left. u \right|_S = 0.
 \end{equation}
 
-Отримаємо інтегральне співвідношення. \medskip
+Отримаємо для нього відповідне інтегральне співвідношення. \medskip
 
 Розглянемо функцію $v(x)$, таку, що $\left. v \right|_S = 0$, помножимо рівняння на $v$ та проінтегруємо по $\Omega$:
 \begin{equation}
@@ -332,10 +332,14 @@
 \end{equation}
 
 Після однократного застосування формули інтегрування за частинами отримаємо:
-\begin{multline}
-    \Iiint_\Omega v L u \diff x = \Iiint_\Omega \left( - \Sum_{i, j = 1}^n A_{i, j}(x) \frac{\partial u}{\partial x_i} \frac{\partial v}{\partial x_j} - \Sum_{k = 1}^n \frac{\partial}{\partial x_k} (B_k(x) v) u + C(x) u v \right) \diff x + \\
-    + \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \frac{\partial u}{\partial x_i} \cos(n, x_j) + \Sum_{k = 1}^N B_k(x) u v \cos(n, x_k) \right) \diff S.
-\end{multline}
+\begin{equation}
+    \begin{aligned}
+        & \Iiint_\Omega v L u \diff x = \\
+        & \quad = \Iiint_\Omega \left( - \Sum_{i, j = 1}^n A_{i, j}(x) \frac{\partial u}{\partial x_i} \frac{\partial v}{\partial x_j} - \Sum_{k = 1}^n \frac{\partial}{\partial x_k} (B_k(x) v) u + C(x) u v \right) \diff x + \\
+        & \qquad + \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \frac{\partial u}{\partial x_i} \cos(n, x_j) + \Sum_{k = 1}^N B_k(x) u v \cos(n, x_k) \right) \diff S.
+    \end{aligned}
+\end{equation}
+
 
 Продовжимо інтегрування за частинами до першого інтегралу по області $\Omega$, перекидаючи похідну з функції $u$:
 \begin{multline}
@@ -354,11 +358,15 @@
 
 Враховуючи це позначення, останню формулу можна записати у вигляді:
 \begin{equation}
-    \Iiint_\Omega (V L u - u M v) \diff x = \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \left( \frac{\partial u}{\partial x_i} v - \frac{\partial v}{\partial x_i} u \right) \cos(n, x_j) + \Sum_{k = 1}^n B_k(x) u v \cos(n, x_k) \right) \diff S.
+    \begin{aligned}
+        & \Iiint_\Omega (V L u - u M v) \diff x = \\
+        & \quad = \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \left( \frac{\partial u}{\partial x_i} v -  \frac{\partial v}{\partial x_i} u \right) \cos(n, x_j) + \right. \\
+        & \qquad \left. + \Sum_{k = 1}^n B_k(x) u v \cos(n, x_k) \right) \diff S.
+    \end{aligned}
 \end{equation}
 
 \begin{definition}[другої формули Гріна]
-    Ця формула називається другою формулою Гріна. 
+    Ця формула називається \textit{другою формулою Гріна}.
 \end{definition}
 
 Розглянемо основні оператори математичної фізики другого порядку з постійними коефіцієнтами:
