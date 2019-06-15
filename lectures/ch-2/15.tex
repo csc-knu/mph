@@ -270,8 +270,122 @@
     Класичний розв'язок --- це розв'язок, який задовольняє рівнянню, початковим і граничним умовам в кожній точці, області, або границі.    
 \end{definition}
 
-Це означає, що класичний розв'язок повинен мати певну гладкість, яка визначається порядком похідних рівняння і порядком похідних граничних і початкових умов.
+Це означає, що класичний розв'язок повинен мати певну гладкість, яка визначається порядком похідних рівняння і порядком похідних граничних і початкових умов. \medskip
 
-\newpage 
+Розглянемо рівняння
+\begin{equation}
+    \label{eq:differential-equation}
+    \nabla \cdot (p(x) \nabla u) - q(x) u = -F (x), \quad x \in \Omega
+\end{equation}
+та однорідні умови
+\begin{equation}
+    \label{eq:homogenuous-conditions}
+    \left. u \right|_S = 0.
+\end{equation}
+
+Отримаємо інтегральне співвідношення. \medskip
+
+Розглянемо функцію $v(x)$, таку, що $\left. v \right|_S = 0$, помножимо рівняння на $v$ та проінтегруємо по $\Omega$:
+\begin{equation}
+    \Iiint_\Omega v \left(\nabla \cdot (p(x) \nabla u) - u \right) \diff \Omega = - \Iiint_\Omega F v \diff \Omega.    
+\end{equation}
+
+Після інтегрування за частинами отримаємо:
+\begin{equation}
+    \Iiint_\Omega \left( p \langle \nabla u, \nabla v \rangle) - q u v \right) \diff \Omega + \Iint_S p v \frac{\partial u}{\partial n} \diff S = - \Iiint_\Omega F v \diff \Omega.
+\end{equation}
+
+Остаточно, після врахування граничних умов маємо:
+\begin{equation}
+    \label{eq:integral-equality}
+    \Iiint_\Omega \left( p \langle \nabla u, \nabla v \rangle) + q u v \right) \diff \Omega = \Iiint_\Omega F v \diff \Omega.
+\end{equation}
+
+Інтегральна тотожність має зміст для більш широкого класу функцій ніж той якому належить класичний розв'язок граничної задачі і коефіцієнти рівняння. \medskip
+
+Якщо $u, v \in C^2 \big( \Omega \big) \cap C \big( \overline \Omega \big)$, $p \in C^1 (\Omega$, $q \in C (\Omega)$ то з тотожності \eqref{eq:integral-equality}, обернений ланцюжок перетворень дозволяє отримати граничну задачу \eqref{eq:differential-equation}, \eqref{eq:homogenuous-conditions}. Але \eqref{eq:integral-equality} має зміст для функцій більш широкого класу, а саме $F, u, v, \nabla u, \nabla v \in L_2(\Omega)$, $p$, $q$ --- обмежені. Це дозволяє використовувати інтегральну тотожність \eqref{eq:homogenuous-conditions} для визначення узагальненого розв'язку граничної
+задачі \eqref{eq:differential-equation}, \eqref{eq:homogenuous-conditions}. \medskip
+
+Для цього введемо множину $N_2 = \{u | u, \nabla u \in L_2(\Omega), \left.u \right|_S = 0\}$.
+
+\begin{definition}[узагальненого розв'язку]
+    Узагальненим розв'язком граничної задачі \eqref{eq:differential-equation}, \eqref{eq:homogenuous-conditions} будемо називати довільну функцію $u \in N_2$, таку, що $\forall v \in N_2$ має місце інтегральна тотожність \eqref{eq:integral-equality}.    
+\end{definition}
+
+\subsubsection{Формально спряжені оператори. Друга формула Гріна}
+
+Будемо розглядати лінійний диференціальний оператор
+\begin{equation}
+    L u = \Sum_{i, j = 1}^N \frac{\partial}{\partial x_j} \left( A_{i,j}(x) \frac{\partial u}{\partial x_i} \right) + \Sum_{k = 1}^N B_k(x) \frac{\partial u}{\partial x_k} + C(x) u.
+\end{equation}
+
+Будемо припускати, що $A_{i, j} = A_{j, i} \in C^1 \big( \overline \Omega \big)$, $B_k \in C \big( \overline \Omega \big)$, $u \in C^2 \big( \overline \Omega \big)$. \medskip
+
+Розглянемо інтеграл:
+\begin{equation}
+    \Iiint_\Omega v L u \diff x = \Iiint_\Omega v \left( \Sum_{i, j = 1}^N \frac{\partial}{\partial x_j} \left( A_{i,j}(x) \frac{\partial u}{\partial x_i} \right) + \Sum_{k = 1}^N B_k(x) \frac{\partial u}{\partial x_k} + C(x) u \right) \diff x.
+\end{equation}
+
+Для перетворення першої і другої суми застосуємо формулу інтегрування за частинами:
+\begin{equation}
+    \Iiint_\Omega v(x) \frac{\partial u(x)}{\partial x_i} \diff x = \Iint_S v(x) u(x) \cos(n, x_i) \diff x - \Iiint_\Omega u(x) \frac{\partial v(x)}{\partial x_i} \diff x.
+\end{equation}
+
+Після однократного застосування формули інтегрування за частинами отримаємо:
+\begin{multline}
+    \Iiint_\Omega v L u \diff x = \Iiint_\Omega \left( - \Sum_{i, j = 1}^n A_{i, j}(x) \frac{\partial u}{\partial x_i} \frac{\partial v}{\partial x_j} - \Sum_{k = 1}^n \frac{\partial}{\partial x_k} (B_k(x) v) u + C(x) u v \right) \diff x + \\
+    + \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \frac{\partial u}{\partial x_i} \cos(n, x_j) + \Sum_{k = 1}^N B_k(x) u v \cos(n, x_k) \right) \diff S.
+\end{multline}
+
+Продовжимо інтегрування за частинами до першого інтегралу по області $\Omega$, перекидаючи похідну з функції $u$:
+\begin{multline}
+    \Psi = \Iiint_\Omega \left( \Sum_{i, j = 1}^N u \frac{\partial}{\partial x_i} \left( A_{i,j}(x) \frac{\partial v}{\partial x_j} \right) - \Sum_{k = 1}^n \frac{\partial}{\partial x_k} (B_k(x) v) u + C(x) u v \right) \diff x + \\
+    + \Oiint_S \left( \Sum_{i, j = 1}^n A_{i,j}(x) \left( \frac{\partial u}{\partial x_i} v - \frac{\partial v}{\partial x_i} u \right) \cos(n, x_j) + \Sum_{k = 1}^N B_k(x) u v \cos(n, x_k) \right) \diff S.
+\end{multline}
+
+Введемо наступний оператор:
+\begin{equation}
+    M u = \Sum_{i, j = 1}^n \frac{\partial}{\partial x_j} \left( A_{i,j}(x) \frac{\partial u}{\partial x_i} \right) - \Sum_{k = 1}^N \frac{\partial}{\partial x_k} (B_k(x) u) + C(x) u.
+\end{equation}
+
+\begin{definition}[формально спряженого оператора]
+    Оператор $M$ називається \textit{формально спряженим} до оператора $L$.
+\end{definition}
+
+Враховуючи це позначення, останню формулу можна записати у вигляді:
+\begin{equation}
+    \Iiint_\Omega (V L u - u M v) \diff x = \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \left( \frac{\partial u}{\partial x_i} v - \frac{\partial v}{\partial x_i} u \right) \cos(n, x_j) + \Sum_{k = 1}^n B_k(x) u v \cos(n, x_k) \right) \diff S.
+\end{equation}
+
+\begin{definition}[другої формули Гріна]
+    Ця формула називається другою формулою Гріна. 
+\end{definition}
+
+Розглянемо основні оператори математичної фізики другого порядку з постійними коефіцієнтами:
+\begin{enumerate}
+    \item Гельмгольца: $A_1 u = (\Delta + k^2) u$.
+    \item Теплопровідності: $A_2 u = \left( a^2 \Delta - \frac{\partial}{\partial t} \right) u$.
+    \item Хвильовий: $A_3 u = \left( a^2 \Delta - \frac{\partial^2}{\partial t^2} \right) u$.
+\end{enumerate}
+
+Оскільки оператори $A_1$, $A_3$ містять лише похідні другого порядку, то ці оператори є формально самоспряженими. Для оператора $A_2$, згідно до визначення спряженим буде оператор $A_2^\star u = \left( a^2 \Delta + \frac{\partial}{\partial t} \right) u$. \medskip
+
+Запишемо другу формулу Гріна для кожного з основних операторів:
+\begin{enumerate}
+    \item для Гельмгольца: 
+    \begin{equation}
+        \Iiint_\Omega ( v (\Delta u + k^2 u) - u (\Delta v + k^2 v)) \diff x = \Iint_S \left( v \frac{\partial u}{\partial n} - u \frac{\partial v}{\partial n} \right) \diff S;
+    \end{equation}
+    \item для теплопровдіності:
+    \begin{multline}
+        \Int_{t_0}^T \Iiint_\Omega \left( v \left( a^2 u - \frac{\partial u}{\partial t} \right) - u \left( a^2 \Delta v + \frac{\partial v}{\partial t} \right) \right) \diff x \diff t = \\
+        = \Int_{t_0}^T \Iint_S a^2 \left( v \frac{\partial u}{\partial n} - u \frac{\partial v}{\partial n} \right) \diff S \diff t- \Iiint_\Omega \left. u v \right|_{t_0}^T \diff x.
+    \end{multline}
+    \item для хвильового:
+    \begin{multline}
+        \Int_{t_0}^T \Iiint_\Omega \left( v \left( a^2 u - \frac{\partial^2 u}{\partial t^2} \right) - u \left( a^2 \Delta v - \frac{\partial^2 v}{\partial t^2} \right) \right) \diff x \diff t = \\
+        = \Int_{t_0}^T \Iint_S a^2 \left( v \frac{\partial u}{\partial n} - u \frac{\partial v}{\partial n} \right) \diff S \diff t - \Iiint_\Omega \left. \left( v \frac{\partial u}{\partial t} - u \frac{\partial v}{\partial t} \right) \right|_{t_0}^T \diff x.
+    \end{multline}
+\end{enumerate}
 
 \end{document}
