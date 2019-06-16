@@ -6,6 +6,7 @@
 
 Нехай функція $\omega(x) \in C^1$, $x = (x_1, \ldots, x_n)$, $n \ge 2$ є такою що на поверхні $\omega(x) = 0$, $\nabla \omega(x) \ne 0$ та
 \begin{equation}
+    \label{eq:omega-partial-system-of-linear-equations}
     \Sum_{i, j = 1}^N a_{i,j}(x) \frac{\partial \omega(x)}{\partial x_i} \frac{\partial \omega(x)}{\partial x_j} = 0.
 \end{equation}
 
@@ -76,6 +77,7 @@
 \end{equation}
 може бути зведене до одного із рівнянь:
 \begin{align}
+    \label{eq:cauchy-equation-simplified-first-form}
     u_{xt}(t,x) &= f(x, y, u, u_t, u_x), \\
     \label{eq:cauchy-equation-simplified-second-form}
     u_{tt} - u_{xx} &= f(x, y, u, u_t, u_x).
@@ -120,3 +122,369 @@
     \centering
     \includegraphics[]{{../img/16-1}.mps}
 \end{figure}
+
+Застосовуючи формулу \eqref{eq:cauchy-equation-simplified-second-form} в області, яка обмежена дугою $AB$ кривої $L$ і відрізками характеристик $[CA]$ і $[CB]$, одержуємо:
+\begin{equation}
+    \label{eq:int-ab-bc-ca}
+    \Int_{AB + [BC] + [CA]} u_x \diff t + u_t \diff x = \Iint_D f(x, t) \diff x \diff t.
+\end{equation}
+
+Оскільки вздовж $[BC]$ і $[AC]$ маємо $\diff x = - \diff t$, $\diff x = \diff t$ відповідно, то \eqref{eq:free-string-fluctuations} запишеться у вигляді:
+\begin{equation}
+    \Int_{AB} u_x \diff t + u_t \diff x - 2 u (C) + u(A) + u(B) = \Iint_D f(x, t) \diff x \diff t,
+\end{equation}
+звідки знаходимо
+\begin{equation}
+    \label{eq:uc-via-ua-ub-and-ints}
+    u(C) = \frac{u(A) + u(B)}{2} + \frac{1}{2} \Int_{AB} u_x \diff t + u_t \diff x - \frac{1}{2} \Iint_D f(x, t) \diff x \diff t.
+\end{equation}
+
+Якщо розв'язок рівняння \eqref{eq:cauchy-equation-simplified-first-form} задовольняє умовам:
+\begin{equation}
+    \label{eq:free-string-fluctuations-boundary-conditions}
+    \left. u \right|_L = \phi(x), \quad \left. \frac{\partial u}{\partial \ell} \right|_L = \psi(x),
+\end{equation}
+де $\phi$ і $\psi$ --- задані дійсні відповідно два рази і один раз неперервно диференційовні функції, а $\ell$ --- заданий на $L$ достатньо гладкий вектор, що ніде не збігається з дотичною до кривої $L$. Визначимо $u_x$ і $u_t$ із рівностей:
+\begin{equation}
+    u_x \frac{\diff x}{\diff s} + u_t \frac{\diff t}{\diff s} = \frac{\diff \phi}{\diff s}, \quad u_x \ell_x + u_t \ell_t = \psi,
+\end{equation}
+де $s$ --- довжина дуги $L$, і підставляючи відомі значення $u$, $u_x$, $u_t$ в праву частину \eqref{eq:uc-via-ua-ub-and-ints}, одержуємо розв'язок задачі Коші \eqref{eq:free-string-fluctuations}, \eqref{eq:free-string-fluctuations-boundary-conditions}. \medskip
+
+Із наведених міркувань випливає, що постановка задачі Коші \eqref{eq:cauchy-equation-simplified-second-form}, \eqref{eq:int-ab-bc-ca} є коректною, тобто вона має в розглядуваній області тільки єдиний розв'язок, і він є стійким. \medskip
+
+Аналогічно ставиться задача Коші і у випадку рівняння \eqref{eq:cauchy-equation-simplified-first-form}. \medskip
+
+Для рівняння \eqref{eq:cauchy-equation-simplified-first-form} характеристиками будуть прямі, паралельні осям координат ($x = \const$, $t = \const$). Отже, в цьому випадку всяка гладка крива $L$, яка перетинається не більш, ніж в одній точці з прямими, паралельними осям координат, буде ``вільною''. Нехай рівняння цієї кривої буде $t = g(x)$ (або $x = h(t)$). Вважаємо, що існують похідні $g'(x)$, $h'(t)$, відмінні від нуля. Тоді задача Коші може бути поставлена наступним чином: в області
+\begin{equation}
+    D = \left\{ (t, x) \middle| x_0 < x < x_0 + \alpha, g(x) < t < t_0 + \beta \right\}, \quad \alpha > 0, \quad \beta > 0
+\end{equation}
+знайти розв'язок диференціального рівняння \eqref{eq:omega-partial-system-of-linear-equations}, який на кривій $L$ задовольняє умови
+\begin{equation}
+    \label{eq:second-form-boundary-conditions}
+    \left. u \right|_{t = g(x)} = \phi(x), \quad \left. u_t \right|_{t = g(x)} = \psi(x).
+\end{equation}
+
+Дані Коші \eqref{eq:uc-via-ua-ub-and-ints} дозволяють на кривій $t = g(x)$ знайти значення похідної $u_x$. Дійсно, диференціюючи по $x$ першу із умов \eqref{eq:second-form-boundary-conditions}, одержуємо
+\begin{equation}
+    \left. u_x \right|_{t = g(x)} + \left. u_t \right|_{t = g(x)}, \quad g'(x) = \phi'(x),
+\end{equation}
+або
+\begin{equation}
+    \left. u_x \right|_{t = g(x)} = \phi'(x) - \psi(x) \phi'(x).
+\end{equation}
+
+\subsubsection{Узагальнена задача Коші для \texorpdfstring{$n$}{n}-вимірного хвильового рівняння}
+
+У випадку хвильового рівняння в $n$-вимірному просторі
+\begin{equation}
+    \label{eq:utt-equation}
+    u_{tt}(t, x) = a^2 \Delta u(t, x) + f(t, x), \quad x = (x_1, x_2, \ldots, x_n)
+\end{equation}
+носієм початкових умов може бути будь-яка ``вільна'' поверхня $\Sigma$, тобто гіперповерхня $\Psi(x, t) = 0$, яка задовольняє умовам:
+\begin{itemize}
+    \item в жодній її точці $(x, t)$ не має місце рівність
+    \begin{equation}
+        \Sum_{i = 1}^n a^2 \left( \Psi_{x_i} \right)^2 - \left( \Psi_t \right)^2 = 0,
+    \end{equation}
+    тобто поверхня $\Sigma$ не є характеристичною;
+    \item при $n \ge 2$:
+    \begin{equation}
+        \label{eq:psi-inequality-condition}
+        \Sum_{i = 1}^n a^2 \left( \Psi_{x_i} \right)^2 - \left( \Psi_t \right)^2 < 0.
+    \end{equation}
+\end{itemize}
+
+Задача Коші ставиться наступним чином: знайти два рази неперервно диференційовний розв'язок рівняння \eqref{eq:free-string-fluctuations-boundary-conditions}, який задовольняє умови
+\begin{equation}
+    \label{eq:utx-boundary-conditions}
+    u(t, x) = \phi(x), \quad \frac{\partial u(t, x)}{\partial n} = \psi(x), \quad (x, t) \in \Sigma,
+\end{equation}
+де $n$ --- заданий на $\Sigma$ одиничний вектор нормалі, а $\phi(x)$ і $\psi(x)$ --- задані на $\Sigma$ досить гладкі функції. Будемо вважати, що поверхня $\Sigma$ задана рівнянням $t = \sigma(x)$. \medskip
+
+Покажемо, що задачу Коші \eqref{eq:utt-equation}, \eqref{eq:utx-boundary-conditions} можна звести до задачі Коші з початковими умовами заданими на поверхні $\tau = 0$. \medskip
+
+Замість змінної $t$ введемо змінну $\tau = t - \sigma(x)$. Для такої заміни змінних отримаємо хвильове рівняння для функції $\tilde u(x, \tau) = u(x, \tau + \sigma(x))$. \medskip
+
+Підрахуємо похідні, що входять в хвильове рівняння \eqref{eq:utt-equation}:
+\begin{align}
+    \frac{\partial^2 u}{\partial t^2} &= \frac{\partial^2 \tilde u}{\partial \tau^2} \left( \frac{\partial \tau}{\partial t} \right)^2 =  \frac{\partial^2 \tilde u}{\partial \tau^2}, \\
+    \frac{\partial^2 u}{\partial x_i^2} &= \frac{\partial^2 \tilde u}{\partial \tau^2} \left( \frac{\partial \tau}{\partial x_i} \right)^2 + \frac{\partial^2 \tilde u}{\partial x_i^2} + \frac{\partial \tilde u}{\partial \tau} \frac{\partial^2 \tau}{\partial x_i^2} = \\
+    &= \frac{\partial^2 \tilde u}{\partial \tau^2} \left( \frac{\partial \sigma}{\partial \tau^2} \right)^2 + \frac{\partial^2 \tilde u}{\partial x_i^2} - \frac{\partial \tilde u}{\partial \tau} \frac{\partial^2 \sigma}{\partial x_i^2}. \nonumber
+\end{align}
+
+Таким чином хвильове рівняння буде мати вигляд:
+\begin{equation}
+    \label{eq:tilde-u-wwave-equation}
+    \frac{\partial^2 \tilde u}{\partial \tau^2} = \frac{a^2}{a_0} \Sum_{i = 1}^n \frac{\partial^2 \tilde u}{\partial x_i^2} - \frac{a^2}{a_0} \Sum_{i = 1}^n \frac{\partial \tilde u}{\partial \tau} \frac{\partial^2 \sigma}{\partial x_i^2} + \frac{f(x, \tau + \sigma(x))}{a_0},
+\end{equation}
+де
+\begin{equation}
+    a_0 = 1 - a^2 \Sum_{i = 1}^n \left( \frac{\partial \sigma}{\partial x_i} \right)^2 \ne 0.
+\end{equation}
+
+Остання нерівність випливає з того, що $\Sigma$ задана рівнянням $\tau = \sigma(x)$ не є характеристичною поверхнею. \medskip
+
+При обраній заміні змінних поверхня $\Sigma$ переходить в площину $\tau = 0$, a умови \eqref{eq:utx-boundary-conditions} приймають вигляд:
+\begin{equation}
+    \label{eq:tilde-u-boundary-conditions}
+    \left. \tilde u \right|_{\tau = 0} = \left. u \right|_\Sigma = \phi(x), \quad \left. \frac{\partial \tilde u}{\partial \tau} \right|_{\tau = 0} = \left. \frac{\partial u}{\partial t} \right|_\Sigma.
+\end{equation}
+
+Залишається знайти $\left. \frac{\partial u}{\partial t} \right|_\Sigma$. Для цього диференціюємо першу з умов \eqref{eq:tilde-u-boundary-conditions}. \medskip
+
+Врахуємо, що
+\begin{equation}
+    \label{eq:system-odf-linear-equations-first-part}
+    \left. u \right|_\Sigma = \phi(x) = u(x, \sigma(x)), \quad \frac{\partial \phi}{\partial x_i} = \frac{\partial u}{\partial t} \frac{\partial \sigma}{\partial x_i} + \frac{\partial u}{\partial x_i}, \quad i = 1, 2, \ldots, n
+\end{equation}
+
+Нормаль до поверхні $\Sigma$ можна записати у вигляді $\vec n = \frac{\langle 1, - \nabla \sigma \rangle}{\Delta}$. Диференціюємо $u(x, t)$ по нормалі і використаємо другу умову \eqref{eq:utt-equation}:
+\begin{equation}
+    \label{eq:system-odf-linear-equations-second-part}
+    \psi(x) = \left. \frac{\partial u(x, \sigma(x))}{\partial \vec n} \right|_\Sigma = \frac{1}{\Delta} \left( \frac{\partial u}{\partial t} - \Sum_{i = 1}^n \frac{\partial \sigma}{\partial x_i} \frac{\partial u}{\partial x_i} \right).
+\end{equation}
+
+Система лінійних алгебраїчних рівнянь \eqref{eq:system-odf-linear-equations-first-part}, \eqref{eq:system-odf-linear-equations-second-part} має єдиний розв'язок відносно невідомих величин $\frac{\partial u}{\partial x_i}$, $i = 1, 2, \ldots, n$, $\frac{\partial u}{\partial t}$ на будь-якій поверхні $\Sigma$, оскільки її визначник
+\begin{equation}
+    \begin{vmatrix}
+        \dfrac{\partial \sigma}{\partial x_1} & 1 & 0 & & \cdots & 0 \\
+        \\
+        \vdots & 0 & \ddots & & \ddots & \vdots \\
+        \\
+        \vdots & \vdots & \ddots & & \ddots & 0 \\
+        \\
+        \dfrac{\partial \sigma}{\partial x_n} & 0 & \cdots & & 0 & 1 \\
+        \\
+        \dfrac{1}{\Delta} & -\dfrac{1}{\Delta} \dfrac{\partial \sigma}{\partial x_1} & \cdots & & \cdots & - \dfrac{1}{\Delta} \dfrac{\partial \sigma}{\partial x_n}
+    \end{vmatrix} = (-1)^n \Delta \ne 0.
+\end{equation}
+
+Таким чином задача Коші з даними на вільній поверхні $\Sigma$ є коректною. \medskip
+
+Відзначимо, що умова ``вільності'' поверхні $\Sigma$ є принциповою для коректної постановки задачі Коші. Для хвильового рівняння
+\begin{equation}
+    u_{tt}(t, x, y) = u_{xx}(t, x, y) + u_{yy}(t, x, y)
+\end{equation}
+площина $y = 0$ не є вільною (не виконується умова \eqref{eq:psi-inequality-condition}), ні характеристичною поверхнею. Функція
+\begin{equation}
+    u_m(t, x, y) = \frac{\sinh (m y) \sin \left( \frac{m (x + t)}{\sqrt{2}} \right)}{m^2},
+\end{equation}
+де $m$ --- натуральне число, є розв'язком рівняння \eqref{eq:utt-equation}, який задовольняє умови
+\begin{equation}
+    \left. u_m(t, x, y) \right|_{y = 0} = 0, \quad  u_y(t, x, 0)  = \frac{\sin \left( \frac{m (x + t)}{\sqrt{2}} \right)}{m}.
+\end{equation}
+
+Але задача Коші \eqref{eq:utx-boundary-conditions}, \eqref{eq:tilde-u-wwave-equation} поставлена некоректно, тому що
+\begin{equation}
+    \Lim_{m \to \infty} \frac{\sin \left( \frac{m (x + t)}{\sqrt{2}} \right)}{m} = 0, 
+\end{equation}
+а сам розв'язок $u_m(t, x, y)$ при $m \to \infty$ є необмеженим.
+
+\subsubsection{Плоскі хвилі. Дисперсія хвиль}
+
+Розглянемо однорідне хвильове рівняння зі сталими коефіцієнтами 
+\begin{equation}
+    \label{eq:9.21}
+    u_{tt}(t, x) = a^2 \Delta u(t, x) + c u(t, x), \quad x = (x_1, x_2, \ldots, x_n).
+\end{equation}
+
+Покладемо $c = 0$. Розв'язки рівняння \eqref{eq:9.21} шукатимемо у вигляді
+\begin{equation}
+    \label{eq:9.22}
+    u(t, x) = f (b t + \langle \xi, x \rangle),
+\end{equation}
+де $\vec \xi = (\xi_1, \xi_2, \ldots, \xi_n)$,
+\begin{equation}
+    \langle \xi, x \rangle = \Sum_{i = 1}^n \xi_i x_i.
+\end{equation}
+
+При різних значеннях $t = t_0$ функція $u(t_1, x)$ відрізняється від $u(t_0, x)$ зсувом на вектор $\vec \xi \, b (t_1 - t_0) / \left|\vec \xi \, \right|^2$, дійсно:
+\begin{equation}
+    \begin{aligned}
+        u \left(t_0, x + \frac{\vec \xi \, b (t_1 - t_0)}{\left|\vec \xi\,\right|^2} \right) &= f \left(b t_0 + \langle \xi, x + \frac{\vec \xi \, b (t_1 - t_0)}{\left|\vec \xi\,\right|^2} \rangle \right) = \\
+        &= f \left( b t_0 + \langle \xi, x\rangle + \langle \xi, \xi \rangle \frac{b (t_1 - t_0)}{\left|\vec \xi\,\right|^2} \right) = \\
+        &= f (b t_1 + \langle \xi, x\rangle) = u(t_1, x).
+    \end{aligned}
+\end{equation}
+
+\begin{definition}
+    Розв'язок вигляду \eqref{eq:9.22} прийнято називати \textit{плоскою хвилею}, яка рухається вздовж напряму вектора $\xi$ зі швидкістю $v = b / \left|\vec \xi\,\right|$.    
+\end{definition}
+
+\begin{definition}
+    Вираз $b t + \langle \xi, x \rangle$ називається \textit{фазою хвилі} \eqref{eq:9.22}, а $f$ --- \textit{формою хвилі}. 
+\end{definition}
+
+\begin{definition}
+    Якщо $b = 0$, то хвиля \eqref{eq:9.22} називається \textit{стоячою}.
+\end{definition}
+
+Знайдемо умови, яким повинні задовольняти $b$ і вектор $\vec \xi$, щоб функція \eqref{eq:9.22} була розв'язком рівняння \eqref{eq:9.21} при $c = 0$. Підставимо \eqref{eq:9.22} в \eqref{eq:9.21}. Отримаємо: 
+\begin{equation}
+    f'' (b y + \langle \xi, x \rangle) b^2 = a^2 f''(b t + \langle \xi, x \rangle) \Sum_{i = 1}^n \xi_i^2.
+\end{equation}
+
+Вважаючи, що $f''(Q) \not\equiv 0$, маємо
+\begin{equation}
+    \label{eq:9.23}
+    b^2 = a^2 \left| \vec \xi \, \right|^2.
+\end{equation}
+
+Розв'язками цього рівняння є вектори $\vec N = (\xi, b) \in \RR^{n + 1}$, які лежать на конусі $\mathcal{K}$ в $\RR^{n + 1}$, основою якого є сфера $\left| \vec \xi \, \right| = b / a$. 
+
+\begin{definition}
+    Вектор $\vec N = (\xi, b) \in \RR^{n + 1}$, $\vec N \ne 0$, який задовольняє рівняння \eqref{eq:9.23}, називається \textit{характеристичною нормаллю} хвильового рівняння \eqref{eq:9.21}.
+\end{definition}
+
+\begin{definition}
+    Гіперплощина
+    \begin{equation}
+        N^\perp = \left\{(t, x) \in \RR^{n + 1} \middle| b t + \langle \xi, x \rangle = \const \right\}
+    \end{equation}
+    називається \textit{характеристичною гіперплощиною} хвильового рівняння \eqref{eq:9.21}.
+\end{definition}
+ 
+Ця площина перпендикулярна до характеристичної нормалі $\vec N$.
+
+\begin{definition}
+    Гіперповерхня в $\RR^{n + 1}$ називається \textit{характеристичною}, якщо в кожній точці її дотична гіперплощина є характеристичною.    
+\end{definition}
+
+Характеристичне рівняння \eqref{eq:9.23} свідчить, що швидкість поширення всіх плоских хвиль, які задовольняють рівняння \eqref{eq:9.21}, дорівнює $a$:
+\begin{equation}
+    \label{eq:9.24}
+    v^2 = \frac{b^2}{\left| \xi \right|^2} = a^2.
+\end{equation}
+
+Справедливе й обернене твердження. Для довільного $\vec N \in \RR^{n + 1}$, який задовольняє \eqref{eq:9.23}, плоска хвиля \eqref{eq:9.24} є розв'язком рівняння \eqref{eq:9.21} при довільній функції $f(bt + \langle \xi, x \rangle)$. \medskip
+
+В окремому випадку $f(b t + \langle \xi, x \rangle)$ може бути й розривною (або функцією, яка швидко змінюється) в деякій точці, наприклад при $b t + \langle \xi, x \rangle = 2$. Тоді розв'язок \eqref{eq:9.22} буде мати той самий розрив уздовж всієї гіперплощини в $\RR^{n + 1}(\xi \ne 0)$:
+\begin{equation}
+    \label{eq:9.25}
+    b t + \langle \xi, x \rangle = 2.
+\end{equation}
+
+При фіксованому $t$ цей розрив розміщений на площині в $\RR^n$ з рівнянням \eqref{eq:9.25}. Ця площина рухається із зростанням $t$ у напрямі перпендикулярного їй вектора $- \vec \xi$, зі швидкістю $v = a = b / \left| \vec \xi \, \right|$. \medskip
+
+Звідси можна зробити висновок:
+\begin{enumerate}
+    \item довільна характеристична гіперплощина може бути поверхнею розриву розв'язку рівняння \eqref{eq:9.21} при $c = 0$;
+    \item усі плоскі хвилі й розриви цих хвиль, які задовольняють рівняння \eqref{eq:9.21} при $c = 0$, поширюються зі швидкістю $a$ у напрямі вектора $- \vec \xi$ без спотворення (хвиля без дисперсії).
+\end{enumerate}
+
+Зазначимо, що з формулою \eqref{eq:9.24} пов'язане відкриття електромагнітної природи світла і спеціальної теорії відносності. Так, із рівнянь електродинаміки Максвелл вивів, що потенціали електромагнітного поля задовольняють хвильове рівняння 
+\begin{equation}
+    u_{tt}(t, x, y, z) = a^2 \Delta u(t, x, y, z),
+\end{equation}
+де $a^2 = 1 / (\epsilon \mu)$, $\epsilon$ і $\mu$ --- відповідно діелектрична та магнітна проникність вакууму. Останні величини знаходяться експериментально з чисто електромагнітних вимірювань. Після обчислення Максвеллом швидкості поширення електромагнітних хвиль виявилось, що вона з великою точністю збігається із швидкістю світла: $a = 1 / \sqrt{\epsilon \mu} = 299'976$ км/с. Звідси Максвелл зробив висновок, що світло має електромагнітну природу. \medskip
+
+Розглянемо диференціальне рівняння \eqref{eq:9.21}, коли $c \ne 0$. Якщо $u(t, x) = f (b t + \langle \xi, x \rangle)$ --- плоска хвиля для рівняння \eqref{eq:9.21}, то ми відразу дістаємо для заданих $\xi$ і $b$ рівняння 
+\begin{equation}
+    \label{eq:9.26}
+    f''(bt+\langle \xi, x \rangle) \left( a^2 \left| \vec \xi \, \right|^2 - b^2 \right) + f(bt + \langle \xi, x \rangle) c = 0.
+\end{equation}
+
+Отже, в цьому разі функція $f(b t + \langle \xi, x \rangle)$ не може бути довільною --- вона повинна бути розв'язком рівняння \eqref{eq:9.26}. Очевидно, що для швидкості $v = a$, тобто для $a^2 \left| \vec \xi \, \right|^2 = b^2$, уже не існує біжучої плоскої хвилі. Але для інших швидкостей і для довільного напряму можливі форми хвиль визначаються із рівняння \eqref{eq:9.26} і є експоненціальними функціями. У зв'язку з цим напрям руху хвилі і її швидкість, яка відповідає рівнянню \eqref{eq:9.21}, можуть задаватися довільним чином (за винятком $v = a$), але при цьому можливі тільки спеціальні форми плоских хвиль. З фізичних міркувань виключаються із розгляду розв'язки, які не є рівномірно обмеженими функціями в просторі. Беручи до уваги, що
+\begin{equation}
+    \begin{aligned}
+        f(b t + \langle \xi, x \rangle) &= f \left( v \left| \vec \xi \, \right| t - \langle e, x \rangle \left| \vec \xi \, \right| \right) = \\
+        &= f \left( (v t - \langle e, x \rangle ) \left| \vec \xi \, \right| \right) = \\
+        &= f (v t - \langle e, x \rangle),
+    \end{aligned}
+\end{equation}
+де $g(z) = f \left( z \left| \vec \xi \, \right| \right)$, $\vec e = - \vec \xi / \left| \vec \xi \, \right|$, $\left| \vec e \, \right| = 1$, $z = v t - \langle e, x \rangle$, маємо:
+\begin{equation}
+    \label{eq:9.26.1}
+    g''(z) \left( a^2 \left| \vec \xi \, \right|^2 - b^2 \right) + g(z) c - 0.
+\end{equation}
+
+Рівномірно обмежені розв'язки рівняння \eqref{eq:9.26.1} можна записати у вигляді $g(z) = e^{-ikz}$, при виконанні рівності
+\begin{equation}
+    \label{eq:9.27}
+    - (k v)^2 = - a^2 k^2 + c.
+\end{equation}
+
+Позначимо $\omega = kv$ --- частота хвилі. \medskip
+
+Таким чином, хвиля довільної форми, що задовольняє рівняння \eqref{eq:9.21} при виконанні умови \eqref{eq:9.27} може бути зображена як суперпозиція гармонічних хвиль вигляду:
+\begin{equation}
+    \label{eq:9.28}
+    u_k(t, x) = e^{i k (v t - \langle e, x \rangle)},
+\end{equation}
+
+З \eqref{eq:9.27} маємо
+\begin{equation}
+    - \omega^2 = - a^2 k^2 + c,
+\end{equation}
+тобто $k = \pm \frac{\sqrt{c + \omega^2}}{a}$ і гармонічні коливання \eqref{eq:9.28} матимуть фазову швидкість $\omega / k$, яка залежатиме від частоти $\omega$, що дорівнює 
+$v = \frac{\omega}{k} = \frac{a \omega}{\sqrt{c + \omega^2}}$. \medskip
+
+Отже,
+\begin{equation}
+    \label{eq:9.29}
+    u_k (t, x) = \exp \left\{ - \frac{i}{a} \sqrt{c + \omega^2} \left( \frac{a \omega}{\sqrt{c + \omega^2}} t - \langle e, x \rangle \right) \right\}.
+\end{equation}
+
+Оскільки розв'язок рівняння \eqref{eq:9.21} --- це суперпозиція хвиль вигляду \eqref{eq:9.29}, які поширюються в одному й тому самому напрямі, причому всі ці хвилі мають форму, яка задовольняє рівняння \eqref{eq:9.26}, то різні компоненти поширюються з різними швидкостями; отже, форма складової хвилі $u(x,t)$ змінюватиметься з часом $t$ і хвильовий процес при своєму поширенні буде спотворюватися (хвилі з дисперсією). Кажуть, що якщо фазова швидкість гармонічних хвиль залежить від частоти, то рівняння \eqref{eq:9.21} описує явище дисперсії. \medskip
+
+Очевидно, що якщо рівняння \eqref{eq:9.21} не допускає розв'язків у вигляді хвиль довільної форми, то має місце дисперсія хвиль. 
+
+\begin{definition}
+    Доданок $c u(t, x)$ в рівнянні \eqref{eq:9.21} іноді називають \textit{дисперсійним членом}.
+\end{definition}
+
+\begin{example}
+    Розглянемо телеграфне рівняння, яке описує електричні коливання в провідниках
+    \begin{equation}
+        \label{eq:9.30}
+        u_{xx}(t,x) - L C u_{tt} - (RC + LG) u_t(t,x) - RG u(t,x) = 0,
+    \end{equation}
+    де $C$ --- місткість, $R$ --- омічний опір; $L$ --- індуктивність; $G$ --- втрата ізоляції. Всі ці величини розраховані на одиницю довжини провідника.
+\end{example}
+
+\begin{solution}
+    Позначимо $b = RC + LG$, $d = RG$, $a^2 = 1 / (LG)$ і введемо нову невідому функцію
+    \begin{equation}
+        \label{eq:9.31}
+        v(t,x) = u(t,x) e^{a^2bt/2}.
+    \end{equation}
+    
+    Тоді рівняння \eqref{eq:9.30} запишеться у вигляді
+    \begin{equation}
+        \label{eq:9.32}
+        a^2 v_{xx}(t,x)-v_{xx}(t,x)+vc(t,x)=,
+    \end{equation}
+    де
+    \begin{equation}
+        c = \frac{a^2}{4} (a^2b^2-4d) = \frac{a^4}{4}\left(b^2-\frac{4d}{a^2}\right) = \frac{a^4}{4}(RC-LG)^2.
+    \end{equation}
+
+    Отже, на підставі попередніх міркувань при виконанні умови 
+    \begin{equation}
+        \label{eq:9.33}
+        RC = LG,
+    \end{equation}
+    тобто $c = 0$ рівняння \eqref{eq:9.32} буде мати хвилі без дисперсії і в силу \eqref{eq:9.31}, рівняння \eqref{eq:9.30} має хвилі без дисперсії із згасанням вигляду
+    \begin{equation}
+        u(t,x)=e^{-Kt}f(x-at), \quad u(t,x)=e^{-Kt}f(-x-at),
+    \end{equation}
+    де $K = \frac{1}{2} \left( \frac{R}{L} + \frac{G}{C} \right)$. \medskip
+
+    Коли коефіцієнти рівняння \eqref{eq:9.30}, які характеризують провідник, задовольняють умову \eqref{eq:9.33}, то в провіднику хвилі довільної форми поширюються без спотворення і можуть лише затухати. Але це затухання в пункті прийому хвиль-сигналів завжди можна компенсувати за рахунок їх підсилення, тим самим можна точно відновити сигнали, які передаються по провіднику. \medskip
+
+    Ця обставина має дуже важливе значення в галузі телефонного зв'язку при передаванні сигналів по кабелях на великі віддалі.
+\end{solution}
+
+Зауважимо нарешті, що рівняння \eqref{eq:9.21} при $c = 0$ можуть мати, крім плоских хвиль, хвилі інших форм. Наприклад, якщо $n = 3$, характеристиками для рівняння \eqref{eq:9.21} будуть також поверхні
+\begin{equation}
+    r - at = \const, \quad - r - a t = \const,
+\end{equation}
+де 
+\begin{equation}
+    r = \sqrt{\Sum_{i=1}^3 (x_i - x_{0,i})^2},
+\end{equation}
+$x_0 = (x_{0, 1}, x_{0, 2}, x_{0, 3})$ --- фіксована точка, а функції $u = \frac{f(r - at)}{4 \pi r}$ --- хвилі без дисперсії із затуханням для рівняння \eqref{eq:9.21} при $n = 3$ і $c = 0$.
+
+\begin{definition}
+    Ці хвилі називаються сферичними.
+\end{definition}
