@@ -213,7 +213,9 @@
 \end{equation}
 де
 \begin{align}
+	\label{eq:linear-coefficients-transform-a}
 	\overline{A}_{k,l} &= \Sum_{i=1}^n \Sum_{j=1}^n A_{i,j}\alpha_{i,k}\alpha_{j,l}, \\
+	\label{eq:linear-coefficients-transform-b}
 	\overline{B}_k &= \Sum_{i=1}^n B_i \alpha_{i,k} + \Sum_{i=1}^n \Sum_{j=1}^n A_{i,j}(\xi_k)_{x_ix_j}.
 \end{align}
 
@@ -234,10 +236,11 @@
 \end{equation}
 де 
 \begin{equation}
+	\label{eq:linear-coefficients-transform-main-part}
 	\overline{A}_{k,l}^0 = \Sum_{i=1}^n \Sum_{j=1}^n \overline{A}_{i,j}^0 \alpha_{i,k}\alpha_{j,l}.
 \end{equation}
 
-Таким чином можна бачити, що коефіцієнти головної частини рівняння перетворюються аналогічно коефіцієнтам квадратичної форми при описаному лінійному перетворенні. Відомо, що використовуючи лінійне перетворення можна привести матрицю $\left[A_{i,j}^0\right]_{i,j=\overline{1,n}}$ квадратичної форми до діагонального вигляду, в якому $\overline{A}_{i,j}^0 = l_i\delta_{i,j}$, де  $l_i \in \{-1,0,1\}$  . \medskip
+Таким чином можна бачити, що коефіцієнти головної частини рівняння \eqref{eq:linear-coefficients-transform-main-part} перетворюються аналогічно коефіцієнтам квадратичної форми при описаному лінійному перетворенні \eqref{eq:linear-coefficients-transform-a}, \eqref{eq:linear-coefficients-transform-b}. Відомо, що використовуючи лінійне перетворення можна привести матрицю $\left[A_{i,j}^0\right]_{i,j=\overline{1,n}}$ квадратичної форми до діагонального вигляду, в якому $\overline{A}_{i,j}^0 = l_i\delta_{i,j}$, де  $l_i \in \{-1,0,1\}$  . \medskip
 
 Згідно до закону інерції квадратичних форм, кількість додатних, від'ємних та нульових діагональних елементів інваріантне відносно лінійного перетворення.
 
@@ -472,11 +475,12 @@
 
 Будемо розглядати характеристичний детермінант 
 \begin{equation}
-	\left \det \(\Sum_{|\alpha|=m} a_{i,j,\alpha} (x) \xi^\alpha\) \right
+	\label{eq:characteristic-determinant}
+	\det \left(\Sum_{|\alpha|=m} a_{i,j,\alpha} (x) \xi^\alpha \right)
 \end{equation}
 який представляє собою форму порядку $n \times m$ відносно параметрів $\xi_1, \ldots, \xi_m$. \medskip
 
-Подальша класифікація систем відбувається на основі аналізу характеристичної форми (однорідного поліному).
+Подальша класифікація систем відбувається на основі аналізу характеристичної форми (однорідного поліному \eqref{eq:characteristic-determinant}).
 
 \begin{example}
 	Розглянемо систему стаціонарних рівнянь теорії пружності:
