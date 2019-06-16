@@ -1,10 +1,10 @@
-\input{univ.sty}
+\input{../univ.sty}
 
 \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
 \author{Скибицький Нікіта}
 \date{\today}
 
-\input{th.sty}
+\input{../th.sty}
 
 \begin{document}
 
@@ -35,15 +35,15 @@
 Підрахуємо потенціал електростатичного поля від такої пари зарядів. Позначимо $r$ відстань від центру диполя (середина відрізку, що з'єднує заряди) до точки вимірювання потенціалу $r = |OP|$. При цьому будемо припускати, що величинами більш високого порядку малості ніж $\epsilon/r$ можна нехтувати:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.5\textwidth]{img/13-1.png}
+%	\includegraphics[width=.5\textwidth]{img/13-1.png}
 \end{figure}
  
 З геометричних міркувань знаходимо
 \begin{equation}
-	u(P) = \frac{-q}{4\pi r\epsilon_0 \sqrt{1-2\frac{\epsilon}{r}\cos\psi+\left(\frac{\epsilon}{r}\right)^2}} + \frac{q}{4\pi r\epsilon_0 \sqrt{1+2\frac{\epsilon}{r}\cos\psi+\left(\frac{\epsilon}{r}\right)^2}}.
+	u(P) = \dfrac{-q}{4\pi r\epsilon_0 \sqrt{1-2\dfrac{\epsilon}{r}\cos\psi+\left(\dfrac{\epsilon}{r}\right)^2}} + \dfrac{q}{4\pi r\epsilon_0 \sqrt{1+2\dfrac{\epsilon}{r}\cos\psi+\left(\dfrac{\epsilon}{r}\right)^2}}.
 \end{equation}
 
-Нехтуючи членами більш високого порядку малості отримаємо
+Застосовуючи формулу Тейлора і нехтуючи членами другого порядку малості отримаємо
 \begin{equation}
 	\begin{aligned}
 		u(P) &= -\frac{q}{4\pi\epsilon_0 r} \left( 1 + \frac{\epsilon}{r}\cos\psi\right) + \frac{q}{4\pi\epsilon_0 r} \left( 1 - \frac{\epsilon}{r}\cos\psi\right) = \\
@@ -57,6 +57,7 @@
 \begin{equation}
 	u(P) = -\Iint_S \frac{\cos\psi}{4\pi\epsilon_0 r^2} \diff p = - \Iint_S \mu(M) \frac{\cos\psi}{4\pi\epsilon_0 |MP|^2} \diff S_M.
 \end{equation}
+Де $|MP|$ ---відстань між точками $M$ і $P$. 
 
 \begin{definition}[потенціалу подвійного шару]
 	Оскільки на поверхні тіла орієнтація вісі диполя направлена по нормалі $n$ до поверхні, то потенціал електростатичного поля диполів поверхні буде мати вигляд інтегралу
@@ -76,18 +77,12 @@
 		\vecf D = \epsilon_0 \vecf E + \vecf P,
 	\end{equation}
 \end{definition}
-де 
-\begin{definition}[поляризації діелектриків]
-	$\vecf P$ називають вектором \it{поляризації діелектриків}
-\end{definition}
-та для широкого класу діелектриків вектор $\vecf P$ можна записати у вигляді
+де 	$\vecf P$ називають вектором \it{поляризації діелектриків} та для широкого класу діелектриків вектор $\vecf P$ можна записати у вигляді
 \begin{equation}
 	\vecf P = \epsilon_0 \chi \vecf E,
 \end{equation}
-де
-\begin{definition}
 	$\chi$ --- діелектрична сприйнятливість діелектрика. 
-\end{definition}
+
 
 Таким чином електричну індукцію в діелектрику можна обчислити за формулою 
 \begin{equation}
@@ -141,6 +136,7 @@
 
 У випадку, якщо у просторі відсутні додаткові заряди окрім заряджених поверхонь, то шуканий потенціал електростатичного поля задовольняє рівнянню Лапласа. Таким чином гранична задача приймає вигляд:
 \begin{system}
+    \label{eq:first-electrostatics-boundary-problem-homogeneous}
 	& \Delta U = 0, \quad x \in \RR^3 \setminus S, \\
 	& \left. U \right|_{S_i} = U_i, \quad i = \overline{1,N}, \\
 	& \Lim_{|x| \to \infty} U = 0.
@@ -148,13 +144,14 @@
 
 У випадку, якщо провідники розташовані у неоднорідному діелектрику у якому з щільністю $\rho$ розподілені вільні заряди, то гранична задача буде мати вигляд:
 \begin{system}
+    \label{eq:first-electrostatics-boundary-problem-heterogeneous}
 	& \nabla \cdot (\epsilon_a(x) \nabla U) = - \rho(x), \quad  x \in \RR^3 \setminus S, \\
 	& \left. U\right|_{S_i} = U_i, \quad i = \overline{1,N}, \\
 	& \Lim_{|x| \to \infty} U = 0.
 \end{system}
 
-\begin{definition}[граничної задачі електростатики першого типу]
-	Ці дві граничні задачі називають граничними задачами електростатики першого типу.
+\begin{definition}[першої граничної задачі електростатики]
+    Граничні задачі \eqref{eq:first-electrostatics-boundary-problem-homogeneous} і \eqref{eq:first-electrostatics-boundary-problem-heterogeneous} називають \textit{першими граничними задачами електростатики}.
 \end{definition}
 
 В електростатиці розглядається і другий тип граничної задачі, коли на поверхні провідника задаються умови другого роду:
@@ -176,23 +173,25 @@
 	На кожному провіднику (поверхні) відомий повний заряд провідника $e_i$. Необхідно визначити потенціал електростатичного поля в усіх точках простору.
 \end{example}
 
-\begin{solution}
-	З основного рівняння електростатики:
-	\begin{equation}
-		\nabla \cdot (\epsilon_a \nabla U) = 0, \quad x \in \RR^3 \setminus S,
-	\end{equation}
-	якщо $\left. U \right|_{S_i} = U_i = \const$, де $U_i$ --- невідомі величини при виконання умови 
-	\begin{equation}
-		\Oiint_{S_i} \epsilon_a \frac{\partial U}{\partial n} \diff S = -e_i,
-	\end{equation}
-	та умови затухання потенціалу на нескінченості
-	\begin{equation}
-		\Lim_{|x| \to \infty} U = 0
-	\end{equation}
-\end{solution}
+З основного рівняння електростатики запишимо:
+\begin{equation}
+    \label{eq:second-electrostatics-boundary-problem-equation}
+	\nabla \cdot (\epsilon_a \nabla U) = 0, \quad x \in \RR^3 \setminus S,
+\end{equation}
+на кожгому провіднику задамо $\left. U \right|_{S_i} = U_i = \const$, де $U_i$ --- невідомі величини. Умову повного заряду провідника запишемо у вигляді: 
+\begin{equation}
+    \label{eq:second-electrostatics-boundary-problem-boundary-conditions}
+	\Oiint_{S_i} \epsilon_a \frac{\partial U}{\partial n} \diff S = -e_i,
+\end{equation}
+де інтегрування ведеться по довільній замкненій поверхні ${S_i}$, яка охоплює провідник.
+Завершує постановку  умови затухання потенціалу на нескінченості
+\begin{equation}
+    \label{eq:second-electrostatics-boundary-problem-conditions-at-the-infinity}
+	\Lim_{|x| \to \infty} U = 0.
+\end{equation}
 
-\begin{definition}[граничної задачі електростатики другого типу]
-	Отримана гранична задача називається граничною задачею електростатики другого типу.
+\begin{definition}[другої граничної задачі електростатики]
+	Гранична задача \eqref{eq:second-electrostatics-boundary-problem-equation}--\eqref{eq:second-electrostatics-boundary-problem-conditions-at-the-infinity} називається \textit{другою граничною задачею електростатики}.
 \end{definition}
 
 \subsection{Математичні моделі магнітостатики}
@@ -234,15 +233,13 @@
 Магнітна індукція --- векторна величина, напрям якої визначається рівноважним положенням нормалі пробного контуру, а рівняння вище визначає модуль вектору $\vecf B$.
 
 \begin{definition}[напруженості магнітного поля]
-	Поряд з вектором магнітної індукції $\vecf B$ розглядається також векторна величина $\vecf H$, яку називають \it{напруженістю магнітного поля}. Для вакууму та інших ізотропних середовищ, які не мають магнітних властивостей зв'язок між вектором магнітної індукції та вектором напруженості магнітного поля має вигляд
+	Поряд з вектором магнітної індукції $\vecf B$ розглядається також векторна величина $\vecf H$, яку називають \it{напруженістю магнітного поля}. Для вакууму та інших ізотропних середовищ, які не мають магнітних властивостей зв'язок між вектором магнітної індукції та вектором напруженості магнітного поля має вигляд. 
+	
 	\begin{equation}
 		\vecf B = \mu \vecf H,
 	\end{equation}
 	тобто ці вектори колінеарні.
-\end{definition}
-
-\begin{definition}[магнітної проникності середовище]
-	$\mu = \const$ --- \it{магнітна проникливість середовища}, через $\mu_0$ будемо позначати магнітну проникливість вакууму.
+	Де 	$\mu = \const$ --- \it{магнітна проникливість середовища}, через $\mu_0$ будемо позначати магнітну проникливість вакууму.
 \end{definition}
 
 \subsubsection{Закон Біо-Савара}
@@ -264,7 +261,7 @@
 де всі величини зображені на наступному рисунку:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/13-2.png}
+%	\includegraphics[]{img/13-2.png}
 \end{figure}
 
 При цьому вектор $\vec H$ має напрям по дотичній до концентричних кіл з центром у точці проходження струму і орієнтований за правилом правого гвинта.
@@ -284,7 +281,7 @@
 Обчислимо циркуляцію вектора магнітної напруженості вздовж будь-якого замкненого плоского контуру, що охоплює деякий прямий струм, ортогональний до площини контуру:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.5\textwidth]{img/13-3.png}
+%	\includegraphics[width=.5\textwidth]{img/13-3.png}
 \end{figure}
 
 Враховуючи, формулу $\left| \vecf H \right| = I / 2 \pi b$, можна записати, що
@@ -302,7 +299,7 @@
 	\Oint_C \langle \vecf H, \diff \vec l \rangle = \Sum I.
 \end{equation}
 
-У випадку, коли токи розподілені у просторі з деякою щільністю $\vec j$, то величина току, що протікає через довільну поверхню $S$ може бути записаний у вигляді
+У випадку, коли струми розподілені у просторі з деякою щільністю $\vec j$, то величина струму, що протікає через довільну поверхню $S$ може бути записаний у вигляді
 \begin{equation}
 	I = \Int_S \vec j_n \diff S.
 \end{equation}
@@ -325,6 +322,7 @@
 \begin{th_equation}[магнітостатики]
 	Воно є частинним випадком третього рівняння поля:
 	\begin{equation}
+        \label{eq:magnetostatics-equation-third-field-equation}
 		\nabla \times \vecf H = \vec j.
 	\end{equation}
 \end{th_equation}
@@ -345,6 +343,7 @@
 \end{equation}
 або, враховуючи $\vecf B = \mu \vecf H$,
 \begin{equation}
+    \label{eq:magnetostatics-equation-second-field-equation}
 	\nabla \cdot \left(\mu_0 \vecf H\right) = 0.
 \end{equation}
 
@@ -364,22 +363,20 @@
 Для пояснення явища намагнічування середовищ Ампер припустив, що в молекулах тіла циркулюють кругові струми. Кожний струм має магнітний момент і створює в оточуючому просторі магнітне поле. Якщо зовнішнє магнітне поле відсутнє, то молекули розташовані хаотично і результуюче поле дорівнює нулю.  В результаті хаотичної орієнтації магнітних моментів, сумарний магнітний момент  тіла також рівний нулю. Під дією зовнішнього поля моменти молекул сприймають переважну орієнтацію в одному напрямку, за рахунок чого магнетик намагнічується і його сумарний магнітний момент становиться відмінним від нуля. Магнітні поля окремих молекулярних струмів вже не компенсують одне одного, а утворюють додаткове магнітне поле $\vecf B'$:
 \begin{figure}[H]
 	\centering
-	\includegraphics[]{img/13-4.png}
+	%\includegraphics[]{img/13-4.png}
 \end{figure}
 
 \begin{definition}[вектору намагнічування]
 	Намагнічування магнетика природно характеризувати магнітним моментом одиниці об'єму. Цю величину називають \it{вектором намагнічування} і позначають $\vecf J$.
 \end{definition}
 
-\begin{remark}
-	Дослідним шляхом встановлено, що вектор намагнічування $\vecf J$ зв'язаний з напруженістю зовнішнього поля у точці співвідношенням
-	\begin{equation}
-		\vecf J = \chi \vecf H.
-	\end{equation}
-\end{remark}
+Дослідним шляхом встановлено, що вектор намагнічування $\vecf J$ зв'язаний з напруженістю зовнішнього поля у точці співвідношенням
+\begin{equation}
+	\vecf J = \chi \vecf H.
+\end{equation}
 
 \begin{definition}[магнітної сприйнятливості речовини]
-	Тут $\chi$ --- безрозмірна величина, яку називають \it{магнітною сприйнятливістю речовини}.
+    Тут $\chi$ --- безрозмірна величина, яку називають \it{магнітною сприйнятливістю речовини}.
 \end{definition}
 
 В залежності від знаку і величини магнітної сприйнятливості $\chi$ усі магнетики поділяються на класи:
@@ -395,7 +392,7 @@
 \end{equation}
 де $\mu_\alpha = \mu_0 (1 + \chi)$. \medskip
 
-Таким чином для магнетиків рівняння магнітостатики приймають вигляд другого і третього рівняння поля вище, де вектор магнітної індукції і напруженість магнітного поля зв'язані між собою останнім співвідношенням.
+Таким чином для магнетиків рівняння магнітостатики приймають вигляд другого і третього рівняння поля \eqref{eq:magnetostatics-equation-second-field-equation}, \eqref{eq:magnetostatics-equation-third-field-equation}, де вектор магнітної індукції і напруженість магнітного поля зв'язані між собою останнім співвідношенням.
 
 \subsubsection{Граничні умови для магнітного поля}
 
@@ -408,7 +405,7 @@
 де $S_1 = S_2$:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.5\textwidth]{img/13-5.png}
+%	\includegraphics[width=.5\textwidth]{img/13-5.png}
 \end{figure}
 
 Потік магнітної індукції $\vecf B$ через бокову поверхню циліндру при $h \to 0$ стає нескінченно малим і їм можна нехтувати. Таким чином
@@ -425,7 +422,7 @@
 де $a_1 = a_2$ --- горизонтальні елементи контуру інтегрування:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.5\textwidth]{img/13-6.png}
+%	\includegraphics[width=.5\textwidth]{img/13-6.png}
 \end{figure}
 
 Інтеграл по вертикальним складовим контуру при $h \to 0$ прямує до нуля. \medskip
@@ -451,9 +448,9 @@
 
 Нагадаємо систему рівнянь магнітостатики для магнетиків.
 \begin{system}
-	\nabla \cdot \vecf B &= 0, \\
-	\nabla \times \vecf H &= \vec j, \\
-	\vecf B &= \mu_a \vecf H.
+	& \nabla \cdot \vecf B = 0, \\
+	& \nabla \times \vecf H = \vec j, \\
+	& \vecf B = \mu_a \vecf H.
 \end{system}
 
 З другого рівняння випливає, що $\nabla \cdot \vec j = 0$, оскільки $\nabla \cdot (\nabla \times \vecf H) = 0$. \medskip
