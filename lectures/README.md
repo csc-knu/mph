@@ -1,7 +1,7 @@
 <!--DEBUG-->
 
 _Якщо захочете правити вихідний код лекцій, то вам знадобляться [univ.sty](univ.sty) і [th.sty](th.sty)._
-_Зараз опрацьовані лекції №№1&ndash;14, та №№17&ndash;20._
+_Зараз опрацьовані лекції №№1&ndash;20._
 
 ### Перший розділ
 
@@ -49,43 +49,43 @@ _Станом на 5 червня 2019 р. цей розділ повністю 
 
 ### Третій розділ
 
-[лекції 17&ndash;20](ch-3-v.pdf)
+[лекції 17&ndash;20](ch-3/ch-3.pdf)
 
-17. Лекція №17: [pdf-v](17-v.pdf), [docx](17.docx), [LaTeX source](17.tex)
+17. Лекція №17: [pdf](ch-3/17.pdf), [docx](ch-3/17.docx), [LaTeX source](ch-3/17.tex)
 
-18. Лекція №18: [pdf-v](18-v.pdf), [docx](18.docx), [LaTeX source](18.tex)
+18. Лекція №18: [pdf](ch-3/18.pdf), [docx](ch-3/18.docx), [LaTeX source](ch-3/18.tex)
 
-19. Лекція №19: [pdf-v](19-v.pdf), [docx](19.docx), [LaTeX source](19.tex)
+19. Лекція №19: [pdf](ch-3/19.pdf), [docx](ch-3/19.docx), [LaTeX source](ch-3/19.tex)
 
-20. Лекція №20: [pdf-v](20-v.pdf), [docx](20.docx), [LaTeX source](20.tex)
+20. Лекція №20: [pdf](ch-3/20.pdf), [docx](ch-3/20.docx), [LaTeX source](ch-3/20.tex)
 
-21. Лекція №21: [pdf](21.pdf), [docx](21.docx)
+21. Лекція №21: [pdf](ch-3/21.pdf), [docx](ch-3/21.docx), [LaTeX source](ch-3/21.tex)
 
-22. Лекція №22: [pdf](22.pdf), [docx](22.docx)
+22. Лекція №22: [pdf](ch-3/22.pdf), [docx](ch-3/22.docx)
 
-23. Лекція №23: [pdf](23.pdf), [docx](23.docx)
+23. Лекція №23: [pdf](ch-3/23.pdf), [docx](ch-3/23.docx)
 
-24. Лекція №24: [pdf](24.pdf), [docx](24.docx)
+24. Лекція №24: [pdf](ch-3/24.pdf), [docx](ch-3/24.docx)
 
-25. Лекція №25: [pdf](25.pdf), [docx](25.docx)
+25. Лекція №25: [pdf](ch-3/25.pdf), [docx](ch-3/25.docx)
 
-26. Лекція №26: [pdf](26.pdf), [docx](26.docx)
+26. Лекція №26: [pdf](ch-3/26.pdf), [docx](ch-3/26.docx)
 
-27. Лекція №27: [pdf](27.pdf), [docx](27.docx)
+27. Лекція №27: [pdf](ch-3/27.pdf), [docx](ch-3/27.docx)
 
 ### Четвертий розділ
 
-28. Лекція №28: [pdf](28.pdf), [docx](28.docx)
+28. Лекція №28: [pdf](ch-4/28.pdf), [docx](ch-4/28.docx)
 
-29. Лекція №29: [pdf](29.pdf), [docx](29.docx)
+29. Лекція №29: [pdf](ch-4/29.pdf), [docx](ch-4/29.docx)
 
-30. Лекція №30: [pdf](30.pdf), [docx](30.docx)
+30. Лекція №30: [pdf](ch-4/30.pdf), [docx](ch-4/30.docx)
 
-31. Лекція №31: [pdf](31.pdf), [docx](31.docx)
+31. Лекція №31: [pdf](ch-4/31.pdf), [docx](ch-4/31.docx)
 
-32. Лекція №32: [pdf](32.pdf), [docx](32.docx)
+32. Лекція №32: [pdf](ch-4/32.pdf), [docx](ch-4/32.docx)
 
-33. Лекція №33: [pdf](33.pdf), [docx](33.docx)
+33. Лекція №33: [pdf](ch-4/33.pdf), [docx](ch-4/33.docx)
 
 ---
 
