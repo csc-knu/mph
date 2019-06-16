@@ -1,25 +1,10 @@
-\input{univ.sty}
-
-\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
-\author{Скибицький Нікіта}
-\date{\today}
-
-\input{th.sty}
-
-\begin{document}
-
-\tableofcontents
-
-\setcounter{section}{2}
-\setcounter{subsection}{6}
-
 \subsection{Класифікація рівнянь в частинних похідних}
 
 \subsubsection{Класифікація рівнянь з двома незалежними змінними}
 
 Будемо розглядати загальне рівняння другого порядку з двома незалежними змінними, лінійне відносно старших похідних.
 \begin{definition}[головної частини рівняння]
-	Частину рівняння, яка містить похідні другого порядку називають \it{головною} частиною рівняння:
+	Частину рівняння, яка містить похідні старшого порядку називають \it{головною} частиною рівняння:
 	\begin{equation}
 		A(x,y)\dfrac{\partial^2u}{\partial x^2}+2B(x,y)\dfrac{\partial^2u}{\partial x\partial y}+C(x,y)\dfrac{\partial^2u}{\partial y^2}+F\left(x,y,u,\dfrac{\partial u}{\partial x},\dfrac{\partial u}{\partial y}\right)=0.
 	\end{equation}
@@ -30,14 +15,14 @@
 	\xi = \xi(x, y), \quad \eta = \eta(x, y).
 \end{equation}
 
-Для скорочення скористаємося позначеннями $\partial u / \partial x = u_x$. \medskip
+Для скорочення запису скористаємося позначеннями  $\partial u / \partial x = u_x$. \medskip
 
 Обчислимо вирази для похідних в нових змінних $\xi$, $\eta$:
 \begin{align}
 	u_x &= u_\xi \xi_x + u_\eta \eta_x, \\
 	u_y &= u_\xi \xi_y + u_\eta \eta_y, \\
 	u_{xx} &= u_{\xi\xi} \xi_x^2 + 2 u_{\xi\eta} \xi_x \eta_x + u_{\eta\eta} \eta_x^2 + u_\xi \xi_{xx} + u_\eta \eta_{xx}, \\
-	u_{yy} &= u_{\xi\xi} \xi_y^2 + 2 u_{\xi\eta} \xi_y \eta_x + u_{\eta\eta} \eta_y^2 + u_\xi \xi_{yy} + u_\eta \eta_{yy}, \\
+	u_{yy} &= u_{\xi\xi} \xi_y^2 + 2 u_{\xi\eta} \xi_y \eta_y + u_{\eta\eta} \eta_y^2 + u_\xi \xi_{yy} + u_\eta \eta_{yy}, \\
 	u_{xy} &= u_{\xi\xi} \xi_x \xi_y + u_{\xi\eta} (\xi_x \eta_y + \xi_y \eta_x) + u_{\eta\eta} \eta_x \eta_y + u_\xi \xi_{xy} + u_\eta \eta_{xy}.
 \end{align}
 
@@ -69,16 +54,17 @@
 
 Для знаходження функцій $\xi(x, y)$, $\eta(x,y)$, зведемо рівняння в частинних похідних до звичайного диференціального рівняння. \medskip
 
-Розглянемо пешре з цих рівнянь і розділимо його на $\xi_y^2$:
+Розглянемо перше з цих рівнянь і розділимо його на $\xi_y^2$:
 \begin{equation}
 	A \left( \dfrac{\xi_x}{\xi_y} \right)^2 + 2 B \dfrac{\xi_x}{\xi_y} + C = 0.
 \end{equation}
+Аналочічне рівняння можно отримати і для функції  $\eta(x,y)$.
 
 Розглянемо неявно задану функцію $y = y(x)$ у вигляді $\xi(x, y) = \const$, легко бачити
 \begin{equation}
 	\diff \xi = \xi_x \diff x + \xi_y \diff y = 0
 \end{equation}
-і
+або
 \begin{equation}
 	\dfrac{\xi_x}{\xi_y} = - \dfrac{\diff y}{\diff x}.
 \end{equation}
@@ -87,15 +73,14 @@
 \begin{definition}[характеристичного рівняння]
 	\it{Характеристичним} називається рівняння
 	\begin{equation}
-		A \left( \dfrac{\diff y}{\diff x} \right)^2 + 2 B \dfrac{\diff y}{\diff x} + C = 0.
+		A \left( \dfrac{\diff y}{\diff x} \right)^2 - 2 B \dfrac{\diff y}{\diff x} + C = 0.
 	\end{equation}
 \end{definition}
 
 \begin{definition}[характеристик]
 	Його розв'язки називаються \it{характеристиками}.
 \end{definition}
-
-Рівняння розпадається на два лінійних рівняння:
+Квадратне рівняння відносно похідної розпадається на два лінійних рівняння:
 \begin{align}
 	\dfrac{\diff y}{\diff x} &= \dfrac{B + \sqrt{B^2 - AC}}{A}, \\ 
 	\dfrac{\diff y}{\diff x} &= \dfrac{B - \sqrt{B^2 - AC}}{A}.
@@ -105,7 +90,7 @@
 \begin{enumerate}
 	\item рівняння гіперболічного типу $B^2 - AC > 0$. \medskip
 
-	Кожне з рівнянь має по одній дійсній характеристиці. Нехай $\phi(x,y)=\const$ та $\psi(x,y)=\const$ --- загальні інтеграли першого та другого характеристичного рівняння, тоді нові змінні вибираються
+	Кожне з  характеристичних рівнянь має по одній дійсній характеристиці. Нехай $\phi(x,y)=\const$ та $\psi(x,y)=\const$ --- загальні інтеграли першого та другого характеристичного рівняння, тоді нові змінні вибираються у вигляді
 	\begin{align}
 		\xi &= \phi(x, y), \\
 		\eta &= \psi(x, y).
@@ -137,7 +122,7 @@
 		\xi &= \phi(x,y) + i \psi(x, y), \\
 		\eta &= \phi(x, y) - i \psi(x, y)
 	\end{align}
-	отримаємо вигляд аналогічний першій канонічній формі гіперболічного рівняння
+	отримаємо вигляд аналогічний першій канонічній формі гіперболічного рівняння але з комплесними незалежними змінними.
 	\begin{equation}
 		u_{\xi\eta}=\Phi(\xi,\eta,u,u_\xi,u_\eta).
 	\end{equation}
@@ -148,7 +133,7 @@
 		\beta &= \psi(x,y) = \dfrac{\xi-\eta}{2i}.
 	\end{align}
 	
-	Тоді отримаємо канонічну форму запису рівняння еліптичного вигляду:
+	Тоді отримаємо канонічну форму запису рівняння еліптичного типу у вигляді:
 	\begin{equation}
 		u_{\alpha\alpha} + u_{\beta\beta} = \Phi(\alpha,\beta,u,u_\alpha,u_\beta).
 	\end{equation}
@@ -189,7 +174,7 @@
 
 \subsubsection{Класифікація рівнянь другого порядку з багатьма незалежними змінними}
 
-Будемо розглядати лінійне рівняння з дійсними коефіцієнтами
+Розглянемо лінійне рівняння з дійсними коефіцієнтами
 \begin{equation}
 	\Sum_{i=1}^n \Sum_{j=1}^n A_{i,j} u_{x_i x_j} + \Sum_{i=1}^n B_i u_{x_i} + Cu + F = 0,
 \end{equation}
@@ -217,7 +202,7 @@
 	\overline{B}_k &= \Sum_{i=1}^n B_i \alpha_{i,k} + \Sum_{i=1}^n \Sum_{j=1}^n A_{i,j}(\xi_k)_{x_ix_j}.
 \end{align}
 
-Поставимо у відповідність рівнянню квадратичну форму
+Поставимо у відповідність головній частині диференціального рівнянню квадратичну форму
 \begin{equation}
 	\Sum_{i=1}^n \Sum_{j=1}^n A_{i,j}^0 y_iy_j,
 \end{equation}
@@ -234,26 +219,26 @@
 \end{equation}
 де 
 \begin{equation}
-	\overline{A}_{k,l} = \Sum_{i=1}^n \Sum_{j=1}^n \overline{A}_{i,j}^0 \alpha_{i,k}\alpha_{j,l}.
+	\overline{A}_{k,l}^0 = \Sum_{i=1}^n \Sum_{j=1}^n \overline{A}_{i,j}^0 \alpha_{i,k}\alpha_{j,l}.
 \end{equation}
 
-Таким чином можна бачити, що коефіцієнти головної частини рівняння перетворюються аналогічно коефіцієнтам квадратичної форми при описаному лінійному перетворенні. Відомо, що використовуючи лінійне перетворення можна привести матрицю $\left[A_{i,j}^0\right]_{i,j=\overline{1,n}}$ квадратичної форми до діагонального вигляду, в якому $\overline{A}_{i,j}^0 = \delta_{i,j}$. \medskip
+Таким чином можна бачити, що коефіцієнти головної частини рівняння перетворюються аналогічно коефіцієнтам квадратичної форми при описаному лінійному перетворенні. Відомо, що використовуючи лінійне перетворення можна привести матрицю $\left[A_{i,j}^0\right]_{i,j=\overline{1,n}}$ квадратичної форми до діагонального вигляду, в якому $\overline{A}_{i,j}^0 = l_i\delta_{i,j}$, де  $l_i \in \{-1,0,1\}$  . \medskip
 
 Згідно до закону інерції квадратичних форм, кількість додатних, від'ємних та нульових діагональних елементів інваріантне відносно лінійного перетворення.
 
 \begin{definition}[еліптичного рівняння]
-	Будемо називати рівняння в точці $(x_1^0,\ldots,x_n^0)$ \it{еліптичним}, якщо всі $\overline{A}_{i,i}^0$, $i=\overline{1,n}$ мають один і той же знак. 
+	Будемо називати рівняння в точці $(x_1^0,\ldots,x_n^0)$ \it{еліптичним}, якщо всі $\overline{A}_{i,i}^0$, $i=\overline{1,n}$ мають один і той же знак  та жодний діагональний елемент не дорівнює нулю. 
 \end{definition}
 
 \begin{definition}[гіперболічного рівняння]
-	Будемо називати рівняння в точці $(x_1^0,\ldots,x_n^0)$ \it{гіперболічним}, якщо $m < n$ елементів матриці мають один знак, а $n - m$ коефіцієнтів мають протилежний знак. 
+	Будемо називати рівняння в точці $(x_1^0,\ldots,x_n^0)$ \it{гіперболічним}, якщо $m < n$ елементів матриці мають один знак, а $n - m$ коефіцієнтів мають протилежний знак та жодний діагональний елемент не дорівнює нулю. 
 \end{definition}
 
 \begin{definition}[параболічного рівняння]
 	Будемо називати рівняння в точці $(x_1^0,\ldots,x_n^0)$ \it{параболічним}, якщо хоча б один з діагональних елементів матриці $\overline{A}_{i,i}^0$ дорівнює нулю. 
 \end{definition}
 
-Обираючи нові незалежні змінні $\xi_i$ таким чином що б у точці $(x_1^0,\ldots,x_n^0)$ виконувалось рівність $\alpha_{i,k}= \partial \xi_k / \partial xi_i = \alpha_{i,k}^0$, де $\alpha_{i,k}^0$ --- коефіцієнти перетворення, яке приводить квадратичну форму до канонічної форми запису. Зокрема, покладаючи
+Обираючи нові незалежні змінні $\xi_i$ таким чином що б у точці $(x_1^0,\ldots,x_n^0)$ виконувалось рівність $\alpha_{i,k}= \partial \xi_k / \partial x_i = \alpha_{i,k}^0$, де $\alpha_{i,k}^0$ --- коефіцієнти перетворення, яке приводить квадратичну форму до канонічної форми запису. Зокрема, покладаючи
 \begin{equation}
 	\xi_k = \Sum_{i=1}^n \alpha_{i,k}^0 x_i,
 \end{equation}
@@ -278,6 +263,7 @@
 \end{th_equation}
 
 \newpage
+Де $\Phi=\Phi(\nabla_\xi u, u,\xi) $
 
 \begin{example}
 	Визначити тип рівняння і привести його до канонічної форми запису
@@ -352,7 +338,7 @@
 	Методом виділення повних квадратів приведемо квадратичну форму до канонічної форми запису
 	\begin{multline*}
 		\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+2\lambda_2^2+6\lambda_3^2 = \\
-		= (\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+\lambda_2^2+\lambda_3^2 - 2 \lambda_2\lambda_3)^2 + \lambda_2^2 + 2\lambda_2\lambda_3 + 5\lambda_3^2 = \\
+		= (\lambda_1^2+2\lambda_1\lambda_2-2\lambda_1\lambda_3+\lambda_2^2+\lambda_3^2 - 2 \lambda_2\lambda_3) + \lambda_2^2 + 2\lambda_2\lambda_3 + 5\lambda_3^2 = \\
 		= (\lambda_1+\lambda_2-\lambda_3)^2 + (\lambda_2^2 + 2\lambda_2\lambda_3+\lambda_3^2) + 4\lambda_3^2 = \\
 		= (\lambda_1+\lambda_2-\lambda_3)^2 + (\lambda_2 + \lambda_3)^2 + (2\lambda_3)^2.
 	\end{multline*}
@@ -431,7 +417,7 @@
 Перший доданок містить лише старші похідні рівняння і за аналогією з рівняннями другого порядку можемо дати
 
 \begin{definition}[головної частини рівняння]
-	Диференціальний оператор 
+	Частину диференціального рівняння, яка містить похідні старшого порядку 
 	\begin{equation}
 		A_0(x, D) u = \Sum_{|\alpha|=m}a_\alpha D^\alpha u
 	\end{equation}
@@ -471,7 +457,7 @@
 
 Будемо розглядати характеристичний детермінант 
 \begin{equation}
-	\left| \Sum_{|\alpha|=m} a_{i,j,\alpha} (x) \xi^\alpha \right|
+	\left \det \(\Sum_{|\alpha|=m} a_{i,j,\alpha} (x) \xi^\alpha\) \right
 \end{equation}
 який представляє собою форму порядку $n \times m$ відносно параметрів $\xi_1, \ldots, \xi_m$. \medskip
 
@@ -596,7 +582,3 @@
 	\end{equation}
 	де $\xi = (\xi_1, \xi_2, \xi_3)$. Враховуючи, що характеристична форма містить лише три змінних, а рівняння містить чотири, можемо зробити висновок, що система є параболічною.
 \end{solution}
-
-\newpage 
-
-\end{document}

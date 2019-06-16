@@ -1,0 +1,382 @@
+\subsection{Постановка основних граничних задач для лінійних диференційних рівнянь 2-го порядку, коректність, класичні та узагальнені розв'язки}
+
+Серед множини математичних моделей, які були розглянуті в попередніх параграфах можна виділити найтиповіші математичні моделі, які концентрують в собі головні особливості усіх розглянутих вище. Ці моделі представляють собою граничні задачі для рівнянь трьох типів: еліптичних, параболічних та гіперболічних лінійних рівнянь другого порядку. \medskip
+
+Розглянемо основний диференціальний оператор другого порядку:
+\begin{equation}
+    L u = \nabla \cdot (p(x) \nabla u) - q(x) u.
+\end{equation}
+
+Запишемо основні диференціальні рівняння:
+\begin{itemize}
+    \item Еліптичне рівняння:
+    \begin{equation}
+        \label{eq:elliptic-differential-equation}
+        L u = - F(x), \quad x \in \Omega \subset \RR^n.
+    \end{equation}
+    \item Параболічне рівняння:
+    \begin{equation}
+        \label{eq:parabolic-differential-equation}
+        \rho(x) \frac{\partial u}{\partial t} = L u + F(x, t), \quad x \in \Omega, \quad t > t_0.
+    \end{equation}
+    \item Гіперболічне рівняння:
+    \begin{equation}
+        \label{eq:hyperbolic-differential-equation}
+        \rho(x) \frac{\partial^2 u}{\partial t^2} = L u + F(x, t), \quad x \in \Omega, \quad t > t_0.
+    \end{equation}
+\end{itemize}
+
+\subsubsection{Гранична задача для еліптичного рівняння}
+
+Будемо розділяти внутрішні і зовнішні задачі для еліптичного рівняння.
+
+\begin{definition}[внутрішньої і зовнішньої задач]
+    Якщо $x \in \Omega$, то таку задачу будемо називати \textit{внутрішньою}, якщо $x \in \Omega'$ ---  \textit{зовнішньою}.
+\end{definition}
+
+\begin{remark}
+    В подальшому ми будемо розглядати класичні розв'язки граничних задач. Це означає, що рівняння і усі граничні умови виконуються в кожній точці області або границі.
+\end{remark}
+
+Введемо обмеження на коефіцієнти рівняння $p$ і $q$ та вільний член $F$. Зокрема будемо припускати, що $p > 0$, $p \in C^1 \left(\overline \Omega\right)$, $q \ge 0$, $q \in C \left(\overline \Omega\right)$, $F(x) \in C \left(\overline \Omega\right)$. \medskip
+
+Позначимо $\partial \Omega = S$ --- поверхню на якій задаються граничні умови загального
+вигляду:
+\begin{equation}
+    \label{eq:general-boundary-conditions}
+    \left. \alpha(x) \frac{\partial u}{\partial n} + \beta(x) u \right|_S = V(x),
+\end{equation}
+де $\alpha, \beta \ge 0$, $\alpha, \beta, B \in C(S)$. З умови \eqref{eq:general-boundary-conditions} можна отримати умови 1, 2, 3 роду:
+\begin{enumerate}
+    \item Діріхле:
+    \begin{equation}
+        \label{eq:elliptic-dirichlet-boundary-conditions}
+        \left. u \right|_S = \frac{V(x)}{\beta(x)}.
+    \end{equation}
+    \item Неймана:
+    \begin{equation}
+        \label{eq:elliptic-neumann-boundary-conditions}
+        \left. \frac{\partial u}{\partial n} \right|_S = \frac{V(x)}{\alpha(x)}.
+    \end{equation}
+    \item Ньютона:
+    \begin{equation}
+        \label{eq:elliptic-newton-boundary-conditions}
+        \left. \frac{\partial u}{\partial n} + \frac{\beta}{\alpha} u \right|_S = \frac{V}{\alpha}.
+    \end{equation}
+\end{enumerate}
+
+Таким чином гранична задача для еліптичного рівняння може бути сформульована наступним чином: 
+\begin{problem_formulation*}[граничної для еліптичного рівняння]
+    Знайти функцію $u(x) \in C^2\big(\Omega\big) \cap C^1 \big( \overline \Omega \big)$, яка в кожній внутрішній точці області $\Omega$ (для внутрішньої задачі) або $\Omega'$ (для зовнішньої задачі) задовольняє рівняння \eqref{eq:elliptic-differential-equation}, а кожній точці границі $S$ виконується одна з граничних умов \eqref{eq:elliptic-dirichlet-boundary-conditions}, \eqref{eq:elliptic-neumann-boundary-conditions} або \eqref{eq:elliptic-newton-boundary-conditions}.
+\end{problem_formulation*}
+
+\begin{definition}
+    У випадку зовнішньої граничної задачі в нескінченно віддаленій точці області слід задавати додаткові умови поведінки розв'язку. Такі умови називають умовами \textit{регулярності на нескінченості}.
+\end{definition}
+
+\begin{remark}
+    Як правило вони полягають в завданні характеру спадання розв'язку і мають вигляд
+    \begin{equation}
+        u(x) = O \left( \frac{1}{|x|^\alpha} \right),
+    \end{equation}
+    при $|x| \to \infty$, де $\alpha$ --- деякий заданий параметр задачі.
+\end{remark}
+
+\subsubsection{Постановка змішаних задач для рівняння гіперболічного типу. Задача Коші для гіперболічного рівняння}
+
+Для постановки граничних задач рівняння гіперболічного типу \eqref{eq:hyperbolic-differential-equation} введемо просторово-часовий циліндр, як область зміни незалежних змінних $x$, $t$:
+\begin{equation}
+    Z(\Omega, T) = \Omega \times (0, T].
+\end{equation}
+
+Для отримання єдиного розв'язку гіперболічного рівняння, на нижній основі просторово-часового циліндру $Z_0(\Omega, T) = \Omega \times \{t = 0\}$ треба задати початкові умови:
+\begin{align}
+    \label{eq:hyperbolic-starting-function-condition}
+    u(x, 0) &= u_0(x), \quad x \in \Omega, \\
+    \label{eq:hyperbolic-starting-derivative-condition}
+    \frac{\partial u(x, 0)}{\partial t} &= v_0(x), \quad x \in \Omega.
+\end{align}
+
+На боковій поверхні просторово-часового циліндру $Z_S(\Omega, T) = S \times (0, T]$ треба задати граничні умови одного з трьох основних типів:
+\begin{enumerate}
+    \item Діріхле:
+    \begin{equation}
+        \label{eq:hyperbolic-dirichlet-boundary-conditions}
+        \left. u \right|_S = \phi(x, t).
+    \end{equation}
+    \item Неймана:
+    \begin{equation}
+        \label{eq:hyperbolic-neumann-boundary-conditions}
+        \left. \frac{\partial u}{\partial n} \right|_S = \phi(x, t).
+    \end{equation}
+    \item Ньютона:
+    \begin{equation}
+        \label{eq:hyperbolic-newton-boundary-conditions}
+        \left. \frac{\partial u}{\partial n} + \alpha(x, t) u \right|_S = \phi(x, t).
+    \end{equation}
+\end{enumerate}
+
+Таким чином постановка граничної задачі для гіперболічного рівняння має вигляд:
+\begin{problem_formulation*}[граничної для гіперболічного рівняння]
+    Знайти функцію $u(x, t) \in C^{(2, 2)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 1)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $(x, t) \in Z_0(\Omega, T)$, і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}.
+\end{problem_formulation*}
+
+\begin{remark}
+    При цьому відносно вхідних даних будемо робити наступні припущення
+    \begin{gather}
+        p > 0, \quad p \in C^1 \Big( \overline \Omega \Big), \quad q \ge 0, \quad q \in C \Big( \overline \Omega \Big), \quad F(x, t) \in C \Big( \overline{Z(\Omega, T)} \Big), \\
+        u_0, v_0 \in C \left( \overline{Z_0(\Omega, T)} \right), \quad \alpha, \phi \in C \left( \overline{Z_S(\Omega, T)} \right), \quad \alpha \ge 0.
+    \end{gather}
+\end{remark}
+
+\subsubsection{Задача Коші}
+
+У випадку, коли область $\Omega$ має великі розміри і впливом граничних умов можна знехтувати, область $\Omega$ ототожнюється з усім евклідовим простором, тобто $\Omega = \RR^n$. \medskip
+
+У зв'язку з відсутністю границі, граничні умови не задаються. В цьому випадку гранична задача трансформується в задачу Коші для гіперболічного рівняння яка ставиться наступним чином: 
+\begin{problem_formulation*}[Коші для гіперболічного рівняння]
+    Знайти функцію $u(x, t) \in C^{(2, 2)} \Big( Z(\RR^n, T) \Big) \cap C^{(1, 1)} \Big( \overline {Z(\RR^n, T)} \Big)$, яка задовольняє рівнянню \eqref{eq:hyperbolic-differential-equation} для $(x, t) \in Z(\RR^n, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition}, \eqref{eq:hyperbolic-starting-derivative-condition} для $x \in \RR^n$.
+\end{problem_formulation*}
+
+\subsubsection{Постановка змішаних задач для рівняння параболічного типу}
+
+При постановці граничної задачі і задачі Коші для рівняння параболічного типу треба враховувати, що по часовій змінній рівняння має перший порядок, що і обумовлює деякі відмінності в постановці граничних задач. \medskip
+
+Постановка граничної задачі для рівняння параболічного типу \eqref{eq:parabolic-differential-equation} має вигляд:
+\begin{problem_formulation*}[граничної для параболічного рівняння]
+    Знайти функцію $u(x, t) \in C^{(2, 1)} \Big( Z(\Omega, T) \Big) \cap C^{(1, 0)} \Big( \overline {Z(\Omega, T)} \Big)$, яка задовольняє рівняння \eqref{eq:parabolic-differential-equation} для $(x, t) \in Z(\Omega, T)$, початковим умовам \eqref{eq:hyperbolic-starting-function-condition} для $(x, t) \in Z_0(\Omega, T)$ і в кожній точці $(x, t) \in Z_S(\Omega, T)$ одній з граничних умов \eqref{eq:hyperbolic-dirichlet-boundary-conditions}--\eqref{eq:hyperbolic-newton-boundary-conditions}.
+\end{problem_formulation*}
+
+Аналогічні зміни необхідно запровадити і при постановці задачі Коші для рівняння параболічного типу.
+
+\begin{exercise}
+    Записати самостійно постановку задачі Коші для параболічного рівняння \eqref{eq:parabolic-differential-equation}.
+\end{exercise}
+
+\subsubsection{Коректність задач математичної фізики}
+
+Зважуючи на фізичну природу задач математичної фізики, до них застосовуються наступні природні вимоги.
+\begin{enumerate}
+    \item Існування розв'язку: задача повинна мати розв'язок (задача яка не має розв'язку не представляє інтересу як математична модель).
+    \item Єдиність розв’язку: не повинно існувати декілька розв'язків задачі.
+    \item Неперервна залежність від вхідних даних: розв'язок задачі повинен мало змінюватись при малій зміні вхідних даних.
+\end{enumerate}
+
+Розглянемо математичну модель у вигляді наступної граничної задачі:
+\begin{equation}
+    \label{eq:boundary-problem}
+    \left\{
+        \begin{aligned}
+            & L u = f, \quad x \in \Omega, \\
+            & \ell u = \phi, \quad x \in S = \partial \Omega.
+        \end{aligned}
+    \right.
+\end{equation}
+
+Формулювання диференціального рівняння і граничних умов ще недостатньо що б гранична задача була сформульована однозначно. Необхідно додатково вказати які аналітичні властивості вимагаються від роз\-в'яз\-ку, в якому розумінні задовольняється рівняння і граничні умови. \medskip
+
+При аналізі граничної задачі виникають наступні питання:
+\begin{itemize}
+    \item Чи може існувати розв'язок з відповідними властивостями?
+    \item Які аналітичні властивості треба вимагати від вхідних даних $f$, $\phi$, коефіцієнтів диференціального оператора і граничних умов?
+    \item Чи існують серед умов задачі такі, що протирічать одне одном?
+    \item Які умови треба накладати на гладкість границі $S$?
+    \item Чи достатньо сформульованих умов для однозначного знаходження розв’язку?
+    \item Чи можна гарантувати, що малі зміни $f$, $\phi$ приведуть до малих змін розв'язку?
+\end{itemize}
+
+Перелічені проблеми зручно розв'язувати звівши граничну задачу до операторного рівняння. Застосувавши загальні методи теорії операторів та операторних рівнянь. \medskip
+
+В першу чергу виберемо два бананових простора $E$ та $F$. \medskip
+
+Шуканий розв'язок розглядається як елемент $E$, а сукупність правих частин як елемент $F$. \medskip
+
+Визначимо оператор $A$, як відображення $u \mapsto \{Lu, \phi\}$, тоді гранична задача
+\eqref{eq:boundary-problem} зводиться до операторного рівняння
+\begin{equation}
+    \label{eq:boundary-operator-equation}
+    A u = g, \quad g = \{f, \phi\}.
+\end{equation}
+
+Позначимо $R(A)$ та $D(A)$ --- область значень та область визначення оператора $A$. Коректність операторного рівняння визначають для пари просторів $E$ та $F$. \medskip
+
+\begin{proposition}
+    В термінах операторного рівняння \eqref{eq:boundary-operator-equation} існування розв'язку означає, що область значень оператора $R(A)$ є не порожня підмножина $F$.
+\end{proposition}
+
+\begin{proposition}
+    Єдиність розв'язку означає, що відображення $A: D(A) \to R(A)$ ін'єктивне і на $R(A)$ визначений обернений оператор $A^{-1}$.
+\end{proposition}
+
+\begin{definition}[ін'єктивного відображення]
+    Відображення $A$: \allowbreak $D(A) \to R(A)$ називається \textit{ін'єктивним}, якщо різні елементи множини $D(A)$ переводяться в різні елементи множини $R(A)$.    
+\end{definition}
+
+\begin{proposition}
+    Вимога неперервної залежності розв'язку від правої частини або стійкості граничної задачі зводиться до неперервності або обмеженості оператора $A^{-1}$.
+\end{proposition}
+
+\subsubsection{Приклад Адамара}
+
+\begin{example}[Адамара, некоректно поставленої задачі]
+    Розглянемо рівняння Лапласа
+    \begin{equation}
+        \frac{\partial^2 u}{\partial t^2} = - \frac{\partial^2 u}{\partial x^2}, \quad t > 0, \quad 0 < x < \pi.
+    \end{equation}
+
+    Додаткові умови
+    \begin{equation}
+        \left. u \right|_{x = 0} = \left. u \right|_{x = \pi} = 0, \quad \left. u \right|_{t = 0} = 0, \quad \left. \frac{\partial u}{\partial t} \right|_{t = 0} = \frac{\sin (k x)}{k}.
+    \end{equation}
+\end{example}
+
+\begin{proposition}
+    Для прикладу Адамара порушена умова непевної залежності роз\-в'яз\-ку від вхідних даних.
+\end{proposition}
+
+\begin{proof}
+    Розв'язок
+    \begin{equation}
+        u_k(x, t) = \frac{\sinh(k t) \sin (k x)}{k^2},
+    \end{equation}
+    причому $\forall x \in (0, \pi)$:
+    \begin{equation}
+        \Lim_{k \to \infty} u_k(x, 0) =  \Lim_{k \to \infty} \frac{\sin (k x)}{k} = 0,
+    \end{equation}
+    але $\forall t > 0$, $\forall x \in (0, \pi)$:
+    \begin{equation}
+        \Lim_{k \to \infty} u_k(x, t) =  \Lim_{k \to \infty} \frac{\sinh(k t) \sin (k x)}{k^2} = \infty.
+    \end{equation}
+\end{proof}
+
+\subsubsection{Класичний і узагальнений розв'язки}
+
+\begin{definition}[класичного розв'язку]
+    Класичний розв'язок --- це розв'язок, який задовольняє рівнянню, початковим і граничним умовам в кожній точці, області, або границі.    
+\end{definition}
+
+Це означає, що класичний розв'язок повинен мати певну гладкість, яка визначається порядком похідних рівняння і порядком похідних граничних і початкових умов. \medskip
+
+Розглянемо рівняння
+\begin{equation}
+    \label{eq:differential-equation}
+    \nabla \cdot (p(x) \nabla u) - q(x) u = -F (x), \quad x \in \Omega
+\end{equation}
+та однорідні умови
+\begin{equation}
+    \label{eq:homogenuous-conditions}
+    \left. u \right|_S = 0.
+\end{equation}
+
+Отримаємо для нього відповідне інтегральне співвідношення. \medskip
+
+Розглянемо функцію $v(x)$, таку, що $\left. v \right|_S = 0$, помножимо рівняння на $v$ та проінтегруємо по $\Omega$:
+\begin{equation}
+    \Iiint_\Omega v \left(\nabla \cdot (p(x) \nabla u) - u \right) \diff \Omega = - \Iiint_\Omega F v \diff \Omega.    
+\end{equation}
+
+Після інтегрування за частинами отримаємо:
+\begin{equation}
+    \Iiint_\Omega \left( p \langle \nabla u, \nabla v \rangle) - q u v \right) \diff \Omega + \Iint_S p v \frac{\partial u}{\partial n} \diff S = - \Iiint_\Omega F v \diff \Omega.
+\end{equation}
+
+Остаточно, після врахування граничних умов маємо:
+\begin{equation}
+    \label{eq:integral-equality}
+    \Iiint_\Omega \left( p \langle \nabla u, \nabla v \rangle) + q u v \right) \diff \Omega = \Iiint_\Omega F v \diff \Omega.
+\end{equation}
+
+Інтегральна тотожність має зміст для більш широкого класу функцій ніж той якому належить класичний розв'язок граничної задачі і коефіцієнти рівняння. \medskip
+
+Якщо $u, v \in C^2 \big( \Omega \big) \cap C \big( \overline \Omega \big)$, $p \in C^1 (\Omega$, $q \in C (\Omega)$ то з тотожності \eqref{eq:integral-equality}, обернений ланцюжок перетворень дозволяє отримати граничну задачу \eqref{eq:differential-equation}, \eqref{eq:homogenuous-conditions}. Але \eqref{eq:integral-equality} має зміст для функцій більш широкого класу, а саме $F, u, v, \nabla u, \nabla v \in L_2(\Omega)$, $p$, $q$ --- обмежені. Це дозволяє використовувати інтегральну тотожність \eqref{eq:homogenuous-conditions} для визначення узагальненого розв'язку граничної
+задачі \eqref{eq:differential-equation}, \eqref{eq:homogenuous-conditions}. \medskip
+
+Для цього введемо множину $N_2 = \{u | u, \nabla u \in L_2(\Omega), \left.u \right|_S = 0\}$.
+
+\begin{definition}[узагальненого розв'язку]
+    Узагальненим розв'язком граничної задачі \eqref{eq:differential-equation}, \eqref{eq:homogenuous-conditions} будемо називати довільну функцію $u \in N_2$, таку, що $\forall v \in N_2$ має місце інтегральна тотожність \eqref{eq:integral-equality}.    
+\end{definition}
+
+\subsubsection{Формально спряжені оператори. Друга формула Гріна}
+
+Будемо розглядати лінійний диференціальний оператор
+\begin{equation}
+    L u = \Sum_{i, j = 1}^N \frac{\partial}{\partial x_j} \left( A_{i,j}(x) \frac{\partial u}{\partial x_i} \right) + \Sum_{k = 1}^N B_k(x) \frac{\partial u}{\partial x_k} + C(x) u.
+\end{equation}
+
+Будемо припускати, що $A_{i, j} = A_{j, i} \in C^1 \big( \overline \Omega \big)$, $B_k \in C \big( \overline \Omega \big)$, $u \in C^2 \big( \overline \Omega \big)$. \medskip
+
+Розглянемо інтеграл:
+\begin{equation}
+    \Iiint_\Omega v L u \diff x = \Iiint_\Omega v \left( \Sum_{i, j = 1}^N \frac{\partial}{\partial x_j} \left( A_{i,j}(x) \frac{\partial u}{\partial x_i} \right) + \Sum_{k = 1}^N B_k(x) \frac{\partial u}{\partial x_k} + C(x) u \right) \diff x.
+\end{equation}
+
+Для перетворення першої і другої суми застосуємо формулу інтегрування за частинами:
+\begin{equation}
+    \Iiint_\Omega v(x) \frac{\partial u(x)}{\partial x_i} \diff x = \Iint_S v(x) u(x) \cos(n, x_i) \diff x - \Iiint_\Omega u(x) \frac{\partial v(x)}{\partial x_i} \diff x.
+\end{equation}
+
+Після однократного застосування формули інтегрування за частинами отримаємо:
+\begin{equation}
+    \begin{aligned}
+        & \Iiint_\Omega v L u \diff x = \\
+        & \quad = \Iiint_\Omega \left( - \Sum_{i, j = 1}^n A_{i, j}(x) \frac{\partial u}{\partial x_i} \frac{\partial v}{\partial x_j} - \Sum_{k = 1}^n \frac{\partial}{\partial x_k} (B_k(x) v) u + C(x) u v \right) \diff x + \\
+        & \qquad + \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \frac{\partial u}{\partial x_i} \cos(n, x_j) + \Sum_{k = 1}^N B_k(x) u v \cos(n, x_k) \right) \diff S.
+    \end{aligned}
+\end{equation}
+
+
+Продовжимо інтегрування за частинами до першого інтегралу по області $\Omega$, перекидаючи похідну з функції $u$:
+\begin{multline}
+    \Psi = \Iiint_\Omega \left( \Sum_{i, j = 1}^N u \frac{\partial}{\partial x_i} \left( A_{i,j}(x) \frac{\partial v}{\partial x_j} \right) - \Sum_{k = 1}^n \frac{\partial}{\partial x_k} (B_k(x) v) u + C(x) u v \right) \diff x + \\
+    + \Oiint_S \left( \Sum_{i, j = 1}^n A_{i,j}(x) \left( \frac{\partial u}{\partial x_i} v - \frac{\partial v}{\partial x_i} u \right) \cos(n, x_j) + \Sum_{k = 1}^N B_k(x) u v \cos(n, x_k) \right) \diff S.
+\end{multline}
+
+Введемо наступний оператор:
+\begin{equation}
+    M u = \Sum_{i, j = 1}^n \frac{\partial}{\partial x_j} \left( A_{i,j}(x) \frac{\partial u}{\partial x_i} \right) - \Sum_{k = 1}^N \frac{\partial}{\partial x_k} (B_k(x) u) + C(x) u.
+\end{equation}
+
+\begin{definition}[формально спряженого оператора]
+    Оператор $M$ називається \textit{формально спряженим} до оператора $L$.
+\end{definition}
+
+Враховуючи це позначення, останню формулу можна записати у вигляді:
+\begin{equation}
+    \begin{aligned}
+        & \Iiint_\Omega (V L u - u M v) \diff x = \\
+        & \quad = \Oiint_S \left( \Sum_{i, j = 1}^N A_{i, j}(x) \left( \frac{\partial u}{\partial x_i} v -  \frac{\partial v}{\partial x_i} u \right) \cos(n, x_j) + \right. \\
+        & \qquad \left. + \Sum_{k = 1}^n B_k(x) u v \cos(n, x_k) \right) \diff S.
+    \end{aligned}
+\end{equation}
+
+\begin{definition}[другої формули Гріна]
+    Ця формула називається \textit{другою формулою Гріна}.
+\end{definition}
+
+Розглянемо основні оператори математичної фізики другого порядку з постійними коефіцієнтами:
+\begin{enumerate}
+    \item Гельмгольца: $A_1 u = (\Delta + k^2) u$.
+    \item Теплопровідності: $A_2 u = \left( a^2 \Delta - \frac{\partial}{\partial t} \right) u$.
+    \item Хвильовий: $A_3 u = \left( a^2 \Delta - \frac{\partial^2}{\partial t^2} \right) u$.
+\end{enumerate}
+
+Оскільки оператори $A_1$, $A_3$ містять лише похідні другого порядку, то ці оператори є формально самоспряженими. Для оператора $A_2$, згідно до визначення спряженим буде оператор $A_2^\star u = \left( a^2 \Delta + \frac{\partial}{\partial t} \right) u$. \medskip
+
+Запишемо другу формулу Гріна для кожного з основних операторів:
+\begin{enumerate}
+    \item для Гельмгольца: 
+    \begin{equation}
+        \Iiint_\Omega ( v (\Delta u + k^2 u) - u (\Delta v + k^2 v)) \diff x = \Iint_S \left( v \frac{\partial u}{\partial n} - u \frac{\partial v}{\partial n} \right) \diff S;
+    \end{equation}
+    \item для теплопровдіності:
+    \begin{multline}
+        \Int_{t_0}^T \Iiint_\Omega \left( v \left( a^2 u - \frac{\partial u}{\partial t} \right) - u \left( a^2 \Delta v + \frac{\partial v}{\partial t} \right) \right) \diff x \diff t = \\
+        = \Int_{t_0}^T \Iint_S a^2 \left( v \frac{\partial u}{\partial n} - u \frac{\partial v}{\partial n} \right) \diff S \diff t- \Iiint_\Omega \left. u v \right|_{t_0}^T \diff x.
+    \end{multline}
+    \item для хвильового:
+    \begin{multline}
+        \Int_{t_0}^T \Iiint_\Omega \left( v \left( a^2 u - \frac{\partial^2 u}{\partial t^2} \right) - u \left( a^2 \Delta v - \frac{\partial^2 v}{\partial t^2} \right) \right) \diff x \diff t = \\
+        = \Int_{t_0}^T \Iint_S a^2 \left( v \frac{\partial u}{\partial n} - u \frac{\partial v}{\partial n} \right) \diff S \diff t - \Iiint_\Omega \left. \left( v \frac{\partial u}{\partial t} - u \frac{\partial v}{\partial t} \right) \right|_{t_0}^T \diff x.
+    \end{multline}
+\end{enumerate}

@@ -1,0 +1,506 @@
+\subsection{Моделі руху в'язкої рідини}
+
+\begin{definition}[в'язкості рідини]
+	\it{В'язкість рідини} --- це властивість чинити опір пересуванню її часток, яка характеризує ступінь її плинності та рухливості.
+\end{definition}
+
+Як видно з визначення, в'язкість є властивістю рідини, що рухається, і в стані спокою не виявляється. Наявність сил внутрішнього тертя рідини, що рухається, уперше встановив Ньютон, згодом російський вчений В. Н. Петров у 1888 р. привів математичний вираз для сили тертя. \medskip
+
+Нехай шар рідини $A$ рухається зі швидкістю $v$, а шар рідини $B$ зі швидкістю $v + \diff v$, відстань між шарами $\diff y$:
+\begin{figure}[H]
+	\centering
+	\includegraphics[]{{../img/12-1}.mps}
+\end{figure}
+
+У введених позначеннях сила тертя $T$ між двома шарами рідини задається формулою
+\begin{equation}
+	T = - \mu F\frac{\diff v}{\diff y},
+\end{equation}
+де $\mu$ --- динамічний коефіцієнт в'язкості, $F$ --- площа стикання двох шарів рідини. Знак мінус вказує на те , що тертя діє в напряму протилежному рухові. \medskip
+
+Закони, що описують процеси руху в'язкої рідини, залишаються тими що і для ідеальної рідини, але при цьому з'являється додатковий механізм передачі імпульсу та енергії. \medskip
+
+\begin{law}[збереження маси у вигляді рівняння нерозривності]
+	\label{law:mass-conservation-continuity}
+	Залишається незмінним:
+	\begin{equation}
+		\label{eq:mass-conservation-continuity}
+		\frac{\partial \rho}{\partial t} + \nabla \cdot \Big(\rho \vecf V\Big) = 0.		
+	\end{equation}
+\end{law}
+
+\subsubsection{Закон збереження імпульсу}
+
+Нагадаємо вигляд потоку імпульсу для ідеальної рідини, що проходить через елементарну поверхню $\diff S$ в одиницю часу:
+\begin{equation}
+	\label{eq:impulse-flow}
+	\diff \vecf I = \Big(\rho V_n \vecf V + p \vec n \Big) \diff S.
+\end{equation}
+
+\begin{remark}
+	Нагадаємо, що $V_n$ --- нормальна складова векторного поля $\vecf V$, тобто
+	\begin{equation}
+		V_n = \langle \vecf V, \vec n \rangle.
+	\end{equation}
+\end{remark}
+
+Дамо
+\begin{definition}[щільності потоку імпульсу]
+	Введемо тензорну величину \it{щільності потоку імпульсу}:
+	\begin{equation}
+		\bm{\Pi} = \rho 
+		\begin{pmatrix}
+			V_1 V_1 & V_1 V_2 & V_1 V_3 \\
+			V_2 V_1 & V_2 V_2 & V_2 V_3 \\
+			V_3 V_1 & V_3 V_2 & V_3 V_3
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\
+			0 & 0 & 1
+		\end{pmatrix}
+		p.
+	\end{equation}
+\end{definition}
+
+Тоді поток імпульсу \eqref{eq:impulse-flow} можна записати у вигляді: 
+\begin{equation}
+	\diff \vecf I = \langle \bm{\Pi}, \vec n \rangle \diff S.
+\end{equation}
+
+\begin{law}[збереження імпульсу ідеальної рідини]
+	\label{law:impulse-conservation-ideal-liquid}
+	З використанням тензору щільності потоку імпульсу $\bm{\Pi}$ матиме вигляд:
+	\begin{equation}
+		\label{eq:impulse-conservation-ideal-liquid}
+		\frac{\partial \rho \vecf V}{\partial t} + \nabla \cdot \bm{\Pi} = 0.
+	\end{equation}
+\end{law}
+
+Для в'язкої рідини, у випадку тривимірних рухів додатковий механізм переносу потоку імпульсу має тензорну природу і задається через симетричний тензор в'язких напружень.
+
+\begin{definition}[симетричного тензору в'язких напружень]
+	\it{Симетричним тензором в'язких напружень} називається тензор, компоненти якого визначаються наступними рівняннями: 
+	\begin{equation}
+		\sigma_{ik} = \eta \left( \frac{\partial V_i}{\partial x_k} + \frac{\partial V_k}{\partial x_i} - \frac{2}{3} \delta_{ik} \Sum_{l = 1}^3 \frac{\partial V_l}{\partial x_l}\right) + \xi \delta_{ik} \Sum_{l = 1}^3 \frac{\partial V_l}{\partial x_l},
+	\end{equation}
+	де $\xi, \eta > 0$ --- коефіцієнти першої та другої в'язкості, $\delta_{ik}$ --- символ Кронекера, а
+	\begin{equation}
+		\Sum_{l = 1}^3 \frac{\partial V_l}{\partial x_l} = \nabla \cdot \vecf V.
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+	Рідина \it{ідеальна}, коли $\xi = \eta = 0$.
+\end{remark}
+
+Таким чином для в'язкої рідини симетричний тензор щільності потоку імпульсу приймає вигляд:
+\begin{equation}
+	\bm{\Pi}_{ik} = \rho V_i V_k + p \delta_{ik} - \sigma_{ik}.
+\end{equation}
+
+Використовуючи загальний вигляд тензору потоку імпульсу для в'язкої рідини, маємо
+\begin{law}[збереження імпульсу]
+	\label{law:impulse-conservation-viscous-liquid}
+	Також можна записати у розгорнутому вигляді:
+	\begin{equation}
+		\label{eq:impulse-conservation-viscous-liquid}
+		\frac{\partial \rho \vecf V}{\partial t} + \nabla \cdot \Big(\rho \vecf V \vecf V^\intercal\Big) + \nabla p = \eta \Delta \vecf V + \left( \xi + \frac{\eta}{3} \right) \nabla \Big(\nabla \cdot \vecf V \Big).
+	\end{equation}
+\end{law}
+
+\begin{remark}
+	Тут ми вважаємо, що $\vecf V$ --- вектор-стовпчик, відповідно   $\vecf V^\intercal $ --- вектор-рядок.
+\end{remark}
+
+\begin{remark}
+	Закон збереження імпульсу для в'язкої рідини у випадку нестисливої рідини, тобто коли $\rho \equiv \const$ має простіший вигляд.
+\end{remark}
+	
+Рівняння нерозривності приймає вигляд $\nabla \cdot \vecf V = 0$. \medskip
+
+Отже, поле швидкості є соленоїдальним, тобто
+\begin{equation}
+	\frac{\partial \rho \vecf V}{\partial t} + \nabla \cdot \Big(\rho \vecf V \vecf V^\intercal\Big) = - \nabla p + \eta \Delta \vecf V,
+\end{equation}
+або
+\begin{equation}
+	\frac{\partial \vecf V}{\partial t} + \nabla \cdot \Big(\vecf V \vecf V^\intercal\Big) = - \frac{\nabla p}{\rho} + \frac{\eta}{\rho} \Delta \vecf V.
+\end{equation}
+
+\subsubsection{Закон збереження енергії}
+
+Запишемо потік енергії для ідеальної рідини:
+\begin{equation}
+	\diff \vecf E = \left( \rho \vecf V \frac{|V|^2}{2} + \rho \epsilon \vecf V + p \vecf V\right) \vec n \diff S,
+\end{equation}
+або
+\begin{equation}
+	\diff \vecf E = \rho V_n \left( \frac{|V|^2}{2} + \epsilon + \frac{p}{\rho}\right)\diff S.
+\end{equation}
+
+\begin{remark}
+	Тут і надалі ми писатимемо $|V|$ замість $\left|\vecf V\right|$ для заощадження часу, місця, і концентрації уваги на тих використаннях векторного поля у яких важливий саме напрямок.
+\end{remark}
+
+Замість скалярної величини тиску $p$ для ідеальної рідини введемо тензор напружень для в'язкої рідини $\dot{\bf{P}}_{ik} = p \delta_{ik} - \sigma_{ik}$. \medskip
+
+Тоді матимемо 
+\begin{equation}
+	\diff \vecf E = \rho \langle\left(\left( \frac{|V|^2}{2} + \epsilon \right) I + \frac{\dot{\bf{P}}}{\rho} \right)\vecf V, \vec n \rangle,
+\end{equation}
+де $I$ --- одинична матриця. \medskip
+
+Можна записати
+\begin{law}[інтегральний закон збереження повної енергії]
+	\begin{multline}
+		\Iiint_G \rho \left. \left( \frac{|V|^2}{2} + \epsilon\right)^2 \right|_{t_1}^{t_2} \diff G + \\
+		+\Int_{t_1}^{t_2} \Iint_S \langle \left(\rho \left(\frac{|V|^2}{2} + \epsilon \right)I+\frac{\dot{\bf{P}}}{\rho}\right),\vec n\rangle \diff S \diff t = 0.
+	\end{multline}
+\end{law}
+
+Звідси, 
+\begin{law}[збереження повної енергії для в'язкої рідини]
+	\label{law:energy-conservation-viscous-liquid}
+	\begin{equation}
+		\label{eq:energy-conservation-viscous-liquid}
+		\frac{\partial}{\partial t} \left( \rho \left( \frac{|V|^2}{2} + \epsilon\right)\right) + \nabla \cdot \left( \left( \rho \left(\frac{|V|^2}{2} + \epsilon\right)I + \dot{\bf{P}}\right) \vecf V \right) = 0.
+	\end{equation}
+\end{law}
+
+Якщо рідина не тільки в'язка, а й теплопровідна, то з'являється ще один механізм передачі енергії --- теплопровідність, тоді другий доданок матиме вигляд:
+\begin{equation}
+	\nabla \cdot \left( \left( \rho \left(\frac{|V|^2}{2} + \epsilon\right)I + \dot{\bf{P}}\right) \vecf V + \vecf Q\right)
+\end{equation}
+
+де $\vecf Q$ --- потік тепла,
+\begin{equation}
+	\vecf Q = - k \nabla \epsilon,
+\end{equation}
+а $k$ --- коефіцієнт теплопровідності. \medskip
+
+Отже, отримали
+\begin{th_equation}[які описують рух в'язкої рідини]
+	Ця система складається з рівняння нерозривності \eqref{eq:mass-conservation-continuity} (закону збереження маси \ref{law:mass-conservation-continuity}), закону збереження імпульсу \ref{law:impulse-conservation-viscous-liquid}, і закону збереження повної енергії \ref{law:energy-conservation-viscous-liquid}, та замикається рівнянням стану
+	\begin{equation}
+		\epsilon = \epsilon(p, \rho).
+	\end{equation}
+\end{th_equation}
+
+\begin{remark}
+	При переході від моделі ідеальної до моделі в'язкої рідини збільшується порядок рівнянь з першого на другий.
+\end{remark}
+
+\subsubsection{Додаткові умови}
+
+Початкові умови:
+\begin{equation}
+	\left. p, \rho, \epsilon, V \right|_{t = 0} = p_0, \rho_0, \epsilon_0, V_0,
+\end{equation}
+тобто у початковий момент часу задаються усі невідомі параметри. \medskip
+
+Граничні умови на поверхні тіла:
+\begin{enumerate}
+	\item Якщо нерухоме тіло обтікається в'язкою рідиною, то за рахунок молекулярних сил, в'язка рідина прилипає до поверхні тіла, тобто виконується умова:
+	\begin{equation}
+		\left. \vecf V(x, t) \right|_{x \in S} = 0
+	\end{equation}
+	\item Якщо поверхня тіла рухається зі швидкістю  $\vecf U_S(x, t)$ то на його поверхні для в'язкої рідини виконується умова
+	\begin{equation}
+		\left. \vecf V(x, t) \right|_{x \in S} = \vecf U_S(x, t).
+	\end{equation}
+\end{enumerate}
+
+\begin{definition}[умов приліпання]
+	Ці дві умови називаються \it{умовами приліпання}.
+\end{definition}
+
+\subsubsection{Умови на поверхні розділу двох середовищ}
+
+У випадку, коли два середовища розділені рухомою поверхнею, (дві рідини, що не змішуються) то на границі розділу двох середовищ, задають дві умови:
+\begin{enumerate}
+ 	\item динамічна:
+ 	\begin{equation}
+ 		\left. \vecf V_1 \right|_S = \left. \vecf V_2 \right|_S = \vecf V_p
+ 	\end{equation}
+
+	\begin{remark}
+		Динамічна умова вказує на те, що вектор швидкості на поверхні розділу двох середовищ є неперервним, а сама поверхня рухається з місцевою швидкістю середовища  . 
+	\end{remark}
+
+ 	\item статична:
+ 	\begin{equation}
+ 		\dot{\bf{P}}_1 \vec n_1 + \dot{\bf{P}}_2 \vec n_2 = 0,
+ 	\end{equation}
+ 	або
+ 	\begin{equation}
+ 		\dot{\bf{P}}_1 \vec n_1 = \dot{\bf{P}}_2 \vec n_1.
+ 	\end{equation}
+
+	\begin{remark}
+		Статична умова вказує на те, що рівнодіюча сил на поверхні розділу середовищ дорівнює нулю, тут $\vec n_1$, $\vec n_2$ --- вектори зовнішньої нормалі, $\vec n_2 = - \vec n_1$.
+	\end{remark}
+\end{enumerate}
+
+\subsubsection{Граничні умови на вільній поверхні}
+
+\begin{definition}[вільної поверхні]
+	\it{Вільною поверхнею} будемо називати поверхню утворену частинками в'язкої рідини на яку діє деяка зовнішня сила.
+\end{definition}
+
+Нехай $h(x, t) = 0$ --- рівняння вільної поверхні, де $h: \RR^n\times \RR \to \RR$ --- невідома функція, тоді виконується
+\begin{th_condition}[на вільній поверхні]
+	Cпіввідношення 
+	\begin{equation}
+		\left. \frac{\partial h(x, t)}{\partial t} \right. + \left. \langle \nabla_x h(x , t), \vecf V(x,t) \rangle \right|_{x \in S} = 0
+	\end{equation}
+	виражає умову непротікання рідини через поверхню $S$.
+\end{th_condition}
+
+\begin{remark}
+	Тобто через вільну поверхню рідина не перетікає, а сама вільна поверхня переміщується з місцевою швидкістю руху рідини.
+\end{remark}
+
+На вільну поверхню також діє зовнішня сила, яка задається тензорним співвідношенням:
+\begin{equation}
+	\left. \dot{\bf{P}}(x, t) \vec n \right|_{x \in S} = \vecf F(x, t).
+\end{equation}
+
+Скалярна форма цього рівняння має вигляді
+\begin{equation}
+	\left. \Sum_{k = 1}^3 p(x, t) \delta_{ik} n_k - \sigma_{ik}(x, t) n_k \right|_{x \in S} = F_i(x, t), \quad i = 1, 2, 3,
+\end{equation}
+де $F_i$ --- компоненти вектора зовнішніх сил, що діють на поверхні $S$.
+
+\subsection{Математичні моделі електростатики}
+
+З курсу фізики відомо, що при певних умовах окремі тіла (діелектрики) можуть отримувати додаткові електричні заряди (відбувається електризація). Наявність електричних зарядів проявляється у взаємодії заряджених тіл між собою (тіла притягуються або відштовхуються). \medskip
+
+Відомо, що існують два види електричних зарядів, які умовно поділяються на додатні та від'ємні. Будь-який електричний заряд утворюється як сукупність елементарних неподільних за величиною зарядів. Носієм такого елементарного від'ємного заряду є електрон, носієм елементарного позитивного заряду може бути протон. Величину елементарного заряду традиційно позначають $\mathrm{e}$. \medskip
+
+Будь-який електричний заряд утворюється як сукупність елементарних зарядів $q = \pm N \mathrm{e}$. \medskip
+
+Якщо заряджені частинки в тілі можуть більш менш вільно пересуватися в межах тіла, то кажуть, що тіло здатне проводити електричний струм. Носіями зарядів можуть бути не тільки електрони, але іони (атоми, що приєднали до себе або згубили один чи декілька електронів). \medskip
+
+Будемо розглядати точкові заряди. Тобто заряджені тіла, геометричними розмірами яких можна нехтувати, вважаючи їх точкою. Взаємодія точкових електричних зарядів полягає в виникненні сили тяжіння або відштовхування. Величина цієї сили експериментально встановлена Кулоном у вигляді фізичного закону
+\begin{law}[Кулона]
+	Виконується співвідношення
+	\begin{equation}
+		f = k \frac{q_1 q_2}{|r|^2},
+	\end{equation}
+	де  $k$ --- коефіцієнт пропорційності, який залежить від середовища в якому відбувається взаємодії, $q_1$, $q_2$ --- величини зарядів, $r$ --- відстань між зарядами.
+\end{law}
+
+Враховуючи векторний характер сили, закон Кулона можна записати в векторному вигляді
+\begin{equation}
+	\vec f = k \frac{q_1 q_2}{|r|^3} \vec r
+\end{equation}
+
+Якщо характеризувати силу, з якою заряд $q_1$ діє на заряд $q_2$, то радіус вектор $\vec r$ направлений від $q_1$ до $q_2$. При цьому сила з якою заряд $q_2$ діє на заряд $q_1$ рівна за величиною та протилежна за напрямом. Закон Кулона в вакуумі має вигляд:
+\begin{equation}
+	\vec f = \frac{1}{4 \pi \epsilon_0} \frac{q_1q_2}{|r|^3} \vec r.
+\end{equation}
+
+\begin{definition}[електричної сталої]
+	$\epsilon_0$ --- \it{електрична стала}.
+\end{definition}
+
+\subsubsection{Електричне поле. Напруженість електричного поля}
+
+Взаємодія між електричними зарядами відбувається через електричне поле. Будь-який заряд змінює властивості оточуючого середовища створюючи в ньому електричне поле. Це поле проявляє себе у тому, що розташований в цьому полі заряд буде знаходитись під дією сили. \medskip
+
+Для дослідження поля використовують пробний заряд, який обирають невеликим за величиною і розмірами (точковий заряд). Згідно до закону Кулона сила $\vec f$, що діє на пробний заряд  $q'$  полем точкового заряду величини $q$ записується у вигляді
+\begin{equation}
+	\vec f = q' \left( \frac{1}{4 \pi \epsilon_0} \frac{q}{|r|^3} \vec r \right)
+\end{equation}
+
+З цієї формули видно, що сила $\vec f$ залежить від $q'$.
+
+\begin{definition}[напруженості електричного поля]
+	Характеристикою електричного поля, яка не залежить від величини пробного заряду є
+	\begin{equation}
+		E = \frac{\vec f}{q'},
+	\end{equation}
+	яку називають \it{напруженістю електричного поля}.
+\end{definition}
+
+\begin{remark}
+	Її також можна визначити як силу, що діє на одиничний пробний заряд.
+\end{remark}
+
+Таким чином,  напруженість електричного поля точкового заряду $q$ визначається за формулою:
+\begin{equation}
+	\vecf E = \frac{1}{4 \pi \epsilon_0} \frac{q}{|r|^3} \vec r,
+\end{equation}
+де вектор $\vec r$ направлений від точки розташування заряду $q$ до точки знаходження пробного заряду. 
+
+\subsubsection{Суперпозиція полів}
+
+Дослідним шляхом встановлено, що у випадку, коли поле утворюється декількома точковими зарядами, то сумарна сила, яка діє на пробний заряд дорівнює векторній сумі від дії кожної окремої сили. \medskip
+
+Тобто виконується
+\begin{th_principle}[суперпозиції електричних полів]
+	\begin{equation}
+		\vecf E = \Sum_i \vecf E_i	
+	\end{equation}
+\end{th_principle}
+
+Нехай в точках $P_i$ простору розташовані заряди величиною $q_i$, $i \in I$, тоді згідно до принципу суперпозиції електричних полів, можна записати:
+\begin{equation}
+	\vecf E(P) = \frac{1}{4 \pi \epsilon_0} \Sum_{i \in I} \frac{q_i}{|r_i|^3} \vec r_i,
+\end{equation}
+де $\vec r_i = \overrightarrow{P_iP}$, $|r_i|$ --- довжина цього вектора. \medskip
+
+У випадку, коли в області $\Omega$ трьохвимірного простору заряди розташовані щільно і щільність їх розташування задана деякою функцією $q(P)$, то напруженість електричного поля визначається у вигляді інтегралу:
+\begin{equation}
+	\vecf E(P_0) = \frac{1}{4 \pi \epsilon_0} \Iiint_\Omega \frac{q(P)}{|r|^3} \vec r \diff P,
+\end{equation}
+де $\vec r =\overrightarrow{ P_0 - P}$.
+
+\subsubsection{Потік векторного поля. Теорема Гауса}
+
+\begin{definition}[потоку векторного поля]
+	\it{Потоком векторного поля} $\vecf E$ через поверхню $S$ будемо називати величину
+	\begin{equation}
+		\Iint_S \langle \vecf E, \vec n \rangle \diff S = \Phi
+	\end{equation}
+\end{definition}
+
+Розглянемо замкнену поверхню $S$ всередині якої знаходиться точковий заряд $q$, тоді потік векторного поля цього заряду можна розрахувати за визначенням, або враховуючи інтегральний вигляд напруженості електрчиного поля маємо:
+\begin{equation}
+	\Phi = \frac{q}{4 \pi\epsilon_0} \Oiint_S \frac{\langle \vec r, \vec n\rangle}{|r|^3} \diff S,
+\end{equation}
+де $\vec r$ --- вектор направлений від точки розташування заряду до змінної точки поверхні $S$. \medskip
+
+Неважко перевірити, що
+\begin{equation}
+	\frac{\vec r}{|r|^3} = - \nabla \frac{1}{|r|}
+\end{equation}
+тоді
+\begin{equation}
+	\frac{q\langle \vec r,\vec n\rangle}{4 \pi \epsilon_0 |r|^3} = - \frac{q}{4 \pi \epsilon_0} \frac{\partial}{\partial n} \frac{1}{|r|},
+\end{equation}
+і, як наслідок,
+\begin{equation}
+	\Phi = - \frac{q}{4 \pi \epsilon_0} \Oiint_S \frac{\partial}{\partial n} \frac{1}{|r|} \diff S.
+\end{equation}
+
+В наступних лекціях, при вивченні гармонічних функцій ми покажемо, що цей вираз з урахуванням значення інтеграул дорівнює  $q / \epsilon_0$. \medskip
+
+Таким чином потік напруженості векторного поля одного точкового заряду дорівнює величині цього заряду поділеному на електричну постійну. \medskip
+
+Враховуючи принцип суперпозиції електричного поля можна сформулювати наступну
+\begin{theorem}[Гауса про значення потоку електричного поля через замкнену поверхню]
+	Потік напруженості векторного поля через замкнену поверхню $S$ тіла дорівнює алгебраїчній сумі зарядів, що знаходяться всередині цієї поверхні поділеній на діелектричну сталу:
+	\begin{equation}
+		\Oiint_S \vecf E_n \diff S = \frac{1}{\epsilon_0} \Sum_i q_i.
+	\end{equation}
+\end{theorem}
+
+Якщо заряд розподілений всередині замкненого об'єму, обмеженого поверхнею $S$ з об'ємною густиною $\rho$, то теорема Гауса буде мати вигляд
+\begin{equation}
+	\Oiint_S \vecf E_n \diff S = \frac{1}{\epsilon_0} \Iiint_\Omega \rho \diff \Omega
+\end{equation}
+
+\begin{definition}[електричного зміщення]
+	Поряд з напруженістю векторного поля $\vecf E$, для опису електричного поля вводять величину $\vecf D$, яка називається \it{електричним зміщенням}. Для вакууму вона визначається
+	\begin{equation}
+		\vecf D = \epsilon_0 \vecf E.
+	\end{equation}
+\end{definition}
+
+Формула Гауса приймає вид:
+\begin{equation}
+	\Oiint_S \vecf D_n \diff S = \Iiint_\Omega \rho \diff \Omega.
+\end{equation}
+
+\subsubsection{Робота сил електростатичного поля. Потенціал електростатичного поля}
+
+Відомо, що робота в силовому полі, виконана вздовж деякого контуру $C$ силою $\vecf F$ обчислюється у вигляді криволінійного інтегралу другого роду за формулою
+\begin{equation}
+	A = \Int_C \langle \vecf F, \diff \vec l\rangle.
+\end{equation}
+
+\begin{definition}[циркуляції векторного поля]
+	Відповідно, для електричного поля ця робота може бути записана у вигляді інтегрула
+	\begin{equation}
+		A = \Int_C \langle \vecf E, \diff \vec l\rangle,
+	\end{equation} 
+	який будемо називати \it{циркуляцією векторного поля} вздовж контуру $C$.
+\end{definition}
+
+\begin{definition}[потенціалу електростатичного поля]
+	Введемо величину
+	\begin{equation}
+		u\Big(\vec r\Big) = \frac{1}{4 \pi \epsilon_0 |r|}, \quad \vec r = (x_1, x_2, x_3).
+	\end{equation}
+	і назвемо її потенціалом електростатичного поля одиничного точкового заряду, розташованого в точці початку координат.
+\end{definition}
+
+Враховуючи 
+\begin{equation}
+	\frac{\vec r}{|r|^3} = - \nabla \frac{1}{|r|},
+\end{equation}
+легко бачити, що напруженість поля одиничного точкового заряду можна записати 
+\begin{equation}
+	-\nabla u = \vecf E,
+\end{equation}
+тобто векторне поле одиничного точкового заряду є потенціальним. Аналогічна властивість має місце і для поля розподілених в об'ємі зарядів. \medskip
+
+
+Легко перевірити, що формула для напруженості електричного поля через інтеграл може бути переписана у вигляді
+\begin{equation}
+	\vecf E (P_0) = - \frac{1}{4 \pi \epsilon_0} \nabla_{P_0} \Iiint_\Omega \frac{q(P)}{|P-P_0|} \diff P.
+\end{equation}
+
+Враховуючи потенційність векторного поля, роботу в такому полі можна обчислити
+\begin{equation}
+	A = \Int_{ab} \langle - \nabla u, \diff l \rangle = - \Int_{ab} \diff u = u(a) - u(b),
+\end{equation}
+причому $u(\infty) = 0$. \medskip
+
+\begin{remark}
+	Зрозуміло, що циркуляція електростатичного поля вздовж довільного замкненого контуру дорівнює нулю тобто
+	\begin{equation}
+		\Oint_C \langle \vecf E, \diff \vec l \, \rangle = 0.
+	\end{equation}
+\end{remark}
+
+Виходячи з формули для роботи можна визначити фізичний зміст потенціалу електростатичного поля в заданій точці. 
+
+\begin{definition}[потенціалу електростатичного поля]
+	\it{Потенціал електростатичного поля} --- це робота яку необхідно здійснити, щоб перемістити одиничний точковий заряд з нескінченно віддаленої точки простору у задану точку.
+\end{definition}
+
+\begin{remark}
+	Ця робота не залежить від шляху переміщення, а залежить лише від положення точки.
+\end{remark}
+	 
+Електричне поле утворене сукупністю точкових зарядів, або розподілених у просторі з деякою щільністю також залишається потенціальним, а значить допускає існування скалярної функції $u$, такої, що
+\begin{equation}
+	-\nabla \Phi = \vecf E.
+\end{equation}
+
+Враховуючи теорему Гауса та формулу Остроградського-Гауса отримаємо рівняння
+\begin{equation}
+	\nabla \cdot \vecf E = \frac{\rho}{\epsilon_0},
+\end{equation}
+або, враховуючи $-\nabla \Phi = \vecf E$, отримаємо рівняння:
+\begin{equation}
+	\nabla \cdot (\nabla \Phi) = -\frac{\rho}{\epsilon_0}
+\end{equation}
+або
+\begin{th_equation}[основне рівняння електростатики для вакууму]
+	\begin{equation}
+		\Delta \Phi = - \frac{\rho}{\epsilon_0}
+	\end{equation}
+\end{th_equation}
+
+\begin{remark}
+	Крім теореми Гауса при постановці граничних задач електростатики необхідно враховувати різні граничні режими електростатичного поля.
+\end{remark}
+
+\begin{example}
+	Всередині провідника електричне поле $\vecf E$ завжди дорівнює нулю, таким чином потенціал $u = \const$. Ця константа має одне і те ж саме значення у системі з'єднаних між собою провідними зв'язками провідників. Якщо провідники відокремлені один від одного, то $\const$ для кожного провідника має своє окреме значення.
+\end{example}

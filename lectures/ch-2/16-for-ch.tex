@@ -1,0 +1,122 @@
+\subsection{Загальна постановка задачі Коші для хвильового рівняння. Плоскі хвилі}
+
+\subsubsection{Характеристичні поверхні}
+
+В лекції 14 розглядалися питання класифікації диференціальних рівнянь другого порядку з $n > 2$ незалежними змінними. Важливу роль при визначені типу рівняння і вибору нової системи координат відіграють характеристичні поверхні, які є аналогами характеристичних кривих (характеристик) для випадку рівнянь з двома незалежними змінними. \medskip
+
+Нехай функція $\omega(x) \in C^1$, $x = (x_1, \ldots, x_n)$, $n \ge 2$ є такою що на поверхні $\omega(x) = 0$, $\nabla \omega(x) \ne 0$ та
+\begin{equation}
+    \Sum_{i, j = 1}^N a_{i,j}(x) \frac{\partial \omega(x)}{\partial x_i} \frac{\partial \omega(x)}{\partial x_j} = 0.
+\end{equation}
+
+\begin{definition}[характеристичної поверхні]
+    Тоді поверхню $\omega(x) = 0$ називають \textit{характеристичною поверхнею} або \textit{характеристикою} квазілінійного рівняння
+    \begin{equation}
+        \Sum_{i, j = 1}^n a_{i, j}(x) \frac{\partial^2 u}{\partial x_i \partial x_j} + \Phi(x, u, \nabla u) = 0.
+    \end{equation}
+\end{definition}
+
+\begin{definition}[характеристичної лінії]
+    При $n = 2$ характеристична поверхня називається \textit{характеристичною лінією}.
+\end{definition}
+
+Оскільки $\nabla \omega(x) \ne 0$, то сімейство характеристик $\omega(x) = \const$ заповнює область таким чином, що через кожну точку області проходить одна характеристична поверхня. \medskip
+
+Враховуючи закон перетворення коефіцієнтів рівняння
+\begin{equation}
+    \overline{a_{k, l}} = \Sum_{i = 1}^n \Sum_{j = 1}^n a_{i, j} \frac{\partial \xi_k}{\partial x_i} \frac{\partial \xi_l}{\partial x_j}
+\end{equation}
+при виборі заміни змінних $\xi_k = \xi_k(x_1, x_2, \ldots, x_n)$, $k = 1, \ldots, n$, знання однієї чи декількох характеристичних поверхонь дозволяє спростити рівняння, зокрема, якщо $\xi_1 = \omega(x_1, x_2, \ldots, x_n)$, то
+\begin{equation}
+    \overline{a_{1, 1}} = \Sum_{i = 1}^n \Sum_{j = 1}^n a_{i, j} \frac{\partial \omega}{\partial x_i} \frac{\partial \omega}{\partial x_j} = 0.
+\end{equation}
+
+Для хвильового рівняння
+\begin{equation}
+    u_{tt}(t, x) = a^2 \Delta u(t, x) + f(t, x),
+\end{equation}
+де $x = (x_1, x_2, \ldots, x_n)$, характеристичне рівняння має вигляд
+\begin{equation}
+    \left( \frac{\partial \omega}{\partial t} \right)^2 - a^2 \Sum_{i = 1}^n \left(\frac{\partial \omega}{\partial x_i} \right)^2 = 0.
+\end{equation}
+
+Одним з розв'язків цього диференціального рівняння першого порядку є поверхня
+\begin{equation}
+    \omega(x, t) = a^2 (t - t_0)^2 - \Sum_{i = 1}^n (x_i - x_{0, i})^2 = 0.
+\end{equation}
+
+\begin{definition}[характеристичного конуса]
+    Поверхня
+    \begin{equation}
+        a^2 (t - t_0)^2 - \Sum_{i = 1}^n (x_i - x_{0, i})^2 = 0.
+    \end{equation}
+    називається \textit{характеристичним конусом} з вершиною в точці $(x_0, t_0)$ і є характеристичною поверхнею (характеристикою) хвильного рівняння.
+\end{definition}
+
+\begin{remark}
+    Характеристичний конус є границею конусів
+    \begin{align}
+        \Gamma^+(x_0, t_0) &= a (t - t_0) > \sqrt{ \Sum_{i = 1}^n (x_i - x_{0, i})^2 }, \\
+        \Gamma^-(x_0, t_0) &= - a (t - t_0) > \sqrt{ \Sum_{i = 1}^n (x_i - x_{0, i})^2 },
+    \end{align}
+    які називають \textit{конусами майбутнього} та \textit{минулого} відповідно.
+\end{remark}
+
+Хвильове рівняння має також інше сімейство характеристичних поверхонь
+\begin{equation}
+    a (t - t_0) + \Sum_{i = 1}^n (x_i - x_{0,i}) e_i = 0,
+\end{equation}
+де $\{e_i\}_{i = 1}^n$ --- довільні числа такі, що $|\vec e| = 1$.
+
+\subsubsection{Узагальнена задача Коші для рівняння коливання струни}
+
+Довільне квазілінійне рівняння гіперболічного типу з двома незалежними змінними
+\begin{equation}
+    a_{1, 1} (\xi, \eta) U_{\xi, \xi} (\xi, \eta) + 2 a_{1, 2} U_{\xi \eta}(\xi, \eta) + a_{2, 2} (\xi, \eta) U_{\eta, \eta}(\xi, \eta) = F(\xi, \eta, U, U_\xi, U_\eta)
+\end{equation}
+може бути зведене до одного із рівнянь:
+\begin{align}
+    u_{xt}(t,x) &= f(x, y, u, u_t, u_x), \\
+    \label{eq:cauchy-equation-simplified-second-form}
+    u_{tt} - u_{xx} &= f(x, y, u, u_t, u_x).
+\end{align}
+
+\begin{remark}
+    Коефіцієнти $a_{i,j}(\xi,\eta)$ ($i, j = 1, 2$) і права частина $f(\xi, \eta, U, U_\xi, U_\eta)$ вважаються неперервно диференційовними функціями у відповідних областях.
+\end{remark}
+
+При постановці задачі Коші для рівняння \eqref{eq:cauchy-equation-simplified-second-form} до тепер ми вважали, що носієм початкових умов є пряма $t = 0$. \medskip
+
+На прикладі рівняння вільних коливань однорідної струни
+\begin{equation}
+    \label{eq:free-string-fluctuations}
+    u_{tt} - u_{xx} = f(x, t)
+\end{equation}
+покажемо, що носієм початкових умов може бути крива $L$, яка є відмінною від прямої $t = 0$, причому встановимо, яким умовам повинна задовольняти крива $L$ і який вигляд повинні мати самі початкові умови, щоб одержана задача Коші була поставлена коректно. \medskip
+
+Для цього позначимо через $D$ обмежену область фазової площини $xOt$ з кусково-гладкою жордановою межею $S$. Нехай $u(t, x) \in C^2(D)$ --- розв'язок рівняння \eqref{eq:free-string-fluctuations}, який має неперервні частинні похідні 1-го порядку в області $\overline{D} = D \cup S$. \medskip
+
+Інтегруючи тотожність \eqref{eq:free-string-fluctuations} по області $D$ і використовуючи формулу Гріна
+\begin{equation}
+    \Iint_D (Q_x(x, t) - P_t(x, t)) \diff x \diff t = \Int_S P \diff x + Q \diff t,
+\end{equation}
+де криволінійний інтеграл в правій частині береться по контуру в напрямі проти годинникової стрілки, одержуємо
+\begin{equation}
+    \Iint_D (u_{xx} - u_{tt}) \diff x \diff t = \Int_S u_x \diff t + u_t \diff x = \Iint_S f(x, t) \diff x, \diff t
+\end{equation}
+
+Нехай $L$ --- розімкнута крива Жордана з неперервною кривизною, яка задовольняє умовам:
+\begin{itemize}
+    \item кожна пряма із двох сімей характеристик $x + t = \const$, $x - t = \const$ рівняння \eqref{eq:free-string-fluctuations} перетинає криву $L$ не більше, ніж в одній точці;
+    \item напрям дотичної до кривої $L$ в жодній точці не збігається з напрямом характеристик рівняння \eqref{eq:free-string-fluctuations}.
+\end{itemize}
+
+\begin{remark}
+    Іноді таку криву $L$ називають \textit{``вільною''}.
+\end{remark}
+
+Припустимо, що характеристики $x - x_1 = t - t_1$ і $x - x_1 = t_1 - t$, які виходять із точки $C$, перетинаються із кривою $L$ в точках $A$ і $B$:
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{{../img/16-1}.mps}
+\end{figure}
