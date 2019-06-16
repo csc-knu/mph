@@ -313,17 +313,17 @@
     \langle \xi, x \rangle = \Sum_{i = 1}^n \xi_i x_i.
 \end{equation}
 
-При різних значеннях $t = t_0$ функція $u(t_1, x)$ відрізняється від $u(t_0, x)$ зсувом на вектор $\vec \xi \; b (t_1 - t_0) / \left|\vec \xi \; \right|^2$, дійсно:
+При різних значеннях $t = t_0$ функція $u(t_1, x)$ відрізняється від $u(t_0, x)$ зсувом на вектор $\vec \xi \, b (t_1 - t_0) / \left|\vec \xi \, \right|^2$, дійсно:
 \begin{equation}
     \begin{aligned}
-        u \left(t_0, x + \frac{\vec \xi \; b (t_1 - t_0)}{\left|\vec \xi\;\right|^2} \right) &= f \left(b t_0 + \langle \xi, x + \frac{\vec \xi \; b (t_1 - t_0)}{\left|\vec \xi\;\right|^2} \rangle \right) = \\
-        &= f \left( b t_0 + \langle \xi, x\rangle + \langle \xi, \xi \rangle \frac{b (t_1 - t_0)}{\left|\vec \xi\;\right|^2} \right) = \\
+        u \left(t_0, x + \frac{\vec \xi \, b (t_1 - t_0)}{\left|\vec \xi\,\right|^2} \right) &= f \left(b t_0 + \langle \xi, x + \frac{\vec \xi \, b (t_1 - t_0)}{\left|\vec \xi\,\right|^2} \rangle \right) = \\
+        &= f \left( b t_0 + \langle \xi, x\rangle + \langle \xi, \xi \rangle \frac{b (t_1 - t_0)}{\left|\vec \xi\,\right|^2} \right) = \\
         &= f (b t_1 + \langle \xi, x\rangle) = u(t_1, x).
     \end{aligned}
 \end{equation}
 
 \begin{definition}
-    Розв'язок вигляду \eqref{eq:9.22} прийнято називати \textit{плоскою хвилею}, яка рухається вздовж напряму вектора $\xi$ зі швидкістю $v = b / \left|\vec \xi\;\right|$.    
+    Розв'язок вигляду \eqref{eq:9.22} прийнято називати \textit{плоскою хвилею}, яка рухається вздовж напряму вектора $\xi$ зі швидкістю $v = b / \left|\vec \xi\,\right|$.    
 \end{definition}
 
 \begin{definition}
@@ -342,10 +342,10 @@
 Вважаючи, що $f''(Q) \not\equiv 0$, маємо
 \begin{equation}
     \label{eq:9.23}
-    b^2 = a^2 \left| \vec \xi \; \right|^2.
+    b^2 = a^2 \left| \vec \xi \, \right|^2.
 \end{equation}
 
-Розв'язками цього рівняння є вектори $\vec N = (\xi, b) \in \RR^{n + 1}$, які лежать на конусі $\mathcal{K}$ в $\RR^{n + 1}$, основою якого є сфера $\left| \vec \xi \; \right| = b / a$. 
+Розв'язками цього рівняння є вектори $\vec N = (\xi, b) \in \RR^{n + 1}$, які лежать на конусі $\mathcal{K}$ в $\RR^{n + 1}$, основою якого є сфера $\left| \vec \xi \, \right| = b / a$. 
 
 \begin{definition}
     Вектор $\vec N = (\xi, b) \in \RR^{n + 1}$, $\vec N \ne 0$, який задовольняє рівняння \eqref{eq:9.23}, називається \textit{характеристичною нормаллю} хвильового рівняння \eqref{eq:9.21}.
@@ -379,7 +379,7 @@
     b t + \langle \xi, x \rangle = 2.
 \end{equation}
 
-При фіксованому $t$ цей розрив розміщений на площині в $\RR^n$ з рівнянням \eqref{eq:9.25}. Ця площина рухається із зростанням $t$ у напрямі перпендикулярного їй вектора $- \vec \xi$, зі швидкістю $v = a = b / \left| \vec \xi \; \right|$. \medskip
+При фіксованому $t$ цей розрив розміщений на площині в $\RR^n$ з рівнянням \eqref{eq:9.25}. Ця площина рухається із зростанням $t$ у напрямі перпендикулярного їй вектора $- \vec \xi$, зі швидкістю $v = a = b / \left| \vec \xi \, \right|$. \medskip
 
 Звідси можна зробити висновок:
 \begin{enumerate}
@@ -396,21 +396,21 @@
 Розглянемо диференціальне рівняння \eqref{eq:9.21}, коли $c \ne 0$. Якщо $u(t, x) = f (b t + \langle \xi, x \rangle)$ --- плоска хвиля для рівняння \eqref{eq:9.21}, то ми відразу дістаємо для заданих $\xi$ і $b$ рівняння 
 \begin{equation}
     \label{eq:9.26}
-    f''(bt+\langle \xi, x \rangle) \left( a^2 \left| \vec \xi \; \right|^2 - b^2) + f(bt + \langle \xi, x \rangle) c = 0.
+    f''(bt+\langle \xi, x \rangle) \left( a^2 \left| \vec \xi \, \right|^2 - b^2 \right) + f(bt + \langle \xi, x \rangle) c = 0.
 \end{equation}
 
-Отже, в цьому разі функція $f(b t + \langle \xi, x \rangle)$ не може бути довільною --- вона повинна бути розв'язком рівняння \eqref{eq:9.26}. Очевидно, що для швидкості $v = a$, тобто для $a^2 \left| \vec \xi \; \right|^2 = b^2$, уже не існує біжучої плоскої хвилі. Але для інших швидкостей і для довільного напряму можливі форми хвиль визначаються із рівняння \eqref{eq:9.26} і є експоненціальними функціями. У зв'язку з цим напрям руху хвилі і її швидкість, яка відповідає рівнянню \eqref{eq:9.21}, можуть задаватися довільним чином (за винятком $v = a$), але при цьому можливі тільки спеціальні форми плоских хвиль. З фізичних міркувань виключаються із розгляду розв'язки, які не є рівномірно обмеженими функціями в просторі. Беручи до уваги, що
+Отже, в цьому разі функція $f(b t + \langle \xi, x \rangle)$ не може бути довільною --- вона повинна бути розв'язком рівняння \eqref{eq:9.26}. Очевидно, що для швидкості $v = a$, тобто для $a^2 \left| \vec \xi \, \right|^2 = b^2$, уже не існує біжучої плоскої хвилі. Але для інших швидкостей і для довільного напряму можливі форми хвиль визначаються із рівняння \eqref{eq:9.26} і є експоненціальними функціями. У зв'язку з цим напрям руху хвилі і її швидкість, яка відповідає рівнянню \eqref{eq:9.21}, можуть задаватися довільним чином (за винятком $v = a$), але при цьому можливі тільки спеціальні форми плоских хвиль. З фізичних міркувань виключаються із розгляду розв'язки, які не є рівномірно обмеженими функціями в просторі. Беручи до уваги, що
 \begin{equation}
     \begin{aligned}
-        f(b t + \langle \xi, x \rangle) &= f \left( v \left| \vec \xi \; \right| t - \langle e, x \rangle \left| \vec \xi \; \right| \right) = \\
-        &= f \left( (v t - \langle e, x \rangle ) \left| \vec \xi \; \right| \right) = \\
+        f(b t + \langle \xi, x \rangle) &= f \left( v \left| \vec \xi \, \right| t - \langle e, x \rangle \left| \vec \xi \, \right| \right) = \\
+        &= f \left( (v t - \langle e, x \rangle ) \left| \vec \xi \, \right| \right) = \\
         &= f (v t - \langle e, x \rangle),
     \end{aligned}
 \end{equation}
-де $g(z) = f \left( z \left| \vec \xi \; \right| \right)$, $\vec e = - \vec \xi / \left| \vec \xi \; \right|$, $\left| \vec e \right| = 1$, $z = v t - \langle e, x \rangle$, маємо:
+де $g(z) = f \left( z \left| \vec \xi \, \right| \right)$, $\vec e = - \vec \xi / \left| \vec \xi \, \right|$, $\left| \vec e \, \right| = 1$, $z = v t - \langle e, x \rangle$, маємо:
 \begin{equation}
     \label{eq:9.26.1}
-    g''(z) \left( a^2 \left| \vec \xi \; \right|^2 * b^2 \right) + g(z) c - 0.
+    g''(z) \left( a^2 \left| \vec \xi \, \right|^2 - b^2 \right) + g(z) c - 0.
 \end{equation}
 
 Рівномірно обмежені розв'язки рівняння \eqref{eq:9.26.1} можна записати у вигляді $g(z) = e^{-ikz}$, при виконанні рівності
