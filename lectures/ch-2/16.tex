@@ -21,6 +21,7 @@
 
 Нехай функція $\omega(x) \in C^1$, $x = (x_1, \ldots, x_n)$, $n \ge 2$ є такою що на поверхні $\omega(x) = 0$, $\nabla \omega(x) \ne 0$ та
 \begin{equation}
+    \label{eq:omega-partial-system-of-linear-equations}
     \Sum_{i, j = 1}^N a_{i,j}(x) \frac{\partial \omega(x)}{\partial x_i} \frac{\partial \omega(x)}{\partial x_j} = 0.
 \end{equation}
 
@@ -91,6 +92,7 @@
 \end{equation}
 може бути зведене до одного із рівнянь:
 \begin{align}
+    \label{eq:cauchy-equation-simplified-first-form}
     u_{xt}(t,x) &= f(x, y, u, u_t, u_x), \\
     \label{eq:cauchy-equation-simplified-second-form}
     u_{tt} - u_{xx} &= f(x, y, u, u_t, u_x).
@@ -135,4 +137,117 @@
     \centering
     \includegraphics[]{{../img/16-1}.mps}
 \end{figure}
+
+Застосовуючи формулу \eqref{eq:cauchy-equation-simplified-second-form} в області, яка обмежена дугою $AB$ кривої $L$ і відрізками характеристик $[CA]$ і $[CB]$, одержуємо:
+\begin{equation}
+    \label{eq:int-ab-bc-ca}
+    \Int_{AB + [BC] + [CA]} u_x \diff t + u_t \diff x = \Iint_D f(x, t) \diff x \diff t.
+\end{equation}
+
+Оскільки вздовж $[BC]$ і $[AC]$ маємо $\diff x = - \diff t$, $\diff x = \diff t$ відповідно, то \eqref{eq:free-string-fluctuations} запишеться у вигляді:
+\begin{equation}
+    \Int_{AB} u_x \diff t + u_t \diff x - 2 u (C) + u(A) + u(B) = \Iint_D f(x, t) \diff x \diff t,
+\end{equation}
+звідки знаходимо
+\begin{equation}
+    \label{eq:uc-via-ua-ub-and-ints}
+    u(C) = \frac{u(A) + u(B)}{2} + \frac{1}{2} \Int_{AB} u_x \diff t + u_t \diff x - \frac{1}{2} \Iint_D f(x, t) \diff x \diff t.
+\end{equation}
+
+Якщо розв'язок рівняння \eqref{eq:cauchy-equation-simplified-first-form} задовольняє умовам:
+\begin{equation}
+    \label{eq:free-string-fluctuations-boundary-conditions}
+    \left. u \right|_L = \phi(x), \quad \left. \frac{\partial u}{\partial \ell} \right|_L = \psi(x),
+\end{equation}
+де $\phi$ і $\psi$ --- задані дійсні відповідно два рази і один раз неперервно диференційовні функції, а $\ell$ --- заданий на $L$ достатньо гладкий вектор, що ніде не збігається з дотичною до кривої $L$. Визначимо $u_x$ і $u_t$ із рівностей:
+\begin{equation}
+    u_x \frac{\diff x}{\diff s} + u_t \frac{\diff t}{\diff s} = \frac{\diff \phi}{\diff s}, \quad u_x \ell_x + u_t \ell_t = \psi,
+\end{equation}
+де $s$ --- довжина дуги $L$, і підставляючи відомі значення $u$, $u_x$, $u_t$ в праву частину \eqref{eq:uc-via-ua-ub-and-ints}, одержуємо розв'язок задачі Коші \eqref{eq:free-string-fluctuations}, \eqref{eq:free-string-fluctuations-boundary-conditions}. \medskip
+
+Із наведених міркувань випливає, що постановка задачі Коші \eqref{eq:cauchy-equation-simplified-second-form}, \eqref{eq:int-ab-bc-ca} є коректною, тобто вона має в розглядуваній області тільки єдиний розв'язок, і він є стійким. \medskip
+
+Аналогічно ставиться задача Коші і у випадку рівняння \eqref{eq:cauchy-equation-simplified-first-form}. \medskip
+
+Для рівняння \eqref{eq:cauchy-equation-simplified-first-form} характеристиками будуть прямі, паралельні осям координат ($x = \const$, $t = \const$). Отже, в цьому випадку всяка гладка крива $L$, яка перетинається не більш, ніж в одній точці з прямими, паралельними осям координат, буде ``вільною''. Нехай рівняння цієї кривої буде $t = g(x)$ (або $x = h(t)$). Вважаємо, що існують похідні $g'(x)$, $h'(t)$, відмінні від нуля. Тоді задача Коші може бути поставлена наступним чином: в області
+\begin{equation}
+    D = \left\{ (t, x) \middle| x_0 < x < x_0 + \alpha, g(x) < t < t_0 + \beta \right\}, \quad \alpha > 0, \quad \beta > 0
+\end{equation}
+знайти розв'язок диференціального рівняння \eqref{eq:omega-partial-system-of-linear-equations}, який на кривій $L$ задовольняє умови
+\begin{equation}
+    \label{eq:second-form-boundary-conditions}
+    \left. u \right|_{t = g(x)} = \phi(x), \quad \left. u_t \right|_{t = g(x)} = \psi(x).
+\end{equation}
+
+Дані Коші \eqref{eq:uc-via-ua-ub-and-ints} дозволяють на кривій $t = g(x)$ знайти значення похідної $u_x$. Дійсно, диференціюючи по $x$ першу із умов \eqref{eq:second-form-boundary-conditions}, одержуємо
+\begin{equation}
+    \left. u_x \right|_{t = g(x)} + \left. u_t \right|_{t = g(x)}, \quad g'(x) = \phi'(x),
+\end{equation}
+або
+\begin{equation}
+    \left. u_x \right|_{t = g(x)} = \phi'(x) - \psi(x) \phi'(x).
+\end{equation}
+
+\subsubsection{Узагальнена задача Коші для \texorpdfstring{$n$}{n}-вимірного хвильового рівняння}
+
+У випадку хвильового рівняння в $n$-вимірному просторі
+\begin{equation}
+    \label{eq:utt-equation}
+    u_{tt}(t, x) = a^2 \Delta u(t, x) + f(t, x), \quad x = (x_1, x_2, \ldots, x_n)
+\end{equation}
+носієм початкових умов може бути будь-яка ``вільна'' поверхня $\Sigma$, тобто гіперповерхня $\Psi(x, t) = 0$, яка задовольняє умовам:
+\begin{itemize}
+    \item в жодній її точці $(x, t)$ не має місце рівність
+    \begin{equation}
+        \Sum_{i = 1}^n a^2 \left( \Psi_{x_i} \right)^2 - \left( \Psi_t \right)^2 = 0,
+    \end{equation}
+    тобто поверхня $\Sigma$ не є характеристичною;
+    \item при $n \ge 2$:
+    \begin{equation}
+        \Sum_{i = 1}^n a^2 \left( \Psi_{x_i} \right)^2 - \left( \Psi_t \right)^2 < 0.
+    \end{equation}
+\end{itemize}
+
+Задача Коші ставиться наступним чином: знайти два рази неперервно диференційовний розв'язок рівняння \eqref{eq:free-string-fluctuations-boundary-conditions}, який задовольняє умови
+\begin{equation}
+    \label{eq:utx-boundary-conditions}
+    u(t, x) = \phi(x), \quad \frac{\partial u(t, x)}{\partial n} = \psi(x), \quad (x, t) \in \Sigma,
+\end{equation}
+де $n$ --- заданий на $\Sigma$ одиничний вектор нормалі, а $\phi(x)$ і $\psi(x)$ --- задані на $\Sigma$ досить гладкі функції. Будемо вважати, що поверхня $\Sigma$ задана рівнянням $t = \sigma(x)$. \medskip
+
+Покажемо, що задачу Коші \eqref{eq:utt-equation}, \eqref{eq:utx-boundary-conditions} можна звести до задачі Коші з початковими умовами заданими на поверхні $\tau = 0$. \medskip
+
+Замість змінної $t$ введемо змінну $\tau = t - \sigma(x)$. Для такої заміни змінних отримаємо хвильове рівняння для функції $\tilde u(x, \tau) = u(x, \tau + \sigma(x))$. \medskip
+
+Підрахуємо похідні, що входять в хвильове рівняння \eqref{eq:utt-equation}:
+\begin{align}
+    \frac{\parital^2 u}{\partial t^2} &= \frac{\partial^2 \tilde u}{\partial \tau^2} \left( \frac{\partial \tau}{\partial t} \right)^2 =  \frac{\partial^2 \tilde u}{\partial \tau^2}, \\
+    \frac{\partial^2 u}{\partial x_i^2} &= \frac{\partial^2 \tilde u}{\partial \tau^2} \left( \frac{\partial \tau}{\partial x_i} \right)^2 + \frac{\partial^2 \tilde u}{\partial x_i^2} + \frac{\partial \tilde u}{\partial \tau} \frac{\partial^2 \tau}{\partial x_i^2} = \\
+    &= \frac{\partial^2 \tilde u}{\partial \tau^2} \left( \frac{\partial \sigma}{\partial \tau^2} \right)^2 + \frac{\partial^2 \tilde u}{\partial x_i^2} - \frac{\partial \tilde u}{\partial \tau} \frac{\partial^2 \sigma}{\partial x_i^2}. \nonumber
+\end{align}
+
+Таким чином хвильове рівняння буде мати вигляд:
+\begin{equation}
+    \frac{\partial^2 \tilde u}{\partial \tau^2} = \frac{a^2}{a_0} \Sum_{i = 1}^n \frac{\partial^2 \tilde u}{\partial x_i^2} - \frac{a^2}{a_0} \Sum_{i = 1}^n \frac{\partial \tilde u}{\partial \tau} \frac{\partial^2 \sigma}{\partial x_i^2} + \frac{f(x, \tau + \sigma(x))}{a_0},
+\end{equation}
+де
+\begin{equation}
+    a_0 = 1 - a^2 \Sum_{i = 1}^n \left( \frac{\partial \sigma}{\partial x_i} \right)^2 \ne 0.
+\end{equation}
+
+Остання нерівність випливає з того, що $\Sigma$ задана рівнянням $\tau = \sigma(x)$ не є характеристичною поверхнею. \medskip
+
+При обраній заміні змінних поверхня $\Sigma$ переходить в площину $\tau = 0$, a умови \eqref{eq:utx-boundary-conditions} приймають вигляд:
+\begin{equation}
+    \label{eq:tilde-u-boundary-conditions}
+    \left. \tilde u \right|_{\tau = 0} = \left. u \right|_\Sigma = \phi(x), \quad \left. \frac{\partial \tilde u}{\partial \tau} \right|_{\tau = 0} = \left. \frac{\partial u}{\partial t} \right|_\Sigma.
+\end{equation}
+
+Залишається знайти $\left. \frac{\partial u}{\partial t} \right|_\Sigma$. Для цього диференціюємо першу з умов \eqref{eq:tilde-u-boundary-conditions}. \medskip
+
+Врахуємо, що
+\begin{equation}
+    \left. u \right|_\Sigma = \phi(x) = u(x, \sigma(x)), \quad \frac{\partial \phi}{\partial x_i} = \frac{\partial u}{\partial t} \frac{\partial \sigma}{\partial x_i} + \frac{\partial u}{\partial x_i}, \quad i = 1, 2, \ldots, n
+\end{equation}
+
 \end{document}
