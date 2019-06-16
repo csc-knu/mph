@@ -23,7 +23,7 @@ _Станом на 5 червня 2019 р. цей розділ повністю 
 
 ### Другий розділ
 
-[лекції 6&ndash;14](ch-2-v.pdf)
+[разом](ch-2/ch-2.pdf)
 
 7. Лекція №7: [pdf](ch-2/7.pdf), [docx](ch-2/7.docx), [LaTeX source](ch-2/7.tex)
 
@@ -37,13 +37,15 @@ _Станом на 5 червня 2019 р. цей розділ повністю 
 
 12. Лекція №12: [pdf](ch-2/12.pdf), [docx](ch-2/12.docx), [LaTeX source](ch-2/12.tex)
 
-13. Лекція №13: [pdf-v](13-v.pdf), [docx](13.docx), [LaTeX source](13.tex)
+13. Лекція №13: [pdf](ch-2/13.pdf), [docx](ch-2/13.docx), [LaTeX source](ch-2/13.tex)
 
-14. Лекція №14: [pdf-v](14-v.pdf), [docx](14.docx), [LaTeX source](14.tex)
+14. Лекція №14: [pdf](ch-2/14.pdf), [docx](ch-2/14.docx), [LaTeX source](ch-2/14.tex)
+
+    _Станом на 16 червня 2019 р. цей розділ відредагований Анатолієм Володимировичем до цього місця._
 
 15. Лекція №15: [pdf](ch-2/15.pdf), [docx](ch-2/15.docx), [LaTeX source](ch-2/15.tex)
 
-16. Лекція №16: [pdf](16.pdf), [docx](16.docx)
+16. Лекція №16: [pdf](ch-2/16.pdf), [docx](ch-2/16.docx), [LaTeX source](ch-2/16.tex)
 
 ### Третій розділ
 

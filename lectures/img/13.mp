@@ -64,7 +64,24 @@ endfig;
 
 % cls && mpost 13.mp && epstopdf 13-3.mps && start 13-3.pdf
 beginfig(3)
-    u := 2cm;
+    u := 3cm;
+    draw (u, 0){down} .. (1.1 u/sqrt(2), -1.1 u/sqrt(2)) .. (0, -u) .. (-1.2u, -.2u) .. (-0.9u/sqrt(2), 0.9u/sqrt(2)) .. (1.2u/sqrt(2), 1.2u/sqrt(2)) .. (u, 0){down} withcolor (.2 black + .8 red);
+    label.urt(btex $C$ etex, (1.2u/sqrt(2), 1.2u/sqrt(2))) withcolor (.2 black + .8 red);
+    draw fullcircle scaled 2u dashed evenly withpen pencircle scaled 1.5bp;
+    fill fullcircle scaled 2u withcolor white;
+    drawarrow (u, 0) -- (u, -3u/2);
+    label.rt(btex $H$ etex, (u, -11u/8));
+    drawarrow (u, 0) -- (3u/2, u/2);
+    label.lrt(btex $\overrightarrow{{\rm d}\ell\;}$ etex, (11u/8, 3u/8));
+    draw (0, 0) -- (u, 0);
+    mark_rt_angle((0, 0), (u, 0), (u, -3u/2));
+    mark_rt_angle((0, 0), (u, 0), (3u/2, u/2));
+    mark_rt_angle((u, -3u/2), (u, 0), (3u/2, u/2));
+    label.bot(btex $R$ etex, (2u/3, 0));
+    draw (0, 0) -- (3u/2, u/2);
+    arcs((u, 0), (0, 0), (3u/2, u/2), 25);
+    label.top(btex ${\rm d}\alpha$ etex, (5u/12, 0));
+    
 endfig;
 
 % cls && mpost 13.mp && epstopdf 13-4.mps && start 13-4.pdf
@@ -102,10 +119,59 @@ endfig;
 % cls && mpost 13.mp && epstopdf 13-5.mps && start 13-5.pdf
 beginfig(5)
     u := 2cm;
+    path p[];
+    p[1] := (0, 0){down} .. (u, -u){right} .. (2u, 0){up};
+    draw p[1] yscaled .2;
+    p[2] := (2u, 0){up} .. (u, u){left} .. (0, 0){down};
+    draw p[2] yscaled .2 dashed evenly;
+
+    draw p[1] yscaled .2 shifted (0, u/2);
+    draw p[2] yscaled .2 shifted (0, u/2) dashed evenly;
+
+    draw (0, 0) -- (0, u); draw (2u, 0) -- (2u, u);
+
+    draw fullcircle scaled 2u yscaled .2 shifted (u, u);
+
+    draw (-u/4,0) -- (0, 0);
+    drawarrow (-u/4,u/2) -- (-u/4,u) dashed evenly;
+    label.lft(btex $h$ etex, (-u/4, u/2));
+    drawarrow (-u/4,u/2) -- (-u/4,0) dashed evenly;
+    draw (-u/4,u) -- (0, u);
+
+    label.rt(btex $S_1$ etex, (u/16, 0));
+    label.rt(btex $S_2$ etex, (u/16, u));
+
+    label.rt(btex $\vec n_2$ etex, (u, -5u/8));
+    draw (u, 0) withpen pencircle scaled 2bp;
+    drawarrow (u, 0) -- (u, -3u/4);
+    label.lft(btex $\vec n_1$ etex, (u, 13u/8));
+    draw (u, u) withpen pencircle scaled 2bp;
+    drawarrow (u, u) -- (u, 7u/4);
+
+    label.ulft(btex $B_1$ etex, (2.5u, 2u));
+    drawarrow (2.5u, 2u) -- (u, .5u) dashed evenly;
+    label.lrt(btex $B_2$ etex, (.25u, -1.25u));
+    drawarrow (u, .5u) -- (.25u, -1.25u) dashed evenly;
+
+    label.lft(btex $\mu_2$ etex, (2u, u/4));
+    label.lft(btex $\mu_1$ etex, (2u, 3u/4));
 endfig;
 
 % cls && mpost 13.mp && epstopdf 13-6.mps && start 13-6.pdf
 beginfig(6)
     u := 2cm;
+
+    draw (0, 0) -- (0, u/2) -- (2u, u/2) -- (2u, 0) -- cycle dashed evenly;
+    drawarrow (3u/2, 0) -- (u, 0);
+    label.bot(btex $a_2$ etex, (5u/4, 0));
+    drawarrow (u, u/2) -- (3u/2, u/2);
+    label.top(btex $a_1$ etex, (5u/4, u/2));
+    draw (-u/4, u/4) -- (9u/4, u/4);
+    drawarrow (-u/2,u/4) -- (-u/2, u/2);
+    drawarrow (-u/2,u/4) -- (-u/2, 0);
+    drawarrow (u/4, 3/4u) -- (7u/4, 3u/4) dashed evenly;
+    label.top(btex $\vec H_{1, \tau}$ etex, (u, 3u/4));
+    drawarrow (7u/4, -u/4) -- (u/4, -u/4) dashed evenly;
+    label.bot(btex $\vec H_{2, \tau}$ etex, (u, -u/4));
 endfig;
 end
