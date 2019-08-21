@@ -1,6 +1,6 @@
 \subsection{Використання фундаментальних розв'язків та \allowbreak функцій Гріна для знаходження розв'язків задач Коші та граничних задач}
 
-Фундаментальні розв'язки оператора теплопровідності та хвильового оператора можна ефективно  використовувати для побудови розв'язків задач Коші для рівняння теплопровідності, або хвильового рівняння.
+Фундаментальні розв'язки оператора теплопровідності та хвильового оператора можна ефективно використовувати для побудови розв'язків задач Коші для рівняння теплопровідності, або хвильового рівняння.
 
 \subsubsection{Задача Коші для рівняння теплопровідності}
 
@@ -37,9 +37,9 @@
 	\end{aligned}
 \end{equation}
 
-\begin{exercise}
-	Переконайтеся що вас ніде не обманюють!
-\end{exercise}
+% \begin{exercise}
+% 	Переконайтеся що вас ніде не обманюють!
+% \end{exercise}
 
 Для обчислення першого інтегралу лівої частини застосуємо другу формулу Гріна, другий інтеграл спростимо, обчисливши інтеграл від похідної по змінній $\tau$, другий інтеграл у правій частині рівності обчислимо з використанням властивості $\delta$-функції Дірака. В результаті отримаємо:
 \begin{equation}
@@ -54,9 +54,9 @@
 	= - \Iiint_{U_R} \epsilon(x - \xi, -\alpha) u(\xi, t + \alpha) \diff \xi + \Iiint_{U_R} \epsilon(x - \xi, t) u(\xi, 0) \diff \xi.
 \end{multline}
 
-\begin{exercise}
-	Переконайтеся що вас ніде не обманюють!
-\end{exercise}
+% \begin{exercise}
+% 	Переконайтеся що вас ніде не обманюють!
+% \end{exercise}
 
 Врахуємо, що $\epsilon(x - \xi, - \alpha) = 0$ при $\alpha > 0$. Спрямуємо радіус кулі $R \to \infty$, та врахуємо поведінку фундаментального розв'язку в нескінченно віддаленій точці, отримаємо, що поверхневі інтеграли обертаються в нуль. В результаті остаточних спрощень отримаємо 
 \begin{th_formula}[інтегрального представлення розв'язку задачі Коші для рівняння теплопровідності]
@@ -84,7 +84,7 @@
 Над цими рівняннями проведемо наступні дії аналогічні попередньому випадку:
 \begin{enumerate}
 	\item перше помножимо на $\psi_1(x - \xi, t - \tau)$;
-	\item друге помножимо на $y(\xi, \tau)$;
+	\item друге помножимо на $u(\xi, \tau)$;
 	\item аргументи $x$, $t$ першого перепозначимо через $\xi$, $\tau$ відповідно;
 	\item віднімемо від першого рівняння друге та проінтегруємо по $\tau \in (0, t)$ та по $\xi \in (-R, R)$.
 \end{enumerate}
@@ -98,9 +98,9 @@
 	\end{aligned}
 \end{equation}
 
-\begin{exercise}
-	Переконайтеся що вас ніде не обманюють!
-\end{exercise}
+% \begin{exercise}
+% 	Переконайтеся що вас ніде не обманюють!
+% \end{exercise}
 
 Застосуємо до першого та другого інтегралів формулу інтегрування за частинами:
 \begin{equation}
@@ -111,9 +111,9 @@
 	\end{aligned}
 \end{equation}
 
-\begin{exercise}
-	Переконайтеся що вас ніде не обманюють!
-\end{exercise}
+% \begin{exercise}
+% 	Переконайтеся що вас ніде не обманюють!
+% \end{exercise}
 
 Виконаємо необхідні підстановки та спрямуємо $R \to \infty$, отримаємо, що перший інтеграл в лівій частині тотожньо перетворюється в нуль за рахунок властивостей фундаментального розв'язку. В другому інтегралі у лівій частині верхня підстановка перетворюється в нуль за рахунок властивостей фундаментального розв'язку, а нижню підстановку можна перетворити з використанням початкових умов задачі Коші.
 \begin{equation}
@@ -124,9 +124,9 @@
 	\end{aligned}
 \end{equation}
 
-\begin{exercise}
-	Переконайтеся що вас ніде не обманюють!
-\end{exercise}
+% \begin{exercise}
+% 	Переконайтеся що вас ніде не обманюють!
+% \end{exercise}
 
 Цю проміжну формулу можна конкретизувати обчисливши відповідні інтеграли, враховуючи конкретний вигляд фундаментального розв'язку
 \begin{equation}
@@ -291,9 +291,9 @@
 		\end{aligned}
 	\end{equation}
 
-	\begin{exercise}
-		Переконайтеся що вас ніде не обманюють!
-	\end{exercise}
+	% \begin{exercise}
+	% 	Переконайтеся що вас ніде не обманюють!
+	% \end{exercise}
 
 	До лівої частини застосуємо формулу Остроградського-Гауса, а інтеграл в правій частині обчислюється безпосередньо:
 	\begin{equation}
@@ -337,9 +337,9 @@
 	\end{aligned}
 \end{equation}
 
-\begin{exercise}
-	Переконайтеся що вас ніде не обманюють!
-\end{exercise}
+% \begin{exercise}
+% 	Переконайтеся що вас ніде не обманюють!
+% \end{exercise}
 
 Застосуємо до лівої частини рівності другу формулу Гріна, а другий інтеграл в правій частині обчислимо безпосередньо враховуючи властивості $\delta$-функції Дірака:
 \begin{equation}
@@ -386,30 +386,30 @@
 	Доведіть останню формулу.
 \end{exercise}
 
-\begin{remark}
-	Підказка: домножаючи 
-	\begin{equation}
-		\left. \frac{\partial G_3^k(x, \xi)}{\partial n_\xi} + \alpha(\xi) G_3^k(x, \xi) \right|_{\xi \in S} = 0
-	\end{equation}
-	на $u(\xi)$ отримаємо
-	\begin{equation}
-		\label{eq:4.3.52}
-		\left. u(\xi) \frac{\partial G_3^k(x, \xi)}{\partial n_\xi} + \alpha(\xi) u(\xi) G_3^k(x, \xi) \right|_{\xi \in S} = 0.
-	\end{equation}
+% \begin{remark}
+% 	Підказка: домножаючи 
+% 	\begin{equation}
+% 		\left. \frac{\partial G_3^k(x, \xi)}{\partial n_\xi} + \alpha(\xi) G_3^k(x, \xi) \right|_{\xi \in S} = 0
+% 	\end{equation}
+% 	на $u(\xi)$ отримаємо
+% 	\begin{equation}
+% 		\label{eq:4.3.52}
+% 		\left. u(\xi) \frac{\partial G_3^k(x, \xi)}{\partial n_\xi} + \alpha(\xi) u(\xi) G_3^k(x, \xi) \right|_{\xi \in S} = 0.
+% 	\end{equation}
 
-	У свою чергу, домножаючи
-	\begin{equation}
-		\left. \frac{\partial u(\xi)}{\partial n} + \alpha(\xi) u(\xi) \right|_{\xi \in S} = f(\xi)
-	\end{equation}
-	на $G_3^k(x, \xi)$ отримаємо
-	\begin{equation}
-		\left. G_3^k(x, \xi) \frac{\partial u(\xi)}{\partial n} + \alpha(\xi) u(\xi) G_3^k(x, \xi) \right|_{\xi \in S} = f(\xi) G_3^k(x, \xi).
-	\end{equation}
+% 	У свою чергу, домножаючи
+% 	\begin{equation}
+% 		\left. \frac{\partial u(\xi)}{\partial n} + \alpha(\xi) u(\xi) \right|_{\xi \in S} = f(\xi)
+% 	\end{equation}
+% 	на $G_3^k(x, \xi)$ отримаємо
+% 	\begin{equation}
+% 		\left. G_3^k(x, \xi) \frac{\partial u(\xi)}{\partial n} + \alpha(\xi) u(\xi) G_3^k(x, \xi) \right|_{\xi \in S} = f(\xi) G_3^k(x, \xi).
+% 	\end{equation}
 
-	Віднімаючи звідси \eqref{eq:4.3.52} маємо
-	\begin{equation}
-		\left. G_3^k(x, \xi) \frac{\partial u(\xi)}{\partial n} - u(\xi) \frac{\partial G_3^k(x, \xi)}{\partial n_\xi} \right|_{\xi \in S} = f(\xi) G_3^k(x, \xi).
-	\end{equation}
+% 	Віднімаючи звідси \eqref{eq:4.3.52} маємо
+% 	\begin{equation}
+% 		\left. G_3^k(x, \xi) \frac{\partial u(\xi)}{\partial n} - u(\xi) \frac{\partial G_3^k(x, \xi)}{\partial n_\xi} \right|_{\xi \in S} = f(\xi) G_3^k(x, \xi).
+% 	\end{equation}
 
-	Залишається просто підставити це у другий інтеграл загальної формули.
-\end{remark}
+% 	Залишається просто підставити це у другий інтеграл загальної формули.
+% \end{remark}
