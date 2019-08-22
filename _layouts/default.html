@@ -33,7 +33,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarToggle">
         <div class="navbar-nav mr-auto">
-          {{ page.description | default: site.description | default: site.github.project_tagline }}
+          <a class="nav-item nav-link" href="/mph/lectures/"><span id="current">Лекції</span></a>
+          <a class="nav-item nav-link" href="/mph/control/"><span id="current">Питання</span></a>
+          <a class="nav-item nav-link" href="/mph/practice/control/"><span id="current">Практичні</span></a>
+          <a class="nav-item nav-link" href="/mph/books/"><span id="current">Література</span></a>
         </div>
       </div>
     </div>
@@ -48,10 +51,10 @@
       <!--space between posts and sidebar-->
     </div>
     <div class="col-md-3">
-      <div class="content-section text-muted">
+      <div class="content-section text-danger">
         Наступний модуль відбудеться % % 2019&nbsp;р.
       </div>
-      <div class="content-section text-muted">
+      <div class="content-section text-danger">
         Наступна практична контрольна робота відбудеться % % 2019&nbsp;р.
       </div>
     </div>
