@@ -7,14 +7,14 @@
 \input{../th.sty}
 
 \begin{document}
-
-\tableofcontents
-
-\setcounter{section}{4}
-\setcounter{subsection}{2}
-\setcounter{subsubsection}{5}
-\setcounter{theorem}{29}
-\setcounter{equation}{64}
+	
+	\tableofcontents
+	
+	\setcounter{section}{4}
+	\setcounter{subsection}{1}
+	\setcounter{subsubsection}{4}
+	\setcounter{theorem}{51}
+	\setcounter{equation}{48}
 
 \subsection{Використання фундаментальних розв'язків та \allowbreak функцій Гріна для знаходження розв'язків задач Коші та граничних задач}
 
@@ -213,7 +213,7 @@
 \end{equation}
 та проміжну формулу запишемо формулу Пуассона. Обчислимо першій інтеграл:
 \begin{equation}
-	\Int_0^t \Iint_{\RR^2} \psi_2(x - \xi, t) v_0(\xi) \diff \xi = \frac{1}{2 a \pi} \Iint_{|\xi - x| < a (t - \tau)} \frac{v_0(\xi) \diff \xi}{\sqrt{a^2 (t - \tau)^2 - |\xi - x|^2}}.
+	\Int_0^t \Iint_{\RR^2} \psi_2(x - \xi, t) F(\xi, \tau) \diff \xi = \frac{1}{2 a \pi}	\Int_0^t \Iint_{|\xi - x| < a (t - \tau)} \frac{F(\xi, \tau) \diff \xi}{\sqrt{a^2 (t - \tau)^2 - |\xi - x|^2}}.
 \end{equation}
 
 Запишемо третій інтеграл:
@@ -279,7 +279,7 @@
 \end{definition}
 
 Оскільки функція Гріна задовольняє рівняння з такою ж правою частиною як і фундаментальний розв'язок (лише зі здвигом на $\xi$), то для визначення функції Гріна можна надати наступне еквівалентне визначення:
-\begin{definition}[еквівалентне функції Гріна]
+\begin{definition}[еквівалентне означення функції Гріна]
 	Функцію $G_i^k(x, \xi)$ будемо називати функцією Гріна першої другої або третьої граничної задачі в області $\Omega$ з границею $S$ оператора Гельмгольца, якщо ця функція  може бути представлена у вигляді
 	\begin{equation}
 		G_i^k(x, \xi) = q_\pm^k(x - \xi) + g_i^k(x, \xi),
@@ -313,7 +313,7 @@
 	% 	Переконайтеся що вас ніде не обманюють!
 	% \end{exercise}
 
-	До лівої частини застосуємо формулу Остроградського-Гауса, а інтеграл в правій частині обчислюється безпосередньо:
+	До лівої частини застосуємо другу формулу Гріна, а інтеграл в правій частині обчислюється безпосередньо:
 	\begin{equation}
 		-G_i^k(\xi, \eta) + G_i^k(\eta, \xi) = \Iint_S \left( G_i^k(x, \eta) \frac{\partial G_i^k(x, \xi)}{\partial n_x} - G_i^k(x, \xi) \frac{\partial G_i^k(x, \eta)}{\partial n_x} \right) \diff S_x.
 	\end{equation}
@@ -344,7 +344,7 @@
 Враховуючи симетрію функції Гріна та парність $\delta$-функції Дірака, запишемо систему у вигляді:
 \begin{system}
 	& (\Delta_\xi + k^2) G_i^k(x, \xi) = - \delta(x - \xi), \quad x, \xi \in \Omega, \\
-	& \left. \ell_i g_i^k(x, \xi) \right|_{\xi \in S} = - \left. \ell_i q_\pm^k(\xi) \right|_{\xi \in S}, \quad i = 1, 2, 3.
+	& \left.  \ell_i G_i^k(x, \xi) \right|_{x \in S} = 0, \quad i = 1, 2, 3.
 \end{system}
 
 Проведемо наступні перетворення: першу систему помножимо на $G_i^k(x, \xi)$, а другу помножимо на $u(\xi)$, віднімемо від першої рівності другу і проінтегруємо по змінній $\xi \in \Omega$:
