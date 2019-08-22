@@ -70,7 +70,3 @@
 	\frac{\partial V^k(x)}{\partial n_{\text{inner}}} &= \overline{\frac{\partial V^k(x)}{\partial n_x}} + \frac{\mu(x)}{2}, \newline
 	\frac{\partial V^k(x)}{\partial n_{\text{external}}} &= \overline{\frac{\partial V^k(x)}{\partial n_x}} - \frac{\mu(x)}{2}.
 \end{equation}
-
----
-
-[Назад на головну](../README.md)

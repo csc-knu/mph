@@ -327,5 +327,3 @@ $$
 	\end{aligned}
 \end{equation}
 $$
-
-[Назад на головну](../README.md)

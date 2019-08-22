@@ -306,7 +306,3 @@ $$
 	& u(x) = O (|x|^{-1/2}), \quad \frac{\partial u(x)}{\partial |x|} - i k u(x) = o(|x|^{-1/2}), \quad |x| \to \infty, \newline
 	& u(x) = O (|x|^{-1/2}), \quad \frac{\partial u(x)}{\partial |x|} + i k u(x) = o(|x|^{-1/2}), \quad |x| \to \infty.
 \end{align}
-
----
-
-[Назад на головну](../README.md)

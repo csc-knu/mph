@@ -148,5 +148,3 @@ $$
 	\psi_3(x, t) &= \frac{\theta(t)}{4 \pi a^2 t} \delta_{S_{at}}(x), \quad x \in \mathbb{R}^3.
 \end{align*}
 $$
-
-[Назад на головну](../README.md)

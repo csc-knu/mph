@@ -155,5 +155,3 @@ $$
 	& \quad + \frac{1}{2 a \pi} \displaystyle\iint\limits_{\vert\xi - x\vert < a t} \frac{v_0(\xi) \,\mathrm{d} \xi}{\sqrt{a^2 t^2 - \vert x - \xi\vert^2}}.
 \end{aligned}
 $$
-
-[Назад на головну](../README.md)

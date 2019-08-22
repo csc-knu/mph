@@ -105,7 +105,3 @@ _Телесный угол_ &mdash; часть пространства, кот�
 \begin{equation}
 	\omega_x(S) = - \Int_S \frac{\partial}{\partial n_y} \cdot \frac{\diff S_y}{|x - y|}.
 \end{equation}
-
----
-
-[Назад на головну](../README.md)
