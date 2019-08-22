@@ -6,7 +6,6 @@
 .page-header {
 	padding-top: 1rem;
 	padding-bottom: 0.01rem;
-    color: #fff;
     text-align: center;
     background-color: #cc2874;
     background-image: linear-gradient(120deg, #155799, #ff1010);
@@ -23,19 +22,15 @@ body {
 }
 
 .bg-cold-hot-gradient {
-    background-color: #cc2874;
-    background-image: linear-gradient(120deg, #155799, #ff1010);
+  background-color: #cc2874;
+  background-image: linear-gradient(120deg, #155799, #ff1010);
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #971557;
+  color: #cbd5db;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
-}
-
-span#current {
   color: #ffffff;
 }
 
