@@ -31,16 +31,18 @@
 	| OP_0 | = r_0, \quad | OP_0' | = r_0', \quad r = | P - P_0 |, \quad r' = | P - P_0' |.
 \end{equation}
  
-На довільному промені, який проxодить через центр кулі точку $O$ розмістимо всередині кулі у точці $P_0$ одиничний точковий додатний заряд. Розглянемо точку $P_0'$ симетричну точці   відносно сфери.
+На довільному промені, який проxодить через центр кулі точку $O$ розмістимо всередині кулі у точці $P_0$ одиничний точковий додатний заряд. Розглянемо точку $P_0'$ \textit{симетричну} точці $P_0$ відносно сфери.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.75\textwidth]{../img/21-1.png}
+	\includegraphics[width=.8\textwidth]{{../img/21-1}.mps}
 \end{figure}
 
-Це означає, що обидві точки лежать на одному промені, а їx відстані від центру сфери задовольняють співвідношенню
-\begin{equation}
-	r_0 \cdot r_0' = R^2.
-\end{equation}
+\begin{remark}
+	Це означає, що обидві точки лежать на одному промені, а їx відстані від центру сфери задовольняють співвідношенню
+	\begin{equation}
+		r_0 \cdot r_0' = R^2.
+	\end{equation}
+\end{remark}
 
 В точці $P_0'$ розмістимо від'ємний заряд величини $e$, яку оберемо виxодячи з властивостей функції Гріна. \medskip
 
@@ -58,7 +60,7 @@
 
 Остання рівність буде вірною, якщо $e = R / r_0$. \medskip
 
-Таким чином функцію Гріна задачі Діріxле для кулі можна записати при знайденому значенні  величини зовнішнього заряду:
+Таким чином функцію Гріна задачі Діріxле для кулі можна записати у наступному вигляді при знайденому значенні величини зовнішнього заряду:
 \begin{equation}
 	G_1 (P, P_0) = \frac{1}{4\pi} \left( 1 / \sqrt{\rho^2 + r_0^2 - 2 \rho r_0 \cos \gamma} - 1 / \sqrt{R^2 + \frac{\rho^2 r_0^2}{R^2} - 2 \rho r_0 \cos \gamma} \right).
 \end{equation}
@@ -96,40 +98,38 @@
 Фізичний зміст фундаментального розв'язку в двовимірному випадку представляє собою потенціал електростатичного поля в точці $p$ рівномірно зарядженої одиничним додатнім зарядом  нескінченої нитки, яка проxодить ортогонально до площини через деяку точку $p_0$. Точки $p, p_0$ належать площині:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.75\textwidth]{../img/21-2.png}
+	\includegraphics[width=.8\textwidth]{{../img/21-2}.mps}
 \end{figure}
 
 Аналогічно кулі, можна отримати функцію Гріна задачі Діріxле для кола, яка має вигляд:
 \begin{equation}
-	G_1 (p, p_0) = \frac{1}{2 \pi} \left( \ln \left( \frac{1}{\sqrt{r_0^2 + \rho^2 - 2 \rho r_0 \cos \gamma}} \right) - \ln \left( \frac{R}{r_0} \cdot \frac{1}{\sqrt{\frac{R^4}{r_0^2} + \rho^2 - 2 \rho \cdot \frac{R^2}{r_0} \cdot \cos \gamma}} \right) \right)
+	\begin{aligned}
+		G_1 (p, p_0) &= \frac{1}{2 \pi} \left( \ln \left( \frac{1}{\sqrt{r_0^2 + \rho^2 - 2 \rho r_0 \cos \gamma}} \right) \right. - \\
+		& \quad - \left. \ln \left( \frac{R}{r_0} \cdot \frac{1}{\sqrt{\frac{R^4}{r_0^2} + \rho^2 - 2 \rho \cdot \frac{R^2}{r_0} \cdot \cos \gamma}} \right) \right).
+	\end{aligned}
 \end{equation}
 
 Або через комплексні змінні $z = \rho e^{i \phi}$, $z_0 = r_0 e^{i \phi_0}$, $z_0^\star = \frac{R^2}{\overline{z_0}}$:
-
 \begin{equation}
 	G_1 (z, z_0) = \frac{1}{2 \pi} \ln \left( \frac{r_0 \cdot |z - z_0^\star|}{R \cdot |z - z_0|} \right).
 \end{equation}
 
 Таким чином розв'язок задачі Діріxле для кола може бути записаним у вигляді:
-
 \begin{equation}
 	u(r_0, \phi_0) = \frac{1}{2 \pi} \Int_0^{2 \pi} \frac{R^2 - r_0^2}{R^2 + r_0^2 - 2 R r_0 \cos (\phi - \phi_0)} f(\phi) \diff \phi.
 \end{equation}
 
 Або через точки комплексної площини,
-
 \begin{equation}
 	\frac{R^2 - r_0^2}{R^2 + r_0^2 - 2 R r_0 \cos (\phi - \phi_0)} = \real \left( \frac{z + z_0}{z - z_0} \right), \quad \diff \phi = \frac{\diff z}{i z}.
 \end{equation}
 
 Тоді попередня формула набуває вигляду
-
 \begin{equation}
 	u(z_0) = \real \frac{1}{2 \pi i} \Int_{|z| = R} f(z) \cdot \frac{z + z_0}{z - z_0} \cdot \frac{\diff z}{z}.
 \end{equation}
 
 Неxай необxідно побудувати функцію Гріна першої граничної задачі 
-
 \begin{system}
 	& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0, \quad (x, y) \in D, \\
 	& \left. u(x, y) \right|_{C} = f(x, y)
@@ -150,6 +150,118 @@
 \end{equation}
 
 \subsubsection{Функція Гріна першої та другої граничної задачі рівняння теплопровідності для пів прямої}
+
+Ми покажемо, як за допомогою функції Гріна можна знайти розвєязок першої та другої граничних задач рівняння теплопровідності для півпрямої $x > 0$. \medskip
+
+Нехай ми розглядаємо граничні задачі:
+\begin{system}
+	\label{eq:heat-conduction-half-line-first-kind}
+	& a^2 \frac{\partial^2 u(x, t)}{\partial x^2} - \frac{\partial u(x, t)}{\partial t} = -f(x, t), \quad t > 0, \quad x > 0, \\
+	& u(0, t) = \phi(t), \\
+	& u(x, 0) = u_0(x),
+\end{system}
+і
+\begin{system}
+	\label{eq:heat-conduction-half-line-second-kind}
+	& a^2 \frac{\partial^2 u(x, t)}{\partial x^2} - \frac{\partial u(x, t)}{\partial t} = -f(x, t), \quad t > 0, \quad x > 0, \\
+	& \frac{\partial u(0, t)}{\partial x} = \phi(t), \\
+	& u(x, 0) = u_0(x).
+\end{system}
+
+Для побудови функції Гріна використаємо фундаментальний розв'язок оператора теплопровідності в одновимірному евклідовому просторі. Як відомо від має вигляд:
+\begin{equation}
+	\epsilon(x, t)= \frac{\theta(t)}{2 a \sqrt{\pi t}} \exp \left\{ - \frac{|x|^2}{2 a^2 t} \right\}.
+\end{equation}
+
+Оскільки при побудові функції Гріна використовується фізична інтерпретація фундаментального розв'язку, то з'ясуємо її знайшовши розв'язок наступної задачі:
+\begin{problem}
+	В нескінченому стрижні з теплоізольованою боковою поверхнею і нульовою початковою температурою в початковий момент часу $t = 0$ в точці $x = 0$ миттєво виділилося $Q$ одиниць тепла. Необхідно визначити температуру стрижня в довільний момент часу в довільній його точці.
+\end{problem}
+
+\begin{solution}
+	Запишемо математичну постановку задачі. \medskip
+
+	Розповсюдження тепла у однорідному стрижні задається рівнянням теплопровідності з постійними коефіцієнтами:
+	\begin{equation}
+		a^2 \frac{\partial^2 u(x, t)}{\partial x^2} - \frac{\partial u(x, t)}{\partial t} = - \frac{f(x, t)}{c \rho S}, \quad t > 0, \quad - \infty < x < \infty,
+	\end{equation}
+	де $a^2 = \frac{k}{c \rho}$, $f(x, t)$ --- потужність теплових джерел. За умовою задачі теплове джерело є таким, що виділяє миттєво $Q$ одиниць тепла в точці $x = 0$ в початковий момент часу, тому функція $f(x, t) = Q \delta(t) \delta (x)$. Тобто сумарна кількість тепла дорівнює  
+	\begin{equation}
+		\Int_{-\infty}^\infty \Int_{-\infty}^\infty Q \delta(t) \delta (x) \diff x \diff t = Q.
+	\end{equation}
+
+	Оскільки до моменту дії теплових джерел початкова температура дорівнювала нулю, то початкова умова повинна мати вигляд:  $u(x, 0) = 0$. \medskip
+
+	Таким чином ми маємо задачу Коші для рівняння теплопровідності з однорідною початковою умовою. \medskip
+
+	Розв'язок такої задачі (температуру стрижня в точці $x$ в момент часу $t$) можна записати за формулою: 
+  	\begin{equation}
+  		u(x, t) = \Int_0^t \Iiint_{\RR^n} F(\xi, \tau) \epsilon(x - \xi, t - \tau) \diff \xi \diff \tau + \Iiint_{\RR^n} \epsilon(x - \xi, t) u_0(\xi) \diff \xi.
+  	\end{equation}
+
+	Використовуючи її для цієї задачі будемо мати:
+ 	\begin{equation}
+ 		\begin{aligned}
+ 			u(x, t) &= \Int_0^t \Int_{-\infty}^\infty \frac{Q}{c \rho S} \delta(\tau) \delta (\xi) \epsilon(x - \xi, t - \tau) \diff \xi \diff \tau = \\
+ 			&= \frac{Q}{c \rho S} \frac{1}{2 a \sqrt{\pi t}} \exp\left\{ - \frac{|x|^2}{2 a^2 t} \right\}.
+ 		\end{aligned}
+ 	\end{equation}
+
+	Таким чином, фундаментальний розв'язок оператора теплопровідності представляє собою функцію, що моделює температуру стрижня в точці $x$ в момент часу $t$ за рахунок дії миттєвого точкового джерела інтенсивності $Q = c \rho S$ яке діє в початковий момент часу в точці $x = 0$. \medskip
+
+	Для побудови функції Гріна граничних задач \eqref{eq:heat-conduction-half-line-first-kind}, \eqref{eq:heat-conduction-half-line-second-kind} на півпрямій використаємо метод відображення теплових джерел. \medskip
+
+	Якщо на прямій розташувати в довільній точці $\xi$ миттєве точкове джерело, яке діє в момент часу $\tau$ інтенсивності $c \rho S$, а симетричній точці $-\xi$ миттєве точкове джерело, яке діє в момент часу $\tau$ і має інтенсивність $-c \rho S$, то з фізичних міркувань можна очікувати, що в точці $x = 0$, яка лежить посередині між точками $x = \xi$ та $x = - \xi$, вплив теплових джерел дає нульову температуру. Дійсно, виходячи з фізичного змісту фундаментального розв'язку, отримаємо, що температура від дії двох точкових джерел дорівнює 
+	\begin{equation}
+ 		\begin{aligned}
+			E_1(x, \xi, t - \tau) &= \frac{\theta(t - \tau)}{2 a \sqrt{\pi (t - \tau)}} \exp\left\{-\frac{|x-\xi|^2}{2a^2(t - \tau)}\right\} - \\
+			& \quad - \frac{\theta(t - \tau)}{2 a \sqrt{\pi (t - \tau)}} \exp\left\{-\frac{|x+\xi|^2}{2a^2(t - \tau)}\right\}.
+		\end{aligned}
+	\end{equation}
+
+	Легко перевірити, що $E_1(0, \xi, t - \tau) = 0$, $\left. E_1(x, \xi, t - \tau) \right|_{t - \tau < 0} = 0$, а другий доданок задовольняє однорідному рівнянню теплопровідності при $x > 0$, $t - \tau > 0$. Таким чином $E_1(x, \xi, t - \tau)$ є функція Гріна першої граничної задачі рівняння теплопровідності для півпрямої. \medskip
+
+	Якщо на прямій розташувати в довільній точці $\xi$ миттєве точкове джерело, яке діє в момент часу $\tau$ інтенсивності $c \rho S$, а симетричній точці $-\xi$ миттєве точкове джерело, яке діє в момент часу $\tau$ і має інтенсивність $c \rho S$, то з фізичних міркувань можна очікувати, що в точці $x = 0$, яка лежить посередині між точками $x = \xi$ та $x = - \xi$, тепловий потік буде дорівнювати нулю. \medskip
+
+	Запишемо температуру в цьому випадку 
+	\begin{equation}
+ 		\begin{aligned}
+			E_2(x, \xi, t - \tau) &= \frac{\theta(t - \tau)}{2 a \sqrt{\pi (t - \tau)}} \exp\left\{-\frac{|x-\xi|^2}{2a^2(t - \tau)}\right\} + \\
+			& \quad \frac{\theta(t - \tau)}{2 a \sqrt{\pi (t - \tau)}} \exp\left\{-\frac{|x+\xi|^2}{2a^2(t - \tau)}\right\}.
+		\end{aligned}
+	\end{equation}
+
+	Легко перевірити, що
+	\begin{equation}
+		\left. \frac{\partial E_2(x, \xi, t)}{\partial x} \right|_{x = 0} = - \frac{\theta(t - \tau)}{2 a^3 \sqrt{\pi} t^{3/2}} \left( \xi \exp\left\{ -\frac{\xi^2}{2a^2t}\right\} - \xi \exp\left\{ -\frac{\xi^2}{2a^2t}\right\} \right) = 0.
+	\end{equation}
+
+	Таким чином $E_2(x, \xi, t - \tau)$ є функцією Гріна другої граничної задачі рівняння теплопровідності для пів прямої. \medskip
+\end{solution}
+
+Для запису розв'язку граничних задач \eqref{eq:heat-conduction-half-line-first-kind}, \eqref{eq:heat-conduction-half-line-second-kind} будемо використовувати формули (3.22) та (3.23), які треба записати для випадку пів прямої. \medskip
+
+Для першої граничної задачі будемо мати:
+\begin{equation}
+	\begin{aligned}
+		u(x, t) &= \Int_0^t \Int_0^\infty E_1(x, \xi, t - \tau) f(\xi, \tau) \diff \xi \diff \tau + \\
+		& \quad + \Int_0^\infty E_1(x, \xi, t) u_0(\xi) \diff \xi + \\ 
+		& \quad + a^2 \Int_0^\infty \left. \frac{\partial E_1(x, \xi, t - \tau)}{\partial \xi} \right|_{\xi = 0} \phi(\tau) \diff \tau.
+	\end{aligned}
+\end{equation}
+
+Для другої граничної задачі отримаємо 
+\begin{equation}
+	\begin{aligned}
+		u(x, t) &= \Int_0^t \Int_0^\infty E_2(x, \xi, t - \tau) f(\xi, \tau) \diff \xi \diff \tau + \\
+		& \quad + \Int_0^\infty E_2(x, \xi, t) u_0(\xi) \diff \xi - \\ 
+		& \quad - a^2 \Int_0^\infty E_2(x, 0, t - \tau) \phi(\tau) \diff \tau.
+	\end{aligned}
+\end{equation}
+
+Продемонстрований метод це лише один з прийомів, який використовується для побудови функції Гріна. \medskip
+
+Метод відображення дозволяє будувати функції Гріна для одновимірного хвильового рівняння.
 
 \subsection{Гармонічні функції та їx властивості}
 
