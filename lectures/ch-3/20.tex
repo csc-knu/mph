@@ -7,14 +7,14 @@
 \input{../th.sty}
 
 \begin{document}
-
-\tableofcontents
-
-\setcounter{section}{4}
-\setcounter{subsection}{3}
-\setcounter{subsubsection}{4}
-\setcounter{theorem}{21}
-\setcounter{equation}{55}
+	
+	\tableofcontents
+	
+	\setcounter{section}{4}
+	\setcounter{subsection}{3}
+	\setcounter{subsubsection}{4}
+	\setcounter{theorem}{51}
+	\setcounter{equation}{49}
 
 \subsubsection{Функція Гріна граничних задач оператора теплопровідності}
 
@@ -72,7 +72,7 @@
 \begin{proof}
 	Доведемо другу властивість. Запишемо співвідношення, яким задовольняє функція Гріна:
 	\begin{align}
-		a^2 \Delta_x E_i(x, \xi, t - \tau_1) + \frac{\partial E_i(x, \xi, t - \tau_1)}{\partial t} &= - \delta(x - \xi) \delta (t - \tau_1), \quad x, \xi \in \Omega, \\
+		a^2 \Delta_x E_i(x, \xi, t - \tau_1) - \frac{\partial E_i(x, \xi, t - \tau_1)}{\partial t} &= - \delta(x - \xi) \delta (t - \tau_1), \quad x, \xi \in \Omega, \\
 		a^2 \Delta_x E_i(x, \eta, \tau_2 - t) + \frac{\partial E_i(x, \eta, \tau_2 - t)}{\partial t} &= - \delta(x - \eta) \delta (t - \tau_2), \quad x, \eta \in \Omega.
 	\end{align}
 	Перше рівняння помножимо на $E_i(x, \xi, \tau_2 - t)$, друге рівняння помножимо на $E_i(x, \xi, t - \tau_1)$, віднімемо від першого друге і проінтегруємо по $x \in \Omega$ і по $-\infty < t < \tau$:
@@ -119,7 +119,7 @@
 		& a^2 \Int_0^{t + \epsilon} \Iiint_\Omega \Big( E_i(x, \xi, t - \tau) \Delta u(\xi, \tau) - \\
 		& \qquad \quad - u(\xi, \tau) \Delta_\xi E_i(x, \xi, t - \tau) \Big) \diff \xi \diff \tau + \\
 		& \qquad + \Int_0^{t + \epsilon} \Iiint_\Omega E_i(x, \xi, t - \tau) F(\xi, \tau) \diff \xi \diff \tau - \\
-		& \qquad - \Iiint_\Omega \Int_0^{t+\epsilon} \frac{\partial (E_u(x, \xi, t - \tau) u(\xi, \tau))}{\partial \tau} \diff \tau \diff \xi = \\
+		& \qquad - \Iiint_\Omega \Int_0^{t+\epsilon} \frac{\partial (E_i(x, \xi, t - \tau) u(\xi, \tau))}{\partial \tau} \diff \tau \diff \xi = \\
 		& \quad = \Int_0^{t + \epsilon} \Iiint_\Omega \delta(x - \xi) \delta(t - \tau) \diff \xi \diff \tau.
 	\end{aligned}
 \end{equation}
@@ -250,7 +250,7 @@
 	G_i(p, P_0) = \frac{1}{4 \pi |P - P_0|} + \Sum_j \frac{\gamma_j}{4 \pi |P - P_j|}.
 \end{equation}
 
-У цый формулі перший доданок є фундаментальним розв'язком і одночасно моделює потенціал в точці $P$ одиничного точкового заряду розташованого в точці $P_0 \in \Omega$. Сума --- другий регулярний доданок, який фігурує в означенні 2 функції Гріна представляє функцію  $g_i^k(x, \xi)$, $\gamma_k$ --- константи, які моделюють величину точкового заряду, $P_j \notin \Omega$ --- точки розташування зарядів, які лежать поза областю $\Omega$. \medskip
+У цій формулі перший доданок є фундаментальним розв'язком і одночасно моделює потенціал в точці $P$ одиничного точкового заряду розташованого в точці $P_0 \in \Omega$. Сума --- другий регулярний доданок, який фігурує в означенні 2 функції Гріна представляє функцію  $g_i^k(x, \xi)$, $\gamma_k$ --- константи, які моделюють величину точкового заряду, $P_j \notin \Omega$ --- точки розташування зарядів, які лежать поза областю $\Omega$. \medskip
 
 Оскільки має місце рівність
 \begin{equation}
@@ -318,11 +318,11 @@
 		& \quad - \left. \frac{1}{4 \pi \sqrt{(x - x_0)^2 + (y - y_0)^2 + (z + z_0)^2}} \right) = \\
 		& = - \left( \frac{z - z_0}{4 \pi ((x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2)^{3/2}} \right. - \\
 		& \quad - \left. \left. \frac{z - z_0}{4 \pi ((x - x_0)^2 + (y - y_0)^2 + (z + z_0)^2)^{3/2}} \right) \right|_{z = 0} = \\
-		& = \frac{-z_0}{2 \pi (x - x_0)^2 + (y - y_0)^2 + z_0^2)^{3 / 2}}.
+		& = \frac{-z_0}{2 \pi( (x - x_0)^2 + (y - y_0)^2 + z_0^2))^{3 / 2}}.
 	\end{aligned}
 \end{equation}
 
-Таким чином, використовуючи формулу \eqref{eq:4.3.46} інтегрального представлення розв'язку першої граничної задачі, можемо записати розв'язок задачі Діріхле для рівняння Пуассона:
+Таким чином, використовуючи формулу \seqref{4.3.45} (з попередньої лекції) інтегрального представлення розв'язку першої граничної задачі, можемо записати розв'язок задачі Діріхле для рівняння Пуассона:
 \begin{equation}
 	\begin{aligned}
 		U(x_0, y_0, z_0) &= \frac{1}{4 \pi} \Int_0^\infty \Iint_{\RR^2} \left( \frac{1}{\sqrt{(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2}} \right. - \\
@@ -372,7 +372,7 @@
 	\end{aligned}
 \end{equation}
 
-Враховуючи формулу \eqref{eq:4.3.47} інтегрального представлення розв'язку другої граничної задачі, отримаємо формулу для розв'язку задачі Неймана рівняння Пуассона в півпросторі:
+Враховуючи формулу \seqref{4.3.47} (з попередньої лекції) інтегрального представлення розв'язку другої граничної задачі, отримаємо формулу для розв'язку задачі Неймана рівняння Пуассона в півпросторі:
 \begin{equation}
 	\begin{aligned}
 		U(x_0, y_0, z_0) &= \frac{1}{4 \pi} \Int_0^\infty \Iint_{\RR^2} \left( \frac{1}{\sqrt{(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2}} \right. + \\

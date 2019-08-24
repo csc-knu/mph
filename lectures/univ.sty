@@ -139,3 +139,14 @@
 \renewcommand{\langle}{\left\oldlangle}
 \let\oldrangle=\rangle
 \renewcommand{\rangle}{\right\oldrangle}
+
+% _s stands for "safe"
+\makeatletter
+\newcommand{\seqref}[1]{%
+  \@ifundefined{r@eq:#1}{%
+    (\textcolor{blue}{#1})%
+  }{%
+    \eqref{eq:#1}%
+  }%
+}
+\makeatother
