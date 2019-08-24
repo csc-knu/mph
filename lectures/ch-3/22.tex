@@ -1,0 +1,473 @@
+\input{../univ.sty}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
+
+\input{../th.sty}
+
+\begin{document}
+
+\tableofcontents
+
+\setcounter{section}{4}
+\setcounter{subsection}{5}
+\setcounter{subsubsection}{1}
+\setcounter{equation}{13}
+
+\subsubsection{Принцип максимуму гармонічних функцій}
+
+\begin{theorem}[принцип максимуму гармонічних функцій]
+	Якщо гармонічна в скінченній області функція досягає у внутрішній точці цієї області свого максимального або мінімального значення, то ця функція є тотожна константа.
+\end{theorem}
+
+\begin{proof}
+	Нехай $u(x)$ гармонічна функція в обмеженій області $\Omega$ і досягає в точці $x_0 \in \Omega$ свого максимального значення. Розглянемо кулю $U(x_0, R_0) \subset \Omega$ максимально великого радіусу. \medskip
+
+	Оскільки $u(x_0) = \max_{x \in \Omega} u(x)$, то значення функції $u(x)$, коли $x \in S(x_0, R_0)$ задовольняє нерівності $u(x) \le u(x_0)$. \medskip
+
+	Якщо хоча б у одній точці $S(x_0, R_0)$ нерівність строга, тобто $u(x) < u(x_0)$, то за рахунок неперервності гармонічних функцій ця нерівність буде збережена і в деякому околі цієї точки, а це означатиме, що
+	\begin{equation}
+		u(x_0) > \frac{1}{4 \pi R_0^2} \Iint_{S(x_0,R_0)} u(\xi) \diff S_\xi.
+	\end{equation}
+
+	Тобто ми прийшли до протиріччя з припущенням, що $\exists \xi \in S(x_0, R_0): u(\xi) < u(x_0)$. Це означає, що $u(x) = u(x_0)$, $x \in S(x_0, R_0)$. \medskip
+
+	Оскільки ця рівність має місце для кулі будь-якого радіусу $R \le R_0$, то це означає, що $u(x) \equiv u(x_0)$  коли $x \in U(x_0, R_0)$. \medskip
+
+	Покажемо тепер, що функція $u(x) \equiv u(x_0)$  коли $x \in \Omega$. \medskip
+
+	Для цього виберемо довільну точку $x^\star \in \Omega$, то з'єднаємо її з точкою $x_0$ ламаною. Побудуємо послідовність куль $\{U(x_i, R_i)\}_{i=0}^N$ з такими властивостями: 
+	\begin{itemize}
+		\item центри куль $x_i$, $i = \overline{1..N}$ належать ламаній;
+		\item $x_{i + 1} \in U(x_i, R_i) \subset \Omega$, $i = \overline{1..N}$;
+		\item $x^\star \in U(x_N, R_N)$.
+	\end{itemize}
+
+	Оскільки центр кожної наступної кулі з номером $i + 1$, лежить всередині кулі з номером $i$, то використовуючи метод математичної індукції, ми можемо встановити властивість: якщо функція $u(x) \equiv u(x_0)$ коли $x \in U(x_i, R_i)$ то $u(x) \equiv u(x_0)$, коли $x \in U(x_{i+1}, R_{i+1})$. Це означає, що $u(x) \equiv u(x_0)$, коли $x \in U(x_N, R_N)$. Зокрема, це означає, що $u(x^\star) = u(x_0)$.
+\end{proof}
+
+\begin{corollary}
+	Гармонічна функція відмінна від тотожної константи не досягає в скінченній області ні свого максимального ні свого мінімального значення.
+\end{corollary}
+
+\begin{corollary}
+	Якщо функція гармонічна в області $\Omega$ і неперервна в $\overline{\Omega}$, то свої максимальне і мінімальне значення вона приймає на границі $S$ області.
+\end{corollary}
+
+\begin{corollary}
+	Якщо функція гармонічна в області $\Omega$ і неперервна в $\overline{\Omega}$, то $|u(x)| \le \max_{x \in S} |u(x)|$.
+\end{corollary}
+
+\begin{corollary}
+	Нехай $u(x), v(x)$ --- гармонічні функції в області $\Omega$ і має місце нерівність $u(x) \le v(x)$, $x \in S$, тоді $u(x) \le v(x)$, $x \in \Omega$.
+\end{corollary}
+
+\subsubsection{Оператор Лапласа в циліндричній та сферичній системах координат}
+
+Замість прямокутних координат $x, y, z$ введемо ортогональні криволінійні координати $q_1, q_2, q_3$ за допомогою співвідношень
+\begin{equation}
+	q_i = f_i(x, y, z), \quad i = 1, 2, 3,
+\end{equation}
+які дозволяють записати обернені перетворення 
+\begin{equation}
+	\label{eq:4.5.16}
+	x = \phi_1(q_1, q_2, q_3), \quad y = \phi_2(q_1, q_2, q_3), \quad z = \phi_3(q_1, q_2, q_3).
+\end{equation}
+
+Загальний вигляд оператора Лапласа в криволінійних координатах має вигляд:
+\begin{equation}
+	\begin{aligned}
+		\Delta(u) &= \frac{1}{H_1H_2H_3} \left( \frac{\partial}{\partial q_1} \left( \frac{H_2H_3}{H_1} \frac{\partial u}{\partial q_1} \right) \right. + \\
+		&\quad + \left. \frac{\partial}{\partial q_2} \left( \frac{H_1H_3}{H_2} \frac{\partial u}{\partial q_2} \right) + \frac{\partial}{\partial q_3} \left( \frac{H_1H_2}{H_3} \frac{\partial u}{\partial q_3} \right) \right),
+	\end{aligned}
+\end{equation}
+де
+\begin{system}
+	\label{eq:4.5.18}
+	H_1^2 &= \left( \frac{\partial \phi_1}{\partial q_1} \right)^2 + \left( \frac{\partial \phi_2}{\partial q_1} \right)^2 + \left( \frac{\partial \phi_3}{\partial q_1} \right)^2, \\
+	H_2^2 &= \left( \frac{\partial \phi_1}{\partial q_2} \right)^2 + \left( \frac{\partial \phi_2}{\partial q_2} \right)^2 + \left( \frac{\partial \phi_3}{\partial q_2} \right)^2, \\
+	H_4^2 &= \left( \frac{\partial \phi_1}{\partial q_3} \right)^2 + \left( \frac{\partial \phi_2}{\partial q_3} \right)^2 + \left( \frac{\partial \phi_3}{\partial q_3} \right)^2.
+\end{system}
+
+\begin{itemize}
+	\item Для сферичної системи координат $q_1 = r$, $q_2 = \theta$, $q_3 = \phi$, і формули \eqref{eq:4.5.16}, \eqref{eq:4.5.18} мають вигляд $x = r \sin \theta \cos \phi$, $y = r \sin \theta \sin \phi$, $z = r \cos \theta$, $H_1 = 1$, $H_2 = r$, $H_3 = r \sin \theta$. \medskip
+
+	Таким чином оператор Лапласа у сферичній системі координат матиме вигляд.
+	\begin{equation}
+		\label{eq:4.5.19}
+		\Delta_{r, \phi, \theta} u = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial u}{\partial r} \right) + \frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial u}{\partial \theta} \right) + \frac{1}{r^2 \sin^2 \theta} \frac{\partial^2 u}{\partial \phi^2}.
+	\end{equation}
+
+	\item Для циліндричної системи координат $q_1 = \rho$, $q_2 = \phi$, $q_3 = z$, і формули \eqref{eq:4.5.16}, \eqref{eq:4.5.18} мають вигляд $x = \rho \cos \phi$, $y = \rho \sin \phi$, $z = z$, $H_1 = 1$, $H_2 = \rho$, $H_3 = 1$. \medskip
+
+	Оператор Лапласа в циліндричній системі координат має вигляд:
+	\begin{equation}
+		\Delta_{\rho,\phi,z} u = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left( \rho \frac{\partial u}{\partial \rho} \right) + \frac{1}{\rho^2} \frac{\partial^2 u}{\partial \phi^2} + \frac{\partial^2 u}{\partial z^2}.
+	\end{equation}
+
+	\item Якщо функція $u$ не залежить від змінної $z$, то отримуємо полярну систему координат і вираз оператора Лапласа в полярній системі координат:
+	\begin{equation}
+		\Delta_{\rho,\phi} u = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left( \rho \frac{\partial u}{\partial \rho} \right) + \frac{1}{\rho^2} \frac{\partial^2 u}{\partial \phi^2}.
+	\end{equation}
+\end{itemize}
+
+\subsubsection{Перетворення Кельвіна гармонічних функцій}
+
+\begin{definition}
+	Нехай функція $u$ гармонічна за межами кулі $U(0, R)$, тоді функцію
+	\begin{equation}
+		\label{eq:4.5.22}
+		v(y) = \left( \frac{R}{|y|} \right)^{n - 2} \cdot u \left( \frac{R^2}{|y|^2} \cdot y \right)
+	\end{equation}
+	(тут використовується перетворення аргументу обернених радіус векторів $x = R^2 / |y|^2 \cdot y$ або обернене $y = R^2 / |x|^2 \cdot x$) будемо називати \textit{перетворенням Кельвіна} гармонічної функції $u(x)$ в $n$-вимірному евклідовому просторі.
+\end{definition}
+
+\begin{remark}
+	В подальшому будемо вважати, що $R = 1$, цього завжди можна досягти шляхом зміни масштабу. 
+\end{remark}
+
+\begin{proposition}
+	Для $n = 3$ перетворення Кельвіна $v(y)$ гармонічної функції $u(x)$ є гармонічною функцією аргументу $y$. 
+\end{proposition}
+
+\begin{proof}
+	Легко показати, що перший доданок в операторі Лапласа \eqref{eq:4.5.19} може бути записаний у вигляді 
+	\begin{equation}
+		\frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial u}{\partial r} \right) = \frac{1}{r} \frac{\partial^2 (ru)}{\partial r^2}.
+	\end{equation}
+	
+	Таким чином при $n = 3$, $R = 1$, \eqref{eq:4.5.22} має вигляд
+	\begin{equation}
+		v(y) = \frac{1}{|y|} \cdot u \left( \frac{y}{|y|^2} \right).
+	\end{equation}
+	
+	Оскільки $y = x / |x|^2$, а $x = y / |y|^2$, то $|y| = 1 / |x|$, або $v(y) = |x| \cdot u(x)$.
+\end{proof}
+
+\begin{proposition}
+	Функція $v(r', \theta, \phi) = r \cdot u(r, \theta, \phi)$, де $r = 1 / r'$, задовольняє рівнянню Лапласа, якщо $u(r, \theta, \phi)$ --- гармонічна функція.
+\end{proposition}
+
+\begin{proof}
+	Дійсно, 
+	\begin{equation}
+		\begin{aligned}
+			0 = r \cdot \Delta_{r, \phi, \theta} u &= \frac{\partial^2 (ru)}{\partial r^2} + \frac{1}{r \sin \theta} \left( \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial u}{\partial \theta} \right) + \frac{1}{\sin \theta} \frac{\partial^2 u}{\partial \phi^2} \right) = \\
+			&= \frac{\partial^2 v}{\partial r^2} + \frac{1}{r^2 \sin \theta} \left( \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial v}{\partial \theta} \right) + \frac{1}{\sin \theta} \frac{\partial^2 v}{\partial \phi^2} \right) = \\
+			&= (r')^2 \cdot \frac{\partial}{\partial r'} \left( (r')^2 \frac{\partial v}{\partial r'} \right) + \\
+			& \quad + \frac{(r')^2}{\sin \theta} \left( \frac{\partial}{\partial \theta} \left( \sin \theta \cdot \frac{\partial v}{\partial \theta} \right) + \frac{1}{\sin \theta} \frac{\partial^2 v}P\partial \phi^2 \right) = \\
+			&= (r')^4 \Delta_{r', \phi, \theta} v(r', \theta, \phi).
+		\end{aligned}
+	\end{equation}
+	При отриманні останньої рівності було враховано що
+	\begin{equation}
+		\frac{\partial v}{\partial r} = - (r')^2 \frac{\partial v}{\partial r'}, \quad \frac{\partial^2 v}{\partial r^2} = (r')^2 \frac{\partial}{\partial r'} \left( (r')^2 \frac{\partial v}{\partial r'} \right).
+	\end{equation}
+\end{proof}
+
+\begin{remark}
+	Аналогічно тому, як було показана гармонічність
+	\begin{equation}
+		v(y) = \frac{1}{|y|} \cdot u \left( \frac{y}{|y|}^2 \right)
+	\end{equation}
+	у тривимірному евклідовому просторі, можна показати гармонічність функції
+	\begin{equation}
+		v(y) = u \left( \frac{y}{|y|}^2 \right)
+	\end{equation}
+	у двовимірному евклідовому просторі.
+\end{remark}
+
+\subsubsection{Гармонічність в нескінченно віддаленій точці та поведінка гармонічних функцій на нескінченості}
+
+\begin{definition}
+	Будемо говорити, що функція $u(x)$ є \textit{гармонічною функцією в нескінченно віддаленій точці}, якщо функція 
+	\begin{equation}
+		v(y) = \begin{cases}
+			\dfrac{1}{|y|} \cdot u \left( \dfrac{y}{|y|^2} \right), & n = 3, \\ & \\
+			u \left( \dfrac{y}{|y|^2} \right), & n = 2,
+		\end{cases}
+	\end{equation}
+	є гармонічною функцією в точці нуль.
+\end{definition}
+
+Легко бачити, що
+\begin{equation}
+	v(y) = \begin{cases}
+		|x| \cdot u(x), & n = 3, \\
+		u(x), & n = 2.
+	\end{cases}
+\end{equation}
+
+\begin{theorem}[про поведінку гармонічних функцій в нескінченно віддалені точці в просторі]
+	\label{th:4.5.2}
+	Якщо при $n = 3$ функція $u(x)$ гармонічна в нескінченно віддаленій точці, то при $|x| \to \infty$ функція прямує до нуля не повільніше $1/|x|$, а частинні похідні ведуть себе як $D^\alpha u(x) = O (1 / |x|^{1 + |\alpha|}$.
+\end{theorem}
+
+\begin{theorem}[про поведінку гармонічних функцій в нескінченно віддалені точці на площині]
+	\label{th:4.5.3}
+	Якщо при $n = 2$ функція $u(x)$ гармонічна в нескінченно віддаленій точці, то при $|x| \to \infty$ функція  обмежена, а частинні похідні ведуть себе як $D^\alpha u(x) = O (1 / |x|^{1 + |\alpha|} )$.
+\end{theorem}
+
+\begin{definition}
+	Гармонічні функції які мають поведінку на нескінченості визначену теоремами \ref{th:4.5.2} та \ref{th:4.5.3} для тривимірного і двовимірного просторів називають \textit{регулярними на нескінченості} гармонічними функціями, а відповідні оцінки --- \textit{умовами регулярності на нескінченості}.
+\end{definition}
+
+\subsubsection{Єдиність гармонічних функцій}
+
+Нехай $U(x)$ --- гармонічна функція в обмеженій області $\Omega$ з границею $S$, тоді має місце рівність Діріхле
+\begin{equation}
+	\label{eq:4.5.31}
+	\Iiint_\Omega |\nabla U|^2 \diff x = \Iint_S U \frac{\partial U}{\partial \vec n} \diff S.
+\end{equation}
+
+Нехай $U(x)$ --- гармонічна функція області $U(0, R) \setminus \Omega$ з границями $S$ та $S(0, R)$, де $R$ --- як завгодно велике число, тоді має місце рівність Діріхле
+\begin{equation}
+	\label{eq:4.5.32}
+	\Iiint_\Omega |\nabla U|^2 \diff x = \Iint_S U \frac{\partial U}{\partial \vec n} \diff S + \Iint_{S(0,R)} U \frac{\partial U}{\partial \vec n} \diff S.
+\end{equation}
+
+Для доведення рівності Діріхле \eqref{eq:4.5.31} достатньо записати очевидний ланцюжок рівностей:
+\begin{equation}
+	\begin{aligned}
+		0 &= \Iint_\Omega U(x) \Delta U(x) \diff x = \Iint_\Omega U(x) \nabla \cdot (\nabla U(x)) \diff x = \\
+		&= \Iint_S U(x) \langle \nabla U(x), \vec n \rangle \diff S - \Iint_\Omega |\nabla U(x)|^2 \diff x.
+	\end{aligned}
+\end{equation}
+
+Аналогічно можна довести і рівність \eqref{eq:4.5.32}. \medskip
+
+При формулюванні теорем єдиності гармонічних функцій ми скрізь будемо припускати існування відповідної гармонічної функції, хоча сам факт існування гармонічної функції ми доведемо пізніше.
+
+\begin{theorem}[Перша теорема єдиності гармонічних функцій]
+	Якщо в обмеженій області $\Omega$, (або в області $\Omega' = \RR^3 \setminus \Omega$) існує гармонічна функція (або гармонічна функція регулярна на нескінченості), яка приймає на поверхні $S$ задані значення, то така функція єдина.
+\end{theorem}
+
+\begin{proof}
+	Припустимо, що в області $\Omega$ існує принаймні дві гармонічні функції, які приймають на поверхні $S$ однакові значення:
+	\begin{system}
+		& \Delta u_i(x) = 0, \quad x \in \Omega, \\
+		& \left. u_i \right|_{x \in S} = f, \quad i = 1, 2. 
+	\end{system}
+
+	Для функції $u(x) = u_1(x) - u_2(x)$ будемо мати задачу	
+	\begin{system}
+		& \Delta u(x) = 0, \quad x \in \Omega, \\
+		& \left. u \right|_{x \in S} = 0. 
+	\end{system}
+
+	Застосуємо рівність Діріхле для функції $u(x)$. Будемо мати 
+	\begin{equation}
+		\Iiint_\Omega |\nabla u|^2 \diff x = \Iint_S u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S = 0.
+	\end{equation}
+
+	Звідси маємо, що $\nabla u(x) \equiv 0$, $x \in \Omega$. Остання рівність означає, що $u(x) \equiv \const$, $x \in \overline{\Omega}$ а оскільки $u(x) = 0$, $x \in S$ то $u(x) \equiv 0$, $x \in \Omega$. Тобто ми маємо, що $u_1(x) \equiv u_2(x)$. \medskip 
+
+	Покажемо справедливість теореми для області $\Omega' = \RR^3 \setminus \Omega$. \medskip
+
+	Припускаючи існування двох регулярних гармонічних функцій які приймають на поверхні $S$ однакові значення
+	\begin{system}
+		& \Delta u_i(x) = 0, \quad x \in \Omega', \\
+		& \left. u_i \right|_{x \in S} = f, \quad i = 1, 2. 
+	\end{system}
+	отримаємо для функції  $u(x) = u_1(x) - u_2(x)$ задачу  
+	\begin{system}
+		& \Delta u(x) = 0, \quad x \in \Omega', \\
+		& \left. u \right|_{x \in S} = 0, \\
+		& u(x) = O \left( \frac{1}{|x|} \right), \quad |x| \to \infty. 
+	\end{system}
+
+	Застосуємо для $u(x)$ рівність \eqref{eq:4.5.32}:
+	\begin{equation}
+		\begin{aligned}
+			\Iiint_{U(0, R) \setminus \Omega} |\nabla u|^2 \diff x &= \Iint_S u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S + \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S = \\
+			&= \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S.
+		\end{aligned}
+	\end{equation}
+
+	Спрямуємо радіус кулі $R$ до нескінченності і врахуємо умову регулярності на нескінченості:
+	\begin{equation}
+		\begin{aligned}
+			\Iiint_{\Omega'} |\nabla u|^2 \diff x &= \Lim_{R \to \infty} \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S = \\
+			&= \Lim_{R \to \infty} O \left( \frac{1}{R^3} \right) \Iint_{S(0, R)} \diff S = 0.
+		\end{aligned}
+	\end{equation}
+
+	Таким чином $u(x) \equiv \const$, $x \in \Omega'$ а оскільки $u(x) = 0$, $x \in S$ то $u_1(x) \equiv u_2(x)$.
+\end{proof}
+
+\begin{theorem}[Друга теорема єдиності гармонічних функцій]
+	Якщо в обмеженій області $\Omega$, (або в області $\Omega' = \RR^3 \setminus \Omega$) існує гармонічна функція (або гармонічна функція регулярна на нескінченості), яка приймає на поверхні $S$ задані значення своєї нормальної похідної $\left. \frac{\partial u}{\partial \vec n} \right|_{x \in S}$, то в області $\Omega$ вона визначається с точністю до адитивної константи, а в області $\Omega'$ вона єдина.
+\end{theorem}
+
+\begin{proof}
+	Припустимо, що в області $\Omega$ існує принаймі дві гармонічні функції, які приймають на поверхні $S$ однакові значення нормальної похідної
+	\begin{system}
+		& \Delta u_i(x) = 0, \quad x \in \Omega, \\
+		& \left. \frac{\partial u_i}{\partial \vec n} \right|_{x \in S} = f, \quad i = 1, 2. 
+	\end{system}
+
+	Для функції $u(x) = u_1(x) - u_2(x)$ будемо мати задачу
+	\begin{system}
+		& \Delta u(x) = 0, \quad x \in \Omega, \\
+		& \left. \frac{\partial u}{\partial \vec n} \right|_{x \in S} = 0. 
+	\end{system}
+
+	Для функції $u(x)$ використаємо рівність Діріхле:
+	\begin{equation}
+		\Iiint_\Omega |\nabla u|^2 \diff x = \Iint_S u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S = 0, 
+	\end{equation}
+	тобто $\nabla u(x) \equiv 0$, $x \in \Omega$, $u(x) \equiv \const$. Константа залишається невизначеною і таким чином $u_1(x) = u_2(x) + \const$. \medskip
+
+	Покажемо справедливість теореми для області $\Omega'$. \medskip
+
+	Припускаючи існування двох регулярних гармонічних функцій які приймають на поверхні $S$ однакові значення нормальної похідної
+	\begin{system}
+		& \Delta u_i(x) = 0, \quad x \in \Omega', \\
+		& \left. \frac{\partial u_i}{\partial \vec n} \right|_{x \in S} = f, \quad i = 1, 2. 
+	\end{system}
+	отримаємо для функції $u(x) = u_1(x) - u_2(x)$ задачу
+	\begin{system}
+		& \Delta u(x) = 0, \quad x \in \Omega', \\
+		& \left. \frac{\partial u}{\partial \vec n} \right|_{x \in S} = 0. 
+	\end{system}
+
+	Застосуємо для $u(x)$ рівність \eqref{eq:4.5.32}:
+	\begin{equation}
+		\begin{aligned}
+			\Iiint_{U(0, R) \setminus \Omega} |\nabla u|^2 \diff x &= \Iint_S u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S + \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S = \\
+			&= \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S.
+		\end{aligned}
+	\end{equation}
+
+	Спрямуємо радіус кулі $R$ до нескінченності і врахуємо умову регулярності на нескінченості:
+	\begin{equation}
+		\begin{aligned}
+			\Iiint_{\Omega'} |\nabla u|^2 \diff x &= \Lim_{R \to \infty} \Iint_{S(0, R)} u \cdot \frac{\partial u}{\partial \vec n} \cdot \diff S = \\
+			&= \Lim_{R \to \infty} O \left( \frac{1}{R^3} \right) \Iint_{S(0, R)} \diff S = 0.
+		\end{aligned}
+	\end{equation}
+
+	Таким чином $u(x) \equiv \const$, $x \in \Omega'$ а оскільки $\lim_{x \to \infty} u(x) = 0$, то $u(x) \equiv 0$, а $u_1(x) \equiv u_2(x)$.
+\end{proof}
+
+\begin{theorem}[Третя теорема єдиності гармонічних функцій]
+	Якщо в обмеженій області $\Omega$, (або в області $\Omega' = \RR^3 \setminus \Omega$) існує гармонічна функція (або гармонічна функція регулярна на нескінченості), яка приймає на поверхні $S$ задані значення лінійної комбінації нормальної похідної та функції $\left. \frac{\partial u}{\partial \vec n} + \alpha(x) \cdot u \right|_{x \in S}$, $\alpha \ge 0$ то в області $\Omega$ та в області $\Omega'$ вона визначається єдиним чином. 
+\end{theorem}
+
+\begin{exercise}
+	Останню теорему довести самостійно.
+\end{exercise}
+
+\subsection{Рівняння Гельмгольца, деякі властивості його \allowbreak роз\-в'яз\-ків}
+
+\begin{example}
+	Розглянемо задачу
+	\begin{system}
+		\label{eq:4.6.1}
+		& a^2 \Delta u(x, t) - \frac{\partial^2 u}{\partial t^2} = -F(x, t), \quad x \in \Omega, \\
+		& \left. \ell_i u \right|_{x \in S} = f(x, t).
+	\end{system}
+\end{example}
+
+\begin{remark}
+	В цій задачі відсутні початкові умови у зв'язку з тим, що розглядаються спеціальні значення функції $F(x, t)$ та $f(x, t)$. А саме ми вважаємо, що ці функції є періодичними по аргументу $t$ з однаковим періодом.
+\end{remark}
+
+\begin{solution}
+	Покладемо, що
+	\begin{system}
+		\label{eq:4.6.2}
+		& F(x, t) = F_1(x) \cos (\omega t) - F_2(x) \sin (\omega t), \\
+		& f(x, t) = f_1(x) \cos (\omega t) - f_2(x) \sin (\omega t).
+	\end{system}
+
+	Можна очікувати, що в результаті доволі тривалої дії таких збурень розв'язок задачі при будь-яких початкових умовах теж буде періодичним, тобто
+	\begin{equation}
+		\label{eq:4.6.3}
+		u(x, t) = V_1(x) \cos (\omega t) - V_2(x) \sin (\omega t).
+	\end{equation}
+
+	Підставляючи цей розв'язок у задачу \eqref{eq:4.6.1}, отримаємо 
+	\begin{system}
+		& \left( \Delta V_1 + \frac{\omega^2}{a^2} V_1 \right) \cos (\omega t) - \left( \Delta V_2 + \frac{\omega^2}{a^2} V_2 \right) \sin (\omega t) = \\
+		& \quad = - \frac{F_1}{a^2} \cos (\omega t) - \frac{F_2}{a^2} \sin (\omega t), \\
+		& \left. \cos (\omega t) \ell_i V_1 \right|_{x \in S} - \left. \sin (\omega t) \ell_i V_2 \right|_{x \in S} = \\
+		& \quad = f_1 \cos (\omega t) - f_2 \sin (\omega t).
+	\end{system}
+
+	Оскільки функції $\cos (\omega t), \sin (\omega t)$ --- лінійно незалежні, то для амплітуди $V_i(x)$, $i = 1, 2$  отримаємо рівняння Гельмгольца 
+	\begin{system}
+		& \Delta V_j + \frac{\omega^2}{a^2} V_j = -\frac{F_j}{a^2}, \quad x \in \Omega, \quad j = 1, 2, \\
+		& \left. \ell_i V_j \right|_{x \in S} = f_j.
+	\end{system}
+\end{solution}
+
+\begin{remark}
+	Аналогічний результат можна отримати, якщо ввести комплексну амплітуду $V = V_1 + i V_2$, комплексну зовнішню силу $F = F_1 + i F_2$ та комплексну амплітуду граничної умови $f = f_1 + i f_2$. \medskip	
+
+	Шукаючи розв'язок \eqref{eq:4.6.1} у вигляді $U(x, t) = V(x) e^{i \omega t}$, отримаємо для комплексної амплітуди задачу
+	\begin{system}
+		& \Delta V(x) + \frac{\omega^2}{a^2} = -\frac{F}{a^2}, \quad x \in \Omega, \\
+		& \left. \ell_i V \right|_{x \in S} = f.
+	\end{system}
+\end{remark}
+
+Другим джерелом виникнення рівняння Гельмгольца є стаціонарне рівняння дифузії при наявності в середовищі процесів, що ведуть до розмноження речовини.
+\begin{example}
+	Такі процеси наприклад виникають, наприклад, при дифузії нейтронів. Рівняння має вигляд:
+	\begin{equation}
+		\Delta V(x) + \frac{c}{D} \cdot V(x) = 0,
+	\end{equation}
+	де $D$ --- коефіцієнт дифузії, $c$ --- швидкість розмноження нейтронів.
+\end{example}
+
+\begin{remark}
+	Суттєва відмінністю граничних задач для рівняння Гельмгольца від граничних задач рівняння Лапласа полягає в можливому порушенні єдиності розв'язку як для внутрішніх так і для зовнішніх задач. 
+\end{remark}
+
+\begin{example}
+	Розглянемо таку граничну задачу:
+	\begin{system}
+		& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 y = 0, \quad 0 < x, y < \pi, \\
+		& u(0, y) = u(\pi, y) = u(x, 0) = u(x, \pi) = 0.
+	\end{system}
+\end{example}
+
+\begin{solution}
+	При $k = 0$ ця задача має лише тривіальний розв'язок, що випливає з першої теореми єдності гармонічних функцій. \medskip
+
+	Нехай тепер $k$ --- ціле число. Неважко перевірити, що в цьому разі задача має нетривіальний розв'язок $u(x, y) = \sin(kx) \sin(ky)$, а це в свою чергу означає, що задача з неоднорідними граничними умовами та неоднорідне рівняння Гельмгольца
+	\begin{system}
+		& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 u = -F(x, y), \quad 0 < x, y < \pi, \\
+		& u(0, y) = \phi_1(y), \\
+		& u(\pi, y) = \phi_2(y), \\ 
+		& u(x, 0) = \psi_1(x), \\
+		& u(x, \pi) = \psi_2(x)
+	\end{system}
+	має неєдиний розв'язок, який визначається з точністю до розв'язку однорідного рівняння, тобто з точністю до функції $A \sin (kx) \sin (ky)$.
+\end{solution}
+
+\begin{example}
+	Розглянемо зовнішню задачу для однорідного рівняння Гельмгольца
+	\begin{system}
+		& \Delta u(x) + k^2 u = 0, \quad |x| > \pi, \quad x = (x_1, x_2, x_3), \\
+		& \left. u(x) \right|_{|x| = \pi} = 0, \\
+		& u(x) \xrightarrow[|x| \to \infty]{} 0.
+	\end{system}
+\end{example}
+
+\begin{solution}
+	При $k = 0$ гранична задача має лише тривіальний розв'язок тотожно рівний нулю, що випливає з другої теореми єдиності гармонічних функцій. \medskip
+
+	У випадку, коли $k$ --- ціле ми маємо, що розв'язком останньої граничної задачі окрім тотожного нуля буде функція
+	\begin{equation}
+		u(x) = \frac{\sin(k|x|)}{4\pi|x|}.
+	\end{equation}
+
+	Легко перевірити, що ця функція задовольняє як однорідному рівнянню Гельмгольца (це уявна частина фундаментального розв'язку) так і граничній умові на сфері і умові на нескінченості. \medskip
+
+	Наявність нетривіального розв'язку у однорідної задачі означає неєдиність розв'язку відповідної неоднорідної задачі.
+\end{solution}
+
+\end{document}
