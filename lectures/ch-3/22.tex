@@ -390,6 +390,7 @@
 
 	Підставляючи цей розв'язок у задачу \eqref{eq:4.6.1}, отримаємо 
 	\begin{system}
+		\label{eq:4.6.4}
 		& \left( \Delta V_1 + \frac{\omega^2}{a^2} V_1 \right) \cos (\omega t) - \left( \Delta V_2 + \frac{\omega^2}{a^2} V_2 \right) \sin (\omega t) = \\
 		& \quad = - \frac{F_1}{a^2} \cos (\omega t) - \frac{F_2}{a^2} \sin (\omega t), \\
 		& \left. \cos (\omega t) \ell_i V_1 \right|_{x \in S} - \left. \sin (\omega t) \ell_i V_2 \right|_{x \in S} = \\
@@ -439,6 +440,7 @@
 
 	Нехай тепер $k$ --- ціле число. Неважко перевірити, що в цьому разі задача має нетривіальний розв'язок $u(x, y) = \sin(kx) \sin(ky)$, а це в свою чергу означає, що задача з неоднорідними граничними умовами та неоднорідне рівняння Гельмгольца
 	\begin{system}
+		\label{eq:4.6.10}
 		& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 u = -F(x, y), \quad 0 < x, y < \pi, \\
 		& u(0, y) = \phi_1(y), \\
 		& u(\pi, y) = \phi_2(y), \\ 
@@ -451,6 +453,7 @@
 \begin{example}
 	Розглянемо зовнішню задачу для однорідного рівняння Гельмгольца
 	\begin{system}
+		\label{eq:4.6.11}
 		& \Delta u(x) + k^2 u = 0, \quad |x| > \pi, \quad x = (x_1, x_2, x_3), \\
 		& \left. u(x) \right|_{|x| = \pi} = 0, \\
 		& u(x) \xrightarrow[|x| \to \infty]{} 0.
