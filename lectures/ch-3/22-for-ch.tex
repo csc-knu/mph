@@ -373,6 +373,7 @@
 
 	Підставляючи цей розв'язок у задачу \eqref{eq:4.6.1}, отримаємо 
 	\begin{system}
+		\label{eq:4.6.4}
 		& \left( \Delta V_1 + \frac{\omega^2}{a^2} V_1 \right) \cos (\omega t) - \left( \Delta V_2 + \frac{\omega^2}{a^2} V_2 \right) \sin (\omega t) = \\
 		& \quad = - \frac{F_1}{a^2} \cos (\omega t) - \frac{F_2}{a^2} \sin (\omega t), \\
 		& \left. \cos (\omega t) \ell_i V_1 \right|_{x \in S} - \left. \sin (\omega t) \ell_i V_2 \right|_{x \in S} = \\
@@ -381,6 +382,7 @@
 
 	Оскільки функції $\cos (\omega t), \sin (\omega t)$ --- лінійно незалежні, то для амплітуди $V_i(x)$, $i = 1, 2$  отримаємо рівняння Гельмгольца 
 	\begin{system}
+		\label{eq:4.6.5}
 		& \Delta V_j + \frac{\omega^2}{a^2} V_j = -\frac{F_j}{a^2}, \quad x \in \Omega, \quad j = 1, 2, \\
 		& \left. \ell_i V_j \right|_{x \in S} = f_j.
 	\end{system}
@@ -391,6 +393,7 @@
 
 	Шукаючи розв'язок \eqref{eq:4.6.1} у вигляді $U(x, t) = V(x) e^{i \omega t}$, отримаємо для комплексної амплітуди задачу
 	\begin{system}
+		\label{eq:4.6.6}
 		& \Delta V(x) + \frac{\omega^2}{a^2} = -\frac{F}{a^2}, \quad x \in \Omega, \\
 		& \left. \ell_i V \right|_{x \in S} = f.
 	\end{system}
@@ -400,6 +403,7 @@
 \begin{example}
 	Такі процеси наприклад виникають, наприклад, при дифузії нейтронів. Рівняння має вигляд:
 	\begin{equation}
+		\label{eq:4.6.7}
 		\Delta V(x) + \frac{c}{D} \cdot V(x) = 0,
 	\end{equation}
 	де $D$ --- коефіцієнт дифузії, $c$ --- швидкість розмноження нейтронів.
@@ -412,6 +416,7 @@
 \begin{example}
 	Розглянемо таку граничну задачу:
 	\begin{system}
+		\label{eq:4.6.8}
 		& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 y = 0, \quad 0 < x, y < \pi, \\
 		& u(0, y) = u(\pi, y) = u(x, 0) = u(x, \pi) = 0.
 	\end{system}
@@ -422,6 +427,7 @@
 
 	Нехай тепер $k$ --- ціле число. Неважко перевірити, що в цьому разі задача має нетривіальний розв'язок $u(x, y) = \sin(kx) \sin(ky)$, а це в свою чергу означає, що задача з неоднорідними граничними умовами та неоднорідне рівняння Гельмгольца
 	\begin{system}
+		\label{eq:4.6.9}
 		& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 u = -F(x, y), \quad 0 < x, y < \pi, \\
 		& u(0, y) = \phi_1(y), \\
 		& u(\pi, y) = \phi_2(y), \\ 
@@ -434,6 +440,7 @@
 \begin{example}
 	Розглянемо зовнішню задачу для однорідного рівняння Гельмгольца
 	\begin{system}
+		\label{eq:4.6.10}
 		& \Delta u(x) + k^2 u = 0, \quad |x| > \pi, \quad x = (x_1, x_2, x_3), \\
 		& \left. u(x) \right|_{|x| = \pi} = 0, \\
 		& u(x) \xrightarrow[|x| \to \infty]{} 0.
@@ -445,6 +452,7 @@
 
 	У випадку, коли $k$ --- ціле ми маємо, що розв'язком останньої граничної задачі окрім тотожного нуля буде функція
 	\begin{equation}
+		\label{eq:4.6.11}
 		u(x) = \frac{\sin(k|x|)}{4\pi|x|}.
 	\end{equation}
 
