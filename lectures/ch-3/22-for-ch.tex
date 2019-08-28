@@ -14,7 +14,7 @@
 		u(x_0) > \frac{1}{4 \pi R_0^2} \Iint_{S(x_0,R_0)} u(\xi) \diff S_\xi.
 	\end{equation}
 
-	Тобто ми прийшли до протиріччя з припущенням, що $\exists \xi \in S(x_0, R_0): u(\xi) < u(x_0)$. Це означає, що $u(x) = u(x_0)$, $x \in S(x_0, R_0)$. \medskip
+	Тобто порушується теорема про середне значення гармонічної функції і ми прийшли до протиріччя з припущенням, що $\exists \xi \in S(x_0, R_0): u(\xi) < u(x_0)$. Це означає, що $u(x) = u(x_0)$, $x \in S(x_0, R_0)$. \medskip
 
 	Оскільки ця рівність має місце для кулі будь-якого радіусу $R \le R_0$, то це означає, що $u(x) \equiv u(x_0)$  коли $x \in U(x_0, R_0)$. \medskip
 
@@ -98,12 +98,12 @@
 \subsubsection{Перетворення Кельвіна гармонічних функцій}
 
 \begin{definition}
-	Нехай функція $u$ гармонічна за межами кулі $U(0, R)$, тоді функцію
-	\begin{equation}
-		\label{eq:4.5.22}
-		v(y) = \left( \frac{R}{|y|} \right)^{n - 2} \cdot u \left( \frac{R^2}{|y|^2} \cdot y \right)
-	\end{equation}
-	(тут використовується перетворення аргументу обернених радіус векторів $x = R^2 / |y|^2 \cdot y$ або обернене $y = R^2 / |x|^2 \cdot x$) будемо називати \textit{перетворенням Кельвіна} гармонічної функції $u(x)$ в $n$-вимірному евклідовому просторі.
+    Нехай функція $u$ гармонічна за межами кулі $U(0, R)$, тоді функцію
+    \begin{equation}
+        \label{eq:4.5.22}
+        v(y) = \left( \frac{R}{|y|} \right)^{n - 2}  u \left( \frac{R^2}{|y|^2}  y \right)
+    \end{equation}
+    (тут використовується перетворення аргументу обернених радіус векторів $x = R^2 / |y|^2  y$ або обернене $y = R^2 / |x|^2  x$) будемо називати \textit{перетворенням Кельвіна} гармонічної функції $u(x)$ в $n$-вимірному евклідовому просторі.
 \end{definition}
 
 \begin{remark}
@@ -115,7 +115,7 @@
 \end{proposition}
 
 \begin{proof}
-	Легко показати, що перший доданок в операторі Лапласа \eqref{eq:4.5.19} може бути записаний у вигляді 
+	Легко показати, що перший доданок в операторі Лапласа в сферичних координатах \eqref{eq:4.5.19} може бути записаний у вигляді 
 	\begin{equation}
 		\frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial u}{\partial r} \right) = \frac{1}{r} \frac{\partial^2 (ru)}{\partial r^2}.
 	\end{equation}
@@ -150,15 +150,15 @@
 \end{proof}
 
 \begin{remark}
-	Аналогічно тому, як було показана гармонічність
-	\begin{equation}
-		v(y) = \frac{1}{|y|} \cdot u \left( \frac{y}{|y|}^2 \right)
-	\end{equation}
-	у тривимірному евклідовому просторі, можна показати гармонічність функції
-	\begin{equation}
-		v(y) = u \left( \frac{y}{|y|}^2 \right)
-	\end{equation}
-	у двовимірному евклідовому просторі.
+    Аналогічно тому, як було показана гармонічність
+    \begin{equation}
+        v(y) = \frac{1}{|y|}  u \left( \frac{y}{|y|^2} \right)
+    \end{equation}
+    у тривимірному евклідовому просторі, можна показати гармонічність функції
+    \begin{equation}
+        v(y) = u \left( \frac{y}{|y|^2} \right)
+    \end{equation}
+    у двовимірному евклідовому просторі.
 \end{remark}
 
 \subsubsection{Гармонічність в нескінченно віддаленій точці та поведінка гармонічних функцій на нескінченості}
@@ -167,7 +167,7 @@
 	Будемо говорити, що функція $u(x)$ є \textit{гармонічною функцією в нескінченно віддаленій точці}, якщо функція 
 	\begin{equation}
 		v(y) = \begin{cases}
-			\dfrac{1}{|y|} \cdot u \left( \dfrac{y}{|y|^2} \right), & n = 3, \\ & \\
+			\dfrac{1}{|y|} u \left( \dfrac{y}{|y|^2} \right), & n = 3, \\ & \\
 			u \left( \dfrac{y}{|y|^2} \right), & n = 2,
 		\end{cases}
 	\end{equation}
@@ -345,7 +345,7 @@
 \subsection{Рівняння Гельмгольца, деякі властивості його \allowbreak роз\-в'яз\-ків}
 
 \begin{example}
-	Розглянемо задачу
+	Розглянемо спеціальну граничну задачу для хвильового рівняння
 	\begin{system}
 		\label{eq:4.6.1}
 		& a^2 \Delta u(x, t) - \frac{\partial^2 u}{\partial t^2} = -F(x, t), \quad x \in \Omega, \\
@@ -404,7 +404,7 @@
 	Такі процеси наприклад виникають, наприклад, при дифузії нейтронів. Рівняння має вигляд:
 	\begin{equation}
 		\label{eq:4.6.7}
-		\Delta V(x) + \frac{c}{D} \cdot V(x) = 0,
+		\Delta V(x) + \frac{c}{D} V(x) = 0,
 	\end{equation}
 	де $D$ --- коефіцієнт дифузії, $c$ --- швидкість розмноження нейтронів.
 \end{example}
@@ -414,7 +414,7 @@
 \end{remark}
 
 \begin{example}
-	Розглянемо таку граничну задачу:
+	Розглянемо таку граничну задачу для рівняння Гельмгольца:
 	\begin{system}
 		\label{eq:4.6.8}
 		& \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + 2 k^2 y = 0, \quad 0 < x, y < \pi, \\
