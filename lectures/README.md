@@ -1,7 +1,7 @@
 <!--DEBUG-->
 
 _Якщо захочете правити вихідний код лекцій, то вам знадобляться [univ.sty](univ.sty) і [th.sty](th.sty)._
-_Станом на 24 серпня 2019 р. опрацьовані лекції №№1&ndash;21._
+_Станом на 24 серпня 2019 р. опрацьовані лекції №№1&ndash;25._
 
 ### Перший розділ
 
@@ -63,13 +63,13 @@ _Станом на 24 червня 2019 р. цей розділ повністю
 
 21. Лекція №21: [pdf](ch-3/21.pdf), [docx](ch-3/21.docx), [LaTeX source](ch-3/21.tex)
 
-22. Лекція №22: [pdf](ch-3/22.pdf), [docx](ch-3/22.docx)
+22. Лекція №22: [pdf](ch-3/22.pdf), [docx](ch-3/22.docx), [LaTeX source](ch-3/22.tex)
 
-23. Лекція №23: [pdf](ch-3/23.pdf), [docx](ch-3/23.docx)
+23. Лекція №23: [pdf](ch-3/23.pdf), [docx](ch-3/23.docx), [LaTeX source](ch-3/23.tex)
 
-24. Лекція №24: [pdf](ch-3/24.pdf), [docx](ch-3/24.docx)
+24. Лекція №24: [pdf](ch-3/24.pdf), [docx](ch-3/24.docx), [LaTeX source](ch-3/24.tex)
 
-25. Лекція №25: [pdf](ch-3/25.pdf), [docx](ch-3/25.docx)
+25. Лекція №25: [pdf](ch-3/25.pdf), [docx](ch-3/25.docx), [LaTeX source](ch-3/25.tex)
 
 26. Лекція №26: [pdf](ch-3/26.pdf), [docx](ch-3/26.docx)
 

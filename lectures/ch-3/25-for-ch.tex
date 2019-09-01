@@ -1,0 +1,373 @@
+\subsubsection{Потенціал подвійного шару та його пряме значення}
+
+Згідно до теореми \sthref{4.8.1} попередньої лекції, потенціал подвійного шару оператора Гельмгольца (а також Лапласа)
+\begin{equation}
+	W^k(x) = \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff S_y
+\end{equation}
+для будь-якої області, яка не має перетину з поверхнею $S$ є функцією яка має похідні будь-якого порядку. \medskip
+
+В точках поверхні $S$ потенціали подвійного шару є невласним інтегралом і його поведінка залежить від властивості щільності та властивості поверхні інтегрування.
+
+\begin{theorem}[про пряме значення потенціалу подвійного шару]
+	Якщо $S$ замкнена поверхня Ляпунова, $\sigma \in C(S)$, тоді потенціал подвійного шару \seqref{4.8.3}, \seqref{4.8.3'} має в будь-якій точці $x$ поверхні $S$ цілком визначене скінчене значення і це значення неперервно змінюється, коли точка $x$ пробігає поверхню $S$.
+\end{theorem}
+
+\begin{proof}
+	Оскільки $\sigma \in C(S)$, то $\sigma$ --- обмежена на поверхні $S$, таким чином
+	\begin{equation}
+		\begin{aligned}
+			\left| \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \right| &\le M \left| \frac{\partial}{\partial \vec n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \right| \le \\
+			&\le M \sqrt{1 + k^2 |x - y|^2} \left| \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \right| \le \\
+			&\le M_1 \left| \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \right|
+		\end{aligned}
+	\end{equation}
+
+	Згідно до теореми 5 лекції 24 інтеграл
+	\begin{equation}
+		\Iiint_S \left| \frac{\partial}{\partial \vec n_y} \frac{1}{|x - y|} \right| \diff S_y
+	\end{equation}
+	існує, а таким чином існує інтеграл
+	\begin{equation}
+		W^k(x) = \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff S_y
+	\end{equation}
+	коли $x \in S$. \medskip
+
+	Покажемо тепер, що $W^k \in C(S)$. Розглянемо
+	\begin{equation}
+		K(x, y) = \frac{\partial}{\partial \vec n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|},
+	\end{equation}
+	як ядро інтегрального оператора. \medskip
+	
+	Оскільки
+	\begin{equation}
+		K(x, y) = \frac{A(x, y)}{4 \pi |x - y|^2} \cos(\vec n_y, y - x),
+	\end{equation}
+	де
+	\begin{equation}
+		A(x, y) = (\mp i k |x - y| + 1) e^{\pm i k |x - y|},
+	\end{equation}
+	то згідно \seqref{4.8.19} $\cos(\vec n_y, y - x)) \le c_1 |x - y|^\alpha$. Таким чином
+	\begin{equation}
+		K(x, y) = \frac{A(x, y) \cos(\vec n_y, y - x) |x - y|^{-\alpha/2}}{4 \pi |x - y|^{2-\alpha/2}} = \frac{A_1(x, y)}{|x - y|^{2-\alpha/2}}
+	\end{equation}
+	є полярним ядром. А це в свою чергу забезпечує відображення неперервної на $S$ щільності $\sigma$ в неперервний на $S$ потенціал подвійного шару $W^k$.
+\end{proof}
+
+\begin{definition}
+	Значення потенціалу подвійного шару в точках поверхні будемо називати \textit{прямим значенням потенціалу подвійного шару} і позначатимемо його $\overline{W^k(x)}$, $x \in S$.
+\end{definition}
+
+\subsubsection{Інтеграл Гауса}
+
+\begin{definition}
+	\textit{Інтегралом Гауса} будемо називати потенціал подвійного шару оператора Лапласа з щільністю $\sigma(y) = 1$, тобто
+	\begin{equation}
+		W_0(x) = \Iint_S \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y.
+	\end{equation}
+\end{definition}
+
+\begin{lemma}
+	Якщо $S$ --- замкнена поверхня Ляпунова, що обмежує область $\Omega$, то інтеграл Гауса визначається наступною формулою:
+	\begin{equation}
+		W_0(x) = \begin{cases}
+			-1, & x \in \Omega, \\
+			-1/2, & x \in S, \\
+			0, & x \in \Omega'.
+		\end{cases}
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	Розглянемо випадок коли $x \in \Omega'$. В цьому випадку функція $\frac{1}{4 \pi | x - y|}$ --- гармонічна в області $\Omega$ по аргументу $x$ оскільки $y \in S$ то $ x \ne y$. Згідно до властивості гармонічної функції маємо
+	\begin{equation}
+	 	\Iint_S \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y = 0.
+	\end{equation}
+
+	Для випадку, коли $x \in \Omega$ розглянемо область $\Omega_\epsilon = \Omega \setminus U(x, \epsilon)$. Функція $\frac{1}{4 \pi | x - y|}$ буде гармонічною в області $\Omega_\epsilon$ і для неї має місце співвідношення
+	\begin{equation}
+	 	\Iint_S \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + 
+	 	\Iint_{S(x, \epsilon)} \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y = 0.
+	\end{equation}
+
+	Обчислимо значення
+	\begin{equation}
+		\begin{aligned}
+	 		\Lim_{\epsilon \to 0} \Iint_{S(x, \epsilon)} \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|}  \diff S_y &= \Lim_{\epsilon \to 0} \Iint_{S(x, \epsilon)} \frac{\cos(\vec n_y, y - x)}{4 \pi |x - y|^2} \diff S_y = \\
+	 		&= - \Lim_{\epsilon \to 0} \frac{1}{4 \pi \epsilon^2} (-1) \Iint_{S(x, \epsilon)} \diff S_y = 1.
+	 	\end{aligned}
+	\end{equation}
+
+	Випадок $x \in S$ можна дослідити, якщо розглянути область $\Omega_\epsilon^1 = \Omega \setminus (\Omega \cap U(x, \epsilon))$:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.3\textwidth]{{../img/25-1}.mps}
+	\end{figure}
+
+	У ній функція $\frac{1}{4 \pi |x - y|}$ --- гармонічна і записати інтеграл по замкненій поверхні $S_\epsilon^1$ яка обмежує область $\Omega_\epsilon^1$ та спрямувати $\epsilon$ до нуля.
+\end{proof}
+
+Аналізуючи інтеграл Гауса легко бачити, що навіть у найпростішому випадку постійної щільності потенціал подвійного шару при переході через поверхню $S$ має розрив. Наступна теорема вивчає поведінку потенціалу подвійного шару при підході до поверхні $S$ зсередини та ззовні області.
+
+\begin{theorem}[про граничні значення потенціалу подвійного шару]
+	Нехай $S$ --- замкнута поверхня Ляпунова, а $\sigma$ --- неперервна на $S$ щільність, тоді потенціал подвійного шару оператора Гельмгольца та Лапласа $W^k(x) \in C (\overline{\Omega}) \cap C (\overline{\Omega'}) \cap C (S)$ і його граничні значення при підході до поверхні $S$ зсередини $W_{\text{inner}}^k(x)$ і ззовні $W_{\text{outer}}^k(x)$ задовольняють співвідношенням:
+	\begin{align}
+		W_{\text{inner}}^k(x) &= \overline{W^k(x)} - \frac{\sigma(x)}{2}, \\
+		W_{\text{outer}}^k(x) &= \overline{W^k(x)} + \frac{\sigma(x)}{2}.
+	\end{align}
+\end{theorem}
+
+\begin{proof}
+	Розглянемо потенціал подвійного шару
+	\begin{equation}
+		\begin{aligned}
+			W^k(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff S_y = \\
+			&= \Iint_S \sigma(y) (1 \mp i k |x - y|) e^{\pm i k |x - y|} \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y.
+		\end{aligned}
+	\end{equation}
+
+	Позначимо $(1 \mp i k |x - y|) e^{\pm i k |x - y|} = \phi(|x - y|)$. \medskip
+
+	Розглянемо довільну точку $x_0 \in S$ та запишемо потенціал подвійного шару у вигляді:
+	\begin{equation}
+		\begin{aligned}
+			W^k(x) &= W^k(x) \pm \Iint_S \sigma(x_0) \phi(|x - x_0|) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y = \\
+			&= W_1^k(x) + \sigma(x_0) \phi(|x - x_0) W_0(x).
+		\end{aligned}
+	\end{equation}
+	де
+	\begin{equation}
+		W_1^k(x) = \Iint_S \left( \sigma(y) \phi(|x - y|) - \sigma(x_0) \phi(|x - x_0|) \right) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y.
+	\end{equation}
+	а $W_0(x)$ --- інтеграл Гауса. Покажемо, що $W_1^k$ --- неперервна функція в точці $x_0$. Візьмемо точку $x_0$ за центр сфери $U(x_0, \eta)$, яка розіб'є поверхню $S$ на дві частини $S'$ і $S''$, де $S' = S \cap U(x_0, \eta)$, а $S'' = S \setminus S'$. Враховуючи представлення поверхні $S = S' \cap S''$, запишемо  
+	\begin{equation}
+		W_1^k(x) = W_1^{'k}(x) + W_1^{''k}(x) = \Iint_{S'} \left( \ldots \right) \diff S_y' + \Iint_{S''} \left( \ldots \right) \diff S_y''.
+	\end{equation}
+ 
+	Покажемо, що $|W_1^k(x) - W_1^k(x_0)|$ можна зробити як завгодно малим за рахунок зближення точок $x$ та $x_0$. Запишемо очевидну нерівність:
+	\begin{equation}
+		\left| W_1^k(x) - \overline{W_1^k(x_0)} \right| \le \left| W_1^{''k}(x) - \overline{W_1^{''k}(x_0)} \right| + \left| W_1^{'k}(x) \right | + \left| \overline{W_1^{'k}(x_0)} \right|.
+	\end{equation}
+
+	Оцінимо праву частину нерівності. Оберемо радіус сфери $\eta$ таким чином щоби
+	\begin{equation}
+		\Big| \sigma(y) \phi(|x - y|) - \sigma(x_0) \phi(|x - x_0|) \Big| \le \frac{\epsilon}{3 C_0},
+	\end{equation}
+		де $\epsilon$ --- довільне мале число, а $C_0$ --- константа з формулювання теореми \sthref{4.8.5}, нерівність \seqref{4.8.61}. Це можливо завдяки неперервності $\sigma(y) \phi(|x - y|)$. Таким чином
+	\begin{equation}
+		\left| W_1^{'k} (x_0) \right| \le \frac{\epsilon}{3 C_0} \Iint_{S'} \left| \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \right| \diff S_y' \le \frac{\epsilon}{3}.
+	\end{equation}
+
+	Аналогічна нерівність виконується і для $\left| \overline{W_1^{'k}(x_0)} \right| \le \frac{\epsilon}{3}$, як для частинного випадку положення точки $x$. \medskip
+
+	Зафіксуємо радіус сфери $\eta$ і будемо вважати, що точка $x$ достатньо близька до точки $x_0$ така, що $|x - x_0| \le \eta/2$, тоді на поверхні $S''$:
+	\begin{equation}
+		|x - y| \ge |y - x_0| - |x_0 - x| \ge \eta - \frac{\eta}{2} = \frac{\eta}{2}.
+	\end{equation}
+
+	Таким чином підінтегральна функція в інтегралі $W_1^{''k}(x)$ є неперервною і тому неперервним буде і сам інтеграл, тобто $\left| W_1^{''k}(x) - \overline{W_1^{''k}(x_0)} \right| \le \frac{\epsilon}{3}$. Це доводить неперервність $W_1^{''k}(x)$ в точці $x_0$. \medskip
+
+	З неперервності $W_1^k(x)$, можемо записати 
+	\begin{equation}
+		{W_1^k}_{\text{inner}}(x_0) = {W_1^k}_{\text{outer}}(x_0) = \overline{W_1^k(x_0)}.
+	\end{equation}
+
+	Врахуємо представлення 
+	\begin{equation}
+		W^k(x) = W_1^k(x) + \sigma(x_0) \phi(|x - x_0|) W_0(x).
+	\end{equation}
+
+	Обчислимо граничні значення потенціалу в точці $x_0$ зсередини та ззовні:
+	\begin{align}
+		W_{\text{inner}}^k(x_0) &= \overline{W_1^k(x_0)} + \sigma(x_0) \phi(|x_0 - x_0|) {W_{0}}_{\text{inner}}(x_0) = \overline{W_1^k(x_0)} - \sigma(x_0), \\
+		W_{\text{outer}}^k(x_0) &= \overline{W_1^k(x_0)} + \sigma(x_0) \phi(|x_0 - x_0|) {W_{0}}_{\text{outer}}(x_0) = \overline{W_1^k(x_0)}.
+	\end{align}
+
+	Оскільки
+	\begin{equation}
+		\overline{W_1^k(x_0)} = \overline{W^k(x_0)} - \sigma(x_0) \overline{W_0(x_0)} = \overline{W^k(x_0)} + \frac{\sigma(x_0)}{2},
+	\end{equation}
+	то з трьох останніх рівностей отримаємо:
+	\begin{align}
+		W_{\text{inner}}^k(x) &= \overline{W^k(x)} - \frac{\sigma(x)}{2}, \\
+		W_{\text{outer}}^k(x) &= \overline{W^k(x)} + \frac{\sigma(x)}{2}.
+	\end{align}
+\end{proof}
+
+\subsubsection{Потенціал простого шару та його властивості}
+
+Нагадаємо, що потенціали простого шару для оператора Лапласа та Гельмгольца записуються у вигляді 
+\begin{equation}
+	V(x) = \Iint_S \frac{\mu(y)}{4 \pi |x - y|} \diff S_y \qquad V^k(x) = \Iint_S \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y.
+\end{equation}
+
+Вивчимо властивості цих потенціалів в усьому евклідовому просторі.
+
+\begin{theorem}[про неперервність потенціалу простого шару]
+	Якщо $S$ --- замкнута поверхня Ляпунова, а $\mu$ вимірювана і обмежена на $S$, то потенціал простого шару оператора Лапласа та Гельмгольца є функцією неперервною в усьому евклідовому просторі.
+\end{theorem}
+
+\begin{proof}
+	Оскільки властивості потенціалів в будь-якій точці простору, яка не належить поверхні $S$ досліджувались в теоремі \sthref{4.8.1}, то встановити неперервність потенціалу простого шару необхідно лише в точках поверхні  $S$. \medskip
+
+	Побудуємо сферу Ляпунова $S(x, d)$ і нехай $S_d'(x)$ --- частина поверхні $S$, яка знаходиться всередині сфери Ляпунова. Тоді потенціал простого шару 
+	\begin{equation}
+		\label{eq:4.8.31}
+		V^k(x) = \Iint_{S_d'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y + \Iint_{S \setminus S_d'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y.
+	\end{equation}
+
+	У другому інтегралі підінтегральна функція є неперервна і обмежена , а значить цей інтеграл існує. \medskip
+
+	Для оцінки першого інтегралу введемо локальну систему координат $\xi_1, \xi_2, \xi_3$ з центром у точці $x$. Нехай $G'(x)$ --- проекція $S_d'(x)$ на площину $\xi_3 = 0$, дотичну до поверхні $S$ в точці $x$, тоді:
+	\begin{equation}
+		\begin{aligned}
+			\left| \Iint_{S_d'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y \right| &\le \Iint_{G'(x)} \frac{|\mu(\xi_1, \xi_2)| \diff \xi_1 \diff \xi_2}{4 \pi \sqrt{\xi_1^2 + \xi_2^2 + \xi_3^2} \cos(\vec n_y, \xi_3)} \le \\
+			&\le 2 M \Int_0^{2\pi} \Int_0^d \frac{\rho \diff \rho}{4 \pi \rho} = M d.
+		\end{aligned}
+	\end{equation}
+
+	При оцінці інтегралу були використані оцінки \seqref{4.8.47} та оцінка
+	\begin{equation}
+		\frac{1}{r} = \frac{1}{\sqrt{\xi_1^2 + \xi_2^2 + \xi_3^2}} \le \frac{1}{\sqrt{\xi_1^2 + \xi_2^2}} = \frac{1}{\rho}.
+	\end{equation}
+
+	Таким чином потенціал простого шару дійсно існує в кожній точці простору $\RR^3$. \medskip
+
+	Покажемо тепер неперервність потенціалу в точці $x \in S$. \medskip
+
+	Оберемо сферу Ляпунова $S(x, \eta)$, $\eta < d$. Тоді потенціал простого шару можна представити аналогічно \eqref{eq:4.8.31} у вигляді:
+	\begin{equation}
+		\label{eq:4.8.31'}
+		V^k(x) = \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y + \Iint_{S \setminus S_\eta'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y.
+	\end{equation}
+
+	Очевидно, що другий інтеграл
+	\begin{equation}
+		V_1^k(x) = \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y
+	\end{equation}
+	є неперервною функцією і $\forall \epsilon > 0$ $\exists \delta(\epsilon) > 0$ така, що $|V_1^k(x) - V_1^k(x')| \le \epsilon/3$ як тільки $|x - x'| < \delta(\epsilon)$. \medskip
+
+	Покажемо, що
+	\begin{equation}
+		\left| \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y -  \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x' - y|} \mu(y)}{4 \pi |x' - y|} \diff S_y \right| \le \frac{2 \epsilon}{3}
+	\end{equation}
+	при $|x - x'| < \delta$. \medskip
+
+	Очевидно, що
+	\begin{multline}
+		\left| \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y -  \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x' - y|} \mu(y)}{4 \pi |x' - y|} \diff S_y \right| \le \\
+		\le \left| \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y \right| + \left| \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x' - y|} \mu(y)}{4 \pi |x' - y|} \diff S_y \right|.
+	\end{multline}
+
+	Розглянемо другий інтеграл і виберемо точки $x, x'$ так, що $|x - x'| < \eta / 2$. \medskip
+
+	Введемо локальну систему координат з центром в точці $x$. Тоді нехай точка $y = (\xi_1, \xi_2, \xi_3)$, а $x' = (\xi_1', \xi_2', \xi_3')$. Тоді 
+	\begin{equation}
+		\frac{1}{r} = \frac{1}{|y - x'|} \le \frac{1}{\sqrt{(\xi_1 - \xi_1')^2 + (\xi_2 - \xi_2')^2}} \le \frac{1}{\rho}
+	\end{equation}
+	а також
+	\begin{equation}
+		\rho \le |y - x'| = |y - x' + x - x| \le |x - x'| + |x - y| \le \eta + \frac{\eta}{2} = \frac{3 \eta}{2}.
+	\end{equation}
+ 
+	Таким чином можна записати оцінку інтеграла
+	\begin{equation}
+		\begin{aligned}
+			\left| \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x' - y|} \mu(y)}{4 \pi |x' - y|} \diff S_y \right| &\le 2 M \Iint_{G_\eta'(x)} \frac{\diff \xi_1 \diff \xi_2}{4 \pi \sqrt{(\xi_1 - \xi_1')^2 + (\xi_2 - \xi_2')^2}} \le \\
+			&\le 2M \Int_0^{2\pi} \Int_0^{3\eta/2} \frac{\rho \diff \rho}{4 \pi \rho} = \frac{3 \eta M}{2} \le \frac{\epsilon}{3}
+		\end{aligned}
+	\end{equation}
+	за рахунок вибору достатньо маленького значення $\eta$. \medskip
+
+	Інтеграл
+	\begin{equation}
+		\left| \Iint_{S_\eta'(x)} \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y \right| \le \frac{\epsilon}{3},
+	\end{equation}
+	як частинний випадок попереднього інтегралу при $x' = x$. Таким чином встановлено, що $|V^k - V^k(x')| \le \epsilon$, якщо $|x - x'| \le \delta$.
+\end{proof}
+
+\subsubsection{Нормальна похідна потенціалу простого шару}
+
+Будемо розглядати потенціал простого шару
+\begin{equation}
+	V^k(x) = \Iint_S \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y
+\end{equation}
+для оператору Гельмгольца. \medskip
+
+Візьмемо довільну точку $x \not\in S$, і проведемо через цю точку яку-небудь нормаль $\vec n_x$ до поверхні $S$:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.3\textwidth]{{../img/25-2}.mps}
+\end{figure}
+
+Для такого випадку в точці $x$, можна обчислити похідну по напрямку нормалі $\vec n_x$ від потенціалу простого шару, яку обчислюють шляхом диференціювання підінтегральної функції
+\begin{equation}
+	\frac{\partial V^k(x)}{\partial \vec n_x} = \frac{\partial}{\partial \vec n_x} \Iint_S \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y = \Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff S_y.
+\end{equation}
+
+Обчислимо вираз  
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial}{\partial \vec n_x} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} &= \frac{\pm i k |x - y| - 1}{4 \pi |x - y|^2} \cdot e^{\pm i k |x - y|} \Sum_{j = 1}^3 \frac{x_j - y_j}{|x - y|} \cos(\vec n_x, x_j) = \\
+		&= \frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|}}{4 \pi |x - y|^2} \cos(\vec n_x, x - y).
+	\end{aligned}
+\end{equation}
+
+\begin{theorem}[про пряме значення нормальної похідної потенціалу простого шару]
+	Якщо $\mu$ обмежена і вимірювана функція на поверхні Ляпунова $S$, то нормальна похідна потенціалу простого шару
+	\begin{equation}
+		\frac{\partial V^k(x)}{\partial \vec n_x} = \Iint_S \mu(y) \frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|}}{4 \pi |x - y|^2} \cos(\vec n_x, x - y) \diff S_y.
+	\end{equation}
+	має в кожній точці поверхні $S$ цілком визначене скінчене значення, яке неперервно змінюється коли точка $x$ пробігає поверхню $S$.
+\end{theorem}
+
+\begin{definition}
+	Це значення називають \textit{прямим значенням нормальної похідної потенціалу простого шару}, позначається $\overline{\frac{\partial V^k(x)}{\partial \vec n_x}}$, $x \in S$. 
+\end{definition}
+
+\begin{proof}
+	При доведенні теореми будемо розглядати нормальну похідну потенціалу, як результат відображення щільності $\mu$ за допомогою інтегрального оператора з ядром
+	\begin{equation}
+		K(x, y) = \frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|}}{4 \pi |x - y|^2} \cos(\vec n_x, x - y).
+	\end{equation}
+
+	Враховуючи властивості поверхні Ляпунова, можна показати, що ця ядро є полярним, оскільки для достатньо малих значень $|x - y|$ виконується $\cos(\vec n_x, x - y) \le a_2 |x - y|^\alpha$. Це означає, що
+	\begin{equation}
+		\begin{aligned}
+			K(x, y) &= \frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|} \cos(\vec n_x, x - y) |x - y|^{-\alpha/2}}{4 \pi |x - y|^{2 - \alpha/2}} = \\
+			&= \frac{A(x, y)}{4 \pi |x - y|^{2 - \alpha/2}}
+		\end{aligned}
+	\end{equation}
+	є полярним ядром. Далі використовуємо, що інтегральний оператор з полярним ядром відображає обмежену функцію у неперервну.
+\end{proof}
+
+\begin{theorem}[про граничні значення нормальної похідної потенціалу простого шару]
+	Якщо $S$ замкнута поверхня Ляпунова, а $\mu$ неперервна на $S$ щільність, то потенціал простого шару має на $S$ граничні значення правильної нормальної похідної при підході до точки $x \in S$ зсередини та ззовні, і ці граничні значення можуть бути обчислені за формулами: 
+	\begin{align}
+		\frac{\partial V^k(x)}{\partial \vec n_{\text{inner}}} &= \overline{\frac{\partial V^k(x)}{\partial \vec n}} + \frac{\mu(x)}{2}, \\
+		\frac{\partial V^k(x)}{\partial \vec n_{\text{outer}}} &= \overline{\frac{\partial V^k(x)}{\partial \vec n}} - \frac{\mu(x)}{2}.
+	\end{align}
+\end{theorem}
+
+\begin{definition}
+	Граничні значення нормальної похідної в точці $x_0 \in S$ потенціалу простого шару зсередини $\frac{\partial V^k(x)}{\partial \vec n_{\text{inner}}}$ та ззовні $\frac{\partial V^k(x)}{\partial \vec n_{\text{outer}}}$ будемо називати \textit{правильними}, якщо вони є граничними значеннями $\frac{\partial V^k(x)}{\partial \vec n}$ коли $x \to x_0$ вздовж нормалі $\vec n_{x_0}$ зсередини та ззовні відповідно.
+\end{definition}
+
+\begin{proof}
+	Розглянемо вираз, який представляє собою суму потенціалу подвійного шару і нормальної похідної потенціалу простого шару з  однаковою щільністю $\mu(x)$:
+	\begin{equation}
+		\frac{\partial V^k(x)}{\partial \vec n_x} + W^k(x) = \Iint_S \mu(y) \left( \frac{\partial}{\partial n_x} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} + \frac{\partial}{\partial n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \right) \diff S_y.
+	\end{equation}
+
+	Можна показати, що ця функція змінюється неперервно, коли точка $x$ перетинає поверхню $S$, рухаючись по нормалі до цієї поверхні в точці $x$. \medskip
+
+	Враховуючи цю неперервність при переході через поверхню вздовж нормалі , можемо записати:
+	\begin{equation}
+		\frac{\partial V^k(x_0)}{\partial n_{\text{inner}}} + W_{\text{inner}}^k(x_0) = \frac{\partial V^k(x_0)}{\partial n_{\text{outer}}} + W_{\text{outer}}^k(x_0) = \overline{\frac{\partial V^k(x_0)}{\partial n_x}} + \overline{W^k(x_0)}.
+	\end{equation}
+
+	Звідси маємо:
+	\begin{align}
+		\frac{\partial V^k(x_0)}{\partial n_{\text{inner}}} &= \overline{W^k(x_0)} - W_{\text{inner}}^k(x_0) + \overline{\frac{\partial V^k(x_0)}{\partial n_x}} = \overline{\frac{\partial V^k(x_0)}{\partial n_x}} + \frac{\mu(x_0)}{2}. \\
+		\frac{\partial V^k(x_0)}{\partial n_{\text{outer}}} &= \overline{W^k(x_0)} - W_{\text{outer}}^k(x_0) + \overline{\frac{\partial V^k(x_0)}{\partial n_x}} = \overline{\frac{\partial V^k(x_0)}{\partial n_x}} - \frac{\mu(x_0)}{2}.
+	\end{align}
+\end{proof}

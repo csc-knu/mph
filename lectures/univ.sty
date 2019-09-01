@@ -152,3 +152,14 @@
   }%
 }
 \makeatother
+
+% _s stands for "safe"
+\makeatletter
+\newcommand{\sthref}[1]{%
+  \@ifundefined{r@th:#1}{%
+    \textcolor{blue}{#1}%
+  }{%
+    \ref{th:#1}%
+  }%
+}
+\makeatother
