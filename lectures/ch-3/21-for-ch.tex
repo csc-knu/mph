@@ -263,12 +263,14 @@
 
 \begin{example}[гармонічної функції у $\RR^2$]
 	\begin{equation}
+		\label{eq:4.5.1}
 		\Delta \frac{1}{2 \pi} \ln \frac{1}{|x - \xi|} = 0, \quad x \ne \xi, \quad x, \xi \in \RR^2.
 	\end{equation}
 \end{example}
 
 \begin{example}[гармонічної функції у $\RR^3$]
 	\begin{equation}
+		\label{eq:4.5.2}
 		\Delta \frac{1}{4 \pi |x - \xi|} = 0, \quad x \ne \xi, \quad x, \xi \in \RR^3.
 	\end{equation}
 \end{example}
@@ -276,25 +278,25 @@
 \subsubsection{Інтегральне представлення функцій класу \texorpdfstring{$C^2(\Omega)$}{C2Omega}}
 
 Для отримання інтегрального представлення функцій класу $C^2(\Omega)$ будемо використовувати другу формулу Гріна для оператора Лапласа:
-
 \begin{equation}
+	\label{eq:4.5.3}
 	\Iiint_\Omega ( v(x) \Delta u(x) - u(x) \Delta v(x) ) \diff x = \Iint_S \left( v(x) \cdot \frac{\partial u(x)}{\partial n} - u(x) \cdot \frac{\partial v(x)}{\partial n} \right) \diff S.
 \end{equation}
 
 В якості функції $u(\xi)$ оберемо довільну функцію $C^2(\Omega)$, а у якості $v$, фундаментальний розв'язок оператора Лапласа для тривимірного евклідового простору $\frac{1}{4 \pi \vert x - \xi \vert}$.
 
 В результаті підстановки циx величин в останню формулу отримаємо
-
 \begin{equation}
+	\label{eq:4.5.4}
 	\begin{aligned}
-		& \Iiint_\Omega \left( \frac{1}{4 \pi |x - \xi|} \Delta u(\xi) - u(\xi) \delta (x - \xi) \right) \diff \xi = \\
+		& \Iiint_\Omega \left( \frac{1}{4 \pi |x - \xi|} \Delta u(\xi) + u(\xi) \delta (x - \xi) \right) \diff \xi = \\
 		& \quad = \Iint_S \left( \frac{1}{4 \pi |x - \xi|} \cdot \frac{\partial u(\xi)}{\partial n} - u(\xi) \cdot \frac{\partial}{\partial n} \frac{1}{4 \pi |x - \xi|} \right) \diff S_\xi.
 	\end{aligned}
 \end{equation}
 
-Після обчислення другого доданку в лівій частині можемо записати формулу інтегрального представлення функцій класу $C^2(\Omega)$.
-
+Після обчислення другого доданку в лівій частині можемо записати формулу інтегрального представлення функцій класу $C^2(\Omega)$:
 \begin{equation}
+	\label{eq:4.5.5}
 	\begin{aligned}
 		u(x) &= - \Iiint_\Omega \frac{1}{4 \pi |x - \xi|} \Delta u(\xi) \diff \xi + \\
 		&\quad + \Iint_S \left( \frac{1}{4 \pi |x - \xi|} \cdot \frac{\partial u(\xi)}{\partial n} - u(\xi) \cdot \frac{\partial n}{\partial n} \frac{1}{4 \pi |x - \xi|} \right) \diff S_\xi.
@@ -302,8 +304,8 @@
 \end{equation}
 
 У випадку коли функція $u(x)$ є гармонічною в області $\Omega$ то остання формула прийме вигляд:
-
 \begin{equation}
+	\label{eq:4.5.6}
 	u(x) = \Iint_S \left( \frac{1}{4 \pi |x - \xi|} \cdot \frac{\partial u(\xi)}{\partial n} - u(\xi) \cdot \frac{\partial}{\partial n} \frac{1}{4 \pi |x - \xi|} \right) \diff S_\xi.
 \end{equation}
 
@@ -351,7 +353,7 @@
 		u(x_0) = \Iint_{S(x_0, R)} \left( \frac{1}{4 \pi |x_0 - \xi|} \cdot \frac{\partial u(\xi)}{\partial n} - u(\xi) \cdot \frac{\partial}{\partial n_\xi} \frac{1}{4 \pi |x_0 - \xi|} \right) \diff S_\xi.
 	\end{equation}
 	 
-	Оскільки $\xi \in S(x_0, R)$, то $\frac{1}{4 \pi |x_0 - \xi|} = \frac{1}{4 \pi R}$, а
+	Оскільки $\xi \in S(x_0, R)$, то $\dfrac{1}{4 \pi |x_0 - \xi|} = \dfrac{1}{4 \pi R}$, а
 
 	\begin{equation}
 		\left. \frac{\partial}{\partial n_\xi} \frac{1}{4 \pi |x_0 - \xi|} \right|_{S(x_0, R)} = \frac{1}{4 \pi R^2}.
