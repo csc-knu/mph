@@ -249,15 +249,15 @@
 	\begin{equation}
 		\begin{aligned}
 			A &= \Lim_{\epsilon \to 0} \Iiint_{\Omega \setminus U(x, \epsilon)} \frac{\partial \rho(y)}{\partial y_j} \frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff y - \Iint_S \rho(y) \frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \cos(\vec n_y, y_j) \diff S_y = \\
-			&= \Lim_{\epsilon \to 0} \Iiint_{\Omega \setminus U(x, \epsilon)} \frac{\partial \rho(y)}{\partial y_j} \frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff y - \underbrace{\Iint_S \rho(y) \frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \cos(\vec n_y, y_j) \diff S_y} + \\
+			&= \Lim_{\epsilon \to 0} \Iiint_{\Omega \setminus U(x, \epsilon)} \rho(y) \frac{\partial^2}{\partial y_j^2} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff y - \underbrace{\Iint_S \rho(y) \frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \cos(\vec n_y, y_j) \diff S_y} + \\
 			& \quad + \underbrace{\Iint_S \rho(y) \frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \cos(\vec n_y, y_j) \diff S_y} - \Iint_{S(x, \epsilon)} \rho(y) \frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \cos(\vec n_y, y_j) \diff S_y.
 		\end{aligned}
 	\end{equation} 
 
-	Оскільки
-	\begin{equation}
+	Оскільк
+и	\begin{equation}
 		\begin{aligned}
-			\frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} &= \frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|}}{4 \pi |x - y|^2} \frac{y_j - x_j}{|x - y|} = \\
+			\frac{\partial}{\partial y_j} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} &= \frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|}}{4 \pi |x - y|^2} \frac{(y_j - x_j)}{|x - y|} = \\
 			&= \frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|}}{4 \pi |x - y|^2} \cos(\vec{y - x}, y_j) = \\
 			&= -\frac{(\pm i k |x - y| - 1) e^{\pm i k |x - y|}}{4 \pi |x - y|^2} \cos(\vec n_y, y_j).
 		\end{aligned}
@@ -327,7 +327,7 @@
 
 \subsubsection{Місцева система координат на поверхні Ляпунова}
 
-На поверхні $S$ виберемо довільну точку $x$ і зробимо її початком місцевої локальної системи координат, вісь $\xi_3$ направимо в напрямку зовнішньої нормалі $\vec n_x$, а дві інші вісі $\xi_1, \xi_2$ розташуємо в дотичній площині до поверхні $S$ в точці $x$ так що би утворити обрані вісі утворювали праву трійку. Враховуючи теорему \ref{th:4.8.4}, зрозуміло, що частину поверхні Ляпунова $S$, яка розташована всередині сфери $S(x, d)$ можна записати у вигляді явного рівняння
+На поверхні $S$ виберемо довільну точку $x$ і зробимо її початком місцевої локальної системи координат, вісь $\xi_3$ направимо в напрямку зовнішньої нормалі $\vec n_x$, а дві інші вісі $\xi_1, \xi_2$ розташуємо в дотичній площині до поверхні $S$ в точці $x$ так що би  обрані вісі утворювали праву трійку. Враховуючи теорему \ref{th:4.8.4}, зрозуміло, що частину поверхні Ляпунова $S$, яка розташована всередині сфери $S(x, d)$ можна записати у вигляді явного рівняння
 \begin{equation}
 	\label{eq:4.8.11}
 	\xi_3 = f(\xi_1, \xi_2), \quad f \in C^1.
@@ -388,7 +388,7 @@ $\left|\frac{\partial f(\xi_1, \xi_2)}{\partial \xi_i}\right| \le \sqrt{3} a r^\
 Таким чином
 \begin{equation}
 	\label{eq:4.8.17}
-	r = |\xi_3| = |f| \le \Int_0^\rho \left|\frac{\partial f}{\partial \rho}\right| \le \sqrt{3} \rho,
+	 |\xi_3| = |f| \le \Int_0^\rho \left|\frac{\partial f}{\partial \rho}\right| \le \sqrt{3} \rho,
 \end{equation}
 а звідси маємо $\rho^2 \le r^2 \le 4 \rho^2$, або $\rho \le r \le 2 \rho$. \medskip
 
