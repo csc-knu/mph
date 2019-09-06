@@ -1,0 +1,382 @@
+\input{../univ.sty}
+
+\title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
+\author{Скибицький Нікіта}
+\date{\today}
+ 
+\input{../th.sty}
+
+\begin{document}
+
+\tableofcontents
+
+\setcounter{section}{4}
+\setcounter{subsection}{8}
+
+\subsection{Дослідження існування розв'язків основних граничних задач рівняння Лапласа та Гельмгольца}
+
+Будемо розглядати замкнену Ляпуновську поверхню, яка обмежує дві області $\Omega$ та $\Omega'$ --- зовнішню по відношенню до області $\Omega$. Будемо розглядати основні граничні задачі рівняння Лапласа:
+\begin{longtable}{p{.45\textwidth} p{.45\textwidth} p{.45\textwidth}}
+	\parbox{.45\textwidth}{\begin{equation}\label{eq:4.9.1}\left\{\begin{aligned}
+		& \Delta u(x) = 0, \quad x \in \Omega, \\
+		& \left. u \right|_{x \in S} = f(x).
+	\end{aligned}\right.\end{equation}} & \parbox{.45\textwidth}{\begin{equation}\label{eq:4.9.1'}\left\{\begin{aligned}
+		& \Delta u(x) = 0, \quad x \in \Omega', \\
+		& \left. u \right|_{x \in S} = f(x), \\
+		& u(x) = O(1/|x|), \quad |x| \to \infty.
+	\end{aligned}\right.\end{equation}} \\
+	\parbox{.45\textwidth}{\begin{equation}\label{eq:4.9.2}\left\{\begin{aligned}
+		& \Delta u(x) = 0, \quad x \in \Omega, \\
+		& \left. \frac{\partial u}{\partial \vec n} \right|_{x \in S} = f(x).
+	\end{aligned}\right.\end{equation}} & \parbox{.45\textwidth}{\begin{equation}\label{eq:4.9.2'}\left\{\begin{aligned}
+		& \Delta u(x) = 0, \quad x \in \Omega', \\
+		& \left. \frac{\partial u}{\partial \vec n} \right|_{x \in S} = f(x), \\
+		& u(x) = O(1/|x|), \quad |x| \to \infty.
+	\end{aligned}\right.\end{equation}}
+\end{longtable}
+
+\begin{definition}
+	Будемо називати граничні задачі \eqref{eq:4.9.1} та \eqref{eq:4.9.1'} \textit{внутрішньою} та \textit{зовнішньою граничними задачами Діріхле} і позначати $D_{\text{inner}}$ та $D_{\text{outer}}$ відповідно. Граничні задачі \eqref{eq:4.9.2} та \eqref{eq:4.9.2'} будемо називати \textit{внутрішньою} та \textit{зовнішньою граничними задачами Неймана} та позначати $N_{\text{inner}}$ та $N_{\text{outer}}$ відповідно.  	
+\end{definition}
+
+Функцію $f(x)$ будемо вважати неперервною на поверхні Ляпунова $S$. \medskip
+
+Враховуючи властивості потенціалів, будемо шукати розв'язки граничних задач Діріхле у вигляді потенціалу подвійного шару, а задач Неймана у вигляді потенціалу простого шару з невідомими щільностями:
+\begin{align}
+	\label{eq:4.9.3}
+	u(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y \qquad \text{для }D_{\text{inner}}\text{ та }D_{\text{outer}}, \\
+	\label{eq:4.9.4}
+	u(x) &= \Iint_S \mu(y) \frac{1}{4 \pi |x - y|} \diff S_y \qquad \text{для }N_{\text{inner}}\text{ та }N_{\text{outer}}.
+\end{align}
+
+В області $\Omega$ та $\Omega'$ потенціали простого шару та подвійного шару задовольняють рівняння Лапласа. \medskip
+
+Для знаходження розв'язків відповідних граничних задач необхідно задовільними граничним умовам на поверхні $S$ та для зовнішніх задач умовам регулярності на нескінченості. \medskip
+
+Запишемо інтегральні співвідношення, які дозволять задовольнити граничні умови та визначити невідомі щільності потенціалів. \medskip
+
+Для запису інтегральних співвідношень використаємо теореми про граничні значення потенціалу подвійного шару та граничні значення нормальної похідної  потенціалу простого шару.
+\begin{align}
+	\label{eq:4.9.5}
+	f(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\sigma(x)}{2}, \quad x \in S, \quad D_{\text{inner}} \\
+	\label{eq:4.9.6}
+	f(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\sigma(x)}{2}, \quad x \in S, \quad D_{\text{outer}} \\
+	\label{eq:4.9.7}
+	f(x) &= \Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\mu(x)}{2}, \quad x \in S, \quad N_{\text{inner}} \\
+	\label{eq:4.9.8}
+	f(x) &= \Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\mu(x)}{2}, \quad x \in S, \quad N_{\text{outer}}.
+\end{align}
+
+Неважко бачити, що рівняння \eqref{eq:4.9.5}--\eqref{eq:4.9.8} є інтегральними рівняннями Фредгольма другого роду і розпадаються на дві пари союзних (спряжених): $D_{\text{inner}}$, $N_{\text{outer}}$ та $D_{\text{outer}}$, $N_{\text{inner}}$. З теорем Фредгольма відомо, що існування і єдність розв'язків інтегрального рівняння і спряженого до нього виконується одночасно. Тому ми будемо досліджувати одночасно пари рівнянь $D_{\text{inner}}$, $N_{\text{outer}}$ та $D_{\text{outer}}$, $N_{\text{inner}}$. \medskip
+
+Ядро інтегрального рівняння \eqref{eq:4.9.6} має вигляд
+\begin{equation}
+	\label{eq:4.9.9}
+	K(x, y) = \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} = - \frac{\cos(y - x, \vec n_y)}{4 \pi |x - y|^2},
+\end{equation}
+відповідно спряженого до нього рівняння \eqref{eq:4.9.8} має ядро:
+\begin{equation}
+	\label{eq:4.9.10}
+	K^\star(x, y) = \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} = - \frac{\cos(x - y, \vec n_x)}{4 \pi |x - y|^2},
+\end{equation}
+
+Враховуючи властивості поверхні Ляпунова і оцінки $\cos(y - x, \vec n_y) < a_1 |x - y|^\alpha$, можна встановити, що ядра $K(x, y), K^\star(x, y)$ є полярними і для таких інтегральних рівнянь можна застосовувати теореми Фредгольма.
+
+\subsubsection{Дослідження внутрішньої задачі Діріхле та зовнішньої задачі Неймана}
+
+Покажемо, що інтегральні рівняння Фредгольма \eqref{eq:4.9.5} з полярним ядром \eqref{eq:4.9.9} та спряжене до нього рівняння \eqref{eq:4.9.8} мають єдиний розв'язок для будь-якого неперервного вільного члена. \medskip
+
+Розглянемо однорідне рівняння для рівняння \eqref{eq:4.9.8} 
+\begin{equation}
+	\label{eq:4.9.8'}
+	\Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\mu(x)}{2} = 0, \quad x \in S.
+\end{equation}
+
+Нехай $\mu_0(x) \in L_2(S)$ ---  розв'язок однорідного рівняння \eqref{eq:4.9.8'}. Зрозуміло, що в цьому випадку функція $\mu_0(x) \in C(S)$ і задовольняє рівняння
+\begin{equation}
+	\label{eq:4.9.8''}
+	\Iint_S \mu_0(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\mu_0(x)}{2} = 0, \quad x \in S.
+\end{equation}
+
+Побудуємо потенціал простого шару з щільністю $\mu_0$ і позначимо його
+\begin{equation}
+	\label{eq:4.9.11}	
+	V_0(x) = \Iint_S \mu_0(y) \frac{1}{4 \pi |x - y|} \diff S_y.
+\end{equation}
+
+Потенціал \eqref{eq:4.9.11} має правильну нормальну похідну при підході до поверхні $S$ ззовні, а рівняння \eqref{eq:4.9.8''} означає, що
+\begin{equation}
+	\label{eq:4.9.12}
+	\frac{\partial V_0(x)}{\partial \vec n_{\text{inner}}} \equiv 0.
+\end{equation}
+
+Зрозуміло, що для $V_0$ задовольняє граничній задачі
+\begin{equation}
+	\label{eq:4.9.13}
+	\left\{
+		\begin{aligned}
+			& \Delta V_0(x) = 0, \quad x \in \Omega', \\
+			& \left. \frac{\partial V_0(x)}{\partial \vec n} \right|_{x \in S} = 0,
+		\end{aligned}
+	\right.
+\end{equation}
+яка має лише тривіальний розв'язок, тобто $V_0(x) \equiv 0$, $x \in \Omega'$. Оскільки потенціал простого шару є неперервною функцією в усьому евклідовому просторі, то $V_0(x) \equiv 0$, $x \in S$, таким чином $V_0(x)$ задовольняє граничній задачі Діріхле
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			& \Delta V_0(x) = 0, \quad x \in \Omega, \\
+			& \left .V_0(x) \right|_{x \in S} = 0,
+		\end{aligned}
+	\right.
+\end{equation}
+яка має лише тривіальний розв'язок $V_0(x) \equiv 0$, $x \in \Omega$. Таким чином маємо, що $V_0(x) \equiv 0$, $x \in \RR^3$, а це означає, враховуючи \eqref{eq:4.9.11}, що $\mu_0(x) \equiv 0$, $x \in S$. Таким чином однорідне рівняння \eqref{eq:4.9.8'} має лише тривіальний розв'язок, а відповідне неоднорідне рівняння \eqref{eq:4.9.8} і спряжене до нього неоднорідне рівняння \eqref{eq:4.9.5} має єдиний розв'язок для будь-якого неперервного вільного члену $f(x)$. З наведених міркувань має місце 
+
+\begin{theorem}[про існування розв'язку внутрішньої задачі Діріхле та зовнішньої задачі Неймана]
+	Нехай $S$ --- замкнена поверхня Ляпунова, тоді внутрішня задача Діріхле \eqref{eq:4.9.1} та зовнішня задача Неймана \eqref{eq:4.9.2'} мають єдині розв'язки для будь-яких неперервних функцій $f(x)$ і розв'язки цих задач можна представити у вигляді потенціалу подвійного шару \eqref{eq:4.9.3} та простого шару \eqref{eq:4.9.4} відповідно.
+\end{theorem}
+
+\subsubsection{Дослідження зовнішньої задачі Діріхле та внутрішньої задачі Неймана}
+
+Розглянемо однорідне рівняння, яке відповідає рівнянню Фредгольма \eqref{eq:4.9.6}
+\begin{equation}
+	\label{eq:4.9.6'}
+	\Iint_S \sigma_0(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\sigma_0(x)}{2} = 0, \quad x \in S, \quad D_{\text{outer}}.
+\end{equation}
+
+Згідно до властивостей інтегралу Гауса $W_0(x)$, легко перевірити, що, рівняння \eqref{eq:4.9.6'} має нетривіальний розв'язок $\sigma_0(x) \equiv 1$, можна показати, що інших нетривіальних розв'язків не існує. Це означає, що розв'язок спряженого неоднорідного рівняння \eqref{eq:4.9.7} існує тоді і лише тоді, коли його вільний член $f$ ортогональний розв'язкам спряженого однорідного рівняння, тобто функції $\sigma_0(x) \equiv 1$. Умову ортогональності можна записати у вигляді 
+\begin{equation}
+	\label{eq:4.9.14}
+	\Iint_S f(x) \diff S = 0.
+\end{equation}
+
+Таким чином має місце
+
+\begin{theorem}[про існування розв'язку внутрішньої задачі Неймана]
+	Нехай $S$ --- замкнута поверхня Ляпунова, а $f \in C(S)$, тоді внутрішня задача Неймана \eqref{eq:4.9.2} має розв'язок тоді і лише тоді, коли виконана умова ортогональності \eqref{eq:4.9.14}, а сам розв'язок можна представити у вигляді потенціалу простого шару \eqref{eq:4.9.4}.
+\end{theorem}
+
+Розглянемо випадок зовнішньої задачі Діріхле. Згідно до того, що однорідне рівняння \eqref{eq:4.9.6'} має один нетривіальний розв'язок, то однорідне спряжене до нього рівняння
+\begin{equation}
+	\label{eq:4.9.7'}
+	\Iint_S \mu_1(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\mu_1(x)}{2}, \quad x \in S, \quad N_{\text{inner}}
+\end{equation}
+теж має один нетривіальний розв'язок $\mu_1(x)$ --- власну функцію характеристичного числа $\lambda = -1/2$. Згідно до третьої теореми Фредгольма, неоднорідне рівняння \eqref{eq:4.9.6} має розв'язок тоді і лише тоді, коли виконується умова ортогональності
+\begin{equation}
+	\Iint_S f(x) \mu_1(x) \diff S = 0
+\end{equation}
+і при цьому розв'язок інтегрального рівняння \eqref{eq:4.9.6} неєдиний. \medskip
+
+В той же час відомо, що зовнішня задача Діріхле має єдиний розв'язок (друга теорема єдиності гармонічних функцій). Отже маємо протиріччя, яке викликане тим, що потенціал подвійного шару
+\begin{equation}
+	u(x) = \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y
+\end{equation}
+у вигляді якого ми шукаємо розв'язок зовнішньої задачі Діріхле не є гармонічною функцією регулярною на нескінченості. Дійсно цей потенціал веде себе як $O(1/|x|^2)$, $|x| \to \infty$, тобто прямує до нуля швидше ніж регулярна гармонічна функція. \medskip
+
+Для виправлення цієї ситуації будемо шукати розв'язок зовнішньої задачі Діріхле $D_{\text{outer}}$ у вигляді:
+\begin{equation}
+	\label{eq:4.9.15}
+	u(x) = \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{1}{|x|} \Iint_S \sigma(y) \diff S_y,
+\end{equation}
+де перший доданок як і раніше є потенціалом подвійного шару, а другий --- \textit{потенціал Робена}, який не порушуючи гармонічність цієї функції, забезпечує регулярність на нескінченості. При цьому ми вважаємо, що система координат обрана таким чином, що точка $x = 0 \in \Omega$. \medskip
+
+Для знаходження щільності $\sigma$, запишемо інтегральне співвідношення використовуючи теорему про граничні значення потенціалу подвійного шару (потенціал Робена є неперервною функцією в $\RR^3$):
+\begin{equation}
+	\label{eq:4.9.16}
+	f(x) = \Iint_S \sigma(y) \left( \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} + \frac{1}{|x|} \right) \diff S_y + \frac{\sigma(x)}{2}.
+\end{equation}
+
+Тут $K(x, y) = \dfrac{\partial}{\partial \vec n_y} \dfrac{1}{4 \pi |x - y|} + \dfrac{1}{|x|}$ --- ядро інтегрального рівняння. \medskip
+
+Покажемо, що \eqref{eq:4.9.16} має єдиний розв'язок. Для цього покажемо, що однорідне рівняння
+\begin{equation}
+	\label{eq:4.9.16'}
+	\Iint_S \sigma(y) \left( \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} + \frac{1}{|x|} \right) \diff S_y + \frac{\sigma(x)}{2} = 0
+\end{equation}
+має лише тривіальний розв'язок. Нехай $\sigma_0$ --- деякий розв'язок рівняння \eqref{eq:4.9.16'}. Побудуємо потенціал з щільністю $\sigma_0$:
+\begin{equation}
+	\label{eq:4.9.17}
+	U_0(x) = \Iint_S \sigma_0(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{1}{|x|} \Iint_S \sigma_0(y) \diff S_y,
+\end{equation}
+який задовольняє рівняння Лапласа для $x \in \Omega'$. З \eqref{eq:4.9.16'} випливає, що граничне значення потенціалу $U_0$ при підході до поверхні $S$ ззовні дорівнює нулю, тобто функція $U_0$ є розв'язком граничної задачі
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			& \Delta U_0(x) = 0, \quad x \in \Omega', \\
+			& \left. U_0 \right|_{x \in S} = 0, \\
+			& U_0(x) = O(1/|x|), \quad |x| \to \infty.
+		\end{aligned}		
+	\right.
+\end{equation}
+
+Ця задача має лише тривіальний розв'язок, тобто $U_0(x) \equiv 0$, $x \in \Omega'$. Помножимо \eqref{eq:4.9.17} на $|x|$, та спрямуємо $x \to \infty$. В результаті отримаємо, що
+\begin{equation}
+	\label{eq:4.9.18}
+	\Iint_S \sigma(y) \diff S = 0.
+\end{equation}
+
+Тобто будь-який розв'язок інтегрального рівняння \eqref{eq:4.9.16'}, задовольняє співвідношення \eqref{eq:4.9.18}, але тоді рівняння \eqref{eq:4.9.16'} спрощується і приймає вигляд
+\begin{equation}
+	\Iint_s \sigma_0(y) \left( \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \right) \diff S_y + \frac{\sigma_0(x)}{2} = 0.
+\end{equation}
+
+Відомо, що це рівняння має у якості розв'язку функцію $\sigma_0(x) \equiv \const$, але з \eqref{eq:4.9.18} випливає що $\sigma_0(x) \equiv 0$. Таким чином, однорідне рівняння має лише тривіальний розв'язок, а відповідне неоднорідне рівняння \eqref{eq:4.9.16} має єдиний розв'язок для будь-якого вільного члена $f$. Тобто нами доведена
+\begin{theorem}[про існування розв'язку зовнішньої задачі Діріхле]
+	Нехай $S$ --- замкнена поверхня Ляпунова, $f \in C(S)$, тоді зовнішня задача Діріхле \eqref{eq:4.9.1'} має єдиний розв'язок регулярний на нескінченості для довільної неперервної функції $f$ і цей розв'язок може бути знайдений у вигляді суми потенціалі подвійного шару і потенціалу Робена.
+\end{theorem}
+
+\subsubsection{Третя гранична задача для рівняння Лапласа}
+
+Окрім основних граничних задач рівняння Лапласа, метод потенціалів може бути застосований до третьої граничної задачі (Ньютона).
+\begin{longtable}{p{.45\textwidth} p{.45\textwidth}p{.45\textwidth}}
+	\parbox{.45\textwidth}{\begin{equation}\label{eq:4.9.19}\left\{\begin{aligned}
+		& \Delta u(x) = 0, \quad x \in \Omega, \\
+		& \left. \left( \frac{\partial u}{\partial \vec n} + \alpha(x) u \right) \right|_{x \in S} = f(x).
+	\end{aligned}\right.\end{equation}} & \parbox{.45\textwidth}{\begin{equation}\label{eq:4.9.19'}\left\{\begin{aligned}
+		& \Delta u(x) = 0, \quad x \in \Omega', \\
+		& \left. \left( \frac{\partial u}{\partial \vec n} + \alpha(x) u \right) \right|_{x \in S} = f(x), \\
+		& u(x) = O(1/|x|), \quad |x| \to \infty.
+	\end{aligned}\right.\end{equation}}
+\end{longtable}
+
+Будемо припускати, $\alpha(x) > 0$, $x \in S$. Розв'язок граничних задач \eqref{eq:4.9.19} та \eqref{eq:4.9.19'} будемо шукати у вигляді потенціалів простого шару
+\begin{equation}
+	V(x) = \Iint_S \mu(y) \frac{1}{4 \pi |x - y|} \diff S_y.
+\end{equation}
+
+Враховуючи теорему про граничні значення нормальної похідної потенціалу простого шару запишемо інтегральні рівняння для щільності потенціалу $\mu$ по поверхні $S$:
+\begin{align}
+	\label{eq:4.9.20},
+	f(x) &= \Iint_S \mu(y) \left( \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} + \frac{\alpha(x)}{4 \pi |x - y|} \right) \diff S_y + \frac{\mu(x)}{2}, \quad x \in S, \quad H_{\text{inner}}, \\
+	\label{eq:4.9.20'}.
+	f(x) &= \Iint_S \mu(y) \left( \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} + \frac{\alpha(x)}{4 \pi |x - y|} \right) \diff S_y - \frac{\mu(x)}{2}, \quad x \in S, \quad H_{\text{outer}}.
+\end{align}
+
+Можна показати, що у випадку, коли $\alpha(x) \ge 0$, $x \in S$, інтегральні рівняння \eqref{eq:4.9.20} та \eqref{eq:4.9.20'} мають єдині розв'язки для будь-якої неперервної функції $f(x)$, і ці розв'язки можуть бути знайдені у вигляді потенціалу простого шару. 
+
+\subsubsection{Дослідження існування розв'язків граничних задач рівняння Гельмгольца}
+
+Розглянемо граничні задачі для однорідного рівняння Гельмгольца
+\begin{align}
+	\label{eq:4.9.21}
+	& \left\{
+		\begin{aligned}
+			& (\Delta + k^2) u(x) = 0, \quad x \in \Omega, \\
+			& \left. u \right|_{x \in S} = f(x).
+		\end{aligned}
+	\right. \\[.5cm]
+	\label{eq:4.9.21'}
+	& \left\{
+		\begin{aligned}
+			& (\Delta + k^2) u(x) = 0, \quad x \in \Omega', \\
+			& \left. u \right|_{x \in S} = f(x), \\
+			& u(x) = O(1/|x|), \quad |x| \to \infty, \\
+			& \frac{\partial u(x)}{\partial |x|} \pm i k u(x) = o(1/|x|), \quad |x| \to \infty.
+		\end{aligned}
+	\right. \\[.5cm]
+	\label{eq:4.9.22}
+	& \left\{
+		\begin{aligned}
+			& (\Delta + k^2) u(x) = 0, \quad x \in \Omega, \\
+			& \left. \frac{\partial u}{\partial \vec n} \right|_{x \in S} = f(x)
+		\end{aligned}
+	\right. \\[.5cm]
+	\label{eq:4.9.22'}
+	& \left\{
+		\begin{aligned}
+			& (\Delta + k^2) u(x) = 0, \quad x \in \Omega', \\
+			& \left. \frac{\partial u}{\partial \vec n} \right|_{x \in S} = f(x), \\
+			& u(x) = O(1/|x|), \quad |x| \to \infty, \\
+			& \frac{\partial u(x)}{\partial |x|} \pm i k u(x) = o(1/|x|), \quad |x| \to \infty.
+		\end{aligned}
+	\right.
+\end{align}
+
+Будемо шукати розв'язки граничних задач для рівняння Гельмгольца у вигляді потенціалу простого шару
+\begin{equation}
+	V^k(x) = \Iint_S \frac{e^{\pm i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y
+\end{equation}
+для задачі Неймана \eqref{eq:4.9.22}, \eqref{eq:4.9.22'} та у вигляді потенціалу подвійного шару
+\begin{equation}
+	W^k(x) = \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{e^{\pm i k |x - y|}}{4 \pi |x - y|} \diff S_y
+\end{equation}
+для задачі Діріхле \eqref{eq:4.9.21}, \eqref{eq:4.9.21'}.
+
+\begin{theorem}[про існування розв'язків граничних задач для рівняння Гельмгольца]
+	Нехай число $k^2$ не є власним числом внутрішніх задач Діріхле та Неймана оператора Лапласа в області $\Omega$, тоді граничні задачі Діріхле та Неймана, внутрішня та зовнішня \eqref{eq:4.9.21}, \eqref{eq:4.9.22} та \eqref{eq:4.9.21'}, \eqref{eq:4.9.22'} мають єдиний розв'язок для будь-якої неперервної функції $f(x)$ на поверхні $S$, і ці розв'язки можна представити у вигляді потенціалів подвійного шару та простого шару відповідно.
+\end{theorem}
+
+\begin{proof}
+	Будемо шукати розв'язки внутрішньої та зовнішньої задачі Діріхле у вигляді потенціалу подвійного шару
+	\begin{equation}
+		\label{eq:4.9.23}
+		u(x) = \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{e^{i k |x - y|}}{4 \pi |x - y|} \diff S_y,
+	\end{equation}
+	а внутрішньої та зовнішньої задач Неймана у вигляді потенціалу простого шару
+	\begin{equation}
+		\label{eq:4.9.24}
+		\Iint_S \frac{e^{- i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y,
+	\end{equation}
+
+	Враховуючи властивості потенціалів та фундаментальних розв'язків оператора Гельмгольца, легко бачити, що ці функції задовольняють однорідному рівнянню Гельмгольца та умовам регулярності на нескінченості у випадку зовнішніх задач.
+	Для визначення невідомої щільності запишемо граничні інтегральні рівняння:
+	\begin{align}
+		\label{eq:4.9.25}
+		& f(x) = - \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y, \quad D_{\text{inner}}, \\
+		\label{eq:4.9.25'}
+		& f(x) = \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y, \quad D_{\text{outer}}, \\
+		\label{eq:4.9.26}
+		& f(x) = \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y, \quad N_{\text{inner}}, \\
+		\label{eq:4.9.26'}
+		& f(x) = - \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y, \quad N_{\text{outer}}.
+	\end{align}
+
+	Тут
+	\begin{equation}
+		\label{eq:4.9.27}
+		K(x, y) = \frac{\partial}{\partial \vec n_y} \frac{e^{ik|x - y|}}{4 \pi |x - y|} = \frac{i k |x - y| - 1}{4 \pi |x - y|^2} e^{i k|x - y|} \cos(y - x, \vec n_y)
+	\end{equation}
+	та
+	\begin{equation}
+		\label{eq:4.9.27'}
+		K^\star(x, y) = \frac{\partial}{\partial \vec n_x} \frac{e^{-ik|x - y|}}{4 \pi |x - y|} = \frac{- i k |x - y| - 1}{4 \pi |x - y|^2} e^{- i k|x - y|} \cos(x - y, \vec n_x)
+	\end{equation}
+	--- ядра основного та спряженого інтегральних рівнянь. \medskip
+
+	Вивчимо випадок зовнішньої задачі Діріхле та внутрішньої задачі Неймана $D_{\text{outer}}, N_{\text{inner}}$. Розглянемо однорідне інтегральне рівняння, яке відповідає $N_{\text{inner}}$:
+	\begin{equation}
+		\label{eq:4.9.28}
+		0 = \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y. 
+	\end{equation}
+
+	Припустимо, що \eqref{eq:4.9.28} має єдиний нетривіальний розв'язок $\mu_0$, тоді і однорідне рівняння для $D_{\text{outer}}$
+	\begin{equation}
+		\label{eq:4.9.29}
+		f(x) = \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y. 
+	\end{equation}
+	теж має єдиний нетривіальний розв'язок $\sigma_0$. Складемо потенціал простого шару з щільністю $\mu_0$:
+	\begin{equation}
+		V_0^k(x) = \Iint_S \frac{e^{-ik|x-y|}\mu_0(y)}{4\pi|x-y|}\diff S_y.	
+	\end{equation}
+
+	З теореми про розрив нормальної похідної потенціалу простого шару маємо, що цей потенціал є розв'язком граничної задачі:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				& (\Delta + k^2) V_0^k(x) = 0, \quad x \in \Omega, \\
+				& \left. \frac{\partial V_0^k(x)}{\partial \vec n_{\text{inner}}} \right|_{x \in S} = 0,
+			\end{aligned}
+		\right.
+	\end{equation}
+	але оскільки $k^2$ не є власне число внутрішньої задачі Неймана, то остання гранична задача має лише тривіальний розв'язок, тобто $V_0^k(x) \equiv 0$, $x \in \Omega$. Враховуючи неперервність потенціалу простого шару в усьому евклідовому просторі можна записати, що $V_0^k(x) \equiv 0$, $x \in S$. Звідси випливає, що $V_0^k$ задовольняє граничній задачі
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				& (\Delta + k^2) V_0^k(x) = 0, \quad x \in \Omega', \\
+				& \left. V_0^k(x) \right|_{x \in S} = 0,
+			\end{aligned}
+		\right.
+	\end{equation}
+	а оскільки $V_0^k(x)$ задовольняє умові Зомерфельда, то єдиним розв'язком останньої задачі Діріхле є тотожній нуль. Отже маємо, що $V_0^k(x) \equiv 0$, $x \in \RR^3$, а це в свою чергу означає, що $\mu_0 \equiv 0$, $x \in S$ і рівняння \eqref{eq:4.9.28} та \eqref{eq:4.9.29} мають лише тривіальні розв'язки. Згідно до теореми Фредгольма відповідні неоднорідні рівняння \eqref{eq:4.9.25'} та \eqref{eq:4.9.26} мають єдиний розв'язок для будь-якого вільного члена $f$.
+\end{proof}
+
+\end{document}
