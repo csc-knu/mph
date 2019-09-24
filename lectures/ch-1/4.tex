@@ -1,10 +1,10 @@
- \input{../univ.sty}
+ \input{univ.sty}
 
  \title{{\Huge МАТЕМАТИЧНА ФІЗИКА}}
  \author{Скибицький Нікіта}
  \date{\today}
 
- \input{../th.sty}
+ \input{th.sty}
 
  \begin{document}
 
@@ -39,7 +39,7 @@
 	\begin{equation}
 		\|\bf{K} f\|_{L_2(G)} \le MV \|f\|_{L_2(G)} \le MV,
 	\end{equation}
-    то $0 \le \nu \le MV$. \medskip
+
 
 	Згідно до визначення точної верхньої межі,
 	\begin{equation}
@@ -94,9 +94,9 @@
 	
 	Отже маємо: $(\bf{K} + E\nu)(\bf{K} - E \nu)\phi=0$. Ця рівність може мати місце у двох випадках:
 	\begin{enumerate}
-		\item $(\bf{K} - E\nu) \phi \equiv 0$. Тоді $\phi = \dfrac{1}{\nu}\bf{K}\phi$, а отже $\phi$ --- власна функція, $\dfrac{1}{\nu}$ --- характеристичне число оператора $\bf{K}$.
+		\item $(\bf{K} - E\nu) \phi \equiv 0$. Тоді $\phi = \frac{1}{\nu}\bf{K}\phi$, а отже $\phi$ --- власна функція, $\frac{1}{\nu}$ --- характеристичне число оператора $\bf{K}$.
 
-		\item $(\bf{K} - E\nu) \phi \equiv \Phi \ne 0$. Тоді $(\bf{K} + E \nu) \Phi \equiv 0$. Тоді $\Phi = -\dfrac{1}{\nu}\bf{K}\Phi$, а отже $\Phi$ --- власна функція, $-\dfrac{1}{\nu}$ --- характеристичне число оператора $\bf{K}$.
+		\item $(\bf{K} - E\nu) \phi \equiv \Phi \ne 0$. Тоді $(\bf{K} + E \nu) \Phi \equiv 0$. Тоді $\Phi = -\frac{1}{\nu}\bf{K}\Phi$, а отже $\Phi$ --- власна функція, $-\frac{1}{\nu}$ --- характеристичне число оператора $\bf{K}$.
 	\end{enumerate}
 	
 	Залишилось довести, що це характеристичне число є мінімальним за модулем. Припустимо супротивне. Нехай $\exists \lambda_0: |\lambda_0| < |\lambda_1|$, тоді
@@ -140,10 +140,10 @@
 	K^p(x, y) = (K^p)^\star (x, y) \in  C\left(\overline G \times \overline G\right).
 \end{equation}
 
-Дослідимо властивості повторних ермітових операторів.
+Дослідимо властивості  ермітових операторів, що відврвідають ядру $K^p(x, y)$.
 
 \begin{proposition}
-	Будь-яке характеристичне число $\lambda_j$, $j > p + 1$ та відповідна йому власна функція $\phi_j$ є характеристичним числом і власною функцією ядра $K^p(x,y)$.
+	Будь-яке характеристичне число $\lambda_j$, $j\ge p + 1$ та відповідна йому власна функція $\phi_j$ є характеристичним числом і власною функцією ядра $K^p(x,y)$.
 \end{proposition}
 
 \begin{proof}
@@ -250,7 +250,7 @@
 \subsubsection{Теорема Гільберта-Шмідта}
 
 \begin{definition}[джерелувато-зображуваної функції]
-	Функція $f(x)$ називається \it{джерелувато-зображуваною} через ермітове неперервне ядро $K(x, y) = K^\star (x, y)$, $K \in C(G \times G$, якщо існує функція $h(x) \in L_2(G)$, така що 
+	Функція $f(x)$ називається \it{джерелувато-зображуваною} через ермітове неперервне ядро $K(x, y) = K^\star (x, y)$, $K \in  C\left(\overline G \times \overline G\right)$, якщо існує функція $h(x) \in L_2(G)$, така що 
 	\begin{equation}
 		f(x) = \Int_G K(x, y) h(y) \diff y.
 	\end{equation}
@@ -279,7 +279,6 @@
 	\begin{equation}
 		\left\| f - \Sum_{i = 1}^p \dfrac{(h, \phi_i)}{\lambda_i} \phi_i \right\|_{L_2(G)} = \left\| \bf{K}h - \Sum_{i = 1}^p \dfrac{(h, \phi_i)}{\lambda_i} \phi_i \right\|_{L_2(G)} \xrightarrow[p \to \infty]{}0.
 	\end{equation}
-
 	Покажемо, що формулу 
 	\begin{equation}
 		K(x, y) \sim \Sum_{i = 1}^\infty \dfrac{\phi_i(x) \overline \phi_i(y)}{\lambda_i}.
@@ -317,7 +316,7 @@
 	\begin{equation}
 		\sum_{i=1}^\infty \frac{(h, \phi_i)}{\lambda_i} \phi_i
 	\end{equation}
-	збігається абсолютно і рівномірно.
+	збігається абсолютно і рівномірно саме до функції $f(x)$.
 \end{proof}
 
 \begin{corollary}
@@ -368,7 +367,7 @@
 
 	Додатково інтегруючи по аргументу $y \in G$ отримаємо збіжність вищезгаданого білінійного ряду в середньоквадратичному:
 	\begin{equation}
-		\Iint_{G \times G} \left( K(x, y) - \Sum_{i = 1}^p \dfrac{\phi_i(x) \overline \phi_i(y)}{\lambda_i} \right)^2 \diff y \xrightarrow[p \to \infty]{} 0.
+		\Iint_{G \times G} \left( K(x, y) - \Sum_{i = 1}^p \dfrac{\phi_i(x) \overline \phi_i(y)}{\lambda_i} \right)^2 \diff y \diff x\xrightarrow[p \to \infty]{} 0.
 	\end{equation}
 \end{proof}
 
