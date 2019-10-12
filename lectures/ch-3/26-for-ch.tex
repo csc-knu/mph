@@ -21,7 +21,7 @@
 \end{longtable}
 
 \begin{definition}
-	Будемо називати граничні задачі \eqref{eq:4.9.1} та \eqref{eq:4.9.1'} \textit{внутрішньою} та \textit{зовнішньою граничними задачами Діріхле} і позначати $D_{\text{inner}}$ та $D_{\text{outer}}$ відповідно. Граничні задачі \eqref{eq:4.9.2} та \eqref{eq:4.9.2'} будемо називати \textit{внутрішньою} та \textit{зовнішньою граничними задачами Неймана} та позначати $N_{\text{inner}}$ та $N_{\text{outer}}$ відповідно.  	
+	Будемо називати граничні задачі \eqref{eq:4.9.1} та \eqref{eq:4.9.1'} \textit{внутрішньою} та \textit{зовнішньою граничними задачами Діріхле} і позначати $D_{\text{i}}$ та $D_{\text{e}}$ відповідно. Граничні задачі \eqref{eq:4.9.2} та \eqref{eq:4.9.2'} будемо називати \textit{внутрішньою} та \textit{зовнішньою граничними задачами Неймана} та позначати $N_{\text{i}}$ та $N_{\text{e}}$ відповідно.  	
 \end{definition}
 
 Функцію $f(x)$ будемо вважати неперервною на поверхні Ляпунова $S$. \medskip
@@ -29,9 +29,9 @@
 Враховуючи властивості потенціалів, будемо шукати розв'язки граничних задач Діріхле у вигляді потенціалу подвійного шару, а задач Неймана у вигляді потенціалу простого шару з невідомими щільностями:
 \begin{align}
 	\label{eq:4.9.3}
-	u(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y \qquad \text{для }D_{\text{inner}}\text{ та }D_{\text{outer}}, \\
+	u(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y \qquad \text{для }D_{\text{i}}\text{ та }D_{\text{e}}, \\
 	\label{eq:4.9.4}
-	u(x) &= \Iint_S \mu(y) \frac{1}{4 \pi |x - y|} \diff S_y \qquad \text{для }N_{\text{inner}}\text{ та }N_{\text{outer}}.
+	u(x) &= \Iint_S \mu(y) \frac{1}{4 \pi |x - y|} \diff S_y \qquad \text{для }N_{\text{i}}\text{ та }N_{\text{e}}.
 \end{align}
 
 В області $\Omega$ та $\Omega'$ потенціали простого шару та подвійного шару задовольняють рівняння Лапласа. \medskip
@@ -43,16 +43,16 @@
 Для запису інтегральних співвідношень використаємо теореми про граничні значення потенціалу подвійного шару та граничні значення нормальної похідної  потенціалу простого шару.
 \begin{align}
 	\label{eq:4.9.5}
-	f(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\sigma(x)}{2}, \quad x \in S, \quad D_{\text{inner}} \\
+	f(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\sigma(x)}{2}, \quad x \in S, \quad D_{\text{i}} \\
 	\label{eq:4.9.6}
-	f(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\sigma(x)}{2}, \quad x \in S, \quad D_{\text{outer}} \\
+	f(x) &= \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\sigma(x)}{2}, \quad x \in S, \quad D_{\text{e}} \\
 	\label{eq:4.9.7}
-	f(x) &= \Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\mu(x)}{2}, \quad x \in S, \quad N_{\text{inner}} \\
+	f(x) &= \Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\mu(x)}{2}, \quad x \in S, \quad N_{\text{i}} \\
 	\label{eq:4.9.8}
-	f(x) &= \Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\mu(x)}{2}, \quad x \in S, \quad N_{\text{outer}}.
+	f(x) &= \Iint_S \mu(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y - \frac{\mu(x)}{2}, \quad x \in S, \quad N_{\text{e}}.
 \end{align}
 
-Неважко бачити, що рівняння \eqref{eq:4.9.5}--\eqref{eq:4.9.8} є інтегральними рівняннями Фредгольма другого роду і розпадаються на дві пари союзних (спряжених): $D_{\text{inner}}$, $N_{\text{outer}}$ та $D_{\text{outer}}$, $N_{\text{inner}}$. З теорем Фредгольма відомо, що існування і єдність розв'язків інтегрального рівняння і спряженого до нього виконується одночасно. Тому ми будемо досліджувати одночасно пари рівнянь $D_{\text{inner}}$, $N_{\text{outer}}$ та $D_{\text{outer}}$, $N_{\text{inner}}$. \medskip
+Неважко бачити, що рівняння \eqref{eq:4.9.5}--\eqref{eq:4.9.8} є інтегральними рівняннями Фредгольма другого роду і розпадаються на дві пари союзних (спряжених): $D_{\text{i}}$, $N_{\text{e}}$ та $D_{\text{e}}$, $N_{\text{i}}$. З теорем Фредгольма відомо, що існування і єдність розв'язків інтегрального рівняння і спряженого до нього виконується одночасно. Тому ми будемо досліджувати одночасно пари рівнянь $D_{\text{i}}$, $N_{\text{e}}$ та $D_{\text{e}}$, $N_{\text{i}}$. \medskip
 
 Ядро інтегрального рівняння \eqref{eq:4.9.6} має вигляд
 \begin{equation}
@@ -92,7 +92,7 @@
 Потенціал \eqref{eq:4.9.11} має правильну нормальну похідну при підході до поверхні $S$ ззовні, а рівняння \eqref{eq:4.9.8''} означає, що
 \begin{equation}
 	\label{eq:4.9.12}
-	\frac{\partial V_0(x)}{\partial \vec n_{\text{inner}}} \equiv 0.
+	\frac{\partial V_0(x)}{\partial \vec n_{\text{e}}} \equiv 0, x \in S.
 \end{equation}
 
 Зрозуміло, що для $V_0$ задовольняє граничній задачі
@@ -101,7 +101,8 @@
 	\left\{
 		\begin{aligned}
 			& \Delta V_0(x) = 0, \quad x \in \Omega', \\
-			& \left. \frac{\partial V_0(x)}{\partial \vec n} \right|_{x \in S} = 0,
+			& \left. \frac{\partial V_0(x)}{\partial \vec n} \right|_{x \in S} = 0,\\
+			& V_0(x) = O(1/|x|), \quad |x| \to \infty
 		\end{aligned}
 	\right.
 \end{equation}
@@ -125,7 +126,7 @@
 Розглянемо однорідне рівняння, яке відповідає рівнянню Фредгольма \eqref{eq:4.9.6}
 \begin{equation}
 	\label{eq:4.9.6'}
-	\Iint_S \sigma_0(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\sigma_0(x)}{2} = 0, \quad x \in S, \quad D_{\text{outer}}.
+	\Iint_S \sigma_0(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\sigma_0(x)}{2} = 0, \quad x \in S, \quad D_{\text{e}}.
 \end{equation}
 
 Згідно до властивостей інтегралу Гауса $W_0(x)$, легко перевірити, що, рівняння \eqref{eq:4.9.6'} має нетривіальний розв'язок $\sigma_0(x) \equiv 1$, можна показати, що інших нетривіальних розв'язків не існує. Це означає, що розв'язок спряженого неоднорідного рівняння \eqref{eq:4.9.7} існує тоді і лише тоді, коли його вільний член $f$ ортогональний розв'язкам спряженого однорідного рівняння, тобто функції $\sigma_0(x) \equiv 1$. Умову ортогональності можна записати у вигляді 
@@ -145,7 +146,7 @@
 	\label{eq:4.9.7'}
 	\Iint_S \mu_1(y) \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{\mu_1(x)}{2}, \quad x \in S, \quad N_{\text{inner}}
 \end{equation}
-теж має один нетривіальний розв'язок $\mu_1(x)$ --- власну функцію характеристичного числа $\lambda = -1/2$. Згідно до третьої теореми Фредгольма, неоднорідне рівняння \eqref{eq:4.9.6} має розв'язок тоді і лише тоді, коли виконується умова ортогональності
+теж має один нетривіальний розв'язок $\mu_1(x)$ --- власну функцію характеристичного числа $\lambda = -2$. Згідно до третьої теореми Фредгольма, неоднорідне рівняння \eqref{eq:4.9.6} має розв'язок тоді і лише тоді, коли виконується умова ортогональності
 \begin{equation}
 	\Iint_S f(x) \mu_1(x) \diff S = 0
 \end{equation}
@@ -157,7 +158,7 @@
 \end{equation}
 у вигляді якого ми шукаємо розв'язок зовнішньої задачі Діріхле не є гармонічною функцією регулярною на нескінченості. Дійсно цей потенціал веде себе як $O(1/|x|^2)$, $|x| \to \infty$, тобто прямує до нуля швидше ніж регулярна гармонічна функція. \medskip
 
-Для виправлення цієї ситуації будемо шукати розв'язок зовнішньої задачі Діріхле $D_{\text{outer}}$ у вигляді:
+Для виправлення цієї ситуації будемо шукати розв'язок зовнішньої задачі Діріхле $D_{\text{e}}$ у вигляді:
 \begin{equation}
 	\label{eq:4.9.15}
 	u(x) = \Iint_S \sigma(y) \frac{\partial}{\partial \vec n_y} \frac{1}{4 \pi |x - y|} \diff S_y + \frac{1}{|x|} \Iint_S \sigma(y) \diff S_y,
@@ -230,10 +231,10 @@
 
 Враховуючи теорему про граничні значення нормальної похідної потенціалу простого шару запишемо інтегральні рівняння для щільності потенціалу $\mu$ по поверхні $S$:
 \begin{align}
-	\label{eq:4.9.20},
-	f(x) &= \Iint_S \mu(y) \left( \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} + \frac{\alpha(x)}{4 \pi |x - y|} \right) \diff S_y + \frac{\mu(x)}{2}, \quad x \in S, \quad H_{\text{inner}}, \\
-	\label{eq:4.9.20'}.
-	f(x) &= \Iint_S \mu(y) \left( \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} + \frac{\alpha(x)}{4 \pi |x - y|} \right) \diff S_y - \frac{\mu(x)}{2}, \quad x \in S, \quad H_{\text{outer}}.
+	\label{eq:4.9.20}
+	f(x) &= \Iint_S \mu(y) \left( \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} + \frac{\alpha(x)}{4 \pi |x - y|} \right) \diff S_y + \frac{\mu(x)}{2}, \quad x \in S, \quad H_{\text{i}}, \\
+	\label{eq:4.9.20'}
+	f(x) &= \Iint_S \mu(y) \left( \frac{\partial}{\partial \vec n_x} \frac{1}{4 \pi |x - y|} + \frac{\alpha(x)}{4 \pi |x - y|} \right) \diff S_y - \frac{\mu(x)}{2}, \quad x \in S, \quad H_{\text{e}}.
 \end{align}
 
 Можна показати, що у випадку, коли $\alpha(x) \ge 0$, $x \in S$, інтегральні рівняння \eqref{eq:4.9.20} та \eqref{eq:4.9.20'} мають єдині розв'язки для будь-якої неперервної функції $f(x)$, і ці розв'язки можуть бути знайдені у вигляді потенціалу простого шару. 
@@ -299,20 +300,20 @@
 	а внутрішньої та зовнішньої задач Неймана у вигляді потенціалу простого шару
 	\begin{equation}
 		\label{eq:4.9.24}
-		\Iint_S \frac{e^{- i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y,
+	u(x)=	\Iint_S \frac{e^{- i k |x - y|} \mu(y)}{4 \pi |x - y|} \diff S_y,
 	\end{equation}
 
 	Враховуючи властивості потенціалів та фундаментальних розв'язків оператора Гельмгольца, легко бачити, що ці функції задовольняють однорідному рівнянню Гельмгольца та умовам регулярності на нескінченості у випадку зовнішніх задач.
 	Для визначення невідомої щільності запишемо граничні інтегральні рівняння:
 	\begin{align}
 		\label{eq:4.9.25}
-		& f(x) = - \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y, \quad D_{\text{inner}}, \\
+		& f(x) = - \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y, \quad D_{\text{i}}, \\
 		\label{eq:4.9.25'}
-		& f(x) = \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y, \quad D_{\text{outer}}, \\
+		& f(x) = \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y, \quad D_{\text{e}}, \\
 		\label{eq:4.9.26}
-		& f(x) = \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y, \quad N_{\text{inner}}, \\
+		& f(x) = \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y, \quad N_{\text{i}}, \\
 		\label{eq:4.9.26'}
-		& f(x) = - \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y, \quad N_{\text{outer}}.
+		& f(x) = - \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y, \quad N_{\text{e}}.
 	\end{align}
 
 	Тут
@@ -327,13 +328,13 @@
 	\end{equation}
 	--- ядра основного та спряженого інтегральних рівнянь. \medskip
 
-	Вивчимо випадок зовнішньої задачі Діріхле та внутрішньої задачі Неймана $D_{\text{outer}}, N_{\text{inner}}$. Розглянемо однорідне інтегральне рівняння, яке відповідає $N_{\text{inner}}$:
+	Вивчимо випадок зовнішньої задачі Діріхле та внутрішньої задачі Неймана $D_{\text{e}}, N_{\text{i}}$. Розглянемо однорідне інтегральне рівняння, яке відповідає $N_{\text{i}}$:
 	\begin{equation}
 		\label{eq:4.9.28}
 		0 = \frac{\mu(x)}{2} + \Iint_S K^\star(x, y) \mu(y) \diff S_y. 
 	\end{equation}
 
-	Припустимо, що \eqref{eq:4.9.28} має єдиний нетривіальний розв'язок $\mu_0$, тоді і однорідне рівняння для $D_{\text{outer}}$
+	Припустимо, що \eqref{eq:4.9.28} має єдиний нетривіальний розв'язок $\mu_0$, тоді і однорідне рівняння для $D_{\text{e}}$
 	\begin{equation}
 		\label{eq:4.9.29}
 		f(x) = \frac{\sigma(x)}{2} + \Iint_S K(x, y) \sigma(y) \diff S_y. 
@@ -348,7 +349,7 @@
 		\left\{
 			\begin{aligned}
 				& (\Delta + k^2) V_0^k(x) = 0, \quad x \in \Omega, \\
-				& \left. \frac{\partial V_0^k(x)}{\partial \vec n_{\text{inner}}} \right|_{x \in S} = 0,
+				& \left. \frac{\partial V_0^k(x)}{\partial \vec n_{\text{i}}} \right|_{x \in S} = 0,
 			\end{aligned}
 		\right.
 	\end{equation}
