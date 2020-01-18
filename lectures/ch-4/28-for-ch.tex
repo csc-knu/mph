@@ -134,7 +134,7 @@
 \begin{proposition}
     Матричне представлення спряженого оператора $A^\star$ в базисі $\{e_i\}_{i = 1}^\infty$ записується через матрицюз елементами
     \begin{equation*}
-        a_{i, j}^\star = (A^\star e_i, e_j) = (e_i, A e_j) = \bar a_{j, i}, \quad i, j = 1, 2, \ldots
+        a_{i, j}^\star = (A^\star e_i, e_j) = (e_i, A e_j) = \overline a_{j, i}, \quad i, j = 1, 2, \ldots
     \end{equation*}
     тобто через транспоновану і комплексно-спряжену.
 \end{proposition}
@@ -210,25 +210,25 @@
 Для спряженого рівняння
 \begin{equation}
     \label{eq:5.1.5'}
-    (I - \bar \lambda A^\star) f^\star = g^\star
+    (I - \overline \lambda A^\star) f^\star = g^\star
 \end{equation}
 можна записати представлення
 \begin{equation}
     \label{eq:5.1.7'}
-    (I - \bar \lambda A_2^\star) f^\star - \bar \lambda A_1^\star f^\star = g^\star.
+    (I - \overline \lambda A_2^\star) f^\star - \overline \lambda A_1^\star f^\star = g^\star.
 \end{equation}
 
 Застосуємо до останнього рівняння оператор
 \begin{equation*}
-    \left( I - \bar \lambda A_2^\star \right)^{-1},
+    \left( I - \overline \lambda A_2^\star \right)^{-1},
 \end{equation*}
 отримаємо еквівалентне рівняння:
 \begin{equation}
     \label{eq:5.1.8'}
-    f^\star - \bar \lambda \left( I - \bar \lambda A_2^\star \right)^{-1} A_1^\star f^\star = z^\star, \quad x^\star = \left( I - \bar \lambda A_2^\star \right)^{-1} g^\star.
+    f^\star - \overline \lambda \left( I - \overline \lambda A_2^\star \right)^{-1} A_1^\star f^\star = z^\star, \quad x^\star = \left( I - \overline \lambda A_2^\star \right)^{-1} g^\star.
 \end{equation}
 
-При цьому оператор $\left( I - \bar \lambda A_2^\star \right)^{-1} A_1^\star$ буде спряженим до оператора $A_1 (I - \lambda A_2)^{-1}$. Враховуючи скінченновимірність оператора $A_1$ скінченновимірним буде також оператор $A_1 (I - \lambda A_2)^{-1}$, тобто його матричне представлення може бути записане через елементи базису $\{e_1, e_2, \ldots, e_n\}$ і при цьому
+При цьому оператор $\left( I - \overline \lambda A_2^\star \right)^{-1} A_1^\star$ буде спряженим до оператора $A_1 (I - \lambda A_2)^{-1}$. Враховуючи скінченновимірність оператора $A_1$ скінченновимірним буде також оператор $A_1 (I - \lambda A_2)^{-1}$, тобто його матричне представлення може бути записане через елементи базису $\{e_1, e_2, \ldots, e_n\}$ і при цьому
 \begin{equation*}
     \sum_{i = 1}^\infty |a_{i,j}|^2 = \left\| A_1 (I - \lambda A_2)^{-1} \right\|^2.
 \end{equation*}
@@ -248,16 +248,16 @@
     h_j - \lambda \sum_{i = 1}^n a_{i, j} h_i = g_j + \lambda \sum_{i = n + 1}^\infty a_{i, j} g_j, \quad j \le n.
 \end{equation}
 
-Аналогічним чином спряжене рівняння \eqref{eq:5.1.8'} можна замінити системою лінійних алгебраїчних рівнянь для знаходження коефіцієнтів Фур'є $f_j^\star$, $j = 1, 2, \ldots$ елемента $f^\star$ через коефіцієнти Фур'є $z_j^\star$, $j = 1, 2, \ldots$ елемента $z^\star = (I - \bar \lambda A_2^\star)^{-1} g^\star$. При цьому для $f_j^\star$, $j \le n$ отримаємо лінійну алгебраїчну систему
+Аналогічним чином спряжене рівняння \eqref{eq:5.1.8'} можна замінити системою лінійних алгебраїчних рівнянь для знаходження коефіцієнтів Фур'є $f_j^\star$, $j = 1, 2, \ldots$ елемента $f^\star$ через коефіцієнти Фур'є $z_j^\star$, $j = 1, 2, \ldots$ елемента $z^\star = (I - \overline \lambda A_2^\star)^{-1} g^\star$. При цьому для $f_j^\star$, $j \le n$ отримаємо лінійну алгебраїчну систему
 \begin{equation}
     \label{eq:5.1.9'}
-    f_j^\star - \bar \lambda \sum_{i = 1}^n \bar a_{j, i} f_j^\star = z_j^\star, \quad j = 1, 2, \ldots, n.
+    f_j^\star - \overline \lambda \sum_{i = 1}^n \overline a_{j, i} f_j^\star = z_j^\star, \quad j = 1, 2, \ldots, n.
 \end{equation}
 
 При цьому
 \begin{equation}
     \label{eq:5.1.10}
-    f_j^\star = z_j^\star = \bar \lambda \sum_{i = 1}^n \bar a_{j, i} f_j^\star, \quad j > n.
+    f_j^\star = z_j^\star = \overline \lambda \sum_{i = 1}^n \overline a_{j, i} f_j^\star, \quad j > n.
 \end{equation}
 
 \subsubsection{Теореми Фредгольма для операторного рівняння}
@@ -302,11 +302,11 @@
 \end{proof}
 
 \begin{theorem}[Фредгольма для операторного рівняння, друга]
-    Однорідне рівняння \eqref{eq:5.1.11'} може мати нетривіальний розв'язок лише для зліченної множини значень параметру $\lambda = \lambda_k$, $k = 1, 2, \ldots$, кожне з яких має скінченну кратність. Спряжене рівняння \eqref{eq:5.1.12'} має нетривіальний розв'язок тоді і лише тоді, коли параметр $\lambda = \bar \lambda_k$, $k = 1, 2, \ldots$, при цьому кратність $\lambda_k$ і $\bar \lambda_k$ співпадає.
+    Однорідне рівняння \eqref{eq:5.1.11'} може мати нетривіальний розв'язок лише для зліченної множини значень параметру $\lambda = \lambda_k$, $k = 1, 2, \ldots$, кожне з яких має скінченну кратність. Спряжене рівняння \eqref{eq:5.1.12'} має нетривіальний розв'язок тоді і лише тоді, коли параметр $\lambda = \overline \lambda_k$, $k = 1, 2, \ldots$, при цьому кратність $\lambda_k$ і $\overline \lambda_k$ співпадає.
 \end{theorem}
 
 \begin{proof}
-    Для довільного значення параметра $\lambda$ викон $\rang (\textbf{E} - \lambda \textbf{A}) = \rang (\textbf{E} - \bar \lambda \textbf{A}^\star) = q \le n$, де $\textbf{A} = (a_{i, j})$, $\textbf{A}^\star = (\bar a_{j, i})$, $i, j = 1, 2, \ldots, n$. Таким чином однорідні для $\eqref{eq:5.1.9}$ та $\eqref{eq:5.1.9'}$ системи рівнянь мають однакову кількість лінійно незалежних розв'язків, що рівна $n - q$. Для випадку, коли $q < n$ число $\lambda$ будемо визначати як характеристичне число, число $r = n - q$ є кратність характеристичного числа $\lambda$, а відповідні розв'язки ($n$-вимірні вектори) $f^{(1)}, f^{(2)}, \ldots, f^{(r)}$ як власні вектори числа $\lambda$. При цьому спряжене однорідне рівняння для \eqref{eq:5.1.9'} має характеристичне число $\lambda$ і власні вектори $f^{\star(1)}, f^{\star(2)}, \ldots, f^{\star(r)}$.
+    Для довільного значення параметра $\lambda$ виконується $\rang (\textbf{E} - \lambda \textbf{A}) = \rang (\textbf{E} - \overline \lambda \textbf{A}^\star) = q \le n$, де $\textbf{A} = (a_{i, j})$, $\textbf{A}^\star = (\overline a_{j, i})$, $i, j = 1, 2, \ldots, n$. Таким чином однорідні для $\eqref{eq:5.1.9}$ та $\eqref{eq:5.1.9'}$ системи рівнянь мають однакову кількість лінійно незалежних розв'язків, що рівна $n - q$. Для випадку, коли $q < n$ число $\lambda$ будемо визначати як характеристичне число, число $r = n - q$ є кратність характеристичного числа $\lambda$, а відповідні розв'язки ($n$-вимірні вектори) $f^{(1)}, f^{(2)}, \ldots, f^{(r)}$ як власні вектори числа $\lambda$. При цьому спряжене однорідне рівняння для \eqref{eq:5.1.9'} має характеристичне число $\lambda$ і власні вектори $f^{\star(1)}, f^{\star(2)}, \ldots, f^{\star(r)}$.
 \end{proof}
 
 \begin{theorem}[Фредгольма для операторного рівняння, третя]
@@ -317,7 +317,7 @@
     Для випадку, коли параметр $\lambda$ є характеристичним числом, то для існування розв'язку неоднорідної системи лінійних алгебраїчних рівнянь \eqref{eq:5.1.9} згідно теореми Кронекера---Капеллі необхідно і достатньо щоб вільний член системи \eqref{eq:5.1.9} був ортогональним до усіх роз\-в'яз\-ків спряженого однорідного рівняння. Тобто
     \begin{equation}
         \label{eq:5.1.13}
-        0 = \sum_{j = 1}^n \left( g_j + \lambda \sum_{i = n + 1}^\infty a_{i, j} g_i \right) f_j^{\star(s)} = \sum_{j = 1}^n g_j \bar f_j^{\star (s)} + \sum_{j = n + 1}^\infty g_j \bar f_j^{\star(s)} = (g, f^\star).
+        0 = \sum_{j = 1}^n \left( g_j + \lambda \sum_{i = n + 1}^\infty a_{i, j} g_i \right) f_j^{\star(s)} = \sum_{j = 1}^n g_j \overline f_j^{\star (s)} + \sum_{j = n + 1}^\infty g_j \overline f_j^{\star(s)} = (g, f^\star).
     \end{equation}
 
     Розв'язок рівняння \eqref{eq:5.1.11} очевидно може бути записаний у вигляді $f^{(0)} + \sum_{s = 1}^r c_s f^{(s)}$, де $f^{(0)}$ --- довільний розв’язок неоднорідного рівняння, $c_s$, $s = 1, \ldots, r$ --- довільні константи.
@@ -325,23 +325,23 @@
 
 \subsubsection{Простір \texorpdfstring{$W_2^k(\Omega)$}{W\_2\^k(Omega)} та його властивості}
 
-Нехай $\Omega$ --- обмежена область з границею $S$, яка задовольняє умові Ліпшиця. Нехай $C^\infty(\bar \Omega)$ --- % лінійна
-множина функцій неперервних з усіма їх похідними в області $\bar \Omega$. Позначимо через $C_0^\infty(\Omega)$ % лінійну
-множину усіх функцій з $C^\infty(\bar \Omega)$, які мають компактний носій в області $\Omega$, тобто усі функції з множини $C_0^\infty (\bar \Omega)$ тотожно перетворюються в нуль в околі границі $S$ разом з усіма своїми похідними. \medskip
+Нехай $\Omega$ --- обмежена область з границею $S$, яка задовольняє умові Ліпшиця. Нехай $C^\infty(\overline \Omega)$ --- % лінійна
+множина функцій неперервних з усіма їх похідними в області $\overline \Omega$. Позначимо через $C_0^\infty(\Omega)$ % лінійну
+множину усіх функцій з $C^\infty(\overline \Omega)$, які мають компактний носій в області $\Omega$, тобто усі функції з множини $C_0^\infty (\overline \Omega)$ тотожно перетворюються в нуль в околі границі $S$ разом з усіма своїми похідними. \medskip
 
 \begin{proposition}
-    Для функцій з класів $C_0^\infty(\Omega)$ та $C^\infty(\bar \Omega)$ можна ввести скалярний добуток
+    Для функцій з класів $C_0^\infty(\Omega)$ та $C^\infty(\overline \Omega)$ можна ввести скалярний добуток
     \begin{equation*}
-        (u, v)_{L_2(\Omega)} = \int_\Omega u(x) \bar v(x) \diff x,
+        (u, v)_{L_2(\Omega)} = \int_\Omega u(x) \overline v(x) \diff x,
     \end{equation*}
     який породжує норму
     \begin{equation*}
-        \|u\|_{L_2(\Omega)}^2 = \int_\Omega u(x) \bar u(x) \diff x.
+        \|u\|_{L_2(\Omega)}^2 = \int_\Omega u(x) \overline u(x) \diff x.
     \end{equation*}
 \end{proposition}
 
 \begin{proposition}
-    Для функцій з класів $C_0^\infty(\Omega)$ та $C^\infty(\bar \Omega)$ можна ввести скалярний добуток і в іншій
+    Для функцій з класів $C_0^\infty(\Omega)$ та $C^\infty(\overline \Omega)$ можна ввести скалярний добуток і в іншій
     спосіб: нехай $k$ --- ціле невід'ємне число. Тоді
     \begin{equation}
         \label{eq:5.1.14}
@@ -362,20 +362,21 @@
     \end{equation}
 \end{proposition}
 
-Ця функція відповідає усім аксіомам норми і таким чином простір $C^\infty(\bar \Omega)$ із введеною нормою $\|u\|_{W_2^k(\Omega)}$ стає нормованим простором, який ми будемо позначати $S_2^k(\Omega)$. Збіжність у цьому просторі означає, що, якщо $\|u_n -  u\|_{W_2^k(\Omega)} \xrightarrow[n \to \infty]{} 0$, то $\|D^i u_n - D^i u\|_{L_2(\Omega)} \xrightarrow[n \to \infty]{} 0$, $\forall |i| \le k$, тобто в просторі $S_2^k(\Omega)$ по нормі $L_2(\Omega)$ збігається послідовність функцій та послідовність усіх частинних похідних до $k$-го порядку включно. \medskip
+Ця функція відповідає усім аксіомам норми і таким чином простір $C^\infty(\overline \Omega)$ із введеною нормою $\|u\|_{W_2^k(\Omega)}$ стає нормованим простором, який ми будемо позначати $S_2^k(\Omega)$. Збіжність у цьому просторі означає, що, якщо \[\|u_n -  u\|_{W_2^k(\Omega)} \xrightarrow[n \to \infty]{} 0,\] то \[\left\|D^i u_n - D^i u\right\|_{L_2(\Omega)} \xrightarrow[n \to \infty]{} 0, \quad \forall |i| \le k,\] тобто в просторі $S_2^k(\Omega)$ по нормі $L_2(\Omega)$ збігається послідовність функцій та послідовність усіх частинних похідних до $k$-го порядку включно. \medskip
 
 Особливістю нормованого простору $S_2^k(\Omega)$ є його неповнота, тобто не будь-яка фундаментальна по нормі простору $S_2^k(\Omega)$ послідовність буде мати границю, що належить цьому простору. \medskip
 
 Важливим для подальшого буде наступна властивість похідних функцій з класу $S_2^k(\Omega)$:
-\begin{equation}
+\begin{multline}
     \label{eq:5.1.16}
-    \int_\Omega D^i u(x) \psi(x) \diff x = (-1)^{|i|} \int_\Omega u(x) D^i \psi(x) \diff x, \quad \forall u \in S_2^k(\Omega), \psi \in C_0^\infty(\Omega).
-\end{equation} 
+    \int_\Omega D^i u(x) \psi(x) \diff x = (-1)^{|i|} \int_\Omega u(x) D^i \psi(x) \diff x, \\
+    \forall u \in S_2^k(\Omega), \psi \in C_0^\infty(\Omega).
+\end{multline}
 
 Для побудови повного простору з нормою $W_2^k(\Omega)$ будемо використовувати стандартну процедуру поповнення. \medskip
 
 У випадку $k = 0$ повним простором, який містить в собі $S_2^0(\Omega)$ та щільну % лінійну
-множину $C^\infty(\bar \Omega)$ є простір $L_2(\Omega)$. \medskip
+множину $C^\infty(\overline \Omega)$ є простір $L_2(\Omega)$. \medskip
 
 Для випадку $k > 0$ скалярний добуток введений в $S_2^k(\Omega)$ не може бути розширений на усі елементи простору $L_2(\Omega)$, оскільки не усі елементи цього простору мають похідні в якому-небудь розумному сенсі. \medskip
 
@@ -430,5 +431,5 @@
 \end{remark}
 
 \begin{remark}
-    Аналогічно простору$W_2^k(\Omega)$ можна побудувати простір $\overset{\circ}{W}_2^k(\Omega)$, який будується за допомогою процедури поповнення простора $C_0^\infty(\Omega)$.
+    Аналогічно простору $W_2^k(\Omega)$ можна побудувати простір $\overset{\circ}{W} {}_2^k(\Omega)$, який будується за допомогою процедури поповнення простора $C_0^\infty(\Omega)$.
 \end{remark}
