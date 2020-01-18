@@ -208,7 +208,7 @@
 
 Для цього необхідно записати граничну задачу відносно нової функції $v(x) = u(x) - \Phi(x)$, де функція $\Phi(x)$ задовольняє відповідній граничній умові та належить простору $W_2^1(\Omega)$. \medskip
 
-Відносно $f$ та $f_i$, $i = \overline{1..n}$ будемо рахувати, що $\|f\|_{L_2(\Omega)}, \|f_i\|_{L_2(\Omega)} < \infty$. \medskip
+Відносно $f$ та $f_i$, $i = \overline{1..n}$ будемо рахувати, що $\|f\|_{L_2(\Omega)}, \|\vec f\|_{L_2(\Omega)} < \infty$, де $\vec f = (f_1,\ldots,f_n)$. \medskip
 
 Розглянемо граничну задачу для рівняння \eqref{eq:5.2.1} з однорідними граничними умовами
 \begin{equation}
@@ -235,5 +235,52 @@
 Отримаємо для узагальненого розв'язку енергетичну тотожність, яка дозволить нам довести єдиність узагальненого розв'язку задачі Діріхле. \medskip
 
 Розглянемо квадратичну форму і запишемо нерівності:
+\begin{equation}
+    \label{eq:5.2.8}
+    L(u,u) = \int_\Omega \left( \sum_{i=1}^n p(x) u_{x_i}^2 - a(x) u^2) \diff x \ge \int_\Omega \left( \nu \sum_{i=1}^n u_{x_i}^2 - a_2 u^2 \right) = \nu \|u_x\|^2 - a_2 \|u\|^2 \ge \left( \frac{\nu}{C_\Omega^2} - a_2\right) \|u\|^2 = \delta_1 \|u\|^2, \quad \delta_1 = \frac{\nu}{C_\Omega^2} - a_2.
+\end{equation}
+
+В нерівності \eqref{eq:5.2.8} використані наступні позначення $\|u_x\|^2 = \int_\Omega \sum_{i=1}^n u_{x_i}^2(x) \diff x$, $\|u\|^2 = \int_\Omega u^2(x) \diff x$. Якщо $\delta_1 > 0$, то з \eqref{eq:5.2.8} можна отримати 
+\begin{equation}
+    \label{eq:5.2.9}
+    \nu \|u_x\|^2 \le L(u,u) + a_2 \|u\|^2 \le \left( 1 + \frac{a_2}{\delta_1} \right) L(u, u),
+\end{equation}
+або з \eqref{eq:5.2.9} маємо
+\begin{equation}
+    \label{eq:5.2.10}
+    L(u,u) \ge \delta_2 \|u_x\|^2, \quad \delta_2 = \frac{\nu \delta_1}{\delta_1 + a_2}.
+\end{equation}
+
+Для узагальненого розв'язку $u$ з $\overset{\circ}{W} {}_2^1(\Omega)$ задачі Діріхле, виходячи з \eqref{eq:5.2.7}, нерівності Буняковського та $\epsilon$-нерівності, можна записати наступну нерівність
+\begin{equation}
+    \label{eq:5.2.11}
+    L(u,u) = -(f,u)_{L_2(\Omega)} + \sum_{i=1}^n (f_i,u_{x_i})_{L_2(\Omega)} \le \|f\| \cdot \|u\| + \|\vec f\| \cdot \|u_x\| \le \epsilon_1 \|u\|^2 + \frac{1}{4\epsilon_1}\|f\|^2 + \epilon_2\|u_x\|^2 + \frac{1}{4\epsilon_2}\|\vec f\|^2.
+\end{equation}
+
+Таким чином, маємо з \eqref{eq:5.2.10} та \eqref{eq:5.2.11}:
+\begin{equation}
+    \label{eq:5.2.12}
+    \delta_2 \|u_x\|^2 \le \|f\| \cdot \|u\| + \|\vec f\| \cdot \|u_x\| \le \epsilon_1 \|u\|^2 + \frac{1}{4\epsilon_1}\|f\|^2 +\epsilon_2\|u_x\|^2 + \frac{1}{4\epsilon_2}\|\vec f\|^2\le(\epsilon_1+C_\Omega^2) \|u_x\|^2 + \frac{1}{4\epsilon_1}\|f\|^2+\frac{1}{4\epsilon_2}\|\vec f\|^2.
+\end{equation}
+
+Оберемо в \eqref{eq:5.2.12} $\epsilon_2=\frac{\delta_2}{4}$, $\epsilon_1=\frac{\delta_2}{4C_\Omega^2}$. Таким чином з \eqref{eq:5.2.12} отримаємо
+\begin{equation}
+    \label{eq:5.2.13}
+    \frac{\delta_2}{2}\|u_x\|^2 \le \frac{C_\Omega^2}{\delta_2}\|f\|^2+\frac{1}{\delta_2}\|\vec f\|,
+\end{equation}
+або
+\begin{equation}
+    \label{eq:5.2.13'}
+    \|u_x\|^2 \le \frac{2}{\delta_2^2}(C_\Omega^2 \|f\|^2+\|\vec f\|\right).
+\end{equation}
+
+Враховуючи, що $\|u_x\|^2$ еквівалентна нормі $\|u\|_{W_2^1(\Omega)}^2$ справджується 
+\begin{theorem}[єдиності узагальненого розв'язку задачі Діріхле]
+    Задача Діріхле для рівняння \eqref{eq:5.2.1}, з однорідними граничними умовами \eqref{eq:5.2.4} ($\phi(x) \equiv 0$) при виконанні умови \eqref{eq:5.2.3}, \eqref{eq:5.2.4} може мати лише єдиний розв'язок при виконанні умови $\delta_2 = \frac{\nu}{C_\Omega^2} - a_2 > 0$ в класі $W_2^1(\Omega)$.
+\end{theorem}
+
+\begin{remark}
+    З оцінки \eqref{eq:5.2.13} випливає, що однорідна гранична задача, коли $\|f\| = 0$, $\|\vec f\| = 0$, має лише тривіальний розв'язок, а це означає, що вихідна задача Діріхле дійсно може мати лише єдиний розв'язок.
+\end{remark}
 
 % TODO
