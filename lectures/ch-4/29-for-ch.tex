@@ -1,0 +1,142 @@
+\subsubsection{Нерівність Пуанкаре---Фрідріхса}
+
+\begin{proposition}
+    Розглянемо обмежену область $\Omega$ і покажемо, що для будь-якої функції $u(x) \in \overset{\circ}{W}_2^1(\Omega)$ виконується нерівність Пуанкаре---Фрідріхса:
+    \begin{equation}
+        \label{eq:5.1.18}
+        \int_\Omega u^2(x) \diff x \le C_\Omega^2 \int_\Omega \sum_{i = 1}^n u_{x_i}^2(x) \diff x.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    Покажемо справедливість цієї нерівності для будь-якої функції $u(x)$ з $C_0^\infty(\Omega)$. Будемо вважати, що область $\Omega можна заключити$ у паралелепіпед $\Pi = \{x: 0 \le x_i \le \ell_i, i = \overline{1..n}\}$. За межами області $\Omega$ продовжимо функцію $u(x)$ нульовим значенням, тобто $u(x) \equiv 0, x \in \Omega'$. Припустимо, що серед усіх сторін паралелепіпеда сторона $\ell_1$ є найменшою. Позначимо $x_1' = (x_2, \ldots, x_n) \subset \Pi_1 = \{x_1', 0 \le x_i \le \ell_i, i = \overline{2..n}\}$, а $x_1$ --- перша координата точки $x$. \medskip
+
+    Запишемо очевидну рівність
+    \begin{equation*}
+        u(x_1, x_1') = \int_0^{x_1} \frac{\partial u(y_1, x_1')}{\partial y_1} \diff y_1.
+    \end{equation*}
+
+    Піднесемо обидві частини рівності до квадрату, проінтегруємо по паралелепіпеду $\Pi$ і оцінимо праву частину використовуючи нерівність Коші---Буняковського:
+
+    \begin{align*}
+        \int_\Pi u^2(x) \diff x
+        &= \int_0^{\ell_1} \diff x_1 \int_{\Pi_1} \left( \int_0^{x_1} \frac{\partial u(y_1, x_1')}{\partial y_1} \diff y_1 \right)^2 \diff x_1' \le \\
+        &\le \int_0^{\ell_1} \diff x_1 \int_{\Pi_1} \left(  x_1 \int_0^{\ell_1} \left( \frac{\partial u(y_1, x_1')}{\partial y_1} \diff y_1 \right)^2 \right) \diff x_1' = \\
+        &= \frac{\ell_1^2}{2} \int_\Pi \left( \frac{\partial u}{\partial x_1} \right)^2 \diff x \le \\
+        &\le \frac{\ell_1^2}{2} \int_{\Pi} \sum_{i = 1}^n \left( \frac{\partial u}{\partial x_i} \right)^2 \diff x.
+    \end{align*}
+
+    Тобто нерівність \eqref{eq:5.1.18} виконується з константою $C_\Omega = \frac{\ell_1}{\sqrt{2}}$. \medskip
+
+    З нерівності \eqref{eq:5.1.18}, отриманої для функцій $C_0^\infty(\Omega)$ шляхом використання процедури поповнення, отримаємо, що ця нерівність є справедливою для функції $u(x) \in \overset{\circ}{W}_2^1(\Omega)$.
+\end{proof}
+
+\begin{remark}
+    Зокрема, нерівність \eqref{eq:5.1.18} дозволяє ввести в просторі $\overset{\circ}{W}_2^1(\Omega)$ еквівалентну норму.
+\end{remark}
+
+\begin{proposition}
+    Покажемо, що $\|u\|_2^2 = \int_\Omega \sum_{i = 1}^n \left( \frac{\partial u}{\partial x_i} \right)^2 \diff x$ є еквівалентною нормою в просторі $\overset{\circ}{W}_2^1(\Omega)$. Тобто, покажемо, що знайдуться такі додатні константи $C_1$, $C_2$, що $C_1 \|u\|_{W_2^1(\Omega)} \le \|u\|_2 \le C_2 \|u\|_{W_2^1(\Omega)}$.
+\end{proposition}
+
+\begin{proof}
+    Дійсно,
+    \begin{equation*}
+        \|u\|_2^2 = \left( \int_\Omega \sum_{i = 1}^n \left( \frac{\partial u}{\partial x_i} \right)^2 \diff x \right) \le \left( \int_\Omega \sum_{i = 1}^n \left( \frac{\partial u}{\partial x_i} \right)^2 \diff x \right) + \int_\Omega u^2(x) \diff x = \|u\|_{W_2^1(\Omega)}^2,
+    \end{equation*}
+    тобто $C_2 = 1$. Також виконується нерівність
+    \begin{equation*}
+        \|u\|_{W_2^1(\Omega)}^2 = \left( \int_\Omega \sum_{i = 1}^n \left( \frac{\partial u}{\partial x_i} \right)^2 \diff x \right) + \int_\Omega u^2(x) \diff x \le (1 + C_\Omega^2) \left( \int_\Omega \sum_{i = 1}^n \left( \frac{\partial u}{\partial x_i1} \right)^2 \diff x \right) = (1 + C_\Omega^2) \|u\|_2^2.
+    \end{equation*}
+    З останньої нерівності випливає, що $C_1 = \frac{1}{\sqrt{1 + C_\Omega^2}}$.
+\end{proof}
+
+\begin{theorem}[Релліха, про компактність обмеженої множини]
+    Будь-яка обмежена множина в просторі $W_2^1(\Omega)$ компактна в $L_2(\Omega)$.
+\end{theorem}
+
+\begin{remark}
+    Тобто, якщо $M$ --- така нескінчена множина функцій, що $\forall u \in M$: $\|u\|_{W_2^1(\Omega)} \le C$, то з $M$ можна виділити нескінчену підмножину, яка збігається в $L_2(\Omega)$ до деякого елементу з цього простору. 
+\end{remark}
+
+\subsubsection{Еквівалентні нормування у просторах $\overset{\circ}{W}_2^1(\Omega)$ та $W_2^1(\Omega)$}
+
+Нехай в області $\Omega$ з границею $S \in C^1$ задана дійсна неперервна в $\overline{\Omega}$ симетрична матриця $P(x) = (p_{i,j}(x))_{i,j=\overline{1..n}}$, функція $a(x) \in C(\Omega)$, а на границі $S$ функція $\sigma(x) \in C(S)$. Визначимо на $W_2^1(\Omega)$ ермітову білінійну форму 
+\begin{equation}
+    \label{eq:5.1.19}
+    W(f, g) = \int_\Omega \left( \sum_{i,j=1}^n p_{i,j}(x) f_{x_i}(x) \overline{g}_{x_j}(x) + a(x) f(x) \overline{g}(x) \right) \diff x + \int_S \sigma(x) f(x) \overline{g}(x) \diff S.
+\end{equation}
+
+\begin{theorem}[про еквівалентність норм у просторі $W_2^1(\Omega)$]
+    Якщо матриця $P(x)$ додатно-визначена, тобто для кожного комплексного вектора $\xi = (\xi_1, \ldots, \xi_n)$ і для усіх $x \in \overline{\Omega}$: $\sum_{i,j=1}^n p_{i,j} \xi_i \overline{\xi}_j \ge \gamma \|\xi\|^2$, де $\gamma$ --- певна додатна стала, а функції $a(x)$ і $\sigma(x)$ невід'ємні у своїх областях визначення, то білінійна форма \eqref{eq:5.1.19} визначає в $W_2^1(\Omega)$ скалярний добуток, еквівалентний скалярному добутку
+    \begin{equation}
+        \label{eq:5.1.20}
+        (f, g)_{W_2^1(\Omega)} = \int_\Omega ((\nabla f(x), \nabla g(x)) + f(x) \overline{g}(x)) \diff x.
+    \end{equation}
+\end{theorem}
+
+\begin{remark}
+    Це фактично означає, що існують такі додатні константи $C_1$, $C_2$ що виконується нерівність
+    \begin{equation}
+        \label{eq:5.1.21}
+        C_2^2 \|f\|_{W_2^1(\Omega)}^2 \le W(f, f) \le C_1^2 \|f\|_{W_2^1(\Omega)}^2.
+    \end{equation}
+\end{remark}
+
+\begin{remark}
+    Таким чином, ця теорема дозволяє ввести у просторі $W_2^1(\Omega)$ норму
+    \begin{equation}
+        \label{eq:5.1.22}
+        \|f\|_\star^2 = W(f, f),
+    \end{equation}
+    еквівалентну звичайній нормі в цьому просторі.
+\end{remark}
+
+\begin{proof}
+    Для доведення теореми необхідно встановити справедливість двосторонньої нерівності \eqref{eq:5.1.21}. Зауважимо, що в виразі \eqref{eq:5.1.19} кожен з трьох доданків для $W(f,f)$ невід'ємний. Оскільки
+    \begin{align*}
+        \int_\Omega \left( \sum_{i,j=1}^n p_{i,j} f_{x_i} \overline{f}_{x_j} \right) \diff x
+        &\le p_0 \int_\Omega \sum_{i,j=1}^n |f_{x_i}| |\overline{f}_{x_j}| \diff x \le p_0 n \int_\Omega |\nabla f|^2 \diff x \le p_0 n \|f\|_{W_2^1(\Omega)}^2, \quad p_0 = \max_{1\le i,j\le n}\|p_{i,j}\|_{C(\Omega)}, \\
+
+        \int_\Omega a(x) |f|^2 \diff x
+        &\le a_1 \|f\|_{L_2(\Omega)}^2, \quad a_1 = \|a\|_{C(\Omega)}, \\
+
+        \int_S \sigma(x) |f|^2 \diff S
+        &\le \sigma_1 \|f\|_{L_2(S)}^2 \le C^2 \sigma_1 \|f\|_{W_2^1(\Omega)}^2, \quad \sigma_1 = \|\sigma\|_{C(S)}.
+    \end{align*}
+
+    З цих нерівностей випливає, що права нерівність \eqref{eq:5.1.21} виконується зі сталою $C_1^2 = p_0 n + a_1 + \sigma_1 C^2$. \medskip
+
+    Покажемо справедливість лівої нерівності \eqref{eq:5.1.21}, а саме покажемо що виконується нерівність $\|f\|_{W_2^1(\Omega)}^2 \le \frac{1}{C_2^2} W(f, f)$. \medskip
+
+    Припустимо зворотне, що відповідної константи $C_2$ не існує. Тоді для довільного цілого $m \ge 1$ знайдеться така функція $f_m(x) \in W_2^1(\Omega)$, що $\|f_m\|_{W_2^1(\Omega)}^2 \ge m W(f_m, f_m)$,, або знайдеться $g_m(x) = \frac{f_m(x)}{\|f_m\|_{W_2^1(\Omega)}}$, $\|g_m\|_{W_2^1(\Omega)} = 1$, така, що
+    \begin{equation*}
+        W(g_m, g_m) = \int_\Omega \left( \sum{i,j=1}^np_{i,h} g_{m, x_i} \overline{g}_{m, x_j} + a(x) |g_m|^2 \right) \diff x + \int_S \sigma(x) |g_m|^2 \diff S \le \frac{1}{m}.     
+    \end{equation*}
+
+    Звідси випливає, що кожне з доданків останньої нерівності не перевищує $1/m$ і тому виконуються нерівності:
+    \begin{equation}
+        \label{eq:5.1.23}
+        \int_\Omega a|g_m|^2 \diff x < \frac{1}{m}, \quad \int_S \sigma |g_m|^2 \diff S < \frac{1}{m}, \quad \int_\Omega |\nabla g_m|^2 \diff x < \frac{1}{m \gamma}.
+    \end{equation}
+
+    З \eqref{eq:5.1.23} випливає, що послідовність $g_m$, $m = 1, 2, \ldots$ обмежена в $W_2^1(\Omega)$, тому з неї можна обрати фундаментальну в $L_2(\Omega)$ послідовність; нехай це є послідовність $g_m$, $m = 1, 2, \ldots$, тобто $\|g_m - g_p\|_{L_2(\Omega)} \to 0$, $m, p \to \infy$. Розглянемо
+    \begin{align*}
+        \|g_m - g_p\|_{W_2^1(\Omega)}^2
+        &= \|g_m - g_p\|_{L_2(\Omega)}^2 + \| |\nabla (g_m - g_p)| \|_{L_2(\Omega)}^2 \le \\
+        &\le \|g_m - g_p\|_{L_2(\Omega)}^2 + 2 \| |\nabla g_m| \|_{L_2(\Omega)}^2 + 2 \| |\nabla g_p| \|_{L_2(\Omega)}^2 \le \\
+        &\le \|g_m - g_p\|_{L_2(\Omega)}^2 + \frac{2}{m \gamma} + \frac{2}{p \gamma} \xrightarrow[p, m \to \infty]{} 0.
+    \end{align*}
+
+    Таким чином послідовність $g_m$, $m = 1, 2, \ldots$ фундаментальна в просторі $W_2^1(\Omega)$ і тому збігається по нормі цього простору до деякого елементу $g \in W_2^1(\Omega)$. \medskip 
+
+    Переходимо до границі при $m \to \ifnty$, отримаємо
+    \begin{equation}
+        \label{eq:5.1.24}
+        \|g\|_{W_2^1(\Omega)} = 1, \quad \int_\Omega |\nabla g|^2 \diff x = 0, \quad \int_\Omega a |g|^2 \diff x = 0, \quad \int_S \sigma |g|^2 \diff S = 0.
+    \end{equation}
+
+    З перших двох рівностей випливає, що $g(x) = \const$, $x \in \Omega$, звідси маємо $g(x) = \frac{1}{\sqrt{|\Omega|}}$, $x \in \Omega$ таким чином маємо протиріччя з двома останніми рівностями \eqref{eq:5.1.24} і теорема доведена.
+\end{proof}
+
+% TODO
