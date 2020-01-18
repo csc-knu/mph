@@ -155,12 +155,12 @@
     З перших двох рівностей випливає, що $g(x) = \const$, $x \in \Omega$, звідси маємо $g(x) = \frac{1}{\sqrt{|\Omega|}}$, $x \in \Omega$ таким чином маємо протиріччя з двома останніми рівностями \eqref{eq:5.1.24} і теорема доведена.
 \end{proof}
 
-\subsection{Узагальнені розв'язки задачі Діріхле еліптичних рівнянь в просторі \texorpdfstring{$W_2^1(\Omega)}$}{W21Omega}}
+\subsection{Узагальнені розв'язки задачі Діріхле еліптичних рівнянь в просторі \texorpdfstring{$W_2^1(\Omega)$}{W21Omega}}
 
 Будемо розглядати лінійне еліптичне рівняння другого порядку зі змінними коефіцієнтами:
 \begin{equation}
     \label{eq:5.2.1}
-    L u = \nabla \cdot (p(x) \nabla u) + a(x) u = f(x) + \um_{i = 1}^n \frac{\partial f_i(x)}{\partial x_i}.
+    L u = \nabla \cdot (p(x) \nabla u) + a(x) u = f(x) + \sum_{i = 1}^n \frac{\partial f_i(x)}{\partial x_i}.
 \end{equation}
 
 Головна частина рівняння \eqref{eq:5.2.1} $\nabla \cdot (p(x) \nabla u)$ допускає узагальнення вигляду
@@ -202,9 +202,9 @@
     \end{equation}
 \end{itemize}
 
-Де $\frac{\partial u}{\partial N} = p(x) \frac{\partial u}{\partial n}$, для головної частини \eqref{eq:5.2.2} $\frac{\partial u}{\partial N} = \sum_{i,j=1}^n p_{i,j}(x) u_{x_j} \cos (n, x_i)$, а $n$ --- одинична зовнішня нормаль до поверхні $S$. \medskip
+Де $\frac{\partial u}{\partial N} = p(x) \frac{\partial u}{\partial n}$, для головної частини \eqref{eq:5.2.2} \[\frac{\partial u}{\partial N} = \sum_{i,j=1}^n p_{i,j}(x) u_{x_j} \cos (n, x_i),\] а $n$ --- одинична зовнішня нормаль до поверхні $S$. \medskip
 
-Усі перераховані задачі можуть бути зведені до задач з однорідним граничними умовами, тобто такими умовами, що $\phi(x) \equiv 0$. \meskip
+Усі перераховані задачі можуть бути зведені до задач з однорідним граничними умовами, тобто такими умовами, що $\phi(x) \equiv 0$. \medskip
 
 Для цього необхідно записати граничну задачу відносно нової функції $v(x) = u(x) - \Phi(x)$, де функція $\Phi(x)$ задовольняє відповідній граничній умові та належить простору $W_2^1(\Omega)$. \medskip
 
@@ -213,7 +213,7 @@
 Розглянемо граничну задачу для рівняння \eqref{eq:5.2.1} з однорідними граничними умовами
 \begin{equation}
     \label{eq:5.2.4'}
-    \left. u \right_S = 0.
+    \left. u \right|_S = 0.
 \end{equation}
 
 Введемо білінійну форму:
