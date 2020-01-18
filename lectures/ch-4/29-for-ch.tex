@@ -155,4 +155,85 @@
     З перших двох рівностей випливає, що $g(x) = \const$, $x \in \Omega$, звідси маємо $g(x) = \frac{1}{\sqrt{|\Omega|}}$, $x \in \Omega$ таким чином маємо протиріччя з двома останніми рівностями \eqref{eq:5.1.24} і теорема доведена.
 \end{proof}
 
+\subsection{Узагальнені розв'язки задачі Діріхле еліптичних рівнянь в просторі \texorpdfstring{$W_2^1(\Omega)}$}{W21Omega}}
+
+Будемо розглядати лінійне еліптичне рівняння другого порядку зі змінними коефіцієнтами:
+\begin{equation}
+    \label{eq:5.2.1}
+    L u = \nabla \cdot (p(x) \nabla u) + a(x) u = f(x) + \um_{i = 1}^n \frac{\partial f_i(x)}{\partial x_i}.
+\end{equation}
+
+Головна частина рівняння \eqref{eq:5.2.1} $\nabla \cdot (p(x) \nabla u)$ допускає узагальнення вигляду
+\begin{equation}
+    \label{eq:5.2.2}
+    \sum_{i, j = 1}^n \frac{\partial}{\partial x_i} \left( p_{i,j}(x) \frac{\partial u}{\partial x_j} \right), \quad p_{i,j}(x) = p_{j,i}(x).
+\end{equation}
+
+Для рівняння \eqref{eq:5.2.1} будемо припускати, що 
+\begin{align}
+    \label{eq:5.2.3}
+    \nu &\le p(x) \le \mu, \quad \nu, \mu > 0, \\
+    \label{eq:5.2.3'}
+    a_1 &\le a(x) \le a_2.
+\end{align}
+
+Для головної частини \eqref{eq:5.2.2} умова \eqref{eq:5.2.3} трансформується в умову
+\begin{equation}
+    \label{eq:5.2.3''}
+    \nu \xi^2 \le \sum_{i,j=1}^n p_{i,j} \xi_i \xi_j \le \mu \xi^2, \quad \xi^2 = \sum_{i = 1}^n \xi_i^2.
+\end{equation}
+
+Для рівняння \eqref{eq:5.2.1} будемо розглядати три основні граничні задачі:
+\begin{itemize}
+    \item з умовами Діріхле
+    \begin{equation}
+        \label{eq:5.2.4}
+        \left. u \right|_S = \phi(x), 
+    \end{equation}
+    \item Неймана
+    \begin{equation}
+        \label{eq:5.2.5}
+        \left. \frac{\partial u}{\partial N} \right|_S = \phi(x), 
+    \end{equation}
+    \item або Ньютона
+    \begin{equation}
+        \label{eq:5.2.6}
+        \left. \frac{\partial u}{\partial N} + \sigma(x) u \right|_S = \phi(x).
+    \end{equation}
+\end{itemize}
+
+Де $\frac{\partial u}{\partial N} = p(x) \frac{\partial u}{\partial n}$, для головної частини \eqref{eq:5.2.2} $\frac{\partial u}{\partial N} = \sum_{i,j=1}^n p_{i,j}(x) u_{x_j} \cos (n, x_i)$, а $n$ --- одинична зовнішня нормаль до поверхні $S$. \medskip
+
+Усі перераховані задачі можуть бути зведені до задач з однорідним граничними умовами, тобто такими умовами, що $\phi(x) \equiv 0$. \meskip
+
+Для цього необхідно записати граничну задачу відносно нової функції $v(x) = u(x) - \Phi(x)$, де функція $\Phi(x)$ задовольняє відповідній граничній умові та належить простору $W_2^1(\Omega)$. \medskip
+
+Відносно $f$ та $f_i$, $i = \overline{1..n}$ будемо рахувати, що $\|f\|_{L_2(\Omega)}, \|f_i\|_{L_2(\Omega)} < \infty$. \medskip
+
+Розглянемо граничну задачу для рівняння \eqref{eq:5.2.1} з однорідними граничними умовами
+\begin{equation}
+    \label{eq:5.2.4'}
+    \left. u \right_S = 0.
+\end{equation}
+
+Введемо білінійну форму:
+\begin{equation}
+    \label{eq:5.2.7}
+    L(u, \eta) := \int_\Omega \left( \sum_{i=1}^n p(x) u_{x_i} \eta_{x_i} - a(x)u\eta \right) \diff x = \int_\Omega \left( -f\eta + \sum_{i=1}^n f_i \eta_{x_i} \right) \diff x.
+\end{equation}
+
+Рівність \eqref{eq:5.2.7} можна отримати з рівняння \eqref{eq:5.2.1} шляхом множення його на функцію $\eta$, інтегрування добутку по області $\Omega$, застосування формули інтегрування за частинами та використанням умови \eqref{eq:5.2.4'}.
+
+\begin{definition}
+    Функцію $u(x)$ з простору $\overset{\circ}{W} {}_2^1$ будемо називати \emph{узагальненим розв'язком} задачі Діріхле \eqref{eq:5.2.1}, \eqref{eq:5.2.4'}, якщо для кожного елементу $\eta \in \overset{\circ}{W} {}_2^1(\Omega)$ виконується інтегральна тотожність \eqref{eq:5.2.7}.
+\end{definition}
+
+Інтегральна тотожність \eqref{eq:5.2.7} має зміст для більш широкого класу функцій ніж гранична задача \eqref{eq:5.2.1}, \eqref{eq:5.2.4'}. Цілком зрозуміло, що якщо обрати функцію $\eta(x), u(x) \in C_\infty^0(\Omega)$, то шляхом інтегрування за частинами можемо перейти від інтегральної тотожності до диференціального рівняння \eqref{eq:5.2.1}. \medskip
+
+В той же час інтегральна тотожність \eqref{eq:5.2.7} має зміст для функцій $u, \eta \in \overset{\circ}{W} {}_2^1$. Таким чином з використанням інтегральної тотожності \eqref{eq:5.2.7} ми розширили поняття розв'язку граничної задачі Діріхле. \medskip
+
+Отримаємо для узагальненого розв'язку енергетичну тотожність, яка дозволить нам довести єдиність узагальненого розв'язку задачі Діріхле. \medskip
+
+Розглянемо квадратичну форму і запишемо нерівності:
+
 % TODO
